@@ -1,0 +1,61 @@
+---
+title: "Shootout"
+format: html
+editor: visual
+---
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(readr)
+library(rvest)
+```
+
+```{r}
+url <- "https://www.hockey-reference.com/boxscores/202210180NSH.html#scoring"
+h <- read_html(url)
+tab <- h %>% html_nodes("table")
+```
+
+```{r}
+test <- tab %>% html_table()
+
+head( test[[1]] )
+head( test[[2]] )
+```
+
+```{r}
+scoring <- test[[1]]
+la <- test[[3]]
+nashville <- test[[5]]
+```
+
+```{r}
+( la <- la[-c(1), ] )
+( colnames(la)<- c("Rank", "Player", "G", "A", "PTS", "p_m", "EV_goals", 
+                   "PP_goals", "SH_goals", "GW_goals", "EV_assists",
+                   "PP_assists", "SH_assists", "huh", "S", "S_percent", "Shifts",
+                   "TOI") )
+```
+
+
+# Second try
+```{r}
+nhl_schedule <- read_csv("~/OneDrive - St. Lawrence University/nhl_schedule.csv")
+```
+
+```{r}
+shootout <- nhl_schedule %>%
+  rename(V_goals = "G...3",
+         H_goals = "G...5",
+         extra_time = "...6",
+         attendance = "Att.") %>%
+  filter(extra_time == "SO") %>%
+  select(c(1:7))
+```
+
+```{r}
+shots_la <- read_csv("~/OneDrive - St. Lawrence University/shots_la.csv")
+```
+
+

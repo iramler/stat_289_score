@@ -1,0 +1,42 @@
+---
+title: "NHL Teams"
+format: html
+editor: visual
+---
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(readr)
+```
+
+```{r}
+head(teams_data)
+```
+
+# Clean the data
+
+```{r}
+teams_data <- teams_data %>%
+  rename(PP_percent = "PP%",
+         GF_G = "GF/G",
+         S_percent = "S%",
+         PK_percent = "PK%",
+         SO_percent = "SO%") %>%
+  mutate(S = parse_number(S),
+         PIM = parse_number(PIM))
+```
+
+PP percent vs PK percent
+
+```{r}
+plot(PP_percent~PK_percent, data = teams_data)
+abline(lm(PP_percent~PK_percent, data = teams_data), col = "red")
+```
+
+PK percent vs PIM
+
+```{r}
+plot(PK_percent~PIM, data = teams_data)
+abline(lm(PK_percent~PIM, data = teams_data), col = "red")
+```
