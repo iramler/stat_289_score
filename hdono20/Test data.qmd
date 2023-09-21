@@ -6,5 +6,10 @@ editor: visual
 
 ```{r}
 library(readr)
-D3_2022_Postseason = read.csv()
+D3_2022_Postseason <- read_csv("hdono20/D3_2022_Postseason.csv")
 ```
+
+```{r}
+Standings_D3 <- read_csv("hdono20/Standings_D3.csv")
+```
+
