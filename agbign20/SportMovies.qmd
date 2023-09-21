@@ -1,0 +1,143 @@
+---
+title: "SportMovies"
+format: html
+editor: visual
+---
+
+-   Webscrapping and Joining data sets would be for STAT234
+-   Analysis of the final joined product will be for STAT113
+
+Websites to show:
+IMDb: https://developer.imdb.com/non-commercial-datasets/
+Wikipedia Sports: https://en.wikipedia.org/wiki/List_of_sports_films
+
+Load packages
+
+```{r}
+library(tidyverse)
+library(rvest)
+
+```
+
+Load in IMDb movies data
+
+```{r}
+title_basics <- readr::read_tsv("https://datasets.imdbws.com/title.basics.tsv.gz")
+ratings <- readr::read_tsv("https://datasets.imdbws.com/title.ratings.tsv.gz") 
+```
+
+Join the IMDb movie data sets together
+```{r}
+IMDb <- full_join(title_basics, ratings, by = "tconst") # do we want this? theres a lot of NAs
+```
+
+
+Webscrape Sport Films data from Wikipedia for every sport we want to use
+```{r}
+url <- "https://en.wikipedia.org/wiki/List_of_sports_films"
+## convert the html code into something R can read
+h <- read_html(url)
+## grabs the tables
+tab <- h %>% html_nodes("table")
+objs <- tab %>% html_table()
+lapply(objs,dim)
+```
+
+Create individual data frames from the wikipedia
+```{r}
+cheerAndDance <- objs[[4]]
+cricket <- objs[[5]]
+lacrosse <- objs[[11]]
+rugby <- objs[[12]]
+volleyball <- objs[[13]]
+motorcycleRacing <- objs[[17]]
+rowing <- objs[[19]]
+sailing <- objs[[20]]
+bowling <- objs[[21]]
+cue <- objs[[24]]
+figureSkating <- objs[[26]]
+golf <- objs[[27]]
+gymnastics <- objs[[28]]
+martialArts <- objs[[30]]
+moutaineeringAndClimbing <- objs[[31]]
+rollerskating <- objs[[33]]
+skateboarding <- objs[[35]]
+skiing <- objs[[36]]
+snowboarding <- objs[[38]]
+surfing <- objs[[40]]
+swimmingAndDiving <- objs[[41]]
+tennis <- objs[[43]]
+underwaterDiving <- objs[[44]]
+wrestling <- objs[[45]]
+fishing <- objs[[46]]
+rodeo <- objs[[50]]
+esports <- objs[[52]]
+  
+```
+
+
+Create data frames for the sports on Wikipedia with their own separate links
+```{r}
+#football
+football_url <- "https://en.wikipedia.org/wiki/List_of_American_football_films"
+## convert the html code into something R can read
+football_h <- read_html(football_url)
+## grabs the tables
+football_tab <- football_h %>% html_nodes("table")
+football_objs <- football_tab %>% html_table()
+lapply(football_objs,dim)
+football <- football_objs[[1]]
+
+
+#basketball
+basketball_url <- "https://en.wikipedia.org/wiki/List_of_basketball_films"
+basketball_h <- read_html(basketball_url)
+basketball_tab <- basketball_h %>% html_nodes("table")
+basketball_objs <- basketball_tab %>% html_table()
+lapply(basketball_objs,dim)
+basketball <- basketball_objs[[1]]
+
+
+#baseball
+baseball_url <- "https://en.wikipedia.org/wiki/List_of_baseball_films"
+baseball_h <- read_html(baseball_url)
+baseball_tab <- baseball_h %>% html_nodes("table")
+baseball_objs <- baseball_tab %>% html_table()
+lapply(baseball_objs,dim)
+baseball <- baseball_objs[[1]]
+
+
+#iceHockey
+icehockey_url <- "https://en.wikipedia.org/wiki/List_of_films_about_ice_hockey"
+icehockey_h <- read_html(icehockey_url)
+icehockey_tab <- icehockey_h %>% html_nodes("table")
+icehockey_objs <- icehockey_tab %>% html_table()
+lapply(icehockey_objs,dim)
+icehockey <- icehockey_objs[[1]]
+
+
+#autoRacing
+autoracing_url <- ""
+autoracing_h <- read_html(autoracing_url)
+autoracing_tab <- autoracing_h %>% html_nodes("table")
+autoracing_objs <- autoracing_tab %>% html_table()
+lapply(autoracing_objs,dim)
+icehockey <- autoracing_objs[[1]]
+
+#cycling 
+
+#athletics
+
+#boxing
+
+#horseRacing
+
+```
+
+
+
+Join IMDb and wikipedia data
+
+```{r}
+
+```
