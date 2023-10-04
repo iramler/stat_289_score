@@ -1,0 +1,71 @@
+---
+title: Women's National Baskeball Assosiation win and loss statistics
+author: Kristen Varin
+date: October 3, 2023
+description: This data set contains team win and loss statistics for 20 WNBA 
+teams in the seasons from 2003 to 2022.
+categories:
+  - linear regression
+  - scatterplots
+  - logistic regression
+---
+
+## Motivation
+
+The National Basketball Association (NBA) has dominated over the WNBA in popularity 
+since the creation of the WNBA 50 years after that of the NBA. For this reason, the 
+amounts of data and analysis available are way higher for NBA statistics, such as 
+predictions of whether a team makes playoffs. These types of analyses are limited 
+for the WNBA, so this data set can be used to predict win percentages based on win 
+percentages halfway through the season, and to predict whether a team makes the 
+playoffs based on these variables. 
+
+## Data
+
+This data set contains 226 rows and 12 columns. Each row represents a single WNBA 
+team in of the 2003 to 2022 seasons.
+
+: [wins.csv](../data/wins.csv)
+
+Variable      | Description 
+--------------|-------------
+ team_id      | team id number 
+              |
+ season       | season number 
+              |
+ wins         | total wins by the team for that season 
+              |
+ losses       | total losses by the team for that season 
+              |
+ tot_games    | total games played by the team for that season 
+              |
+ half_wins    | number of wins by the team halfway through the season (July 15) 
+              |
+ half_losses  | number of losses by the team halfway through the season 
+              |
+ half_games   | games played by the team halfway through the season 
+ 
+ win_percent  | percentage of wins by team for that season 
+ 
+ half_percent | percentage of wins by team halfway through the season 
+ 
+ rank         | team rank based on win percentage for that season 
+ 
+ playoffs     | Boolean; True if the team made playoffs (played > 34 games)
+
+
+## Questions
+
+- Is there a statistically significant linear relationship between mid-season win 
+percentage and team rank at the end of the season? 
+
+- Is there a relationship between mid-season win percentage of whether a team 
+makes the playoffs? 
+
+
+## References
+
+Gilani S, Hutchinson G (2022). _wehoop: Access Women's Basketball Play by Play 
+Data_. R package version 1.5.0, <https://CRAN.R-project.org/package=wehoop>.
+
+
