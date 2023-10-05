@@ -149,6 +149,7 @@ sportFilms <- unite(sportFilms, col = "Types", c("Type", "Ref", "Style", "Event(
 Join with IMDb
 ```{r}
 allSportFilms <- inner_join(IMDb, sportFilms, by = c("primaryTitle" = "Title"))
-
+write.csv(allSportFilms,file = "agbign20/data/allSportsFilms.csv")
 ```
+
 
