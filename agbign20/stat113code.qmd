@@ -1,0 +1,42 @@
+---
+title: "sportfilms"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+allSportFilms <- read.csv("agbign20/data/allSportsFilms.csv")
+```
+
+Manipulate how we want it to be
+```{r}
+allSportFilms <- allSportFilms[, -c(1,2,5,8)]
+allSportFilms <- allSportFilms %>%
+  mutate(runtimeMinutes = as.numeric(runtimeMinutes))
+```
+
+
+```{r}
+ggplot(allSportFilms, aes(x=averageRating)) + geom_bar()
+ggplot(allSportFilms, aes(x=isAdult)) + geom_bar() # mostly not adult films
+ggplot(allSportFilms, aes(x=titleType)) + geom_bar() # mostly tv episodes
+ggplot(allSportFilms, aes(x=runtimeMinutes)) + geom_bar() # lets look at this one closer
+ggplot(allSportFilms, aes(x=sport)) + geom_bar() # mostly boxing movies
+```
+
+```{r}
+allSportFilms %>% filter(runtimeMinutes <= 250) %>% ggplot(aes(x=runtimeMinutes)) + geom_bar()
+# looks like about 40 and 60 minutes have the highest count, makes sense since tvepisode is the highest count of title type
+```
+
+
+Questions:
+- should I get rid of the adult films on here, might not be appropriate?
+- should I filter by a certain range of years?
+- some movies on here are on here duplicate times with different release years, should we filter those too?
+- should I merge or just keep one of the genres
