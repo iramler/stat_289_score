@@ -29,7 +29,7 @@ This data set contains 226 rows and 12 columns. Each row represents a
 single WNBA team in of the 2003 to 2022 seasons.
 
 | Variable     | Description                                                     |
-|--------------|-----------------------------------------------------------------|
+|----------------|--------------------------------------------------------|
 | team_id      | team id number                                                  |
 |              |                                                                 |
 | season       | season number                                                   |
