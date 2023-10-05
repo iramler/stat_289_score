@@ -13,7 +13,7 @@ library(ggplot2)
 ```
 
 # Pick 1
-```{r}
+```{r}x
 url <- "https://www.sportingnews.com/us/nhl/news/list-no-1-overall-pick-nhl-draft-history-canadiens/q1hnthszlyswpwgvsfk6vwzk"
 h <- read_html(url)
 tab <- h %>% html_nodes("table")
@@ -26,7 +26,7 @@ draft_picks <- draft_picks %>% rename("Year" = X1, "Player" = X3, "Team" = X2)
 ```
 
 
-```{r}
+```{r}x
 draft_picks <- draft_picks %>%
   mutate(Division = case_when(Team %in% c("Toronto Maple Leafs", "Florida Panthers", "Boston Bruins", "Buffalo Sabres", "Detroit Red Wings", "Montreal Canadiens", "Ottawa Senators", "Tampa Bay Lightning") ~ "Atlantic",
                               Team %in% c("Carolina Hurricanes", "Columbus Blue Jackets", "New Jersey Devils", "Colorado Rockies", "New York Islanders", "New York Rangers", "Philadelphia Flyers", "Pittsburgh Penguins", "Washington Capitals") ~ "Metropolitan",
@@ -38,32 +38,35 @@ draft_picks <- draft_picks %>%
 draft_picks <- draft_picks[-c(22),]
 ```
 
-```{r}
+```{r}x
 # https://www.statmuse.com/nhl/ask/nhl-3rd-overall-draft-picks
 
 round_3 <- readxl::read_excel("~/OneDrive - St. Lawrence University/round_3.xlsx")
 ```
 
-```{r}
+```{r}x
 # https://www.statmuse.com/nhl/ask/nhl-2nd-overall-draft-picks
 
 round_2 <- readxl::read_excel("~/OneDrive - St. Lawrence University/round_2.xlsx")
 ```
 
-```{r}
+```{r}x
 draft_picks <- bind_rows(draft_picks, round_2, round_3)
 ```
 
-```{r}
+```{r}x
 Points <- c(31, 63, 39, 48, 69, 52, 44, 21, 21, 35, 10, 57, 10, 23, 37, 30, 64, 56, 42,
             24, 21, 43, 29, 23, 34, 33, 48, 9, 51, 32, 27)
 ```
 
-```{r}
+```{r}x
 draft_picks <- bind_cols(draft_picks, Points) %>%
   rename("Points" = "...6")
 ```
 
+```{r}
+write_csv(draft_picks, "~/stat_289/stat_289_score/tlum/draft_picks.csv")
+```
 
 
 ```{r}
