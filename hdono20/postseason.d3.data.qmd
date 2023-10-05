@@ -1,54 +1,48 @@
 ---
-title: D3 '2022' Statistics
+title: 'D3 2022 Statistics'
 author: Hope Donoghue
 date: September 21, 2023
 description: D3 women's soccer teams statistics from 2022 season
 categories:
-  - linear regression
-  - principal component analysis
+  - correlation
+  - Chi-square test for association 
 ---
 
 ## Motivation
 
-The [National Women’s Soccer League (NWSL)](https://www.nwslsoccer.com/) is the top professional women's soccer league in the United States. While a team's record ultimately determines their ranking, goal differential (goals scored - goals conceded) is often a better indicator of a team's ability. But what aspects of a team's performance are related to their goal differential? The NWSL records a variety of statistics describing a team's performance, such as the percentage of time they maintain possession, percentage of shots on target, etc. With this dataset, you can explore variation between teams as well as which statistics are relevant predictor variables of goal differential.  
+Have you ever wondered if you know how many goals the home team scored in a soccer game then can you predict how many goals the opponent scored? Is there a relationship between this? This module will explore this idea with NCAA Division III women's soccer data from the 2022 season including postseason.
 
 
 ## Data
 
-This dataset contains statistics about the regular season performance for each NWSL team from 2016 to 2022 (excluding 2020 which was cancelled due to COVID). 
-
-The data was collected using the [`nwslR` package in `R`](https://github.com/nwslR/nwslR). 
+The data set consists of 3753 games in the 2022 Division III women's soccer season. 
 
 
 | Variable | Description |
 |----|-------------|
-| team_name |	Name of NWSL team |
-| season |	Regular season year of team's statistics |
-| games_played |	Number of games team played in season |
-| goal_differential | Goals scored - goals conceded |
-| goals |	Number of goals scores |
-| goals_conceded |	Number of goals conceded |
-| cross_accuracy |	Percent of crosses that were successful |
-| goal_conversion_pct |	Percent of shots scored |
-| pass_pct |	Pass accuracy |
-| pass_pct_opposition_half |	Pass accuracy in opposition half |
-| possession_pct |	Percentage of overall ball possession the team had during the season |
-| shot_accuracy |	Percentage of shots on target |
-| tackle_success_pct |	Percent of successful tackles |
+| Away |	Name away team |
+| Away Score |	The number of goals the away team scored in game |
+| Home |	Name of home team |
+| Home Score | The number of goals the home team scored in game |
+| Date | Date of game |
 
-: [nwsl-team-stats.csv](../data/nwsl-team-stats.csv)
+
+```{r}
+library(readr)
+D3_2022_Postseason <- read_csv("hdono20/D3_2022_Postseason.csv")
+```
+
 
 
 ## Questions
 
-1. Build a linear regression model to predict goal differential as a function of the team's statistics. Which variables, if any, are predictive of a team's goal differential in a season? Describe their relationships.
+1. What is the correlation value of Home Score vs. Away Score from the dataset? Interpret the correlation value in context.
 
-2. Using principal component analysis, project the team seasons into a lower dimensional space using only the team statistics that do not include goals scored or conceded. Choose an appropriate number of principal components, and describe which statistics contribute to your selected number of components. Based on your results, which team statistics explain the most variation between team-seasons in the dataset? Which team statistics are independent of each other?
+
 
 ## References
 
-Dror A (2023). _nwslR: Compiles dataset for the National Women's Soccer
-  League (NWSL)_. R package version 0.0.0.9001.
+Data webscraped from the D3soccer.com website. https://www.d3soccer.com/seasons/women/2022/schedule 
   
 
 
