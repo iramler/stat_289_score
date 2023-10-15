@@ -11,7 +11,7 @@ library(tidyverse)
 ```
 
 ```{r}
-opl_female <- read_csv("powerlifting/Regression Module/opl_female.csv")
+opl_female <- read_csv("saweav20/Regression Module/opl_female.csv")
 ```
 
 ```{r}
