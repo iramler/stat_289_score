@@ -1,15 +1,21 @@
 ---
-title: Power Lifting Regression
+title: Power Lifting Statistics
 author: Sarah Weaver
 date: June 21, 2023
 description: Data on power lifting competitors spanning many years.
 categories:
+  - simple regression
   - multiple regression
+  - correlation
+  - scatterplots
 ---
 
 ## Motivation
 
-
+Suppose you wanted to look at different power lifting events and find correlation,
+run a linear regression, or see if there is any relation between body weight and 
+the amount one can bench, squat, or dead lift. This data set contains male and female 
+competitors and their stats based on their performances in tournaments.
 
 ## Data
 
@@ -28,9 +34,24 @@ competitor and their respective personal information.
 
 : [powerliftingregression.csv](../data/powerliftingregression.csv)
 
+## subsets of data can be used to model examples like correlation and
+## simple or multiple regression
+```{r}
+# eval: false
+opl_female <- opl_class |> filter(Sex == "F") |> filter(Age == 25.0)
+```
+
+: [opl_female.csv](../data/opl_female.csv)
+
+
+
 ## Questions
 
-The data set is designed to help model a multiple linear regression example 
+The data set is designed to help model a multiple linear regression example. 
+The size of the data set allows for subsets to be created which can be used for
+correlation or simple linear regression. These are just some of the applications
+for this data set.
+
 
 ## References
 
