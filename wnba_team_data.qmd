@@ -138,14 +138,22 @@ sum_data
 wnba_win_data %>% ungroup() %>% select(team_id) %>% distinct()
 ```
 
+
+
+
 ```{r}
 # use the current win percentage to rank the teams after each week of the season
-sum_data <- sum_data %>% 
-  group_by(season, week) %>%
+# TODO still have to fix rankings
+# because teams play multiple games in one week??? 
+
+
+sum_data %>% 
+  #distinct(season,week,team_id) %>% 
+  group_by(season, week) %>% 
   mutate(current_rank = as.integer(rank(-current_win_percent))) %>%
   arrange(season, team_id, game_date)
-sum_data
 ```
+
 
 ```{r}
 # join data
@@ -155,17 +163,23 @@ wnba_team_data <- full_join(wnba_win_data, sum_data, by = c("team_id", "season")
 wnba_team_data
 ```
 
-# TODO still have to fix rankings
+
+
+```{r}
+wnba_team_data <- wnba_team_data %>% select(-c(week, current_rank))
+wnba_team_data
+```
+
 
 ```{r}
 # Write csv file
-#write.csv(wnba_team_data, "wnba_team_data.csv", row.names=FALSE)
+write.csv(wnba_team_data, "wnba_team_data.csv", row.names=FALSE)
 ```
+
 
 ```{r}
 # for citations
 library(report)
-
 cite_packages()
 ```
 

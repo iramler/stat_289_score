@@ -1,0 +1,14 @@
+---
+title: "wnba_team_models"
+format: html
+editor: visual
+---
+
+```{r}
+wnba_team <- read_csv("kevari20/wnba_team_data.csv")
+```
+
+
+
+
+
