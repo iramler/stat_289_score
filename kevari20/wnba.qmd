@@ -6,6 +6,7 @@ description: This data set contains team win and loss statistics for 16 WNBA
 teams for 20 seasons. 
 categories:
   - linear regression
+  - two way tables
   - scatterplots
   - logistic regression
 editor: 
@@ -24,45 +25,25 @@ This data set contains 8890 rows and 21 columns. Each row represents a single ga
 | Variable            | Description                                                     |
 |---------------------|---------------------------------------------------|
 | team_id             | team id number                                                  |
-|                     |                                                                 |
 | season              | season number                                                   |
-|                     |                                                                 |
 | total_wins          | total wins by the team for that season                          |
-|                     |                                                                 |
 | total_losses        | total losses by the team for that season                        |
-|                     |                                                                 |
 | total_games         | total games played by the team for that season                  |
-|                     |                                                                 |
 | half_wins           | number of wins by the team halfway through the season (July 15) |
-|                     |                                                                 |
 | half_losses         | number of losses by the team halfway through the season         |
-|                     |                                                                 |
 | half_games          | games played by the team halfway through the season             |
-|                     |                                                                 |
 | playoff             | Boolean; True if the team made playoffs (season type = 3)       |
-|                     |                                                                 |
 | total_win_percent   | percentage of wins by team for that season                      |
-|                     |                                                                 |
 | half_win_percent    | percentage of wins by team halfway through the season           |
-|                     |                                                                 |
 | final_rank          | team rank based on win percentage for that season               |
-|                     |                                                                 |
 | half_rank           | team rank halfway through the season                            |
-|                     |                                                                 |
 | game_date           | date of the game                                                |
-|                     |                                                                 |
 | current_wins        | number of wins for the team at the current date                 |
-|                     |                                                                 |
 | current_losses      | number of losses for the team at the current date               |
-|                     |                                                                 |
 | current_games       | number of games played by the team at the current date          |
-|                     |                                                                 |
 | current_win_percent | win percentage of the team at the current date                  |
-|                     |                                                                 |
 | team_winner         | Boolean; True is the team won the game                          |
-|                     |                                                                 |
 | week                | current week of the year                                        |
-|                     |                                                                 |
 | current_rank        | rank of the team in current season at the current week          |
 
 : [wnba_team_data.csv](../data/wnba_team_data.csv)
