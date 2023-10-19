@@ -15,15 +15,17 @@ library(ggplot2)
 library(lubridate)
 ```
 
-## Does mid season record predict season record? 
+## Does mid season record predict season record?
 
 ### Linear Regression Model
+
 ```{r}
 model <- lm(total_win_percent ~ half_win_percent, data = wnba_team) 
 summary(model)
 ```
 
 ### Plot it
+
 ```{r}
 library(ggplot2)
 wnba_team %>% ggplot(aes(half_win_percent, total_win_percent)) + 
@@ -36,7 +38,7 @@ wnba_team %>% ggplot(aes(half_win_percent, total_win_percent)) +
   ) 
 ```
 
-## Does mid season record predict rank? 
+## Does mid season record predict rank?
 
 ### Linear Regression Model
 
@@ -59,7 +61,7 @@ wnba_team %>% ggplot(aes(half_win_percent, final_rank)) +
   facet_wrap(~ season)
 ```
 
-# Does rank predict whether a team makes playoffs? 
+# Does rank predict whether a team makes playoffs?
 
 ## Logistic Regression Model
 
@@ -76,10 +78,3 @@ wnba_team %>%
   select(final_rank, playoff) %>% 
   table()
 ```
-
-
-
-
-
-
-

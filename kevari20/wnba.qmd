@@ -3,7 +3,7 @@ title: Women's National Baskeball Assosiation win and loss statistics
 author: Kristen Varin
 date: October 3, 2023
 description: This data set contains team win and loss statistics for 16 WNBA 
-teams. 
+teams for 20 seasons. 
 categories:
   - linear regression
   - scatterplots
@@ -19,10 +19,10 @@ The National Basketball Association (NBA) has dominated over the WNBA in popular
 
 ## Data
 
-This data set contains 8890 rows and 21 columns. Each row represents a single WNBA team in of the 2003 to 2022 seasons.
+This data set contains 8890 rows and 21 columns. Each row represents a single game and WNBA team in one of the 2003 to 2022 seasons.
 
 | Variable            | Description                                                     |
-|-------------------|-----------------------------------------------------|
+|---------------------|---------------------------------------------------|
 | team_id             | team id number                                                  |
 |                     |                                                                 |
 | season              | season number                                                   |
@@ -71,9 +71,9 @@ This data set contains 8890 rows and 21 columns. Each row represents a single WN
 
 -   Is there a statistically significant linear relationship between mid-season rank and team rank at the end of the season?
 
--   Plot a team's rankings over the course of a season of your choosing. 
+-   Plot a team's rankings over the course of a season of your choosing.
 
--   Create a two-way table that shows mid season ranking and final ranking for a team and season of your choosing. 
+-   Create a two-way table that shows rankings and whether teams make the playoffs. 
 
 -   Is there a relationship between mid-season win percentage and whether a team makes the playoffs?
 
