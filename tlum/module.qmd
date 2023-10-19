@@ -1,0 +1,47 @@
+---
+title: "NHL Shootout Statistics"
+author: Taylor Lum
+date: October 10, 2023
+description: Standings from the 2022-2023 NHL season
+categories:
+  - correlation test
+---
+
+## Motivation
+
+In 2005 the National Hockey League added shootout to regular season games. In the event that regulation time ends in a tie and no goals are scored in overtime, the game goes to a 3-player shootout. This data explores the relationship between the proportion of points won from shootout and the overall strength of the team (based on overall points).
+
+## Data
+
+The data set contains data from the results of the 2022-2023 NHL Season.
+
+| Variable | Description                                                       |
+|-----------------|-------------------------------------------------------|
+| team     | NHL team abbreviation                                             |
+| GP       | Games played                                                      |
+| W        | Wins                                                              |
+| L        | Losses                                                            |
+| OTL      | Overtime losses                                                   |
+| PTS      | Points                                                            |
+| reg_pts  | Points won during regulation time or overtime (2 points per game) |
+| ppg      | Points won per game in regulation time or overtime                |
+| so_pts   | Points won from shootout (1 extra point per shootout)             |
+| pct_so   | Percentage (decimal form) of possible points from shootout won    |
+| RW       | Number of regulation wins                                         |
+| ROW      | Number of regulation and overtime wins                            |
+| SOW      | Number of shootout wins                                           |
+| SOL      | Number of shootout losses                                         |
+
+```{r}
+library(readr)
+standings_2223 <- read_csv("~/stat_289/stat_289_score/tlum/standings_2223.csv")
+```
+
+## Questions
+
+1.  Run a correlation test between `pct_so` and `ppg`.
+2.  Is `ppg` a good predictor of whether or not a team will win a shootout?
+
+## References
+
+Data scraped from https://www.espn.com/nhl/standings/\_/season/2023/group/league
