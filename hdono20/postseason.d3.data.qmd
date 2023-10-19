@@ -2,20 +2,20 @@
 title: 'D3 2022 Statistics'
 author: Hope Donoghue
 date: September 21, 2023
-description: D3 women's soccer teams statistics from 2022 season
+description: Division III women's soccer teams statistics from 2022 season
 categories:
-  - correlation
+  - Correlation
   - Chi-square test for association 
 ---
 
 ## Motivation
 
-Have you ever wondered if you know how many goals the home team scored in a soccer game then can you predict how many goals the opponent scored? Is there a relationship between this? This module will explore this idea with NCAA Division III women's soccer data from the 2022 season including postseason.
+Have you ever wondered if you know how many goals the home team scored in a soccer game then can you predict how many goals the opponent scored? Is there a relationship between this? This module will explore this idea with NCAA Division III women's soccer data from the 2022 season including the postseason championship. 
 
 
 ## Data
 
-The data set consists of 3753 games in the 2022 Division III women's soccer season. 
+The data set consists of 3753 games in the 2022 Division III women's soccer season. Each row represents one game in the season.
 
 
 | Variable | Description |
@@ -27,22 +27,15 @@ The data set consists of 3753 games in the 2022 Division III women's soccer seas
 | Date | Date of game |
 
 
-```{r}
-library(readr)
-D3_2022_Postseason <- read_csv("hdono20/D3_2022_Postseason.csv")
-```
-
-
-
 ## Questions
 
-1. What is the correlation value of Home Score vs. Away Score from the dataset? Interpret the correlation value in context.
+1. What is the correlation value of Home Score vs. Away Score from the data set? Interpret the correlation value in context.
 
 
 
 ## References
 
-Data webscraped from the D3soccer.com website. https://www.d3soccer.com/seasons/women/2022/schedule 
+Data web scraped from the D3soccer.com website. https://www.d3soccer.com/seasons/women/2022/schedule 
   
 
 
