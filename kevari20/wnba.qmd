@@ -2,7 +2,8 @@
 title: Women's National Baskeball Assosiation win and loss statistics
 author: Kristen Varin
 date: October 3, 2023
-description: This data set contains team win and loss statistics for 20 WNBA 
+description: This data set contains team win and loss statistics for 16 WNBA 
+teams. 
 categories:
   - linear regression
   - scatterplots
@@ -14,65 +15,68 @@ editor:
 
 ## Motivation
 
-The National Basketball Association (NBA) has dominated over the WNBA in
-popularity since the creation of the WNBA 50 years after that of the
-NBA. For this reason, the amounts of data and analysis available are way
-higher for NBA statistics, such as predictions of whether a team makes
-playoffs. These types of analyses are limited for the WNBA, so this data
-set can be used to predict win percentages based on win percentages
-halfway through the season, and to predict whether a team makes the
-playoffs based on these variables.
+The National Basketball Association (NBA) has dominated over the WNBA in popularity since the creation of the WNBA 50 years after that of the NBA. For this reason, the amounts of data and analysis available are way higher for NBA statistics, such as predictions of whether a team makes playoffs. These types of analyses are limited for the WNBA, so this data set can be used to predict win percentages based on win percentages halfway through the season, and to predict whether a team makes the playoffs based on these variables.
 
 ## Data
 
-This data set contains 226 rows and 12 columns. Each row represents a
-single WNBA team in of the 2003 to 2022 seasons.
+This data set contains 8890 rows and 21 columns. Each row represents a single WNBA team in of the 2003 to 2022 seasons.
 
-| Variable     | Description                                                     |
-|----------------|--------------------------------------------------------|
-| team_id      | team id number                                                  |
-|              |                                                                 |
-| season       | season number                                                   |
-|              |                                                                 |
-| wins         | total wins by the team for that season                          |
-|              |                                                                 |
-| losses       | total losses by the team for that season                        |
-|              |                                                                 |
-| tot_games    | total games played by the team for that season                  |
-|              |                                                                 |
-| half_wins    | number of wins by the team halfway through the season (July 15) |
-|              |                                                                 |
-| half_losses  | number of losses by the team halfway through the season         |
-|              |                                                                 |
-| half_games   | games played by the team halfway through the season             |
-|              |                                                                 |
-| win_percent  | percentage of wins by team for that season                      |
-|              |                                                                 |
-| half_percent | percentage of wins by team halfway through the season           |
-|              |                                                                 |
-| rank         | team rank based on win percentage for that season               |
-|              |                                                                 |
-| playoffs     | Boolean; True if the team made playoffs (played \> 34 games)    |
+| Variable            | Description                                                     |
+|-------------------|-----------------------------------------------------|
+| team_id             | team id number                                                  |
+|                     |                                                                 |
+| season              | season number                                                   |
+|                     |                                                                 |
+| total_wins          | total wins by the team for that season                          |
+|                     |                                                                 |
+| total_losses        | total losses by the team for that season                        |
+|                     |                                                                 |
+| total_games         | total games played by the team for that season                  |
+|                     |                                                                 |
+| half_wins           | number of wins by the team halfway through the season (July 15) |
+|                     |                                                                 |
+| half_losses         | number of losses by the team halfway through the season         |
+|                     |                                                                 |
+| half_games          | games played by the team halfway through the season             |
+|                     |                                                                 |
+| playoff             | Boolean; True if the team made playoffs (season type = 3)       |
+|                     |                                                                 |
+| total_win_percent   | percentage of wins by team for that season                      |
+|                     |                                                                 |
+| half_win_percent    | percentage of wins by team halfway through the season           |
+|                     |                                                                 |
+| final_rank          | team rank based on win percentage for that season               |
+|                     |                                                                 |
+| half_rank           | team rank halfway through the season                            |
+|                     |                                                                 |
+| game_date           | date of the game                                                |
+|                     |                                                                 |
+| current_wins        | number of wins for the team at the current date                 |
+|                     |                                                                 |
+| current_losses      | number of losses for the team at the current date               |
+|                     |                                                                 |
+| current_games       | number of games played by the team at the current date          |
+|                     |                                                                 |
+| current_win_percent | win percentage of the team at the current date                  |
+|                     |                                                                 |
+| team_winner         | Boolean; True is the team won the game                          |
+|                     |                                                                 |
+| week                | current week of the year                                        |
+|                     |                                                                 |
+| current_rank        | rank of the team in current season at the current week          |
 
-: [wins.csv](../data/wins.csv)
+: [wnba_team_data.csv](../data/wnba_team_data.csv)
 
 ## Questions
 
--   Is there a statistically significant linear relationship between
-    mid-season win percentage and team rank at the end of the season?
+-   Is there a statistically significant linear relationship between mid-season win percentage and team rank at the end of the season?
 
--   Plot the relationship between mid-season win percentage and win
-    percentage at the end of the season. How could you plot this
-    separately for each season?
+-   Plot the relationship between mid-season win percentage and win percentage at the end of the season. How could you plot this separately for each season?
 
--   Is there a relationship between mid-season win percentage and
-    whether a team makes the playoffs?
+-   Is there a relationship between mid-season win percentage and whether a team makes the playoffs?
 
--   Is there a relationship between rank and whether a team makes the
-    playoffs? How would you plot this relationship?
+-   Is there a relationship between rank and whether a team makes the playoffs? How would you plot this relationship?
 
 ## References
 
-Gilani S, Hutchinson G (2022). *wehoop: Access Women's Basketball Play
-by Play Data*. R package version 1.5.0,
-<https://CRAN.R-project.org/package=wehoop>.
+Gilani S, Hutchinson G (2022). *wehoop: Access Women's Basketball Play by Play Data*. R package version 1.5.0, <https://CRAN.R-project.org/package=wehoop>.
