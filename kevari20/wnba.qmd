@@ -69,9 +69,11 @@ This data set contains 8890 rows and 21 columns. Each row represents a single WN
 
 ## Questions
 
--   Is there a statistically significant linear relationship between mid-season win percentage and team rank at the end of the season?
+-   Is there a statistically significant linear relationship between mid-season rank and team rank at the end of the season?
 
--   Plot the relationship between mid-season win percentage and win percentage at the end of the season. How could you plot this separately for each season?
+-   Plot a team's rankings over the course of a season of your choosing. 
+
+-   Create a two-way table that shows mid season ranking and final ranking for a team and season of your choosing. 
 
 -   Is there a relationship between mid-season win percentage and whether a team makes the playoffs?
 
