@@ -16,7 +16,13 @@ editor:
 
 ## Motivation
 
-The National Basketball Association (NBA) has dominated over the WNBA in popularity since the creation of the WNBA 50 years after that of the NBA. For this reason, the amounts of data and analysis available are way higher for NBA statistics, such as predictions of whether a team makes playoffs. These types of analyses are limited for the WNBA, so this data set can be used to predict win percentages based on win percentages halfway through the season, and to predict whether a team makes the playoffs based on these variables.
+The National Basketball Association (NBA) has dominated over the WNBA in 
+popularity since the creation of the WNBA 50 years after that of the NBA. 
+For this reason, the amounts of data and analysis available are way higher 
+for NBA statistics, such as predictions of whether a team makes playoffs. 
+These types of analyses are limited for the WNBA, so this data set can be used 
+to predict win percentages based on win percentages halfway through the season, 
+and to predict whether a team makes the playoffs based on these variables.
 
 ## Data
 
@@ -47,6 +53,9 @@ This data set contains 8890 rows and 21 columns. Each row represents a single ga
 | current_rank        | rank of the team in current season at the current week          |
 
 : [wnba_team_data.csv](../data/wnba_team_data.csv)
+
+2 data sets: 
+
 
 ## Questions
 

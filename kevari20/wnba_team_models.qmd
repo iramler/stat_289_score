@@ -78,3 +78,11 @@ wnba_team %>%
   select(final_rank, playoff) %>% 
   table()
 ```
+
+
+
+- make another table with columns for each game and a current record
+
+- then have the other tabel for just summary statistics
+
+
