@@ -19,7 +19,7 @@ Regulation time in an NHL game consists of three 20 minute periods. If regulatio
 The data set contains the final standings of the 2022-2023 NHL Season with team level statistics.
 
 | Variable | Description                                                       |
-|---------------------|---------------------------------------------------|
+|----------|-------------------------------------------------------------------|
 | team     | NHL team abbreviation                                             |
 | GP       | Games played                                                      |
 | W        | Wins                                                              |
