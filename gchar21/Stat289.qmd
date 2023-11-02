@@ -1,0 +1,45 @@
+---
+title: "Stat289 Data Formatting"
+author: "George Charalambous"
+format: 
+  html:
+    embed-resources: true
+---
+
+```{r}
+library(here)
+library(tidyverse)
+library(dplyr)
+
+data <- read_csv(here("data/data_correct.csv"))
+```
+
+Logistic Regression Modelling Probability of Winning 
+
+```{r}
+interest_df <- data |>
+  select(c(1, 2, 7, 22, 23)) |>
+  pivot_wider(names_from = Meta,
+                 values_from = championName) |>
+  group_by(teamId, matchId) |>
+  mutate(winner = if_else(winner == 1,
+                          true = "Wins",
+                          false = "Losses")) |>
+  group_by(`AD Carry`, Support, winner) |>
+  summarise(outcome = n()) |>
+  pivot_wider(names_from = winner, 
+              values_from = outcome)|>
+  filter(Wins + Losses > 30) |>
+  filter(Support != "NULL" & ADCarry != "NULL") |>
+  mutate(ADCarry = as.factor(`AD Carry`), 
+         Support = as.factor(Support)) 
+```
+
+
+Fitting a Logistic Regression Model to predict how likely is the player going to win using the specified pair of support and AD Carry
+
+```{r}
+model_1 <- glm(c(Wins, Losses) ~ Support + ADCarry , family = "binomial", 
+               data = interest_df)
+```
+
