@@ -1,0 +1,46 @@
+---
+title: Sport Films Dataset
+author: Alyssa Bigness
+date: October 9, 2023
+description: The dataset is joined of IMDb average ratings and sport films from wikipedia. We want to use the joining functions and webscrapping for STAT234 modules and use the finalized version of the dataset for STAT113 modules.
+
+categories:
+  - two sample t test
+  - two way anova
+---
+
+## Motivation
+
+The dataframe, AllSportFilmsData.csv, is joined from the IMDb website of the films' average ratings and types of sport films from wikipedia. The data explores the intersection of sports and films, showcasing how sports have influenced the creation of films and how these sport films inspire people to be involved in athletic teams. Using sport films offers a unique perspective compared to games scores and statistics, telling a story of athletes in a way that numbers can't fully convey.
+
+## Data
+
+There are 12372 observations (rows) and 11 variables, which are listed below.
+
+| Variable       | Description                              |
+|----------------|------------------------------------------|
+| primaryTitle   | the title of the film                    |
+| titleType      | the type of film                         |
+| runtimeMinutes | how long the film is (minutes)           |
+| Year           | the release year of the film             |
+| Genre          | the genres of the film                   |
+| averageRating  | the average rating                       |
+| numVotes       | the number of votes given for the rating |
+| Types          | any specific type for the sport category |
+| summaryNotes   | the summary of the film                  |
+| sport          | the type of sport                        |
+
+: [AllSportFilmsData.csv](../data/AllSportFilmsData.csv)
+
+## Questions
+
+1.  Do these data provide evidence that, on average, the average rating of comedy and drama movies differ? Include all details of the appropriate hypothesis test.
+
+2.  Construct and interpret a 95% confidence interval in average goals for comedy and drama sport movies.
+
+
+## References
+
+<https://en.wikipedia.org/wiki/List_of_sports_films>
+
+<https://developer.imdb.com/non-commercial-datasets/>

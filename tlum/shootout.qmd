@@ -50,3 +50,40 @@ p2 <- p3[-c(2)]
 p2 <- p2[-c(2)]
 SO <- SO[-c(2)]
 ```
+
+```{r}
+shootout <- shootout %>%
+  mutate(home_win = if_else(H_goals > V_goals, TRUE, FALSE))
+```
+
+```{r}
+shootout %>%
+  summarise(mean(home_win))
+```
+
+```{r}
+shootout %>% 
+  group_by(Home) %>%
+  summarise(mean(home_win))
+```
+
+```{r}
+shootout %>%
+  group_by(Visitor) %>%
+  summarise(mean(home_win))
+# visitor loss
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
