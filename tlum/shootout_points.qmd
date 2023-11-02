@@ -44,7 +44,7 @@ standings_2223 <- standings_2223 %>%
 
 ```{r}
 standings_2223 <- standings_2223 %>%
-  select(-c(13:19))
+  select(-c(19, 18, 14, 13))
 ```
 
 ```{r}
@@ -54,6 +54,14 @@ standings_2223 <- standings_2223 %>%
   relocate(pct_so, .after = so_pts) %>%
   relocate(ppg, .after = reg_pts)
 ```
+
+```{r}
+standings_2223 <- standings_2223 %>%
+  rename(team = "...1")
+```
+
+
+
 
 ```{r}
 write_csv(standings_2223, "~/stat_289/stat_289_score/tlum/standings_2223.csv")
@@ -78,6 +86,29 @@ standings_2223<- read_csv("~/stat_289/stat_289_score/tlum/standings_2223.csv")
 ```
 ```{r}
 cor.test(standings_2223$pct_so, standings_2223$ppg)
+```
+```{r}
+cor.test(standings_2223$GF, standings_2223$GA)
+```
+```{r}
+summary(lm(GA~GF, data = standings_2223))
+```
+```{r}
+plot(GA~GF, data = standings_2223) 
+abline(lm(GA~GF, data = standings_2223))
+```
+```{r}
+summary(lm(pct_so~GF, data = standings_2223))
+```
+```{r}
+cor.test(standings_2223$DIFF, standings_2223$PTS)
+```
+```{r}
+plot(PTS~DIFF, data = standings_2223)
+```
+```{r}
+standings_2223 %>%
+  mutate(ppg = reg_pts / (GP - SOW - SOL))
 ```
 
 
