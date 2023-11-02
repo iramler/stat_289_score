@@ -11,7 +11,7 @@ library(here)
 library(tidyverse)
 library(dplyr)
 
-data <- read_csv(here("data/data_correct.csv"))
+data <- read_csv("gchar21/data/data_correct.csv")
 ```
 
 Logistic Regression Modelling Probability of Winning 
@@ -21,25 +21,49 @@ interest_df <- data |>
   select(c(1, 2, 7, 22, 23)) |>
   pivot_wider(names_from = Meta,
                  values_from = championName) |>
+  unnest(cols = c(Support, `AD Carry`))
+
+
+# https://stackoverflow.com/questions/71780575/struggling-to-unnest-tibble-dput-code-and-error-included-in-r
+# finds the length of each entry
+# goal is to remove any rows with length > 1
+interest_df_2 <- apply(interest_df,
+                            c(1,2), # go into every cell 
+                            function(x) length(# get length of
+                              unlist(x, recursive = FALSE) # a tibble cell is 
+                              # a list itself, therefore unlist first
+                            )
+)
+
+matches_with_wonky_roles <- which( (interest_df_2[,4] != 1) | (interest_df_2[,5] != 1) )
+
+interest_df_3 <- interest_df[-matches_with_wonky_roles, ] |>
+  rename(ADC = `AD Carry`,
+         SUP = Support
+         )
+
+interest_df_4 <- 
+interest_df_3 |>
   group_by(teamId, matchId) |>
   mutate(winner = if_else(winner == 1,
                           true = "Wins",
                           false = "Losses")) |>
-  group_by(`AD Carry`, Support, winner) |>
+  group_by(ADC, SUP, winner) |>
   summarise(outcome = n()) |>
   pivot_wider(names_from = winner, 
               values_from = outcome)|>
-  filter(Wins + Losses > 30) |>
-  filter(Support != "NULL" & ADCarry != "NULL") |>
-  mutate(ADCarry = as.factor(`AD Carry`), 
-         Support = as.factor(Support)) 
+  filter(Wins + Losses > 10) |>
+  mutate(ADC = unlist(ADC),
+         SUP = unlist(SUP)
+         ) 
 ```
 
 
 Fitting a Logistic Regression Model to predict how likely is the player going to win using the specified pair of support and AD Carry
 
 ```{r}
-model_1 <- glm(c(Wins, Losses) ~ Support + ADCarry , family = "binomial", 
-               data = interest_df)
+model_1 <- glm(cbind(Wins, Losses) ~ SUP*ADC , family = "binomial", 
+               data = interest_df_4)
+summary(model_1)
 ```
 
