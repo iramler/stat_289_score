@@ -2,50 +2,45 @@
 title: Sport Films Dataset
 author: Alyssa Bigness
 date: October 9, 2023
-description: A one- or two-sentence description of the data. If possible, give a brief summary of the sports problem and statistical situation.
-The dataset is joined of IMDb average ratings and sport films from wikipedia. We want to use the joining functions and webscrapping for STAT234 modules and use the finalized version of the dataset for STAT113 modules.
+description: The dataset is joined of IMDb average ratings and sport films from wikipedia. We want to use the joining functions and webscrapping for STAT234 modules and use the finalized version of the dataset for STAT113 modules.
 
 categories:
-  - manipulating data
-  - ggplots
-  - joining functions
-  - webscrapping
-  
+  - two sample t test
+  - two way anova
 ---
 
 ## Motivation
 
-The dataframe, AllSportFilmsData.csv, is joined from the IMDb website of the films' average ratings and types of sport films from wikipedia. The variables in this dataset include: the title of the film (primaryTitle), the type of film (titleType), how long the film is in minutes(runtimeMinutes), the genre (genres), the average rating (averageRating), the number of votes given for the rating (numVotes), the year the film is released (Year), any specific type for the sport category(Types), and the summary of the film (summaryNotes).
+The dataframe, AllSportFilmsData.csv, is joined from the IMDb website of the films' average ratings and types of sport films from wikipedia. The data explores the intersection of sports and films, showcasing how sports have influenced the creation of films and how these sport films inspire people to be involved in athletic teams. Using sport films offers a unique perspective compared to games scores and statistics, telling a story of athletes in a way that numbers can't fully convey.
 
 ## Data
 
-There are 
-Describe the data. What does each row represent? How many rows are there? If
-there is missingness, say how it is coded and why it is present.
+There are 12372 observations (rows) and 11 variables, which are listed below.
 
-| Variable | Description |
-|----|-------------|
-| primaryTitle | the title of the film |
-| titleType | the type of film |
-| runtimeMinutes | how long the film is (minutes) |
-| genres | the genre of the film |
-| averageRating | the average rating |
-| numVotes | the number of votes given for the rating |
-| Types | any specific type for the sport category |
-| summaryNotes | the summary of the film |
-| sport | the type of sport |
+| Variable       | Description                              |
+|----------------|------------------------------------------|
+| primaryTitle   | the title of the film                    |
+| titleType      | the type of film                         |
+| runtimeMinutes | how long the film is (minutes)           |
+| Year           | the release year of the film             |
+| Genre          | the genres of the film                   |
+| averageRating  | the average rating                       |
+| numVotes       | the number of votes given for the rating |
+| Types          | any specific type for the sport category |
+| summaryNotes   | the summary of the film                  |
+| sport          | the type of sport                        |
 
 : [AllSportFilmsData.csv](../data/AllSportFilmsData.csv)
 
-
 ## Questions
 
-  - Analyses or research questions
+1.  Do these data provide evidence that, on average, the average rating of comedy and drama movies differ? Include all details of the appropriate hypothesis test.
+
+2.  Construct and interpret a 95% confidence interval in average goals for comedy and drama sport movies.
+
 
 ## References
 
-Give references to the original source here, such as by pasting the package
-citation:
-
 <https://en.wikipedia.org/wiki/List_of_sports_films>
+
 <https://developer.imdb.com/non-commercial-datasets/>

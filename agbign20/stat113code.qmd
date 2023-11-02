@@ -40,7 +40,7 @@ Create a boxplot with sport on x axis (pick common sports), comedy and drama as 
 NOTE: Might need to change the genre variable to get different results
 
 ```{r}
-sports <- c("boxing", "football", "autoracing", "martialArts", "golf", "ice hockey")
+#sports <- c("boxing", "football", "autoracing", "martialArts", "golf", "ice hockey")
 
 comedyDramaSports <- allSportFilms %>% mutate(ComedyIND = ifelse(str_detect(genres,"Comedy"),"Comedy",NA),
          DramaIND = ifelse(str_detect(genres,"Drama"),"Drama",NA)) %>%
@@ -60,13 +60,16 @@ newAllSportFilms <- allSportFilms %>%
   filter(titleType == "movie") %>% 
   filter(Year >= 1980)
 
-cdsports <- newAllSportFilms %>% mutate(ComedyIND = ifelse(str_detect(genres, "Comedy"), "Comedy", NA),
-                                     DramaIND = ifelse(str_detect(genres, "Drama"), "Drama", NA)) %>%
+newAllSportFilms$Genre <- paste(newAllSportFilms$genre, newAllSportFilms$Genres, sep = ",")
+newAllSportFilms <- newAllSportFilms[,-c(1,4,8)]
+
+cdsports <- newAllSportFilms %>% mutate(ComedyIND = ifelse(str_detect(Genre, "Comedy"), "Comedy", NA),
+                                     DramaIND = ifelse(str_detect(Genre, "Drama"), "Drama", NA)) %>%
   pivot_longer(cols=ComedyIND:DramaIND,names_to = NULL, values_to = "Type") %>%
-  drop_na("Type") %>% select(primaryTitle,Year, Type, averageRating, sport) %>%
-  filter(sport %in% sports)
+  drop_na("Type") %>% select(primaryTitle,Year, Type, averageRating, sport)
 ```
 
+1970s instead of 1980s would be 1700 obervations vs 1500 observations
 
 Comedy vs Drama Films
 
@@ -93,11 +96,18 @@ There is sufficient evidence that there is a difference in the mean average rati
 
 Break down by sport
 ```{r}
-ggplot(cdsports, aes(x=sport, y = averageRating, fill = Type)) + geom_boxplot()
+cdsports %>% count(sport, Type) %>% view() # look at the number of comedy and drama movies for each sport
+cdsports <- cdsports %>% 
+  mutate(sport = fct_other(cdsports$sport, keep = c("autoracing", "baseball", "basketball", "football", "martialArts"))) %>%
+  mutate(Type = as.factor(Type))
+ggplot(cdsports, aes(x = sport, y = averageRating, fill = Type)) + geom_boxplot()
 ```
 
-Two Way Anova Analysis
+
+
+Two Way Anova Analysis 
 ```{r}
+
 cdsports %>% group_by(Type, sport) %>%
   summarize(mean = round(mean(averageRating, na.rm = TRUE)),
             sd = round(sd(averageRating, na.rm = TRUE))) %>% view()
@@ -106,9 +116,40 @@ mod <- aov(averageRating ~ Type * sport, data = cdsports)
 summary(mod)
 ```
 With sport held constant, average rating is significantly different between the two genres for type.
-With type held constant, average rating is significantly different for at least one sport.
-The interaction between type and sport is not significant.
+With type held constant, average rating is not significantly different between the sports.
+The interaction between type and sport is not quite significant.
 
 
+tukey HSD : type and sports
+```{r}
+library(multcomp)
+
+mod1 = glm(averageRating ~ Type*sport, data=cdsports)
+
+
+summary(glht(mod1, mcp(sport ="Tukey"))) # avg rating is not significantly different between sports
+summary(glht(mod1, mcp(Type ="Tukey"))) # avg rating is not significantly different between the two genres
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Question:
+- to get rid double counting movies if they are both comedy and drama, see if their indicator variables are both 1, make an indicator variable like bothIND and then make the other two indictors both 0 again
 
 
