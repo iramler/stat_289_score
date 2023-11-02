@@ -1,0 +1,115 @@
+---
+title: "Shootout"
+format: html
+editor: visual
+---
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(readr)
+library(rvest)
+library(ggplot2)
+```
+
+```{r}
+url <- "https://www.espn.com/nhl/standings/_/season/2023/group/league"
+h <- read_html(url)
+tab <- h %>% html_nodes("table")
+
+
+objs <- tab %>% html_table()
+```
+
+```{r}
+teams <- objs[[1]]
+points <- objs[[2]]
+```
+
+```{r}
+teams <- c("BOS", "CAR", "NJ", "TOR", "VGK", "EDM", "COL", "DAL", "NYR", "LA", "MIN", "SEA", "TB", "WPG", "NYI", "CGY", "FLA", "NSH", "PIT", "BUF", "OTT", "VAN", "STL", "WSH", "DET", "PHI", "ARI", "MTL", "SJ", "CHI", "CBJ", "ANA")
+```
+
+```{r}
+standings_2223 <- bind_cols(teams, points)
+```
+
+```{r}
+standings_2223 <- standings_2223 %>%
+  mutate(reg_pts = PTS - SOW,
+         so_pts = SOW) %>%
+  relocate(reg_pts, .after = PTS) %>%
+  relocate(so_pts, .after = reg_pts)
+```
+
+```{r}
+standings_2223 <- standings_2223 %>%
+  select(-c(19, 18, 14, 13))
+```
+
+```{r}
+standings_2223 <- standings_2223 %>%
+  mutate(pct_so = so_pts / (SOW + SOL),
+         ppg = PTS / 82) %>%
+  relocate(pct_so, .after = so_pts) %>%
+  relocate(ppg, .after = reg_pts)
+```
+
+```{r}
+standings_2223 <- standings_2223 %>%
+  rename(team = "...1")
+```
+
+
+
+
+```{r}
+write_csv(standings_2223, "~/stat_289/stat_289_score/tlum/standings_2223.csv")
+```
+
+```{r}
+mod <- lm(pct_so~ppg, data = standings_2223)
+summary(mod)
+```
+
+```{r}
+plot(pct_so~ppg, data = standings_2223)
+abline(mod, col = "red")
+```
+
+```{r}
+cor(standings_2223$pct_so, standings_2223$ppg)
+```
+
+```{r}
+standings_2223<- read_csv("~/stat_289/stat_289_score/tlum/standings_2223.csv")
+```
+```{r}
+cor.test(standings_2223$pct_so, standings_2223$ppg)
+```
+```{r}
+cor.test(standings_2223$GF, standings_2223$GA)
+```
+```{r}
+summary(lm(GA~GF, data = standings_2223))
+```
+```{r}
+plot(GA~GF, data = standings_2223) 
+abline(lm(GA~GF, data = standings_2223))
+```
+```{r}
+summary(lm(pct_so~GF, data = standings_2223))
+```
+```{r}
+cor.test(standings_2223$DIFF, standings_2223$PTS)
+```
+```{r}
+plot(PTS~DIFF, data = standings_2223)
+```
+```{r}
+standings_2223 %>%
+  mutate(ppg = reg_pts / (GP - SOW - SOL))
+```
+
+
+are good teams better at shootouts team's record without shootouts deduct points from shootouts points per regulation games compare points per game to proportion of points per shootout

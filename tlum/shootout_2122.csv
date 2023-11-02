@@ -1,0 +1,103 @@
+visitor,v_goals,home,h_goals,extra_time,attendance,home_win,ANA,ARI,BOS,BUF,CGY,CAR,CHI,COL,CBJ,DAL,DET,EDM,FLA,LAK,MIN,MTL,NSH,NJD,NYI,NYR,OTT,PHI,PIT,SJ,SEA,STL,TBL,TOR,VAN,VGK,WSH,WPG
+Vancouver Canucks,2,Edmonton Oilers,3,SO,16034,TRUE,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Vancouver Canucks,5,Philadelphia Flyers,4,SO,19338,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+Arizona Coyotes,1,Buffalo Sabres,2,SO,7872,TRUE,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dallas Stars,2,Pittsburgh Penguins,1,SO,16450,FALSE,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Colorado Avalanche,4,Tampa Bay Lightning,3,SO,19092,FALSE,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+Anaheim Ducks,4,Vegas Golden Knights,5,SO,18029,TRUE,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Florida Panthers,2,Boston Bruins,3,SO,17850,TRUE,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+New York Islanders,2,Nashville Predators,3,SO,17159,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Columbus Blue Jackets,4,New Jersey Devils,3,SO,10239,FALSE,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dallas Stars,3,Winnipeg Jets,4,SO,13174,TRUE,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+St. Louis Blues,2,Los Angeles Kings,3,SO,11756,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Minnesota Wild,5,Pittsburgh Penguins,4,SO,17181,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+New Jersey Devils,3,San Jose Sharks,2,SO,12019,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Pittsburgh Penguins,2,Chicago Blackhawks,3,SO,17736,TRUE,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+St. Louis Blues,3,Winnipeg Jets,2,SO,14004,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1
+Florida Panthers,2,Pittsburgh Penguins,3,SO,17194,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+New Jersey Devils,3,New York Rangers,4,SO,16130,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Columbus Blue Jackets,5,Arizona Coyotes,4,SO,7865,FALSE,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Winnipeg Jets,1,Edmonton Oilers,2,SO,15273,TRUE,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Tampa Bay Lightning,4,Philadelphia Flyers,3,SO,18243,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+Minnesota Wild,4,Tampa Bay Lightning,5,SO,19092,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+Minnesota Wild,3,New Jersey Devils,2,SO,14763,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Pittsburgh Penguins,1,Calgary Flames,2,SO,15343,TRUE,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Anaheim Ducks,5,Los Angeles Kings,4,SO,15276,FALSE,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tampa Bay Lightning,3,St. Louis Blues,4,SO,16605,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+Seattle Kraken,3,Detroit Red Wings,4,SO,18963,TRUE,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Chicago Blackhawks,4,Washington Capitals,3,SO,18573,FALSE,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+Calgary Flames,4,Anaheim Ducks,3,SO,12427,FALSE,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+St. Louis Blues,3,Florida Panthers,4,SO,13446,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+Toronto Maple Leafs,3,Minnesota Wild,4,SO,18568,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+Chicago Blackhawks,3,New York Islanders,2,SO,17255,FALSE,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ottawa Senators,3,New Jersey Devils,2,SO,10312,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Anaheim Ducks,3,Washington Capitals,4,SO,18573,TRUE,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+Boston Bruins,1,Vancouver Canucks,2,SO,18403,TRUE,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Anaheim Ducks,2,Columbus Blue Jackets,1,SO,16029,FALSE,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Winnipeg Jets,3,Vancouver Canucks,4,SO,18457,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+Washington Capitals,3,Buffalo Sabres,2,SO,9554,FALSE,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+Buffalo Sabres,3,Minnesota Wild,2,SO,18022,FALSE,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Philadelphia Flyers,2,Montreal Canadiens,3,SO,NA,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+Vegas Golden Knights,3,New York Rangers,2,SO,17400,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0
+Vegas Golden Knights,4,New York Islanders,3,SO,17255,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0
+Arizona Coyotes,7,San Jose Sharks,8,SO,11450,TRUE,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Nashville Predators,3,Columbus Blue Jackets,4,SO,17494,TRUE,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Vancouver Canucks,1,Los Angeles Kings,2,SO,14514,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+New York Rangers,4,Tampa Bay Lightning,3,SO,19092,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0
+Florida Panthers,5,Dallas Stars,6,SO,17678,TRUE,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Washington Capitals,2,Minnesota Wild,3,SO,19078,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+Detroit Red Wings,3,Anaheim Ducks,4,SO,12043,TRUE,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Toronto Maple Leafs,4,Vegas Golden Knights,3,SO,17911,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+Arizona Coyotes,3,Colorado Avalanche,4,SO,17072,TRUE,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Minnesota Wild,3,Colorado Avalanche,4,SO,17565,TRUE,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Chicago Blackhawks,2,Seattle Kraken,3,SO,17151,TRUE,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+New York Islanders,4,Philadelphia Flyers,3,SO,16362,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0
+Florida Panthers,2,Vancouver Canucks,1,SO,9346,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+Winnipeg Jets,2,Pittsburgh Penguins,3,SO,17962,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1
+Los Angeles Kings,2,New York Rangers,3,SO,15666,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Anaheim Ducks,3,Toronto Maple Leafs,4,SO,NA,TRUE,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+Nashville Predators,2,Edmonton Oilers,3,SO,9150,TRUE,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Carolina Hurricanes,3,Ottawa Senators,2,SO,NA,FALSE,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Detroit Red Wings,3,Pittsburgh Penguins,2,SO,18369,FALSE,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Vegas Golden Knights,3,Tampa Bay Lightning,2,SO,19092,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0
+Arizona Coyotes,3,Colorado Avalanche,2,SO,15345,FALSE,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Boston Bruins,1,New York Rangers,2,SO,15403,TRUE,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Detroit Red Wings,3,New York Rangers,2,SO,16461,FALSE,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Dallas Stars,1,Chicago Blackhawks,0,SO,19845,FALSE,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Montreal Canadiens,3,New York Islanders,2,SO,17255,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+San Jose Sharks,3,Anaheim Ducks,4,SO,13288,TRUE,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Dallas Stars,1,Nashville Predators,2,SO,17869,TRUE,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+New York Islanders,3,San Jose Sharks,4,SO,11283,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0
+Boston Bruins,5,Columbus Blue Jackets,4,SO,19434,FALSE,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Minnesota Wild,6,Detroit Red Wings,5,SO,17461,FALSE,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Minnesota Wild,2,Columbus Blue Jackets,3,SO,16399,TRUE,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Seattle Kraken,4,Montreal Canadiens,3,SO,20608,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Anaheim Ducks,1,New Jersey Devils,2,SO,14783,TRUE,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Florida Panthers,2,Los Angeles Kings,3,SO,15822,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+New York Islanders,3,Washington Capitals,4,SO,18573,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0
+Pittsburgh Penguins,3,St. Louis Blues,2,SO,18096,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0
+Washington Capitals,4,Carolina Hurricanes,3,SO,18680,FALSE,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+Pittsburgh Penguins,3,Buffalo Sabres,4,SO,9399,TRUE,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+Dallas Stars,4,Carolina Hurricanes,3,SO,16421,FALSE,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Chicago Blackhawks,4,Los Angeles Kings,3,SO,13518,FALSE,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Washington Capitals,4,Buffalo Sabres,3,SO,9740,FALSE,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+Florida Panthers,4,Ottawa Senators,3,SO,17201,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Montreal Canadiens,2,New Jersey Devils,3,SO,12080,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Winnipeg Jets,3,Buffalo Sabres,2,SO,8055,FALSE,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Los Angeles Kings,3,Edmonton Oilers,4,SO,16472,TRUE,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Los Angeles Kings,3,Calgary Flames,2,SO,16398,FALSE,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Montreal Canadiens,5,Tampa Bay Lightning,4,SO,19092,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+Philadelphia Flyers,4,New York Rangers,3,SO,16005,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0
+Colorado Avalanche,2,Edmonton Oilers,1,SO,18347,FALSE,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Pittsburgh Penguins,4,New York Islanders,5,SO,15924,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0
+San Jose Sharks,4,Chicago Blackhawks,5,SO,19501,TRUE,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+New Jersey Devils,3,Seattle Kraken,4,SO,17151,TRUE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+Calgary Flames,2,Nashville Predators,3,SO,17237,TRUE,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Ottawa Senators,4,Vancouver Canucks,3,SO,18845,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0
+Ottawa Senators,2,Columbus Blue Jackets,1,SO,18116,FALSE,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+San Jose Sharks,5,Vegas Golden Knights,4,SO,18367,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Toronto Maple Leafs,4,Washington Capitals,3,SO,18573,FALSE,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0
+Vegas Golden Knights,2,Dallas Stars,3,SO,18532,TRUE,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Vegas Golden Knights,3,Chicago Blackhawks,4,SO,19660,TRUE,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+Nashville Predators,5,Colorado Avalanche,4,SO,18011,FALSE,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Vancouver Canucks,2,Edmonton Oilers,3,SO,18347,TRUE,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
