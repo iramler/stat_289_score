@@ -63,7 +63,9 @@ create different subsets that fit your statistical needs!
 Is there any correlation between lifting events within a certain age or
 weight category?
 
+Can a relationship be modeled between events weights and body weight?
 
+Is there an event where females perform better than males?
 
 
 ## References
