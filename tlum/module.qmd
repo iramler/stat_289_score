@@ -16,7 +16,7 @@ In 2005 the National Hockey League added shootout to regular season games. In th
 The data set contains data from the results of the 2022-2023 NHL Season.
 
 | Variable | Description                                                       |
-|-----------------|-------------------------------------------------------|
+|----------|-------------------------------------------------------------------|
 | team     | NHL team abbreviation                                             |
 | GP       | Games played                                                      |
 | W        | Wins                                                              |
