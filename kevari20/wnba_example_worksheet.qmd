@@ -1,0 +1,73 @@
+---
+title: "wnba_team_models"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+wnba_data <- read_csv("kevari20/wnba_data.csv")
+```
+
+```{r}
+head(wnba_data)
+```
+
+What do you notice about the team id's included in this data set? 
+(Hint: Might need to use the `distinct()` function )
+```{r}
+team_data %>% select(team_id) %>% distinct() %>% arrange(team_id)
+```
+
+Now, filter out the id's we don't want
+```{r}
+# filter for actual teams
+team_data <- team_data %>% filter(team_id <= 20)
+```
+
+Now, let's make sure each team id is associated with the correct team name. 
+Use a select statement with both team_id and team_name and then use the distinct 
+function. Which team id's are repeated? What might this mean? 
+
+```{r}
+team_data %>% select(team_id, team_name) %>% distinct() %>% arrange(team_id)
+```
+
+For the id's you found, rename the teams so that the same id's have all the 
+same team name (You can choose which name to keep). 
+```{r}
+# detroit shock, tulsa shock and dallas wings are the same team
+# san antonia silver stars, san antonio stars, and las vegas aces are the same team
+# make new team name variable for all these teams
+team_data <- team_data %>% mutate(team_name = case_when(team_id == 3 ~ 'Dallas Wings',
+                                           team_id == 17 ~ 'Las Vegas Aces',
+                                           TRUE ~ team_display_name)) 
+```
+
+Now that our team names are correct, we can lok at games played. Create a new
+data set called `reg_season` that only has data for regular season games 
+(season_type == 2). 
+
+```{r}
+# filter for regular season games
+reg_season <- team_data %>% filter(season_type == 2 )
+```
+
+To calculate win percentage at the mid-way point, we need to know how many games
+are played in a season. Use the `tally()` function to count the number of games
+played by each team within each season. What do you notice? 
+
+```{r}
+team_data %>% group_by(season, team_id) %>% tally()
+```
+
+What is the problem with this data? 
+Is it possible to fix it? 
+Is this data set good or bad quality? Why? Can it still be used? Why? 
+
+
+
+
