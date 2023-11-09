@@ -1,0 +1,106 @@
+---
+title: "Cleaning"
+output: html_document
+date: "2023-07-17"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(GGally)
+```
+
+
+# There is a significantly higher correlation between faceoff win percentage and overall win percentage for women than there is for men
+
+# Shot percetage on goal also has a strong correlation with win percentage 
+
+```{r}
+draw <- read_csv("draw_pctg.csv", col_select = c(1,4))
+turnovers <- read_csv("turnovers.csv", col_select = 1:2)
+sog <- read_csv("sog.csv", col_select = 1:2)
+assists <- read_csv("assists.csv", col_select = 1:2)
+caused_turnovers <- read_csv("caused_turnovers.csv", col_select = 1:2)
+clearing_pctg <- read_csv("clearning_pctg.csv", col_select = 1:2)
+draws_per_game <- read_csv("draws_per_game.csv", col_select = 1:2)
+fouls <- read_csv("fouls.csv", col_select = 1:2)
+free_position_pctg <- read_csv("free_position_pctg.csv", col_select = 1:2)
+ground_balls <- read_csv("ground_balls.csv", col_select = 1:2)
+points <- read_csv("points.csv", col_select = 1:2)
+save_pctg <- read_csv("save_pctg.csv", col_select = 1:2)
+goals_allowed <- read_csv("goals_allowed.csv", col_select = 1:2)
+goals_per_game <- read_csv("goals_per_game.csv", col_select = 1:2)
+shots <- read_csv("shots.csv", col_select = 1:2)
+wins <- read_csv("win_pctg.csv", col_select = 1:2)
+shot_pctg <- read_csv("shot_pctg.csv", col_select = 1:2)
+
+w_lax <- left_join(draw, turnovers, by = "Team")
+w_lax <- left_join(w_lax, sog, by = "Team")
+w_lax <- left_join(w_lax, assists, by = "Team")
+w_lax <- left_join(w_lax, caused_turnovers, by = "Team")
+w_lax <- left_join(w_lax, clearing_pctg, by = "Team")
+w_lax <- left_join(w_lax, draws_per_game, by = "Team")
+w_lax <- left_join(w_lax, fouls, by = "Team")
+w_lax <- left_join(w_lax, free_position_pctg, by = "Team")
+w_lax <- left_join(w_lax, ground_balls, by = "Team")
+w_lax <- left_join(w_lax, points, by = "Team")
+w_lax <- left_join(w_lax, save_pctg, by = "Team")
+w_lax <- left_join(w_lax, goals_allowed, by = "Team")
+w_lax <- left_join(w_lax, goals_per_game, by = "Team")
+w_lax <- left_join(w_lax, shots, by = "Team")
+w_lax <- left_join(w_lax, shot_pctg, by = "Team")
+w_lax <- left_join(w_lax, wins, by = "Team")
+
+cor(w_lax$draw_pctg, w_lax$win_pctg)
+cor(w_lax$sog_per_game, w_lax$win_pctg)
+```
+
+```{r}
+mod <- lm(win_pctg ~ sog_per_game + draw_pctg, data = w_lax)
+summary(mod)
+```
+
+
+# Idea: Have students compare the correlation of of faceoff_win_pctg to win_pctg for men and women
+# Its higher for women being the faceoffs are more meaningful.
+
+# Then, why could this be?
+# look at histograms of turnovers per game for men and women 
+
+```{r}
+write_csv(w_lax, file = "womens_lax_2022-2023.csv")
+
+w_lax <- read_csv("womens_lax_2022-2023.csv")
+
+
+# Correlation is higher for women than men 
+cor(w_lax$draw_pctg, w_lax$win_pctg)
+cor(lax$faceoff_win_pct, lax$win_loss_pctg)
+```
+```{r}
+# 
+hist(lax$avg_turnovers)
+hist(w_lax$turnovers_per_game)
+```
+```{r}
+mean(lax$avg_turnovers)
+mean(w_lax$turnovers_per_game)
+
+# not crazy
+```
+
+
+
+```{r}
+ggcorr(w_lax, # update data here
+       
+       #suggestion: keep these options the same
+       label = TRUE, label_size = 3, 
+       label_round = 2, label_alpha = TRUE,
+       hjust = 0.8, layout.exp = 1
+       )
+```
+

@@ -1,0 +1,137 @@
+---
+title: "STAT213_NASCAR_PredictingDriverRating"
+author: "Alyssa Bigness"
+date: "11/30/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# STAT 213 Module
+
+The data can be found from the NASCAR website (https://www.nascar.com/stats/). This data shows the season statistics from 2007-2022 with variables such as wins, average start, average mid race, average finish, average position, pass difference, green flag passes, green flag passed, quality passes, percent of quality passes, number of fastest laps, laps in top 15, percent of laps in top 15, laps led, percent of laps led, total laps, driver rating, and points.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Load the data into R and any packages needed for this project
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+library(GGally) # for correlation plots
+nascar_df <- read_csv("data/NascarData.csv")
+```
+
+```{r, echo=FALSE, message=FALSE}
+# Manipulate the data to become clean
+nascar_df <- nascar_df %>% 
+  rename(Wins = WINS,
+         AvgStart = AS,
+         AvgMidRace = AMR,
+         AvgFinish = AF,
+         AvgPos = AP,         
+         PassDiff = PD,       
+         GreenFlagPasses = GP,
+         GreenFlagPassed = GPD,
+         QualityPasses = QP,
+         PercentQualityPasses = '%QP',
+         NumFastestLaps = '#FL',
+         LapsInTop15 = LTOP15,
+         PercentLapsInTop15 = '%LTOP15',
+         LapsLed = LL,
+         PercentLapsLed = '%LL',
+         TotalLaps = TL,
+         DriverRating = DR,
+         Points = PTS
+                    )
+```
+
+## Shown below is the head of the NASCAR data set.
+```{r, message=FALSE, echo=FALSE, warning=FALSE}
+# Show the head of the NASCAR data set
+kable(head(nascar_df), "simple")
+```
+
+
+#### We will be seeing if more than one variable could be used to better predict Driver Rating. We will be using the variables average start, then percentage of laps in top 15, and total laps.
+
+```{r, echo=FALSE, message=FALSE}
+# make new data set with only the four variables
+nascar_3vars <- nascar_df %>%
+  select(AvgStart, PercentLapsInTop15, TotalLaps, DriverRating)
+
+
+ggcorr(nascar_3vars, # update data here
+       
+       #suggestion: keep these options the same
+       label = TRUE, label_size = 3, 
+       label_round = 1, label_alpha = TRUE,
+       hjust = 0.75, layout.exp = 1
+       )
+```
+
+## Create a linear regression model formula for just Average Start and Driver Rating and report the adjusted r-squared value.
+```{r, message=FALSE, echo=FALSE}
+# Look at the model formula
+lm_AvgStart <- lm(DriverRating ~ AvgStart, data = nascar_df)
+summary(lm_AvgStart)
+# r-squared is 0.8008 (want closer to 1)
+```
+
+Answer: The linear regression model formula is 112.12259-2.09943(AvgStart). The adjusted r-squared value = 0.8006
+
+## Now let's pick another variable with Average Start for a multi-linear regression model formula for Driver Rating.
+Here we used Percent of Laps in Top 15.
+Create the multi-linear regression model formula for Average Start and Percent of Laps in Top 15 predicting DriverRating, create the residual vs fitted model, and report the new adjusted r-squared value.
+```{r, message=FALSE, echo=FALSE}
+# Look at the model formula
+lm_multi2 <- lm(DriverRating ~ AvgStart + PercentLapsInTop15, data = nascar_df)
+summary(lm_multi2)
+# r-squared is 0.9153
+```
+
+## Here is a residual vs fitted model
+```{r, message=FALSE, echo=FALSE}
+plot(fitted(lm_multi2), resid(lm_multi2))
+```
+
+Answer: The multi-linear regression model formula is 62.15298 - 0.70681(AvgStart) + 0.56005(PercentLapsInTop15). The new adjusted r-squared value = 0.9152
+
+Discuss with your neighbors and write down if this multi-linear regression model better predicts Driver Rating. Why or why not?
+
+Answer: Yes this multi-linear regression model better predicts DriverRating because the adjusted r-squared value is closer to 1 than it was before.
+
+
+
+## Now let's use all three variables for another multi-linear regression model formula for Driver Rating, create a residual vs fitted model, and report the new adjusted r-squared value.
+```{r, message=FALSE, echo=FALSE}
+# Look at the model formula
+lm_multi3 <- lm(DriverRating ~ AvgStart + PercentLapsInTop15 + TotalLaps, data = nascar_df)
+summary(lm_multi3)
+# r-squared is 0.9247
+```
+
+## Here is a residual vs fitted model
+```{r, message=FALSE, echo=FALSE}
+plot(fitted(lm_multi3), resid(lm_multi3))
+```
+
+Answer: The adjusted r-squared value is 0.9245
+
+
+Discuss with your neighbors and write down if this multi-linear regression model better predicts Driver Rating. Why or why not? And which regression model would be the best model for predicting Driver Rating?
+
+Answer: Yes, this multi-linear regression model better predicts Driver Rating because the adjusted r-squared is closer to 1 than before. The best regression model for predicting Driver Rating is the multi-linear regression with all three variables.
+
+
+# Challenge
+### Create a model given all of the variables from the data set that can predict Driver Rating better than what we have found. Here is the correlations of each variable to get you started. (Try to get a r-squared higher than 0.9247!)
+```{r, echo=FALSE, message=FALSE}
+ggcorr(nascar_df, # update data here
+              label = TRUE, label_size = 3, 
+       label_round = 1, label_alpha = TRUE,
+       hjust = 0.75, layout.exp = 1
+       )
+```
+
+

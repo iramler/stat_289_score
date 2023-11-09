@@ -1,0 +1,74 @@
+---
+title: "SLR Module"
+output: html_document
+date: "2023-07-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+https://www.racing-reference.info/active-drivers-stats/
+
+```{r}
+nascar<- read_csv("bignessalyssa_LATE_1937_225990_nascar_df-1.csv")
+
+nascar_2022 <-nascar%>%
+  filter(Year == 2022)%>%
+  select(-1, -21)
+```
+
+The data set contains each drivers' statistics from the 2022 season. 
+
+```{r}
+ggplot(data = nascar_2022, 
+       aes(x = AvgStart, y = DriverRating ))+
+  geom_point()+
+  geom_smooth(se = FALSE)+
+  labs(x = "Average Start", y = "Driver Rating", title = "2022 NASCAR Season")
+```
+
+Above is scatterplot displaying the relationship between Average Start and Driver Rating. 
+
+
+1. In the scatterplot above what is the explanatory variable? What is the response? What are the units of both variables respectively?
+
+2. What does each point on the scatter plot represent?
+
+3. Assess and decribe the trend displayed in the scatterplot. (strong, negative, and linear)
+
+4. Given the trend of the smoother, does a linear trend seem reasonable?
+
+5. Write the population equation for the linear model predicting Driver Rating from Average Start.
+
+6.. Fit the least squares regression equation for modeling Driver Rating from Average Start.
+```{r}
+mod1 <- lm(DriverRating ~ AvgStart, data = nascar_2022)
+summary(mod1)
+```
+
+7. Interpret the slope coefficient in the context of the data.
+
+8. Provide a literal interpretation of the intercept coefficient. Does it make sense in context of the data? (no, extrapolation)
+
+9. Although it is already known, use the model to predict the Driver Rating of Joey Logano who has an AvgStart of 10.9.
+
+10. Given Joey Logano's actual Driver Rating in 2022 was 89.5, calculate the residual of the model prediction. 
+
+11. What is the size of a typical error for this model? (residual standard error)
+
+12. What percent of variation in Driver Rating is explained by the model using Avg Start? What is the sample correlation?
+
+13. What are the model assumptions for simple linear regression? Examine the plots below to check the assumptions for the linear model. Which assumptions are met? Are there any issues?
+
+```{r}
+plot(mod1)
+```
+
+
+
+
+```{r}
+cor(nascar_2022$AvgStart, nascar_2022$DriverRating)
+```
+

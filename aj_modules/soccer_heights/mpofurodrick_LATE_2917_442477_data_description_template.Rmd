@@ -1,0 +1,48 @@
+---
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+---
+
+
+| | |
+| :----------------------------- | -----------------------------------------------------------: |
+|                   |Football Data from Transfermarkt |
+
+---
+
+### Description
+
+The data set 'players_df' contains information about football player names, their respective clubs, height, and their positions, player market valuations historical records, and player id. The dataset is automatically updated once a week, and the source code and data pipeline are available on GitHub (https://github.com/dcaribou/transfermarkt-datasets). The dataset is a live project subject to regular updates and enhancements, and issues and discussions can be reported on the project's GitHub page. A sample of 20 players was taken from each position from the original data set with 28503 observations. 
+
+### Format
+
+A data frame with 80 observations of the following variables.
+
+| | |
+| :----------------------------- | :----------------------------------------------------------- |
+| `name`| Name of the player
+| `country_of_citizenship`| The country where the player is from
+| `player_id`| The player id
+| `current_club_name`| The player's current club
+| `position`| The player's current position
+| `foot`| The player's preferred foot 
+| `height_in_cm`| The player's height
+| `market_value_in_eur`| The player's market valuation
+| `highest_market_value_in_eur`| The highest player valuation the player has achieved
+| `current_club_id`| The player's current club's id
+| `agent_name`| The player's agent's name
+| `contract_expiration_date`| The player's contract expiration date
+| `date_of_birth`| The player's date of birth
+| `city_of_birth`| The player's city of birth
+
+### Details
+
+The data set has statistics with variables for individual `height_in_cm`, market valuations, and highest market valuation the player has achieved. The other variables include `name`, `country_of_citizenship`, `player_id`, `position`, `foot`, `agent_name` and `current_club_name`. 
+
+
+### Source
+
+The data can be found from the [data.world website](https://data.world/dcereijo/player-scores)
+

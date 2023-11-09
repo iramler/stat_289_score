@@ -1,0 +1,62 @@
+---
+title: "Merging Data"
+output: html_document
+date: "2023-07-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# reading
+```{r}
+assists<- read_csv("assists_l.csv", col_select = 1:2)
+caused_turnovers<- read_csv("caused_turnovers_l.csv", col_select = 1:2)
+clearing<- read_csv("clearing_pctg_l.csv", col_select = 1:2)
+fo <- read_csv("fo_win_pctg.csv", col_select = 1:4)
+goals_against<- read_csv("goals_against.csv", col_select = 1:2)
+goals<- read_csv("goals_l.csv", col_select = 1:2)
+groundballs<- read_csv("ground_balls_l.csv", col_select = 1:2)
+man_down <- read_csv("man_down_defense_l.csv", col_select = 1:2)
+man_up <- read_csv("man_up__offense_l.csv", col_select = 1:2)
+margin <- read_csv("margin_l.csv", col_select = 1:2)
+opp_clear <- read_csv("opp_clear_l.csv", col_select = 1:2)
+points <- read_csv("points_l.csv", col_select = 1:2)
+saves <- read_csv("saves_l.csv", col_select = 1:2)
+shot <- read_csv("shot_pctg_l.csv", col_select = 1:2)
+turnovers<- read_csv("turnovers_l.csv", col_select = 1:2)
+shots_per_game <- read_csv("shots_per_game.csv", col_select = 1:3)
+win_loss <- read_csv("win_loss_l.csv")
+```
+# joining
+```{r}
+lax_2022_2023 <- left_join(assists, caused_turnovers, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, clearing, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, fo, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, goals, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, goals_against, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, groundballs, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, man_down, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, man_up, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, margin, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, opp_clear, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, points, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, saves, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, shot, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, turnovers, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, shots_per_game, by = "Team")
+lax_2022_2023 <- left_join(lax_2022_2023, win_loss, by = "Team")
+
+```
+
+# cleaning
+```{r}
+lax_2022_2023 <- lax_2022_2023%>%
+  separate(Team, into = c("Team","Conference"), sep = "\\(", extra = "merge")%>%
+  mutate(Conference = str_remove_all(Conference,"\\)"),
+         Team = str_trim(Team))%>%
+  mutate(shots_per_game = Shots/Games)%>%
+  select(-20, -21)
+
+write_csv(x = lax_2022_2023, file = "lax_2022_2023.csv")
+```
+

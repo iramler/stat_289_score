@@ -1,0 +1,249 @@
+---
+title: "Regression Transformation"
+output: html_document
+date: "2023-06-30"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+nascar <- read_csv("bignessalyssa_LATE_1937_225990_nascar_df-1.csv")
+
+nascar <- nascar %>% 
+  select(-1)
+
+head(nascar)
+```
+
+
+
+## Let's look at correlation between
+```{r, message=FALSE, echo=FALSE}
+cor(nascar$DriverRating, nascar$AvgFinish) 
+```
+The correlation for DriverRating and AvgFinish is -0.926 What does the correlation mean?
+Answer: The correlation is -0.926 which shows a strong significant negative relationship between Average Start and Driver Rating.
+
+
+
+## Now let's look at the linear regression model formula
+```{r, message=FALSE, echo=FALSE}
+lm_AvgFinish <- lm(AvgFinish ~ DriverRating, data = nascar)
+summary(lm_AvgFinish)
+```
+Write the equation of linear model. Also take note of the adjusted R-squared for the model.
+Adjusted R-squared:  0.8577 
+
+# Scatterplot
+Here is the scatterplot of Average Finish vs Driver Rating
+What trends can be seen in this plot?
+```{r, message=FALSE, echo=FALSE}
+ggplot(data = nascar, aes(x = DriverRating, y = AvgFinish))+ 
+  geom_point()+
+  geom_smooth(se = FALSE)
+```
+Answer: DriverRating and AvgFinish have a strong significant negative relationship. The scatterplot also seems to have a little curve at the top.
+
+## Here is a plot of the residual vs fitted model
+```{r, message=FALSE, echo=FALSE}
+plot(lm_AvgFinish)
+```
+Check the linearity assumption for the linear model. Does it seem reasonably met?
+What issues can be identified? 
+
+Answer: Curvature in the residual vs. fitted plot. Linearity assumption does not hold. 
+
+
+## How can we fix this issue?
+What does the code do below? Write a description.
+
+```{r}
+nascar$logDriverRating = log(nascar$DriverRating)
+```
+
+Answer: Taking the natural log of all the DriverRating values.
+
+## Produce a scatterplot using the transformed Driver Rating variable
+```{r, message=FALSE, echo=FALSE}
+ggplot(data = nascar, aes(x = logDriverRating, y = AvgFinish))+
+  geom_point()+
+  geom_smooth(se = FALSE)
+```
+Does the linearity assumption seem to be met now? 
+
+Answer: Linearity vastly improved. Looks like linearity assumption holds now.
+
+## Now let's look the new linear regression model formula
+```{r, message=FALSE, echo=FALSE}
+lm_AvgFinish2 <- lm(AvgFinish ~ logDriverRating, data = nascar)
+summary(lm_AvgFinish2)
+```
+Write down new equation and compare the adjusted R-squared values. Is this model better?
+
+Answer: Adjusted R-squared: 0.8755. Model is clearly improved.
+
+# Finally, lets look at the residuals vs. fitted plot of the new model
+```{r}
+plot(lm_AvgFinish2)
+```
+Looks great. All assumptions hold (except independence)
+
+
+
+# Prediction (despite lack of indpendence) of Averageg Finish for a log driver rating of 4.5
+```{r}
+Avg_finish_prediction = 104.6116-20.0017*4.5
+Avg_finish_prediction
+# 14.604
+```
+
+# Do you think there is any issues with the prediction we just made?
+Because the data is from multiple consecutive seasons, many drivers appear more than once. This violates the model assumption of independence and increases the chance of inaccuracy with inference.
+
+# Trying sqrt
+```{r}
+nascar$sqrtDriverRating = sqrt(nascar$DriverRating)
+```
+```{r}
+ggplot(data = nascar, aes(x = sqrtDriverRating, y = AvgFinish))+
+  geom_point()+
+  geom_smooth(se = FALSE)
+```
+
+```{r}
+lm_AvgFinish3 <- lm(AvgFinish ~ sqrtDriverRating, data = nascar)
+summary(lm_AvgFinish3)
+```
+
+```{r}
+plot(lm_AvgFinish3)
+```
+
+# Worksheet answers
+
+```{r}
+nascar <- read_csv("bignessalyssa_LATE_1937_225990_nascar_df-1.csv")
+```
+
+1. 
+```{r}
+ggplot(data = nascar, 
+       aes(x = AvgPos, y = DriverRating))+
+  geom_point()+
+  geom_smooth(se = FALSE)
+```
+
+```{r}
+mod1 <- lm(DriverRating ~ AvgPos, data = nascar)
+summary(mod1)
+```
+```{r}
+plot(mod1)
+```
+# NATURAL LOGS
+```{r}
+ggplot(data = nascar, 
+       aes(x = log(AvgPos), y = DriverRating))+
+  geom_point()+
+  geom_smooth(se = FALSE)
+```
+
+
+```{r}
+ggplot(data = nascar, 
+       aes(x = AvgPos, y = log(DriverRating)))+
+  geom_point()+
+  geom_smooth(se = FALSE)
+```
+
+```{r}
+ggplot(data = nascar, 
+       aes(x = log(AvgPos), y = log(DriverRating)))+
+  geom_point()+
+  geom_smooth(se = FALSE)
+```
+
+
+```{r}
+logmod1 <- lm(DriverRating ~ log(AvgPos), data = nascar)
+summary(logmod1)
+```
+
+
+```{r}
+logmod2 <- lm(log(DriverRating) ~ AvgPos, data = nascar)
+summary(logmod2)
+```
+
+```{r}
+logmod3 <- lm(log(DriverRating) ~ log(AvgPos), data = nascar)
+summary(logmod3)
+```
+
+```{r}
+plot(logmod1)
+plot(logmod2)
+plot(logmod3)
+```
+
+# SQUARE ROOT
+```{r}
+ggplot(data = nascar, 
+       aes(x = sqrt(AvgPos), y = DriverRating))+
+  geom_point()+
+  geom_smooth(se = FALSE)
+```
+
+
+```{r}
+ggplot(data = nascar, 
+       aes(x = AvgPos, y = sqrt(DriverRating)))+
+  geom_point()+
+  geom_smooth(se = FALSE)
+```
+
+```{r}
+ggplot(data = nascar, 
+       aes(x = sqrt(AvgPos), y = sqrt(DriverRating)))+
+  geom_point()+
+  geom_smooth(se = FALSE)
+```
+
+
+```{r}
+sqrtmod1 <- lm(DriverRating ~ sqrt(AvgPos), data = nascar)
+summary(sqrtmod1)
+```
+
+
+```{r}
+sqrtmod2 <- lm(sqrt(DriverRating) ~ AvgPos, data = nascar)
+summary(sqrtmod2)
+```
+
+```{r}
+sqrtmod3 <- lm(sqrt(DriverRating) ~ sqrt(AvgPos), data = nascar)
+summary(sqrtmod3)
+```
+```{r}
+plot(sqrtmod1)
+plot(sqrtmod2)
+plot(sqrtmod3)
+```
+
+# POLYNOMIAL 
+
+```{r}
+polymod1 <- lm(DriverRating ~ AvgPos + I(AvgPos^2), data = nascar)
+summary(polymod1)
+
+
+polymod2 <- lm(DriverRating ~ AvgPos + I(AvgPos^2) + I(AvgPos^3), data = nascar)
+summary(polymod2)
+```
+```{r}
+plot(polymod1)
+```
+

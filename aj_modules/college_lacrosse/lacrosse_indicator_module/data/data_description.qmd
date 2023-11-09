@@ -1,0 +1,41 @@
+---
+title: "data_description"
+editor: visual
+---
+
+## Motivation
+
+\
+The motivation behind this dataset is to explore the relationship between men's and womens NCAA Division I Lacrosse with an emphasis on faceoffs. Faceoffs, or draws, are a key aspect to the game as they provide the offense with direct opportunities to strike quickly, or at the very least to maintain possession. Faceoffs differ in format from men's to women's lacrosse yet nonetheless they both require high levels of skill and expertise. As important as they are in men's lacrosse, they are even more important in women's lacrosse as they lead more directly to goal scoring. At the highly level of NCAA Division I Lacrosse, all teams must fight to be above the average in win percentage if they want to win games.
+
+## Data
+
+The data set contains 192 rows and 6 columns. Each row represents a lacrosse team at the NCAA Division 1 level from the 2022-2023 season. Teams come from both the men's and womens division.
+
+\| Variable \| Description \| \|\-\-\--\|\-\-\-\-\-\-\-\-\-\-\-\-\-\--\|
+
+\| Team \| college of the team \|
+
+\| faceoff_win_pct \| the proportion of faceoffs win out of total faceoffs taken \|
+
+\| shots_per_game \| average amount of shots per game \|
+
+\| shot_pctg \| proportion of shots that are goals out of total shots \|
+
+\| win_loss_percentage \| amount of wins out of total games played \|
+
+\| Division \| the division the team is in (Mens or Womens) \|
+
+## Questions
+
+Are faceoffs more important for men or women?
+
+What factors could make faceoffs more important for men or women?
+
+How does faceoff percentage affect winning percentage?
+
+## References
+
+NCAA Website: Division I Lacrosse
+
+<http://stats.ncaa.org/rankings/change_sport_year_div>

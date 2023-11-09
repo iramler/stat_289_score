@@ -1,0 +1,131 @@
+---
+title: "SoccerModule"
+format: docx
+---
+
+```{r Read data, echo= FALSE, output = FALSE}
+## Read in Data
+library(tidyverse)
+library(ggiraphExtra)
+
+players_df <- read.csv("https://query.data.world/s/kgjdpxxovikkuxbduexafg6fbrbjav?dws=00000",
+                       header=TRUE, stringsAsFactors=FALSE)
+
+
+```
+
+
+
+
+```{r Height Distribution, echo=FALSE, output=FALSE}
+
+## Exploratory Data Analysis
+
+
+## Height Distribution
+library(ggplot2)
+
+players_df_height <- 
+  players_df |> 
+  filter(height_in_cm > 0)
+
+
+ggplot(data = players_df_height, 
+       aes(x= height_in_cm)) +
+  geom_bar()
+
+```
+
+```{r Boxplot of Height across Diff pos, echo=FALSE, output=FALSE, results='asis'}
+
+## Distribution of Height across different positions
+
+ggplot(data = players_df_height, 
+       aes(y= height_in_cm,
+           color = position)) +
+  geom_boxplot() +
+  theme(legend.position = 'none') +
+  labs(y = "Height (cm)")
+
+```
+
+A researcher wants to investigate whether there are differences among the mean height for different positions (Goalkeeper, Defender, Midfield, or Attack) of soccer players. Goalkeepers are typically thought to be taller than other positions to make up in wingspan to cover the goal better. The ‘players_df’ dataset contains information on each player including their name, current club, position, and height. For this analysis, only the position and height of the player will be used. A sample of 20 players was taken from each position and will be used for this analysis.
+
+
+
+```{r echo=FALSE, output = TRUE, results='asis'}
+
+set.seed(10294119)
+
+height_sample_df <- players_df_height |> group_by(position) |>
+  slice_sample(n = 20)
+
+#height_sample_df |>
+#  select(name, position, foot, height_in_cm) |>
+#  write_csv(file = "soccer_heights_sample.csv")
+
+```
+
+
+```{r echo=FALSE, output = TRUE, results='asis'}
+height_sample_df$position <- factor(height_sample_df$position)
+
+ggplot(data = height_sample_df, 
+       aes(y= height_in_cm,
+           x = position)) +
+  geom_boxplot(aes(color = position)) +
+  theme(legend.position = 'none') +
+  labs(y = "Height (cm)")
+```
+
+
+#### Question 1.
+
+a. Calculate the mean height for each position.
+
+b. Are there any issues with the data that could affect the results?
+
+c. Write of the null and alternative hypotheses that would be consistent with the research question.
+
+
+d. Complete the ANOVA F-test.
+
+```{r echo= FALSE, output = TRUE}
+height_sample_df$position <- recode(height_sample_df$position, 
+                                    Goalkeeper = 'GK', 
+                                       Defender = 'Def',
+                                      Midfield = 'Mid',
+                                       Attack = 'Att')
+
+a1<- aov(data=height_sample_df, height_in_cm ~ position)
+
+
+summary(a1)
+
+```
+
+e. Appropriately interpret results of analysis of variance F-test. 
+
+#### Question 2. 
+
+We will now perform a follow-up analysis to determine which pairs of positions have significantly different height means.
+
+```{r echo= FALSE}
+
+TukeyHSD(a1, conf.level=.95)
+
+```
+
+
+#### Tukey Pair-wise comparison Plot
+
+
+```{r echo=FALSE}
+
+ggHSD(TukeyHSD(a1, conf.level=.95), no = 1)
+
+```
+
+a.	Write a few sentences summarizing the interesting findings between the groups
+
+

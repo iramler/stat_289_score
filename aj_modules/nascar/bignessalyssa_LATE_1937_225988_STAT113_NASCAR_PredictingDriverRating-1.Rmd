@@ -1,0 +1,98 @@
+---
+title: "NASCAR_Module_PredictingDriverRating"
+author: "Alyssa Bigness"
+date: "10/21/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# STAT 113 Module
+
+The data can be found from the NASCAR website (https://www.nascar.com/stats/). This data shows the season statistics from 2007-2022 with variables such as wins, average start, average mid race, average finish, average position, pass difference, green flag passes, green flag passed, quality passes, percent of quality passes, number of fastest laps, laps in top 15, percent of laps in top 15, laps led, percent of laps led, total laps, driver rating, and points.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Load the data into R and any packages needed for this project
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+library(GGally) # for correlation plots
+nascar_df <- read_csv("data/NascarData.csv")
+```
+
+```{r, echo=FALSE, message=FALSE}
+# Manipulate the data to become clean
+nascar_df <- nascar_df %>% 
+  rename(Wins = WINS,
+         AvgStart = AS,
+         AvgMidRace = AMR,
+         AvgFinish = AF,
+         AvgPos = AP,         
+         PassDiff = PD,       
+         GreenFlagPasses = GP,
+         GreenFlagPassed = GPD,
+         QualityPasses = QP,
+         PercentQualityPasses = '%QP',
+         NumFastestLaps = '#FL',
+         LapsInTop15 = LTOP15,
+         PercentLapsInTop15 = '%LTOP15',
+         LapsLed = LL,
+         PercentLapsLed = '%LL',
+         TotalLaps = TL,
+         DriverRating = DR,
+         Points = PTS
+                    )
+```
+
+## Shown below is the head of the NASCAR data set.
+```{r, message=FALSE, echo=FALSE, warning=FALSE}
+# Show the head of the NASCAR data set
+kable(head(nascar_df), "simple")
+```
+
+## Let's look at some of these scatterplots
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = nascar_df, aes(x = AvgStart, y = DriverRating)) + geom_point() + labs(title = "Average Start vs. Driver Rating")
+ggplot(data = nascar_df, aes(x = TotalLaps, y = DriverRating)) + geom_point() + labs(title = "Total Laps vs. Driver Rating")
+ggplot(data = nascar_df, aes(x = PercentLapsInTop15, y = DriverRating)) + geom_point() + labs(title = "Percent of Laps In Top 15 vs. Driver Rating")
+```
+
+Discuss with your neighbors and write which variable is the best to predict Driver Rating based on these scatterplots. Why?
+
+Answer: The best variable to predict DriverRating would be AvgStart because the graph visually appears to be the most linear compared to the two other scatterplots.
+
+## Look at the scatterplot of Average Start vs Driver Rating again
+Average Start is the sum of the driver's starting positions divided by the number of starts.
+Driver Rating is a formula combining several categories.
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = nascar_df, aes(x = AvgStart, y = DriverRating)) + geom_point()
+```
+
+Look at the linear regression model formula and the residual vs fitted model of the best variable to confirm it is the best variable to predict Driver Rating. 
+
+```{r, message=FALSE, echo=FALSE}
+# Look at the model formula
+lm_AvgStart <- lm(DriverRating ~ AvgStart, data = nascar_df)
+summary(lm_AvgStart)
+# r-squared is 0.8006
+```
+
+## Here is a residual vs fitted model
+```{r, message=FALSE, echo=FALSE}
+plot(fitted(lm_AvgStart), resid(lm_AvgStart))
+```
+
+## Graph the scatterplot with the linear regression
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = nascar_df, aes(x = AvgStart, y = DriverRating)) + geom_point() + geom_smooth(method = "lm", se=FALSE)
+```
+
+
+Use that scatterplot to predict Driver Rating when the best variable = 20.
+
+Answer: When AvgStart = 20, DriverRating = 70.
+
+
+

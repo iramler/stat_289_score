@@ -1,0 +1,68 @@
+---
+title: "NCAA 2022-2023 Lacrosse"
+output: html_document
+date: "2023-07-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+lax <- read_csv("data/lax_2022_2023.csv")
+
+ggcorr(lax, # update data here
+       
+       #suggestion: keep these options the same
+       label = TRUE, label_size = 3, 
+       label_round = 2, label_alpha = TRUE,
+       hjust = 0.75, layout.exp = 1
+       )
+```
+
+
+
+# proportion model for shot/ FO win percentages - sum of whether or not the team wins the faceoff
+
+## What is the variable of interest? 
+The proportion of faceoffs won
+
+## The true population proportion for the 2022-2023 season
+```{r}
+mean(lax$FO_win_pctg)
+```
+The true population proportion for faceoff wins in the 2022-20223 season is .501 (meaning they are won roughly 50% of the time).
+
+## In the 2022-2023 season, Duke won 330 out of 548 total faceoffs
+# Hypothesis 
+
+Ho: p = .501
+Ha: p > .501 
+
+## Prepare: What is the sample size and sample proportion 
+The sample size is 548 and the sample proportion is 0.602
+
+# Check the success-failure condition 
+nPo = 548(.501) = 274.548 > 10
+n(1-Po) = 548(1-.501) = 273.452 > 10 
+
+
+
+
+# Calculate the Z test statistic  
+z = .602 - .501/ sqrt(.501*.499/548) = 4.728708
+
+
+# Calculate the p-value at a significance level of alpha = .05 
+
+Does this sample proportion provide significant evidence that Duke has a greater faceoff 
+percentage than what is normal for all of Division 1 lacrosse in the 2022-2023 season?
+Provide all necessary details and a conclusion in context.
+
+
+```{r}
+cor(lax$faceoff_win_pct, lax$win_loss_pctg)
+```
+
+
+

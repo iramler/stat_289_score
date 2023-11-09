@@ -1,0 +1,63 @@
+---
+title: "Estimation_and_Prediction"
+output: html_document
+date: "2023-06-15"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggiraphExtra)
+library(lmtest)
+```
+
+```{r}
+nascar<- read_csv("bignessalyssa_LATE_1937_225990_nascar_df-1.csv")
+
+```
+# Confidence Intervals and Prediction Intervals 
+# issues with inference due to non-constant variance 
+```{r}
+rating_mod <- lm(DriverRating ~ PercentQualityPasses, data = nascar)
+anova(rating_mod)
+# compute R-squared value by hand 
+# SSM/SST = 549242/640259 = 0.8578435 = R-squared
+```
+# plots for model assumptions
+```{r}
+plot(rating_mod)
+ggPredict(rating_mod)
+bptest(rating_mod)
+# normality - Q-Q plot of residuals --- looks good
+# linearity - residuals vs. fitted flat or not---- yes
+# constancy of variance (homoscedasticity)(equal variance) - scatterplot and residuals vs. fitted --- does not look good
+```
+
+# Predict the driver rating of drivers with a quality pass percentage of 42 
+```{r}
+summary(rating_mod)
+# Rating = 33.27907 + 1.01381*42 = 75.85909
+# The model predicts drivers with a 42.0 percent quality pass percentage to have a driver rating of 75.86
+```
+# confidence interval for model predictor of Percent Quality Passes
+```{r}
+confint(rating_mod, level = .95)
+# On average, and with 95% confidence, a one percent increase in percent quality passes is associated with an increase in driver rating between 0.99 and 1.04 points. 
+```
+
+# Compute a 95% confidence interval for the mean rating of all drivers with a percent of quality passes of 42
+```{r}
+newx = data.frame(PercentQualityPasses = 42.0)
+predict(rating_mod, newdata = newx, interval = "conf", level = 0.90)
+# On average, and with 95% confidence, a 42% quality pass percentage will result in a driver rating between 75.33 and 76.39.
+```
+
+# Compute a 95% prediction interval for the mean rating of all drivers with a percent of quality passes of 42
+```{r}
+newx = data.frame(PercentQualityPasses = 42.0)
+predict(rating_mod, newdata = newx, interval = "pred", level = 0.90)
+# The model predicts that 95% of drivers with a 42% quality pass percentage will result in a driver rating between 62.03 and 89.69.
+```
+
+
+

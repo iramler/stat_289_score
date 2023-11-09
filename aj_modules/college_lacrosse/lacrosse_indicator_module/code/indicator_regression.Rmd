@@ -1,0 +1,127 @@
+---
+title: "Indicator Regression"
+output: html_document
+date: "2023-07-18"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# cleaning
+```{r}
+# mens_lax <- read_csv("men_women_copy/lax_2022_2023.csv")
+#womens_lax <- read_csv("men_women_copy/womens_lax_2022-2023.csv")
+
+#mens_lax <- mens_lax%>%
+ # select(1,8,23,18,22)%>%
+#  mutate(Division = "Mens")
+
+#womens_lax <- womens_lax%>%
+#  select(1,2,16, 17, 18)%>%
+#  rename(faceoff_win_pct = draw_pctg)%>%
+#  rename(win_loss_pctg = win_pctg)%>%
+#  mutate(Division = "Womens")
+  
+
+#men_women_lax <- rbind(mens_lax, womens_lax)
+
+#write_csv(men_women_lax,"men_and_women_2022_2023.csv")
+
+# team, faceoff/draw pct, shots_per_game, shot_pctg, win pctg
+```
+
+
+
+
+# Module
+```{r}
+lax <- read_csv("data/men_and_women_2022_2023.csv")
+```
+
+## visualize faceoffs vs win percentage
+```{r}
+ggplot(data = lax,
+       aes(x = faceoff_win_pct, y = win_loss_pctg))+
+  geom_point()+
+  geom_smooth(method = lm, se = FALSE)
+```
+
+## what is the correlation?
+```{r}
+cor(lax$faceoff_win_pct, lax$win_loss_pctg)
+```
+
+## fit a model with faceoffs predicting win percentage (look at r-squared and predictor)
+```{r}
+mod1 <- lm(win_loss_pctg ~ faceoff_win_pct, data = lax)
+summary(mod1)
+```
+
+## Visual 
+```{r}
+ggplot(data = lax,
+       aes(x = faceoff_win_pct, y = win_loss_pctg, color = Division))+
+  geom_point()+
+  geom_smooth(se = FALSE, method = lm)
+```
+```{r}
+lax <- lax%>%
+  mutate(genderIND = ifelse(Division == "Mens", 1, 0))
+
+
+modIND1 <- lm(win_loss_pctg ~ genderIND + faceoff_win_pct, data = lax)
+summary(modIND)
+```
+```{r}
+modIND2 <- lm(win_loss_pctg ~ genderIND + faceoff_win_pct*genderIND, data = lax)
+summary(modIND2)
+```
+
+
+## which intercept is higher 
+
+
+## which slope is steeper 
+
+
+## why do they meet at .500
+
+## Is there evidence the model is better 
+
+```{r}
+anova(mod1, modIND2)
+```
+
+
+```{r}
+ggplot(data = men_women_lax,
+       aes(x = avg_turnovers, fill = Division))+
+  geom_boxplot()
+```
+```{r}
+men_women_lax%>%
+  with(t.test(avg_turnovers ~ Division))
+```
+
+
+```{r}
+mens_lax <- lax%>%
+  filter(Division == "Mens")
+
+womens_lax <- lax%>%
+  filter(Division == "Womens")
+
+
+cor(mens_lax$shots_per_game, mens_lax$faceoff_win_pct)
+cor(womens_lax$shots_per_game, womens_lax$faceoff_win_pct)
+
+mean(mens_lax$shot_pctg)
+mean(womens_lax$shot_pctg)
+
+
+#cor(mens_lax$shot_pctg, mens_lax$faceoff_win_pct)
+#cor(womens_lax$shot_pctg, womens_lax$faceoff_win_pct)
+```
+
+

@@ -1,0 +1,99 @@
+---
+title: "STAT213_NASCAR_Transformations"
+author: "Alyssa Bigness"
+date: "11/30/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# STAT 213
+
+The data can be found from the NASCAR website (https://www.nascar.com/stats/). This data shows the season statistics from 2007-2022 with variables such as wins, average start, average mid race, average finish, average position, pass difference, green flag passes, green flag passed, quality passes, percent of quality passes, number of fastest laps, laps in top 15, percent of laps in top 15, laps led, percent of laps led, total laps, driver rating, and points.
+
+The goal of this module is to learn what regressions are appropriate for certain models.
+
+```{r, echo=FALSE, message=FALSE}
+# Load the data into R and any packages needed for this project
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+nascar_df <- read_csv("data/NascarData.csv")
+```
+
+```{r, echo=FALSE, message=FALSE}
+# Manipulate the data to become clean
+nascar_df <- nascar_df %>% 
+  rename(Wins = WINS,
+         AvgStart = AS,
+         AvgMidRace = AMR,
+         AvgFinish = AF,
+         AvgPos = AP,         
+         PassDiff = PD,       
+         GreenFlagPasses = GP,
+         GreenFlagPassed = GPD,
+         QualityPasses = QP,
+         PercentQualityPasses = '%QP',
+         NumFastestLaps = '#FL',
+         LapsInTop15 = LTOP15,
+         PercentLapsInTop15 = '%LTOP15',
+         LapsLed = LL,
+         PercentLapsLed = '%LL',
+         TotalLaps = TL,
+         DriverRating = DR,
+         Points = PTS
+                    )
+
+#write.csv(nascar_df, "C:\\Users\\alyss\\nascar_df.csv" )
+```
+
+
+## Shown below is the head of the NASCAR data set.
+```{r, message=FALSE, echo=FALSE}
+# Show the head of the NASCAR data set
+kable(head(nascar_df), "simple")
+```
+
+
+
+## Example 1 Average Finish vs Driver Rating
+
+Here is the scatterplot of Average Finish vs Driver Rating
+```{r, message=FALSE, echo=FALSE}
+ggplot(data = nascar_df, aes(x = DriverRating, y = AvgFinish)) + geom_point()
+```
+
+Discuss with your neighbors if there are any trends you see.
+
+Answer: DriverRating and AvgFinish has a strong significant negative relationship. The scatterplot also seems to have a little curve at the top.
+
+
+Try producing a logarithmic regression model for AvgFinish ~ Driver Rating by applying log to y and/or x to improve the fit. Then create the residual plot to determine if this model is the appropriate fit. Also, write down the adjusted R2 for the model.
+
+```{r, message=FALSE, echo=FALSE}
+ggplot(data = nascar_df, aes(x = log(DriverRating), y = AvgFinish)) + geom_point() + geom_smooth()
+```
+
+```{r, message=FALSE, echo=FALSE}
+lm_logtransform <- lm(AvgFinish ~ log(DriverRating), data = nascar_df)
+summary(lm_logtransform)
+
+```
+
+```{r, message=FALSE, echo=FALSE}
+plot(fitted(lm_logtransform), resid(lm_logtransform))
+```
+
+Answer: The residual plot shows that this model is the appropriate fit. The adjusted R-squared is 0.8756.
+
+
+Given your new logarithmic transformation made, predict the AvgFinish when 
+DriverRating = 55.
+Answer: AvgFinish = 25
+
+
+
+
+

@@ -1,0 +1,36 @@
+---
+title: "Stat 213 - Quiz 5"
+author: "Staty McStatface"
+output: word_document
+---
+
+```{r}
+library(tidyverse)
+library(car)
+nascar <- read_csv("https://myslu.stlawu.edu/~iramler/data/nascar.csv")
+```
+
+```{r}
+nascar$WinIND <- ifelse( nascar$Wins > 0, 1, 0)
+```
+
+
+```{r}
+mod_c <-
+  lm(data = nascar, DriverRating ~ 
+       PercentLapsInTop15 + PercentLapsLed + 
+       AvgStart + AvgFinish)
+summary(mod_c)
+```
+
+
+
+
+```{r}
+mod_e <-
+  lm(data = nascar, DriverRating ~ 
+       PercentLapsLed + 
+       WinIND)
+summary(mod_e)
+```
+

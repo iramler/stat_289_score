@@ -1,0 +1,105 @@
+---
+title: "NASCAR_Module"
+author: "Alyssa Bigness"
+date: "10/18/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The data can be found from the NASCAR website (https://www.nascar.com/stats/). This data shows the season statistics from 2007-2022 with variables such as wins, average start, average mid race, average finish, average position, pass difference, green flag passes, green flag passed, quality passes, percent of quality passes, number of fastest laps, laps in top 15, percent of laps in top 15, laps led, percent of laps led, total laps, driver rating, and points.
+
+The goal of this module is to learn what regressions are appropriate for certain models.
+
+```{r, echo=FALSE, message=FALSE}
+# Load the data into R and any packages needed for this project
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+nascar_df <- read_csv("data/NascarData.csv")
+```
+
+```{r, echo=FALSE, message=FALSE}
+# Manipulate the data to become clean
+nascar_df <- nascar_df %>% 
+  rename(Wins = WINS,
+         AvgStart = AS,
+         AvgMidRace = AMR,
+         AvgFinish = AF,
+         AvgPos = AP,         
+         PassDiff = PD,       
+         GreenFlagPasses = GP,
+         GreenFlagPassed = GPD,
+         QualityPasses = QP,
+         PercentQualityPasses = '%QP',
+         NumFastestLaps = '#FL',
+         LapsInTop15 = LTOP15,
+         PercentLapsInTop15 = '%LTOP15',
+         LapsLed = LL,
+         PercentLapsLed = '%LL',
+         TotalLaps = TL,
+         DriverRating = DR,
+         Points = PTS
+                    )
+
+#write.csv(nascar_df, "C:\\Users\\alyss\\nascar_df.csv" )
+```
+
+
+## Shown below is the head of the NASCAR data set.
+```{r, message=FALSE, echo=FALSE}
+# Show the head of the NASCAR data set
+kable(head(nascar_df), "simple")
+```
+
+## Here is a scatterplot showing the AvgStart vs DriverRating
+Average Start is the sum of the driver's starting positions divided by the number of starts.
+Driver Rating is a formula combining several categories.
+
+```{r, message=FALSE, echo=FALSE}
+ggplot(data = nascar_df, aes(x = AvgStart, y = DriverRating)) + geom_point()
+```
+Discuss with your neighbors if there are any trends you see.
+
+Answer: AvgStart and DriverRating has a strong significant negative relationship. The scatterplot also seems to have a little curve at the bottom.
+
+
+## Let's look at the correlation
+```{r, message=FALSE, echo=FALSE}
+cor.test(nascar_df$AvgStart, nascar_df$DriverRating) 
+# the correlation is -0.8949, a strong significant negative correlation
+```
+The correlation for AvgStart and DriverRating is -0.895. What does the correlation mean?
+Answer: The correlation is -0.895 which shows a strong significant negative relationship between Average Start and Driver Rating.
+
+## Now let's look the linear regression model formula
+```{r, message=FALSE, echo=FALSE}
+# Look at the model formula
+lm_AvgStart <- lm(DriverRating ~ AvgStart, data = nascar_df)
+summary(lm_AvgStart)
+```
+
+
+## Here is a residual vs fitted model
+```{r, message=FALSE, echo=FALSE}
+plot(fitted(lm_AvgStart), resid(lm_AvgStart))
+```
+
+Write down the linear model formula, as well as examine the residual plots to determine if this model is the appropriate fit. Also write down the adjusted R-squared for the model.
+
+Answer: 
+Linear Model Formula: 
+DriverRating = 112.123 -2.099*AvgStart
+Adjusted R-squared = 0.8006
+
+### Discussion Question: 
+Is a linear regression model the most appropriate model to use for this association? Why or why not? 
+
+Answer: No, the linear regression model is not the most appropriate model to use for this association because the scatterplot is curved towards the bottom.
+
+
+
+
+
