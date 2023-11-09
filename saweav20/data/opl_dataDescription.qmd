@@ -1,8 +1,8 @@
 ---
-title: Power Lifting Statistics
+title: Powerlifting Statistics
 author: Sarah Weaver
 date: June 21, 2023
-description: Data on power lifting competitors spanning many years.
+description: Data on powerlifting competitors spanning many years.
 categories:
   - simple regression
   - multiple regression
@@ -54,7 +54,7 @@ opl_female <- opl_class |> filter(Sex == "F") |> filter(Age == 25.0)
 ```
 
 This code is an example of one of the ways to create a smaller subset of data
-which could be more manageable for simple problems. Change the filters on to
+which could be more manageable for simple problems. Change the filters to
 create different subsets that fit your statistical needs!
 
 
