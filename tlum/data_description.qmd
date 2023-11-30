@@ -10,7 +10,7 @@ categories:
 
 ## Motivation
 
-In 2005 the National Hockey League added shootout to regular season games. In the event that regulation time ends in a tie and no goals are scored in overtime, the game goes to a 3-player shootout. This data explores the relationship between various team statistics and the proportion of points won from shootout.
+In 2005 the National Hockey League added shootout to regular season games. In the event that regulation time ends in a tie and no goals are scored in overtime, the game goes to a 3-player shootout. This data set can be used to explore the relationship between various team-level statistics.
 
 Regulation time in an NHL game consists of three 20 minute periods. If regulation time ends and the score is tied (both teams have the same number of goals), the game goes into a 5 minute 3-on-3 overtime, where the next goal wins. If the game is still not resolved after overtime, it goes into a 3 round shootout, where players take a 1-on-1 breakaway against the goalie. A team gets 2 points for a win (whether it's regulation, overtime, or shootout), and the losing team gets 0 points for a regulation loss, or 1 point for an overtime/shootout loss.
 
@@ -19,7 +19,7 @@ Regulation time in an NHL game consists of three 20 minute periods. If regulatio
 The data set contains the final standings of the 2022-2023 NHL Season with team level statistics.
 
 | Variable | Description                                                                                              |
-|----------|----------------------------------------------------------------------------------------------------------|
+|-------------|-----------------------------------------------------------|
 | Team     | NHL team abbreviation                                                                                    |
 | GP       | Total games played                                                                                       |
 | SOG      | Number of games that went to shootout                                                                    |
