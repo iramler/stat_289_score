@@ -61,10 +61,31 @@ standings_2223 <- standings_2223 %>%
 ```
 
 
+```{r}
+nhl_2223 <- standings_2223 %>%
+  mutate(SOG = SOW + SOL,
+    PPG = reg_pts / 82 - SOG) %>%
+  relocate(PPG, .after = ppg) %>%
+  relocate(SOG, .after = GP) %>%
+  select(-9)
+```
+
+```{r}
+nhl_2223 <- nhl_2223 %>%
+  mutate(PPG = reg_pts / (82-SOG))
+```
+
+```{r}
+nhl_2223 <- nhl_2223 %>%
+  rename(Team = team,
+         Reg_PTS = reg_pts,
+         SO_PTS = so_pts,
+         Pct_SO = pct_so)
+```
 
 
 ```{r}
-write_csv(standings_2223, "~/stat_289/stat_289_score/tlum/standings_2223.csv")
+write_csv(nhl_2223, "~/stat_289/stat_289_score/tlum/nhl_2223.csv")
 ```
 
 ```{r}
@@ -109,6 +130,10 @@ plot(PTS~DIFF, data = standings_2223)
 ```{r}
 standings_2223 %>%
   mutate(ppg = reg_pts / (GP - SOW - SOL))
+```
+
+```{r}
+plot(Pct_SO~PPG, data = nhl_2223)
 ```
 
 
