@@ -1,17 +1,48 @@
 ---
-title: "Stat289 Data Formatting"
-author: "George Charalambous"
-format: 
-  html:
-    embed-resources: true
+title: League of Legends ADCarry
+author: George Charalambous
+date: December 12, 2023
+description: Using Logistic Regression to investigate the ADC relationship
+categories:
+  - list the relevant
+  - statistical methods
+  - that can be used
+  - with this dataset
+  - one per line
+  - with two spaces and a hyphen in front
 ---
+
+## Motivation
+
+League of Legends (LoL) is a multiplayer online battle arena game where teams comprising five players engage in competitive matches. Throughout its evolution, players have established a meta gaming approach involving five specific roles. This study will focus on the AD and Carry roles, terms which go together as ADC. The Attack-Damage Carry (ADC), also known as the Marksman, specializes in dealing physical damage primarily through basic attacks, typically stationed in the bot lane, the bottom lane on the main League of Legends map. Their vulnerability is compensated by a Support champion, who assists in kills, protects the ADC, and provides vision. Support champions vary in play style, with abilities for both offensive and defensive maneuvers. This dynamic duo forms a critical synergy in team composition. 
+
+This investigation employs logistic regression models to pinpoint connections and relationships between those two vital components of a team. 
+
+## Data
+
+| Variable         | Description                                               |
+|------------------|-----------------------------------------------------------|
+| Match ID         | Unique identifier for each match                          |
+| Winner           | Indicates if the team won the match (1 for Yes, 0 for No) |
+| Player Position  | Position or role of the player (e.g., AD Carry, Support)  |
+| Champion ID      | Unique identifier for the champion played by the player   |
+| Champion Name    | Name of the champion played by the player                 |
+| Kills            | Number of enemy players killed by the player              |
+| Deaths           | Number of times the player's character was defeated       |
+| Assists          | Number of times the player assisted in killing an enemy   |
+| Meta             | Indicates if the champion was used as AD or Carry         | 
+
+
+: [data_correct.csv](../data/filename.csv)
+
+## Questions
 
 ```{r}
 library(here)
 library(tidyverse)
 library(dplyr)
 
-data <- read_csv("gchar21/data/data_correct.csv")
+data <- read_csv(here("data/data_correct.csv"))
 ```
 
 Logistic Regression Modelling Probability of Winning 
@@ -20,10 +51,12 @@ Logistic Regression Modelling Probability of Winning
 interest_df <- data |>
   select(c(1, 2, 7, 22, 23)) |>
   pivot_wider(names_from = Meta,
-                 values_from = championName) |>
+              values_from = championName) |>
   unnest(cols = c(Support, `AD Carry`))
+```
 
 
+```{r}
 # https://stackoverflow.com/questions/71780575/struggling-to-unnest-tibble-dput-code-and-error-included-in-r
 # finds the length of each entry
 # goal is to remove any rows with length > 1
@@ -41,7 +74,10 @@ interest_df_3 <- interest_df[-matches_with_wonky_roles, ] |>
   rename(ADC = `AD Carry`,
          SUP = Support
          )
+```
 
+
+```{r}
 interest_df_4 <- 
 interest_df_3 |>
   group_by(teamId, matchId) |>
@@ -61,9 +97,21 @@ interest_df_3 |>
 
 Fitting a Logistic Regression Model to predict how likely is the player going to win using the specified pair of support and AD Carry
 
+
 ```{r}
 model_1 <- glm(cbind(Wins, Losses) ~ SUP*ADC , family = "binomial", 
                data = interest_df_4)
 summary(model_1)
 ```
 
+## References
+
+Give references to the original source here, such as by pasting the package
+citation:
+
+Petti B, Gilani S (2022). _baseballr: Acquiring and Analyzing Baseball
+  Data_. R package version 1.3.0,
+  <https://CRAN.R-project.org/package=baseballr>.
+
+If the dataset has a particular license, mention the license here. For example,
+"Data available under the Creative Commons Attribution license."
