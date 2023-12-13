@@ -10,7 +10,7 @@ The motivation behind this dataset is to explore the relationship between men's 
 
 ## Data
 
-The data set contains 192 rows and 6 columns. Each row represents a lacrosse team at the NCAA Division 1 level from the 2022-2023 season. Teams come from both the men's and womens division.
+The data set contains 192 rows and 6 columns. Each row represents a lacrosse team at the NCAA Division 1 level from the 2022-2023 season. Teams come from both the men's and women's division.
 
 \| Variable \| Description \| \|\-\-\--\|\-\-\-\-\-\-\-\-\-\-\-\-\-\--\|
 

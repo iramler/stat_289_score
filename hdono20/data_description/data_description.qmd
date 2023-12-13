@@ -1,0 +1,40 @@
+---
+title: "2022 Divison III Women's Soccer Statistics"
+author: Hope Donoghue
+description: Division III women's soccer teams statistics from '2022' season
+categories:
+  - Correlation
+  - Chi-square test for association 
+---
+
+## Motivation
+
+Have you ever wondered if you know how many goals the home team scored in a soccer game then can you predict how many goals the opponent scored? Is there a relationship between this? With this data set on NCAA Division III women's soccer data from the 2022 season you will be able to explore this question.
+
+## Data
+
+The data set consists of 3753 games in the 2022 Division III women's soccer season. Each row represents one game in the season.
+
+| Variable   | Description                                      |
+|------------|--------------------------------------------------|
+| away_team  | Name away team                                   |
+| away_score | The number of goals the away team scored in game |
+| home_team  | Name of home team                                |
+| home_score | The number of goals the home team scored in game |
+| date       | Date of game                                     |
+
+## Questions
+
+1.  Do you think the correlation value for Home Score vs. Away Score will be negative or positive? Explain your answer.
+
+2.  Find the correlation value for Home Score vs. Away Score from the data set. Interpret the correlation value in context.
+
+3.  Perform a test for association to see if the correlation value from above is statistically significant. Make sure to state the hypotheses clearly.
+
+4.  There are a lot of games in the data set with many different scorelines that range from 0-0 all the way to 18-0. Let's see if there is a significant association between Home Score and Away Score if we group the games by scorelines and treat the groups as categorical variables. Create a two-way contingency table that separates the games into groups with similar scorelines and test for association.
+
+## References
+
+Data web scraped from the D3soccer.com website. https://www.d3soccer.com/seasons/women/2022/schedule
+
+csv file: d3_wsoc2022.csv

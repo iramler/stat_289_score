@@ -1,0 +1,183 @@
+---
+title: "worksheet"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+```
+
+1.  Load in the `wnba_data` data set.
+
+```{r}
+wnba_data <- read_csv("kevari20/data/wnba_data.csv")
+```
+
+2.  What do you notice about the team IDs in this data set? Do they all belong to a valid team or are some not needed? (Hint: Might need to use the `distinct()` function).
+
+```{r}
+wnba_data %>% select(team_id, team_display_name) %>% distinct() %>% arrange(team_id)
+```
+
+3.  Filter out the IDs we won't be using.
+
+```{r}
+# filter for actual teams
+wnba <- wnba_data %>% filter(team_id <= 20)
+```
+
+4.  Now, let's make sure each team ID is associated with the correct team name. Use a `select()` statement with both `team_id` and `team_name` and then use the `distinct()` function. Which team IDs are repeated? What might this mean?
+
+```{r}
+wnba %>% select(team_id, team_display_name) %>% distinct() %>% arrange(team_id)
+```
+
+5.  For the IDs you found, rename the teams so that the same IDs all have the most recent team name. You can create a new variable called `team_name`.
+
+```{r}
+# detroit shock, tulsa shock and dallas wings are the same team
+# san antonia silver stars, san antonio stars, and las vegas aces are the same team
+# make new team name variable for all these teams
+wnba <- wnba %>% mutate(team_name = case_when(team_id == 3 ~ 'Dallas Wings',
+                                           team_id == 17 ~ 'Las Vegas Aces',
+                                           TRUE ~ team_display_name)) 
+```
+
+6.  Now that our team names are correct, we can look at games played. Create a new data set called `reg_season` that only has data for regular season games (season_type == 2) and one called `playoffs` that only has data for playoff games (season_type == 3).
+
+```{r}
+# filter for regular season games
+reg_season <- wnba %>% filter(season_type == 2)
+playoffs <- wnba %>% filter(season_type == 3)
+```
+
+7.  To calculate win percentage at the mid-way point, we need to know how many games are played in a season. Use the `tally()` function to count the number of games played by each team within each season. What do you notice?
+
+```{r}
+reg_season %>% group_by(season, team_id) %>% tally()
+```
+
+8.  Do some Google searching on how many games were played by WNBA teams during these seasons. You might find that the number of regular season games has fluctuated since 2020, but there is still a problem. Can you tell what it is?
+
+9.  Let's look into the 2008 season. There are 4 teams that played 33 games instead of 34. Find out who these teams are and Google their season statistics. Did they actually only play 33 games? Why is this a problem?
+
+```{r}
+reg_season %>% filter(season == 2008) %>% group_by(team_id) %>% tally()
+```
+
+```{r}
+reg_season %>% 
+  select(team_id, team_name) %>% 
+  filter(team_id == 3 | team_id == 4 | team_id == 20) %>% 
+  distinct()
+```
+
+10. The data was scrapped from the ESPN website. Go to <https://www.espn.com/wnba/team/schedule/_/name/atl/season/2008> and click on the first two scores recorded in the 'RESULT' Section. What is different about the pages these links take you to? How might this be causing the problem? 
+
+11. What are some ways we could solve this problem if we still wanted to create the table originally indicated? Choose a way and make a table with your new data. 
+
+```{r}
+tally <- reg_season %>% group_by(season, team_id) %>% tally()
+```
+
+Filter out the seasons where the number of games played is not consistent between all teams. 
+```{r}
+tally %>% group_by(n) 
+```
+
+```{r}
+# Helpful Visualization
+table(tallys$n, tallys$season)
+```
+
+```{r}
+# filter out seasons where number of games played is not consistent between all teams
+# keep seasons 2007, 2009, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
+filtered <- reg_season %>% filter(season == 2007 | season == 2009 | season == 2010 | season == 2013 | season == 2014 | season == 2015 | season == 2016 | season == 2017 | season == 2018 | season == 2019 | season == 2020)
+```
+
+```{r}
+# total wins
+team_wins <- team_data %>% 
+  group_by(team_id, season) %>% 
+  summarise(total_wins = (sum(team_winner == TRUE, na.rm = TRUE)), 
+         total_losses = (sum(team_winner == FALSE, na.rm = TRUE)), 
+         total_games = sum(team_winner | team_winner == FALSE, na.rm = TRUE)) %>% 
+  filter(total_games > 1) %>%
+  arrange(team_id) 
+team_wins
+```
+
+```{r}
+# filter for mid season mark (July 15)
+half_wins <- team_data %>%  
+  filter((month(game_date) == 5 & day(game_date) >= 19) | 
+           (month(game_date) == 6) |
+           (month(game_date) == 7 & day(game_date) < 15)) %>% 
+  group_by(team_id, season) %>% 
+  summarize(half_wins = (sum(team_winner == TRUE, na.rm = TRUE)), 
+            half_losses = (sum(team_winner == FALSE, na.rm = TRUE)),
+            half_games = sum(team_winner | team_winner == FALSE, na.rm = TRUE), 
+            ) %>% 
+    filter(half_games > 1) %>%
+  arrange(team_id) 
+half_wins
+```
+
+```{r}
+# Join datasets to create win data
+wnba_win_data <- full_join(team_wins, half_wins, by = c("team_id", "season")) %>% 
+ full_join(playoffs, by = c("team_id", "season")) %>% arrange(season)
+wnba_win_data
+```
+
+```{r}
+# where playoff value is NA, change this value to FALSE
+wnba_win_data <- wnba_win_data %>% 
+  mutate(playoff = ifelse(season_type == 3, TRUE, FALSE)) %>%
+  mutate(playoff = ifelse(is.na(playoff), FALSE, playoff)) %>% 
+  distinct()
+wnba_win_data
+```
+
+```{r}
+# get win percentages
+wnba_win_data <- wnba_win_data %>% 
+  mutate(total_win_percent = round(total_wins*100 / total_games, 2), 
+                half_win_percent = round(half_wins*100 / half_games, 2))
+wnba_win_data
+```
+
+```{r}
+# Create ranking variable
+# need to negate because by default it will give higher rank to lower percents
+wnba_win_data <- wnba_win_data %>% 
+  group_by(season) %>% 
+  mutate(final_rank = as.integer(rank(-total_win_percent)), 
+         half_rank = as.integer(rank(-half_win_percent)))
+wnba_win_data
+```
+
+```{r}
+# Create a variable that is a Yes if the team is in the top 8 rankings at the end of the season
+wnba_win_data <- wnba_win_data %>% 
+  mutate(final_top8 = ifelse(final_rank <= 8, TRUE, FALSE))
+```
+
+```{r}
+# Do the same but for mid season
+wnba_win_data <- wnba_win_data %>% 
+  mutate(half_top8 = ifelse(half_rank <= 8, TRUE, FALSE))
+```
+
+```{r}
+# Get the data needed
+id3_season2007 <- wnba_win_data %>% filter(team_id == 3, season == 2007) 
+```
+
+```{r}
+# Table for team id = 3 showing their mid season record and their total record
+id3_season2007 %>% select(half_wins, total_wins, half_top8, final_top8) %>% distinct()
+```
+
