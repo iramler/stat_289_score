@@ -34,7 +34,6 @@ allSportFilms %>% filter(runtimeMinutes <= 250) %>% ggplot(aes(x=runtimeMinutes)
 # looks like about 40 and 60 minutes have the highest count, makes sense since tvepisode is the highest count of title type
 ```
 
-
 Create a boxplot with sport on x axis (pick common sports), comedy and drama as different boxplot colors, and average rating on y axis
 
 NOTE: Might need to change the genre variable to get different results
@@ -51,9 +50,8 @@ comedyDramaSports <- allSportFilms %>% mutate(ComedyIND = ifelse(str_detect(genr
 ggplot(comedyDramaSports, aes(x = sport, y = averageRating, fill = Type)) + geom_boxplot()
 
 ```
-explain not much is going on
-two way anova
 
+explain not much is going on two way anova
 
 ```{r}
 newAllSportFilms <- allSportFilms %>% 
@@ -75,28 +73,27 @@ cdsports <- newAllSportFilms %>% mutate(ComedyIND = ifelse(str_detect(Genre, "Co
 Comedy vs Drama Films
 
 Side by side boxplot of comedy and drama
+
 ```{r}
 ggplot(cdsports, aes(x = GenreType, y = averageRating, fill = GenreType)) + geom_boxplot()
 ```
 
 Two sample t test
+
 ```{r}
 comedy <- cdsports %>% filter(GenreType == "Comedy")
 drama <- cdsports %>% filter(GenreType == "Drama")
 t.test(comedy$averageRating, drama$averageRating, var.equal = TRUE) # welchs t test (doesnt assume variance is equal)
 ```
-t test statistic = -2.9117
-p-value = 0.003672
-The 95% CI for the true difference in means between the two groups turns out to be [-0.358, -0.0698]
 
-The sample mean of group 1 was 5.88189 and the sample mean of group 2 was 6.293
-Ho: u1 = u2 (mu) --> the two population means are equal
-Ha: u1 does not equal u2 (mu) --> the two population means are not equal
+t test statistic = -2.9117 p-value = 0.003672 The 95% CI for the true difference in means between the two groups turns out to be \[-0.358, -0.0698\]
 
-Because the pvalue of our test is about 0, we reject the null hypothesis.
-There is sufficient evidence that there is a difference in the mean average rating between comedy and drama films.
+The sample mean of group 1 was 5.88189 and the sample mean of group 2 was 6.293 Ho: u1 = u2 (mu) --\> the two population means are equal Ha: u1 does not equal u2 (mu) --\> the two population means are not equal
+
+Because the pvalue of our test is about 0, we reject the null hypothesis. There is sufficient evidence that there is a difference in the mean average rating between comedy and drama films.
 
 Break down by sport
+
 ```{r}
 cdsports %>% count(sport, GenreType) %>% view() # look at the number of comedy and drama movies for each sport
 cdsports <- cdsports %>% 
@@ -108,9 +105,8 @@ write.csv(cdsports, 'agbign20/data/cdSportMovies.csv')
 ggplot(cdsports, aes(x = sport, y = averageRating, fill = GenreType)) + geom_boxplot()
 ```
 
+Two Way Anova Analysis
 
-
-Two Way Anova Analysis 
 ```{r}
 
 cdsports %>% group_by(GenreType, sport) %>%
@@ -120,13 +116,13 @@ cdsports %>% group_by(GenreType, sport) %>%
 mod <- aov(averageRating ~ GenreType * sport, data = cdsports)
 summary(mod)
 ```
-With sport held constant, average rating is significantly different between the two genres for type.
-With type held constant, average rating is not significantly different between the sports.
-The interaction between type and sport is not strongly significant.
 
-without interaction still not significant  
+With sport held constant, average rating is significantly different between the two genres for type. With type held constant, average rating is not significantly different between the sports. The interaction between type and sport is not strongly significant.
+
+without interaction still not significant
 
 tukey HSD : type and sports
+
 ```{r}
 library(multcomp)
 
@@ -137,8 +133,8 @@ summary(glht(mod1, mcp(sport ="Tukey"))) # avg rating is not significantly diffe
 summary(glht(mod1, mcp(GenreType ="Tukey"))) # avg rating is not significantly different between the two genres
 ```
 
-
 chi-square
+
 ```{r}
 cdsports_count <- cdsports %>% count(sport, GenreType) %>% pivot_wider(names_from = GenreType, values_from = n)
 write.csv(cdsports_count, 'agbign20/data/cdSportMoviesCount.csv')
@@ -146,27 +142,8 @@ write.csv(cdsports_count, 'agbign20/data/cdSportMoviesCount.csv')
 chisq.test(cdsports_count$Comedy, cdsports_count$Drama, correct = FALSE)
 ```
 
+modules: small, to the point
 
+chi-squared are certain types of sports more likely to be comedy vs drama movies, might need to pivot column sports and genres rows, anova two sample t compairson of IMDb movie ratings of comedy vs drama movies --\> lacrosse module for this
 
-
-modules:
-small, to the point
-
-chi-squared are certain types of sports more likely to be comedy vs drama movies, might need to pivot column sports and genres rows, 
-anova
-two sample t compairson of IMDb movie ratings of comedy vs drama movies --> lacrosse module for this
-
-
-
-
-
-
-
-
-
-
-
-Question:
-- to get rid double counting movies if they are both comedy and drama, see if their indicator variables are both 1, make an indicator variable like bothIND and then make the other two indictors both 0 again
-
-
+Question: - to get rid double counting movies if they are both comedy and drama, see if their indicator variables are both 1, make an indicator variable like bothIND and then make the other two indictors both 0 again
