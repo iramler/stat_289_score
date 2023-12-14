@@ -11,7 +11,7 @@ NASCAR, the National Association for Stock Car Auto Racing, has emerged as one o
 
 ## Data
 
-The data comes from the NASCAR website and shows the season statistics from 2007-2022. Each row displays the metrics of a racer for that specific year. The data frame contains 1111 rows of ovservations and 20 variables.
+The data comes from the NASCAR website and shows the season statistics from 2007-2022. Each row displays the metrics of a racer for that specific year. The data frame contains 1111 rows of observations and 20 variables.
 
 \| Variable \| Description \|
 
