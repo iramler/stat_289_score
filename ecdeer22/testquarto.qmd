@@ -1,0 +1,45 @@
+---
+title: "Untitled"
+author: "Emma"
+format: html
+---
+
+Upload Data:
+```{r}
+library(readr)
+divingdata <- read_csv("ecdeer22/divingdata.csv")
+library(tidyverse)
+```
+
+DS234 
+```{r}
+#count attempts per dive
+divingdata |> group_by(DiveName) |> summarise(n_DiveName = n()) 
+
+#remove 15yrold from data
+divingdata |> filter(Age != 15)
+
+#histogram of total points
+ggplot(data=divingdata, aes(x=TotalPoints)) + geom_histogram(bins = 20, fill = "white", colour = "black")
+```
+
+STAT213
+```{r}
+#compartive box plots comparing total points by age
+boxplot(TotalPoints~Age, data = divingdata)
+
+#linear model predicting points by difficulty
+model = lm(Points~Difficulty, data=divingdata)
+summary(model)
+
+#anova of model
+anova(model)
+
+#summary statistics 
+mean(divingdata$TotalPoints)
+mean(divingdata$Age)
+
+#histogram of total points
+hist(divingdata$TotalPoints
+```
+
