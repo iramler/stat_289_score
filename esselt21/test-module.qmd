@@ -1,0 +1,16 @@
+---
+title: "test-module"
+author: "Eric Seltzer"
+format: html
+---
+
+# 1 Load in tidyverse
+```{r}
+library(tidyverse)
+```
+
+# Load in the sample datasets
+```{r}
+athletes <- read_csv("data/atheletes.csv")
+```
+
