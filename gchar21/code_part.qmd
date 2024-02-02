@@ -75,7 +75,7 @@ popularity_df_ADC <-
 ```
 
 ```{r}
-popularity_df_sup <- 
+popularity_df_SUP <- 
   interest_df_3 |>
   group_by(teamId, matchId) |>
   mutate(winner = if_else(winner == 1,
@@ -89,30 +89,32 @@ popularity_df_sup <-
 ```{r}
 top5_df_ADC <- popularity_df_ADC |>
   ungroup() |>
-  slice(1:5) |>
+  ##slice(1:10) |>
   pull(ADC) |>
   unlist()
 ```
 
 ```{r}
-top5_df_SUP <- popularity_df |>
+top5_df_SUP <- popularity_df_SUP |>
   ungroup() |>
-  slice(1:5) |>
+  ##slice(1:10) |>
   pull(SUP) |>
   unlist()
 ```
 
 ```{r}
-rest_df <- interest_df_4 |>
-  mutate(ADC = fct_other(ADC, 
-                         top5_df_ADC), 
-         SUP = fct_other(SUP, 
-                         top5_df_SUP)) |>
-  mutate(ADC = fct_relevel(ADC, 
-                           "Other"), 
-         SUP = fct_relevel(SUP, 
-                           "Other"))
+# rest_df <- interest_df_4 |>
+#   mutate(ADC = fct_other(ADC, 
+#                          top5_df_ADC), 
+#          SUP = fct_other(SUP, 
+#                          top5_df_SUP)) |>
+#   mutate(ADC = fct_relevel(ADC, 
+#                            "Other"), 
+#          SUP = fct_relevel(SUP, 
+#                            "Other"))
+# ```
 ```
+
 
 Fitting a Logistic Regression Model to predict how likely is the player going to win using the specified pair of support and AD Carry
 
@@ -121,3 +123,5 @@ model_1 <- glm(cbind(Wins, Losses) ~ SUP*ADC, family = "binomial",
                data = rest_df)
 summary(model_1)
 ```
+
+
