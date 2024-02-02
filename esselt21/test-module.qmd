@@ -11,6 +11,37 @@ library(tidyverse)
 
 # Load in the sample datasets
 ```{r}
-athletes <- read_csv("data/atheletes.csv")
+athletes <- read_csv("/Users/ericseltzer/stat_289/esselt21/data/athletes.csv")
+medals <- read_csv("/Users/ericseltzer/stat_289/esselt21/data/medals.csv")
+```
+```{r}
+tidy_medals <- 
+  medals %>%
+  select(-athlete_short_name, -athlete_link, -country, -discipline)
+tidy_athletes <- 
+  athletes %>%
+  select(-short_name, -country, - discipline, -url, )
+```
+
+
+```{r}
+tidy_medals <-
+  tidy_medals %>%
+  rename(name = athlete_name) %>%
+  mutate()
+```
+
+```{r}
+new <-
+  semi_join(tidy_medals,
+            tidy_athletes,
+            by = "name")
+```
+
+```{r}
+new %>%
+  group_by(name) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
 ```
 
