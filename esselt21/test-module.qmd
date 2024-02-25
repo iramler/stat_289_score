@@ -3,45 +3,68 @@ title: "test-module"
 author: "Eric Seltzer"
 format: html
 ---
-
-# 1 Load in tidyverse
+# Data Cleaning and Data Summarizing
+## 1. Loading in a dataset
 ```{r}
+#| output: false
+# These are the necessary packages to load in a csv file. Tidyverse contains many different packages that we will be using in this module.
 library(tidyverse)
+library(here)
 ```
 
-# Load in the sample datasets
+How to load in csv files into a data frame.
 ```{r}
-athletes <- read_csv("/Users/ericseltzer/stat_289/esselt21/data/athletes.csv")
-medals <- read_csv("/Users/ericseltzer/stat_289/esselt21/data/medals.csv")
+athletes <- read_csv(here('esselt21/data/athletes.csv'))
+medals <- read_csv(here('esselt21/data/medals.csv'))
 ```
+
+## 2. Data Cleaning
+Firstly, lets look at an example of what the data looks like starting with the medals data set.
 ```{r}
-tidy_medals <- 
-  medals %>%
-  select(-athlete_short_name, -athlete_link, -country, -discipline)
-tidy_athletes <- 
-  athletes %>%
-  select(-short_name, -country, - discipline, -url, )
+head(medals)
 ```
-
+The first thing that has to be adjusted is the medal_code data and the athelete_sex data. Currently, the data type is a double and character respectively, but it should really be a factored datatype with 3 levels. To do this, we can take advantage of the forcats and dplyr packages in tidyverse.
+```{r}
+medalsTidy <- 
+  medals |>
+  mutate(medal_code = as_factor(medal_code),
+         athlete_sex = as_factor(ifelse(athlete_sex == 'M', 'M',
+                                      ifelse(athlete_sex == 'W', 'W', 'O'))))
+# mutate allows you to adjust variables in the data set
+```
+We should also change the medal_date data type as it currently holds minutes that as shown previously are all 0. To do this we will take advantage of the strftime function and the lubridate package. 
+```{r}
+medalsTidy <-
+  medalsTidy |>
+  mutate(medal_date = strftime(medal_date,
+                               format = '%Y-%m-%d')) |>
+  mutate(medal_date = as_date(medal_date))
+```
+Another good step to take might be to get rid of the athlete_short_name, and then to separate athlete_name into a first name and last name variable.
+```{r}
+medalsTidy <-
+  medalsTidy |>
+  select(-athlete_short_name)
+```
 
 ```{r}
-tidy_medals <-
-  tidy_medals %>%
-  rename(name = athlete_name) %>%
-  mutate()
+medalsTidy <-
+  medalsTidy |>
+  separate(athlete_name,
+           sep = "^\\S*\\K\\s+",
+           into = c("last_name", "first_name"))
 ```
 
+Next, we should get rid of some variables that aren't necessary to include. Such as things like athlete_link, country for simplification, and discipline code as it will be hard to interpret what the discipline is from the code. We can do this with the select function in dplyr.
 ```{r}
-new <-
-  semi_join(tidy_medals,
-            tidy_athletes,
-            by = "name")
+medalsTidy <-
+  medalsTidy |>
+  select(-(c('athlete_link', 'discipline_code')))
 ```
 
-```{r}
-new %>%
-  group_by(name) %>%
-  summarise(count = n()) %>%
-  arrange(desc(count))
-```
-
+# Exercise 1
+See if you can apply some of these techniques shown above to the athletes data set. Here is a list of what you should do.
+1. Create a first and last name column and get rid of the short_name column.
+2. Make gender a factored variable.
+3. Get rid of country_code, discipline_code, residence_place, residence_country, and url.
+4. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.
