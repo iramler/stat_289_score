@@ -59,12 +59,12 @@ medalsTidy <-
            into = c('last_name', 'first_name'))
 ```
 
-Next, we should get rid of some variables that aren't necessary to include. Such as things like athlete_link, country code for simplification, and discipline code as it will be hard to interpret what the discipline is from the code. We can do this with the select function in dplyr. Lets also change ROC to Republic of China to match the rest of the data.
+Next, we should get rid of some variables that aren't necessary to include. Such as things like athlete_link, country code for simplification, and discipline code as it will be hard to interpret what the discipline is from the code. We can do this with the select function in dplyr. Lets also change ROC to Russian Olympic Committee so as to be the official name.
 ```{r}
 medalsTidy <-
   medalsTidy |>
   select(-(c('athlete_link', 'discipline_code', 'country_code'))) |>
-  mutate(country = ifelse(country == 'ROC', 'Republic of China', country))
+  mutate(country = ifelse(country == 'ROC', 'Russian Olympic Committee', country))
 ```
 
 Here is what our cleaned data set now looks like.
