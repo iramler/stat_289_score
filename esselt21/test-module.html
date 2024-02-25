@@ -101,117 +101,331 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="data-cleaning-and-data-summarizing" class="level1">
-<h1>Data Cleaning and Data Summarizing</h1>
+<section id="data-cleaning" class="level1">
+<h1>Data Cleaning</h1>
 <section id="loading-in-a-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="loading-in-a-dataset">1. Loading in a dataset</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These are the necessary packages to load in a csv file. Tidyverse contains many different packages that we will be using in this module.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.1     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.1     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>here() starts at /Users/ericseltzer/RStudio/stat-289</code></pre>
-</div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>How to load in csv files into a data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>athletes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'esselt21/data/athletes.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 2897 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (13): name, short_name, gender, birth_place, birth_country, country, co...
-date  (1): birth_date
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>medals <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'esselt21/data/medals.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 694 Columns: 12
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (10): medal_type, athlete_short_name, athlete_name, athlete_sex, athlet...
-dbl   (1): medal_code
-dttm  (1): medal_date
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>athletes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'esselt21/data/athletes.csv'</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>medals <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'esselt21/data/medals.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="data-cleaning" class="level2">
-<h2 class="anchored" data-anchor-id="data-cleaning">2. Data Cleaning</h2>
+<section id="data-cleaning-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-cleaning-1">2. Data Cleaning</h2>
 <p>Firstly, lets look at an example of what the data looks like starting with the medals data set.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(medals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 12
-  medal_type medal_code medal_date          athlete_short_name athlete_name     
-  &lt;chr&gt;           &lt;dbl&gt; &lt;dttm&gt;              &lt;chr&gt;              &lt;chr&gt;            
-1 Gold                1 2022-02-05 00:00:00 ECKHOFF T          ECKHOFF Tiril    
-2 Gold                1 2022-02-05 00:00:00 ROEISELAND MO      ROEISELAND Marte…
-3 Gold                1 2022-02-05 00:00:00 BOE T              BOE Tarjei       
-4 Gold                1 2022-02-05 00:00:00 BOE JT             BOE Johannes Thi…
-5 Silver              2 2022-02-05 00:00:00 CHEVALIER-BOUCHET  CHEVALIER-BOUCHE…
-6 Silver              2 2022-02-05 00:00:00 FILLON MAILLET Q   FILLON MAILLET Q…
-# ℹ 7 more variables: athlete_sex &lt;chr&gt;, athlete_link &lt;chr&gt;, event &lt;chr&gt;,
-#   country &lt;chr&gt;, country_code &lt;chr&gt;, discipline &lt;chr&gt;, discipline_code &lt;chr&gt;</code></pre>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(medals))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 9%">
+<col style="width: 4%">
+<col style="width: 33%">
+<col style="width: 9%">
+<col style="width: 3%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">medal_type</th>
+<th style="text-align: right;">medal_code</th>
+<th style="text-align: left;">medal_date</th>
+<th style="text-align: left;">athlete_short_name</th>
+<th style="text-align: left;">athlete_name</th>
+<th style="text-align: left;">athlete_sex</th>
+<th style="text-align: left;">athlete_link</th>
+<th style="text-align: left;">event</th>
+<th style="text-align: left;">country</th>
+<th style="text-align: left;">country_code</th>
+<th style="text-align: left;">discipline</th>
+<th style="text-align: left;">discipline_code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">ECKHOFF T</td>
+<td style="text-align: left;">ECKHOFF Tiril</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1031947-tiril-eckhoff.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">NOR</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">ROEISELAND MO</td>
+<td style="text-align: left;">ROEISELAND Marte Olsbu</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1031950-marte-olsbu-roeiseland.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">NOR</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">BOE T</td>
+<td style="text-align: left;">BOE Tarjei</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1031962-tarjei-boe.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">NOR</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">BOE JT</td>
+<td style="text-align: left;">BOE Johannes Thingnes</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1031965-johannes-thingnes-boe.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">NOR</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Silver</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">CHEVALIER-BOUCHET</td>
+<td style="text-align: left;">CHEVALIER-BOUCHET Anais</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1035786-anais-chevalier-bouchet.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">France</td>
+<td style="text-align: left;">FRA</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Silver</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">FILLON MAILLET Q</td>
+<td style="text-align: left;">FILLON MAILLET Quentin</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1035791-quentin-fillon-maillet.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">France</td>
+<td style="text-align: left;">FRA</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <p>The first thing that has to be adjusted is the medal_code data and the athelete_sex data. Currently, the data type is a double and character respectively, but it should really be a factored datatype with 3 levels. To do this, we can take advantage of the forcats and dplyr packages in tidyverse.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  medals <span class="sc">|&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">medal_code =</span> <span class="fu">as_factor</span>(medal_code),</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">athlete_sex =</span> <span class="fu">as_factor</span>(<span class="fu">ifelse</span>(athlete_sex <span class="sc">==</span> <span class="st">'M'</span>, <span class="st">'M'</span>,</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">ifelse</span>(athlete_sex <span class="sc">==</span> <span class="st">'W'</span>, <span class="st">'W'</span>, <span class="st">'O'</span>))))</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate allows you to adjust variables in the data set</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  medals <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">medal_code =</span> <span class="fu">as_factor</span>(medal_code),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">athlete_sex =</span> <span class="fu">as_factor</span>(<span class="fu">ifelse</span>(athlete_sex <span class="sc">==</span> <span class="st">'M'</span>, <span class="st">'M'</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">ifelse</span>(athlete_sex <span class="sc">==</span> <span class="st">'W'</span>, <span class="st">'W'</span>, <span class="st">'O'</span>))))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate allows you to adjust variables in the data set</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We should also change the medal_date data type as it currently holds minutes that as shown previously are all 0. To do this we will take advantage of the strftime function and the lubridate package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">medal_date =</span> <span class="fu">strftime</span>(medal_date,</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                               <span class="at">format =</span> <span class="st">'%Y-%m-%d'</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">medal_date =</span> <span class="fu">as_date</span>(medal_date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">medal_date =</span> <span class="fu">strftime</span>(medal_date,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                               <span class="at">format =</span> <span class="st">'%Y-%m-%d'</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">medal_date =</span> <span class="fu">as_date</span>(medal_date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Another good step to take might be to get rid of the athlete_short_name, and then to separate athlete_name into a first name and last name variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>athlete_short_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>athlete_short_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(athlete_name,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">sep =</span> <span class="st">"^</span><span class="sc">\\</span><span class="st">S*</span><span class="sc">\\</span><span class="st">K</span><span class="sc">\\</span><span class="st">s+"</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"last_name"</span>, <span class="st">"first_name"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(athlete_name,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">sep =</span> <span class="st">'^</span><span class="sc">\\</span><span class="st">S*</span><span class="sc">\\</span><span class="st">K</span><span class="sc">\\</span><span class="st">s+'</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">'last_name'</span>, <span class="st">'first_name'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Next, we should get rid of some variables that aren’t necessary to include. Such as things like athlete_link, country for simplification, and discipline code as it will be hard to interpret what the discipline is from the code. We can do this with the select function in dplyr.</p>
+<p>Next, we should get rid of some variables that aren’t necessary to include. Such as things like athlete_link, country code for simplification, and discipline code as it will be hard to interpret what the discipline is from the code. We can do this with the select function in dplyr. Lets also change ROC to Republic of China to match the rest of the data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>(<span class="fu">c</span>(<span class="st">'athlete_link'</span>, <span class="st">'discipline_code'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>(<span class="fu">c</span>(<span class="st">'athlete_link'</span>, <span class="st">'discipline_code'</span>, <span class="st">'country_code'</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">ifelse</span>(country <span class="sc">==</span> <span class="st">'ROC'</span>, <span class="st">'Republic of China'</span>, country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Here is what our cleaned data set now looks like.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(medalsTidy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 9%">
+<col style="width: 19%">
+<col style="width: 6%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">medal_type</th>
+<th style="text-align: left;">medal_code</th>
+<th style="text-align: left;">medal_date</th>
+<th style="text-align: left;">last_name</th>
+<th style="text-align: left;">first_name</th>
+<th style="text-align: left;">athlete_sex</th>
+<th style="text-align: left;">event</th>
+<th style="text-align: left;">country</th>
+<th style="text-align: left;">discipline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">ECKHOFF</td>
+<td style="text-align: left;">Tiril</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">ROEISELAND</td>
+<td style="text-align: left;">Marte Olsbu</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">BOE</td>
+<td style="text-align: left;">Tarjei</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">BOE</td>
+<td style="text-align: left;">Johannes Thingnes</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Silver</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">CHEVALIER-BOUCHET</td>
+<td style="text-align: left;">Anais</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">France</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Silver</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">FILLON</td>
+<td style="text-align: left;">MAILLET Quentin</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">France</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="exercise-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<p>See if you can apply some of these techniques shown above to the athletes data set. Here is a list of what you should do.</p>
+<p>1a. Create a first and last name column and get rid of the short_name column.</p>
+<p>2b. Make gender a factored variable.</p>
+<p>3c. Get rid of country_code, discipline_code, residence_place, residence_country, and url.</p>
+<p>4d. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.</p>
 </section>
 </section>
-<section id="exercise-1" class="level1">
-<h1>Exercise 1</h1>
-<p>See if you can apply some of these techniques shown above to the athletes data set. Here is a list of what you should do. 1. Create a first and last name column and get rid of the short_name column. 2. Make gender a factored variable. 3. Get rid of country_code, discipline_code, residence_place, residence_country, and url. 4. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.</p>
+<section id="data-summarization" class="level2">
+<h2 class="anchored" data-anchor-id="data-summarization">3. Data Summarization</h2>
+<p>Next lets look at summarizing some statistics using our cleaned medals data set. First, lets see which country has the most medal winners in our data set using dplyr.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">medal_count =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(medal_count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29 × 2
+   country                  medal_count
+   &lt;chr&gt;                          &lt;int&gt;
+ 1 Republic of China                 86
+ 2 Canada                            67
+ 3 United States of America          63
+ 4 Germany                           60
+ 5 Norway                            58
+ 6 Finland                           55
+ 7 Japan                             34
+ 8 Sweden                            34
+ 9 Austria                           30
+10 Italy                             27
+# ℹ 19 more rows</code></pre>
+</div>
+</div>
+<section id="exercise-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<p>Using the example above and the filter function in the dplyr package, lets see which country has the most gold medal winners using either medal_type.</p>
+</section>
+<section id="exercise-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+<p>Now try finding which country has the most silver medals using medal_code.</p>
+</section>
+<section id="exercise-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<p>Finally, figure out what discipline the United States of America received the most medals in.</p>
+</section>
+</section>
 </section>
 
 </main>

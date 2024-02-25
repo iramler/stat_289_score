@@ -3,7 +3,7 @@ title: "test-module"
 author: "Eric Seltzer"
 format: html
 ---
-# Data Cleaning and Data Summarizing
+# Data Cleaning
 ## 1. Loading in a dataset
 ```{r}
 #| output: false
@@ -14,6 +14,7 @@ library(here)
 
 How to load in csv files into a data frame.
 ```{r}
+#| output: false
 athletes <- read_csv(here('esselt21/data/athletes.csv'))
 medals <- read_csv(here('esselt21/data/medals.csv'))
 ```
@@ -21,8 +22,9 @@ medals <- read_csv(here('esselt21/data/medals.csv'))
 ## 2. Data Cleaning
 Firstly, lets look at an example of what the data looks like starting with the medals data set.
 ```{r}
-head(medals)
+knitr::kable(head(medals))
 ```
+
 The first thing that has to be adjusted is the medal_code data and the athelete_sex data. Currently, the data type is a double and character respectively, but it should really be a factored datatype with 3 levels. To do this, we can take advantage of the forcats and dplyr packages in tidyverse.
 ```{r}
 medalsTidy <- 
@@ -32,6 +34,7 @@ medalsTidy <-
                                       ifelse(athlete_sex == 'W', 'W', 'O'))))
 # mutate allows you to adjust variables in the data set
 ```
+
 We should also change the medal_date data type as it currently holds minutes that as shown previously are all 0. To do this we will take advantage of the strftime function and the lubridate package. 
 ```{r}
 medalsTidy <-
@@ -40,6 +43,7 @@ medalsTidy <-
                                format = '%Y-%m-%d')) |>
   mutate(medal_date = as_date(medal_date))
 ```
+
 Another good step to take might be to get rid of the athlete_short_name, and then to separate athlete_name into a first name and last name variable.
 ```{r}
 medalsTidy <-
@@ -51,20 +55,49 @@ medalsTidy <-
 medalsTidy <-
   medalsTidy |>
   separate(athlete_name,
-           sep = "^\\S*\\K\\s+",
-           into = c("last_name", "first_name"))
+           sep = '^\\S*\\K\\s+',
+           into = c('last_name', 'first_name'))
 ```
 
-Next, we should get rid of some variables that aren't necessary to include. Such as things like athlete_link, country for simplification, and discipline code as it will be hard to interpret what the discipline is from the code. We can do this with the select function in dplyr.
+Next, we should get rid of some variables that aren't necessary to include. Such as things like athlete_link, country code for simplification, and discipline code as it will be hard to interpret what the discipline is from the code. We can do this with the select function in dplyr. Lets also change ROC to Republic of China to match the rest of the data.
 ```{r}
 medalsTidy <-
   medalsTidy |>
-  select(-(c('athlete_link', 'discipline_code')))
+  select(-(c('athlete_link', 'discipline_code', 'country_code'))) |>
+  mutate(country = ifelse(country == 'ROC', 'Republic of China', country))
 ```
 
-# Exercise 1
+Here is what our cleaned data set now looks like.
+```{r}
+knitr::kable(head(medalsTidy))
+```
+
+### Exercise 1
 See if you can apply some of these techniques shown above to the athletes data set. Here is a list of what you should do.
-1. Create a first and last name column and get rid of the short_name column.
-2. Make gender a factored variable.
-3. Get rid of country_code, discipline_code, residence_place, residence_country, and url.
-4. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.
+
+1a. Create a first and last name column and get rid of the short_name column.
+
+2b. Make gender a factored variable.
+
+3c. Get rid of country_code, discipline_code, residence_place, residence_country, and url.
+
+4d. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.
+
+## 3. Data Summarization
+Next lets look at summarizing some statistics using our cleaned medals data set. First, lets see which country has the most medal winners in our data set using dplyr.
+```{r}
+medalsTidy |>
+  group_by(country) |>
+  summarise(medal_count = n()) |>
+  arrange(desc(medal_count))
+```
+
+### Exercise 2
+Using the example above and the filter function in the dplyr package, lets see which country has the most gold medal winners using either medal_type.
+
+### Exercise 3
+Now try finding which country has the most silver medals using medal_code.
+
+### Exercise 4
+Finally, figure out what discipline the United States of America received the most medals in.
+
