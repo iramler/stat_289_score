@@ -101,8 +101,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="data-cleaning" class="level1">
-<h1>Data Cleaning</h1>
+<section id="data-cleaning-and-summarization-module" class="level1">
+<h1>Data Cleaning and Summarization Module</h1>
 <section id="loading-in-a-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="loading-in-a-dataset">1. Loading in a dataset</h2>
 <div class="cell">
@@ -116,8 +116,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>medals <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'esselt21/data/medals.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="data-cleaning-1" class="level2">
-<h2 class="anchored" data-anchor-id="data-cleaning-1">2. Data Cleaning</h2>
+<section id="data-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="data-cleaning">2. Data Cleaning</h2>
 <p>Firstly, lets look at an example of what the data looks like starting with the medals data set.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(medals))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -272,12 +272,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">sep =</span> <span class="st">'^</span><span class="sc">\\</span><span class="st">S*</span><span class="sc">\\</span><span class="st">K</span><span class="sc">\\</span><span class="st">s+'</span>,</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">'last_name'</span>, <span class="st">'first_name'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Next, we should get rid of some variables that aren’t necessary to include. Such as things like athlete_link, country code for simplification, and discipline code as it will be hard to interpret what the discipline is from the code. We can do this with the select function in dplyr. Lets also change ROC to Republic of China to match the rest of the data.</p>
+<p>Next, we should get rid of some variables that aren’t necessary to include. Such as things like athlete_link, country code for simplification, and discipline code as it will be hard to interpret what the discipline is from the code. We can do this with the select function in dplyr. Lets also change ROC to Russian Olympic Committee so as to be the official name.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>(<span class="fu">c</span>(<span class="st">'athlete_link'</span>, <span class="st">'discipline_code'</span>, <span class="st">'country_code'</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">ifelse</span>(country <span class="sc">==</span> <span class="st">'ROC'</span>, <span class="st">'Republic of China'</span>, country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">ifelse</span>(country <span class="sc">==</span> <span class="st">'ROC'</span>, <span class="st">'Russian Olympic Committee'</span>, country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here is what our cleaned data set now looks like.</p>
 <div class="cell">
@@ -398,18 +398,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(medal_count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 29 × 2
-   country                  medal_count
-   &lt;chr&gt;                          &lt;int&gt;
- 1 Republic of China                 86
- 2 Canada                            67
- 3 United States of America          63
- 4 Germany                           60
- 5 Norway                            58
- 6 Finland                           55
- 7 Japan                             34
- 8 Sweden                            34
- 9 Austria                           30
-10 Italy                             27
+   country                   medal_count
+   &lt;chr&gt;                           &lt;int&gt;
+ 1 Russian Olympic Committee          86
+ 2 Canada                             67
+ 3 United States of America           63
+ 4 Germany                            60
+ 5 Norway                             58
+ 6 Finland                            55
+ 7 Japan                              34
+ 8 Sweden                             34
+ 9 Austria                            30
+10 Italy                              27
 # ℹ 19 more rows</code></pre>
 </div>
 </div>

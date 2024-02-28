@@ -3,7 +3,7 @@ title: "test-module"
 author: "Eric Seltzer"
 format: html
 ---
-# Data Cleaning
+# Data Cleaning and Summarization Module
 ## 1. Loading in a dataset
 ```{r}
 #| output: false
