@@ -4,12 +4,8 @@ author: Your Name
 date: Todays Date (e.g., April 17, 2023)
 description: A one- or two-sentence description of the data. If possible, give a brief summary of the sports problem and statistical situation.
 categories:
-  - list the relevant
-  - statistical methods
-  - that can be used
-  - with this dataset
-  - one per line
-  - with two spaces and a hyphen in front
+  - summary statistics
+  - 
 editor:
   markdown: 
     canonical: true
@@ -25,23 +21,19 @@ This file is Markdown, so you *can* use formatting; [here is a guide to the basi
 
 ## Data
 
-Describe the data. What does each row represent? How many rows are there? If there is missingness, say how it is coded and why it is present.
+The data set contains 1138 rows and 7 columns. Each row represents a single lap by a driver who completed the 2023 F1 Miami Grand Prix.
 
-| Variable       | Description                                                                              |
-|----------------|------------------------------------------------------------------------------------------|
-| driverId       | (int): Unique identifier for each driver.                                                |
-| driverName     | (chr): The full name of the driver.                                                      |
-| lap            | (int): The lap number. This data type allows for numerical operations directly.          |
-| lapTime        | (num): The time taken to complete the lap, in seconds.                                   |
-| lapPosition    | (int): The position of the driver at the end of the lap.                                 |
-| fastestLap     | (int): The lap number of the driver's fastest lap during the session or race.            |
-| fastestLapTime | (num): The time of the fastest lap by the driver during the session or race, in seconds. |
+| Variable       | Description                                                                       |
+|----------------|-----------------------------------------------------------------------------------|
+| driverId       | Unique identifier for each driver.                                                |
+| driverName     | The full name of the driver.                                                      |
+| lap            | The lap number. This data type allows for numerical operations directly.          |
+| lapTime        | The time taken to complete the lap, in seconds.                                   |
+| lapPosition    | The position of the driver at the end of the lap.                                 |
+| fastestLap     | The lap number of the driver's fastest lap during the session or race.            |
+| fastestLapTime | The time of the fastest lap by the driver during the session or race, in seconds. |
 
 : [miami2023_data.csv](../data/miami2023_data.csv)
-
-For the link above, change filename.csv to the name of the data file. Leave the `../data/` part in the link; this is where the data will live in the system.
-
-If there are multiple data files, repeat the table, including the line starting with `:`, for each data file.
 
 ## Questions
 
