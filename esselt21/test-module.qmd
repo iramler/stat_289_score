@@ -101,3 +101,7 @@ Now try finding which country has the most silver medals using medal_code.
 ### Exercise 4
 Finally, figure out what discipline the United States of America received the most medals in.
 
+## 4. Joining
+### Exercise 5
+As one last additional exercise, think about how you would go about combining both the athletes and medals data sets and what the differences between different join functions would do.
+
