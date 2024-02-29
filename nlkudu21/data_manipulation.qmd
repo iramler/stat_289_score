@@ -61,7 +61,8 @@ str(miami2023_data)
 ```
 
 ```{r}
-write.csv(miami2023_data, "/data/miami2023_data.csv", row.names = FALSE)
+here()
+write.csv(miami2023_data, here("nlkudu21/data/miami2023_data.csv"), row.names = FALSE)
 ```
 
 
