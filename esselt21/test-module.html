@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Eric Seltzer">
+
+<title>test-module</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="test-module_files/libs/clipboard/clipboard.min.js"></script>
+<script src="test-module_files/libs/quarto-html/quarto.js"></script>
+<script src="test-module_files/libs/quarto-html/popper.min.js"></script>
+<script src="test-module_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="test-module_files/libs/quarto-html/anchor.min.js"></script>
+<link href="test-module_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="test-module_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="test-module_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="test-module_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="test-module_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">test-module</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Eric Seltzer </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="data-cleaning-and-summarization-module" class="level1">
+<h1>Data Cleaning and Summarization Module</h1>
+<section id="loading-in-a-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="loading-in-a-dataset">1. Loading in a dataset</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These are the necessary packages to load in a csv file. Tidyverse contains many different packages that we will be using in this module.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>How to load in csv files into a data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>athletes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'esselt21/data/athletes.csv'</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>medals <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">'esselt21/data/medals.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="data-cleaning">2. Data Cleaning</h2>
+<p>Firstly, lets look at an example of what the data looks like starting with the medals data set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(medals))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 9%">
+<col style="width: 4%">
+<col style="width: 33%">
+<col style="width: 9%">
+<col style="width: 3%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">medal_type</th>
+<th style="text-align: right;">medal_code</th>
+<th style="text-align: left;">medal_date</th>
+<th style="text-align: left;">athlete_short_name</th>
+<th style="text-align: left;">athlete_name</th>
+<th style="text-align: left;">athlete_sex</th>
+<th style="text-align: left;">athlete_link</th>
+<th style="text-align: left;">event</th>
+<th style="text-align: left;">country</th>
+<th style="text-align: left;">country_code</th>
+<th style="text-align: left;">discipline</th>
+<th style="text-align: left;">discipline_code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">ECKHOFF T</td>
+<td style="text-align: left;">ECKHOFF Tiril</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1031947-tiril-eckhoff.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">NOR</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">ROEISELAND MO</td>
+<td style="text-align: left;">ROEISELAND Marte Olsbu</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1031950-marte-olsbu-roeiseland.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">NOR</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">BOE T</td>
+<td style="text-align: left;">BOE Tarjei</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1031962-tarjei-boe.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">NOR</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">BOE JT</td>
+<td style="text-align: left;">BOE Johannes Thingnes</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1031965-johannes-thingnes-boe.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">NOR</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Silver</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">CHEVALIER-BOUCHET</td>
+<td style="text-align: left;">CHEVALIER-BOUCHET Anais</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1035786-anais-chevalier-bouchet.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">France</td>
+<td style="text-align: left;">FRA</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Silver</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">2022-02-05</td>
+<td style="text-align: left;">FILLON MAILLET Q</td>
+<td style="text-align: left;">FILLON MAILLET Quentin</td>
+<td style="text-align: left;">X</td>
+<td style="text-align: left;">../../../en/results/biathlon/athlete-profile-n1035791-quentin-fillon-maillet.htm</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">France</td>
+<td style="text-align: left;">FRA</td>
+<td style="text-align: left;">Biathlon</td>
+<td style="text-align: left;">BTH</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The first thing that has to be adjusted is the medal_code data and the athelete_sex data. Currently, the data type is a double and character respectively, but it should really be a factored datatype with 3 levels. To do this, we can take advantage of the forcats and dplyr packages in tidyverse.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  medals <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">medal_code =</span> <span class="fu">as_factor</span>(medal_code),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">athlete_sex =</span> <span class="fu">as_factor</span>(<span class="fu">ifelse</span>(athlete_sex <span class="sc">==</span> <span class="st">'M'</span>, <span class="st">'M'</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">ifelse</span>(athlete_sex <span class="sc">==</span> <span class="st">'W'</span>, <span class="st">'W'</span>, <span class="st">'O'</span>))))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate allows you to adjust variables in the data set</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We should also change the medal_date data type as it currently holds minutes that as shown previously are all 0. To do this we will take advantage of the strftime function and the lubridate package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">medal_date =</span> <span class="fu">strftime</span>(medal_date,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                               <span class="at">format =</span> <span class="st">'%Y-%m-%d'</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">medal_date =</span> <span class="fu">as_date</span>(medal_date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Another good step to take might be to get rid of the athlete_short_name, and then to separate athlete_name into a first name and last name variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>athlete_short_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(athlete_name,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">sep =</span> <span class="st">'^</span><span class="sc">\\</span><span class="st">S*</span><span class="sc">\\</span><span class="st">K</span><span class="sc">\\</span><span class="st">s+'</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">'last_name'</span>, <span class="st">'first_name'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, we should get rid of some variables that aren’t necessary to include. Such as things like athlete_link, country code for simplification, and discipline code as it will be hard to interpret what the discipline is from the code. We can do this with the select function in dplyr. Lets also change ROC to Russian Olympic Committee so as to be the official name.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="ot">&lt;-</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  medalsTidy <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>(<span class="fu">c</span>(<span class="st">'athlete_link'</span>, <span class="st">'discipline_code'</span>, <span class="st">'country_code'</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">ifelse</span>(country <span class="sc">==</span> <span class="st">'ROC'</span>, <span class="st">'Russian Olympic Committee'</span>, country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here is what our cleaned data set now looks like.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(medalsTidy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 9%">
+<col style="width: 19%">
+<col style="width: 6%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">medal_type</th>
+<th style="text-align: left;">medal_code</th>
+<th style="text-align: left;">medal_date</th>
+<th style="text-align: left;">last_name</th>
+<th style="text-align: left;">first_name</th>
+<th style="text-align: left;">athlete_sex</th>
+<th style="text-align: left;">event</th>
+<th style="text-align: left;">country</th>
+<th style="text-align: left;">discipline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">ECKHOFF</td>
+<td style="text-align: left;">Tiril</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">ROEISELAND</td>
+<td style="text-align: left;">Marte Olsbu</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">BOE</td>
+<td style="text-align: left;">Tarjei</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gold</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">BOE</td>
+<td style="text-align: left;">Johannes Thingnes</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">Norway</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Silver</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">CHEVALIER-BOUCHET</td>
+<td style="text-align: left;">Anais</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">France</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Silver</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2022-02-04</td>
+<td style="text-align: left;">FILLON</td>
+<td style="text-align: left;">MAILLET Quentin</td>
+<td style="text-align: left;">O</td>
+<td style="text-align: left;">Mixed Relay 4x6km (W+M)</td>
+<td style="text-align: left;">France</td>
+<td style="text-align: left;">Biathlon</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="exercise-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<p>See if you can apply some of these techniques shown above to the athletes data set. Here is a list of what you should do.</p>
+<p>1a. Create a first and last name column and get rid of the short_name column.</p>
+<p>2b. Make gender a factored variable.</p>
+<p>3c. Get rid of country_code, discipline_code, residence_place, residence_country, and url.</p>
+<p>4d. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.</p>
+</section>
+</section>
+<section id="data-summarization" class="level2">
+<h2 class="anchored" data-anchor-id="data-summarization">3. Data Summarization</h2>
+<p>Next lets look at summarizing some statistics using our cleaned medals data set. First, lets see which country has the most medal winners in our data set using dplyr.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>medalsTidy <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">medal_count =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(medal_count))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 29 × 2
+   country                   medal_count
+   &lt;chr&gt;                           &lt;int&gt;
+ 1 Russian Olympic Committee          86
+ 2 Canada                             67
+ 3 United States of America           63
+ 4 Germany                            60
+ 5 Norway                             58
+ 6 Finland                            55
+ 7 Japan                              34
+ 8 Sweden                             34
+ 9 Austria                            30
+10 Italy                              27
+# ℹ 19 more rows</code></pre>
+</div>
+</div>
+<section id="exercise-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<p>Using the example above and the filter function in the dplyr package, lets see which country has the most gold medal winners using either medal_type.</p>
+</section>
+<section id="exercise-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
+<p>Now try finding which country has the most silver medals using medal_code.</p>
+</section>
+<section id="exercise-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<p>Finally, figure out what discipline the United States of America received the most medals in.</p>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

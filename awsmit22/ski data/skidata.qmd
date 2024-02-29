@@ -1,0 +1,25 @@
+---
+title: "SkiData"
+format: html
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+library(here)
+library(jsonlite)
+library(rvest)
+url <- "https://medias4.fis-ski.com/pdf/2024/CC/2257/2024CC2257RL.pdf"
+h <- read_html(url)
+tab <- h |> html_nodes("table")
+tab
+obj <- tab[[1]] |> html_table(fill = TRUE)
+head(obj)
+obj3 <- tab[[2]] |> html_table(fill = TRUE)
+head(obj3)
+```
+
+```{r}
+library("PDE")
+```
+

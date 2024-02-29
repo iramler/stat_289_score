@@ -1,0 +1,52 @@
+---
+title: A descriptive dataset title
+author: Your Name
+date: Todays Date (e.g., April 17, 2023)
+description: A one- or two-sentence description of the data. If possible, give a brief summary of the sports problem and statistical situation.
+categories:
+  - list the relevant
+  - statistical methods
+  - that can be used
+  - with this dataset
+  - one per line
+  - with two spaces and a hyphen in front
+editor:
+  markdown: 
+    canonical: true
+---
+
+## Motivation
+
+The categories above determine how this dataset is listed on the [datasets by methods](https://data.scorenetwork.org/by-statsds-topic.html) page. Consult that page for a list of statistical categories already used by other datasets.
+
+In this first section, describe the source of the dataset and what it's about. Give any necessary background about it and the sports research question of interest. See other datasets on the website for examples.
+
+This file is Markdown, so you *can* use formatting; [here is a guide to the basics](https://quarto.org/docs/authoring/markdown-basics.html).
+
+## Data
+
+Describe the data. What does each row represent? How many rows are there? If there is missingness, say how it is coded and why it is present.
+
+| Variable       | Description                                                                              |
+|----------------|------------------------------------------------------------------------------------------|
+| driverId       | (int): Unique identifier for each driver.                                                |
+| driverName     | (chr): The full name of the driver.                                                      |
+| lap            | (int): The lap number. This data type allows for numerical operations directly.          |
+| lapTime        | (num): The time taken to complete the lap, in seconds.                                   |
+| lapPosition    | (int): The position of the driver at the end of the lap.                                 |
+| fastestLap     | (int): The lap number of the driver's fastest lap during the session or race.            |
+| fastestLapTime | (num): The time of the fastest lap by the driver during the session or race, in seconds. |
+
+: [miami2023_data.csv](../data/miami2023_data.csv)
+
+For the link above, change filename.csv to the name of the data file. Leave the `../data/` part in the link; this is where the data will live in the system.
+
+If there are multiple data files, repeat the table, including the line starting with `:`, for each data file.
+
+## Questions
+
+If possible, list some analyses or research questions that could be answered with this dataset, or the types of questions you'd ask students. This is mainly meant to give other instructors ideas for how they could use the data.
+
+## References
+
+Vopani. (2023, December). Formula 1 World Championship (1950 - 2023). Retrieved Febraury 27, 2024 from https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020
