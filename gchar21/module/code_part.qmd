@@ -10,7 +10,7 @@ library(here)
 library(tidyverse)
 library(dplyr)
 
-data <- read_csv(here("data/data_correct.csv"))
+data <- read_csv("~/Desktop/Sixth Semester/Stat289Spring2024/gchar21/data/data_correct.csv")
 ```
 
 Logistic Regression Modelling Probability of Winning 
@@ -89,7 +89,7 @@ popularity_df_SUP <-
 ```{r}
 top5_df_ADC <- popularity_df_ADC |>
   ungroup() |>
-  ##slice(1:10) |>
+  slice(1:5) |>
   pull(ADC) |>
   unlist()
 ```
@@ -97,23 +97,43 @@ top5_df_ADC <- popularity_df_ADC |>
 ```{r}
 top5_df_SUP <- popularity_df_SUP |>
   ungroup() |>
-  ##slice(1:10) |>
+  slice(1:5) |>
   pull(SUP) |>
   unlist()
 ```
 
 ```{r}
-# rest_df <- interest_df_4 |>
-#   mutate(ADC = fct_other(ADC, 
-#                          top5_df_ADC), 
-#          SUP = fct_other(SUP, 
-#                          top5_df_SUP)) |>
-#   mutate(ADC = fct_relevel(ADC, 
-#                            "Other"), 
-#          SUP = fct_relevel(SUP, 
-#                            "Other"))
-# ```
+rest_df <- interest_df_4 |>
+  mutate(ADC = fct_other(ADC,
+                         top5_df_ADC),
+         SUP = fct_other(SUP,
+                         top5_df_SUP)) |>
+  mutate(ADC = fct_relevel(ADC,
+                           "Other"),
+         SUP = fct_relevel(SUP,
+                           "Other"))
 ```
+
+```{r}
+## save as a csv
+rest_df <- rest_df |>
+  group_by(ADC, SUP) |>
+  summarise(n_matches = sum(Losses) + sum(Wins))
+```
+
+```{r}
+## save as a csv
+table <- rest_df |>
+  pivot_wider(names_from = c(ADC),
+              values_from = n_matches, 
+              ) |>
+              column_to_rownames("SUP")
+```
+
+```{r}
+chisq.test(table)
+```
+
 
 
 Fitting a Logistic Regression Model to predict how likely is the player going to win using the specified pair of support and AD Carry
