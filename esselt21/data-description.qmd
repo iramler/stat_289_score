@@ -24,22 +24,22 @@ The first athletes contains information on individual athletes. Each row in this
 
 The second medals contains information on medal winners. Each row in this dataset represents a medal won in the Beijing 2022 Olympic Winter Games. This can mean Gold, Bronze, or Silver medals. This dataset has 694 rows and 12 columns.
 
-| Variable          | Description                 |
-|-------------------|-----------------------------|
-| name              | Athlete Name                |
-| short_name        | Athlete Name(short)         |
-| gender            | Athlete Gender              |
-| birth_date        | Athlete Date of Birthday    |
-| birth_place       | Athlete Place of Birthday   |
-| birth_country     | Athlete Country of Birthday |
-| country           | Athlete Country             |
-| country_code      | Athlete Country Code        |
-| discipline        | Discipline.                 |
-| discipline_code   | Discipline Code             |
-| residence_place   | Athlete Residence Place     |
-| residence_country | Athlete Residence Country   |
-| height_m/ft       | Athlete Height (m/ft)       |
-| url               | Athlete Profile Link        |
+| Variable          | Description                      |
+|-------------------|----------------------------------|
+| name              | Athlete Name                     |
+| short_name        | Athlete Name(short)              |
+| gender            | Athlete Gender                   |
+| birth_date        | Athlete Date of Birthday         |
+| birth_place       | Athlete Place of Birthday        |
+| birth_country     | Athlete Country of Birthday      |
+| country           | Athlete Country                  |
+| country_code      | Athlete Country Code             |
+| discipline        | Discipline.                      |
+| discipline_code   | Discipline Code                  |
+| residence_place   | Athlete Residence Place          |
+| residence_country | Athlete Residence Country        |
+| height_m/ft       | Athlete Height (meters and feet) |
+| url               | Athlete Profile Link             |
 
 | Variable           | Description                       |
 |--------------------|-----------------------------------|

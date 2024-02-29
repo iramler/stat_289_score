@@ -93,7 +93,7 @@ medalsTidy |>
 ```
 
 ### Exercise 2
-Using the example above and the filter function in the dplyr package, lets see which country has the most gold medal winners using either medal_type.
+Using the example above and the filter function in the dplyr package, lets see which country has the most gold medal winners using medal_type.
 
 ### Exercise 3
 Now try finding which country has the most silver medals using medal_code.
