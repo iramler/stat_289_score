@@ -24,10 +24,10 @@ This file is Markdown, so you *can* use formatting; [here is a guide to the basi
 The data set contains 1138 rows and 7 columns. Each row represents a single lap by a driver who completed the 2023 F1 Miami Grand Prix.
 
 | Variable       | Description                                                                       |
-|----------------|-----------------------------------------------------------------------------------|
+|----------------|--------------------------------------------------------|
 | driverId       | Unique identifier for each driver.                                                |
 | driverName     | The full name of the driver.                                                      |
-| lap            | The lap number. This data type allows for numerical operations directly.          |
+| lap            | The lap number.                                                                   |
 | lapTime        | The time taken to complete the lap, in seconds.                                   |
 | lapPosition    | The position of the driver at the end of the lap.                                 |
 | fastestLap     | The lap number of the driver's fastest lap during the session or race.            |
