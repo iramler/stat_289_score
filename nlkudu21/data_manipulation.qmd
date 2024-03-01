@@ -58,6 +58,7 @@ miami2023_data <- miami2023_data |>
   select(driverId, driverName, lap, lapTime, lapPosition, fastestLap, fastestLapTime)
 
 str(miami2023_data)
+dim(miami2023_data)
 ```
 
 ```{r}
