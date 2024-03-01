@@ -5,11 +5,9 @@ date: February 29, 2024
 description: The times and ranks of skiers taken at four different distance points in a 10k race in Trondheim, Norway.
 categories:
   - modelling
-  - statistical methods
-  - that can be used
-  - with this dataset
-  - one per line
-  - with two spaces and a hyphen in front
+  - plotting
+  - correlation
+  
 editor: 
   markdown: 
     wrap: 72
