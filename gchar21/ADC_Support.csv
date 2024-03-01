@@ -1,0 +1,219 @@
+"ADC","SUP","Losses","Wins"
+"Miss Fortune","Annie",15,12
+"Miss Fortune","Lulu",8,10
+"Miss Fortune","Alistar",10,15
+"Miss Fortune","Janna",11,7
+"Miss Fortune","Morgana",19,23
+"Miss Fortune","Braum",21,16
+"Miss Fortune","Leona",28,22
+"Miss Fortune","Soraka",7,10
+"Miss Fortune","Thresh",38,33
+"Miss Fortune","Blitzcrank",29,31
+"Miss Fortune","Nami",2,9
+"Miss Fortune","Sona",16,16
+"Miss Fortune","Tahm Kench",10,8
+"Jinx","Zyra",14,14
+"Jinx","Annie",49,41
+"Jinx","Lulu",25,29
+"Jinx","Alistar",62,58
+"Jinx","Janna",65,71
+"Jinx","Morgana",104,114
+"Jinx","Braum",87,91
+"Jinx","Leona",118,147
+"Jinx","Soraka",52,72
+"Jinx","Thresh",215,223
+"Jinx","Blitzcrank",134,160
+"Jinx","Vel'Koz",14,12
+"Jinx","Nami",33,48
+"Jinx","Taric",15,16
+"Jinx","Bard",22,25
+"Jinx","Zilean",9,9
+"Jinx","Sona",42,57
+"Jinx","Karma",10,18
+"Jinx","Tahm Kench",43,49
+"Caitlyn","Annie",26,25
+"Caitlyn","Lulu",27,15
+"Caitlyn","Alistar",45,37
+"Caitlyn","Janna",46,30
+"Caitlyn","Morgana",45,53
+"Caitlyn","Braum",33,40
+"Caitlyn","Leona",90,64
+"Caitlyn","Soraka",25,27
+"Caitlyn","Thresh",106,93
+"Caitlyn","Blitzcrank",68,71
+"Caitlyn","Nami",26,21
+"Caitlyn","Bard",19,16
+"Caitlyn","Sona",23,35
+"Caitlyn","Karma",9,7
+"Caitlyn","Tahm Kench",19,18
+"Tristana","Zyra",15,7
+"Tristana","Annie",33,27
+"Tristana","Lulu",25,14
+"Tristana","Alistar",54,41
+"Tristana","Janna",49,49
+"Tristana","Morgana",80,58
+"Tristana","Braum",79,51
+"Tristana","Leona",91,103
+"Tristana","Soraka",35,52
+"Tristana","Thresh",126,112
+"Tristana","Blitzcrank",87,90
+"Tristana","Nami",21,21
+"Tristana","Taric",11,5
+"Tristana","Bard",22,12
+"Tristana","Zilean",7,5
+"Tristana","Sona",27,39
+"Tristana","Karma",13,10
+"Tristana","Tahm Kench",26,27
+"Kalista","Annie",12,13
+"Kalista","Lulu",7,7
+"Kalista","Alistar",22,28
+"Kalista","Janna",15,14
+"Kalista","Morgana",26,15
+"Kalista","Braum",23,31
+"Kalista","Leona",36,17
+"Kalista","Soraka",5,10
+"Kalista","Thresh",75,72
+"Kalista","Blitzcrank",31,28
+"Kalista","Bard",11,6
+"Kalista","Sona",10,8
+"Kalista","Tahm Kench",21,18
+"Twitch","Annie",8,4
+"Twitch","Alistar",7,7
+"Twitch","Janna",9,3
+"Twitch","Morgana",9,13
+"Twitch","Braum",10,9
+"Twitch","Leona",21,13
+"Twitch","Thresh",23,16
+"Twitch","Blitzcrank",21,14
+"Sivir","Annie",23,21
+"Sivir","Lulu",11,8
+"Sivir","Alistar",29,34
+"Sivir","Janna",29,28
+"Sivir","Morgana",46,45
+"Sivir","Braum",31,40
+"Sivir","Leona",52,50
+"Sivir","Soraka",25,22
+"Sivir","Thresh",76,81
+"Sivir","Blitzcrank",53,50
+"Sivir","Vel'Koz",4,8
+"Sivir","Nami",12,9
+"Sivir","Taric",5,8
+"Sivir","Bard",15,17
+"Sivir","Sona",19,20
+"Sivir","Karma",10,11
+"Sivir","Tahm Kench",23,13
+"Vayne","Zyra",18,7
+"Vayne","Annie",50,46
+"Vayne","Lulu",42,36
+"Vayne","Alistar",78,77
+"Vayne","Janna",70,80
+"Vayne","Morgana",102,104
+"Vayne","Braum",99,119
+"Vayne","Leona",124,127
+"Vayne","Soraka",67,62
+"Vayne","Thresh",183,211
+"Vayne","Blitzcrank",116,140
+"Vayne","Vel'Koz",6,7
+"Vayne","Nami",34,49
+"Vayne","Taric",10,17
+"Vayne","Bard",17,30
+"Vayne","Zilean",5,8
+"Vayne","Sona",39,48
+"Vayne","Karma",10,12
+"Vayne","Tahm Kench",51,30
+"Graves","Annie",17,12
+"Graves","Lulu",13,8
+"Graves","Alistar",18,26
+"Graves","Janna",17,23
+"Graves","Morgana",43,32
+"Graves","Braum",15,36
+"Graves","Leona",49,36
+"Graves","Soraka",17,13
+"Graves","Thresh",69,60
+"Graves","Blitzcrank",34,40
+"Graves","Nami",18,7
+"Graves","Sona",19,13
+"Graves","Tahm Kench",12,11
+"Lucian","Annie",16,16
+"Lucian","Lulu",8,8
+"Lucian","Alistar",28,24
+"Lucian","Janna",23,22
+"Lucian","Morgana",27,31
+"Lucian","Braum",63,48
+"Lucian","Leona",56,39
+"Lucian","Soraka",21,16
+"Lucian","Thresh",82,68
+"Lucian","Blitzcrank",33,42
+"Lucian","Nami",7,10
+"Lucian","Bard",9,7
+"Lucian","Sona",16,11
+"Lucian","Karma",8,4
+"Lucian","Tahm Kench",11,12
+"Ashe","Zyra",9,10
+"Ashe","Annie",23,21
+"Ashe","Lulu",13,12
+"Ashe","Alistar",34,38
+"Ashe","Janna",24,20
+"Ashe","Morgana",47,43
+"Ashe","Braum",32,43
+"Ashe","Leona",58,68
+"Ashe","Soraka",22,29
+"Ashe","Thresh",67,78
+"Ashe","Blitzcrank",53,60
+"Ashe","Vel'Koz",9,5
+"Ashe","Nami",8,13
+"Ashe","Taric",7,6
+"Ashe","Bard",13,5
+"Ashe","Sona",17,24
+"Ashe","Karma",8,5
+"Ashe","Tahm Kench",21,11
+"Corki","Annie",9,8
+"Corki","Morgana",14,13
+"Corki","Braum",10,5
+"Corki","Leona",19,23
+"Corki","Soraka",11,11
+"Corki","Thresh",32,26
+"Corki","Blitzcrank",17,19
+"Corki","Bard",8,3
+"Corki","Sona",10,3
+"Ezreal","Annie",28,13
+"Ezreal","Lulu",9,6
+"Ezreal","Alistar",27,25
+"Ezreal","Janna",17,24
+"Ezreal","Morgana",35,32
+"Ezreal","Braum",22,21
+"Ezreal","Leona",42,29
+"Ezreal","Soraka",16,23
+"Ezreal","Thresh",71,51
+"Ezreal","Blitzcrank",44,38
+"Ezreal","Nami",13,7
+"Ezreal","Bard",7,11
+"Ezreal","Sona",16,20
+"Ezreal","Karma",7,5
+"Ezreal","Tahm Kench",16,11
+"Draven","Annie",7,12
+"Draven","Alistar",20,17
+"Draven","Janna",12,22
+"Draven","Morgana",24,27
+"Draven","Braum",13,11
+"Draven","Leona",28,39
+"Draven","Soraka",13,14
+"Draven","Thresh",37,50
+"Draven","Blitzcrank",28,41
+"Draven","Vel'Koz",7,5
+"Draven","Bard",10,3
+"Draven","Sona",9,6
+"Draven","Tahm Kench",9,7
+"Varus","Annie",5,6
+"Varus","Alistar",6,9
+"Varus","Janna",6,11
+"Varus","Morgana",16,13
+"Varus","Braum",10,6
+"Varus","Leona",25,14
+"Varus","Soraka",11,11
+"Varus","Thresh",35,20
+"Varus","Blitzcrank",16,20
+"Kog'Maw","Janna",7,7
+"Kog'Maw","Leona",6,5
+"Kog'Maw","Thresh",9,11
+"Kog'Maw","Blitzcrank",6,8
