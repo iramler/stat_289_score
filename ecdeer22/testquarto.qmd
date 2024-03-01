@@ -13,7 +13,7 @@ library(tidyverse)
 
 Clean Data:
 ```{r}
-divingdata <- divingdata |> filter(Age != 15)
+divingdata <- divingdata |> filter(Age != 15) |> select(-16, -17)
 ```
 
 DS234 
