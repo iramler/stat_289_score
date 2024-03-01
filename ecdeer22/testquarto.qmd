@@ -11,6 +11,11 @@ divingdata <- read_csv("ecdeer22/divingdata.csv")
 library(tidyverse)
 ```
 
+Clean Data:
+```{r}
+divingdata <- divingdata |> filter(Age != 15)
+```
+
 DS234 
 ```{r}
 #count attempts per dive
@@ -21,11 +26,20 @@ divingdata |> filter(Age != 15)
 
 #histogram of total points
 ggplot(data=divingdata, aes(x=TotalPoints)) + geom_histogram(bins = 20, fill = "white", colour = "black")
+
+#find divers who do specific dives
+divingdata |> filter(DiveName == "105C") |> select(LastName,Judge1:Judge7)
+
+#which country had the most divers:
+divingdata |> group_by(Country) |> summarise(count = n()/9) |> arrange(desc(count))
+
+#count dives of each difficulty
+divingdata |> group_by(Difficulty) |> summarise(n_difficulty = n())
 ```
 
-STAT213
+STAT113/213
 ```{r}
-#compartive box plots comparing total points by age
+#comparative box plots comparing total points by age
 boxplot(TotalPoints~Age, data = divingdata)
 
 #linear model predicting points by difficulty
@@ -40,6 +54,18 @@ mean(divingdata$TotalPoints)
 mean(divingdata$Age)
 
 #histogram of total points
-hist(divingdata$TotalPoints
+hist(divingdata$TotalPoints)
+hist(divingdata$Points)
 ```
 
+**Ideas for Questions:**
+  - Test for difference in means: is one judge harsher then the others? 
+  - Compare divers doing the same dive and points: is one diver significantly better than the other?
+  - Do higher difficulty dives actually mean higher points? 
+  - Do older divers score more points?
+  - Do divers get better results by doing harder dives (difficult <= 2) in the beginning (DivNum <=3), middle (DivNum >3, DivNum <=6), or end (DivNum >6, DivNum <= 9)?
+  - Summary Statistics: What is the most common dive? What is the average age? What is the range of total points scored? What is the average score that Judge3 gave? Which country had the most divers? 
+  - Plots: Comparative box plots by age, Comparative box plots of points by diveNames,
+  - Finding p-value on histograms (divingdata$Points is veyr symmetrical)
+  - CI: A dive of difficulty 1.7 (has most dives(n = 75)) what can expect the points to be
+  - PI:
