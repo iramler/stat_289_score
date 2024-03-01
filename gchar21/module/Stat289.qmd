@@ -2,7 +2,7 @@
 title: League of Legends ADCarry
 author: George Charalambous
 date: December 12, 2023
-description: Using Logistic Regression to investigate the ADC relationship
+description: Using Chi-Squared Distribution to investigate the ADC-Support relationship
 categories:
   - list the relevant
   - statistical methods
