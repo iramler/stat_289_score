@@ -1,0 +1,28 @@
+---
+title: "Women's World Cup GS at Tremblant"
+date: March 5, 2024
+description: Examining data from two runs at a women's World Cup Alpine Skiing Giant Slalom Race at Tremblant
+editor: 
+  canonical: true
+categories:
+  - Paired Data
+  - Difference in Means
+---
+
+## Module
+
+
+### Introduction
+
+
+### Data
+
+
+
+### Data Source
+
+
+### Materials
+
+
+### Authors
