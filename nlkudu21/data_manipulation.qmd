@@ -65,7 +65,7 @@ miami2023_data
 miami2023_data <- miami2023_data |>
   unite(driverName, c(forename, surname), sep = " ") |>
   mutate(fastestLap = as.integer(fastestLap)) |>
-  select(driverId, driverName, lap, lapTime, lapPosition)
+  select(driverId, driverName, constructorId, constructorName, lap, lapTime, lapPosition)
 
 str(miami2023_data)
 dim(miami2023_data)
@@ -91,6 +91,41 @@ miami2023_data |>
 ```
 
 ```{r}
+# make a histogram of laptimes by lando norris
+miami2023_data |> 
+  filter(driverName == "Lando Norris") |> 
+  ggplot(aes(x = lapTime)) + 
+  geom_histogram(binwidth = 1, fill = "blue", color = "black") + 
+  labs(title = "Lando Norris Lap Times", x = "Lap Time (s)", y = "Frequency")
+```
+
+```{r}
+# compare average lap time for each constructor and plot it, 
+# change the y scale to be narrower (between 92 and 95 seconds) 
+
+miami2023_data |> 
+  group_by(constructorName) |> 
+  summarise(avgLapTime = mean(lapTime)) |> 
+  mutate(constructorName = fct_reorder(.f = constructorName, .x = avgLapTime)) |>
+  mutate(constructorName = fct_rev(constructorName)) |>
+  ggplot(aes(x = constructorName, y = avgLapTime)) + 
+  geom_col() + 
+  labs(title = "Average Lap Time by Constructor",
+       x = "Constructor", 
+       y = "Average Lap Time (s)") + 
+  coord_cartesian(ylim = c(92, 95)) + 
+  theme_minimal()
 
 ```
+
+```{r}
+
+
+```
+
+```{r}
+  
+```
+
+
 
