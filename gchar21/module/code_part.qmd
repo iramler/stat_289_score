@@ -122,10 +122,24 @@ rest_df <- rest_df |>
 ```
 
 ```{r}
-# Assuming 'my_dataset' is the name of your dataset
-write.csv(interest_df_4, "ADC_Support.csv", row.names = FALSE)
+popularity_df_ADC <- 
+  popularity_df_ADC |>
+  mutate(ADC = as.character(ADC), 
+         count = as.numeric(count))
 ```
 
+```{r}
+popularity_df_SUP <- 
+  popularity_df_SUP |>
+  mutate(SUP = as.character(SUP), 
+         count = as.numeric(count))
+```
+
+```{r}
+write.csv(popularity_df_ADC, "ADC.csv", row.names = FALSE)
+write.csv(popularity_df_SUP, "SUP.csv", row.names = FALSE)
+write.csv(rest_df, "Rest.csv", row.names = FALSE)
+```
 
 ```{r}
 ## save as a csv
@@ -139,6 +153,7 @@ table <- rest_df |>
 ```{r}
 chisq.test(table)
 ```
+
 
 
 

@@ -40,5 +40,4 @@ The logistic regression model aims to predict the probability of winning in gami
 
 ## References
 
-
 Ramler, I., Lee, C.-S., Schuckers, M. (2019). "Identifying Symbiotic Relationships between Champions in League of Legends.", Department of Mathematics, Computer Science, and Statistics, St. Lawrence University, Canton, NY 13617.
