@@ -1,0 +1,58 @@
+---
+title: "play"
+format: html
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+library(modelr)
+library(broom)
+ski_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/ski data/W10kTro_2257.csv")
+```
+
+Play around with the data
+
+Think of questions
+
+Find speed
+
+```{r}
+norwegiandf <- ski_df |> mutate(norwegian = if_else(NSA == "NOR", true = "yes", false = "no")) |> relocate(norwegian)
+
+norwegiandf |>  mutate(norwegian = if_else(NSA == "NOR", true = 1, false = 0))  |> group_by(norwegian) |> summarise(prop = mean(norwegian))
+
+lm(Rank4 ~ norwegian + Bib + Time1, data = norwegiandf)
+
+summary(ski_df$Time1)
+ggplot(data = norwegiandf, aes(x = norwegian, y = Rank4)) + geom_boxplot()
+```
+
+```{r}
+mod_time1 <- lm(Rank4 ~ Time1, data = ski_df)
+mod_time1 |> tidy()
+```
+
+```{r}
+mod_time_all <- lm(Rank4 ~ Time1 + Time2 + Time3, data = ski_df)
+mod_time_all |> tidy()
+```
+
+```{r}
+ski_speed_df <- ski_df |> mutate(speed1 = Time1/Dist1, speed2 = Time2/Dist2, speed3 = Time3/Dist3, speed4 = Time4/Dist4)
+ski_speed_df
+
+ski_df |> mutate(Diff1 = Diff1 * 60, Diff2 = Diff2 * 60, Diff3 = Diff3 * 60, Diff4 = Diff4 *60)
+```
+
+```{r}
+ggplot(data = ski_df, aes(x = Time1, y = Rank4)) + geom_point()
+```
+
+calculate the difference between the times at each distance interval
+
+```{r}
+ggplot(data = ski_df, aes(y = Rank4, x = NSA)) + geom_boxplot()
+```
+
+* maybe look into hwo correlation changes
