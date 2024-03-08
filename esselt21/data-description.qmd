@@ -22,8 +22,6 @@ There are two datasets here, atheletes and medals.
 
 The first athletes contains information on individual athletes. Each row in this dataset represents a different athlete that competed at the Beijing 2022 Olympic Winter Games. This dataset has 2897 rows and 14 columns.
 
-The second medals contains information on medal winners. Each row in this dataset represents a medal won in the Beijing 2022 Olympic Winter Games. This can mean Gold, Bronze, or Silver medals. This dataset has 694 rows and 12 columns.
-
 | Variable          | Description                      |
 |-------------------|----------------------------------|
 | name              | Athlete Name                     |
@@ -34,12 +32,16 @@ The second medals contains information on medal winners. Each row in this datase
 | birth_country     | Athlete Country of Birthday      |
 | country           | Athlete Country                  |
 | country_code      | Athlete Country Code             |
-| discipline        | Discipline.                      |
+| discipline        | Discipline                       |
 | discipline_code   | Discipline Code                  |
 | residence_place   | Athlete Residence Place          |
 | residence_country | Athlete Residence Country        |
 | height_m/ft       | Athlete Height (meters and feet) |
 | url               | Athlete Profile Link             |
+
+: [athletes.csv](data/athletes.csv)
+
+The second medals contains information on medal winners. Each row in this dataset represents a medal won in the Beijing 2022 Olympic Winter Games. This can mean Gold, Bronze, or Silver medals. This dataset has 694 rows and 12 columns.
 
 | Variable           | Description                       |
 |--------------------|-----------------------------------|
@@ -56,11 +58,7 @@ The second medals contains information on medal winners. Each row in this datase
 | discipline         | Discipline                        |
 | discipline_code    | Discipline Code                   |
 
-The data tables are available for individual download as csv files
-
-:   [athletes.csv](../data/athletes.csv)
-
-:   [medals.csv](../data/medals.csv)
+: [medals.csv](data/medals.csv)
 
 ## Questions
 

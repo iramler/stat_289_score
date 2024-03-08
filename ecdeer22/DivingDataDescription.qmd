@@ -15,11 +15,11 @@ editor:
 
 ## Motivation
 
-The FINA Junior World Diving Championships is a elite dive meet where top divers around the world under the age of 18 compete. Each diver completed 9 dives, all of which contributed to their overall score. Each dive is scored by 7 judges. Each judge gives a score indivdually on a scale of 1-10 at half-point increments based on executation of the dive. 10 represents perfect execution, while 0 represents failed execution. The two lowest and the two highest scores of the judges are voided, and the other three are added together. The sum of the three judges is then multiplied by the difficulty of the attempted dive. The product represent the points earned for that dive. The overall score is calulated by adding together the points earned on each dives.
+The FINA Junior World Diving Championships is a elite dive meet where top divers around the world under the age of 18 compete. Each diver completed 9 dives, all of which contributed to their overall score. Each dive is scored by 7 judges. Each judge gives a score individually on a scale of 1-10 at half-point increments based on execution of the dive. 10 represents perfect execution, while 0 represents failed execution. The two lowest and the two highest scores of the judges are voided, and the other three are added together. The sum of the three judges is then multiplied by the difficulty of the attempted dive. The product represent the points earned for that dive. The overall score is calculated by adding together the points earned on each dives.
 
 ## Data
 
-The data set contains 360 rows and 15 columns. Each row represents a completed dive from a diver in the competiton. Each diver completed 9 dives, so there is 9 rows per diver.
+The data set contains 360 rows and 15 columns. Each row represents a completed dive from a diver in the competition. Each diver completed 9 dives, so there is 9 rows per diver.
 
 | Variable    | Description                                                    |
 |-------------|----------------------------------------------------------------|
@@ -51,7 +51,7 @@ The data set contains 360 rows and 15 columns. Each row represents a completed d
 
 4.  Construct a 90% confidence interval for average total points scored in the meet.
 
-5.  Construct side-by-side boxplots the illustrate the total points scored in the meet by age of the diver.
+5.  Construct side-by-side box plots the illustrate the total points scored in the meet by age of the diver.
 
 6.  Give the 5 number summary for overall score of all the divers in the meet.
 

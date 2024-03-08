@@ -15,7 +15,22 @@ editor:
 
 ## Motivation
 
-The International Ski and Snowboard Federation (FIS), organizes and records a series of events such as the World Cup which exists for all disciplines of FIS such as Nordic Skiing. World Cup races occur every weekend between January and March, with events hosted in different countries. These events consist of multiple different races, held in different disciplines and distances. Nordic skiing is split up into two different techniques, classic and skate, all race weekends have a mixture of skate and classic technique races. The race in this dataset is a womens' 10k classic race set in Trondheim, Norway. In long distance pieces like 10ks there is often a lot of discussion about pacing. Racers' times are recorded at different distance intervals throughout the course. I think it is interesting to look at how well racers' times at different distances predict their rank at the end of the race. I think especially the first time is most interesting to see with regard to the final rank, to see if the same racers who have top times in the first distance have good ranks at the end of the race. 
+The International Ski and Snowboard Federation (FIS), organizes and
+records a series of events such as the World Cup which exists for all
+disciplines of FIS such as Nordic Skiing. World Cup races occur every
+weekend between January and March, with events hosted in different
+countries. These events consist of multiple different races, held in
+different disciplines and distances. Nordic skiing is split up into two
+different techniques, classic and skate, all race weekends have a
+mixture of skate and classic technique races. The race in this dataset
+is a womens' 10k classic race set in Trondheim, Norway. In long distance
+pieces like 10ks there is often a lot of discussion about pacing.
+Racers' times are recorded at different distance intervals throughout
+the course. I think it is interesting to look at how well racers' times
+at different distances predict their rank at the end of the race. I
+think especially the first time is most interesting to see with regard
+to the final rank, to see if the same racers who have top times in the
+first distance have good ranks at the end of the race.
 
 ## Data
 
@@ -23,7 +38,7 @@ Each row of the dataset represents a skier in the womens' 10k classic
 ski race in Trondheim.
 
 | Variable | Description                                                                                                                |
-|-------------------|-----------------------------------------------------|
+|----------|----------------------------------------------------------------------------------------------------------------------------|
 | Bib      | The bib number of the skier, which also represents the order they started in.                                              |
 | Name     | The name of the skier.                                                                                                     |
 | NSA      | The nation a skier is representing.                                                                                        |
@@ -45,18 +60,22 @@ ski race in Trondheim.
 | Dist4    | The distance of the fourth interval, measured in kilometers.                                                               |
 | Event    | The FIS code assigned to the event.                                                                                        |
 
-: [W10kTro_2257.csv](../data/W10kTro_2257.csv)
-
+: [W10kTro_2257.csv](W10kTro_2257.csv)
 
 ## Questions
 
-1.    Create a scatterplot of Time1 against Rank4. Does there seem to be a relationship? If so, what is it?
+1.  Create a scatterplot of Time1 against Rank4. Does there seem to be a
+    relationship? If so, what is it?
 
-2.    Find the correlation between Time1 and Rank4. Is there a strong correlation and if so, is it positive or negative?
+2.  Find the correlation between Time1 and Rank4. Is there a strong
+    correlation and if so, is it positive or negative?
 
-2.    Make a model of Rank4 predicted by Time1. Interpret the coefficient of Time1.
+3.  Make a model of Rank4 predicted by Time1. Interpret the coefficient
+    of Time1.
 
-3.    Make a boxplot of the NSA variable against Rank4. What is the distribution of each Nation? Do some have a bigger range than others?
+4.  Make a boxplot of the NSA variable against Rank4. What is the
+    distribution of each Nation? Do some have a bigger range than
+    others?
 
 ## References
 
