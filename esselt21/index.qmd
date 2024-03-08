@@ -1,0 +1,91 @@
+---
+title: "Beijing 2022 Olympics - Cleaning and Summarizing Data"
+date: March 8, 2024
+description: Demonstrating how to clean data with different packages and summarise the data using dplyr.
+editor: 
+  canonical: true
+categories:
+  - data cleaning
+  - summarization
+  - merging
+---
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction
+
+The Winter Olympics is an event hosted every 4 years last hosted in Beijing in 2022. In the 2022 Olympics, there were a total of 109 events across 15 [disciplines](https://en.wikipedia.org/wiki/2022_Winter_Olympics#:~:text=.%5B62%5D-,Sports,-%5Bedit%5D){target="_blank"}. It also has any more information on the Beijing 2022 Olympics you might be looking for. As the whole goal of the Olympics is to win as many medals as you can, everything is tracked. From the athlete, where they were born, if they won, their height, how many medals they won. This provides large data sets that are very interesting to look at.
+
+In this worksheet, we will look at some of these data sets and learn how to clean them into tidy formats and use these cleaned data to investigate questions such as which country won the most medals. Cleaning and manipulating data sets is a key component to your Data Science journey and opens many doors for what you can learn in the future.
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will be able to:
+
+1.  Understand how to deal with columns that have incorrect variable types.
+
+2.  Describe what is considered a tidy data set.
+
+3.  Manipulate variables into either new variables, or changed versions of themselves.
+
+4.  Summarize key points and provide interpretations for these points.
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Technology requirement: The activity handout provides examples of how to clean and summarize data. For this, the use of R Studio is required and we will be using a quarto document. However, the activity could be modified to ask students to produce that information from the raw dataset and/or extend the activity to investigate other variables available in the data.
+
+1.  Histograms: Familiarity with histograms as a graphical representation of the distribution of a continuous variable, such as Win Rates, is crucial. You should understand how to interpret histograms, including the concepts of bins, frequencies, and the shape, center, and spread of distributions.
+
+2.  Outliers: Knowledge of outliers, which are data points that deviate significantly from the overall pattern, is important.
+
+3.  Familiarity with basic statistical analysis techniques, such as measures of central tendency (mean, median) and measures of dispersion (standard deviation, range), will aid in interpreting and analyzing the histograms. These techniques can provide insights into the overall characteristics and variability of the Win Rates.
+
+4.  Knowledge of outlier detection methods (such as the 1.5 IQR Rule and/or z-scores) is fundamental to the activity.
+:::
+
+### Data
+
+A data frame for 162 champions of the following 7 variables. Each row represents a Champion that you can choose when playing League of Legends during patches 12.22 and 12.23. Note that the activity provided in this module does not use all of the variables provided. Instead they are provided for further analyses at the discretion of the user.
+
+Download data: [LOL_patch_12.22.csv](LOL_patch_12.22.csv)
+
+Download data: [LOL_patch_12.23.csv](LOL_patch_12.23.csv)
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable | Description                                                     |
+|---------------------|---------------------------------------------------|
+| Name     | name of the champion                                            |
+| Role     | role of the champion in a game                                  |
+| KDA      | Average kills, deaths and assists associated with each champion |
+| WRate    | win rates of each champion                                      |
+| PickRate | pick rates of each champion                                     |
+| RolePerc | percentage of time playing as a role                            |
+| BanPerc  | ban percentages associated with each champion                   |
+
+</details>
+
+#### Data Source
+
+Lol champion stats, 12.22 master, win rates. METAsrc. (n.d.). <https://www.metasrc.com/5v5/12.22/stats?ranks=master>
+
+Lol champion stats, 12.23 master, win rates. METAsrc. (n.d.-b). <https://www.metasrc.com/5v5/12.23/stats?ranks=master>
+
+### Materials
+
+[Class handout](LoL_Worksheet.docx)
+
+[Class handout - with solutions](LoL_Worksheet_Key.docx)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+In conclusion, the analysis of Win Rates histograms in League of Legends has provided valuable insights into champion balance and performance. One notable finding from this worksheet is the identification of Sion as a low outlier in the Win Rates for the 12.22 patch. However, in the subsequent 12.23 patch, Sion's Win Rate improved, and was no longer an outlier. Sion was given a Buff in [patch 12.23](https://www.leagueoflegends.com/en-gb/news/game-updates/patch-12-23-notes/){target="_blank"}, resulting in an enhanced performance and a more balanced Win Rate. However, patch 12.23 resulted in two new outliers with low win rates.
+
+The continued presence of outliers highlights the importance of continuous monitoring and adjustments by game developers to ensure fair and competitive gameplay.
+:::
+
+### Authors
+
+Created by George Charalambous (St. Lawrence University), [Ivan Ramler (St. Lawrence University)](mailto:iramler@stlawu.edu), A.J. Dykstra (St. Lawrence University)
