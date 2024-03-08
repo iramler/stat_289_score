@@ -14,6 +14,7 @@ results <- read.csv(here("nlkudu21/data/results.csv"))
 races <- read.csv(here("nlkudu21/data/races.csv"))
 lap_times <- read.csv(here("nlkudu21/data/lap_times.csv"))
 drivers <- read.csv(here("nlkudu21/data/drivers.csv"))
+constructors <- read_csv(here("nlkudu21/data/constructors.csv"))
 ```
 
 ```{r}
@@ -23,6 +24,13 @@ races |> filter(name == "Miami Grand Prix") |> filter(year == 2023)
 ```{r}
 # filter only lap times from 2023 Miami GP
 miami2023_lap_times <- lap_times |> filter(raceId == 1102)
+```
+
+```{r}
+results |> filter(raceId == 1102) 
+```
+```{r}
+drivers |> filter(driverId == 858)
 ```
 
 ```{r}
@@ -37,9 +45,11 @@ miami2023_lap_times
 # get wanted data
 miami2023_data <- miami2023_lap_times |> 
   left_join(results, by = c("raceId" = "raceId", "driverId" = "driverId")) |> 
-  select(driverId, forename, surname, lap, time.x, position.x, fastestLap, fastestLapTime) |>
+  left_join(constructors, by = c("constructorId" = "constructorId")) |>
+  select(driverId, forename, surname, constructorId, name, lap, time.x, position.x, fastestLap, fastestLapTime) |>
   rename(lapTime = time.x, 
-         lapPosition = position.x)
+         lapPosition = position.x,
+         constructorName = name)
 
 # convert <chr> times to <num>
 miami2023_data <- miami2023_data |>
@@ -55,7 +65,7 @@ miami2023_data
 miami2023_data <- miami2023_data |>
   unite(driverName, c(forename, surname), sep = " ") |>
   mutate(fastestLap = as.integer(fastestLap)) |>
-  select(driverId, driverName, lap, lapTime, lapPosition, fastestLap, fastestLapTime)
+  select(driverId, driverName, constructorId, constructorName, lap, lapTime, lapPosition)
 
 str(miami2023_data)
 dim(miami2023_data)
@@ -64,6 +74,58 @@ dim(miami2023_data)
 ```{r}
 here()
 write.csv(miami2023_data, here("nlkudu21/data/miami2023_data.csv"), row.names = FALSE)
+write.csv(miami2023_data, ("./data/miami2023_data.csv"), row.names = FALSE)
 ```
+
+```{r}
+# summary statistics for driver "Lando Norris" 
+miami2023_data |> filter(driverName == "Lando Norris") |> summary()
+```
+
+```{r}
+# find the fastest lap for each driver
+miami2023_data |> 
+  group_by(driverName) |> 
+  summarise(fastestLap = min(lapTime)) |> 
+  arrange(fastestLap)
+```
+
+```{r}
+# make a histogram of laptimes by lando norris
+miami2023_data |> 
+  filter(driverName == "Lando Norris") |> 
+  ggplot(aes(x = lapTime)) + 
+  geom_histogram(binwidth = 1, fill = "blue", color = "black") + 
+  labs(title = "Lando Norris Lap Times", x = "Lap Time (s)", y = "Frequency")
+```
+
+```{r}
+# compare average lap time for each constructor and plot it, 
+# change the y scale to be narrower (between 92 and 95 seconds) 
+
+miami2023_data |> 
+  group_by(constructorName) |> 
+  summarise(avgLapTime = mean(lapTime)) |> 
+  mutate(constructorName = fct_reorder(.f = constructorName, .x = avgLapTime)) |>
+  mutate(constructorName = fct_rev(constructorName)) |>
+  ggplot(aes(x = constructorName, y = avgLapTime)) + 
+  geom_col() + 
+  labs(title = "Average Lap Time by Constructor",
+       x = "Constructor", 
+       y = "Average Lap Time (s)") + 
+  coord_cartesian(ylim = c(92, 95)) + 
+  theme_minimal()
+
+```
+
+```{r}
+
+
+```
+
+```{r}
+  
+```
+
 
 
