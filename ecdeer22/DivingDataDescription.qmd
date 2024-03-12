@@ -4,10 +4,10 @@ author: Emma Deering
 date: February 29, 2024
 description: Premliminary diving results of womens 16-18 1m springboard from the 2022 FINA World Junior Championships. 
 categories:
-  - Difference in means hypothesis tests
-  - Comparative boxplots
-  - Confidence intervals
-  - Five number summary
+  - ANOVA for difference in means
+  - Pairwise Comparisons
+  - Fisher’s LSD
+  - Tukey’s HSD
 editor:
   markdown: 
     canonical: true
@@ -43,17 +43,13 @@ The data set contains 360 rows and 15 columns. Each row represents a completed d
 
 ## Questions
 
-1.  Does one judge, on average, give statistically lower or higher scores then the other judges? Include all details of the appropriate hypothesis test.
+1.  Is there significant difference in average total points among divers of different ages?
 
-2.  Do divers get better results, on average, by doing harder dives (Difficulty \<= 2) in the beginning (DivNum \<=3), middle (DivNum \>3, DivNum \<=6), or end (DivNum \>6, DivNum \<= 9) of their dive order? Include all details of the appropriate hypothesis test.
+2.  Conduct pairwise comparisons using 95% confidence intervals to compare the average total points between divers of each age.
 
-3.  Construct a 95% confidence interval for average points scored on a dive with 1.7 difficulty.
+3.  Conduct pairwise comparisons using Fisher's LSD to compare the average total points between divers of each age.
 
-4.  Construct a 90% confidence interval for average total points scored in the meet.
-
-5.  Construct side-by-side box plots the illustrate the total points scored in the meet by age of the diver.
-
-6.  Give the 5 number summary for overall score of all the divers in the meet.
+4.  Conduct pairwise comparisons using Tukey's HSD to compare the average total points between divers of each age.
 
 ## References
 
