@@ -21,7 +21,10 @@ ufc_data <- fight_data |>
          ) |>
   filter(Str_Acc != 0) |> # dump errors
   filter(Reach != "") |> # dump errors
-  select(-feet, -inches, -DOB, -Height) # remove unnecessary columns
+  select(-feet, -inches, -DOB, -Height) |> # remove unnecessary columns
+  rename(Height = height_inches, Birthyear = birthyear) |>
+  relocate(fighter_name, Height, Weight, Reach, Stance, Birthyear, SLpM, Str_Acc, 
+             SApM, Str_Def, TD_Avg, TD_Acc, TD_Def, Sub_Avg)
 
 # save file
-write.csv(clean_data, "UFC_data.csv")
+write.csv(ufc_data, "UFC_stats.csv")

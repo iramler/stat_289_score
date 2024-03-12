@@ -20,7 +20,7 @@ Since the UFC is fairly recent compared to other professional sports leagues, th
 
 ## Data
 
-The `fight_data` dataset contains 3596 rows and 14 columns. Each row represents a fighter and their career statistics. The columns are shown below.
+The `UFC_stats` dataset contains 1673 rows and 14 columns. Each row represents a fighter and their career statistics. The columns are shown below.
 
 | Variable     | Description                       |
 |--------------|-----------------------------------|
@@ -29,7 +29,7 @@ The `fight_data` dataset contains 3596 rows and 14 columns. Each row represents 
 | Weight       | Weight in lbs. of the fighter     |
 | Reach        | Wingspan in inches of the fighter |
 | Stance       | Fighter's orientation             |
-| DOB          | Fighter's birthdate               |
+| Birthyear    | Fighter's year of birth           |
 | SLpM         | Strikes landed per minute         |
 | Str_Acc      | Striking accuracy percentage      |
 | SApm         | Strikes attempted per minute      |
@@ -39,7 +39,7 @@ The `fight_data` dataset contains 3596 rows and 14 columns. Each row represents 
 | TD_Def       | Takedown defense percentage       |
 | Sub_Avg      | Submission average                |
 
-: [raw_fighter_details.csv](../data/raw_fighter_details.csv)
+: [UFC_stats.csv](../data/UFC_stats.csv)
 
 ## Questions
 
