@@ -1,0 +1,8 @@
+---
+title: "Ski to Sea"
+format: html
+editor: visual
+---
+
+Scraping data from Ski to Sea
+
