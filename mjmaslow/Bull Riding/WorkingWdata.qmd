@@ -1,0 +1,105 @@
+---
+title: "Work w/ The Data"
+author: "Matt Maslow"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(broom)
+```
+
+```{r}
+riders <- read_csv("Bull Riding/BullRiders.csv")
+bulls <- read_csv("Bull Riding/Bulls.csv")
+```
+
+# Questions from Module
+
+## 1. What are the most significant predictors of a bull rider's final points?
+
+```{r}
+riders %>%
+  select(-Rider) %>%
+  lm(Points ~ ., data = .) %>%
+  summary()
+```
+
+
+
+
+## 2 What is the stronger model for predicting PBR’s points?
+
+```{r}
+riders %>%
+lm(Points ~ `Points` + Events + Outs + Rides + prop.Ridden + `Highest RideScore` + `Round Wins` + `Event Wins` ,
+   data = .) %>%
+  summary()
+
+
+riders %>%
+lm(Points ~  Events + prop.Ridden + `Highest RideScore` + `Round Wins` + `Event Wins` ,
+   data = .) %>%
+  summary()
+```
+```{r}
+modFull <- lm(Points ~ Events + Outs + Rides + prop.Ridden + `Highest RideScore` + `Round Wins` + `Event Wins` , data = riders)
+modRed <- lm(Points ~  Events + prop.Ridden + `Highest RideScore` + `Round Wins` + `Event Wins` , data = riders)
+anova(modRed, modFull) %>% tidy()
+```
+
+
+
+
+*Given what every model was better from a above......
+## 3 Are there any outliers or a potential influential point? How would we handle these point(s)?
+
+```{r}
+library(modelr)
+grid <-riders %>% data_grid(
+  Events = seq_range(riders$Events, n = 5),
+  Outs = seq_range(riders$Outs, n = 5),
+  Rides = seq_range(riders$Rides, n = 5),
+  prop.Ridden = seq_range(riders$prop.Ridden, n = 5),
+  `Highest RideScore` = seq_range(riders$`Highest RideScore`, n = 5),
+  `Round Wins` = seq_range(riders$`Round Wins`, n = 5),
+  `Event Wins` = seq_range(riders$`Event Wins`, n = 5)
+  
+)
+aug_rider <- augment(modFull, newdata = grid, se_fit = TRUE, interval = "prediction")
+aug_rider
+```
+```{r}
+aug_rider %>%
+  ggplot(aes(x = age, y = .fitted)) +
+  geom_line(aes(color = as.factor(chol)), size=1.5) +
+  geom_rug(data = riders, sides = "t", alpha = 0.3,
+           aes(y = Points)) +
+  geom_rug(data = riders, sides = "b", alpha = 0.3,
+           aes(y = Points)) +
+  theme_minimal() +
+  labs(title = "Predicted Probability of Heart Disease by Age, Cholesterol, and Sex",
+       x = "Age",
+       y = "Predicted Probability of Heart Disease",
+       color = "Cholesterol Level")
+```
+
+
+
+# 4 If we want to create a new variable in the PBR dataset, how would we do that?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
