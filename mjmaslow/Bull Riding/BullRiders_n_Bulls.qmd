@@ -34,15 +34,15 @@ A data frame for 38 riders from the 2023 season of the Professional Bull Riding 
 <summary><b>Riders Data: Variable Descriptions</b></summary>
 
 | **Variable**        | **Description**                                           |
-|---------------------|-----------------------------------------------------------|
+|---------------------|--------------------------------------------------------------------------|
 | `Rider`             | Name of the pro bull rider                                |
 | `Points`            | Total points earned by the bull rider                     |
 | `Points Back`       | Difference in points between the rider and the leader     |
 | `Events`            | Number of events participated in by the rider             |
-| `Outs`              | Number of times the rider was scheduled to ride           |
+| `Outs`              | Number of times the rider went through gate (Rides + Buckoffs)           |
 | `Rides`             | Number of successful rides by the rider                   |
 | `Buckoffs`          | Number of unsuccessful rides by the rider                 |
-| `prop.Ridden`       | Percent of successfull rides                              |
+| `prop.Ridden`       | Percent of successful rides                               |
 | `Avg Ride Score`    | Average score for successful rides by the rider           |
 | `Highest RideScore` | Highest score achieved by the rider in a single ride      |
 | `Avg Buckoff Time`  | Average time spent on bulls that the rider failed to ride |
