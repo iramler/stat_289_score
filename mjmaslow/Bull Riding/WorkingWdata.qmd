@@ -20,7 +20,7 @@ bulls <- read_csv("Bull Riding/Bulls.csv")
 
 ```{r}
 riders %>%
-  select(-Rider) %>%
+  select(-Rider,-Buckoffs) %>%
   lm(Points ~ ., data = .) %>%
   summary()
 ```
@@ -28,25 +28,19 @@ riders %>%
 
 
 
-## 2 What is the stronger model for predicting PBR’s points?
+## 2 What can can we do to transform the data to improve the model?
 
 ```{r}
 riders %>%
-lm(Points ~ `Points` + Events + Outs + Rides + prop.Ridden + `Highest RideScore` + `Round Wins` + `Event Wins` ,
-   data = .) %>%
-  summary()
-
+lm(Points ~  `Avg Buckoff Time` + Rides + prop.Ridden, data = .) %>%
+  anova()
 
 riders %>%
-lm(Points ~  Events + prop.Ridden + `Highest RideScore` + `Round Wins` + `Event Wins` ,
-   data = .) %>%
-  summary()
+lm(Points ~  `Avg Buckoff Time` + Rides + `Avg Buckoff Time`:Rides  +prop.Ridden, data = .) %>%
+  anova()
 ```
-```{r}
-modFull <- lm(Points ~ Events + Outs + Rides + prop.Ridden + `Highest RideScore` + `Round Wins` + `Event Wins` , data = riders)
-modRed <- lm(Points ~  Events + prop.Ridden + `Highest RideScore` + `Round Wins` + `Event Wins` , data = riders)
-anova(modRed, modFull) %>% tidy()
-```
+
+
 
 
 

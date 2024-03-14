@@ -89,7 +89,7 @@ Download data: [Bulls.csv](Bulls.csv)
 
 `3.` Are there any outliers or a potential influential point? How would we handle these point(s)?
 
-`4.` If we want to create a new variable in the PBR dataset, how would we do that?
+`4.` If we want to improve a model with the current data, how can we fix it with a transformation?
 
 
 
