@@ -61,6 +61,6 @@ clean_data <- fight_data2 %>%
 write.csv(clean_data, "C:/users/bkara/OneDrive - St. Lawrence University/stat_289_score/bkaradenes/clean_data.csv", row.names = TRUE)
 ```
 
-
-
+Target = "_blank" for urls
+- update data descrip., comment abt cleaning
 
