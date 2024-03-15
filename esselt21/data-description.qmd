@@ -14,13 +14,13 @@ editor:
 
 ## Motivation
 
-The data comes from a kaggle page that contains a total of 10 different datasets. If we are interested in figuring out which country won the most gold medals, or if certain attributes have an impact on their chances to medal these data sets can show us that. This can be done through cleaning the data, wrangling with dyplr functions, and using join statements.
+The data comes from a kaggle page that contains a total of 10 different data sets. If we are interested in figuring out which country won the most gold medals, or if certain attributes have an impact on their chances to medal these data sets can show us that. To do this we have to access data from the multiple files and connect them together. This can be done through cleaning the data, wrangling with dyplr functions, and using join statements.
 
 ## Data
 
-There are two datasets here, atheletes and medals.
+There are two data sets here, athletes and medals.
 
-The first athletes contains information on individual athletes. Each row in this dataset represents a different athlete that competed at the Beijing 2022 Olympic Winter Games. This dataset has 2897 rows and 14 columns.
+The first athletes contains information on individual athletes. Each row in this data set represents a different athlete that competed at the Beijing 2022 Olympic Winter Games. This data set has 2897 rows and 14 columns.
 
 | Variable          | Description                      |
 |-------------------|----------------------------------|
@@ -41,7 +41,7 @@ The first athletes contains information on individual athletes. Each row in this
 
 : [athletes.csv](data/athletes.csv)
 
-The second medals contains information on medal winners. Each row in this dataset represents a medal won in the Beijing 2022 Olympic Winter Games. This can mean Gold, Bronze, or Silver medals. This dataset has 694 rows and 12 columns.
+The second medals contains information on medal winners. Each row in this data set represents a medal won in the Beijing 2022 Olympic Winter Games. This can mean Gold, Bronze, or Silver medals. This data set has 694 rows and 12 columns.
 
 | Variable           | Description                       |
 |--------------------|-----------------------------------|
@@ -62,12 +62,24 @@ The second medals contains information on medal winners. Each row in this datase
 
 ## Questions
 
-If possible, list some analyses or research questions that could be answered with this dataset, or the types of questions you'd ask students. This is mainly meant to give other instructors ideas for how they could use the data.
+Exercise 1. See if you can apply some of these techniques shown above to the athletes data set. Here is a list of what you should do.
+
+1a. Create a first and last name column and get rid of the short_name column.
+
+1b. Make gender a factored variable.
+
+1c. Get rid of country_code, discipline_code, residence_place, residence_country, and url.
+
+1d. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.
+
+Exercise 2. Using the example above and the filter function in the dplyr package, lets see which country has the most gold medal winners using medal_type.
+
+Exercise 3. Now try finding which country has the most silver medals using medal_code.
+
+Exercise 4. Finally, figure out what discipline the United States of America received the most medals in.
+
+Exercise 5. Think about how you would go about combining both the athletes and medals data sets and what the differences between different join functions would do.
 
 ## References
 
-Give references to the original source here, such as by pasting the package citation:
-
-Petro (2022). *Beijing 2022 Winter Olympi Games*. R package version 1.3.0, <https://www.kaggle.com/datasets/piterfm/beijing-2022-olympics?resource=download&select=medals.csv>.
-
-If the dataset has a particular license, mention the license here. For example, "Data available under the Creative Commons Attribution license."
+[Beijing 2022 Winter Olympic Games](https://www.kaggle.com/datasets/piterfm/beijing-2022-olympics?resource=download){target="_blank"}

@@ -77,11 +77,11 @@ See if you can apply some of these techniques shown above to the athletes data s
 
 1a. Create a first and last name column and get rid of the short_name column.
 
-2b. Make gender a factored variable.
+1b. Make gender a factored variable.
 
-3c. Get rid of country_code, discipline_code, residence_place, residence_country, and url.
+1c. Get rid of country_code, discipline_code, residence_place, residence_country, and url.
 
-4d. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.
+1d. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.
 
 ## 3. Data Summarization
 Next lets look at summarizing some statistics using our cleaned medals data set. First, lets see which country has the most medal winners in our data set using dplyr.

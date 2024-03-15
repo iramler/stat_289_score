@@ -2,7 +2,7 @@
 title: FINA World Junior Championships 2022 Diving Data
 author: Emma Deering
 date: February 29, 2024
-description: Premliminary diving results of womens 16-18 1m springboard from the 2022 FINA World Junior Championships. 
+description: Preliminary diving results of womens 16-18 1m springboard from the 2022 FINA World Junior Championships. 
 categories:
   - ANOVA for difference in means
   - Pairwise Comparisons
@@ -19,7 +19,7 @@ The FINA Junior World Diving Championships is a elite dive meet where top divers
 
 ## Data
 
-The data set contains 360 rows and 15 columns. Each row represents a completed dive from a diver in the competition. Each diver completed 9 dives, so there is 9 rows per diver.
+The data set contains 360 rows and 15 columns. Each row represents a completed dive from a diver in the preliminary results of women (aged 16-18) 1m springboard from the 2022 FINA World Junior Championships. Each diver completed 9 dives, so there is 9 rows per diver.
 
 | Variable    | Description                                                    |
 |-------------|----------------------------------------------------------------|
@@ -53,4 +53,4 @@ The data set contains 360 rows and 15 columns. Each row represents a completed d
 
 ## References
 
-World Aquatics. (2022). FINA World Junior Diving Championships 2022. https://www.worldaquatics.com/competitions/2951/fina-world-junior-diving-championships-2022/results?event=6d65f6db-1e71-4bca-b1c3-7facf12f500f&unit=preliminary
+[World Aquatics. (2022). FINA World Junior Diving Championships 2022.](https://www.worldaquatics.com/competitions/2951/fina-world-junior-diving-championships-2022/results?event=6d65f6db-1e71-4bca-b1c3-7facf12f500f&unit=preliminary){target="_blank"}
