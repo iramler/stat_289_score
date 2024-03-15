@@ -11,11 +11,123 @@ library(broom)
 ski_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/ski data/W10kTro_2257.csv")
 ```
 
+# Brainstorm
+
 Play around with the data
 
 Think of questions
 
-Find speed
+I would start with mean, median, std, min, max of pace or winning time. Variability of completion time for 10 km across venues and style could be interesting. Pace with age. Histogram of skier age.
+
+# Summary
+
+```{r}
+no_na <- ski_df |> filter(!is.na(Time4))
+summary(ski_df$Time4)
+sd(no_na$Time4)
+
+```
+
+# difference in means
+
+
+# anova test for overall fit for multiregression model
+
+```{r}
+modanova <- lm(Time4 ~ Time1 + Time2 + Time3, data = ski_df)
+modanova |> tidy()
+```
+
+based on p-values all three variables appear to be effective predictors of Time4
+
+```{r}
+anova(modanova)
+```
+
+effective model
+
+# R- squared  multiregression model vs. simple linear model
+```{r}
+modanovasimple <- lm(Time4 ~ Time1, data = ski_df)
+summary(modanovasimple)
+summary(modanova)
+```
+
+the r squared for the multiple regression model is higher so that is the better model
+
+# multicollinearity for multi regression model
+
+```{r}
+vif <- 1/(1- 0.9907)
+vif
+```
+bad vif
+
+# correlation for SLM
+
+```{r}
+cor.test(Time4 ~ Time1, data = ski_df)
+cor(Time4~Time1, data = ski_df)
+cor(ski_df)
+```
+
+
+
+# checking conditions for simple model
+
+# linearity and variance
+```{r}
+#resid vs. fits plot
+plot(modanovasimple$residuals~modanovasimple$fitted)
+abline(0,0)
+
+#scatter plot
+plot(Time4~Time1, data = ski_df)
+abline(modanovasimple)
+```
+
+good
+
+
+# residual normality
+```{r}
+#histogram of residuals
+hist(modanovasimple$residuals)
+# normal quantile plot
+qqnorm(modanovasimple$residuals)
+qqline(modanovasimple$residuals)
+```
+pretty good
+
+# checking conditions for multi regression model
+
+# linearity and variance
+```{r}
+#resid vs. fits plot
+plot(modanova$residuals~modanova$fitted)
+abline(0,0)
+```
+
+good
+
+
+# residual normality
+```{r}
+#histogram of residuals
+hist(modanova$residuals)
+# normal quantile plot
+qqnorm(modanova$residuals)
+qqline(modanova$residuals)
+```
+not great
+
+# interaction
+```{r}
+modint <- aov(Time4~Time1+Time2+Time3 + Time1:Time3,data=ski_df)
+summary(modint)
+```
+
+#Find speed
 
 ```{r}
 norwegiandf <- ski_df |> mutate(norwegian = if_else(NSA == "NOR", true = "yes", false = "no")) |> relocate(norwegian)
@@ -49,7 +161,7 @@ ski_df |> mutate(Diff1 = Diff1 * 60, Diff2 = Diff2 * 60, Diff3 = Diff3 * 60, Dif
 ggplot(data = ski_df, aes(x = Time1, y = Rank4)) + geom_point()
 ```
 
-calculate the difference between the times at each distance interval
+# calculate the difference between the times at each distance interval
 
 ```{r}
 ggplot(data = ski_df, aes(y = Rank4, x = NSA)) + geom_boxplot()
