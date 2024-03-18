@@ -33,24 +33,24 @@ A data frame for 38 riders from the 2023 season of the Professional Bull Riding 
 
 <summary><b>Riders Data: Variable Descriptions</b></summary>
 
-| **Variable**        | **Description**                                           |
-|---------------------|-----------------------------------------------------------|
-| `Rider`             | Name of the pro bull rider                                |
-| `Points`            | Total points earned by the bull rider                     |
-| `Points Back`       | Difference in points between the rider and the leader     |
-| `Events`            | Number of events participated in by the rider             |
-| `Outs`              | Number of times the rider was scheduled to ride           |
-| `Rides`             | Number of successful rides by the rider                   |
-| `Buckoffs`          | Number of unsuccessful rides by the rider                 |
-| `prop.Ridden`       | Percent of successfull rides                              |
-| `Avg Ride Score`    | Average score for successful rides by the rider           |
-| `Highest RideScore` | Highest score achieved by the rider in a single ride      |
-| `Avg Buckoff Time`  | Average time spent on bulls that the rider failed to ride |
-| `Round Wins`        | Number of round wins achieved by the rider                |
-| `Event Wins`        | Number of event wins achieved by the rider                |
-| `ReRides Taken`     | Number of re-rides taken by the rider                     |
-| `Earnings`          | Total earnings of the rider from bull riding events       |
-| `90Pt Rides`        | Number of rides scoring 90 points or above                |
+| **Variable**        | **Description**                                                          |
+|---------------------|--------------------------------------------------------------------------|
+| `Rider`             | Name of the pro bull rider                                               |
+| `Points`            | Total points earned by the bull rider                                    |
+| `Points Back`       | Difference in points between the rider and the leader                    |
+| `Events`            | Number of events participated in by the rider                            |
+| `Outs`              | Number of times the rider went through gate (Rides + Buckoffs)           |
+| `Rides`             | Number of successful rides by the rider                                  |
+| `Buckoffs`          | Number of unsuccessful rides by the rider                                |
+| `prop.Ridden`       | Percent of successful rides                                              |
+| `Avg Ride Score`    | Average score for successful rides by the rider                          |
+| `Highest RideScore` | Highest score achieved by the rider in a single ride                     |
+| `Avg Buckoff Time`  | Average time spent on bulls that the rider failed to ride                |
+| `Round Wins`        | Number of round wins achieved by the rider                               |
+| `Event Wins`        | Number of event wins achieved by the rider                               |
+| `ReRides Taken`     | Number of re-rides taken by the rider                                    |
+| `Earnings`          | Total earnings of the rider from bull riding events                      |
+| `90Pt Rides`        | Number of rides scoring 90 points or above                               |
 
 
 </details>
@@ -89,7 +89,7 @@ Download data: [Bulls.csv](Bulls.csv)
 
 `3.` Are there any outliers or a potential influential point? How would we handle these point(s)?
 
-`4.` If we want to create a new variable in the PBR dataset, how would we do that?
+`4.` If we want to improve a model with the current data, how can we fix it with a transformation?
 
 
 
