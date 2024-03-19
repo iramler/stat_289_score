@@ -119,7 +119,38 @@ miami2023_data |>
 ```
 
 ```{r}
+# histogram of average lap time by driver
+miami2023_data |> 
+  group_by(driverName) |> 
+  summarise(avgLapTime = mean(lapTime)) |> 
+  ggplot(aes(x = avgLapTime)) + 
+  geom_histogram(binwidth = 1, fill = "blue", color = "black") + 
+  labs(title = "Average Lap Time by Driver", x = "Average Lap Time (s)", y = "Frequency")
+```
 
+```{r}
+max_lap_times <- miami2023_data |> filter(driverName == "Max Verstappen") |> pull(lapTime)
+lando_lap_times <- miami2023_data |> filter(driverName == "Lando Norris") |> pull(lapTime)
+
+# two sample t test between max vestappen lap times and lando norris lap times
+t.test(max_lap_times, lando_lap_times, alternative = "greater")
+```
+
+```{r}
+library(ggbreak) 
+
+# side by side box plots all drivers
+miami2023_data |> mutate(driverName = as.factor(driverName)) |> group_by(driverName) |>
+                        mutate(driverNameOrd = fct_reorder(.f = driverName, .x = lapTime, .fun = max)) |>
+  ggplot(aes(x = driverNameOrd, y = lapTime)) + 
+  geom_boxplot() + 
+  scale_y_break(c(112, 130)) +
+  coord_flip() +
+  labs(title = "Lap Times by Driver", x = "Driver", y = "Lap Time (s)")
+```
+
+```{r}
+miami2023_data |> filter(driverName == "Logan Sargeant") 
 
 ```
 

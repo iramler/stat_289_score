@@ -14,20 +14,20 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-Formula 1 (F1) Racing is the highest class of single-seater auto racing sanctioned by the Fédération Internationale de l'Automobile (FIA). Each year, an F1 season features a series of races, known as Grand Prix, which are held in a variety of countries and circuit types. Each of these circuits have their own characteristic's that make the race unique, ranging from overall track layout and location, to specific corners and race-day weather conditions. Each season, teams and drivers compete for the World Constructors' Championship and the World Drivers' Championship, respectively. For the full history and more information about the sport, visit F1's Wikipedia page [here](https://en.wikipedia.org/wiki/Formula_One){target="_blank"} or their website [here](https://www.formula1.com/){target="_blank}.
+Formula 1 (F1) Racing is the highest class of single-seater auto racing sanctioned by the Fédération Internationale de l'Automobile (FIA). Each year, an F1 season features a series of races, known as Grand Prix, which are held in a variety of countries and circuit types. Each of these circuits have their own characteristic's that make the race unique, ranging from overall track layout and location, to specific corners and race-day weather conditions. Each season, teams and drivers compete for the World Constructors' Championship and the World Drivers' Championship, respectively. For the full history and more information about the sport, visit F1's Wikipedia page [here](https://en.wikipedia.org/wiki/Formula_One){target="_blank"} or their website [here](https://www.formula1.com/){target="\"_blank"}.
 
-At the time of racing, the [2023 Miami Grand Prix](https://en.wikipedia.org/wiki/2023_Miami_Grand_Prix){target="_blank} was only the 11th time in F1's history where all cars that started the race crossed the finish line. This meant that there were no crashes, mechanical failures, or race-ending driver mistakes. In addition, there were also no yellow or red flags issued to indicate an incident on or off the track ahead. In addition, there were no safety cars deployed that could slow or bring the field together.
+At the time of racing, the [2023 Miami Grand Prix](https://en.wikipedia.org/wiki/2023_Miami_Grand_Prix){target="\"_blank"} was only the 11th time in F1's history where all cars that started the race crossed the finish line. This meant that there were no crashes, mechanical failures, or race-ending driver mistakes. In addition, there were also no yellow or red flags issued to indicate an incident on or off the track ahead. In addition, there were no safety cars deployed that could slow or bring the field together.
 
 In this worksheet, we will analyze and describe histograms of Win Rates for different champions in LoL. The Win Rate, a key metric in the game, represents the percentage of games won by a champion out of the total games played. Understanding the distribution of Win Rates and identifying potential outliers can provide valuable insights into champion balance and performance, informing strategic decision-making in LoL gameplay.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
 
-1.  Understand the concept of histograms and their relevance in statistical analysis. 
+1.  Understand the concept of histograms and their relevance in statistical analysis.
 
 2.  Analyze and describe histograms to gain insights into the distribution of Win Rates in League of Legends. In particular, being able to describe the center, shape, and spread of a distribution based on the displayed graph.
 
-3.  Identify potential outliers in a numerical variable using numerical methods such as the "1.5 IQR Rule" or z-scores. 
+3.  Identify potential outliers in a numerical variable using numerical methods such as the "1.5 IQR Rule" or z-scores.
 
 4.  Interpret the implications of outliers in terms of champion balance and performance.
 :::
@@ -37,19 +37,18 @@ Technology requirement: The activity handout provides histograms and summary sta
 
 1.  Histograms: Familiarity with histograms as a graphical representation of the distribution of a continuous variable, such as Win Rates, is crucial. You should understand how to interpret histograms, including the concepts of bins, frequencies, and the shape, center, and spread of distributions.
 
-2.  Outliers: Knowledge of outliers, which are data points that deviate significantly from the overall pattern, is important. 
+2.  Outliers: Knowledge of outliers, which are data points that deviate significantly from the overall pattern, is important.
 
 3.  Familiarity with basic statistical analysis techniques, such as measures of central tendency (mean, median) and measures of dispersion (standard deviation, range), will aid in interpreting and analyzing the histograms. These techniques can provide insights into the overall characteristics and variability of the Win Rates.
 
-4. Knowledge of outlier detection methods (such as the 1.5 IQR Rule and/or z-scores) is fundamental to the activity.
+4.  Knowledge of outlier detection methods (such as the 1.5 IQR Rule and/or z-scores) is fundamental to the activity.
 :::
 
 ### Data
 
 The data set contains 1138 rows and 7 columns. Each row represents a single lap by a driver who competed in the 2023 F1 Miami Grand Prix. It is important to note that Oscar Piastri and Logan Sargeant were each lapped once, meaning that they each have 56 rows of lap data, rather than the 57 of the other 18 drivers.
 
-
-Download data: [miami2023_data.csv](../data/miami2023_data.csv)
+Download data used: [miami2023_data.csv](../data/miami2023_data.csv)
 
 <details>
 
@@ -64,7 +63,6 @@ Download data: [miami2023_data.csv](../data/miami2023_data.csv)
 | lap             | The lap number                                   |
 | lapTime         | The time taken to complete the lap, in seconds   |
 | lapPosition     | The position of the driver at the end of the lap |
-
 
 </details>
 
@@ -81,4 +79,3 @@ The continued presence of outliers highlights the importance of continuous monit
 :::
 
 ### Authors
-
