@@ -138,6 +138,6 @@ Make the data frame into a csv file so that it will be saved permanently.
 
 ```{r}
 # user specifies the name and path to the file
-write.csv(y, "awsmit22/ski data/W10kTro_2257.csv", row.names = FALSE) 
+write.csv(y, "W10kTro_2257.csv", row.names = FALSE) 
 ```
 
