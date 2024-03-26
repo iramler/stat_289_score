@@ -1,5 +1,5 @@
 ---
-title: "test-module"
+title: "Class Handout"
 author: "Eric Seltzer"
 format: html
 ---
@@ -95,11 +95,35 @@ medalsTidy |>
 ### Exercise 2
 Using the example above and the filter function in the dplyr package, lets see which country has the most gold medal winners using medal_type.
 
+```{r}
+medalsTidy |>
+  filter(medal_type == 'Gold') |>
+  group_by(country) |>
+  summarise(gold_medal_count = n()) |>
+  arrange(desc(gold_medal_count))
+```
+
 ### Exercise 3
 Now try finding which country has the most silver medals using medal_code.
 
+```{r}
+medalsTidy |>
+  filter(medal_code == 2) |>
+  group_by(country) |>
+  summarise(silver_medal_count = n()) |>
+  arrange(desc(silver_medal_count))
+```
+
 ### Exercise 4
 Finally, figure out what discipline the United States of America received the most medals in.
+
+```{r}
+medalsTidy |>
+  filter(country == "United States of America") |>
+  group_by(discipline) |>
+  summarise(medal_count = n()) |>
+  arrange(desc(medal_count))
+```
 
 ## 4. Joining
 ### Exercise 5

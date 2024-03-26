@@ -35,57 +35,76 @@ By the end of this activity, you will be able to:
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 Technology requirement: The activity handout provides examples of how to clean and summarize data. For this, the use of R Studio is required and we will be using a quarto document. However, the activity could be modified to ask students to produce that information from the raw dataset and/or extend the activity to investigate other variables available in the data.
 
-1.  Histograms: Familiarity with histograms as a graphical representation of the distribution of a continuous variable, such as Win Rates, is crucial. You should understand how to interpret histograms, including the concepts of bins, frequencies, and the shape, center, and spread of distributions.
+1.  RStudio Packages: Familiarity with packages within RStudio. The most used one being dplyr, as well as some other packages that need to be used in order to manipulate variables. You should understand how to use functions within dplyr at a basic level
 
-2.  Outliers: Knowledge of outliers, which are data points that deviate significantly from the overall pattern, is important.
+2.  Tidy Data: You should understand what it means for a data set to be tidy, there is a general definition of requirements for what this means.
 
-3.  Familiarity with basic statistical analysis techniques, such as measures of central tendency (mean, median) and measures of dispersion (standard deviation, range), will aid in interpreting and analyzing the histograms. These techniques can provide insights into the overall characteristics and variability of the Win Rates.
-
-4.  Knowledge of outlier detection methods (such as the 1.5 IQR Rule and/or z-scores) is fundamental to the activity.
+3.  Knowledge of joining and summarizing data, this can be done using dplyr functions. The outcomes of what these different functions do should be understood.
 :::
 
 ### Data
 
-A data frame for 162 champions of the following 7 variables. Each row represents a Champion that you can choose when playing League of Legends during patches 12.22 and 12.23. Note that the activity provided in this module does not use all of the variables provided. Instead they are provided for further analyses at the discretion of the user.
+There are two data sets here, athletes and medals.The first athletes contains information on individual athletes. Each row in this data set represents a different athlete that competed at the Beijing 2022 Olympic Winter Games. This data set has 2897 rows and 14 columns.
 
-Download data: [LOL_patch_12.22.csv](LOL_patch_12.22.csv)
+Download non tidy data: [athletes.csv](data/athletes.csv)
 
-Download data: [LOL_patch_12.23.csv](LOL_patch_12.23.csv)
+**Athletes**
 
-<details>
+| Variable          | Description                      |
+|-------------------|----------------------------------|
+| name              | Athlete Name                     |
+| short_name        | Athlete Name(short)              |
+| gender            | Athlete Gender                   |
+| birth_date        | Athlete Date of Birthday         |
+| birth_place       | Athlete Place of Birthday        |
+| birth_country     | Athlete Country of Birthday      |
+| country           | Athlete Country                  |
+| country_code      | Athlete Country Code             |
+| discipline        | Discipline                       |
+| discipline_code   | Discipline Code                  |
+| residence_place   | Athlete Residence Place          |
+| residence_country | Athlete Residence Country        |
+| height_m/ft       | Athlete Height (meters and feet) |
+| url               | Athlete Profile Link             |
 
-<summary><b>Variable Descriptions</b></summary>
+The second medals contains information on medal winners. Each row in this data set represents a medal won in the Beijing 2022 Olympic Winter Games. This can mean Gold, Bronze, or Silver medals. This data set has 694 rows and 12 columns.
 
-| Variable | Description                                                     |
-|---------------------|---------------------------------------------------|
-| Name     | name of the champion                                            |
-| Role     | role of the champion in a game                                  |
-| KDA      | Average kills, deaths and assists associated with each champion |
-| WRate    | win rates of each champion                                      |
-| PickRate | pick rates of each champion                                     |
-| RolePerc | percentage of time playing as a role                            |
-| BanPerc  | ban percentages associated with each champion                   |
+Download non tidy data: [medals.csv](data/medals.csv)
 
-</details>
+Download tidy data: [medalsTidy.csv](data/medalsTidy.csv)
+
+**Medals**
+
+| Variable           | Description                       |
+|--------------------|-----------------------------------|
+| medal_type         | Medal Type (Gold, Bronze, Silver) |
+| medal_code         | Medal Number (1, 2, 3)            |
+| medal_date         | Date Medal Won                    |
+| athlete_short_name | Athlete Name (Short)              |
+| athlete_name       | Athlete Name                      |
+| athlete_sex        | Athlete Gender                    |
+| athlete_link       | Athlete Profile Link              |
+| event              | Event Competed In                 |
+| country            | Country                           |
+| country_code       | Country Code                      |
+| discipline         | Discipline                        |
+| discipline_code    | Discipline Code                   |
 
 #### Data Source
 
-Lol champion stats, 12.22 master, win rates. METAsrc. (n.d.). <https://www.metasrc.com/5v5/12.22/stats?ranks=master>
-
-Lol champion stats, 12.23 master, win rates. METAsrc. (n.d.-b). <https://www.metasrc.com/5v5/12.23/stats?ranks=master>
+[Beijing 2022 Winter Olympic Games](https://www.kaggle.com/datasets/piterfm/beijing-2022-olympics?resource=download){target="_blank"}
 
 ### Materials
 
-[Class handout](LoL_Worksheet.docx)
+[Class Handout](Class-Handout.qmd)
 
-[Class handout - with solutions](LoL_Worksheet_Key.docx)
+[Class Handout - Solutions](Class-Handout-Solutions.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-In conclusion, the analysis of Win Rates histograms in League of Legends has provided valuable insights into champion balance and performance. One notable finding from this worksheet is the identification of Sion as a low outlier in the Win Rates for the 12.22 patch. However, in the subsequent 12.23 patch, Sion's Win Rate improved, and was no longer an outlier. Sion was given a Buff in [patch 12.23](https://www.leagueoflegends.com/en-gb/news/game-updates/patch-12-23-notes/){target="_blank"}, resulting in an enhanced performance and a more balanced Win Rate. However, patch 12.23 resulted in two new outliers with low win rates.
-
-The continued presence of outliers highlights the importance of continuous monitoring and adjustments by game developers to ensure fair and competitive gameplay.
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+:::
 :::
 
 ### Authors
 
-Created by George Charalambous (St. Lawrence University), [Ivan Ramler (St. Lawrence University)](mailto:iramler@stlawu.edu), A.J. Dykstra (St. Lawrence University)
+Created by Eric Seltzer (St. Lawrence University)
