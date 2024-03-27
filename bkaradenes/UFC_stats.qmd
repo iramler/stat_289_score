@@ -20,26 +20,26 @@ Since the UFC is fairly recent compared to other professional sports leagues, th
 
 ## Data
 
-The `fight_data` dataset contains 3596 rows and 14 columns. Each row represents a fighter and their career statistics. The columns are shown below.
+The `clean_data` dataset contains 3596 rows and 14 columns. Each row represents a fighter and their career statistics. The columns are shown below.
 
-| Variable     | Description                       |
-|--------------|-----------------------------------|
-| fighter_name | First and last name of fighter    |
-| Height       | Fighter's height in inches        |
-| Weight       | Weight in lbs. of the fighter     |
-| Reach        | Wingspan in inches of the fighter |
-| Stance       | Fighter's orientation             |
-| DOB          | Fighter's birthdate               |
-| SLpM         | Strikes landed per minute         |
-| Str_Acc      | Striking accuracy percentage      |
-| SApm         | Strikes attempted per minute      |
-| Str_Def      | Striking defense percentage       |
-| TD_Avg       | Takedown average per fight        |
-| TD_Acc       | Takedown accuracy percentage      |
-| TD_Def       | Takedown defence percentage       |
-| Sub_Avg      | Submission average                |
+| Variable      | Description                       |
+|---------------|-----------------------------------|
+| fighter_name  | First and last name of fighter    |
+| height_inches | Fighter's height in inches        |
+| Weight        | Weight in lbs. of the fighter     |
+| Reach         | Wingspan in inches of the fighter |
+| Stance        | Fighter's orientation             |
+| birthyear     | Fighter's birth year              |
+| SLpM          | Strikes landed per minute         |
+| Str_Acc       | Striking accuracy percentage      |
+| SApm          | Strikes attempted per minute      |
+| Str_Def       | Striking defense percentage       |
+| TD_Avg        | Takedown average per fight        |
+| TD_Acc        | Takedown accuracy percentage      |
+| TD_Def        | Takedown defence percentage       |
+| Sub_Avg       | Submission average                |
 
-: [raw_fighter_details.csv](../data/raw_fighter_details.csv)
+: [clean_data.csv](../data/clean_data.csv)
 
 ## Questions
 
