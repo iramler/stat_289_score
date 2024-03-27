@@ -30,7 +30,7 @@ riders %>%
 
 ```{r}
 riders %>%
-  select(-ri) %>%
+  select(-Rider) %>%
   lm(Points ~ ., data = .) %>%
   summary()
 ```
@@ -69,9 +69,8 @@ lm(Points ~  `Avg Buckoff Time` + Rides + prop.Ridden, data = .) %>%
 
 print("Transformation model (Below)")
 
-
 riders %>%
-lm(Points ~  `Avg Buckoff Time` + Rides + prop.Ridden, data = .) %>%
+lm(Points ~  poly(`Avg Buckoff Time`, 2) + Rides + I(prop.Ridden^2), data = .) %>%
   summary()
 ```
 
