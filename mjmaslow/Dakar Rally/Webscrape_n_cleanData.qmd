@@ -8,12 +8,26 @@ format: html
 ```{r}
 library(rvest)
 library(tidyverse)
+library(httr)
 ```
 
 
+# Webscrape the Data
 
 ```{r}
+# webscraping for the Bull Riders data (2023 Touring Pro Division)
 urlBikes <- "https://www.dakar.com/en/rankings"
+bike <- url1 %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table() %>%
+  .[[1]]
+rider_data %>% head()
+```
+
+
+```{r}
+
 ```
 
 
