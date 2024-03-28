@@ -1,0 +1,50 @@
+---
+title: "CodeAnalysis_BullsData"
+author: "Matthew Maslow"
+format: html
+---
+
+
+
+```{r}
+library(tidyverse)
+library(broom)
+```
+
+
+```{r}
+bulls <- read_csv("Bull Riding/Bulls.csv")
+```
+
+# 1 Variable selection techniques
+
+```{r}
+bulls %>%
+  select(-Bull) %>%
+  cor() %>%
+  round(2)
+```
+
+```{r}
+bulls <- bulls %>%
+  mutate(lessThree_Buckoff = ifelse(`Avg Buckoff Time` < 3.00, 1, 0),
+         betterThanAverage = ifelse(`Avg BullScore` > mean(`Avg BullScore`), 1, 0) )
+```
+
+
+```{r}
+bulls %>%
+glm(`betterThanAverage` ~ `World Champ Avg Score` + `Avg Buckoff Time` + `Highest BullScore` + `45Pt Rides`, data = .) %>%
+  summary()
+```
+
+```{r}
+plot(glm(`betterThanAverage` ~ `World Champ Avg Score` + `Avg Buckoff Time` + `Highest BullScore` + `45Pt Rides`, data = bulls))
+```
+
+
+
+
+
+
+
