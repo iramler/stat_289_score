@@ -27,23 +27,51 @@ bulls %>%
 
 ```{r}
 bulls <- bulls %>%
-  mutate(lessThree_Buckoff = ifelse(`Avg Buckoff Time` < 3.00, 1, 0),
-         betterThanAverage = ifelse(`Avg BullScore` > mean(`Avg BullScore`), 1, 0) )
+  mutate(lessThree_Buckoff = ifelse(Avg_Buckoff_Time < 3.00, 1, 0),
+         betterThanAverage = ifelse(Avg_BullScore > mean(Avg_BullScore), 1, 0) )
 ```
 
 
 ```{r}
 bulls %>%
-glm(`betterThanAverage` ~ `World Champ Avg Score` + `Avg Buckoff Time` + `Highest BullScore` + `45Pt Rides`, data = .) %>%
+glm(betterThanAverage ~ World_Champ_Avg_Score + Avg_Buckoff_Time + Highest_BullScore + fortyFivePt_Rides, data = .) %>%
   summary()
 ```
 
 ```{r}
-plot(glm(`betterThanAverage` ~ `World Champ Avg Score` + `Avg Buckoff Time` + `Highest BullScore` + `45Pt Rides`, data = bulls))
+mod <- glm(betterThanAverage ~ World_Champ_Avg_Score + Avg_Buckoff_Time + Highest_BullScore + fortyFivePt_Rides, data = bulls)
+plot(mod, pch = 16)
 ```
 
 
 
+# 2 Population hypothesis testing
+
+```{r}
+anova(mod, test = "Chisq")
+```
+
+
+```{r}
+confint(mod)
+```
+
+
+
+```{r}
+mod <- glm(`betterThanAverage` ~ World_Champ_Avg_Score + Avg_Buckoff_Time + Highest_BullScore + fortyFivePt_Rides, data = bulls)
+newdata <- data.frame(World_Champ_Avg_Score = 45.5, 
+                      Avg_Buckoff_Time = 3.73, 
+                      Highest_BullScore = 45.5, 
+                      fortyFivePt_Rides = 1)
+```
+```{r}
+predict.glm(mod, interval = "prediction", newdata = newdata)
+```
+
+```{r}
+ exp(1.001762 )/(1+exp(1.001762))
+```
 
 
 
