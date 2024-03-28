@@ -12,6 +12,9 @@ library(tidyverse)
 
 
 
+```{r}
+urlBikes <- "https://www.dakar.com/en/rankings"
+```
 
 
 
