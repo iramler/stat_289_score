@@ -2,10 +2,11 @@
 title: "2023 Miami Grand Prix Lap Data"
 author: "Norah Kuduk"
 date: March 7, 2024
-description: Use Minitab or other statistical software to gather summary statistics about the 2023 F1 Miami GP
+description: Use Minitab or other statistical software to gather summary statistics about the 2023 F1 Miami GP a
 categories:
   - summary statistics
-  - hypothesis testing
+  - histogram analysis
+  - data interpretation
 editor:
   markdown: 
     canonical: true
@@ -35,13 +36,11 @@ The data set contains 1138 rows and 7 columns. Each row represents a single lap 
 
 ## Questions
 
-1.  Understand the basic performance metrics for each driver across a race.
+1.  Investigate the distribution of lap times for a particular constructor or driver.
 
 2.  Determine if there's a significant difference in the average lap times between two drivers or constructor.
 
-3.  Investigate the distribution of lap times for a particular constructor or driver.
-
-4.  Find the fastest lap for each driver.
+3.  Detect outliers for a specific driver or constructor over the course of the race.
 
 ## References
 

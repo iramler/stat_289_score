@@ -186,13 +186,21 @@ miami2023_data |> select(lapTime) |> summary()
 
 ```{r}
 # make a histogram of laptimes by lando norris
-miami2023_data |>
+miami2023_data |> filter(driverName == "Max Verstappen") |>
   ggplot(aes(x = lapTime)) + 
-  geom_histogram(binwidth = .5, fill = "lightskyblue", color = "black") + 
-  scale_x_break(c(112, 135)) +
-  labs(title = "Lap Times", x = "Lap Time (s)", y = "Frequency")
+  geom_histogram(binwidth = .5, fill = "cornflowerblue", color = "black") + 
+  theme_minimal()
 ```
 
+```{r}
+# make a histogram of laptimes by lando norris
+miami2023_data |> filter(driverName == "Max Verstappen") |> 
+  filter(lapTime > 89.305) |>
+  filter(lapTime < 94.305) |>
+  ggplot(aes(x = lapTime)) + 
+  geom_histogram(binwidth = .5, fill = "cornflowerblue", color = "black") + 
+  theme_minimal()
+```
 
 ```{r}
 races |> filter(name == "Australian Grand Prix") |> filter(year == 2023) # 1100
@@ -202,5 +210,42 @@ races |> filter(name == "Australian Grand Prix") |> filter(year == 2023) # 1100
 aus_data <- left_join(results, races, by = c("raceId" = "raceId")) |> filter(raceId == 1100) 
 ```
 
+```{r}
+miami2023_data |> filter(driverName == "Max Verstappen") |> select(lapTime) |> summary()
+```
 
+```{r}
+miami2023_data |> filter(driverName == "Max Verstappen") |> select(lapTime) |> filter(lapTime > 93)
+```
+
+```{r}
+miami2023_data |> filter(driverName == "Max Verstappen") |> select(lapTime) |> filter(lapTime > 89.305) |>
+  filter(lapTime < 94.305) |> summary()
+
+```
+
+```{r}
+# make a histogram of laptimes by ferrari
+miami2023_data |> filter(constructorName == "Ferrari") |>
+  ggplot(aes(x = lapTime)) + 
+  geom_histogram(binwidth = 0.5, fill = "firebrick1", color = "black") + 
+  theme_minimal()
+```
+
+```{r}
+miami2023_data |> filter(constructorName == "Ferrari") |> select(lapTime) |> summary()
+```
+
+```{r}
+miami2023_data |> filter(constructorName == "Ferrari") |> select(lapTime)
+```
+
+
+```{r}
+# make a histogram of laptimes by ferrari
+miami2023_data |>
+  ggplot(aes(x = lapTime)) + 
+  geom_histogram(binwidth = 0.5, fill = "firebrick1", color = "black") + 
+  theme_minimal()
+```
 
