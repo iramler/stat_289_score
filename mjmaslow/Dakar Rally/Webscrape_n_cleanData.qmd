@@ -15,20 +15,42 @@ library(httr)
 # Webscrape the Data
 
 ```{r}
-# webscraping for the Bull Riders data (2023 Touring Pro Division)
-urlBikes <- "https://www.dakar.com/en/rankings"
-bike <- url1 %>%
-  read_html() %>%
-  html_nodes("table") %>%
-  html_table() %>%
-  .[[1]]
-rider_data %>% head()
+# Define the base URL
+base_url <- "https://www.dakar.com/en/rankings/stage-"
+
+# Define the number of stages you want to scrape
+num_stages <- 12
+
+# Initialize an empty list to store data frames for each stage
+all_bikes_data <- list()
+
+# Loop through each stage and scrape data
+for (i in 0:num_stages) {
+  # Construct the URL for the current stage
+  url <- paste0(base_url, i, "/bike")
+  
+  # Scrape the data for the current stage
+  stage_bikes_data <- url %>%
+    read_html() %>%
+    html_nodes("table") %>%
+    html_table() %>%
+    .[[1]]
+  
+  # Add a new column for the stage number
+  stage_bikes_data$Stage <- i
+  
+  # Append the scraped data to the list
+  all_bikes_data[[i + 1]] <- stage_bikes_data
+}
+
+# Combine all data frames into a single data frame
+combined_bikes_data <- do.call(rbind, all_bikes_data)
+
+# Print the first few rows of the combined data frame
+head(combined_bikes_data)
 ```
 
 
-```{r}
-
-```
 
 
 
