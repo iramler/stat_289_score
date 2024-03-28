@@ -15,20 +15,70 @@ library(httr)
 # Webscrape the Data
 
 ```{r}
-# webscraping for the Bull Riders data (2023 Touring Pro Division)
-urlBikes <- "https://www.dakar.com/en/rankings"
-bike <- url1 %>%
-  read_html() %>%
-  html_nodes("table") %>%
-  html_table() %>%
-  .[[1]]
-rider_data %>% head()
-```
+# Define the base URL
+base_url <- "https://www.dakar.com/en/rankings/stage-"
 
+# Define the number of stages you want to scrape
+num_stages <- 12
+
+# Initialize an empty list to store data frames for each stage
+all_bikes_data <- list()
+
+# Loop through each stage and scrape data
+for (i in 0:num_stages) {
+  # Construct the URL for the current stage
+  url <- paste0(base_url, i, "/bike")
+  
+  # Scrape the table data for the current stage
+  stage_bikes_data <- url %>%
+    read_html() %>%
+    html_nodes("table") %>%
+    html_table() %>%
+    .[[1]]
+  
+  # Extract image URLs for the current stage
+  stage_bikes_img <- url %>% 
+    read_html() %>%
+    html_nodes("img") %>%
+    html_attr("src")
+  
+  # Add a new column for the stage number
+  stage_bikes_data$Stage <- i
+  
+  # Check if image URLs are available for this stage
+  if (length(stage_bikes_img) > 0) {
+    # Add the image URLs as a new column to the dataframe
+    stage_bikes_data$Image_URL <- rep(stage_bikes_img, length.out = nrow(stage_bikes_data))
+  } else {
+    # Insert NA values for the Image_URL column if no image URLs are found
+    stage_bikes_data$Image_URL <- rep(NA, nrow(stage_bikes_data))
+  }
+  
+  # Append the scraped data to the list
+  all_bikes_data[[i + 1]] <- stage_bikes_data
+}
+
+# Combine all data frames into a single data frame
+combined_bikes_data <- do.call(rbind, all_bikes_data)
+
+# Print the first few rows of the combined data frame
+head(combined_bikes_data)
+```
 
 ```{r}
+# Read the HTML content from the website
+url <- "https://www.dakar.com/en/rankings/stage-0/bike"
+html <- read_html(url)
 
+# Extract URLs of images
+image_urls <- html %>%
+  html_nodes("img") %>%
+  html_attr("src")
+
+# Print the extracted image URLs
+print(image_urls)
 ```
+
 
 
 
