@@ -1,0 +1,71 @@
+---
+title: "Dakar Rally Analysis"
+date: "2024-03-028"
+author: "Matt Maslow"
+description: Investigating 
+editor: 
+  canonical: true
+categories:
+  - 
+  - 
+  - 
+  - 
+---
+
+
+## Module
+
+<div style="text-align:center;">
+  <img src="bullRider.jpg" alt="Professional Bull Riding - PBR" width="350"/>
+</div>
+
+### Data Preparation
+
+[Link Text](Webscrap_Cleaning_Data.qmd)
+
+
+#### About the data
+
+A data frame for 
+
+
+<details>
+
+<summary><b> Data: Variable Descriptions</b></summary>
+
+| **Variable**        | **Description**                                                          |
+|---------------------|--------------------------------------------------------------------------|
+
+
+
+</details>
+Download data: [.csv](.csv)
+
+
+
+<details>
+
+<summary><b> Data: Variable Descriptions</b></summary>
+
+| **Variable**           | **Description**                                            |
+|------------------------|------------------------------------------------------------|
+
+
+
+</details>
+Download data: [.csv](.csv)
+
+
+### Questions
+
+`1.`
+
+
+
+### References:
+
+<a href=" " target="_blank">Bull Rider's Data</a>
+
+<a href=" " target="_blank">Bull's Data</a>
+
+[Link to the Photo](https://www.quora.com/Why-are-the-bulls-so-pissed-in-PBR-and-other-bull-riding-competitions-Is-it-instinct-that-makes-them-buck-off-the-rider-then-run-back-into-the-pen-or-do-they-train-them-to-act-like-this)
