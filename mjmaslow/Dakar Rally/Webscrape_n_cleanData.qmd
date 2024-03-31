@@ -15,6 +15,8 @@ library(httr)
 # Webscrape the Data
 
 ```{r}
+# Bikes
+
 # Define the base URL
 base_url <- "https://www.dakar.com/en/rankings/stage-"
 
@@ -60,24 +62,42 @@ for (i in 0:num_stages) {
 
 # Combine all data frames into a single data frame
 combined_bikes_data <- do.call(rbind, all_bikes_data)
+```
 
-# Print the first few rows of the combined data frame
+
+# Clean the Data
+
+```{r}
 head(combined_bikes_data)
 ```
 
 ```{r}
-# Read the HTML content from the website
-url <- "https://www.dakar.com/en/rankings/stage-0/bike"
-html <- read_html(url)
+combined_bikes_data <- 
+  combined_bikes_data %>%
+  separate(col = `Driver/Vehicle
+                        Drive-Team`, sep = "\\(", into = c("Team", "Country")) %>%
+  separate(col = Team, sep = "\n", into = c("Team")) %>%
+  separate(col = Country, sep = "\\)", into = c("Country", "Driver")) %>%
+  separate(col = Driver, sep = 275, into = c("blank", "Driver")) %>%
+  separate(col = Time, sep = 2, into = c("Hours", "Minutes")) %>%
+  separate(col = Minutes, sep = 2, into = c("rand", "Minutes")) %>%
+  separate(col = Minutes, sep = 2, into = c("Minutes", "Seconds")) %>%
+  separate(col = Seconds, sep = 2, into = c("rand1", "Seconds")) %>%
+  separate(Seconds, sep = 2, into = c("Seconds", "Variation2")) %>%
+  select(-blank, -rand, -rand1, -Variation2, -Exp.) %>%
+  mutate(Driver = str_trim(Driver),
+         Team = str_trim(Team),
+         Country = str_trim(Country),
+         Hours = as.numeric(Hours),
+         Minutes = as.numeric(Minutes),
+         Seconds = as.numeric(Seconds),
+         Stage = as.numeric(Stage)) %>%
+  rename(Rank = `P.\n                        Pos.`,
+         Driver_Number = `N°`)
 
-# Extract URLs of images
-image_urls <- html %>%
-  html_nodes("img") %>%
-  html_attr("src")
-
-# Print the extracted image URLs
-print(image_urls)
+combined_bikes_data
 ```
+
 
 
 
