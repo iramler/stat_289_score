@@ -16,7 +16,7 @@ categories:
 ## Module
 
 <div style="text-align:center;">
-  <img src="dakarRally.jpg" alt="Dakar Rally: Bikes" width="350"/>
+  <img src="dakarRally.jpg" alt="Dakar Rally: Bikes" width="500"/>
 </div>
 
 ### Data Preparation
