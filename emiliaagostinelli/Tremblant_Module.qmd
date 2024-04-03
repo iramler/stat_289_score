@@ -61,6 +61,8 @@ Each of the 30 rows in this data set represents a racer, and there are 11 variab
 
 : [Tremblant1.csv](Tremblant1.csv)
 
+The description of the data scraping/cleaning can be accessed here: [Scraping Description](scraping_description.qmd)
+
 ### Data Source
 
 The data was scraped from the following link: [FIS World Cup Women's GS at Tremblant](https://live.fis-ski.com/lv-al5009.htm#/follow "FIS World Cup Women's GS at Tremblant")
@@ -69,7 +71,8 @@ The data was scraped from the following link: [FIS World Cup Women's GS at Tremb
 
 [Class Worksheet](Tremblant_Worksheet.docx)
 
-[Class Worksheet Key](Tremblant_Worksheet_Key)
+[Class Worksheet Key](Tremblant_Worksheet_Key.docx)
 
 ### Authors
+
 Created by Emilia Agostinelli (St. Lawrence University), Robin Lock (St. Lawrence University)
