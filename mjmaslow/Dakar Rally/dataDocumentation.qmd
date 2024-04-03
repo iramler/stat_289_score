@@ -2,7 +2,7 @@
 title: "Dakar Rally Analysis"
 date: "2024-03-028"
 author: "Matt Maslow"
-description: Investigating 
+description: Investigating The 2024 Dakar Rally Biker Rankings and Times.
 editor: 
   canonical: true
 categories:
@@ -16,12 +16,12 @@ categories:
 ## Module
 
 <div style="text-align:center;">
-  <img src="bullRider.jpg" alt="Professional Bull Riding - PBR" width="350"/>
+  <img src="dakarRally.jpg" alt="Dakar Rally: Bikes" width="500"/>
 </div>
 
 ### Data Preparation
 
-[Link Text](Webscrap_Cleaning_Data.qmd)
+[Link Text](Webscrape_n_cleanData.qmd)
 
 
 #### About the data
@@ -33,27 +33,30 @@ A data frame for
 
 <summary><b> Data: Variable Descriptions</b></summary>
 
-| **Variable**        | **Description**                                                          |
-|---------------------|--------------------------------------------------------------------------|
-
+| **Variable**        | **Description**                                                                        |
+|---------------------|----------------------------------------------------------------------------------------|
+| Rank                | The ranking of the driver in the competition                                           |
+| Driver_Number       | The number assigned to the driver in the competition                                   |
+| Team                | The team to which the driver belongs                                                   |
+| Country             | The country of origin of the driver                                                    |
+| Driver              | The name of the driver                                                                 |
+| Hours               | The hours component of the time                                                        |
+| Minutes             | The minutes component of the time                                                      |
+| Seconds             | The seconds component of the time                                                      |
+| `Variation`         |*The variation in time is the difference in time between drivers in their specific ranks*|
+| Variation_Hours     | The hours component of the variation in time                                           |
+| Variation_Minutes   | The minutes component of the variation in time                                         |
+| Variation_Seconds   | The seconds component of the variation in time                                         |
+| Penalty_Hours       | The hours component of the penalty time                                                |
+| Penalty_Minutes     | The minutes component of the penalty time                                              |
+| Penalty_Seconds     | The seconds component of the penalty time                                              |
+| Stage               | The stage number of the competition (0-12 stages)                                      |
+| Image_URL           | The URL of the image associated with the player/driver/Experience Level                |
 
 
 </details>
-Download data: [.csv](.csv)
+Download data: [dakarRally_bikes_data.csv](.csv)
 
-
-
-<details>
-
-<summary><b> Data: Variable Descriptions</b></summary>
-
-| **Variable**           | **Description**                                            |
-|------------------------|------------------------------------------------------------|
-
-
-
-</details>
-Download data: [.csv](.csv)
 
 
 ### Questions
@@ -64,8 +67,6 @@ Download data: [.csv](.csv)
 
 ### References:
 
-<a href=" " target="_blank">Bull Rider's Data</a>
+<a href="https://www.dakar.com/en/rankings/stage-0/bike" target="_blank">Dakar Rally - Biker Rankings Data</a>
 
-<a href=" " target="_blank">Bull's Data</a>
-
-[Link to the Photo](https://www.quora.com/Why-are-the-bulls-so-pissed-in-PBR-and-other-bull-riding-competitions-Is-it-instinct-that-makes-them-buck-off-the-rider-then-run-back-into-the-pen-or-do-they-train-them-to-act-like-this)
+[Link to the Photo](https://www.dakar.com/en/gallery/image/bestof-2023-1)

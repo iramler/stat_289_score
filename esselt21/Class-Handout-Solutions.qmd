@@ -77,11 +77,41 @@ See if you can apply some of these techniques shown above to the athletes data s
 
 1a. Create a first and last name column and get rid of the short_name column.
 
+```{r}
+athletesTidy <-
+  athletes |>
+  separate(name,
+           sep = '^\\S*\\K\\s+',
+           into = c('last_name', 'first_name')) |>
+  select(-short_name)
+```
+
 1b. Make gender a factored variable.
+
+```{r}
+athletesTidy <-
+  athletesTidy |>
+  mutate(gender = factor(gender))
+```
 
 1c. Get rid of country_code, discipline_code, residence_place, residence_country, and url.
 
+```{r}
+athletesTidy <-
+  athletesTidy |>
+  select(-c("country_code", "discipline_code", "residence_place", "url"))
+```
+
 1d. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.
+
+```{r}
+athletesTidy <-
+  athletesTidy |>
+  separate(`height_m/ft`,
+           into = c("meters", "feet"),
+           sep = '/') |>
+  select(-feet)
+```
 
 ## 3. Data Summarization
 Next lets look at summarizing some statistics using our cleaned medals data set. First, lets see which country has the most medal winners in our data set using dplyr.

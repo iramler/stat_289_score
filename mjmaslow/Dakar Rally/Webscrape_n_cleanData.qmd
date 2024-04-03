@@ -15,6 +15,8 @@ library(httr)
 # Webscrape the Data
 
 ```{r}
+# Bikes
+
 # Define the base URL
 base_url <- "https://www.dakar.com/en/rankings/stage-"
 
@@ -60,24 +62,79 @@ for (i in 0:num_stages) {
 
 # Combine all data frames into a single data frame
 combined_bikes_data <- do.call(rbind, all_bikes_data)
+```
 
-# Print the first few rows of the combined data frame
+
+# Clean the Data
+
+```{r}
 head(combined_bikes_data)
 ```
 
 ```{r}
-# Read the HTML content from the website
-url <- "https://www.dakar.com/en/rankings/stage-0/bike"
-html <- read_html(url)
-
-# Extract URLs of images
-image_urls <- html %>%
-  html_nodes("img") %>%
-  html_attr("src")
-
-# Print the extracted image URLs
-print(image_urls)
+combined_bikes_data <- 
+  combined_bikes_data %>%
+  separate(col = `Driver/Vehicle
+                        Drive-Team`, sep = "\\(", into = c("Team", "Country")) %>%
+  separate(col = Team, sep = "\n", into = c("Team")) %>%
+  separate(col = Country, sep = "\\)", into = c("Country", "Driver")) %>%
+  separate(col = Driver, sep = 275, into = c("blank", "Driver")) %>%
+  separate(col = Time, sep = 2, into = c("Hours", "Minutes")) %>%
+  separate(col = Minutes, sep = 2, into = c("rand", "Minutes")) %>%
+  separate(col = Minutes, sep = 2, into = c("Minutes", "Seconds")) %>%
+  separate(col = Seconds, sep = 2, into = c("rand1", "Seconds")) %>%
+  separate(Seconds, sep = 2, into = c("Seconds", "Variation2")) %>%
+  separate(Variation, sep = 1, into = c("rand2", "Variation_Hours")) %>%
+  separate(Variation_Hours, sep = 3, into = c("Variation_Hours", "Variation_Minutes")) %>%
+  separate(Variation_Minutes, sep = 2, into = c("rand3", "Variation_Minutes")) %>%
+  separate(Variation_Minutes, sep = "\\'", into = c("Variation_Minutes", "Variation_Seconds")) %>%
+  separate(Penality, sep = 3, into = c("Penalty_Hours", "Penalty_Minutes")) %>%
+  separate(Penalty_Minutes, sep = 3, into = c("Penalty_Minutes", "Penalty_Seconds")) %>%
+  separate(Penalty_Seconds, sep = 1, into = c("rand4", "Penaltly_Seconds")) %>%
+  separate(Penaltly_Seconds, sep = 3, into = c("Penalty_Seconds", "rand5")) %>%
+  select(-blank, -rand, -rand1, -rand2, -rand3, -rand4, -rand5, -Variation2, -Exp.) %>%
+  rename(Rank = `P.\n                        Pos.`,
+         Driver_Number = `N°` ) %>%
+  mutate_at(vars(Team, Driver, Image_URL), as.character) %>%
+  mutate_at(vars(Stage, Country), as.factor) %>%
+  mutate_at(vars(Rank, Driver_Number, Hours, Minutes, Seconds, 
+                 Variation_Hours, Variation_Minutes, Variation_Seconds,
+                 Penalty_Hours, Penalty_Minutes, Penalty_Seconds), as.numeric) %>%
+  # now for the Penalty variables make all of the NAs be 0
+  mutate_at(vars(starts_with("Penalty")), ~replace_na(., 0)) %>%
+  # now for the Variation variables make all of the NAs be 0
+  mutate_at(vars(starts_with("Variation")), ~replace_na(., 0)) %>%
+  # now for the countries, lets make esp be Spain, aus be Australia, and arg be Argentina.....
+  mutate(Country = recode(Country, "arg" = "Argentina", "aus" = "Australia", "aut" = "Austria",
+                          "bel" = "Belgium", "bra" = "Brazil", "bwa" = "Botswana", "chl" = "Chile", "chn" = "China",
+                          "cze" = "Czech Republic", "deu" = "Germany", "dnk" = "Denamrk", "ecu" = "Ecuador",
+                          "esp" = "Spain", "fra" = "France", "gbr" = "United Kingom", "grc" = "Greece", "gtm" = "Guatemala",
+                          "ind" = "India", "irl" = "Ireland", "ita" = "Italy", "jpn" = "Japan", "ltu" = "Lithuania", "mar" =  "Morocco",
+                          "mex" = "Mexico", "mng" = "Mongolia", "pol" = "Poland", "prt" = "Portugal", "rou" = "Romania",
+                          "sau" = "Saudi Arabia", "svk" = "Slovakia", "svn" = "Slovenia", "ury" =  "Uruguay", "usa" = "United States",
+                          "zaf" = "South Africa", "zwe" = "Zimbabwe")) # Original data used Country's ISO-3 codes
+combined_bikes_data
 ```
+
+
+# write the csv
+
+```{r}
+# write_csv(combined_bikes_data, "Dakar Rally/dakarRally_bikes_data.csv")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
