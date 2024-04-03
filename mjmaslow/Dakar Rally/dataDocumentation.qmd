@@ -2,7 +2,7 @@
 title: "Dakar Rally Analysis"
 date: "2024-03-028"
 author: "Matt Maslow"
-description: Investigating The 2024 Dakar Rally Biker Rankings and Times.
+description: Investigating The 2024 Dakar Rally biker rankings and times, throughout all 12 stages.
 editor: 
   canonical: true
 categories:
