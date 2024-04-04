@@ -92,10 +92,10 @@ combined_bikes_data <-
   separate(Penalty_Minutes, sep = 3, into = c("Penalty_Minutes", "Penalty_Seconds")) %>%
   separate(Penalty_Seconds, sep = 1, into = c("rand4", "Penaltly_Seconds")) %>%
   separate(Penaltly_Seconds, sep = 3, into = c("Penalty_Seconds", "rand5")) %>%
-  select(-blank, -rand, -rand1, -rand2, -rand3, -rand4, -rand5, -Variation2, -Exp.) %>%
+  select(-blank, -rand, -rand1, -rand2, -rand3, -rand4, -rand5, -Variation2, -Exp., -Image_URL) %>%
   rename(Rank = `P.\n                        Pos.`,
          Driver_Number = `N°` ) %>%
-  mutate_at(vars(Team, Driver, Image_URL), as.character) %>%
+  mutate_at(vars(Team, Driver), as.character) %>%
   mutate_at(vars(Stage, Country), as.factor) %>%
   mutate_at(vars(Rank, Driver_Number, Hours, Minutes, Seconds, 
                  Variation_Hours, Variation_Minutes, Variation_Seconds,

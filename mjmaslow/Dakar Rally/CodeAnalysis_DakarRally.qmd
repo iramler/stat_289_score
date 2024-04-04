@@ -1,0 +1,43 @@
+---
+title: "Dakar Rally analysis"
+author: "Matt Maslow"
+format: html
+---
+
+
+
+
+
+```{r}
+library(tidyverse)
+```
+
+
+
+```{r}
+dakarRally_bikes_data <- read_csv("Dakar Rally/dakarRally_bikes_data.csv")
+```
+
+
+```{r}
+dakarRally_bikes_data %>%
+  group_by(Team) %>%
+  summarise(count = n()) %>%
+  arrange(desc(count))
+```
+
+# Question 1
+
+```{r}
+dakarRally_bikes_data %>%
+  lm(Rank ~ Team, .) %>%
+  summary()
+```
+
+
+
+
+# Question 2
+
+
+

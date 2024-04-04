@@ -8,7 +8,7 @@
 
 <meta name="author" content="Matt Maslow">
 <meta name="dcterms.date" content="2024-03-28">
-<meta name="description" content="Investigating The 2024 Dakar Rally Biker Rankings and Times.">
+<meta name="description" content="Investigating The 2024 Dakar Rally biker rankings and times, throughout all 12 stages.">
 
 <title>Dakar Rally Analysis</title>
 <style>
@@ -49,11 +49,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Dakar Rally Analysis</h1>
-</div>
+  <div class="quarto-categories">
+    <div class="quarto-category">Multiple Linear Regression</div>
+    <div class="quarto-category">Model Diagnostics</div>
+    <div class="quarto-category">Testing</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    Investigating The 2024 Dakar Rally Biker Rankings and Times.
+    Investigating The 2024 Dakar Rally biker rankings and times, throughout all 12 stages.
   </div>
 </div>
 
@@ -92,7 +97,7 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="Webscrape_n_cleanData.qmd">Link Text</a></p>
 <section id="about-the-data" class="level4">
 <h4 class="anchored" data-anchor-id="about-the-data">About the data</h4>
-<p>A data frame for</p>
+<p>A data frame for the 2024 Dakar Rally, is an annual off-road endurance event that typically spans over two weeks and covers thousands of kilometers across challenging terrain in Saudi Arabia. Participants, including motorcyclists, drivers, and truckers, compete in various categories, facing extreme conditions like deserts, mountains, and dunes, making it one of the toughest motor-sport events in the world. But in this investigation we will be looking at the motorist statistics for all 12 stages of the race. The data frame has a total of 1584 observations with 16 variables. However, the way the race is set up so after each stage, drivers can drop out or be eliminated after each stage due to various reasons such as mechanical failures, accidents, injuries, or exceeding time limits. Therefore, the race started with 142 drivers, and by the time the 12th stage came around only 103 drivers remained.</p>
 <details>
 <summary>
 <b> Data: Variable Descriptions</b>
@@ -142,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 <td>The seconds component of the time</td>
 </tr>
 <tr class="odd">
-<td><code>Variation</code></td>
+<td><em>Variation</em></td>
 <td><em>The variation in time is the difference in time between drivers in their specific ranks</em></td>
 </tr>
 <tr class="even">
