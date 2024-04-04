@@ -151,6 +151,10 @@ table <- rest_df |>
 ```
 
 ```{r}
+write.csv(table, "table.csv", row.names = TRUE)
+```
+
+```{r}
 chisq.test(table)
 ```
 
