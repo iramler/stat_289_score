@@ -1,0 +1,95 @@
+---
+title: "CodeAnalysis_BullsData"
+author: "Matthew Maslow"
+format: html
+---
+
+
+
+```{r}
+library(tidyverse)
+library(broom)
+```
+
+
+```{r}
+bulls <- read_csv("Bull Riding/Bulls.csv")
+```
+
+# 1 Variable selection techniques
+
+```{r}
+bulls %>%
+  select(-Bull) %>%
+  cor() %>%
+  round(2)
+```
+
+```{r}
+bulls <- bulls %>%
+  mutate(lessThree_Buckoff = ifelse(Avg_Buckoff_Time < 3.00, 1, 0),
+         betterThanAverage = ifelse(Avg_BullScore > mean(Avg_BullScore), 1, 0) )
+```
+
+
+```{r}
+bulls %>%
+glm(betterThanAverage ~ World_Champ_Avg_Score + Avg_Buckoff_Time + Highest_BullScore + fortyFivePt_Rides, data = .) %>%
+  summary()
+```
+```{r}
+exp(-0.51984)
+```
+
+
+
+```{r}
+mod <- glm(betterThanAverage ~ World_Champ_Avg_Score + Avg_Buckoff_Time + Highest_BullScore + fortyFivePt_Rides, data = bulls)
+plot(mod, pch = 16)
+```
+
+```{r}
+# If the bull has a World champ average of 46, an average Buckoff time of 2.5, highest 	BullScore of 44.5, and has one over 45Pt ride, what would his probability of having an 	average bull score that is higher than mean avg score.
+
+newdata <- data.frame(World_Champ_Avg_Score = 46, 
+                      Avg_Buckoff_Time = 2.5, 
+                      Highest_BullScore = 44.5, 
+                      fortyFivePt_Rides = 1)
+predict(mod, newdata, type = "response")
+```
+```{r}
+exp(1.834293)/(1+exp(1.834293))
+```
+
+
+# 2 Population hypothesis testing
+
+```{r}
+anova(mod, test = "Chisq")
+```
+
+
+```{r}
+confint(mod)
+```
+
+
+
+```{r}
+mod <- glm(`betterThanAverage` ~ World_Champ_Avg_Score + Avg_Buckoff_Time + Highest_BullScore + fortyFivePt_Rides, data = bulls)
+newdata <- data.frame(World_Champ_Avg_Score = 45.5, 
+                      Avg_Buckoff_Time = 3.73, 
+                      Highest_BullScore = 45.5, 
+                      fortyFivePt_Rides = 1)
+```
+```{r}
+predict.glm(mod, interval = "prediction", newdata = newdata)
+```
+
+```{r}
+ exp(1.001762 )/(1+exp(1.001762))
+```
+
+
+
+

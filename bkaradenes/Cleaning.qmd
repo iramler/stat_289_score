@@ -1,0 +1,76 @@
+---
+title: "Cleaning"
+author: "Brendan Karadenes"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+# original data set 
+fight_data <- read.csv("bkaradenes/raw_fighter_details.csv")
+```
+
+```{r}
+# deleted empty reaches, reach was character so changed to number in
+# inches.
+fight_data2 <- fight_data %>%
+  filter(Reach != "")%>%
+  mutate(Reach = parse_number(Reach))
+```
+
+```{r}
+# only included values > 0, changed from character to numerical
+fight_data2 <- fight_data %>%
+  mutate(Str_Acc = parse_number(Str_Acc)) %>%
+  filter(Str_Acc != 0)
+```
+
+```{r}
+# changed weight to numerical
+fight_data2<-fight_data2%>%
+  mutate(Weight = parse_number(Weight)) %>%
+  mutate(Reach = parse_number(Reach)) %>%
+  filter(Reach != "")
+  
+```
+
+```{r}
+# striking defense, takedown accuracy, takedown defence all changed to
+# numerical
+fight_data2 <- fight_data2 %>%
+  mutate(Str_Def = parse_number(Str_Def)) %>%
+  mutate(TD_Acc = parse_number(TD_Acc)) %>%
+  mutate(TD_Def = parse_number(TD_Def))
+```
+
+
+```{r}
+library(lubridate)
+# changed birthdate to birthyear
+fight_data2 <-
+  fight_data2 %>%
+  mutate(birthyear = year(mdy(DOB)))
+```
+
+```{r}
+# putting height in inches and taking out extra year, DOB, Height, feet,
+# and inches columns
+clean_data <- fight_data2 %>%
+  mutate(
+    feet = as.numeric(str_extract(Height, "\\d+(?=')")), 
+    inches = as.numeric(str_extract(Height, "\\d+(?=\")")) 
+  ) %>%
+  mutate(
+    height_inches = (feet * 12) + inches 
+  ) %>%
+  select(-feet, -inches, -DOB, -Height, -year)
+```
+
+```{r}
+# writing the new cleaned csv
+write.csv(clean_data, "C:/users/bkara/OneDrive - St. Lawrence University/stat_289_score/bkaradenes/clean_data.csv", row.names = TRUE)
+```
+
+
+

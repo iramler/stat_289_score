@@ -1,0 +1,179 @@
+---
+title: "questionbrainstorm"
+format: html
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+library(modelr)
+library(broom)
+ski_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/ski data/W10kTro_2257.csv")
+```
+
+# Brainstorm
+
+Play around with the data
+
+Think of questions
+
+I would start with mean, median, std, min, max of pace or winning time. Variability of completion time for 10 km across venues and style could be interesting. Pace with age. Histogram of skier age.
+
+# Summary
+
+```{r}
+no_na <- ski_df |> filter(!is.na(Time4))
+summary(ski_df$Time4)
+sd(no_na$Time4)
+
+```
+
+# anova for difference in means
+
+```{r}
+ski_long <- ski_df |> pivot_longer(c("Time1", "Time2", "Time3", "Time4"), names_to = "timeinterval", values_to = "time") |> pivot_longer(c("Rank1", "Rank2", "Rank3", "Rank4"), names_to = "rankinterval", values_to = "rank") |> relocate(time, timeinterval, rankinterval, rank)
+```
+
+```{r}
+skimod <- aov(rank ~ time, data = ski_long)
+summary(skimod)
+```
+
+
+# anova test for overall fit for multiregression model
+
+```{r}
+modanova <- lm(Time4 ~ Time1 + Time2 + Time3, data = ski_df)
+modanova |> tidy()
+```
+
+based on p-values all three variables appear to be effective predictors of Time4
+
+```{r}
+anova(modanova)
+```
+
+effective model
+
+# R- squared  multiregression model vs. simple linear model
+```{r}
+modanovasimple <- lm(Time4 ~ Time1, data = ski_df)
+summary(modanovasimple)
+summary(modanova)
+```
+
+the r squared for the multiple regression model is higher so that is the better model
+
+# multicollinearity for multi regression model
+
+```{r}
+vif <- 1/(1- 0.9907)
+vif
+```
+bad vif
+
+# correlation for SLM
+
+```{r}
+cor.test(Time4 ~ Time1, data = ski_df)
+cor(Time4~Time1, data = ski_df)
+cor(ski_df)
+```
+
+
+
+# checking conditions for simple model
+
+# linearity and variance
+```{r}
+#resid vs. fits plot
+plot(modanovasimple$residuals~modanovasimple$fitted)
+abline(0,0)
+
+#scatter plot
+plot(Time4~Time1, data = ski_df)
+abline(modanovasimple)
+```
+
+good
+
+
+# residual normality
+```{r}
+#histogram of residuals
+hist(modanovasimple$residuals)
+# normal quantile plot
+qqnorm(modanovasimple$residuals)
+qqline(modanovasimple$residuals)
+```
+pretty good
+
+# checking conditions for multi regression model
+
+# linearity and variance
+```{r}
+#resid vs. fits plot
+plot(modanova$residuals~modanova$fitted)
+abline(0,0)
+```
+
+good
+
+
+# residual normality
+```{r}
+#histogram of residuals
+hist(modanova$residuals)
+# normal quantile plot
+qqnorm(modanova$residuals)
+qqline(modanova$residuals)
+```
+not great
+
+# interaction
+```{r}
+modint <- aov(Time4~Time1+Time2+Time3 + Time1:Time3,data=ski_df)
+summary(modint)
+```
+
+#Find speed
+
+```{r}
+norwegiandf <- ski_df |> mutate(norwegian = if_else(NSA == "NOR", true = "yes", false = "no")) |> relocate(norwegian)
+
+norwegiandf |>  mutate(norwegian = if_else(NSA == "NOR", true = 1, false = 0))  |> group_by(norwegian) |> summarise(prop = mean(norwegian))
+
+lm(Rank4 ~ norwegian + Bib + Time1, data = norwegiandf)
+
+summary(ski_df$Time1)
+ggplot(data = norwegiandf, aes(x = norwegian, y = Rank4)) + geom_boxplot()
+```
+
+```{r}
+mod_time1 <- lm(Rank4 ~ Time1, data = ski_df)
+mod_time1 |> tidy()
+```
+
+```{r}
+mod_time_all <- lm(Rank4 ~ Time1 + Time2 + Time3, data = ski_df)
+mod_time_all |> tidy()
+```
+
+```{r}
+ski_speed_df <- ski_df |> mutate(speed1 = Time1/Dist1, speed2 = Time2/Dist2, speed3 = Time3/Dist3, speed4 = Time4/Dist4)
+ski_speed_df
+
+ski_df |> mutate(Diff1 = Diff1 * 60, Diff2 = Diff2 * 60, Diff3 = Diff3 * 60, Diff4 = Diff4 *60)
+```
+
+```{r}
+ggplot(data = ski_df, aes(x = Time1, y = Rank4)) + geom_point()
+```
+
+# calculate the difference between the times at each distance interval
+
+```{r}
+ggplot(data = ski_df, aes(y = Rank4, x = NSA)) + geom_boxplot()
+```
+
+* maybe look into hwo correlation changes

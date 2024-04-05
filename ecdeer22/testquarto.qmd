@@ -35,6 +35,8 @@ divingdata |> group_by(Country) |> summarise(count = n()/9) |> arrange(desc(coun
 
 #count dives of each difficulty
 divingdata |> group_by(Difficulty) |> summarise(n_difficulty = n())
+
+divingdata |> group_by(Age) |> summarise(mean = mean(TotalPoints))
 ```
 
 STAT113/213
@@ -56,6 +58,24 @@ mean(divingdata$Age)
 #histogram of total points
 hist(divingdata$TotalPoints)
 hist(divingdata$Points)
+
+#anova difference in means
+mean(divingdata$Judge1)
+mean(divingdata$Judge2)
+mean(divingdata$Judge3)
+mean(divingdata$Judge4)
+mean(divingdata$Judge5)
+mean(divingdata$Judge6)
+mean(divingdata$Judge7)
+
+#anova difference in means
+library(mosaic)
+amod = aov(TotalPoints ~ factor(Age), data = divingdata)
+summary(amod)
+
+pairwise.t.test(divingdata$TotalPoints,divingdata$Age,p.adj="none")
+TukeyHSD(amod)
+
 ```
 
 **Ideas for Questions:**

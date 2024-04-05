@@ -1,5 +1,5 @@
 ---
-title: "test-module"
+title: "Class Handout"
 author: "Eric Seltzer"
 format: html
 ---
@@ -77,11 +77,70 @@ See if you can apply some of these techniques shown above to the athletes data s
 
 1a. Create a first and last name column and get rid of the short_name column.
 
-2b. Make gender a factored variable.
+```{r}
+athletesTidy <-
+  athletes |>
+  separate(name,
+           sep = '^\\S*\\K\\s+',
+           into = c('last_name', 'first_name')) |>
+  select(-short_name)
+```
 
-3c. Get rid of country_code, discipline_code, residence_place, residence_country, and url.
+1b. Make gender a factored variable.
 
-4d. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.
+```{r}
+athletesTidy <-
+  athletesTidy |>
+  mutate(gender = factor(gender))
+```
+
+1c. Get rid of country_code, discipline_code, residence_place, residence_country, and url.
+
+```{r}
+athletesTidy <-
+  athletesTidy |>
+  select(-c("country_code", "discipline_code", "residence_place", "url"))
+```
+
+1d. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.
+
+```{r}
+athletesTidy <-
+  athletesTidy |>
+  separate(`height_m/ft`,
+           into = c("meters", "feet"),
+           sep = '/') |>
+  select(-feet)
+
+
+athletesTidy |>
+  filter(discipline == "Ice Hockey") |>
+  view()
+```
+
+1e. Notice all the missing values in the height variable, calculate the proportion of missing values and comment on how using height in an analysis may be impacted by the missing values.
+
+```{r}
+athletesTidy |>
+  summarise(propNA = mean(is.na(meters)))
+```
+
+1f. Calculate the proportion of missing values for Ice Hockey and discuss the difference from the previous result.
+
+```{r}
+athletesTidy |>
+  filter(discipline == "Ice Hockey") |>
+  summarise(propNA = mean(is.na(meters)))
+```
+
+1g. Calculate the proportion of missing values for each sport, and sort them by descending order.
+
+```{r}
+athletesTidy |>
+  group_by(discipline) |>
+  summarise(propNA = mean(is.na(meters))) |>
+  arrange(desc(propNA))
+```
 
 ## 3. Data Summarization
 Next lets look at summarizing some statistics using our cleaned medals data set. First, lets see which country has the most medal winners in our data set using dplyr.
@@ -95,11 +154,35 @@ medalsTidy |>
 ### Exercise 2
 Using the example above and the filter function in the dplyr package, lets see which country has the most gold medal winners using medal_type.
 
+```{r}
+medalsTidy |>
+  filter(medal_type == 'Gold') |>
+  group_by(country) |>
+  summarise(gold_medal_count = n()) |>
+  arrange(desc(gold_medal_count))
+```
+
 ### Exercise 3
 Now try finding which country has the most silver medals using medal_code.
 
+```{r}
+medalsTidy |>
+  filter(medal_code == 2) |>
+  group_by(country) |>
+  summarise(silver_medal_count = n()) |>
+  arrange(desc(silver_medal_count))
+```
+
 ### Exercise 4
 Finally, figure out what discipline the United States of America received the most medals in.
+
+```{r}
+medalsTidy |>
+  filter(country == "United States of America") |>
+  group_by(discipline) |>
+  summarise(medal_count = n()) |>
+  arrange(desc(medal_count))
+```
 
 ## 4. Joining
 ### Exercise 5
