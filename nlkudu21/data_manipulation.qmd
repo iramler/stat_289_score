@@ -119,13 +119,133 @@ miami2023_data |>
 ```
 
 ```{r}
+# histogram of average lap time by driver
+miami2023_data |> 
+  group_by(driverName) |> 
+  summarise(avgLapTime = mean(lapTime)) |> 
+  ggplot(aes(x = avgLapTime)) + 
+  geom_histogram(binwidth = 0.2, fill = "blue", color = "black") + 
+  labs(title = "Average Lap Time by Driver", x = "Average Lap Time (s)", y = "Frequency")
+```
 
+```{r}
+# histogram of average lap time by constuctor
+miami2023_data |> 
+  group_by(constructorName) |> 
+  summarise(avgLapTime = mean(lapTime)) |> 
+  ggplot(aes(x = avgLapTime)) + 
+  geom_histogram(binwidth = 0.2, fill = "blue", color = "black") + 
+  labs(title = "Average Lap Time by Constructor", x = "Average Lap Time (s)", y = "Frequency")
+```
+
+
+```{r}
+max_lap_times <- miami2023_data |> filter(driverName == "Max Verstappen") |> pull(lapTime)
+lando_lap_times <- miami2023_data |> filter(driverName == "Lando Norris") |> pull(lapTime)
+
+# two sample t test between max vestappen lap times and lando norris lap times
+t.test(max_lap_times, lando_lap_times, alternative = "greater")
+```
+
+```{r}
+library(ggbreak) 
+
+# side by side box plots all drivers
+miami2023_data |> mutate(driverName = as.factor(driverName)) |>
+                        mutate(driverNameOrd = fct_reorder(.f = driverName, .x = lapTime, .fun = median)) |>
+  ggplot(aes(x = driverNameOrd, y = lapTime)) + 
+  geom_boxplot() + 
+  scale_y_break(c(112, 135)) +
+  coord_flip() +
+  labs(title = "Lap Times by Driver", x = "Driver", y = "Lap Time (s)")
+```
+
+```{r}
+# side by side box plots all constructors
+miami2023_data |> mutate(constructorName = as.factor(constructorName)) |>
+                        mutate(consNameOrd = fct_reorder(.f = constructorName, .x = lapTime, .fun = median)) |>
+  ggplot(aes(x = consNameOrd, y = lapTime)) + 
+  geom_boxplot() + 
+  scale_y_break(c(112, 135)) +
+  coord_flip() +
+  labs(title = "Lap Times by Constructor", x = "Constructor", y = "Lap Time (s)")
+```
+
+
+```{r}
+miami2023_data |> filter(driverName == "Logan Sargeant")
+```
+
+```{r}
+miami2023_data |> group_by(driverName) |> filter(lap == max(lap)) |> arrange(lapPosition)
+```
+
+```{r}
+miami2023_data |> select(lapTime) |> summary()
+```
+
+```{r}
+# make a histogram of laptimes by lando norris
+miami2023_data |> filter(driverName == "Max Verstappen") |>
+  ggplot(aes(x = lapTime)) + 
+  geom_histogram(binwidth = .5, fill = "cornflowerblue", color = "black") + 
+  theme_minimal()
+```
+
+```{r}
+# make a histogram of laptimes by lando norris
+miami2023_data |> filter(driverName == "Max Verstappen") |> 
+  filter(lapTime > 89.305) |>
+  filter(lapTime < 94.305) |>
+  ggplot(aes(x = lapTime)) + 
+  geom_histogram(binwidth = .5, fill = "cornflowerblue", color = "black") + 
+  theme_minimal()
+```
+
+```{r}
+races |> filter(name == "Australian Grand Prix") |> filter(year == 2023) # 1100
+```
+
+```{r}
+aus_data <- left_join(results, races, by = c("raceId" = "raceId")) |> filter(raceId == 1100) 
+```
+
+```{r}
+miami2023_data |> filter(driverName == "Max Verstappen") |> select(lapTime) |> summary()
+```
+
+```{r}
+miami2023_data |> filter(driverName == "Max Verstappen") |> select(lapTime) |> filter(lapTime > 93)
+```
+
+```{r}
+miami2023_data |> filter(driverName == "Max Verstappen") |> select(lapTime) |> filter(lapTime > 89.305) |>
+  filter(lapTime < 94.305) |> summary()
 
 ```
 
 ```{r}
-  
+# make a histogram of laptimes by ferrari
+miami2023_data |> filter(constructorName == "Ferrari") |>
+  ggplot(aes(x = lapTime)) + 
+  geom_histogram(binwidth = 0.5, fill = "firebrick1", color = "black") + 
+  theme_minimal()
+```
+
+```{r}
+miami2023_data |> filter(constructorName == "Ferrari") |> select(lapTime) |> summary()
+```
+
+```{r}
+miami2023_data |> filter(constructorName == "Ferrari") |> select(lapTime)
 ```
 
 
+```{r}
+# make a histogram of laptimes by ferrari
+miami2023_data |>
+  ggplot(aes(x = lapTime)) + 
+  geom_histogram(binwidth = 0.5, fill = "firebrick1", color = "black") + 
+  theme_minimal()
+```
 

@@ -4,9 +4,10 @@ author: Abigail Smith
 date: February 29, 2024
 description: The times and ranks of skiers taken at four different distance points (1.3, 4.3, 7.5, and 10k) in a 10k classic race in Trondheim, Norway.
 categories:
-  - modelling
-  - plotting
+  - anova for difference in means
+  - linear regression analysis
   - correlation
+  - checking conditions for simple linear regression
   
 editor: 
   markdown: 
@@ -49,13 +50,13 @@ ski race in Trondheim. There are 61 racers in the dataset and 20 variables.
 
 ## Questions
 
-1.    Create a scatterplot of Time1 against Rank4. Does there seem to be a relationship? If so, what is it?
+1.    Create a simple linear regression model of Time4 predicted by Time1. Check the conditions for the model, to assess its variance, linearity, and normality.
 
 2.    Find the correlation between Time1 and Rank4. Is there a strong correlation and if so, is it positive or negative?
 
-2.    Make a model of Rank4 predicted by Time1. Interpret the coefficient of Time1.
+2.    Make a model of Rank4 predicted by Bib. Interpret the coefficient of Bib.
 
-3.    Make a boxplot of the NSA variable against Rank4. What is the distribution of each Nation? Do some have a bigger range than others?
+3.    Use an ANOVA for means test to decide if there is a considerable difference in the mean time for each time interval. First, perform the test by constructing a one-way ANOVA model for means by hand. Then, check it by running it through R. 
 
 ## References
 

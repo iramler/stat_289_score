@@ -28,17 +28,28 @@ sd(no_na$Time4)
 
 ```
 
+# use of bib to predict rank4
+
+```{r}
+bibmod<- lm(Rank4~Bib, data = ski_df)
+summary(bibmod)
+```
+
 # anova for difference in means
 
 ```{r}
-ski_long <- ski_df |> pivot_longer(c("Time1", "Time2", "Time3", "Time4"), names_to = "timeinterval", values_to = "time") |> pivot_longer(c("Rank1", "Rank2", "Rank3", "Rank4"), names_to = "rankinterval", values_to = "rank") |> relocate(time, timeinterval, rankinterval, rank)
+ski_long <- ski_df |> pivot_longer(c("Time1", "Time2", "Time3", "Time4"), names_to = "timeinterval", values_to = "time") |> relocate(time, timeinterval)
 ```
 
 ```{r}
-skimod <- aov(rank ~ time, data = ski_long)
+skimod <- aov(Rank4 ~ time, data = ski_long)
 summary(skimod)
 ```
 
+```{r}
+skimod |> tidy()
+skimod |> glance()
+```
 
 # anova test for overall fit for multiregression model
 
