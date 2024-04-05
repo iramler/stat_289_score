@@ -75,7 +75,6 @@ summary(amod)
 
 pairwise.t.test(divingdata$TotalPoints,divingdata$Age,p.adj="none")
 TukeyHSD(amod)
-
 ```
 
 **Ideas for Questions:**
@@ -89,3 +88,39 @@ TukeyHSD(amod)
   - Finding p-value on histograms (divingdata$Points is veyr symmetrical)
   - CI: A dive of difficulty 1.7 (has most dives(n = 75)) what can expect the points to be
   - PI:
+
+
+Sums of squares:
+```{r}
+diving2 <- divingdata |> group_by(LastName) |> 
+  slice(1) |>
+  ungroup() |> 
+  mutate(OverallMean = mean(TotalPoints)) |>
+  mutate(OverallSD = sd(TotalPoints)) |>
+  group_by(Age) |> 
+  mutate(n = n()) |> 
+  mutate(mean = mean(TotalPoints)) |> 
+  mutate(sd = sd(TotalPoints)) |> 
+  select(TotalPoints, Age, n, mean, sd, OverallMean, OverallSD) |> 
+  ungroup() |>
+  mutate(yOverallMean = TotalPoints - OverallMean) |>
+  mutate(meanOverallMean = mean - OverallMean) |>
+  mutate(ymean = TotalPoints - mean) |>
+  filter(Age == 17)
+
+divingdata16 <- divingdata |> 
+  filter(Age == 16)|> 
+  select(LastName, Age, TotalPoints) |> 
+  group_by(LastName) |> 
+  slice(1) |> 
+  ungroup() |> 
+  mutate(mean = mean(TotalPoints)) |> 
+  mutate(sd = sd(TotalPoints))
+
+divingdata17 <- divingdata |> filter(Age == 17)|> select(LastName, Age, TotalPoints) |> group_by(LastName) |> slice(1) |> ungroup() |> mutate(mean = mean(TotalPoints)) |> mutate(sd = sd(TotalPoints))
+
+divingdata18 <- divingdata |> filter(Age == 18)|> select(LastName, Age, TotalPoints) |> group_by(LastName) |> slice(1) |> ungroup() |> mutate(mean = mean(TotalPoints))|> mutate(sd = sd(TotalPoints))
+
+qt(0.95,348)
+```
+
