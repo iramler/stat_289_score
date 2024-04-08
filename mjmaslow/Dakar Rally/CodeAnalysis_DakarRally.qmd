@@ -22,18 +22,18 @@ dakarRally_bikes_data <- read_csv("Dakar Rally/dakarRally_bikes_data.csv")
 ```{r}
 dakarRally_bikes_data %>%
   group_by(Team) %>%
-  summarise(count = n()) %>%
+  summarise(count = n(),
+            Mean_Hours_Driven = ((mean(Hours)*60 + mean(Minutes) + (mean(Seconds)/60)) / 60),
+            Mean_Hours_Penalty = (mean(Penalty_Hours)*60 + mean(Penalty_Minutes) + (mean(Penalty_Seconds)/60)) / 60,
+            Mean_Hours_Variation = (mean(Variation_Hours)*60 + mean(Variation_Minutes) + (mean(Variation_Seconds)/60)) / 60) %>%
   arrange(desc(count))
 ```
 
 # Question 1
 
 ```{r}
-dakarRally_bikes_data %>%
-  lm(Rank ~ Team, .) %>%
-  summary()
-```
 
+```
 
 
 
