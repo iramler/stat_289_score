@@ -54,12 +54,28 @@ on answer key
 # Question 2
 
 ```{r}
-dakarRally_bikes_data %>%
-  mutate(top5 = ifelse(Rank <= 5, 1, 0)) %>%
-  select(top5, Hours, Variation_Hours, Penalty_Hours, Stage) %>%
-  glm(top5 ~ ., data = ., family = binomial) %>%
-  summary()
+dakarRally_bikes_data <- 
+  dakarRally_bikes_data %>% 
+  mutate(topFive = ifelse(Rank <= 5, 1, 0))
 ```
+
+```{r}
+modFull <- glm(topFive ~ Hours + Variation_Hours + Penalty_Hours + Penalty_Minutes + Stage,
+               data = dakarRally_bikes_data, family = binomial)
+summary(modFull)
+```
+
+
+```{r}
+modRed <- glm(topFive ~  Hours + Variation_Hours +  Penalty_Hours + Stage,
+              data = dakarRally_bikes_data, family = binomial)
+summary(modRed)
+```
+```{r}
+anova(modRed, modFull, test = "Chisq")
+```
+
+
 
 # Quesrtion 3 
 
