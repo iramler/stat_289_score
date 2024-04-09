@@ -23,21 +23,42 @@ dakarRally_bikes_data <- read_csv("Dakar Rally/dakarRally_bikes_data.csv")
 dakarRally_bikes_data %>%
   group_by(Team) %>%
   summarise(count = n(),
+            average_Rank = mean(Rank),
             Mean_Hours_Driven = ((mean(Hours)*60 + mean(Minutes) + (mean(Seconds)/60)) / 60),
             Mean_Hours_Penalty = (mean(Penalty_Hours)*60 + mean(Penalty_Minutes) + (mean(Penalty_Seconds)/60)) / 60,
             Mean_Hours_Variation = (mean(Variation_Hours)*60 + mean(Variation_Minutes) + (mean(Variation_Seconds)/60)) / 60) %>%
-  arrange(desc(count))
+  arrange(average_Rank) %>%
+  head(5)
+
+dakarRally_bikes_data %>%
+  group_by(Driver) %>%
+  summarise(count = n(),
+            average_Rank = mean(Rank),
+            Mean_Hours_Driven = ((mean(Hours)*60 + mean(Minutes) + (mean(Seconds)/60)) / 60),
+            Mean_Hours_Penalty = (mean(Penalty_Hours)*60 + mean(Penalty_Minutes) + (mean(Penalty_Seconds)/60)) / 60,
+            Mean_Hours_Variation = (mean(Variation_Hours)*60 + mean(Variation_Minutes) + (mean(Variation_Seconds)/60)) / 60) %>%
 ```
 
 # Question 1
 
 ```{r}
-
+dakarRally_bikes_data %>%
+  filter( Stage == 6) %>%
+  select(Rank, Hours, Variation_Hours, Penalty_Hours, Penalty_Minutes) %>%
+  lm(Rank ~ ., data = .) %>%
+  anova()
 ```
 
 
-
 # Question 2
+
+```{r}
+dakarRally_bikes_data %>%
+  mutate(top5 = ifelse(Rank <= 5, 1, 0)) %>%
+  select(top5, Hours, Variation_Hours, Penalty_Hours, Stage) %>%
+  glm(top5 ~ ., data = ., family = binomial) %>%
+  summary()
+```
 
 
 
