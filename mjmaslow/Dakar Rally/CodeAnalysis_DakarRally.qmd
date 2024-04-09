@@ -26,8 +26,30 @@ dakarRally_bikes_data %>%
   filter( Stage == 6) %>%
   select(Rank, Hours, Variation_Hours, Penalty_Hours, Penalty_Minutes) %>%
   lm(Rank ~ ., data = .) %>%
+  summary()
+
+dakarRally_bikes_data %>%
+  filter( Stage == 6) %>%
+  select(Rank, Hours, Variation_Hours, Penalty_Hours, Penalty_Minutes) %>%
+  lm(Rank ~ ., data = .) %>%
   anova()
 ```
+
+## a.
+
+```{r}
+# R2 = 1 - SSE / SST
+SSE = 33737
+SST = (35395+50998+22590+8590+33737)
+
+(R2 = 1 - (SSE / SST))
+```
+
+## b.
+
+on answer key
+
+
 
 
 # Question 2
