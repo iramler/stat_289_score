@@ -51,7 +51,6 @@ on answer key
 
 
 
-
 # Question 2
 
 ```{r}
