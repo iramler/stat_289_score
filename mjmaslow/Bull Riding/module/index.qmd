@@ -1,7 +1,156 @@
 ---
-title: "Module"
-format: html
+title: "Professional Bull Riding Analysis"
+date: "2024-03-06"
+author: "Matt Maslow"
+description: Investigating a collection of professional bull riders and their statistics from 2023 season for the Touring Pro Division.
+editor: 
+  canonical: true
+categories:
+  - Linear Regression
+  - Summary Statistics
+  - Influential Points
+  - Hypothesis Testing
 ---
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction
+
+Example:.........
+
+`
+League of Legends (LoL) is a 5 v. 5 multiplayer online battle arena (MOBA) game developed by Riot Games. In this game, players assume the role of a "champion" with unique abilities and engage in intense battles against a team of other players or computer-controlled champions. Riot Games continually collects data to evaluate the impact of each champion, adjusting and fine-tuning various aspects to ensure fair and competitive gameplay. With regular updates (patches) occurring every two weeks, champions can become either extremely efficient and strong or in need of adjustments to enhance their abilities. Maintaining overall game balance is crucial, and developers employ strategies known as "nerfing" and "buffing" to achieve this balance. "Nerfing" refers to reducing the power or effectiveness of a champion or item, while "buffing" involves increasing its power or effectiveness.
+
+In this worksheet, we will analyze and describe histograms of Win Rates for different champions in LoL. The Win Rate, a key metric in the game, represents the percentage of games won by a champion out of the total games played. Understanding the distribution of Win Rates and identifying potential outliers can provide valuable insights into champion balance and performance, informing strategic decision-making in LoL gameplay.
+`
+
+
+Linear Regression
+Summary Statistics
+Influential Points
+Hypothesis Testing
+
+
+`1.` What are the most significant predictors of a bull rider's final points?
+
+`2.` What is the stronger model for predicting PBR's final points?
+
+`3.` Are there any outliers or a potential influential point? How would we handle these point(s)?
+
+`4.` If we want to improve a model with the current data, how can we fix it with a transformation?
+
+
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will be able to:
+
+1.  Understand the concept of histograms and their relevance in statistical analysis. 
+
+2.  Analyze and describe histograms to gain insights into the distribution of Win Rates in League of Legends. In particular, being able to describe the center, shape, and spread of a distribution based on the displayed graph.
+
+3.  Identify potential outliers in a numerical variable using numerical methods such as the "1.5 IQR Rule" or z-scores. 
+
+4.  Interpret the implications of outliers in terms of champion balance and performance.
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Technology requirement: The activity handout provides histograms and summary statistics so that no statistical software is required. However, the activity could be modified to ask students to produce that information from the raw dataset and/or extend the activity to investigate other variables available in the data.
+
+1.  Histograms: Familiarity with histograms as a graphical representation of the distribution of a continuous variable, such as Win Rates, is crucial. You should understand how to interpret histograms, including the concepts of bins, frequencies, and the shape, center, and spread of distributions.
+
+2.  Outliers: Knowledge of outliers, which are data points that deviate significantly from the overall pattern, is important. 
+
+3.  Familiarity with basic statistical analysis techniques, such as measures of central tendency (mean, median) and measures of dispersion (standard deviation, range), will aid in interpreting and analyzing the histograms. These techniques can provide insights into the overall characteristics and variability of the Win Rates.
+
+4. Knowledge of outlier detection methods (such as the 1.5 IQR Rule and/or z-scores) is fundamental to the activity.
+:::
+
+
+### Data
+
+A data frame for 38 riders from the 2023 season of the Professional Bull Riding (PBR) league, for the Touring Pro Division. These data frames hold the stats for the riders and the bulls they ride. The data was scraped from the PBR website. For the rider data set, there are 357 riders with 16 variables, however, not all of the riders points meaning they would not hold a lot of significance in data and may skew the results. The bull data set has 50 bulls with 11 variables on their scoring statistics.
+
+<details>
+
+<summary><b>Riders Data: Variable Descriptions</b></summary>
+
+| **Variable**        | **Description**                                                          |
+|---------------------|--------------------------------------------------------------------------|
+| `Rider`             | Name of the pro bull rider                                               |
+| `Points`            | Total points earned by the bull rider                                    |
+| `Points Back`       | Difference in points between the rider and the leader                    |
+| `Events`            | Number of events participated in by the rider                            |
+| `Outs`              | Number of times the rider went through gate (Rides + Buckoffs)           |
+| `Rides`             | Number of successful rides by the rider                                  |
+| `Buckoffs`          | Number of unsuccessful rides by the rider                                |
+| `prop.Ridden`       | Percent of successful rides                                              |
+| `Avg Ride Score`    | Average score for successful rides by the rider                          |
+| `Highest RideScore` | Highest score achieved by the rider in a single ride                     |
+| `Avg Buckoff Time`  | Average time spent on bulls that the rider failed to ride                |
+| `Round Wins`        | Number of round wins achieved by the rider                               |
+| `Event Wins`        | Number of event wins achieved by the rider                               |
+| `ReRides Taken`     | Number of re-rides taken by the rider                                    |
+| `Earnings`          | Total earnings of the rider from bull riding events                      |
+| `90Pt Rides`        | Number of rides scoring 90 points or above                               |
+
+
+</details>
+Download data: [BullRiders.csv](BullRiders.csv)
+
+
+<details>
+
+<summary><b>Bull's Data: Variable Descriptions</b></summary>
+
+| **Variable**           | **Description**                                            |
+|------------------------|------------------------------------------------------------|
+| `Bull`                 | Name of the bull                                           |
+| `World Champ Avg Score`| Average score of the bull at world championship events     |
+| `Events`               | Number of events the bull participated in                  |
+| `Ridden`               | Number of times the bull was successfully ridden           |
+| `Outs`                 | Number of times the bull was scheduled to be ridden        |
+| `Rides`                | Number of successful rides on the bull                     |
+| `Buckoffs`             | Number of unsuccessful rides on the bull                   |
+| `Avg BullScore`        | Average score for successful rides on the bull             |
+| `Highest BullScore`    | Highest score achieved by a rider on this bull             |
+| `Avg Buckoff Time`     | Average time a rider spends on the bull before bucking off |
+| `45Pt Rides`           | Number of rides scoring 45 points or above on this bull    |
+
+
+</details>
+Download data: [Bulls.csv](Bulls.csv)
+
+
+#### Data Source
+
+<a href="https://azcms.pbr.com/statistics/rider/?season=2023&tour=TPD-US" target="_blank">Bull Rider's Data</a>
+
+<a href="https://azcms.pbr.com/statistics/bull/" target="_blank">Bull's Data</a>
+
+
+### Materials
+
+[Class handout: Rider's](pbr-rider.docx)
+
+[Class handout: Rider's - with solutions](AnswerKey_pbr-rider.docx)
+
+[Class handout: Bull's](pbr-bulls.docx)
+
+[Class handout: Bull's - with solutions](AnswerKey_pbr-bulls.docx)
+
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+In conclusion, 
+
+
+:::
+
+
+### Authors
+
+Created by Matthew Maslow (St. Lawrence University), [Ivan Ramler (St. Lawrence University)](mailto:iramler@stlawu.edu), A.J. Dykstra (St. Lawrence University)
 
 
 
