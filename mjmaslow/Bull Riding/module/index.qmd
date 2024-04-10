@@ -6,7 +6,7 @@ description: Investigating a collection of professional bull riders and their st
 editor: 
   canonical: true
 categories:
-  - Linear Regression
+  - Linear/Logistic Regression
   - Summary Statistics
   - Influential Points
   - Hypothesis Testing
@@ -18,55 +18,33 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-Example:.........
+Professional Bull Riding (PBR) is a sport that requires a unique combination of skill, strength, and courage. Riders must stay on a bucking bull as long as they can, using only one hand to hold on while the bull tries to throw them off. The rider is scored based on their performance, and the bull is also scored based on how well it bucks. In this dataset, we will explore the data from the 2023 season of the PBR league, Touring Pro Division, to understand the factors that contribute to a rider's success and the performance, and the same for the bulls.
 
-`
-League of Legends (LoL) is a 5 v. 5 multiplayer online battle arena (MOBA) game developed by Riot Games. In this game, players assume the role of a "champion" with unique abilities and engage in intense battles against a team of other players or computer-controlled champions. Riot Games continually collects data to evaluate the impact of each champion, adjusting and fine-tuning various aspects to ensure fair and competitive gameplay. With regular updates (patches) occurring every two weeks, champions can become either extremely efficient and strong or in need of adjustments to enhance their abilities. Maintaining overall game balance is crucial, and developers employ strategies known as "nerfing" and "buffing" to achieve this balance. "Nerfing" refers to reducing the power or effectiveness of a champion or item, while "buffing" involves increasing its power or effectiveness.
-
-In this worksheet, we will analyze and describe histograms of Win Rates for different champions in LoL. The Win Rate, a key metric in the game, represents the percentage of games won by a champion out of the total games played. Understanding the distribution of Win Rates and identifying potential outliers can provide valuable insights into champion balance and performance, informing strategic decision-making in LoL gameplay.
-`
-
-
-Linear Regression
-Summary Statistics
-Influential Points
-Hypothesis Testing
-
-
-`1.` What are the most significant predictors of a bull rider's final points?
-
-`2.` What is the stronger model for predicting PBR's final points?
-
-`3.` Are there any outliers or a potential influential point? How would we handle these point(s)?
-
-`4.` If we want to improve a model with the current data, how can we fix it with a transformation?
-
-
+In these worksheets, we will exploring models that predict the points earned by riders and bulls in the 2023 season of the Professional Bull Riding (PBR) league, Touring Pro Division. We will fit multiple linear regression models to predict rider points and logistic regression models to predict bull points. We will interpret the model summary outputs, analyze patterns and trends, identify potential outliers, and test model efficiency.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
 
-1.  Understand the concept of histograms and their relevance in statistical analysis. 
+1.  Understand how to fit and interpret multiple linear models along with logistic regression models. 
 
-2.  Analyze and describe histograms to gain insights into the distribution of Win Rates in League of Legends. In particular, being able to describe the center, shape, and spread of a distribution based on the displayed graph.
+2.  Analyze and describe model summary outputs, as well as explaining patterns or trends, and effects of multicollinearity 
 
-3.  Identify potential outliers in a numerical variable using numerical methods such as the "1.5 IQR Rule" or z-scores. 
+3.  Identify potential outliers from residual plots, and using variable transformation to improve model. 
 
-4.  Interpret the implications of outliers in terms of champion balance and performance.
+4.  Ability to test model efficiency, as well as performing nested-hypothesis test to find best model.
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-Technology requirement: The activity handout provides histograms and summary statistics so that no statistical software is required. However, the activity could be modified to ask students to produce that information from the raw dataset and/or extend the activity to investigate other variables available in the data.
+Technology requirement: The activity handout will require R-studio to complete the questions. This will need to be able to have access to both CSV files.
 
-1.  Histograms: Familiarity with histograms as a graphical representation of the distribution of a continuous variable, such as Win Rates, is crucial. You should understand how to interpret histograms, including the concepts of bins, frequencies, and the shape, center, and spread of distributions.
+1.  Model Fitting: Know how to fit multiple linear regression and logistic regression model in R, along with interpreting the model summary output. This will require familiarity with the `lm()` and `glm()` functions. 
 
-2.  Outliers: Knowledge of outliers, which are data points that deviate significantly from the overall pattern, is important. 
+2.  Model Summary: Understand how to analyze and describe the patterns or trends in the data, along with how to identify the presence multicollinearity and how to fix it in the model.
 
-3.  Familiarity with basic statistical analysis techniques, such as measures of central tendency (mean, median) and measures of dispersion (standard deviation, range), will aid in interpreting and analyzing the histograms. These techniques can provide insights into the overall characteristics and variability of the Win Rates.
+3.  Outliers: Know how to properly deal with outliers, data points that impact the overall trend/pattern of data, along with the rules of cooks distance. This will will involve the analysis of the residual plots of the models using `plot()` function.
 
-4. Knowledge of outlier detection methods (such as the 1.5 IQR Rule and/or z-scores) is fundamental to the activity.
+4.  Hypothesis Testing: Understand how to perform nested-hypothesis test to find the best model, along with the rules testing. This will require the use of the `anova()` function, or can be completed by hand with use of summary outputs, along with anova tables of individual models.
 :::
-
 
 ### Data
 

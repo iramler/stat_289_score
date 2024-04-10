@@ -1,0 +1,43 @@
+---
+title: "Dakar Rally Analysis"
+date: "2024-03-028"
+author: "Matt Maslow"
+description: Investigating The 2024 Dakar Rally biker rankings and times, throughout all 12 stages.
+editor: 
+  canonical: true
+categories:
+  - Multiple Linear Regression
+  - Model Diagnostics
+  - Testing
+  - Summary Statistics
+---
+
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+
+### Introduction
+
+Professional Bull Riding (PBR) is a sport that requires a unique combination of skill, strength, and courage. Riders must stay on a bucking bull as long as they can, using only one hand to hold on while the bull tries to throw them off. The rider is scored based on their performance, and the bull is also scored based on how well it bucks. In this dataset, we will explore the data from the 2023 season of the PBR league, Touring Pro Division, to understand the factors that contribute to a rider's success and the performance, and the same for the bulls.
+
+In these worksheets, we will exploring models that predict the points earned by riders and bulls in the 2023 season of the Professional Bull Riding (PBR) league, Touring Pro Division. We will fit multiple linear regression models to predict rider points and logistic regression models to predict bull points. We will interpret the model summary outputs, analyze patterns and trends, identify potential outliers, and test model efficiency.
+
+
+
+`1.` What are the most significant predictors of a driver's final ranking after a given stage?
+
+`2.` After a given number of stages, predict probability of driver ranking top five?
+
+`3.` Are there any outliers or a potential influential point? How would we handle these point(s)?
+
+`4.` What model is better for predicting the driver's ranking?
+
+
+
+
+
+
+
+

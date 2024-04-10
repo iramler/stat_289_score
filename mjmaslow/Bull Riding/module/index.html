@@ -50,7 +50,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Professional Bull Riding Analysis</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Linear Regression</div>
+    <div class="quarto-category">Linear/Logistic Regression</div>
     <div class="quarto-category">Summary Statistics</div>
     <div class="quarto-category">Influential Points</div>
     <div class="quarto-category">Hypothesis Testing</div>
@@ -95,12 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
 <p>Example:………</p>
 <p>` League of Legends (LoL) is a 5 v. 5 multiplayer online battle arena (MOBA) game developed by Riot Games. In this game, players assume the role of a “champion” with unique abilities and engage in intense battles against a team of other players or computer-controlled champions. Riot Games continually collects data to evaluate the impact of each champion, adjusting and fine-tuning various aspects to ensure fair and competitive gameplay. With regular updates (patches) occurring every two weeks, champions can become either extremely efficient and strong or in need of adjustments to enhance their abilities. Maintaining overall game balance is crucial, and developers employ strategies known as “nerfing” and “buffing” to achieve this balance. “Nerfing” refers to reducing the power or effectiveness of a champion or item, while “buffing” involves increasing its power or effectiveness.</p>
-<p>In this worksheet, we will analyze and describe histograms of Win Rates for different champions in LoL. The Win Rate, a key metric in the game, represents the percentage of games won by a champion out of the total games played. Understanding the distribution of Win Rates and identifying potential outliers can provide valuable insights into champion balance and performance, informing strategic decision-making in LoL gameplay. `</p>
-<p>Linear Regression Summary Statistics Influential Points Hypothesis Testing</p>
-<p><code>1.</code> What are the most significant predictors of a bull rider’s final points?</p>
-<p><code>2.</code> What is the stronger model for predicting PBR’s final points?</p>
-<p><code>3.</code> Are there any outliers or a potential influential point? How would we handle these point(s)?</p>
-<p><code>4.</code> If we want to improve a model with the current data, how can we fix it with a transformation?</p>
+<p>In this worksheet, we will analyze and describe histograms of Win Rates for different champions in LoL. The Win Rate, a key metric in the game, represents the percentage of games won by a champion out of the total games played. Understanding the distribution of Win Rates and identifying potential outliers can provide valuable insights into champion balance and performance, informing strategic decision-making in LoL gameplay.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Learning Objectives">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -115,10 +110,10 @@ Learning Objectives
 <div class="callout-body-container callout-body">
 <p>By the end of this activity, you will be able to:</p>
 <ol type="1">
-<li><p>Understand the concept of histograms and their relevance in statistical analysis.</p></li>
-<li><p>Analyze and describe histograms to gain insights into the distribution of Win Rates in League of Legends. In particular, being able to describe the center, shape, and spread of a distribution based on the displayed graph.</p></li>
-<li><p>Identify potential outliers in a numerical variable using numerical methods such as the “1.5 IQR Rule” or z-scores.</p></li>
-<li><p>Interpret the implications of outliers in terms of champion balance and performance.</p></li>
+<li><p>Understand how to fit and interpret multiple linear models along with logistic regression models.</p></li>
+<li><p>Analyze and describe model summary outputs, as well as explaining patterns or trends, and effects of multicollinearity</p></li>
+<li><p>Identify potential outliers from residual plots, and using variable transformation to improve model.</p></li>
+<li><p>Ability to test model efficiency, as well as performing nested-hypothesis test to find best model.</p></li>
 </ol>
 </div>
 </div>
@@ -135,12 +130,12 @@ Methods
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Technology requirement: The activity handout provides histograms and summary statistics so that no statistical software is required. However, the activity could be modified to ask students to produce that information from the raw dataset and/or extend the activity to investigate other variables available in the data.</p>
+<p>Technology requirement: The activity handout will require R-studio to complete the questions. This will need to be able to have access to both CSV files.</p>
 <ol type="1">
-<li><p>Histograms: Familiarity with histograms as a graphical representation of the distribution of a continuous variable, such as Win Rates, is crucial. You should understand how to interpret histograms, including the concepts of bins, frequencies, and the shape, center, and spread of distributions.</p></li>
-<li><p>Outliers: Knowledge of outliers, which are data points that deviate significantly from the overall pattern, is important.</p></li>
-<li><p>Familiarity with basic statistical analysis techniques, such as measures of central tendency (mean, median) and measures of dispersion (standard deviation, range), will aid in interpreting and analyzing the histograms. These techniques can provide insights into the overall characteristics and variability of the Win Rates.</p></li>
-<li><p>Knowledge of outlier detection methods (such as the 1.5 IQR Rule and/or z-scores) is fundamental to the activity.</p></li>
+<li><p>Model Fitting: Know how to fit multiple linear regression and logistic regression model in R, along with interpreting the model summary output. This will require familiarity with the <code>lm()</code> and <code>glm()</code> functions.</p></li>
+<li><p>Model Summary: Understand how to analyze and describe the patterns or trends in the data, along with how to identify the presence multicollinearity and how to fix it in the model.</p></li>
+<li><p>Outliers: Know how to properly deal with outliers, data points that impact the overall trend/pattern of data, along with the rules of cooks distance. This will will involve the analysis of the residual plots of the models using <code>plot()</code> function.</p></li>
+<li><p>Hypothesis Testing: Understand how to perform nested-hypothesis test to find the best model, along with the rules testing. This will require the use of the <code>anova()</code> function, or can be completed by hand with use of summary outputs, along with anova tables of individual models.</p></li>
 </ol>
 </div>
 </div>
