@@ -120,8 +120,7 @@ Download data: [Bulls.csv](Bulls.csv)
 
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-In conclusion, 
-
+In conclusion, the investigation explores the 2023 season of the Professional Bull Riding (PBR) league's Touring Pro Division, aiming to uncover the factors influencing rider and bull performance, more specifically on how they are scored. By fitting multiple linear regression models to predict rider points and logistic regression models to predict bull points, statistic learners gain insights into interpreting model summaries, identifying patterns and trends, and evaluating model efficiency. Learning objectives encompass understanding and interpreting linear and logistic regression models, analyzing model summaries, detecting multicollinearity, identifying outliers, knowing when and how to use variable transformation, and testing model efficiency through nested-hypothesis tests. Through these worksheets, statistic learners gain practical experience in leveraging these techniques to help performance evaluation and decision-making in professional bull riding competitions.
 
 :::
 

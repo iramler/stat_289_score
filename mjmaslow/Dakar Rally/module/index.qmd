@@ -97,8 +97,7 @@ Download data: [dakarRally_bikes_data.csv](.csv)
 
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-In conclusion, 
-
+In conclusion, the investigation into the 2024 Dakar Rally's motorist statistics across all 12 stages aims to deepen statistic learners' understanding of predictive modeling and statistical analysis in the context of competitive motor-sport event. By fitting multiple linear regression models to predict driver rankings based on their accumulative time placing after each stage. Readers will gain insight into interpreting model summaries, identifying patterns and trends, and addressing potential outliers. Through hands-on exercises, skills can be developed in model diagnostics, outlier identification, and testing model efficiency using nested-hypothesis tests. Ultimately, this exploration provides a practical framework for utilization statistical techniques in sports applications.
 
 :::
 
