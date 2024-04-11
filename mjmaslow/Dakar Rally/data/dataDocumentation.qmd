@@ -12,7 +12,6 @@ categories:
   - Summary Statistics
 ---
 
-
 ## Module
 
 <div style="text-align:center;">
@@ -58,25 +57,16 @@ A data frame for the 2024 Dakar Rally, is an annual off-road endurance event tha
 Download data: [dakarRally_bikes_data.csv](.csv)
 
 
-
 ### Questions
 
-`1.` 
 
+`1.` What are the most significant predictors of a driver's final ranking after a given stage?
 
-
-
-Ex.....
-`1.` What are the most significant predictors of a bull rider's final points?
-
-`2.` What is the stronger model for predicting PBR's final points?
+`2.` After a given number of stages, predict probability of driver ranking top five?
 
 `3.` Are there any outliers or a potential influential point? How would we handle these point(s)?
 
-`4.` If we want to improve a model with the current data, how can we fix it with a transformation?
-
-
-
+`4.` What model is better for predicting the driver's ranking?
 
 
 

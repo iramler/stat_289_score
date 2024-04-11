@@ -111,6 +111,35 @@ athletesTidy <-
            into = c("meters", "feet"),
            sep = '/') |>
   select(-feet)
+
+
+athletesTidy |>
+  filter(discipline == "Ice Hockey") |>
+  view()
+```
+
+1e. Notice all the missing values in the height variable, calculate the proportion of missing values and comment on how using height in an analysis may be impacted by the missing values.
+
+```{r}
+athletesTidy |>
+  summarise(propNA = mean(is.na(meters)))
+```
+
+1f. Calculate the proportion of missing values for Ice Hockey and discuss the difference from the previous result.
+
+```{r}
+athletesTidy |>
+  filter(discipline == "Ice Hockey") |>
+  summarise(propNA = mean(is.na(meters)))
+```
+
+1g. Calculate the proportion of missing values for each sport, and sort them by descending order.
+
+```{r}
+athletesTidy |>
+  group_by(discipline) |>
+  summarise(propNA = mean(is.na(meters))) |>
+  arrange(desc(propNA))
 ```
 
 ## 3. Data Summarization

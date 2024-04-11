@@ -39,7 +39,7 @@ The data set contains 360 rows and 15 columns. Each row represents a completed d
 | Judge7      | The score that judge 7 awarded the dive                        |
 | Points      | Overall points the individual dive earned                      |
 
-: [filename.csv](../data/divingdata.csv)
+: [divingdata.csv](../data/divingdata.csv)
 
 ## Questions
 
