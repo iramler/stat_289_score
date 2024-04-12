@@ -22,7 +22,7 @@ In this worksheet, we will focus on cleaning up untidy data. To do this, we will
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
 
-1. Scrape data from a website
+1. Practice writing functions
 
 2. Tidy data
 
@@ -30,5 +30,6 @@ By the end of this activity, you will be able to:
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 1. Familiarity with dplyr
+2. Understand how to write a function
 :::
 

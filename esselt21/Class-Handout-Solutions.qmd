@@ -77,11 +77,70 @@ See if you can apply some of these techniques shown above to the athletes data s
 
 1a. Create a first and last name column and get rid of the short_name column.
 
+```{r}
+athletesTidy <-
+  athletes |>
+  separate(name,
+           sep = '^\\S*\\K\\s+',
+           into = c('last_name', 'first_name')) |>
+  select(-short_name)
+```
+
 1b. Make gender a factored variable.
+
+```{r}
+athletesTidy <-
+  athletesTidy |>
+  mutate(gender = factor(gender))
+```
 
 1c. Get rid of country_code, discipline_code, residence_place, residence_country, and url.
 
+```{r}
+athletesTidy <-
+  athletesTidy |>
+  select(-c("country_code", "discipline_code", "residence_place", "url"))
+```
+
 1d. See if you can figure out how to separate the height variable into just meters and convert it into a numeric value.
+
+```{r}
+athletesTidy <-
+  athletesTidy |>
+  separate(`height_m/ft`,
+           into = c("meters", "feet"),
+           sep = '/') |>
+  select(-feet)
+
+
+athletesTidy |>
+  filter(discipline == "Ice Hockey") |>
+  view()
+```
+
+1e. Notice all the missing values in the height variable, calculate the proportion of missing values and comment on how using height in an analysis may be impacted by the missing values.
+
+```{r}
+athletesTidy |>
+  summarise(propNA = mean(is.na(meters)))
+```
+
+1f. Calculate the proportion of missing values for Ice Hockey and discuss the difference from the previous result.
+
+```{r}
+athletesTidy |>
+  filter(discipline == "Ice Hockey") |>
+  summarise(propNA = mean(is.na(meters)))
+```
+
+1g. Calculate the proportion of missing values for each sport, and sort them by descending order.
+
+```{r}
+athletesTidy |>
+  group_by(discipline) |>
+  summarise(propNA = mean(is.na(meters))) |>
+  arrange(desc(propNA))
+```
 
 ## 3. Data Summarization
 Next lets look at summarizing some statistics using our cleaned medals data set. First, lets see which country has the most medal winners in our data set using dplyr.

@@ -136,6 +136,7 @@ popularity_df_SUP <-
 ```
 
 ```{r}
+write.csv(interest_df_4, "Combinations_Total.csv", row.names = FALSE)
 write.csv(popularity_df_ADC, "ADC.csv", row.names = FALSE)
 write.csv(popularity_df_SUP, "SUP.csv", row.names = FALSE)
 write.csv(rest_df, "Rest.csv", row.names = FALSE)
@@ -148,6 +149,10 @@ table <- rest_df |>
               values_from = n_matches, 
               ) |>
               column_to_rownames("SUP")
+```
+
+```{r}
+write.csv(table, "table.csv", row.names = TRUE)
 ```
 
 ```{r}

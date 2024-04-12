@@ -1,0 +1,46 @@
+---
+title: "NCAA Liberty League Women's Volleyball data 2013-2022"
+author: Sierra Hess
+date: April 11, 2024
+description: Volleyball scoring and points after timeout for 2013-2022 Volleyball data
+categories: 
+  - Scoring a point after a timeout 
+  - Winning a game after last timeout
+  - Winning a game after first timeout
+execute: 
+  markdown: 
+    canonical: true
+---
+
+## Motivation 
+In NCAA Women's Volleyball for Liberty League Division, there are 12 teams in New York that are a part of the division. In a play by play dataset, each play of every game from 1013 to 2022 was given with information about the scores,  a description of the plays, when and where the games were. From this dataset, I wanted to look at the effect of a timeout on the game. I looked at both howlikley a losing team was to score a point following a timeout and how likley the losing team was to win after the final timeout of the game. 
+
+
+## Data
+This data set has data from 6,408 rows and 17 columns. Each row represents a timeout in a volleyball game for the NCAA women's volleyball Liberty League games from 2013 until 2022.
+
+|Variable               | Description                                          |
+|-----------------------|------------------------------------------------------|
+|play_descripton        |Which team called the timeout                         | 
+|set                    |The date of the game                                  |
+|Time                   |The set in which the timeout was called               | 
+|Site                   |The location of the game                              |
+|Attendance             |The number of people in attendance of the game        |
+|url                    |The specific url from where the game data was pulled  |
+|timeout                |True/ False of weather or not the play was a timeout  |
+|prev_home_score        |score of the home team when the timeout was called    |
+|prev_visiting_score    |score of the visiting team when the timeout was called|
+|next_home_score        |score of the home team after after the next play      |
+|next_visiting_score    |score of the visiting team after the next play        |
+|losing_team            |the team that had the lower previous score            |
+|set_winner             |the team that won the entire set                      |
+|losing_team_wins       |weather the previously losing team won the set        |
+
+
+
+
+
+
+
+
+
