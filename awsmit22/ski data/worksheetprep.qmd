@@ -1,0 +1,134 @@
+---
+title: "worksheetprep"
+format: html
+---
+
+according to ethan the first part was uphill and then it was a little flat and then it was down and then swiggly and up and then down and then up and it went down and then down and out and then a little up and then down and then flat and then up and then flat and then steep uphill into sharp turn into finish.
+
+```{r}
+library(readr)
+library(tidyverse)
+library(modelr)
+library(broom)
+ski_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/ski data/W10kTro_2257.csv")
+ski_speeds <- ski_df |> mutate(Speed1 = 1.3/ Time1, Speed2 = 3/(Time2-Time1), Speed3 = 3.2/(Time3-Time2), Speed4 = 2.5/(Time4-Time3))
+ski_speeds <- ski_speeds |> filter(!is.na(Rank4)) |> filter(!is.na(Speed1))
+```
+
+```{r}
+write.csv(ski_speeds, "ski_speeds.csv", row.names = FALSE) 
+```
+
+```{r}
+speeds_long <- ski_speeds |> pivot_longer(c("Speed1", "Speed2", "Speed3", "Speed4"), names_to = "speedinterval", values_to = "speed") |> pivot_longer(c("Rank1", "Rank2", "Rank3", "Rank4"), names_to = "rankinterval", values_to = "rank") |> relocate(speed, speedinterval, rankinterval, rank)
+```
+
+```{r}
+ski_new <- ski_speeds |> pivot_longer(c("Speed1", "Speed2", "Speed3", "Speed4"), names_to = "speedinterval", values_to = "speed") |> relocate(speed, speedinterval)
+```
+
+```{r}
+skimod_new<- aov(speed ~ Name + speedinterval, data = ski_new)
+summary(skimod_new)
+```
+
+```{r}
+tapply(ski_new$speed, ski_new$speedinterval, mean)
+```
+
+```{r}
+ski_new2 <- na.omit(ski_new)
+```
+
+```{r}
+tapply(ski_new2$speed, ski_new2$speedinterval, mean)
+```
+
+```{r}
+ski_speeds_anova <- ski_new |> filter(!is.na(speed))
+```
+
+```{r}
+tapply(ski_speeds_clean$speed, ski_speeds_clean$speedidinterval, mean)
+```
+
+```{r}
+ski_df |> nrow()
+```
+
+```{r}
+anovaski <- aov(speed ~ Name + speedinterval, data = ski_speeds_clean)
+summary(anovaski)
+```
+
+```{r}
+ski_speeds |> relocate(Speed1, Rank4)
+```
+
+
+# checking conditions for simple model
+
+```{r}
+mod_1 <- lm(Rank4~ Speed1, data = ski_speeds)
+```
+
+
+# linearity and variance
+```{r}
+#resid vs. fits plot
+plot(mod_1$residuals~mod_1$fitted)
+abline(0,0)
+
+#scatter plot
+plot(Rank4~Speed1, data = ski_speeds)
+abline(mod_1)
+```
+
+The linearity and variance are both relatively good. I would say that the variance is stronger than the linearity.
+
+
+# residual normality
+```{r}
+#histogram of residuals
+hist(mod_1$residuals)
+# normal quantile plot
+qqnorm(mod_1$residuals)
+qqline(mod_1$residuals)
+```
+pretty good
+
+# checking conditions for multi regression model
+
+# linearity and variance
+```{r}
+#resid vs. fits plot
+plot(modanova$residuals~modanova$fitted)
+abline(0,0)
+```
+
+good
+
+
+# residual normality
+```{r}
+#histogram of residuals
+hist(modanova$residuals)
+# normal quantile plot
+qqnorm(modanova$residuals)
+qqline(modanova$residuals)
+```
+not great
+
+```{r}
+cor(ski_speeds$Rank4, skispeeds$Speed1)
+```
+
+
+```{r}
+lm(Rank4 ~ speed + Bib, data = ski_speeds_anova)
+```
+
+```{r}
+write.csv(ski_speeds_anova, "ski_speeds_anova.csv", row.names = FALSE) 
+```
+
