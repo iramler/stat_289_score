@@ -23,7 +23,7 @@ The frequency with which champions are chosen in matches can be affected by vari
 
 ## Data
 
-The data used in this study comprises three distinct data sets, each representing popular champions in the Attack Damage Carry (ADC) and Support roles, along with less significant combinations grouped under the "Rest" category. The ADC dataset includes information on the most frequently chosen champions from a pool of 17, while the Support dataset covers 19 such champions. The remaining 36 combinations are categorized as "Rest". As a result, the study incorporates the five most selected ADC and Support champions, alongside the remaining champions grouped under the "Rest" category, resulting in a 6x6 table.
+The data provided here consists of two data sets. For both data sets, each row represents the number of times each listed ADC-Support pair appeared in a match together. The file `lol_adc_sup_all-pairs.csv` contains the results each every pair of champions in the available data. The file `lol_adc_sup_popular-pairs.csv` contains the results for the five most popular ADCs and the five most popular Supports. All other ADCs and Supports are labeled as "Other"
 
 | Variable | Description                                     |
 |----------|-------------------------------------------------|
@@ -31,9 +31,14 @@ The data used in this study comprises three distinct data sets, each representin
 | SUP      | The Support champion used in the match          |
 | count    | The number of games for each ADC - Support pair |
 
-: [adc_support_pairs.csv](../data/adc_support_pairs.csv)
+: [lol_adc_sup_all-pairs.csv](../data/lol_adc_sup_all-pairs.csv)
+
+: [lol_adc_sup_popular-pairs.csv](../data/lol_adc_sup_popular-pairs.csv)
+
 
 ## Questions
+
+These can be answered using either version of the data.
 
 1.  Identify the variables of interest in this study. Are they categorical or numerical? If categorical, identify the levels of each variable.
 
