@@ -59,25 +59,25 @@ A data frame for the 2024 Dakar Rally, is an annual off-road endurance event tha
 
 <summary><b> Data: Variable Descriptions</b></summary>
 
-| **Variable**        | **Description**                                                                        |
-|---------------------|----------------------------------------------------------------------------------------|
-| Rank                | The ranking of the driver in the competition                                           |
-| Driver_Number       | The number assigned to the driver in the competition                                   |
-| Team                | The team to which the driver belongs                                                   |
-| Country             | The country of origin of the driver                                                    |
-| Driver              | The name of the driver                                                                 |
-| Hours               | The hours component of the time                                                        |
-| Minutes             | The minutes component of the time                                                      |
-| Seconds             | The seconds component of the time                                                      |
-| *Variation*         |*The variation in time is the difference in time between drivers in their specific ranks*|
-| Variation_Hours     | The hours component of the variation in time                                           |
-| Variation_Minutes   | The minutes component of the variation in time                                         |
-| Variation_Seconds   | The seconds component of the variation in time                                         |
-| Penalty_Hours       | The hours component of the penalty time                                                |
-| Penalty_Minutes     | The minutes component of the penalty time                                              |
-| Penalty_Seconds     | The seconds component of the penalty time                                              |
-| Stage               | The stage number of the competition (0-12 stages)                                      |
-| Image_URL           | The URL of the image associated with the player/driver/Experience Level                |
+| **Variable**        | **Description**                                                                          |
+|---------------------|------------------------------------------------------------------------------------------|
+| `Rank`                | The ranking of the driver in the competition                                           |
+| `Driver_Number`       | The number assigned to the driver in the competition                                   |
+| `Team`                | The team to which the driver belongs                                                   |
+| `Country`             | The country of origin of the driver                                                    |
+| `Driver`              | The name of the driver                                                                 |
+| `Hours`               | The hours component of the time                                                        |
+| `Minutes`             | The minutes component of the time                                                      |
+| `Seconds`             | The seconds component of the time                                                      |
+| *Variation*         |*The variation in time is the difference in time between drivers in their specific ranks* |
+| `Variation_Hours`     | The hours component of the variation in time                                           |
+| `Variation_Minutes`   | The minutes component of the variation in time                                         |
+| `Variation_Seconds`   | The seconds component of the variation in time                                         |
+| `Penalty_Hours`       | The hours component of the penalty time                                                |
+| `Penalty_Minutes`     | The minutes component of the penalty time                                              |
+| `Penalty_Seconds`     | The seconds component of the penalty time                                              |
+| `Stage`               | The stage number of the competition (0-12 stages)                                      |
+| `Image_URL`           | The URL of the image associated with the player/driver/Experience Level                |
 
 
 </details>
