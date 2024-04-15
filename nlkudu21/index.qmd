@@ -29,7 +29,7 @@ By the end of this activity, you will be able to:
 
 2.  Identify potential outliers in a numerical variable using numerical methods such as the "1.5 IQR Rule".
 
-3.  Understand outliers and their affect on the data/summary statistics.
+3.  Understand outliers and their effect on the data/summary statistics.
 
 :::
 
