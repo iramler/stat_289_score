@@ -15,7 +15,7 @@ library(tidyverse)
 
 
 ```{r}
-dakarRally_bikes_data <- read_csv("Dakar Rally/dakarRally_bikes_data.csv")
+dakarRally_bikes_data <- read_csv("Dakar Rally/data/dakarRally_bikes_data.csv")
 ```
 
 
@@ -94,7 +94,38 @@ dakarRally_bikes_data %>%
 
 
 
+# viz
+```{r}
+dakarRally_bikes_data %>%
+  group_by(Country, Driver) %>%
+  summarise(count = n(),
+            average_Rank = mean(Rank),
+            Mean_Hours_Driven = ((mean(Hours)*60 + mean(Minutes) + (mean(Seconds)/60)) / 60),
+            Mean_Hours_Penalty = (mean(Penalty_Hours)*60 + mean(Penalty_Minutes) + (mean(Penalty_Seconds)/60)) / 60,
+            Mean_Hours_Variation = (mean(Variation_Hours)*60 + mean(Variation_Minutes) + (mean(Variation_Seconds)/60)) / 60) %>%
+  filter((count == 13)) %>%
+  arrange(desc(Mean_Hours_Driven))
+```
 
+```{r}
+dakarRally_bikes_data %>%
+  group_by(Country, Driver) %>%
+  summarise(count = n(),
+            average_Rank = mean(Rank),
+            Mean_Hours_Driven = ((mean(Hours)*60 + mean(Minutes) + (mean(Seconds)/60)) / 60),
+            Mean_Hours_Penalty = (mean(Penalty_Hours)*60 + mean(Penalty_Minutes) + (mean(Penalty_Seconds)/60)) / 60,
+            Mean_Hours_Variation = (mean(Variation_Hours)*60 + mean(Variation_Minutes) + (mean(Variation_Seconds)/60)) / 60) %>%
+  filter(count == 13) %>%
+  arrange(average_Rank) %>%
+  ggplot(aes(x = average_Rank, y = Mean_Hours_Variation)) +
+  geom_point() +
+  geom_smooth(se = FALSE) +
+  labs(title = "Average Rank vs. Mean Hours Driven + Mean Hours Penalty",
+       x = "Average Rank",
+       y = "Mean Hours Driven + Mean Hours Penalty") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
 
 
 

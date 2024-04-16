@@ -13,7 +13,7 @@ library(broom)
 
 
 ```{r}
-bulls <- read_csv("Bull Riding/Bulls.csv")
+bulls <- read_csv("Bull Riding/data/Bulls.csv")
 ```
 
 # 1 Variable selection techniques

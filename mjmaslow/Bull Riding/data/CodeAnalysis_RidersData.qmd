@@ -10,7 +10,7 @@ library(broom)
 ```
 
 ```{r}
-riders <- read_csv("Bull Riding/BullRiders.csv")
+riders <- read_csv("Bull Riding/data/BullRiders.csv")
 ```
 
 # Questions from Module
@@ -32,6 +32,10 @@ riders %>%
   select(-Rider) %>%
   lm(Points ~ ., data = .) %>%
   summary()
+riders %>%
+  select(-Rider) %>%
+  lm(Points ~ ., data = .) %>%
+  plot()
 ```
 
 
@@ -92,6 +96,33 @@ modOG <- lm(Points ~  `Avg Buckoff Time` + Rides + prop.Ridden, data = riders)
 modTrans <- lm(Points ~  poly(`Avg Buckoff Time`, 2) + Rides + I(prop.Ridden^2), data = riders)
 anova(modOG, modTrans, test = "Chisq")
 ```
+
+# Poster vizualization
+
+```{r}
+library(ggplot2)
+# shwoing simple linear regression for predicting points
+riders %>%
+  # filter out (0,0)
+  filter(Points > 0) %>%
+  ggplot(aes(x = Earnings, y = Points)) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Predicting Rider Points w/ Earnings",
+       x = "Earnings",
+       y = "Points") +
+  scale_x_continuous(labels = scales::dollar) +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+
+
+
+
+
+
 
 
 
