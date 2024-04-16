@@ -13,13 +13,11 @@ library(dplyr)
 library(magrittr)
 
 # reading in Cassie's data
-playByPlay <- read.csv("data/play_by_playFINAL3.csv")
-boxscores <-  read.csv("data/boxscoresFINAL.csv")
-perSet <- read.csv("data/per_set_statsNew.csv")
+playByPlay <- read.csv("slhess20/cassie_data/play_by_playFINAL3.csv")
 ```
 
-
 ```{r}
+# this takes a while to run
 playByPlay <- playByPlay %>% 
   group_by(Date, set, Site)
 
@@ -102,6 +100,7 @@ probability <- calculate_timeout_probability(playByPlay)
 print(paste("Probability of the losing team scoring one point after a timeout:", probability))
 
 ```
+
 ```{r}
 library(dplyr)
 
@@ -121,7 +120,7 @@ timeout <- playByPlay %>%
 
 ```{r}
 
-playByPlay <- read.csv("data/play_by_playFINAL3.csv")
+playByPlay <- read.csv("slhess20/cassie_data/play_by_playFINAL3.csv")
 
 playByPlay <- playByPlay %>% 
   group_by(Date, set, Site)
@@ -157,7 +156,7 @@ print(paste("Probability of the losing team scoring one point after last timeout
 ```
 
 ```{r}
-playByPlay <- read.csv("data/play_by_playFINAL3.csv")
+playByPlay <- read.csv("slhess20/cassie_data/play_by_playFINAL3.csv")
 playByPlay <- playByPlay %>% group_by(url, set)
 
 playByPlay <- playByPlay %>%
@@ -196,11 +195,11 @@ calculate_set_win_probability <- function(playByPlay) {
 probability <- calculate_set_win_probability(playByPlay)
 print(paste("Probability of the losing team winning the entire set after the last timeout:", probability))
 ```
+
 7% chance of team losing before last timeout wins the set.
 
-
 ```{r}
-playByPlay <- read.csv("data/play_by_playFINAL3.csv")
+playByPlay <- read.csv("slhess20/cassie_data/play_by_playFINAL3.csv")
 playByPlay <- playByPlay %>% group_by(url, set)
 
 playByPlay <- playByPlay %>%
@@ -239,4 +238,3 @@ calculate_set_win_probability <- function(playByPlay) {
 probability <- calculate_set_win_probability(playByPlay)
 print(paste("Probability of the losing team winning the entire set after the first timeout:", probability))
 ```
-
