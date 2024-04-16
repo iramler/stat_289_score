@@ -109,26 +109,70 @@ dakarRally_bikes_data %>%
 
 ```{r}
 dakarRally_bikes_data %>%
-  group_by(Country, Driver) %>%
+  group_by(Team) %>%
   summarise(count = n(),
             average_Rank = mean(Rank),
             Mean_Hours_Driven = ((mean(Hours)*60 + mean(Minutes) + (mean(Seconds)/60)) / 60),
             Mean_Hours_Penalty = (mean(Penalty_Hours)*60 + mean(Penalty_Minutes) + (mean(Penalty_Seconds)/60)) / 60,
             Mean_Hours_Variation = (mean(Variation_Hours)*60 + mean(Variation_Minutes) + (mean(Variation_Seconds)/60)) / 60) %>%
-  filter(count == 13) %>%
-  arrange(average_Rank) %>%
-  ggplot(aes(x = average_Rank, y = Mean_Hours_Variation)) +
-  geom_point() +
-  geom_smooth(se = FALSE) +
-  labs(title = "Average Rank vs. Mean Hours Driven + Mean Hours Penalty",
-       x = "Average Rank",
-       y = "Mean Hours Driven + Mean Hours Penalty") +
+  filter((count %% 13 == 0) & (count > 0)) %>%
+  arrange(average_Rank) %>% 
+  head() %>%
+  ggplot(aes(x = reorder(Team, average_Rank), y = average_Rank)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Top Teams by Average Rank",
+       x = "Team",
+       y = "Average Rank") +
+  # add their means hours driven as text
+  geom_text(aes(label = round(Mean_Hours_Driven+Mean_Hours_Penalty, 2)), hjust = -0.1) +
   theme_minimal() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(axis.title = element_text(size = 14),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12),
+        axis.text.x = element_text(size = 10),
+        axis.text.y = element_text(size = 10)) +
+  scale_color_viridis_d()
 ```
 
+```{r}
+dakarRally_bikes_data %>%
+  group_by(Driver) %>%
+  summarise(avg_rank = Rank,
+            stage = Stage,
+            stage_count = n(),
+            Hours_Driven = (((Hours)*60 + (Minutes) + ((Seconds)/60)) / 60),
+            Hours_Penalty = ((Penalty_Hours)*60 + (Penalty_Minutes) + ((Penalty_Seconds)/60)) / 60) %>%
+  filter(stage_count == 13 & stage == 12 & !between(avg_rank, 87, 103)) %>% # drivers skew result as they could have be disqualified
+  arrange(Hours_Driven + Hours_Penalty) %>%
+  head(5)
+```
+Final 5 drivers in the Dakar Rally
 
+RICKY BRABEC, ROSS BRANCH, ADRIEN VAN BEVEREN, KEVIN BENAVIDES, TOBY PRICE
 
+```{r}
+dakarRally_bikes_data %>%
+  group_by(Driver) %>%
+  summarise(avg_rank = Rank,
+            stage = Stage,
+            stage_count = n(),
+            Hours_Driven = (((Hours)*60 + (Minutes) + ((Seconds)/60)) / 60),
+            Hours_Penalty = ((Penalty_Hours)*60 + (Penalty_Minutes) + ((Penalty_Seconds)/60)) / 60) %>%
+  filter(Driver %in% c("RICKY BRABEC", "ROSS BRANCH", "ADRIEN VAN BEVEREN", "KEVIN BENAVIDES", "TOBY PRICE")) %>%
+  ggplot(aes(x = reorder(Driver, Hours_Driven + Hours_Penalty), y = avg_rank, fill = Driver)) +
+  geom_boxplot() +
+  geom_point() +
+  labs(title = "Hours Driven by the Final 5 Drivers",
+       x = "Driver",
+       y = "Hours Driven") +
+  theme_minimal() +
+  coord_flip() +
+  theme(plot.title = element_text(size = 14),
+        axis.title = element_text(size = 12),
+        axis.text = element_text(size = 10)) +
+  theme(legend.position = "none")
+```
 
 
 
