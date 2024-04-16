@@ -116,7 +116,7 @@ riders %>%
   theme(plot.title = element_text(hjust = 0.5),
         axis.text = element_text(size = 10),
          title = element_text(size = 14))
-axis.title = element_text(size = 24),
+  axis.title = element_text(size = 24),
 ```
 
 
