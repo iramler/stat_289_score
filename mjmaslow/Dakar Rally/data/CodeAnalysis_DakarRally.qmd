@@ -160,18 +160,21 @@ dakarRally_bikes_data %>%
             Hours_Driven = (((Hours)*60 + (Minutes) + ((Seconds)/60)) / 60),
             Hours_Penalty = ((Penalty_Hours)*60 + (Penalty_Minutes) + ((Penalty_Seconds)/60)) / 60) %>%
   filter(Driver %in% c("RICKY BRABEC", "ROSS BRANCH", "ADRIEN VAN BEVEREN", "KEVIN BENAVIDES", "TOBY PRICE")) %>%
-  ggplot(aes(x = reorder(Driver, Hours_Driven + Hours_Penalty), y = avg_rank, fill = Driver)) +
+  ggplot(aes(x = reorder(Driver, Hours_Driven + Hours_Penalty, decreasing = TRUE), y = avg_rank, fill = Driver)) +
   geom_boxplot() +
   geom_point() +
-  labs(title = "Hours Driven by the Final 5 Drivers",
-       x = "Driver",
-       y = "Hours Driven") +
+  labs(title = "Average Rank by the Top 5 Drivers (ordered by Hours Driven)",
+       x = "Top 5 Driver",
+       y = "Average Rank") +
   theme_minimal() +
   coord_flip() +
   theme(plot.title = element_text(size = 14),
         axis.title = element_text(size = 12),
         axis.text = element_text(size = 10)) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  # reposition title and bold it, along wiht axis titles
+  theme(plot.title = element_text(hjust = 2.5, face = "bold"),
+        axis.title = element_text(face = "bold"))
 ```
 
 

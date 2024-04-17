@@ -105,18 +105,17 @@ library(ggplot2)
 riders %>%
   # filter out (0,0)
   filter(Points > 0) %>%
-  ggplot(aes(x = Earnings, y = Points)) +
+  ggplot(aes(x = prop.Ridden, y = Points)) +
   geom_point() + 
-  geom_smooth(method = "lm", se = FALSE) +
-  labs(title = "Predicting Rider Points w/ Earnings",
-       x = "Earnings",
-       y = "Points") +
-  scale_x_continuous(labels = scales::dollar) +
+  geom_smooth(method = "lm") +
+  labs(title = "Predicting Rider Points w/ Percent of Successful Rides",
+       x = "Percent of Successful Rides",
+       y = "Rider points") +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5),
         axis.text = element_text(size = 10),
-         title = element_text(size = 14))
-  axis.title = element_text(size = 24),
+        title = element_text(size = 14),
+        axis.title = element_text(size = 24))
 ```
 
 
