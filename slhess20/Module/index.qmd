@@ -1,0 +1,96 @@
+---
+title: "Division Three Volleyball Timeouts"
+date: April 18, 2024
+description: Investigating the effect of timeouts on the outcome of a set. 
+editor: 
+  canonical: true
+categories:
+  - Scoring a point after a timeout   
+  - Winning a game after last timeout 
+  - Winning a game after first timeout
+---
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction
+
+In volleyball, timeouts are typically called by the losing team in order to increase their chances of scoring more points in an attempt to win a set. In division three volleyball, teams can call up to three timeouts per set and there are 3 sets per game. When looking at the data for the Liberty League division for women's volleyball, we can see exactly when a timeout was called. 
+
+In this worksheet, we will analyze the effects of calling a timeout on a set. We can find the probability that calling a timeout will lead to scoring a point by looking at the outcome of each timeout. By looking only at the first or last timeout of a set, we will be able to determine how likely a losing team is to win that set after calling their first or final timeout. Understanding the effects that a timeout has on a set can inform strategic decision-making for coaches and allow them to understand how much calling a timeout may help their game.
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will be able to:
+
+1.  Understand mathematical concepts (such as observations/ variable of interest/ categorical vs numerical/ statistic vs parameter/ etc.). 
+
+2.  Create a 95% confidence interval and explain what that interval means.
+
+3.  Identify potential reasons for certain outcomes. 
+
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Technology requirement: The activity handout provides data and summary statistics so that no statistical software is required. However, the activity could be modified to ask students to produce that information from the raw dataset and/or extend the activity to investigate other variables available in the data.
+
+1.  Basic mathmatical concepts: Familiarity withobservations/ variable of interest/ categorical vs numerical/ statistic vs parameter
+
+2.  Confidence interval: Knowledge of how to calculate confidence intervals. 
+
+3.  Familiarity with probability and how to get basic probability.
+
+4.  Use of reasoning to explain outcomes.
+:::
+
+### Data
+
+A data frame for 6408 timeouts of the following 15 variables. Each row represents a separate timeout in a set.
+
+: [timeout.csv](../slhess20/data/timeout.csv)
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+|Variable               | Description                                          |
+|-----------------------|------------------------------------------------------|
+|play_description       |Which team called the timeout                         | 
+|set                    |The set of the game                                   |
+|Date                   |The date of the game                                  |
+|Time                   |The set in which the timeout was called               | 
+|Site                   |The location of the game                              |
+|Attendance             |The number of people in attendance of the game        |
+|url                    |The specific url from where the game data was pulled  |
+|timeout                |True/ False of weather or not the play was a timeout  |
+|prev_home_score        |score of the home team when the timeout was called    |
+|prev_visiting_score    |score of the visiting team when the timeout was called|
+|next_home_score        |score of the home team after after the next play      |
+|next_visiting_score    |score of the visiting team after the next play        |
+|losing_team            |the team that had the lower previous score            |
+|set_winner             |the team that won the entire set                      |
+|losing_team_wins       |weather the previously losing team won the set        |
+
+
+</details>
+
+#### Data Source
+
+Liberty League data
+<https://libertyleagueathletics.com/standings.aspx?standings=168>
+
+
+### Materials
+
+[Class handout](slhess20/Module/Volleyball_Worksheet.docx)
+
+[Class handout - with solutions](slhess20/Module/Volleyball_Worksheet_key.docx)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+In conclusion, the analysis of timeouts in D3 women's volleyball has provided valuable insights into how timeouts can effect a game. One notable finding from this worksheet is that when you are losing before your first timeout, you are more likley to win the set than if you are losing before your last timeout of the set. This result makes sense since calling a timeout earlier on gives you more time to make a comeback. 
+
+The difference in probability of winning a set based on which timeout you look at means that calling a timeout earlier on can greatly increase your chances of winning a set/ game.
+:::
+
+### Authors
+
+Created by Sierra Hess (St. Lawrence University)

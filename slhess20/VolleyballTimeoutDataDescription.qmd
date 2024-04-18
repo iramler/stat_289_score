@@ -4,8 +4,8 @@ author: Sierra Hess
 date: April 11, 2024
 description: Volleyball scoring and points after timeout for 2013-2022 Volleyball data
 categories: 
-  - Scoring a point after a timeout 
-  - Winning a game after last timeout
+  - Scoring a point after a timeout   
+  - Winning a game after last timeout 
   - Winning a game after first timeout
 execute: 
   markdown: 
@@ -13,15 +13,14 @@ execute:
 ---
 
 ## Motivation 
-In NCAA Woman's Volleyball for the Liberty League, there are 12 teams in New York that are a part of the division. In a play by play data set, each play of every game from 2013 to 2022 was given with information about the scores, a description of the plays, when and where the games were. From this data set, I wanted to look at the effect of a timeout on the game. I looked at both how likely a losing team was to score a point following a timeout and how likely the losing team was to win a set after the final timeout of that set.  
-
+In NCAA Woman's Volleyball for the Liberty League, there are 12 teams in New York that are a part of the division. In a play by play data set, each play of every game from 2013 to 2022 was given with information about the scores, a description of the plays, when and where the games were.
 
 ## Data
 This data set has data from 6,408 rows and 17 columns. Each row represents a timeout in a volleyball game for the NCAA women's volleyball Liberty League games from 2013 until 2022.
 
 |Variable               | Description                                          |
 |-----------------------|------------------------------------------------------|
-|play_descripton        |Which team called the timeout                         | 
+|play_description       |Which team called the timeout                         | 
 |set                    |The set of the game                                   |
 |Date                   |The date of the game                                  |
 |Time                   |The set in which the timeout was called               | 
@@ -37,6 +36,7 @@ This data set has data from 6,408 rows and 17 columns. Each row represents a tim
 |set_winner             |the team that won the entire set                      |
 |losing_team_wins       |weather the previously losing team won the set        |
 
+: [timeout.csv](../slhess20/data/timeout.csv)
 
 ## Questions
 
