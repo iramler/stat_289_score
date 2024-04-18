@@ -48,9 +48,8 @@ This data set has data from 6,408 rows and 17 columns. Each row represents a tim
 
 ## References
 
-play_by_playFINAL3.csv from Cassie Ritcher's SYE
-
-
+Liberty League data
+<https://libertyleagueathletics.com/standings.aspx?standings=168>
 
 
 
