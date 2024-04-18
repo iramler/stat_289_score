@@ -13,7 +13,8 @@ execute:
 ---
 
 ## Motivation 
-In NCAA Woman's Volleyball for the Liberty League, there are 12 teams in New York that are a part of the division. In a play by play data set, each play of every game from 2013 to 2022 was given with information about the scores, a description of the plays, when and where the games were.
+
+In volleyball, a team will typically call a timeout when they are losing a set in order to try and make a comeback. Calling a timeout allows teams to break streaks and make a plan to score. In NCAA Woman's Volleyball for the Liberty League, there are 12 teams in New York that are a part of the division. By looking at each timeout from 2013 until 2022, it is possible to find patterns and the liklihood that a timeout will result in scoring a point or winning a set. 
 
 ## Data
 This data set has data from 6,408 rows and 17 columns. Each row represents a timeout in a volleyball game for the NCAA women's volleyball Liberty League games from 2013 until 2022.

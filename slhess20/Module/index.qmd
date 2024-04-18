@@ -45,7 +45,7 @@ Technology requirement: The activity handout provides data and summary statistic
 
 ### Data
 
-A data frame for 6408 timeouts of the following 15 variables. Each row represents a separate timeout in a set.
+This data set has data from 6,408 rows and 17 columns. Each row represents a timeout in a volleyball game for the NCAA women's volleyball Liberty League games from 2013 until 2022.
 
 : [timeout.csv](../slhess20/data/timeout.csv)
 
