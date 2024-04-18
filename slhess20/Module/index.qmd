@@ -27,14 +27,14 @@ By the end of this activity, you will be able to:
 
 2.  Create a 95% confidence interval and explain what that interval means.
 
-3.  Identify potential reasons for certain outcomes. 
+3.  Identify potential reasons for outcomes. 
 
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-Technology requirement: The activity handout provides data and summary statistics so that no statistical software is required. However, the activity could be modified to ask students to produce that information from the raw dataset and/or extend the activity to investigate other variables available in the data.
+Technology requirement: The activity handout provides data and summary statistics so that no statistical software is required. However, the activity could be modified to ask students to produce that information from the raw data set and/or extend the activity to investigate other variables available in the data.
 
-1.  Basic mathmatical concepts: Familiarity withobservations/ variable of interest/ categorical vs numerical/ statistic vs parameter
+1.  Basic mathematical concepts: Familiarity with observations/ variable of interest/ categorical vs numerical/ statistic vs parameter
 
 2.  Confidence interval: Knowledge of how to calculate confidence intervals. 
 
