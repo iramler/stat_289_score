@@ -86,7 +86,7 @@ Liberty League data
 [Class handout - with solutions](slhess20/Module/Volleyball_Worksheet_key.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-In conclusion, the analysis of timeouts in D3 women's volleyball has provided valuable insights into how timeouts can effect a game. One notable finding from this worksheet is that when you are losing before your first timeout, you are more likley to win the set than if you are losing before your last timeout of the set. This result makes sense since calling a timeout earlier on gives you more time to make a comeback. 
+In conclusion, the analysis of timeouts in D3 women's volleyball has provided valuable insights into how timeouts can effect a game. One notable finding from this worksheet is that when you are losing before your first timeout, you are more likely to win the set than if you are losing before your last timeout of the set. This result makes sense since calling a timeout earlier on gives you more time to make a comeback. 
 
 The difference in probability of winning a set based on which timeout you look at means that calling a timeout earlier on can greatly increase your chances of winning a set/ game.
 :::
@@ -94,3 +94,6 @@ The difference in probability of winning a set based on which timeout you look a
 ### Authors
 
 Created by Sierra Hess (St. Lawrence University)
+
+
+
