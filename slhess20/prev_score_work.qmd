@@ -15,8 +15,9 @@ library(magrittr)
 
 timeout <- read.csv("slhess20/data/timeout.csv")
 ```
+
 ```{r}
-#filter data to only be slu timeouts in 2022
+#filter data to only be slu timeouts in 2014 only
 timeout1 <- timeout %>% 
   filter(play_descripton == "Timeout St. Lawrence.") 
 timeout1 <- timeout1[grepl("^2014", timeout1$Date), ]
@@ -26,31 +27,23 @@ timeout1 <- timeout1 %>%
 ```
 
 ```{r}
-# Load the required library
 library(boot)
 
-# Assuming your dataset is stored in a data frame called 'timeout1'
-# Load your dataset here
-# timeout1 <- read.csv("your_dataset.csv")
-
-# Define the function to calculate statistics of interest
-# For example, let's say you want to calculate the mean of prev_home_score
 statistic_function <- function(data, indices) {
   sample_data <- data[indices, ]
   mean_score <- mean(sample_data$prev_home_score)
   return(mean_score)
 }
 
-# Set the number of bootstrap replicates
+# num reps
 num_bootstrap_replicates <- 1000
 
-# Perform bootstrap resampling
+# resample
 bootstrap_results <- boot(data = timeout1, statistic = statistic_function, R = num_bootstrap_replicates)
 
 # Calculate the confidence interval using the percentile method
 conf_interval_percentile <- boot.ci(bootstrap_results, type = "perc")$percent
 
-# Display the confidence interval
 print(conf_interval_percentile)
 
 
