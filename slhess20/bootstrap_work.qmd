@@ -21,9 +21,13 @@ timeout <- read.csv("slhess20/data/timeout.csv")
 timeout1 <- timeout %>% 
   filter(play_descripton == "Timeout St. Lawrence.") 
 timeout1 <- timeout1[grepl("^2014", timeout1$Date), ]
+library(dplyr)
+timeout1 <- timeout1 %>% 
+  mutate(losing_score = ifelse(prev_home_score > prev_visiting_score, prev_visiting_score, prev_home_score))
+
 
 timeout1 <- timeout1 %>% 
-  select(prev_home_score, prev_visiting_score, losing_team, set_winner, losing_team_wins)
+  select(prev_home_score, prev_visiting_score, losing_score, losing_team, set_winner, losing_team_wins)
 ```
 
 ```{r}
@@ -31,8 +35,8 @@ library(boot)
 
 statistic_function <- function(data, indices) {
   sample_data <- data[indices, ]
-  mean_score <- mean(sample_data$prev_home_score)
-  return(mean_score)
+  mean_score <- mean(sample_data$losing_score)
+  return(mean_score) # look at the mean prev score
 }
 
 # num reps
