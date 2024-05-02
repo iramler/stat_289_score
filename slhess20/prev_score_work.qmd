@@ -46,5 +46,23 @@ conf_interval_percentile <- boot.ci(bootstrap_results, type = "perc")$percent
 
 print(conf_interval_percentile)
 
+```
+
+```{r}
+
+win_likelihood <- function(data, indices) {
+  sample_data <- data[indices, ]
+  model <- glm(losing_team_wins ~ prev_home_score + prev_visiting_score, data = sample_data, family = "binomial")
+  probabilities <- predict(model, type = "response")
+  return(mean(probabilities))
+}
+
+# resample
+bootstrap_results <- boot(data = timeout1, statistic = win_likelihood, R = num_bootstrap_replicates)
+
+# CI
+conf_interval_percentile <- boot.ci(bootstrap_results, type = "perc")$percent
+print(conf_interval_percentile)
 
 ```
+
