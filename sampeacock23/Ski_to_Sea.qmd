@@ -5,11 +5,13 @@ editor: visual
 ---
 
 Scraping data from Ski to Sea
+
 ```{r}
 library(rvest)
 ```
 
 Overall 2019
+
 ```{r}
 ## provide the URL and name it something (in this case, url).
 url <- "https://skitosea.pacificmultisports.com/events/111/results"
@@ -27,6 +29,7 @@ overall_2019 <- test[[1]]
 ```
 
 XC Skiing 2019
+
 ```{r}
 ## provide the URL and name it something (in this case, url).
 url <- "https://skitosea.pacificmultisports.com/events/111/results/leg/71"
@@ -45,6 +48,7 @@ xc_ski_2019 <- test[[1]]
 ```
 
 While Loop
+
 ```{r}
 library(rvest)
 library(dplyr)
