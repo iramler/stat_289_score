@@ -114,12 +114,36 @@ riders %>%
 
 ## b
 
+**Based off the outcomes and trends of the plots, what might we consider add to or 	model from the previous question?**
+
 *Notice the quadratic trends in the plots from the prior part, this means using a quadratic term in our model could be useful.*
 
 
-## c
+## c 
+
+**Now, using the model from question 2, add a quadratic term for Avg Buckoff Time. Record the R-code formula here.**
+
+```{r}
+(mod2 <- lm(Points ~  `Avg Buckoff Time` + I(`Avg Buckoff Time`^2) + Rides + `Avg Buckoff Time`:Rides  + prop.Ridden, data = riders))
+```
+
+## d
+
+**Test which model, original or transformed, is more effective for the data?**
+
+```{r}
+# mod <- model without quadratic term
+# mod2 <- model with quadratic term
+anova(mod, mod2)
+```
+
+*Transformed model is the more effective model for the data with an F-stat of 352, DF=1, and p-value = 0.0001273.*
 
 
+# Question 4
+
+ 
+ ****
 
 
 
