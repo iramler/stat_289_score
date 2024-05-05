@@ -32,10 +32,6 @@ riders %>%
   select(-Rider) %>%
   lm(Points ~ ., data = .) %>%
   summary()
-riders %>%
-  select(-Rider) %>%
-  lm(Points ~ ., data = .) %>%
-  plot()
 ```
 
 
