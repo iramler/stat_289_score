@@ -89,9 +89,43 @@ anova(modRed, modFull, test = "Chisq")
 
 # Question 3
 
-**Using the model from beginning of question 2...**
+**Using ggplot we will be constructing plots to assess the predictors**
 
 ## a
+
+**Make a plot so Points ~ Avg Buckoff Time and Rides ~ prop.Ridden. What do we 	notice?**
+
+```{r}
+riders %>%
+  ggplot(aes(x = `Avg Buckoff Time`, y = Points)) +
+  geom_point() +
+  geom_smooth() +
+  labs(title = "Avg Buckoff Time vs Points") +
+  theme_minimal()
+
+riders %>%
+  ggplot(aes(x = prop.Ridden, y = Rides)) +
+  geom_point() +
+  geom_smooth() +
+  labs(title = "prop.Ridden vs Rides") +
+  theme_minimal()
+```
+*Can notice there is a definitely some curvature in the trends of the data points in each of the plots.*
+
+## b
+
+*Notice the quadratic trends in the plots from the prior part, this means using a quadratic term in our model could be useful.*
+
+
+## c
+
+
+
+
+
+
+
+
 
 
 
