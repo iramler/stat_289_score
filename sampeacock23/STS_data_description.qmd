@@ -1,27 +1,20 @@
 ---
 title: Ski to Sea Data Description
 author: Sam Peacock
-date: Todays Date (e.g., April 17, 2023)
-description: A one- or two-sentence description of the data. If possible, give a brief summary of the sports problem and statistical situation.
+date: May 3, 2024
+description: This module focuses on analyzing which leg of the race is most important to a team's success for the Ski to Sea Race. Focusing on the correlation of time taken to complete each leg and the overall team place, this module examines the relative importance of each leg in contributing to overall place in the Ski to Sea race.
+
 categories:
-  - list the relevant
-  - statistical methods
+  - Multiple Regression
+  - Correlation
   - that can be used
-  - with this dataset
-  - one per line
-  - with two spaces and a hyphen in front
-editor:
-  markdown: 
-    canonical: true
 ---
 
 ## Motivation
 
-The categories above determine how this dataset is listed on the [datasets by methods](https://data.scorenetwork.org/by-statsds-topic.html) page. Consult that page for a list of statistical categories already used by other datasets.
+The Ski to Sea race is a multi-sport relay race held annually in Whatcom County, Washington. The race consists of seven legs: cross-country skiing, downhill skiing or snowboarding, running, road biking, canoeing, mountain biking, and kayaking, with each leg representing a different outdoor sport.
 
 In this first section, describe the source of the dataset and what it's about. Give any necessary background about it and the sports research question of interest. See other datasets on the website for examples.
-
-This file is Markdown, so you *can* use formatting; [here is a guide to the basics](https://quarto.org/docs/authoring/markdown-basics.html).
 
 ## Data
 
@@ -29,8 +22,8 @@ Describe the data. What does each row represent? How many rows are there? If the
 
 | Variable      | Description                                                   |
 |---------------|---------------------------------------------------------------|
-| Column name   | A description of this variable, including units when possible |
-| Column name 2 | A description of this variable, including units when possible |
+| Minutes       | A team's Time (minutes) taken to complete a leg of the race   |
+| Overall Place | A team's overall place in the race                            |
 
 : [filename.csv](../data/filename.csv)
 

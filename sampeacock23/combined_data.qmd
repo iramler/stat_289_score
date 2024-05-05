@@ -1,0 +1,96 @@
+---
+title: "Combining Files"
+format: html
+editor: visual
+---
+
+Read CSV Test
+
+```{r}
+library(readr)
+library(ggplot2)
+event_101_results <- read_csv("sampeacock23/overall_results/event_101_results.csv")
+```
+
+Combine Data
+
+```{r}
+library(readr)
+library(dplyr)
+
+# Create a list of file names
+file_names <- sprintf("sampeacock23/overall_results/event_%03d_results.csv", 101:110)
+
+# Read and combine all CSV files into a single data frame
+combined_data <- lapply(file_names, read_csv) %>%
+  bind_rows(.id = "Year") %>% 
+  mutate(Year = as.numeric(Year) + 2008)
+```
+
+Mean Overall Place by Category (2009-2019)
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+
+# Play around with data
+category <- combined_data %>%
+  group_by(Category) %>%
+  summarise(Place = mean(`Overall Place`))
+
+# Sort the category data frame by Place in descending order
+category_sorted <- category[order(-category$Place),]
+
+# Convert 'Category' to a factor with levels in the desired order
+category_sorted$Category <- factor(category_sorted$Category, levels = category_sorted$Category)
+
+# Create a bar chart
+ggplot(category_sorted, aes(x = Category, y = Place, fill = Category)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Category", y = "Mean Overall Place", title = "Mean Overall Place by Category (2009 - 2019)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate x-axis labels for better readability
+```
+
+Make Time into Minutes
+
+```{r}
+library(dplyr)
+
+# Function to convert time to minutes
+time_to_minutes <- function(time_str) {
+  parts <- as.numeric(strsplit(time_str, ":")[[1]])
+  hours <- parts[1]
+  minutes <- parts[2]
+  seconds <- parts[3]
+  total_minutes <- hours * 60 + minutes + seconds / 60
+  return(total_minutes)
+}
+
+# Apply the conversion to the whole dataset and add a new 'Minutes' variable
+combined_data <- combined_data %>%
+  mutate(Minutes = sapply(`Elapsed Time`, time_to_minutes))
+```
+
+Mean Overall Minutes by Category
+
+```{r}
+library(dplyr)
+
+# Assuming 'combined_data' is your data frame
+minutes_data <- combined_data %>%
+  filter(is.numeric(Minutes)) %>%
+  group_by(Category) %>%
+  summarise(Average_Minutes = mean(Minutes, na.rm = TRUE)) %>%
+  arrange(desc(Average_Minutes))
+
+# Reorder the levels of 'Category' based on 'Average_Minutes'
+minutes_data$Category <- factor(minutes_data$Category, levels = minutes_data$Category)
+
+# Plot the data
+ggplot(minutes_data, aes(x = Category, y = Average_Minutes, fill = Category)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Category", y = "Mean Overall Minutes", title = "Mean Overall Minutes by Category (2009 - 2019)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```

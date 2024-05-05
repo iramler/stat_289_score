@@ -34,11 +34,11 @@ By the end of this activity, you will be able to:
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 Technology requirement: The activity handout provides summary statistics so that no statistical software is required. However, the activity could be modified to ask students to conduct hypothesis tests through a statistical software, produce that information from the raw dataset, and/or extend the activity to investigate other variables available in the data.
 
-1.  Hypothesis Tests: Knowledge of hypothesis tests are vital to this activity. Familarity with  hypothesises, test statistics, degrees of freedom, and p-values are important for the completion of this worksheet.
+1.  Hypothesis Tests: Knowledge of hypothesis tests are vital to this activity. Familiarity with  hypothesizes, test statistics, degrees of freedom, and p-values are important for the completion of this worksheet.
 
 2.  ANOVA: Understanding and familiarity with the concept of ANOVA tests are important in order to further analyze the data through pairwise comparisons. 
 
-3.  Familiarity with basic statistical analysis techniques and terms, specifically mean, categorical variables, and quantatiatve variables, are imporatant conceptual concepts needed in the aiding in this activity.
+3.  Familiarity with basic statistical analysis techniques and terms, specifically mean, categorical variables, and quantitative variables, are important conceptual concepts needed in the aiding in this activity.
 :::
 
 ### Data

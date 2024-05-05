@@ -1,0 +1,452 @@
+---
+title: "combined_leg_data"
+format: html
+editor: visual
+---
+
+Scraping data from Ski to Sea
+
+```{r}
+library(rvest)
+```
+
+2009 Leg Data
+
+```{r}
+## provide the URL and name it something (in this case, url).
+url <- "https://skitosea.pacificmultisports.com/events/101/results/leg/1"
+
+## convert the html code into something R can read
+h <- read_html(url)
+
+## grabs the tables
+tab <- h %>% html_nodes("table")
+
+#
+test <- tab %>% html_table()
+
+xcski_2009 <- test[[1]]
+```
+
+XCSKI
+
+```{r}
+library(rvest)
+library(dplyr)
+library(httr)
+
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 1
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/leg_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+DOWNHILL
+
+```{r}
+library(rvest)
+library(dplyr)
+library(httr)
+
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 2
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/downhill_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+RUN
+
+```{r}
+library(rvest)
+library(dplyr)
+library(httr)
+
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 3
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/run_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+ROAD BIKE
+
+```{r}
+library(rvest)
+library(dplyr)
+library(httr)
+
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 4
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/roadbike_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+CANOE
+
+```{r}
+library(rvest)
+library(dplyr)
+library(httr)
+
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 5
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/canoe_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+XCBIKE
+
+```{r}
+library(rvest)
+library(dplyr)
+library(httr)
+
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 6
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/xcbike_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+KAYAK
+
+```{r}
+library(rvest)
+library(dplyr)
+library(httr)
+
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 7
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/kayak_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+Combine Canoe Data
+
+```{r}
+library(readr)
+library(dplyr)
+
+# List of file names
+file_names <- paste0("sampeacock23/canoe_results/event_", 101:111, "_leg_", seq(5, 75, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_canoe_data <- NULL
+for (file in file_names) {
+  data <- read_csv(file)
+  combined_canoe_data <- bind_rows(combined_canoe_data, data)
+}
+```
+
+Combine Downhill Data
+
+```{r}
+library(readr)
+library(dplyr)
+
+# List of file names
+file_names <- paste0("sampeacock23/downhill_results/event_", 101:111, "_leg_", seq(2, 72, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_downhill_data <- NULL
+for (file in file_names) {
+  data <- read_csv(file)
+  combined_downhill_data <- bind_rows(combined_downhill_data, data)
+}
+```
+
+Combine Kayak Results
+
+```{r}
+library(readr)
+library(dplyr)
+
+# List of file names
+file_names <- paste0("sampeacock23/kayak_results/event_", 101:111, "_leg_", seq(7, 77, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_kayak_data <- NULL
+for (file in file_names) {
+  data <- read_csv(file)
+  combined_kayak_data <- bind_rows(combined_kayak_data, data)
+}
+```
+
+Combine Roadbike Results
+
+```{r}
+library(readr)
+library(dplyr)
+
+# List of file names
+file_names <- paste0("sampeacock23/roadbike_results/event_", 101:111, "_leg_", seq(4, 74, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_roadbike_data <- NULL
+for (file in file_names) {
+  data <- read_csv(file)
+  combined_roadbike_data <- bind_rows(combined_roadbike_data, data)
+}
+```
+
+Combine Run Results
+
+```{r}
+library(readr)
+library(dplyr)
+
+# List of file names
+file_names <- paste0("sampeacock23/run_results/event_", 101:111, "_leg_", seq(3, 73, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_run_data <- NULL
+for (file in file_names) {
+  data <- read_csv(file)
+  combined_run_data <- bind_rows(combined_run_data, data)
+}
+```
+
+Combine XC Bike Results
+
+```{r}
+library(readr)
+library(dplyr)
+
+# List of file names
+file_names <- paste0("sampeacock23/xcbike_results/event_", 101:111, "_leg_", seq(6, 76, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_xcbike_data <- NULL
+for (file in file_names) {
+  data <- read_csv(file)
+  combined_xcbike_data <- bind_rows(combined_xcbike_data, data)
+}
+```
+
+Combine XC Ski Results
+
+```{r}
+library(readr)
+library(dplyr)
+
+# List of file names
+file_names <- paste0("sampeacock23/xcski_results/event_", 101:111, "_leg_", seq(1, 71, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_xcski_data <- NULL
+for (file in file_names) {
+  data <- read_csv(file)
+  combined_xcski_data <- bind_rows(combined_xcski_data, data)
+}
+```
+
+Combine Overall Results
+
+```{r}
+library(readr)
+library(dplyr)
+
+# List of file names
+file_names <- paste0("sampeacock23/overall_results/event_", 101:111,"_results.csv")
+
+# Read and combine the files using a loop
+combined_overall_data <- NULL
+for (file in file_names) {
+  data <- read_csv(file)
+  combined_overall_data <- bind_rows(combined_overall_data, data)
+}
+```
+
+Combine All Results
+
+```{r}
+library(dplyr)
+
+combined_total_data <- inner_join(combined_overall_data, combined_xcski_data, by = "Team Name") %>%
+  inner_join(combined_canoe_data, by = "Team Name") %>%
+  inner_join(combined_downhill_data, by = "Team Name") %>%
+  inner_join(combined_kayak_data, by = "Team Name") %>%
+  inner_join(combined_roadbike_data, by = "Team Name") %>%
+  inner_join(combined_run_data, by = "Team Name") %>%
+  inner_join(combined_xcbike_data, by = "Team Name")
+```
+
+```{r}
+library(dplyr)
+
+# Function to convert time to minutes
+time_to_minutes <- function(time_str) {
+  parts <- as.numeric(strsplit(time_str, ":")[[1]])
+  hours <- parts[1]
+  minutes <- parts[2]
+  seconds <- parts[3]
+  total_minutes <- hours * 60 + minutes + seconds / 60
+  return(total_minutes)
+}
+
+# Apply the conversion to the whole dataset and add a new 'Minutes' variable
+final_combined_total_data <- combined_total_data %>%
+  mutate(Minutes = sapply(`Elapsed Time.x`, time_to_minutes))
+
+
+```
+
