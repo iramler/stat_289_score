@@ -141,7 +141,6 @@ anova(mod, mod2)
 
 
 # Question 4
-
  
  ****
 
