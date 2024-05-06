@@ -179,4 +179,17 @@ dakarRally_bikes_data %>%
 
 
 
+shift the format so it will help determine overall ranking of driver... and do top 5 drivers with a plot in order to find which stage has the biggest impact on their overall rank and timing.
+
+
+
+
+
+
+
+
+
+
+
+
 
