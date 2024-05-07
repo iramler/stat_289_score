@@ -17,7 +17,7 @@ A common expression among golfers is "Drive for show, putt for dough." This impl
 Each row of data gives the measures for one golfer in one tournament. The dataset covers 19 PGA tournaments from the 2022 season with 1387 cases in all. Each tournament consists of four rounds of golf. Some golfers are eliminated after the first two (or sometimes three) rounds. Only players who competed in all four rounds (i.e. those that made the "cut") are included in this dataset.
 
 | Variable           | Description                                                                                                                                                           |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--------------|----------------------------------------------------------|
 | `playerName`       | Name of the player                                                                                                                                                    |
 | `country`          | The country where the player is from                                                                                                                                  |
 | `avgDriveDist`     | Average driving distance (in yards)                                                                                                                                   |
