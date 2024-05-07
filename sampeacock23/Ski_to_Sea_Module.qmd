@@ -9,16 +9,16 @@ categories:
 
 ## Motivation
 
-The Ski to Sea race is a multi-sport relay race held annually in Whatcom County, Washington. The race consists of seven legs: cross-country skiing, downhill skiing or snowboarding, running, road biking, canoeing, mountain biking, and kayaking, with each leg representing a different outdoor sport. 
+The Ski to Sea race is a multi-sport relay race held annually in Whatcom County, Washington. The race consists of seven legs: cross-country skiing, downhill skiing or snowboarding, running, road biking, canoeing, mountain biking, and kayaking, with each leg representing a different outdoor sport.
 
 This module focuses on analyzing which leg of the race is most important to a team's success for the Ski to Sea Race. Focusing on the correlation of time in minutes taken to complete each leg, this module examines the relative importance of each leg in contributing to the overall time in the Ski to Sea race.
 
 ## Data
 
-Each row of data provides the leg race times in minutes for one team in a given year. The dataset covers 11 Ski to Sea Races from 2009-2019 with 5842 cases in all. Each race consists of seven legs: canoe, cross country ski, downhill ski, kayak, road bike, run, and cross country bike. 
+Each row of data provides the leg race times in minutes for one team in a given year. The dataset covers 11 Ski to Sea Races from 2009-2019 with 5197 cases in all. Each race consists of seven legs: canoe, cross country ski, downhill ski, kayak, road bike, run, and cross country bike. It is important to note that rows that contained NAs were omitted.
 
 | Variable           | Description                                                        |
-|--------------------|--------------------------------------------------------------------|
+|------------------|------------------------------------------------------|
 | `Year`             | The year the race took place (2009-2019)                           |
 | `Team Name`        | The team's name                                                    |
 | `canoe_minutes`    | The amount of minutes taken to complete the canoe leg              |

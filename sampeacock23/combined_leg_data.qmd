@@ -491,6 +491,7 @@ combined_leg_data <- combined_leg_data %>%
 ```{r}
 library(dplyr)
 library(lubridate)
+library(tidyverse)
 
 combined_leg_data <- combined_leg_data %>%
   mutate(canoe_minutes = hour(hms(canoe_time)) * 60 + minute(hms(canoe_time)) + second(hms(canoe_time))/60) %>%
@@ -503,6 +504,8 @@ combined_leg_data <- combined_leg_data %>%
   mutate(overall_minutes = hour(hms(overall_time)) * 60 + minute(hms(overall_time)) + second(hms(overall_time))/60)
 
 Ski_to_Sea_Data <- na.omit(combined_leg_data)
+
+Ski_to_Sea_Data <- Ski_to_Sea_Data %>% select("Year", "Team Name", "overall_minutes", "canoe_minutes", "xcski_minutes", "downhill_minutes", "kayak_minutes", "roadbike_minutes", "run_minutes", "xcbike_minutes")
 ```
 
 ```{r}

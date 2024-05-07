@@ -7,7 +7,7 @@ editor: visual
 Load Data
 ```{r}
 library(readr)
-Ski_to_Sea_Data <- read_csv("Ski_to_Sea_Data.csv")
+Ski_to_Sea_Data <- read_csv("module/Ski_to_Sea_Data.csv")
 View(Ski_to_Sea_Data)
 ```
 
@@ -21,7 +21,10 @@ cor(selected_data)
 ```
 
 ```{r}
-first <- Ski_to_Sea_Data %>% filter(Year == 2009) %>% select(overall_minutes)
-last <- Ski_to_Sea_Data %>% filter(Year == 2019) %>% select(overall_minutes)
+ggplot(selected_data, aes(x = canoe_minutes, y = kayak_minutes)) +
+  geom_boxplot() +
+  labs(x = "Canoe", y = "Kayak)", title = "Comparison of Completion Times") +
+  theme_minimal()
 ```
+
 
