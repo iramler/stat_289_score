@@ -1,0 +1,31 @@
+---
+title: "AnswerKey: Dakar Rally"
+format: 
+  html:
+    embed-resources: true
+---
+
+In January of 2024, Saudi Arabia hosted the Dakar Rally, an epic off-road endurance event spanning thousands of kilometers across the rugged terrain. With drivers navigating deserts, mountains, and dunes, this race poses formidable challenges for all sorts of vehicles, such as bikes, cars, and trucks. Our focus will be on exploring the biker’s ranking based off the racers time statistics and driver information.
+
+```{r, message=FALSE, warning=FALSE}}
+library(tidyverse)
+riders <- read_csv(here::here("Dakar Rally/data/dakarRally_bikes_data.csv"))
+```
+
+# 1.	
+
+**Given the data, figure out what stage in the race seems to be the most important**
+
+```{r}
+riders %>%
+  group_by(Stage) %>%
+  summarise(meanRank = mean(Rank)) %>%
+  ggplot(aes(x = Stage, y = meanRank)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Average Rank by Stage",
+       x = "Stage",
+       y = "Average Rank")
+```
+
+  

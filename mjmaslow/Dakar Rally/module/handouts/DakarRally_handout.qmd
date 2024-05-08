@@ -1,0 +1,11 @@
+---
+title: "2024 Dakar Rally Handout"
+format: 
+  html:
+    embed-resources: true
+---
+
+
+
+
+
