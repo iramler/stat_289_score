@@ -5,7 +5,7 @@ format:
     embed-resources: true
 ---
 
-In January of 2024, Saudi Arabia hosted the Dakar Rally, an epic off-road endurance event spanning thousands of kilometers across the rugged terrain. With drivers navigating deserts, mountains, and dunes, this race poses formidable challenges for all sorts of vehicles, such as bikes, cars, and trucks. Our focus will be on exploring the biker’s ranking based off the racers time statistics and driver information.
+In January of 2024, Saudi Arabia hosted the Dakar Rally, an epic off-road endurance event spanning thousands of kilometers across the rugged terrain. With drivers navigating deserts, mountains, and dunes, this race poses formidable challenges for all sorts of vehicles, such as bikes, cars, and trucks. Our focus will be on exploring the bikers ranking based off the racers time statistics and driver information.
 
 ```{r, message=FALSE, warning=FALSE}}
 library(tidyverse)
@@ -14,18 +14,53 @@ riders <- read_csv(here::here("Dakar Rally/data/dakarRally_bikes_data.csv"))
 
 # 1.	
 
-**Given the data, figure out what stage in the race seems to be the most important**
+**Given the data, create a summary output that has the mean time as penalty times for each stage (make sure to incorporate minutes and seconds).**
+
+## a. 
+
+**Create Summary output**
 
 ```{r}
 riders %>%
   group_by(Stage) %>%
-  summarise(meanRank = mean(Rank)) %>%
-  ggplot(aes(x = Stage, y = meanRank)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  labs(title = "Average Rank by Stage",
-       x = "Stage",
-       y = "Average Rank")
+  summarise(`num of riders` = n(),
+            mean_hour_time = mean((Hours) + Minutes/60 + Seconds/3600), 
+            mean_hour_penalty = mean((Penalty_Hours) + (Penalty_Minutes/60) + (Penalty_Seconds/3600))) %>%
+  arrange(mean_hour_time, mean_hour_penalty)
 ```
+
+## b.
+
+**What stage in the race on average takes the riders the longest to complete?**
+
+*The fifth stage of the race, 5-6, is the longest stage on average with 11ish hours*
+
+
+## c.
+**At what stage did the rider's seem to gain the most penalties on average?**
+
+*The seventh stage of the race has the highest amount of penalties penalties on average with 6.9 hours*
+
+
+## d. 
+
+**Determine how many riders started the event versus ended it. How many rider's dropped out or were disqualified?**
+
+*At the beginning the race there were 142 riders, however, in the end only 103 riders remained, meaning 39 riders were disqualified or dropped out.*
+
+
+
+# 2
+
+**Based on the summary output, which stage(s) in the race are the most significant towards overall ranking?**
+
+*Looking at the output it seems that the stages 5 through 9 hold a great amount of significance as it where majority of race is rode, as well as where most riders acquire their penalties either knocking them out or setting them far back in the ranking showing the user the top riders who *
+
+
+
+
+
+
+
 
   
