@@ -287,14 +287,22 @@ library(readr)
 library(dplyr)
 
 # List of file names
-file_names <- paste0("sampeacock23/canoe_results/event_", 101:111, "_leg_", seq(5, 75, by = 7), "_results.csv")
+file_names <- paste0("canoe_results/event_", 101:111, "_leg_", seq(5, 75, by = 7), "_results.csv")
 
 # Read and combine the files using a loop
 combined_canoe_data <- NULL
-for (file in file_names) {
-  data <- read_csv(file)
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(canoe_time = `Elapsed Time`)
+  
   combined_canoe_data <- bind_rows(combined_canoe_data, data)
 }
+
 ```
 
 Combine Downhill Data
@@ -304,12 +312,19 @@ library(readr)
 library(dplyr)
 
 # List of file names
-file_names <- paste0("sampeacock23/downhill_results/event_", 101:111, "_leg_", seq(2, 72, by = 7), "_results.csv")
+file_names <- paste0("downhill_results/event_", 101:111, "_leg_", seq(2, 72, by = 7), "_results.csv")
 
 # Read and combine the files using a loop
 combined_downhill_data <- NULL
-for (file in file_names) {
-  data <- read_csv(file)
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(downhill_time = `Elapsed Time`)
+  
   combined_downhill_data <- bind_rows(combined_downhill_data, data)
 }
 ```
@@ -321,12 +336,19 @@ library(readr)
 library(dplyr)
 
 # List of file names
-file_names <- paste0("sampeacock23/kayak_results/event_", 101:111, "_leg_", seq(7, 77, by = 7), "_results.csv")
+file_names <- paste0("kayak_results/event_", 101:111, "_leg_", seq(7, 77, by = 7), "_results.csv")
 
 # Read and combine the files using a loop
 combined_kayak_data <- NULL
-for (file in file_names) {
-  data <- read_csv(file)
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(kayak_time = `Elapsed Time`)
+  
   combined_kayak_data <- bind_rows(combined_kayak_data, data)
 }
 ```
@@ -338,12 +360,19 @@ library(readr)
 library(dplyr)
 
 # List of file names
-file_names <- paste0("sampeacock23/roadbike_results/event_", 101:111, "_leg_", seq(4, 74, by = 7), "_results.csv")
+file_names <- paste0("roadbike_results/event_", 101:111, "_leg_", seq(4, 74, by = 7), "_results.csv")
 
 # Read and combine the files using a loop
 combined_roadbike_data <- NULL
-for (file in file_names) {
-  data <- read_csv(file)
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(roadbike_time = `Elapsed Time`)
+  
   combined_roadbike_data <- bind_rows(combined_roadbike_data, data)
 }
 ```
@@ -355,12 +384,19 @@ library(readr)
 library(dplyr)
 
 # List of file names
-file_names <- paste0("sampeacock23/run_results/event_", 101:111, "_leg_", seq(3, 73, by = 7), "_results.csv")
+file_names <- paste0("run_results/event_", 101:111, "_leg_", seq(3, 73, by = 7), "_results.csv")
 
 # Read and combine the files using a loop
 combined_run_data <- NULL
-for (file in file_names) {
-  data <- read_csv(file)
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(run_time = `Elapsed Time`)
+  
   combined_run_data <- bind_rows(combined_run_data, data)
 }
 ```
@@ -372,12 +408,19 @@ library(readr)
 library(dplyr)
 
 # List of file names
-file_names <- paste0("sampeacock23/xcbike_results/event_", 101:111, "_leg_", seq(6, 76, by = 7), "_results.csv")
+file_names <- paste0("xcbike_results/event_", 101:111, "_leg_", seq(6, 76, by = 7), "_results.csv")
 
 # Read and combine the files using a loop
 combined_xcbike_data <- NULL
-for (file in file_names) {
-  data <- read_csv(file)
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(xcbike_time = `Elapsed Time`)
+  
   combined_xcbike_data <- bind_rows(combined_xcbike_data, data)
 }
 ```
@@ -389,12 +432,19 @@ library(readr)
 library(dplyr)
 
 # List of file names
-file_names <- paste0("sampeacock23/xcski_results/event_", 101:111, "_leg_", seq(1, 71, by = 7), "_results.csv")
+file_names <- paste0("xcski_results/event_", 101:111, "_leg_", seq(1, 71, by = 7), "_results.csv")
 
 # Read and combine the files using a loop
 combined_xcski_data <- NULL
-for (file in file_names) {
-  data <- read_csv(file)
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(xcski_time = `Elapsed Time`)
+  
   combined_xcski_data <- bind_rows(combined_xcski_data, data)
 }
 ```
@@ -406,47 +456,58 @@ library(readr)
 library(dplyr)
 
 # List of file names
-file_names <- paste0("sampeacock23/overall_results/event_", 101:111,"_results.csv")
+file_names <- paste0("overall_results/event_", 101:111,"_results.csv")
 
 # Read and combine the files using a loop
 combined_overall_data <- NULL
-for (file in file_names) {
-  data <- read_csv(file)
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(overall_time = `Elapsed Time`)
+  
   combined_overall_data <- bind_rows(combined_overall_data, data)
 }
 ```
 
-Combine All Results
+Combine All Leg Results
 
 ```{r}
-library(dplyr)
+combined_leg_data <- inner_join(combined_xcski_data, combined_canoe_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_downhill_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_kayak_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_roadbike_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_run_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_xcbike_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_overall_data, by = c("Team Name", "Year"))
 
-combined_total_data <- inner_join(combined_overall_data, combined_xcski_data, by = "Team Name") %>%
-  inner_join(combined_canoe_data, by = "Team Name") %>%
-  inner_join(combined_downhill_data, by = "Team Name") %>%
-  inner_join(combined_kayak_data, by = "Team Name") %>%
-  inner_join(combined_roadbike_data, by = "Team Name") %>%
-  inner_join(combined_run_data, by = "Team Name") %>%
-  inner_join(combined_xcbike_data, by = "Team Name")
+combined_leg_data <- combined_leg_data %>%
+  select(`Year`, `Team Name`, `overall_time`, everything())
 ```
 
 ```{r}
 library(dplyr)
+library(lubridate)
+library(tidyverse)
 
-# Function to convert time to minutes
-time_to_minutes <- function(time_str) {
-  parts <- as.numeric(strsplit(time_str, ":")[[1]])
-  hours <- parts[1]
-  minutes <- parts[2]
-  seconds <- parts[3]
-  total_minutes <- hours * 60 + minutes + seconds / 60
-  return(total_minutes)
-}
+combined_leg_data <- combined_leg_data %>%
+  mutate(canoe_minutes = hour(hms(canoe_time)) * 60 + minute(hms(canoe_time)) + second(hms(canoe_time))/60) %>%
+  mutate(xcski_minutes = hour(hms(xcski_time)) * 60 + minute(hms(xcski_time)) + second(hms(xcski_time))/60) %>%
+  mutate(downhill_minutes = hour(hms(downhill_time)) * 60 + minute(hms(downhill_time)) + second(hms(downhill_time))/60) %>%
+  mutate(kayak_minutes = hour(hms(kayak_time)) * 60 + minute(hms(kayak_time)) + second(hms(kayak_time))/60) %>%
+  mutate(roadbike_minutes = hour(hms(roadbike_time)) * 60 + minute(hms(roadbike_time)) + second(hms(roadbike_time))/60) %>%
+  mutate(run_minutes = hour(hms(run_time)) * 60 + minute(hms(run_time)) + second(hms(run_time))/60) %>%
+  mutate(xcbike_minutes = hour(hms(xcbike_time)) * 60 + minute(hms(xcbike_time)) + second(hms(xcbike_time))/60) %>%
+  mutate(overall_minutes = hour(hms(overall_time)) * 60 + minute(hms(overall_time)) + second(hms(overall_time))/60)
 
-# Apply the conversion to the whole dataset and add a new 'Minutes' variable
-final_combined_total_data <- combined_total_data %>%
-  mutate(Minutes = sapply(`Elapsed Time.x`, time_to_minutes))
+Ski_to_Sea_Data <- na.omit(combined_leg_data)
 
-
+Ski_to_Sea_Data <- Ski_to_Sea_Data %>% select("Year", "Team Name", "overall_minutes", "canoe_minutes", "xcski_minutes", "downhill_minutes", "kayak_minutes", "roadbike_minutes", "run_minutes", "xcbike_minutes")
 ```
 
+```{r}
+write.csv(Ski_to_Sea_Data, file = "Ski_to_Sea_Data.csv")
+```

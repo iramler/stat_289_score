@@ -30,22 +30,20 @@ The data used in this study comprises three distinct data sets, each representin
 | SUP      | The Support champion used in the match |
 | count    | The number of games for each champion  |
 
-: [filename.csv](~/Desktop/Sixth%20Semester/Stat289Spring2024/gchar21/ADC.csv)
-                (~/Desktop/Sixth%20Semester/Stat289Spring2024/gchar21/SUP.csv)
-                (~/Desktop/Sixth%20Semester/Stat289Spring2024/gchar21/Rest.csv)
+: [filename.csv](~/Desktop/Sixth%20Semester/Stat289Spring2024/gchar21/ADC.csv) (\~/Desktop/Sixth%20Semester/Stat289Spring2024/gchar21/SUP.csv) (\~/Desktop/Sixth%20Semester/Stat289Spring2024/gchar21/Rest.csv)
 
 ## Questions
 
-1.	Identify the variables of interest in this study. Are they categorical or numerical? If categorical, identify the levels of each variable.
+1.  Identify the variables of interest in this study. Are they categorical or numerical? If categorical, identify the levels of each variable.
 
-2. What percent of games did the combination of Jinx in the ADC role and Braum in the Support role appear?
+2.  What percent of games did the combination of Jinx in the ADC role and Braum in the Support role appear?
 
-3. Is there evidence that the selection of a specific champion in the Support role is related to the selection of a specific champion in the ADC role?
+3.  Is there evidence that the selection of a specific champion in the Support role is related to the selection of a specific champion in the ADC role?
 
-4. What combination of champions contributes the most to the test statistic?
+4.  What combination of champions contributes the most to the test statistic?
 
 ## References
 
 Riot Games Developer Portal. Accessed \[February 29, 2024\]. Available at: `https://developer.riotgames.com/apis`
 
-Ramler, I, Lee, C.S., and Schuckers, M. (2019) “Identifying Symbiotic Relationships between Champions in League of Legends.” Proceedings for the 2019 Joint Statistical Meetings, Sports Statistics Section. Alexandria, VA: American Statistical Association. 2362 – 2369.
+Ramler, I, Lee, C.S., and Schuckers, M. (2019) "Identifying Symbiotic Relationships between Champions in League of Legends." Proceedings for the 2019 Joint Statistical Meetings, Sports Statistics Section. Alexandria, VA: American Statistical Association. 2362 -- 2369.

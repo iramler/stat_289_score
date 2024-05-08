@@ -1,0 +1,30 @@
+---
+title: "Worksheet"
+format: html
+editor: visual
+---
+
+Load Data
+```{r}
+library(readr)
+Ski_to_Sea_Data <- read_csv("module/Ski_to_Sea_Data.csv")
+View(Ski_to_Sea_Data)
+```
+
+Correlation Matrix
+```{r}
+# Select specific variables
+selected_data <- Ski_to_Sea_Data[, c("overall_minutes", "canoe_minutes", "xcski_minutes", "downhill_minutes", "kayak_minutes", "roadbike_minutes", "run_minutes", "xcbike_minutes")]
+
+# Compute correlation matrix
+cor(selected_data)
+```
+
+```{r}
+ggplot(selected_data, aes(x = canoe_minutes, y = kayak_minutes)) +
+  geom_boxplot() +
+  labs(x = "Canoe", y = "Kayak)", title = "Comparison of Completion Times") +
+  theme_minimal()
+```
+
+
