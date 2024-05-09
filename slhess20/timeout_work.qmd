@@ -237,4 +237,24 @@ calculate_set_win_probability <- function(playByPlay) {
 }
 probability <- calculate_set_win_probability(playByPlay)
 print(paste("Probability of the losing team winning the entire set after the first timeout:", probability))
+
+probability
+```
+
+```{r}
+margin_of_error <- function(probability, timeouts) {
+  z <- qnorm(c(.025, 0.975)) # 95% CI
+  margin_of_error <- z * sqrt((probability * (1 - probability)) / timeouts)
+  return(margin_of_error)
+}
+total_timeouts <- sum(timeout$timeout, na.rm = TRUE)
+margin_of_error <- margin_of_error(probability, total_timeouts)
+
+print(paste("Probability of the losing team winning the entire set after the first timeout:", probability))
+print(paste("Margin of Error:", margin_of_error))
+low <- probability + margin_of_error[1]
+high <- probability + margin_of_error[2]
+low
+high
+
 ```

@@ -7,7 +7,6 @@ editor:
 categories:
   - One sample proportions 
   - Confidence intervals
-  - statistical concepts
 ---
 
 ## Module
@@ -103,6 +102,5 @@ The difference in probability of winning a set based on which timeout you look a
 ### Authors
 
 Created by Sierra Hess (St. Lawrence University), [Ivan Ramler (St. Lawrence University)](mailto:iramler@stlawu.edu)
-
 
 
