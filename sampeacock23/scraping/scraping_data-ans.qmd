@@ -54,6 +54,14 @@ for (event in 101:111) { # starts a loop to iterate through events from 101 to 1
 
 Downhill Skiing
 
+#### The code above is used in the same way here, but what is the main difference?
+
+- Event still goes from 101-111, but the leg number is set at 2 instead of 1. 
+
+#### How do you anticipate this changing the code for the rest of the legs? What is the maximum leg number for 2009-2019?
+
+- 
+
 ```{r}
 base_url <- "https://skitosea.pacificmultisports.com/events/"
 event <- 101
@@ -250,20 +258,20 @@ Combine Canoe Data
 
 ```{r}
 # List of file names
-file_names <- paste0("canoe_results/event_", 101:111, "_leg_", seq(5, 75, by = 7), "_results.csv")
+file_names <- paste0("canoe_results/event_", 101:111, "_leg_", seq(5, 75, by = 7), "_results.csv") # creates a vector of file names for the canoe race results CSV files. The 101:111 part creates a sequence of event numbers, and seq(5, 75, by = 7) creates a sequence of leg numbers, incrementing by 7.
 
 # Read and combine the files using a loop
-combined_canoe_data <- NULL
-nyears = length(file_names)
+combined_canoe_data <- NULL # initializes an empty data frame to store the combined canoe race data.
+nyears = length(file_names) # sets nyears as the length of the number of files 
 
-for (i in 1:nyears) {
-  data <- read_csv(file_names[i]) %>% 
-  mutate(Year = i + 2008) %>%
-  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
-  select(`Elapsed Time`, `Team Name`, `Year`) %>%
-  rename(canoe_time = `Elapsed Time`)
+for (i in 1:nyears) { # starts a loop to iterate through each file name
+  data <- read_csv(file_names[i]) %>% # reads the CSV file corresponding to the current iteration and performs several operations on the data:
+  mutate(Year = i + 2008) %>% # adds a 'Year' column to the data frame, with each iteration representing a different year starting from 2009
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>% # converts the 'Elapsed Time' column to a character type.
+  select(`Elapsed Time`, `Team Name`, `Year`) %>% # selects only the 'Elapsed Time', 'Team Name', and 'Year' columns.
+  rename(canoe_time = `Elapsed Time`) # renames the 'Elapsed Time' column to 'canoe_time'.
   
-  combined_canoe_data <- bind_rows(combined_canoe_data, data)
+  combined_canoe_data <- bind_rows(combined_canoe_data, data) # combines the current data frame with the previously processed data frames, stacking them vertically.
 }
 ```
 
@@ -426,6 +434,10 @@ combined_leg_data <- inner_join(combined_xcski_data, combined_canoe_data, by = c
   inner_join(combined_run_data, by = c("Team Name", "Year")) %>%
   inner_join(combined_xcbike_data, by = c("Team Name", "Year")) %>%
   inner_join(combined_overall_data, by = c("Team Name", "Year"))
+
+# This code combines several data frames (combined_xcski_data, combined_canoe_data, combined_downhill_data, combined_kayak_data, combined_roadbike_data, combined_run_data, combined_xcbike_data, combined_overall_data) into a single data frame (combined_leg_data) based on the columns "Team Name" and "Year"
+
+# Using inner joins in this context makes sense because we want to combine data frames based on the "Team Name" and "Year" columns where there are matching values in both data frames. An inner join ensures that only the rows with matching "Team Name" and "Year" values in both data frames are included in the final combined data frame. This is important because we want to combine data for the same team in the same year across all legs of the race. If there are teams that did not participate in all legs or for which we do not have complete data, an inner join would exclude them from the final combined data frame, which is desirable in this analysis.
 ```
 
 What dplyr function could we use to select only relevant variables from the dataset?
