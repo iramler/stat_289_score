@@ -4,3 +4,479 @@ format: html
 editor: visual
 ---
 
+# Scraping Ski to Sea Data 
+
+Load Packages
+
+```{r}
+library(rvest)
+library(dplyr)
+library(lubridate)
+library(tidyverse)
+library(httr)
+library(readr)
+```
+
+# Part 1) Creating Data Files for Each Leg (Sport)
+
+Cross Country Ski
+
+- Note that the material in this chunk of code is repeated for each leg to gather data files
+
+#### Question 1) 
+For the below code chunk, look click through the results from the url (base_url). Find which leg number is associated with Cross Country Ski and which event number is associated with the first year (2009). Add in these numbers to the below code. 
+
+##### Question 2)
+Why does it make sense to use a for loop here? 
+
+```{r}
+base_url <- "https://skitosea.pacificmultisports.com/events/" # go to URL and sift through results page
+
+event <-  # notice how the event number changes for different years (2009 - 2019)
+leg <-  # notice how the leg number changes for different sports 
+isEvent <- TRUE # initializes the isEvent variable to track if the event exists
+
+for (event in 101:111) { # starts a loop to iterate through events from 101 to 111
+  url <- paste0(base_url, event, "/results/leg/", leg) # constructs the URL for the current event and leg
+  response <- GET(url) # sends an HTTP GET request to the URL and stores the response
+  if (response$status_code == 200) { # checks if the response status code is 200 (indicating a successful request)
+    
+    # scrape the data
+    h <- read_html(url) # reads the HTML content of the URL
+    tab <- h %>% html_nodes("table") # extracts all tables from the HTML content
+    test <- tab %>% html_table() # converts the tables into data frames
+    data <- test[[1]] # selects the first table and assigns it to the data variable
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/leg_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7 # increments the leg variable by 7 to move to the next leg for the next iteration.
+    Sys.sleep(2) # pauses the script for 2 seconds to avoid overwhelming the server with requests
+    
+  } else {
+    isEvent <- FALSE # if the event does not exist (response status code is not 200), sets isEvent to FALSE
+  }
+}
+```
+
+Downhill Skiing
+
+```{r}
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 2
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/downhill_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+#### Question 3) 
+The code above is used in the same way as it was for the cross country ski leg, but what is the main difference?
+
+#### Question 4)
+How do you anticipate this difference will impact the code for the rest of the legs? What is the maximum leg number for 2009-2019?
+
+Running
+
+```{r}
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 3
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/run_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+Road Bike
+
+```{r}
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 4
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/roadbike_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+Canoe
+
+```{r}
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 5
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/canoe_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+Cross Country Bike
+
+```{r}
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 6
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/xcbike_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+Kayak
+
+```{r}
+base_url <- "https://skitosea.pacificmultisports.com/events/"
+event <- 101
+leg <- 7
+isEvent <- TRUE
+
+for (event in 101:111) {
+  url <- paste0(base_url, event, "/results/leg/", leg)
+  response <- GET(url)
+  if (response$status_code == 200) {
+    
+    # scrape the data
+    h <- read_html(url)
+    tab <- h %>% html_nodes("table")
+    test <- tab %>% html_table()
+    data <- test[[1]]
+    
+    # save the data to a CSV file
+    write.csv(data, file = paste0("sampeacock23/kayak_results/event_", event, "_leg_", leg, "_results.csv"))
+    
+    # append leg number
+    leg <- leg + 7
+    Sys.sleep(2)
+    
+  } else {
+    isEvent <- FALSE
+  }
+}
+```
+
+# Part 2) Combining Data Files Into a Single Dataset for Each Leg
+
+Combine Canoe Data
+
+- Note that the material in this chunk of code is repeated for each leg to combine files
+
+#### Question 5) 
+What are the appropriate parameters for the below for loop? 
+
+```{r}
+# List of file names
+file_names <- paste0("canoe_results/event_", 101:111, "_leg_", seq(5, 75, by = 7), "_results.csv") # creates a vector of file names for the canoe race results CSV files. The 101:111 part creates a sequence of event numbers, and seq(5, 75, by = 7) creates a sequence of leg numbers, incrementing by 7.
+
+# Read and combine the files using a loop
+combined_canoe_data <- NULL # initializes an empty data frame to store the combined canoe race data.
+nyears = length(file_names) # sets nyears as the length of the number of files 
+
+for () { # starts a loop to iterate through each file name
+  data <- read_csv(file_names[i]) %>% # reads the CSV file corresponding to the current iteration and performs several operations on the data:
+  mutate(Year = i + 2008) %>% # adds a 'Year' column to the data frame, with each iteration representing a different year starting from 2009
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>% # converts the 'Elapsed Time' column to a character type.
+  select(`Elapsed Time`, `Team Name`, `Year`) %>% # selects only the 'Elapsed Time', 'Team Name', and 'Year' columns.
+  rename(canoe_time = `Elapsed Time`) # renames the 'Elapsed Time' column to 'canoe_time'.
+  
+  combined_canoe_data <- bind_rows(combined_canoe_data, data) # combines the current data frame with the previously processed data frames, stacking them vertically.
+}
+```
+
+Combine Downhill Data
+
+```{r}
+# List of file names
+file_names <- paste0("downhill_results/event_", 101:111, "_leg_", seq(2, 72, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_downhill_data <- NULL
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(downhill_time = `Elapsed Time`)
+  
+  combined_downhill_data <- bind_rows(combined_downhill_data, data)
+}
+```
+
+Combine Kayak Results
+
+```{r}
+# List of file names
+file_names <- paste0("kayak_results/event_", 101:111, "_leg_", seq(7, 77, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_kayak_data <- NULL
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(kayak_time = `Elapsed Time`)
+  
+  combined_kayak_data <- bind_rows(combined_kayak_data, data)
+}
+```
+
+Combine Roadbike Results
+
+```{r}
+# List of file names
+file_names <- paste0("roadbike_results/event_", 101:111, "_leg_", seq(4, 74, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_roadbike_data <- NULL
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(roadbike_time = `Elapsed Time`)
+  
+  combined_roadbike_data <- bind_rows(combined_roadbike_data, data)
+}
+```
+
+Combine Run Results
+
+```{r}
+# List of file names
+file_names <- paste0("run_results/event_", 101:111, "_leg_", seq(3, 73, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_run_data <- NULL
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(run_time = `Elapsed Time`)
+  
+  combined_run_data <- bind_rows(combined_run_data, data)
+}
+```
+
+Combine Cross Country Bike Results
+
+```{r}
+# List of file names
+file_names <- paste0("xcbike_results/event_", 101:111, "_leg_", seq(6, 76, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_xcbike_data <- NULL
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(xcbike_time = `Elapsed Time`)
+  
+  combined_xcbike_data <- bind_rows(combined_xcbike_data, data)
+}
+```
+
+Combine Cross Country Ski Results
+
+```{r}
+# List of file names
+file_names <- paste0("xcski_results/event_", 101:111, "_leg_", seq(1, 71, by = 7), "_results.csv")
+
+# Read and combine the files using a loop
+combined_xcski_data <- NULL
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(xcski_time = `Elapsed Time`)
+  
+  combined_xcski_data <- bind_rows(combined_xcski_data, data)
+}
+```
+
+Combine Overall Results
+
+```{r}
+# List of file names
+file_names <- paste0("overall_results/event_", 101:111,"_results.csv")
+
+# Read and combine the files using a loop
+combined_overall_data <- NULL
+nyears = length(file_names)
+
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>%
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>%
+  select(`Elapsed Time`, `Team Name`, `Year`) %>%
+  rename(overall_time = `Elapsed Time`)
+  
+  combined_overall_data <- bind_rows(combined_overall_data, data)
+}
+```
+
+# Part 3) Combine All Leg Datasets Into a Single Dataset
+
+#### Question 6)
+Which join technique makes sense to combine these data files?
+
+```{r}
+combined_leg_data <- inner_join(combined_xcski_data, combined_canoe_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_downhill_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_kayak_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_roadbike_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_run_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_xcbike_data, by = c("Team Name", "Year")) %>%
+  inner_join(combined_overall_data, by = c("Team Name", "Year"))
+```
+
+#### Question 7)
+What dplyr function could we use to select only relevant variables from the dataset?
+
+```{r}
+combined_leg_data <- combined_leg_data %>% (`Year`, `Team Name`, `overall_time`, everything())
+```
+
+Provide a technique to mutate the elapsed time variables for each leg into minutes
+
+```{r}
+combined_leg_data <- combined_leg_data %>%
+  mutate(canoe_minutes = hour(hms(canoe_time)) * 60 + minute(hms(canoe_time)) + second(hms(canoe_time))/60) %>%
+  mutate(xcski_minutes = hour(hms(xcski_time)) * 60 + minute(hms(xcski_time)) + second(hms(xcski_time))/60) %>%
+  mutate(downhill_minutes = hour(hms(downhill_time)) * 60 + minute(hms(downhill_time)) + second(hms(downhill_time))/60) %>%
+  mutate(kayak_minutes = hour(hms(kayak_time)) * 60 + minute(hms(kayak_time)) + second(hms(kayak_time))/60) %>%
+  mutate(roadbike_minutes = hour(hms(roadbike_time)) * 60 + minute(hms(roadbike_time)) + second(hms(roadbike_time))/60) %>%
+  mutate(run_minutes = hour(hms(run_time)) * 60 + minute(hms(run_time)) + second(hms(run_time))/60) %>%
+  mutate(xcbike_minutes = hour(hms(xcbike_time)) * 60 + minute(hms(xcbike_time)) + second(hms(xcbike_time))/60) %>%
+  mutate(overall_minutes = hour(hms(overall_time)) * 60 + minute(hms(overall_time)) + second(hms(overall_time))/60)
+
+# get rid of omits
+Ski_to_Sea_Data <- na.omit(combined_leg_data)
+
+# select and reorder variables
+Ski_to_Sea_Data <- Ski_to_Sea_Data %>% select("Year", "Team Name", "overall_minutes", "canoe_minutes", "xcski_minutes", "downhill_minutes", "kayak_minutes", "roadbike_minutes", "run_minutes", "xcbike_minutes")
+```
+
+Save final data file to your project as a .csv
+
+```{r}
+write.csv(Ski_to_Sea_Data, file = "Ski_to_Sea_Data.csv")
+```

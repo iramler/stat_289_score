@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-# Scraping Ski to Sea Data 
+# Scraping Ski to Sea Data
 
 Load Packages
 
@@ -17,9 +17,23 @@ library(httr)
 library(readr)
 ```
 
-# 1) Creating Data Files for Each Leg (Sport)
+# Part 1) Creating Data Files for Each Leg (Sport)
 
 Cross Country Ski
+
+_ Note that the material in this chunk of code is repeated for each leg to gather data files
+
+#### Question 1)
+
+For the below code chunk, look click through the results from the url (base_url). Find which leg number is associated with Cross Country Ski and which event number is associated with the first year (2009). Add in these numbers to the below code.
+
+- Leg #1 and Event #101
+
+##### Question 2)
+
+Why does it make sense to use a for loop here?
+
+- So we can loop through each of the years which are associated with events from 101 to 111
 
 ```{r}
 base_url <- "https://skitosea.pacificmultisports.com/events/" # go to URL and sift through results page
@@ -54,14 +68,6 @@ for (event in 101:111) { # starts a loop to iterate through events from 101 to 1
 
 Downhill Skiing
 
-#### The code above is used in the same way here, but what is the main difference?
-
-- Event still goes from 101-111, but the leg number is set at 2 instead of 1. 
-
-#### How do you anticipate this changing the code for the rest of the legs? What is the maximum leg number for 2009-2019?
-
-- 
-
 ```{r}
 base_url <- "https://skitosea.pacificmultisports.com/events/"
 event <- 101
@@ -91,6 +97,16 @@ for (event in 101:111) {
   }
 }
 ```
+
+#### Question 3) 
+The code above is used in the same way as it was for the cross country ski leg, but what is the main difference?
+
+- The main difference is that the leg number now starts at 2 since we are looking at the next leg (sport). 
+
+#### Question 4)
+How do you anticipate this difference will impact the code for the rest of the legs? What is the maximum leg number for 2009-2019?
+
+- After looking through the results from the base_url, we see that the leg numbers increase by 7 each year. 
 
 Running
 
@@ -252,9 +268,16 @@ for (event in 101:111) {
 }
 ```
 
-# 2) Combining Data Files Into a Single Dataset for Each Leg
+# Part 2) Combining Data Files Into a Single Dataset for Each Leg
 
 Combine Canoe Data
+
+-   Note that the material in this chunk of code is repeated for each leg to combine files
+
+#### Question 5) 
+What are the appropriate parameters for the below for loop? 
+
+- i in 1:nyears because we want to loop through the number of files. nyears is the appropriate parameter here because we made nyears equal the length of the file names. 
 
 ```{r}
 # List of file names
@@ -422,9 +445,12 @@ for (i in 1:nyears) {
 }
 ```
 
-# 3) Combine All Leg Datasets Into a Single Dataset
+# Part 3) Combine All Leg Datasets Into a Single Dataset
 
+#### Question 6)
 Which join technique makes sense to combine these data files?
+
+- Using inner joins in this context makes sense because we want to combine data frames based on the "Team Name" and "Year" columns where there are matching values in both data frames. An inner join ensures that only the rows with matching "Team Name" and "Year" values in both data frames are included in the final combined data frame. This is important because we want to combine data for the same team in the same year across all legs of the race. If there are teams that did not participate in all legs or for which we do not have complete data, an inner join would exclude them from the final combined data frame, which is desirable in this analysis.
 
 ```{r}
 combined_leg_data <- inner_join(combined_xcski_data, combined_canoe_data, by = c("Team Name", "Year")) %>%
@@ -436,11 +462,12 @@ combined_leg_data <- inner_join(combined_xcski_data, combined_canoe_data, by = c
   inner_join(combined_overall_data, by = c("Team Name", "Year"))
 
 # This code combines several data frames (combined_xcski_data, combined_canoe_data, combined_downhill_data, combined_kayak_data, combined_roadbike_data, combined_run_data, combined_xcbike_data, combined_overall_data) into a single data frame (combined_leg_data) based on the columns "Team Name" and "Year"
-
-# Using inner joins in this context makes sense because we want to combine data frames based on the "Team Name" and "Year" columns where there are matching values in both data frames. An inner join ensures that only the rows with matching "Team Name" and "Year" values in both data frames are included in the final combined data frame. This is important because we want to combine data for the same team in the same year across all legs of the race. If there are teams that did not participate in all legs or for which we do not have complete data, an inner join would exclude them from the final combined data frame, which is desirable in this analysis.
 ```
 
+#### Question 7)
 What dplyr function could we use to select only relevant variables from the dataset?
+
+- select
 
 ```{r}
 combined_leg_data <- combined_leg_data %>%
