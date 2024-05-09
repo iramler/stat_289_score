@@ -14,7 +14,41 @@ library(tidyverse)
 riders <- read_csv(here::here("Dakar Rally/data/dakarRally_bikes_data.csv"))
 ```
 
-# 1.	
+
+# 1.
+
+**Given the data, fit a linear model that uses Hours, Minutes, Seconds, Penalty_Hours, Penalty_Minutes, Penalty_Seconds to predict riders ranking.**
+
+## a.
+
+**Fit the model **
+
+
+
+## b.
+
+**Interpret the coefficient for $\hat\{beta_{Hours}}$ & $\hat\{beta_{Penalty_Hours}}$**
+
+
+
+
+## c.
+
+**Test the significance of $\hat{\beta_{Minutes}}$**
+
+
+
+
+## c.
+
+**Now, looking $\hat{\beta_{Hours}}$, conduct a 95% confidence interval.**
+
+
+
+
+
+
+# 2.	
 
 **Given the data, create a summary output that has the mean time as penalty times for each stage (make sure to incorporate minutes and seconds).**
 
@@ -30,6 +64,7 @@ riders <- read_csv(here::here("Dakar Rally/data/dakarRally_bikes_data.csv"))
 
 
 
+
 ## c.
 **At what stage did the rider's seem to gain the most penalties on average?**
 
@@ -42,40 +77,9 @@ riders <- read_csv(here::here("Dakar Rally/data/dakarRally_bikes_data.csv"))
 
 
 
-# 2.
-
-**Now for some model building....**
-
-## a.
-
-**Fit a linear model that predicts a riders ranking based off their time (including penalties)**
-
-
-
-## b.
-
-**Test the significance of $\hat{\beta_{Minutes}}$**
-
-
-
-## c.
-
-**Now, looking $\hat{\beta_{Hours}}$, conduct a 95% confidence interval.**
-
-
-
-
-
 
 # 3.
 
 **Based on the summary output, which stage(s) in the race are the most significant towards overall ranking and why?**
-
-
-
-
-
-
-
 
 
