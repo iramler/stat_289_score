@@ -63,18 +63,24 @@ ggplot(tally, aes(x = winning_score - losing_score)) +
 ```
 
 ```{r}
-# Ho: 
-# Ha: 
+# Compute observed frequencies for each point differential
+observed_freq <- table(tally$losing_score[tally$set == 1])
 
-# Create contingency table
-cont_table <- table(tally$timeout_ind, cut(tally$point_diff, breaks = c(-Inf, 0, Inf)))
+observed_values <- as.numeric(names(observed_freq))
 
-# Perform chi-square test
-chi_square <- chisq.test(cont_table)
+n <- sum(observed_freq)
+p <- 1 / (1 + mean(tally$point_diff[tally$timeout_ind == 1]))
+expected_prob <- dgeom(observed_values, prob = p)
+
+# Normalize expected probabilities to sum up to 1
+expected_prob <- expected_prob / sum(expected_prob) * n
+
+# Perform chi-square goodness-of-fit test
+chi_sq_test <- chisq.test(observed_freq, p = expected_prob)
 
 # Print the results
-print(chi_square)
+print(chi_sq_test)
 
-# p<.05, reject the null there is significant evidence 
+
 ```
 
