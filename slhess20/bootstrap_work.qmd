@@ -6,12 +6,10 @@ editor: visual
 
 ```{r}
 library(readr)
-
 library(tidyverse)
-
 library(dplyr)
-
 library(magrittr)
+library(caret)
 
 timeout <- read.csv("slhess20/data/timeout.csv")
 ```
@@ -19,54 +17,64 @@ timeout <- read.csv("slhess20/data/timeout.csv")
 ```{r}
 #filter data to only be slu timeouts in 2014 only
 timeout1 <- timeout %>% 
-  filter(play_descripton == "Timeout St. Lawrence.") 
-timeout1 <- timeout1[grepl("^2014", timeout1$Date), ]
+  filter(play_descripton == "Timeout St. Lawrence.", 
+         ) 
+timeout1 <- timeout1[grepl("^2019", timeout1$Date), ]
 library(dplyr)
 timeout1 <- timeout1 %>% 
   mutate(losing_score = ifelse(prev_home_score > prev_visiting_score, prev_visiting_score, prev_home_score))
 
 
 timeout1 <- timeout1 %>% 
-  select(prev_home_score, prev_visiting_score, losing_score, losing_team, set_winner, losing_team_wins)
-```
+  select(url, timeout, set,prev_home_score, prev_visiting_score, losing_score, losing_team, set_winner, losing_team_wins)
+#timeout1 <- timeout1 %>% 
+ # group_by(url)
 
-```{r}
-library(boot)
+tally <- timeout1 %>% 
+  mutate(losing_score = ifelse(losing_team == "home", prev_home_score, prev_visiting_score), 
+         winning_score = ifelse(losing_team == "home", prev_visiting_score, prev_home_score),
+         point_diff = winning_score - losing_score,
+         timeout_ind = ifelse(timeout == TRUE, 1, 0)) %>% 
+  select(losing_score, winning_score, set, url, timeout_ind, point_diff, losing_team_wins)
 
-statistic_function <- function(data, indices) {
-  sample_data <- data[indices, ]
-  mean_score <- mean(sample_data$losing_score)
-  return(mean_score) # look at the mean prev score
-}
+# get distribution of how many points team has when timeout is called
+# tally 
 
-# num reps
-num_bootstrap_replicates <- 1000
+# pull previous data for timeout
+# timeout team score vs other team 
+# 3 columns table your score/ other team score/ timeout
 
-# resample
-bootstrap_results <- boot(data = timeout1, statistic = statistic_function, R = num_bootstrap_replicates)
-
-# Calculate the confidence interval using the percentile method
-conf_interval_percentile <- boot.ci(bootstrap_results, type = "perc")$percent
-
-print(conf_interval_percentile)
+# model num timeouts based on the point differential.
 
 ```
 
 ```{r}
+# Visualize distribution of points when timeout is called
+win_diff <- tally %>% filter(losing_team_wins)
 
-win_likelihood <- function(data, indices) {
-  sample_data <- data[indices, ]
-  model <- glm(losing_team_wins ~ prev_home_score + prev_visiting_score, data = sample_data, family = "binomial")
-  probabilities <- predict(model, type = "response")
-  return(mean(probabilities))
-}
+ggplot(tally, aes(x = winning_score - losing_score)) +
+  geom_histogram(binwidth = 1, fill = "pink", color = "black") +
+  labs(title = "Diff of score When Timeout is Called",
+       x = "Losing Team's Score", y = "Frequency")
 
-# resample
-bootstrap_results <- boot(data = timeout1, statistic = win_likelihood, R = num_bootstrap_replicates)
 
-# CI
-conf_interval_percentile <- boot.ci(bootstrap_results, type = "perc")$percent
-print(conf_interval_percentile)
 
+
+```
+
+```{r}
+# Ho: 
+# Ha: 
+
+# Create contingency table
+cont_table <- table(tally$timeout_ind, cut(tally$point_diff, breaks = c(-Inf, 0, Inf)))
+
+# Perform chi-square test
+chi_square <- chisq.test(cont_table)
+
+# Print the results
+print(chi_square)
+
+# p<.05, reject the null there is significant evidence 
 ```
 
