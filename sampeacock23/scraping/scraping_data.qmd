@@ -21,13 +21,15 @@ library(readr)
 
 Cross Country Ski
 
-- Note that the material in this chunk of code is repeated for each leg to gather data files
+-   Note that the material in this chunk of code is repeated for each leg to gather data files
 
-#### Question 1) 
-For the below code chunk, look click through the results from the url (base_url). Find which leg number is associated with Cross Country Ski and which event number is associated with the first year (2009). Add in these numbers to the below code. 
+#### Question 1)
 
-##### Question 2)
-Why does it make sense to use a for loop here? 
+For the below code chunk, look through the results from [Ski to Sea Website](https://skitosea.pacificmultisports.com/events/){target="_blank"}. Find which leg number is associated with Cross Country Ski and which event number is associated with the first year (2009). Add in these numbers to the below code.
+
+#### Question 2)
+
+Load 2010 on the website and find the event and leg number for cross country skiing. Why does it make sense to use a for loop here?
 
 ```{r}
 base_url <- "https://skitosea.pacificmultisports.com/events/" # go to URL and sift through results page
@@ -92,10 +94,13 @@ for (event in 101:111) {
 }
 ```
 
-#### Question 3) 
-The code above is used in the same way as it was for the cross country ski leg, but what is the main difference?
+#### Question 3)
+
+Investigate the event and leg for the downhill ski leg in both 2009 and 2010, what is the main difference? Comment on any changes that occur to the event and leg when you shift to downhill skiing.
+
 
 #### Question 4)
+
 How do you anticipate this difference will impact the code for the rest of the legs? What is the maximum leg number for 2009-2019?
 
 Running
@@ -262,27 +267,26 @@ for (event in 101:111) {
 
 Combine Canoe Data
 
-- Note that the material in this chunk of code is repeated for each leg to combine files
+-   Note that the material in this chunk of code is repeated for each leg to combine files
 
-#### Question 5) 
-What are the appropriate parameters for the below for loop? 
+#### Question 5)
+
+Write a comment after each line of code to describe what that code is doing.
 
 ```{r}
-# List of file names
-file_names <- paste0("canoe_results/event_", 101:111, "_leg_", seq(5, 75, by = 7), "_results.csv") # creates a vector of file names for the canoe race results CSV files. The 101:111 part creates a sequence of event numbers, and seq(5, 75, by = 7) creates a sequence of leg numbers, incrementing by 7.
+file_names <- paste0("canoe_results/event_", 101:111, "_leg_", seq(5, 75, by = 7), "_results.csv") 
 
-# Read and combine the files using a loop
-combined_canoe_data <- NULL # initializes an empty data frame to store the combined canoe race data.
-nyears = length(file_names) # sets nyears as the length of the number of files 
+combined_canoe_data <- NULL =
+nyears = length(file_names) 
 
-for () { # starts a loop to iterate through each file name
-  data <- read_csv(file_names[i]) %>% # reads the CSV file corresponding to the current iteration and performs several operations on the data:
-  mutate(Year = i + 2008) %>% # adds a 'Year' column to the data frame, with each iteration representing a different year starting from 2009
-  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>% # converts the 'Elapsed Time' column to a character type.
-  select(`Elapsed Time`, `Team Name`, `Year`) %>% # selects only the 'Elapsed Time', 'Team Name', and 'Year' columns.
-  rename(canoe_time = `Elapsed Time`) # renames the 'Elapsed Time' column to 'canoe_time'.
+for (i in 1:nyears) {
+  data <- read_csv(file_names[i]) %>% 
+  mutate(Year = i + 2008) %>% 
+  mutate(`Elapsed Time` = as.character(`Elapsed Time`)) %>% 
+  select(`Elapsed Time`, `Team Name`, `Year`) %>% 
+  rename(canoe_time = `Elapsed Time`) 
   
-  combined_canoe_data <- bind_rows(combined_canoe_data, data) # combines the current data frame with the previously processed data frames, stacking them vertically.
+  combined_canoe_data <- bind_rows(combined_canoe_data, data) 
 }
 ```
 
@@ -436,47 +440,27 @@ for (i in 1:nyears) {
 # Part 3) Combine All Leg Datasets Into a Single Dataset
 
 #### Question 6)
-Which join technique makes sense to combine these data files?
+Join these data files
 
 ```{r}
-combined_leg_data <- inner_join(combined_xcski_data, combined_canoe_data, by = c("Team Name", "Year")) %>%
-  inner_join(combined_downhill_data, by = c("Team Name", "Year")) %>%
-  inner_join(combined_kayak_data, by = c("Team Name", "Year")) %>%
-  inner_join(combined_roadbike_data, by = c("Team Name", "Year")) %>%
-  inner_join(combined_run_data, by = c("Team Name", "Year")) %>%
-  inner_join(combined_xcbike_data, by = c("Team Name", "Year")) %>%
-  inner_join(combined_overall_data, by = c("Team Name", "Year"))
+
 ```
 
 #### Question 7)
-What dplyr function could we use to select only relevant variables from the dataset?
+Select relevant variables
 
 ```{r}
-combined_leg_data <- combined_leg_data %>% (`Year`, `Team Name`, `overall_time`, everything())
+
 ```
 
-Provide a technique to mutate the elapsed time variables for each leg into minutes
+Mutate the elapsed time variables for each leg into minutes
 
 ```{r}
-combined_leg_data <- combined_leg_data %>%
-  mutate(canoe_minutes = hour(hms(canoe_time)) * 60 + minute(hms(canoe_time)) + second(hms(canoe_time))/60) %>%
-  mutate(xcski_minutes = hour(hms(xcski_time)) * 60 + minute(hms(xcski_time)) + second(hms(xcski_time))/60) %>%
-  mutate(downhill_minutes = hour(hms(downhill_time)) * 60 + minute(hms(downhill_time)) + second(hms(downhill_time))/60) %>%
-  mutate(kayak_minutes = hour(hms(kayak_time)) * 60 + minute(hms(kayak_time)) + second(hms(kayak_time))/60) %>%
-  mutate(roadbike_minutes = hour(hms(roadbike_time)) * 60 + minute(hms(roadbike_time)) + second(hms(roadbike_time))/60) %>%
-  mutate(run_minutes = hour(hms(run_time)) * 60 + minute(hms(run_time)) + second(hms(run_time))/60) %>%
-  mutate(xcbike_minutes = hour(hms(xcbike_time)) * 60 + minute(hms(xcbike_time)) + second(hms(xcbike_time))/60) %>%
-  mutate(overall_minutes = hour(hms(overall_time)) * 60 + minute(hms(overall_time)) + second(hms(overall_time))/60)
 
-# get rid of omits
-Ski_to_Sea_Data <- na.omit(combined_leg_data)
-
-# select and reorder variables
-Ski_to_Sea_Data <- Ski_to_Sea_Data %>% select("Year", "Team Name", "overall_minutes", "canoe_minutes", "xcski_minutes", "downhill_minutes", "kayak_minutes", "roadbike_minutes", "run_minutes", "xcbike_minutes")
 ```
 
 Save final data file to your project as a .csv
 
 ```{r}
-write.csv(Ski_to_Sea_Data, file = "Ski_to_Sea_Data.csv")
+
 ```

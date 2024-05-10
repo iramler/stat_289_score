@@ -21,19 +21,19 @@ library(readr)
 
 Cross Country Ski
 
-_ Note that the material in this chunk of code is repeated for each leg to gather data files
+-   Note that the material in this chunk of code is repeated for each leg to gather data files
 
 #### Question 1)
 
-For the below code chunk, look click through the results from the url (base_url). Find which leg number is associated with Cross Country Ski and which event number is associated with the first year (2009). Add in these numbers to the below code.
+For the below code chunk, look through the results from [Ski to Sea Website](https://skitosea.pacificmultisports.com/events/){target="_blank"}. Find which leg number is associated with Cross Country Ski and which event number is associated with the first year (2009). Add in these numbers to the below code.
 
-- Leg #1 and Event #101
+-   Leg #1 and Event #101
 
-##### Question 2)
+#### Question 2)
 
-Why does it make sense to use a for loop here?
+Load 2010 on the website and find the event and leg number for cross country skiing. Why does it make sense to use a for loop here?
 
-- So we can loop through each of the years which are associated with events from 101 to 111
+-   So we can loop through each of the years which are associated with events from 101 to 111
 
 ```{r}
 base_url <- "https://skitosea.pacificmultisports.com/events/" # go to URL and sift through results page
@@ -98,15 +98,17 @@ for (event in 101:111) {
 }
 ```
 
-#### Question 3) 
-The code above is used in the same way as it was for the cross country ski leg, but what is the main difference?
+#### Question 3)
 
-- The main difference is that the leg number now starts at 2 since we are looking at the next leg (sport). 
+Investigate the event and leg for the downhill ski leg in both 2009 and 2010, what is the main difference? Comment on any changes that occur to the event and leg when you shift to downhill skiing.
+
+-   The main difference is that the leg number starts at 2 and increases by 7 for each additional year; however, the event does not change.
 
 #### Question 4)
+
 How do you anticipate this difference will impact the code for the rest of the legs? What is the maximum leg number for 2009-2019?
 
-- After looking through the results from the base_url, we see that the leg numbers increase by 7 each year. 
+-   After looking through the results from the website, we see that the leg numbers increase by 7 each year.
 
 Running
 
@@ -274,10 +276,9 @@ Combine Canoe Data
 
 -   Note that the material in this chunk of code is repeated for each leg to combine files
 
-#### Question 5) 
-What are the appropriate parameters for the below for loop? 
+#### Question 5)
 
-- i in 1:nyears because we want to loop through the number of files. nyears is the appropriate parameter here because we made nyears equal the length of the file names. 
+Write a comment after each line of code to describe what that code is doing.
 
 ```{r}
 # List of file names
@@ -448,9 +449,8 @@ for (i in 1:nyears) {
 # Part 3) Combine All Leg Datasets Into a Single Dataset
 
 #### Question 6)
-Which join technique makes sense to combine these data files?
 
-- Using inner joins in this context makes sense because we want to combine data frames based on the "Team Name" and "Year" columns where there are matching values in both data frames. An inner join ensures that only the rows with matching "Team Name" and "Year" values in both data frames are included in the final combined data frame. This is important because we want to combine data for the same team in the same year across all legs of the race. If there are teams that did not participate in all legs or for which we do not have complete data, an inner join would exclude them from the final combined data frame, which is desirable in this analysis.
+Join these data files to create one data set with each row to represent a team name for a given year and the columns represent the minutes for each leg completion.
 
 ```{r}
 combined_leg_data <- inner_join(combined_xcski_data, combined_canoe_data, by = c("Team Name", "Year")) %>%
@@ -465,16 +465,15 @@ combined_leg_data <- inner_join(combined_xcski_data, combined_canoe_data, by = c
 ```
 
 #### Question 7)
-What dplyr function could we use to select only relevant variables from the dataset?
 
-- select
+Select relevant variables
 
 ```{r}
 combined_leg_data <- combined_leg_data %>%
   select(`Year`, `Team Name`, `overall_time`, everything())
 ```
 
-Provide a technique to mutate the elapsed time variables for each leg into minutes
+Mutate the elapsed time variables for each leg into minutes
 
 ```{r}
 combined_leg_data <- combined_leg_data %>%
