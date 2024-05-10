@@ -156,22 +156,15 @@ ggplot(win_diff, aes(x = point_diff)) +
 
 ```
 ```{r}
-# Compute observed frequencies for each point differential
 observed_freq <- table(tally$losing_score[tally$set == 1])
 
-# Total number of observations
 n <- sum(observed_freq)
-
-# Calculate the proportion of timeouts
 p <- mean(tally$timeout_ind == 1)
 
-# Calculate expected frequencies under the null hypothesis
 expected_freq <- n * p
 
 # Perform chi-square goodness-of-fit test
 chi_sq_test <- chisq.test(observed_freq)
-
-# Print the results
 print(chi_sq_test)
 ```
 This p value is much lower than the previous. Since there is more data, this is probably more accurate. 
