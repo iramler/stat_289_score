@@ -11,7 +11,7 @@ library(tidyverse)
 2. Read in Tremblant_Data.csv
 ```{r}
 library(readr)
-Tremblant_df <- read_csv("emiliaagostinelli/Tremblant_Data.csv")
+Tremblant_df <- read_csv("Tremblant_Data.csv")
 ```
 
 3. Write a function that converts time to seconds
