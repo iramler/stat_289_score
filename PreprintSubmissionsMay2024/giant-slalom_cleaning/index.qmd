@@ -37,7 +37,7 @@ By the end of this activity, you will be able to:
 
 ### Data
 
-Each of the 30 rows in this data set represents a racer, and there are 9 variables. There are a few missing values in  for racers that did not finish (DNF) a run. The RUN 1 and RUN 2 variables give the time (and rank that run) for the first racer and secondsdifferent form that time (and rank) for the rest of the racers. 
+Each of the 30 rows in this data set represents a racer, and there are 9 variables. There are a few missing values in  for racers that did not finish (DNF) a run. The RUN 1 and RUN 2 variables give the time (and rank that run) for the first racer and the difference from that time (and rank) for the rest of the racers. 
 
 Download data: [Tremblant_Data.csv](Tremblant_Data.csv)
 
