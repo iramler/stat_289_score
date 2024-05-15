@@ -1,7 +1,15 @@
 ---
 title: "Dakar Rally Analysis"
-date: "2024-03-028"
-author: "Matt Maslow"
+date: "2024-03-28"
+author:
+  - name: Matt Maslow
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - ref: slu
 description: Investigating The 2024 Dakar Rally biker rankings and times, throughout all 12 stages.
 editor: 
   canonical: true
@@ -24,6 +32,7 @@ The Dakar Rally is an annual off-road endurance event that typically spans over 
 
 In this worksheet, we will be exploring the data from the 2024 Dakar Rally, focusing on the biker rankings and times throughout all 12 stages. We will fit multiple linear regression models to predict the rankings of drivers with rider times, and analyze the model summary outputs, patterns and trends, and potential outliers. We will also test the model efficiency and perform a nested-hypothesis test to find the best model.
 
+: [Preliminary script for video](VideoScript.docx)
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
@@ -81,7 +90,7 @@ A data frame for the 2024 Dakar Rally, is an annual off-road endurance event tha
 
 
 </details>
-Download data: [dakarRally_bikes_data.csv](.csv)
+Download data: [dakarRally_bikes_data.csv](dakarRally_bikes_data.csv)
 
 
 #### Data Source
@@ -91,19 +100,15 @@ Download data: [dakarRally_bikes_data.csv](.csv)
 
 ### Materials
 
-[Class handout](DakarRally_worksheet.docx)
+[Class handout](DakarRally_handout.qmd)
 
-[Class handout - with solutions](DakarRally_worksheet_Answer_Key.docx)
+[Class handout - with solutions](AnswerKey_DakarRally.qmd)
 
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 In conclusion, the investigation into the 2024 Dakar Rally's motorist statistics across all 12 stages aims to deepen statistic learners' understanding of predictive modeling and statistical analysis in the context of competitive motor-sport event. By fitting multiple linear regression models to predict driver rankings based on their accumulative time placing after each stage. Readers will gain insight into interpreting model summaries, identifying patterns and trends, and addressing potential outliers. Through hands-on exercises, skills can be developed in model diagnostics, outlier identification, and testing model efficiency using nested-hypothesis tests. Ultimately, this exploration provides a practical framework for utilization statistical techniques in sports applications.
 
 :::
-
-### Authors
-
-Created by Matthew Maslow (St. Lawrence University), [Ivan Ramler (St. Lawrence University)](mailto:iramler@stlawu.edu)
 
 
 
