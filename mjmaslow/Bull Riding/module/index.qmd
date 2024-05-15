@@ -1,7 +1,15 @@
 ---
 title: "Professional Bull Riding Analysis"
 date: "2024-03-06"
-author: "Matt Maslow"
+author:
+  - name: Matt Maslow
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - ref: slu
 description: Investigating a collection of professional bull riders and their statistics from 2023 season for the Touring Pro Division.
 editor: 
   canonical: true
@@ -21,6 +29,9 @@ Please note that these material have not yet completed the required pedagogical 
 Professional Bull Riding (PBR) is a sport that requires a unique combination of skill, strength, and courage. Riders must stay on a bucking bull as long as they can, using only one hand to hold on while the bull tries to throw them off. The rider is scored based on their performance, and the bull is also scored based on how well it bucks. In this dataset, we will explore the data from the 2023 season of the PBR league, Touring Pro Division, to understand the factors that contribute to a rider's success and the performance, and the same for the bulls.
 
 In these worksheets, we will exploring models that predict the points earned by riders and bulls in the 2023 season of the Professional Bull Riding (PBR) league, Touring Pro Division. We will fit multiple linear regression models to predict rider points and logistic regression models to predict bull points. We will interpret the model summary outputs, analyze patterns and trends, identify potential outliers, and test model efficiency.
+
+: [Preliminary script for video](VideoScript.docx)
+
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
@@ -110,13 +121,13 @@ Download data: [Bulls.csv](Bulls.csv)
 
 ### Materials
 
-[Class handout: Rider's](pbr-rider.docx)
+[Class handout: Rider's](PBR-riders-handout.qmd)
 
-[Class handout: Rider's - with solutions](AnswerKey_pbr-rider.docx)
+[Class handout: Rider's - with solutions](Answerkey_pbr_riders.qmd)
 
-[Class handout: Bull's](pbr-bulls.docx)
+[Class handout: Bull's](PBR-bulls-handout.qmd)
 
-[Class handout: Bull's - with solutions](AnswerKey_pbr-bulls.docx)
+[Class handout: Bull's - with solutions](Answerkey_pbr_bulls.qmd)
 
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}

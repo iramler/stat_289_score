@@ -1,6 +1,15 @@
 ---
 title: "Ski to Sea"
 date: May 8, 2024
+author:
+  - name: Sam Peacock
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - ref: slu
 description: Using Ski to Sea results data to see which leg (sport) is more strongly related to a team's overall finish time. 
 editor: 
   canonical: true
@@ -20,7 +29,7 @@ This module focuses on analyzing which leg of the race is most important to a te
 
 The dataset for this activity was obtained from the [Ski to Sea Website](https://skitosea.pacificmultisports.com/results)
 
-Each row of data provides the leg race times in minutes for a team in a given year. Each row is distinguished by a team name (*Team Name*) for a given year (*Year*). The time variables include (*canoe_minutes*), (*xcski_minutes*), (*downhill_minutes*), (*kayak_minutes*), (*run_minutes*), (*xcbike_minutes*), and (*roadbike_minutes*). These time variables make up the (*overall_minutes*) variable. The dataset covers 11 Ski to Sea Races from 2009-2019 with 5197 cases in all. Each race consists of seven legs: canoe, cross country ski, downhill ski, kayak, road bike, run, and cross country bike. It is important to note that rows that contained NAs were omitted. 
+Each row of data provides the leg race times in minutes for a team in a given year. Each row is distinguished by a team name (*Team Name*) for a given year (*Year*). The time variables include (*canoe_minutes*), (*xcski_minutes*), (*downhill_minutes*), (*kayak_minutes*), (*run_minutes*), (*xcbike_minutes*), and (*roadbike_minutes*). These time variables make up the (*overall_minutes*) variable. The dataset covers 11 Ski to Sea Races from 2009-2019 with 5197 cases in all. Each race consists of seven legs: canoe, cross country ski, downhill ski, kayak, road bike, run, and cross country bike. It is important to note that rows that contained NAs were omitted.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 The learning objectives associated with this module are:
@@ -51,7 +60,7 @@ Download data:[Ski_to_Sea_Data.csv](Ski_to_Sea_Data.csv)
 <summary><b>Variable Descriptions</b></summary>
 
 | Variable           | Description                                                        |
-|--------------------|--------------------------------------------------------------------|
+|------------------|------------------------------------------------------|
 | `Year`             | The year the race took place (2009-2019)                           |
 | `Team Name`        | The team's name                                                    |
 | `canoe_minutes`    | The amount of minutes taken to complete the canoe leg              |
@@ -86,9 +95,5 @@ Sample solutions to the worksheets
 [SkiToSeaCorrelationsWithTech-Ans.docx](SkiToSeaCorrelationsWithTech-Ans.docx) - Sample solutions to the "With Tech" version of the activity worksheet.
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Students should find evidence to support the claim that, overall, the kayak leg is the best predictor of overall finish time than other legs. Based on this strong, positive correlation, teams should prioritize their efforts in the kayak leg as this is most closely associated with the overall finish time. 
+Students should find evidence to support the claim that, overall, the kayak leg is the best predictor of overall finish time than other legs. Based on this strong, positive correlation, teams should prioritize their efforts in the kayak leg as this is most closely associated with the overall finish time.
 :::
-
-### Authors
-
-Fill in later
