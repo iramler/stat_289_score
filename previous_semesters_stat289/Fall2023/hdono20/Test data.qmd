@@ -1,0 +1,162 @@
+---
+title: "Test data"
+format: html
+editor: visual
+---
+
+```{r}
+library(readr)
+library(dplyr)
+D3_2022_Postseason <- read_csv("hdono20/D3_2022_Postseason.csv")
+```
+
+```{r}
+# clean up dataset
+d3_wsoc2022 <- D3_2022_Postseason %>%
+  rename("away_team" = Away) %>%
+  rename("home_team" = Home) %>%
+  rename("away_score" = 'Away Score') %>%
+  rename("home_score" = 'Home Score') %>%
+  rename("date" = Date)
+
+write_csv(d3_wsoc2022, "d3_wsoc2022.csv")
+```
+
+
+
+
+
+```{r}
+Standings_D3 <- read_csv("hdono20/Standings_D3.csv")
+```
+
+
+Test for correlation
+```{r}
+cor(d3_wsoc2022$away_score, d3_wsoc2022$home_score)
+```
+
+Negative correlation between away score and home score:
+-0.3108331. We expect a negative correlation between away score and home score because if a team scores a lot of goals, then the other team most likely did not score that many. 
+```{r}
+#Test for correlation
+cor.test(d3_wsoc2022$away_score, d3_wsoc2022$home_score)
+```
+r*sqrt(n-2)/(sqrt(1-r)) correlation value
+
+not normally distributed based on scatterplot 
+
+
+2-way table for distribution of scores: contigency table
+```{r}
+
+library(dplyr)
+test <- D3_2022_Postseason %>%
+  count(`Away Score`)
+
+  
+test1 <- D3_2022_Postseason %>%
+   count(`Home Score`)
+```
+
+```{r}
+test_split <- test[5:15,] %>%
+  mutate(count_sum = sum(n)) %>%
+  mutate(Away_Score = '4 or more') %>%
+  select(Away_Score, count_sum) %>%
+  slice(1) %>%
+  rename("n" = "count_sum") 
+```
+
+```{r}
+test_new <- test[1:4,] %>%
+  rename("Away_Score" = 'Away Score') %>%
+  mutate(Away_Score = as.character(Away_Score))
+```
+
+```{r}
+Away_Score_join <- bind_rows(test_new, test_split)
+```
+
+```{r}
+test_split_Home <- test1[5:19,] %>%
+  mutate(count_sum = sum(n)) %>%
+  mutate(Home_Score = '4 or more') %>%
+  select(Home_Score, count_sum) %>%
+  slice(1) %>%
+  rename("n" = "count_sum") 
+```
+
+
+```{r}
+test_new_Home <- test1[1:4,] %>%
+rename("Home_Score" = 'Home Score') %>%
+    mutate(Home_Score = as.character(Home_Score))
+
+```
+
+```{r}
+Home_Score_join <- bind_rows(test_new_Home, test_split_Home)
+```
+
+
+```{r}
+truncated_dataset1 <- truncated_dataset %>%
+  filter(Home_Score_truncated == "3+" & Away_Score_truncated == "2")
+ 
+```
+
+
+
+
+
+```{r}
+#Make values that have a score greater than 4, just 4 for both Away Score and Home Score
+truncated_dataset <- D3_2022_Postseason %>%
+  mutate(Away_Score_truncated = if_else(`Away Score` > 2, "3+", as.character(`Away Score`))) %>%
+  mutate(Home_Score_truncated = if_else(`Home Score` > 2, "3+", as.character(`Home Score`)))
+```
+
+
+```{r}
+two_way_table <- table(truncated_dataset$Home_Score_truncated, truncated_dataset$Away_Score_truncated)
+two_way_table
+```
+
+Write a csv file for this
+```{r}
+write.csv(two_way_table, "two_way_table.csv", row.names = FALSE)
+```
+
+```{r}
+library(readr)
+two_way_table <- read_csv("hdono20/two_way_table.csv")
+```
+
+
+
+Chi-square test: tests for association between two categorical variables
+
+```{r}
+chi_sq_test <- chisq.test(truncated_dataset$Home_Score_truncated, truncated_dataset$Away_Score_truncated)
+chi_sq_test
+```
+
+Get expected counts
+```{r}
+chi_sq_test$expected
+```
+
+
+```{r}
+assocplot(t(two_way_table))
+```
+
+
+```{r}
+chi_sq_test$residuals
+```
+```{r}
+plot(d3_wsoc2022$away_score, d3_wsoc2022$home_score)
+```
+

@@ -1,0 +1,172 @@
+---
+title: "Geometric work"
+format: html
+editor: visual
+---
+
+
+```{r}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(magrittr)
+library(caret)
+
+timeout <- read.csv("slhess20/data/timeout.csv")
+
+
+
+```
+
+```{r}
+#filter data to only be slu timeouts in 2014 only
+timeout1 <- timeout %>% 
+  filter(play_descripton == "Timeout St. Lawrence.") 
+timeout1 <- timeout1[grepl("^2019", timeout1$Date), ]
+timeout1 <- timeout1 %>% 
+  mutate(losing_score = ifelse(prev_home_score > prev_visiting_score, prev_visiting_score, prev_home_score), 
+         losing_team_wins = ifelse(set_winner == losing_team, TRUE, FALSE)) %>% 
+  select(url, timeout, set,prev_home_score, prev_visiting_score, losing_score, losing_team, set_winner, losing_team_wins)
+
+tally <- timeout1 %>% 
+  mutate(losing_score = ifelse(losing_team == "home", prev_home_score, prev_visiting_score), 
+         winning_score = ifelse(losing_team == "home", prev_visiting_score, prev_home_score),
+         point_diff = winning_score - losing_score,
+         timeout_ind = ifelse(timeout == TRUE, 1, 0)) %>% 
+  select(losing_score, winning_score, set, url, timeout_ind, point_diff, losing_team_wins)
+
+# get distribution of how many points team has when timeout is called
+# tally 
+
+# pull previous data for timeout
+# timeout team score vs other team 
+# 3 columns table your score/ other team score/ timeout
+
+# model num timeouts based on the point differential.
+
+```
+
+```{r}
+# Visualize distribution of points when timeout is called
+win_diff <- tally %>% filter(losing_team_wins)
+
+ggplot(tally, aes(x = point_diff)) +
+  geom_histogram(binwidth = 1, fill = "pink", color = "black") +
+  labs(title = "Diff of score When Timeout is Called",
+       x = "Difference in Score", y = "Frequency")
+# 0 to 12 points apart when a timeout is called
+
+ggplot(win_diff, aes(x = point_diff)) +
+  geom_histogram(binwidth = 1, fill = "pink", color = "black") +
+  labs(title = "Diff of score When Timeout is Called",
+       x = "difference in Score", y = "Frequency")
+# when teams scores are closer in score before timeout, the losing team has higher chance of winning the set (The only times that the losing team won in this data was when the timeouts were called on tie scores). This may suggest that you would want to call a timeout before falling behind in score. 
+
+
+
+```
+
+```{r}
+# Compute observed frequencies for each point differential
+observed_freq <- table(tally$losing_score[tally$set == 1])
+
+num <- timeout1 %>% filter(losing_team_wins == TRUE) %>% summarize( count = n())
+
+
+observed_values <- as.numeric(names(observed_freq))
+
+n <- sum(observed_freq)
+p <- 1 / (1 + mean(tally$point_diff[tally$timeout_ind == 1]))
+expected_prob <- dgeom(observed_values, prob = p)
+
+# Calculate expected frequencies
+expected_freq <- expected_prob * n
+
+# Perform chi-square goodness-of-fit test
+chi_sq_test <- chisq.test(matrix(c(observed_freq, expected_freq), nrow = num$count))
+
+# Print the results
+print(chi_sq_test)
+
+# geometric distribution is a good fit: p > .05. This means accept the null, there is no significant difference between what we see and the geometric. (In 2019 for St. Lawrence, the data follows geometric.) There is a very small sample size, which is why the approximation may be incorrect. 
+```
+
+
+
+I will retest this by including more data (all years for SLU).
+
+```{r}
+library(readr)
+library(tidyverse)
+library(dplyr)
+library(magrittr)
+library(caret)
+
+timeout <- read.csv("slhess20/data/timeout.csv")
+
+
+
+```
+
+```{r}
+#filter data to only be slu timeouts in 2014 only
+timeout1 <- timeout %>% 
+  filter(play_descripton == "Timeout St. Lawrence.") 
+#timeout1 <- timeout1[grepl("^2019", timeout1$Date), ]
+timeout1 <- timeout1 %>% 
+  mutate(losing_score = ifelse(prev_home_score > prev_visiting_score, prev_visiting_score, prev_home_score), 
+         losing_team_wins = ifelse(set_winner == losing_team, TRUE, FALSE)) %>% 
+  select(url, timeout, set,prev_home_score, prev_visiting_score, losing_score, losing_team, set_winner, losing_team_wins)
+
+tally <- timeout1 %>% 
+  mutate(losing_score = ifelse(losing_team == "home", prev_home_score, prev_visiting_score), 
+         winning_score = ifelse(losing_team == "home", prev_visiting_score, prev_home_score),
+         point_diff = winning_score - losing_score,
+         timeout_ind = ifelse(timeout == TRUE, 1, 0)) %>% 
+  select(losing_score, winning_score, set, url, timeout_ind, point_diff, losing_team_wins)
+
+# get distribution of how many points team has when timeout is called
+# tally 
+
+# pull previous data for timeout
+# timeout team score vs other team 
+# 3 columns table your score/ other team score/ timeout
+
+# model num timeouts based on the point differential.
+
+```
+
+```{r}
+# Visualize distribution of points when timeout is called
+win_diff <- tally %>% filter(losing_team_wins)
+
+ggplot(tally, aes(x = point_diff)) +
+  geom_histogram(binwidth = 1, fill = "pink", color = "black") +
+  labs(title = "Diff of score When Timeout is Called",
+       x = "Difference in Score", y = "Frequency")
+# 0 to 12 points apart when a timeout is called
+
+ggplot(win_diff, aes(x = point_diff)) +
+  geom_histogram(binwidth = 1, fill = "pink", color = "black") +
+  labs(title = "Diff of score When Timeout is Called + win set",
+       x = "difference in Score", y = "Frequency")
+# when teams scores are closer in score before timeout, the losing team has higher chance of winning the set.
+
+
+
+```
+```{r}
+observed_freq <- table(tally$losing_score[tally$set == 1])
+
+n <- sum(observed_freq)
+p <- mean(tally$timeout_ind == 1)
+
+expected_freq <- n * p
+
+# Perform chi-square goodness-of-fit test
+chi_sq_test <- chisq.test(observed_freq)
+print(chi_sq_test)
+```
+This p value is much lower than the previous. Since there is more data, this is probably more accurate. 
+
+The p value indicates that there is no evidence that the data does not follow a geometric distribution. 

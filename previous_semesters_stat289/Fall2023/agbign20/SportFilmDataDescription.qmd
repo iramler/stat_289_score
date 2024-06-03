@@ -1,0 +1,56 @@
+---
+title: Sport Films Dataset
+author: Alyssa Bigness
+date: October 9, 2023
+description: These datasets are joined of IMDb average ratings and sport films from wikipedia. 
+categories:
+  - two sample t test
+  - two way anova
+  - chi-squared test
+---
+
+## Motivation
+
+Different types of sports have influenced the creation of sport films, and in turn sport films inspire people to be involved in athletic teams. The dataset was originally joined from the IMDb website of the films' average ratings and types of sport films from wikipedia, with 12372 observations (will be referenced below). These datasets below explore the intersection of sports and films, looking at the most common genres of sport movies (drama and comedy) to see how the average rating of the movies are affected.
+
+## Data
+
+The dataset, cdSportMovies, contains sport films, specifically movies since 1980, and has 1430 observations (rows) and 10 variables.
+
+The dataset, cdSportMoviesCount, contains a count of comedy movies and drama movies since 1980, and has 6 observations (rows) and 3 variables.
+
+| Variable       | Description                              |
+|----------------|------------------------------------------|
+| primaryTitle   | the title of the movie                   |
+| runtimeMinutes | how long the movie is (in minutes)       |
+| averageRating  | the average rating                       |
+| numVotes       | the number of votes given for the rating |
+| Year           | the release year of the film             |
+| Types          | any specific type for the sport category |
+| SummaryNotes   | the summary of the film                  |
+| sport          | the type of sport                        |
+| Genre          | the genres of the film                   |
+| GenreType      | whether the movie is a comedy or drama   |
+
+The data tables are available for individual download as csv files.
+
+:   [cdSportMovies.csv](../data/cdSportMovies.csv)
+
+:   [cdSportMoviesCount.csv](../data/cdSportMoviesCount.csv)
+
+## Questions
+
+1.  Do these data provide evidence that, on average, the average rating of comedy and drama movies differ? Include all details of the appropriate hypothesis test.
+
+2.  Construct and interpret a 95% confidence interval in average goals for comedy and drama sport movies.
+
+## References
+
+The two datasets, cdSportMovies and cdSportMoviesCount, were manipulated from the original dataset (AllSportFilmsData.csv) created below.
+
+:   [AllSportFilmsData.csv](../data/AllSportFilmsData.csv)
+
+INSERT LINK FOR THE QUARTO FILE (stat113code.qmd)
+
+
+The wikipedia link is where I gathered the information of the name of sport films, and the IMDb link contain all films (not exclusively sports) with information such as average rating. <https://en.wikipedia.org/wiki/List_of_sports_films> <https://developer.imdb.com/non-commercial-datasets/>

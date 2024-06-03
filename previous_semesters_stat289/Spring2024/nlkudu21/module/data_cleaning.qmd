@@ -1,0 +1,73 @@
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+```{r}
+here()
+results <- read.csv(here("nlkudu21/data/results.csv"))
+races <- read.csv(here("nlkudu21/data/races.csv"))
+lap_times <- read.csv(here("nlkudu21/data/lap_times.csv"))
+drivers <- read.csv(here("nlkudu21/data/drivers.csv"))
+constructors <- read_csv(here("nlkudu21/data/constructors.csv"))
+```
+
+```{r}
+races |> filter(name == "Miami Grand Prix") |> filter(year == 2023)
+```
+
+```{r}
+# filter only lap times from 2023 Miami GP
+miami2023_lap_times <- lap_times |> filter(raceId == 1102)
+```
+
+```{r}
+results |> filter(raceId == 1102) 
+```
+```{r}
+drivers |> filter(driverId == 858)
+```
+
+```{r}
+# include name with driverId
+miami2023_lap_times <- miami2023_lap_times |> 
+  left_join(drivers, by = c("driverId" = "driverId")) |>
+  select(raceId, driverId, forename, surname, lap, position, time)
+miami2023_lap_times
+```
+
+```{r}
+# get wanted data
+miami2023_data <- miami2023_lap_times |> 
+  left_join(results, by = c("raceId" = "raceId", "driverId" = "driverId")) |> 
+  left_join(constructors, by = c("constructorId" = "constructorId")) |>
+  select(driverId, forename, surname, constructorId, name, lap, time.x, position.x, fastestLap, fastestLapTime) |>
+  rename(lapTime = time.x, 
+         lapPosition = position.x,
+         constructorName = name)
+
+# convert <chr> times to <num>
+miami2023_data <- miami2023_data |>
+  separate(lapTime, into = c("t_minutes", "t_seconds", "t_milliseconds"), sep = "[:.]", convert = TRUE) |>
+  mutate(lapTime = t_minutes * 60 + t_seconds + t_milliseconds / 1000) |>
+  separate(fastestLapTime, into = c("f_minutes", "f_seconds", "f_milliseconds"), sep = "[:.]", convert = TRUE) |>
+  mutate(fastestLapTime = f_minutes * 60 + f_seconds + f_milliseconds / 1000) |>
+  select(-t_minutes, -t_seconds, -t_milliseconds, -f_minutes, -f_seconds, -f_milliseconds)
+
+miami2023_data
+
+# more data cleanup
+miami2023_data <- miami2023_data |>
+  unite(driverName, c(forename, surname), sep = " ") |>
+  mutate(fastestLap = as.integer(fastestLap)) |>
+  select(driverId, driverName, constructorId, constructorName, lap, lapTime, lapPosition)
+
+str(miami2023_data)
+dim(miami2023_data)
+```
+
+```{r}
+here()
+write.csv(miami2023_data, here("nlkudu21/module/miami2023_data.csv"), row.names = FALSE)
+```

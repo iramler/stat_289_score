@@ -1,0 +1,57 @@
+---
+title: "NCAA Liberty League Women's Volleyball data 2013-2022"
+author: Sierra Hess, Cassie Ritcher
+date: April 11, 2024
+description: Volleyball scoring and points after timeout for 2013-2022 Volleyball data
+categories: 
+  - Correlation
+  - data interpretation
+  - hypothesis testing
+execute: 
+  markdown: 
+    canonical: true
+---
+
+## Motivation 
+
+In volleyball, a team will typically call a timeout when they are losing a set in order to try and make a comeback. Calling a timeout allows teams to break streaks and make a plan to score. In division III NCAA Woman's Volleyball for the Liberty League, there are 12 teams in New York that are a part of the division. By looking at each timeout from 2013 until 2022, it is possible to find patterns and the likelihood that a timeout will result in scoring a point or winning a set. 
+
+## Data
+This data set has data from 6,408 rows and 17 columns. Each row represents a timeout in a volleyball game for the NCAA women's volleyball Liberty League games from 2013 until 2022.
+
+|Variable               | Description                                          |
+|-----------------------|------------------------------------------------------|
+|play_description       |Which team called the timeout                         | 
+|set                    |The set of the game                                   |
+|Date                   |The date of the game                                  |
+|Time                   |The set in which the timeout was called               | 
+|Site                   |The location of the game                              |
+|Attendance             |The number of people in attendance of the game        |
+|url                    |The specific url from where the game data was pulled  |
+|timeout                |True/ False of weather or not the play was a timeout  |
+|prev_home_score        |score of the home team when the timeout was called    |
+|prev_visiting_score    |score of the visiting team when the timeout was called|
+|next_home_score        |score of the home team after after the next play      |
+|next_visiting_score    |score of the visiting team after the next play        |
+|losing_team            |the team that had the lower previous score            |
+|set_winner             |the team that won the entire set                      |
+|losing_team_wins       |weather the previously losing team won the set        |
+
+: [timeout.csv](../data/timeout.csv)
+
+## Questions
+
+1.  Does calling a timeout increase the chances of scoring the next point?
+
+2.  What is the probability of winning a set if you were losing before final timeout of the set?
+
+3.  What is the chance that you win the set if you were losing before the first timeout of the set?
+
+## References
+
+Liberty League data
+<https://libertyleagueathletics.com/standings.aspx?standings=168>
+
+
+
+

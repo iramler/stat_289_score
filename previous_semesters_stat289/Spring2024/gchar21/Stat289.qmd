@@ -1,0 +1,43 @@
+---
+title: League of Legends ADCarry
+author: George Charalambous
+date: December 12, 2023
+description: Using Chi-Squared Distribution to investigate the ADC-Support relationship
+categories:
+  - list the relevant
+  - statistical methods
+  - that can be used
+  - with this dataset
+  - one per line
+  - with two spaces and a hyphen in front
+---
+
+## Motivation
+
+League of Legends (LoL) is a multiplayer online battle arena game where teams comprising five players engage in competitive matches. Throughout its evolution, players have established a meta gaming approach involving five specific roles. This study will focus on the AD and Carry roles, terms which go together as ADC. The Attack-Damage Carry (ADC), also known as the Marksman, specializes in dealing physical damage primarily through basic attacks, typically stationed in the bot lane, the bottom lane on the main League of Legends map. Their vulnerability is compensated by a Support champion, who assists in kills, protects the ADC, and provides vision. Support champions vary in play style, with abilities for both offensive and defensive maneuvers. This dynamic duo forms a critical synergy in team composition. 
+
+This investigation employs logistic regression models to pinpoint connections and relationships between those two vital components of a team. 
+
+## Data
+
+| Variable         | Description                                               |
+|------------------|-----------------------------------------------------------|
+| Match ID         | Unique identifier for each match                          |
+| winner           | Indicates if the team won the match (1 for Yes, 0 for No) |
+| kill             | Number of enemy players killed by the player              |
+| death            | Number of times the player's character was defeated       |
+| assist           | Number of times the player assisted in killing an enemy   |
+| duration         | Duration of the match in seconds                          |
+| championName     | Name of the champion played by the player                 |
+| Meta             | Indicates the role of the champion (e.g., AD or Carry)    |
+
+
+: [data_correct.csv](../data/filename.csv)
+
+## Questions
+
+The logistic regression model aims to predict the probability of winning in gaming matches based on the chosen Support (SUP) and Attack Damage Carry (ADC) roles, considering both main effects and their interaction. For this model, we include the 5 most popular champions for the Support and AD levels, collapsing all the other champions into a single level "Other". 
+
+## References
+
+Ramler, I., Lee, C.-S., Schuckers, M. (2019). "Identifying Symbiotic Relationships between Champions in League of Legends.", Department of Mathematics, Computer Science, and Statistics, St. Lawrence University, Canton, NY 13617.

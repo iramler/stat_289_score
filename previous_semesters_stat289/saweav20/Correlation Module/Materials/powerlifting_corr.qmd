@@ -1,0 +1,127 @@
+---
+title: "powerlift_class"
+author: "S. Weaver"
+date: "2023-06-27"
+output: html_document
+---
+
+## TODO: Change the labels and add titles to graphs
+## TODO: Calculate summary stats of the histograms (ex. median and mean)
+## TODO: Create worksheet and key (save graphs after they are completed)
+
+
+ Correlations/Regressions - subset to just a specific age group for females and follow the Ironman style module
+
+```{r}
+library(readr)
+library(here)
+library(dplyr)
+library(ggplot2)
+library(ggthemes)
+
+opl_class <- read_csv(here("powerlifting/data/powerliftingregression.csv"))
+View(opl_class)
+```
+
+## new dataset that is just females who are 25 (original dataset was ages 25-49)
+```{r}
+opl_female <- opl_class |> filter(Sex == "F") |> filter(Age == 25.0)
+
+write_csv(opl_female, "opl_female.csv")
+```
+
+## distribution of benchKg
+```{r}
+ggplot(data = opl_female, aes(x = BenchKg, )) +
+  geom_histogram(colour="black", fill="pink") +
+  theme_minimal() +
+  labs(title = "Bench Weight for Female Power Lifting",
+       x = "Bench Weight (in kilograms)",
+       y = "Count") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+```{r}
+summary(opl_female$BenchKg)
+```
+
+
+## distribution of SquatKg
+```{r}
+ggplot(data = opl_female, aes(x = SquatKg, )) +
+  geom_histogram(colour="black", fill="pink") +
+  theme_minimal() +
+  labs(title = "Squat Weight for Female Power Lifting",
+       x = "Squat Weight (in kilograms)",
+       y = "Count") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+```{r}
+summary(opl_female$SquatKg)
+```
+
+
+## distribution of DealiftKg
+```{r}
+ggplot(data = opl_female, aes(x = DeadliftKg, )) +
+  geom_histogram(colour="black", fill="pink") +
+  theme_minimal() +
+  labs(title = "Deadlift Weight for Female Power Lifting",
+       x = "Deadlift Weight (in kilograms)",
+       y = "Count") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+```{r}
+summary(opl_female$DeadliftKg)
+```
+
+## BenchKg vs SquatKg
+```{r}
+ggplot(data = opl_female, aes(x = BenchKg, y = SquatKg)) +
+  geom_point(color = "darkgreen") +
+  theme_minimal() +
+  labs(title = "Scatterplot of BenchKg vs SquatKg") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+## Correlation Bench vs Squat
+```{r}
+test_1 <- cor.test(opl_female$BenchKg, opl_female$SquatKg)
+test_1
+
+## correlation = 0.8207528
+```
+
+
+
+## BenchKg vs DeadliftKg
+```{r}
+ggplot(data = opl_female, aes(x = BenchKg, y = DeadliftKg)) +
+  geom_point(color = "darkgreen") +
+  theme_minimal() +
+  labs(title = "Scatterplot of BenchKg vs DeadliftKg") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+## Correlation Bench vs Deadlift
+```{r}
+test_2 <- cor.test(opl_female$BenchKg, opl_female$DeadliftKg)
+test_2
+
+## correlation = 0.7824763
+```
+
+
+## SquatKg vs DeadliftKg
+```{r}
+ggplot(data = opl_female, aes(x = SquatKg, y = DeadliftKg)) +
+  geom_point(color = "darkgreen") +
+  theme_minimal() +
+  labs(title = "Scatterplot of SquatKg vs DeadliftKg") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+## Correlation Deadlift vs Squat
+```{r}
+test_3 <- cor.test(opl_female$DeadliftKg, opl_female$SquatKg)
+test_3
+
+## correlation = 0.8630972
+```
+

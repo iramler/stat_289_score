@@ -1,0 +1,129 @@
+---
+title: "Work w/ The Data"
+author: "Matt Maslow"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(broom)
+```
+
+```{r}
+riders <- read_csv("Bull Riding/data/BullRiders.csv")
+```
+
+# Questions from Module
+
+## 1. What are the most significant predictors of a bull rider's final points?
+
+correlation matrix
+
+```{r}
+riders %>%
+  select(-Rider) %>%
+  cor() %>%
+  round(2)
+```
+
+
+```{r}
+riders %>%
+  select(-Rider) %>%
+  lm(Points ~ ., data = .) %>%
+  summary()
+```
+
+
+
+## 2 What can can we do to transform the data to improve the model?
+
+```{r}
+# original Model
+riders %>%
+lm(Points ~  `Avg Buckoff Time` + Rides + prop.Ridden, data = .) %>%
+  summary()
+
+riders %>%
+lm(Points ~  `Avg Buckoff Time` + Rides + prop.Ridden, data = .) %>%
+  plot(pch=16)
+```
+```{r}
+mod <- lm(Points ~  `Avg Buckoff Time` + Rides + prop.Ridden, data = riders)
+anova(mod, test = "Chisq")
+```
+
+
+
+
+```{r}
+# interaction model of original model
+riders %>%
+lm(Points ~  `Avg Buckoff Time` + Rides + `Avg Buckoff Time`:Rides  + prop.Ridden, data = .) %>%
+  summary()
+```
+```{r}
+modRed <- lm(Points ~ `Avg Buckoff Time` + Rides + prop.Ridden, data = riders)
+modFull <- lm(Points ~ `Avg Buckoff Time` + Rides + `Avg Buckoff Time`:Rides  + prop.Ridden, data = riders)
+anova(modRed, modFull, test = "Chisq")
+```
+
+
+
+## loooking. ats transformation now
+
+```{r}
+riders %>%
+lm(Points ~  `Avg Buckoff Time` + Rides + prop.Ridden, data = .) %>%
+  summary()
+
+
+print("Transformation model (Below)")
+
+riders %>%
+lm(Points ~  poly(`Avg Buckoff Time`, 2) + Rides + I(prop.Ridden^2), data = .) %>%
+  summary()
+```
+
+
+
+```{r}
+modOG <- lm(Points ~  `Avg Buckoff Time` + Rides + prop.Ridden, data = riders)
+modTrans <- lm(Points ~  poly(`Avg Buckoff Time`, 2) + Rides + I(prop.Ridden^2), data = riders)
+anova(modOG, modTrans, test = "Chisq")
+```
+
+# Poster vizualization
+
+```{r}
+library(ggplot2)
+# shwoing simple linear regression for predicting points
+riders %>%
+  # filter out (0,0)
+  filter(Points > 0) %>%
+  ggplot(aes(x = prop.Ridden, y = Points)) +
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  labs(title = "Predicting Rider Points w/ Percent of Successful Rides",
+       x = "Percent of Successful Rides",
+       y = "Rider points") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.text = element_text(size = 10),
+        title = element_text(size = 14),
+        axis.title = element_text(size = 24))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

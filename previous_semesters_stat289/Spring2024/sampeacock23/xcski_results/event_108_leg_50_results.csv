@@ -1,0 +1,323 @@
+"","Leg Place","Elapsed Time","Team Name","Team #","Racer Name","Gender","Category","Div Place"
+"1",1,"0:20:06","Aeromech",231,"Stian Hoelgaard","Male","Competitive Open",1
+"2",2,"0:22:08","Sensible.Technology",232,"Kent Murdoch","Male","Masters",1
+"3",3,"0:22:38","Brooks Manufacturing Co.",12,"Logan Wetzel","Male","Competitive Open",2
+"4",4,"0:22:39","The Monkey Wrench Gang",36,"Jeff Ellis","Male","Competitive Open",3
+"5",5,"0:23:45","Lynda Hinton Windermere Sister Cities",240,"Peter Östman","Male","Recreational Open",1
+"6",6,"0:23:49","The Wet and Dirty Oars",194,"Pierre Niess","Male","Competitive Open",4
+"7",7,"0:24:14","The Unorthodocs",16,"Jason Tedrow","Male","Recreational Open",2
+"8",8,"0:25:11","Helly Hansen",311,"Evan Turner","Male","Competitive Open",5
+"9",9,"0:25:29","BEAVERS TREE SERVICE",181,"Jacob Hartsoch","Male","Whatcom County Open",1
+"10",10,"0:25:42","Boomer's Drive-In",171,"Chad Gregg","Male","Competitive Open",6
+"11",11,"0:25:52","VanDammage",264,"Kirk Turner","Male","Competitive Open",7
+"12",11,"0:25:52","Neiner Neiner Weiner",104,"Aric Gaither","Male","Competitive Open",7
+"13",13,"0:26:01","Big Blue Inglorious Beavers",221,"Luke Heckrodt","Male","Recreational Open",3
+"14",14,"0:26:58","Key Bank",193,"Daryl Remmler","Male","Veterans",1
+"15",15,"0:27:23","Half Fast",255,"Richard McClung","Male","Competitive Open",9
+"16",16,"0:27:37","Boundary Bay Brewery Women",275,"Ember Large","Female","Competitive Women",1
+"17",17,"0:27:40","She Sells Ski to Seashells",25,"Alec McGovern","Male","Recreational Open",4
+"18",18,"0:27:45","Inn at Lynden",244,"Justin May","Male","Whatcom County Open",2
+"19",19,"0:28:05","Kid Goats",254,"Claire Waichler","Female","High School",1
+"20",20,"0:28:18","Okanagan Express",229,"David Michael","Male","Masters",2
+"21",21,"0:28:30","Bank of the Pacific",8,"Tony Wiederkehr","Male","Competitive Open",10
+"22",22,"0:28:45","Kulshan Cycles",102,"Corrine Malcolm","Female","Whatcom County Women",1
+"23",23,"0:29:06","Peoples Bank",70,"Louis Sukovaty","Male","Veterans",2
+"24",24,"0:29:54","Minor Threat",99,"Gil Lund","Male","Masters",3
+"25",25,"0:30:01","Super Babes of Anacortes Rigging",132,"Carl Schmitt","Male","Competitive Open",11
+"26",26,"0:30:08","PACCAR Technical Center",237,"Brandon Rouse","Male","Corporate",1
+"27",27,"0:30:12","SHEroes",247,"Jenna Sim","Female","Competitive Women",2
+"28",28,"0:30:24","Peacehealth-Greatest American Heroes",68,"Andy Schmidt","Male","Recreational Open",5
+"29",29,"0:30:26","Mt. Baker Ski Patrol",202,"Emmanuel Bussani","Male","Corporate",2
+"30",30,"0:30:31","Team Ron",287,"Alex Ferneyhough","Male","Recreational Mixed",1
+"31",31,"0:30:41","Darwin's Bulldogs",270,"Darrell Sofield","Male","Veterans",3
+"32",32,"0:30:55","Shear Velocity",144,"Bert Pschunder","Male","Recreational Mixed",2
+"33",33,"0:30:58","Boomer's Drive-In Mixed",167,"Ella Hall","Female","Competitive Mixed",1
+"34",34,"0:31:01","Archer Ale House",164,"Vern Latta","Male","Masters",4
+"35",35,"0:31:05","Desolation Angels",154,"Lindsey MacDonald","Female","Competitive Open",12
+"36",36,"0:31:10","Big Big Bettys",203,"Derek Gremban","Male","Competitive Open",13
+"37",37,"0:31:26","The Studs At Moceri Construction",84,"Chris Whiting","Male","Corporate",3
+"38",38,"0:31:42","Espirit d'aventure",80,"Jonas Bakkane","Male","Recreational Open",6
+"39",39,"0:32:12","Northwest Behavioral Health",82,"Scott Shinneman","Male","Competitive Open",14
+"40",40,"0:32:20","botnw.com Best of the NW",256,"Bryan Schaeffer","Male","Competitive Open",15
+"41",40,"0:32:20","Bellingham Mountain Rescue Council",243,"Sam Dale","Male","Whatcom County Open",3
+"42",42,"0:32:34","Cunning Stunts",225,"Shelly Larsen","Female","Recreational Open",7
+"43",43,"0:32:38","Jack's Bicycle Center",60,"Leah Kiviat","Female","Competitive Women",3
+"44",44,"0:32:59","Janicki 20",121,"Will Whiton","Male","Corporate",4
+"45",45,"0:33:00","Slugnuts",263,"Stefan Travis","Male","Car-Free",1
+"46",46,"0:33:25","CorePhysio",182,"Annie Hewlett","Female","Whatcom County Women",2
+"47",47,"0:34:16","Athleisure Trove",315,"Eric Kraus","Male","Recreational Mixed",3
+"48",48,"0:34:47","Where's Marv?",241,"Scott Johnson","Male","Family",1
+"49",49,"0:34:48","Mr. Cauchy and Crew",81,"Lindsay Wallis","Female","Recreational Mixed",4
+"50",50,"0:35:14","Seize the Body-Float the Day",266,"Thomas Caldwell","Male","Car-Free",2
+"51",51,"0:35:29","Sluggaluffagus",191,"Andy Klein","Male","Car-Free",3
+"52",52,"0:35:31","B'hams Bodacious Beerbellies",218,"Joshua Barrow","Male","Competitive Open",16
+"53",53,"0:35:57","Tag, you're it!",186,"Elizabeth Knapp","Female","Competitive Mixed",2
+"54",54,"0:35:59","7B's in the 'Ham",282,"Todd Vorhies","Male","Recreational Open",8
+"55",55,"0:36:06","Chuckanut Brewery",118,"Markus Virta","Male","Competitive Open",17
+"56",56,"0:36:52","Hot Apple Pirates",47,"Aaron Hagenbuch","Male","Corporate",5
+"57",57,"0:37:07","Suh Dudez",259,"Nicholas Taylor","Male","Recreational Open",9
+"58",58,"0:37:15","Team Jorts",188,"Kayla McIntyre","Female","Competitive Mixed",3
+"59",59,"0:37:24","RAM CONSTRUCTION",161,"Bryan Frazier","Male","Competitive Open",18
+"60",60,"0:37:25","C15 The Wave",124,"Joe Loviska","Male","Recreational Mixed",5
+"61",61,"0:37:27","Winers and Whiners",13,"John Knies","Male","Recreational Open",10
+"62",61,"0:37:27","All Downhill From Here",178,"Curtis Johnson","Male","Recreational Open",10
+"63",63,"0:37:30","GeoEngineers Speed Junkies",40,"David Conlin","Male","Corporate",6
+"64",64,"0:37:31","All Spawned Out and Headed For the Bay",95,"Hans Wolfisberg","Male","Veterans",4
+"65",65,"0:37:35","The Barelies",72,"Doss Herndon-Schepper","Male","Recreational Open",12
+"66",66,"0:37:47","Kevin LaFleur Memorial Team",175,"Kevin Terpstra","Male","Competitive Open",19
+"67",67,"0:38:02","Faithlife #1",14,"Scott Alexander","Male","Corporate",7
+"68",68,"0:38:14","Whatcoms up must come down",187,"Andrea Lubeck","Female","Recreational Mixed",6
+"69",69,"0:38:17","Swedish First Hill: Like a Fine Wine",119,"Mark Johnson","Male","Recreational Open",13
+"70",70,"0:38:19","Tony's Coffee",159,"Charles Dooley","Male","Whatcom County Open",4
+"71",71,"0:38:22","More Epi",49,"Bennett Droessler","Male","Recreational Open",14
+"72",72,"0:38:42","Wander Brewing",173,"Whitney Anderson","Female","Whatcom County Women",3
+"73",73,"0:38:59","Babetown's Wild Ride",185,"Laurel Renkert","Female","Competitive Mixed",4
+"74",73,"0:38:59","Grommets and Gimbals",105,"Andrew Murray","Male","Recreational Mixed",7
+"75",75,"0:39:05","Iron Maidens",211,"Autumn Moser","Female","Recreational Women",1
+"76",76,"0:39:11","Northwest Indian College Eagles",158,"Zach Brown","Male","Recreational Open",15
+"77",77,"0:39:13","That Was Quick",93,"Martin Tauc","Male","Recreational Mixed",8
+"78",78,"0:39:18","Baker's Crew",233,"Laura Curtis","Female","Recreational Mixed",9
+"79",79,"0:39:19","Allegiant",222,"Kevin Miles","Male","Corporate",8
+"80",80,"0:39:29","Team Two",39,"Michal Antolik","Male","Recreational Mixed",10
+"81",81,"0:39:50","Squad 7",248,"Logan Franey","Male","High School",2
+"82",82,"0:39:56","Kerb Grub",291,"Todd Griffiths","Male","Competitive Mixed",5
+"83",83,"0:40:07","Looking for Speed in Alderaan Places",108,"Don Camp","Male","Competitive Mixed",6
+"84",84,"0:40:11","The Real Housewives of Whatcom County",57,"Marie Beaver","Female","Recreational Women",2
+"85",85,"0:40:17","Lumberjack In A Little Boat",145,"Matt Skuntz","Male","Recreational Open",16
+"86",86,"0:40:22","Sky-to-sea Hawks",142,"Kristoffer Vik Hansen","Male","Competitive Mixed",7
+"87",87,"0:40:26","Peoples Bank WHJ",22,"Christopher Burk","Male","Veterans",5
+"88",88,"0:40:30","Peoples Bank BFC",33,"Alexander Potapov","Male","Recreational Open",17
+"89",89,"0:40:50","Seattle ICO Rocks!",227,"Meira Lifson","Female","Recreational Mixed",11
+"90",90,"0:40:52","Solar Powered People",43,"Pasi Virta","Male","Recreational Open",18
+"91",91,"0:40:53","Mass Wasting",27,"Jared Bowman","Male","Recreational Open",19
+"92",92,"0:41:03","Orcas Up Your Nooksack",177,"Kent Robarge","Male","Recreational Open",20
+"93",93,"0:41:12","Seattle ICO - Glamrock is still a thing",236,"Shawn Dahle","Male","Recreational Mixed",12
+"94",94,"0:41:15","Exxel Pacific",166,"Leyland Rudholm","Male","Corporate",9
+"95",95,"0:41:24","Cordata Dental",306,"Nicole Koshure","Female","Family",2
+"96",96,"0:41:29","Two Cubed To Finish",94,"George Winters","Male","Competitive Open",20
+"97",97,"0:41:44","Ecotech Solar",310,"Steve Loeppky","Male","Corporate",10
+"98",98,"0:41:54","Bellingham Firefighters",41,"Mark Brennan","Male","Corporate",11
+"99",99,"0:42:05","Jetsam",113,"Curtis Hinman","Male","Recreational Open",21
+"100",100,"0:42:07","Moose on the Loose 3",28,"Katie Taylor","Female","High School",3
+"101",101,"0:42:09","Man, are we gettin' old",46,"Marc Costanza","Male","Competitive Open",21
+"102",102,"0:42:13","Dukes of haphazaard",307,"Peter Larsen","Male","Recreational Open",22
+"103",103,"0:42:18","Here for the Beer",35,"Brad Koehler","Male","Recreational Mixed",13
+"104",104,"0:42:19","Humana Robur",29,"Mark Tomko","Male","Car-Free",4
+"105",105,"0:42:24","Brio Laundry",180,"Ellie Furmanski","Female","Recreational Open",23
+"106",106,"0:42:45","Big Al and the Mountain Scroats",50,"Kristi Louthan","Female","Recreational Open",24
+"107",107,"0:42:47","Venus Envy",163,"Ingrid Enschede","Female","Recreational Women",3
+"108",108,"0:42:54","A Mixed Bag of Nuts",197,"michael brown","Male","Corporate",12
+"109",109,"0:42:59","Jacks and Jill",129,"Keith Johnston","Male","Recreational Open",25
+"110",110,"0:43:12","PRiME Massage and Sports Medicine",278,"Ingela Abbott","Female","Competitive Women",4
+"111",111,"0:43:14","Diminishing Returns",260,"Rachel Thody","Female","Whatcom County Open",5
+"112",112,"0:43:17","Wreckers",300,"Christopher Berry","Male","Whatcom County Open",6
+"113",113,"0:43:19","Exxel Pacific Too",165,"DAVE FRANKOVICH","Male","Corporate",13
+"114",114,"0:43:27","Gang Green",103,"Johnny Sterling","Male","Corporate",14
+"115",115,"0:43:29","Janicki B5",125,"Colby Allen","Male","Corporate",15
+"116",116,"0:43:32","Whatcom P.T./ Ferndale P.T.",213,"Micah Bartlett","Male","Recreational Mixed",14
+"117",117,"0:43:35","Team Jake",319,"Ben Phillips","Male","Whatcom County Open",7
+"118",118,"0:43:39","Surfrider",303,"Keith Doran","Male","Car-Free",5
+"119",119,"0:43:41","Lehecka",277,"Robert Pollard","Male","Recreational Open",26
+"120",120,"0:43:44","Lie Down In The Grass",170,"Kevin Peterson","Male","Whatcom County Mixed",1
+"121",121,"0:43:46","RuBbEr BaBy bUgGy BuMpErS!",316,"Garrett O'Brien","Male","Recreational Mixed",15
+"122",122,"0:43:48","The Goldbug Guild",55,"Thomas Denton","Male","Recreational Mixed",16
+"123",123,"0:43:49","Nacho Average Ladies",220,"Hilary Groh","Female","Recreational Women",4
+"124",124,"0:43:50","Team AK-WA",107,"Alia Parker","Female","Masters",5
+"125",125,"0:43:56","BFF's (Barlean's Flax Fanatics)",11,"Gwen Hryciw","Female","Competitive Open",22
+"126",125,"0:43:56","Nordic Death",117,"Trevor Herndon","Male","Recreational Open",27
+"127",127,"0:44:01","SpandeXXXXXXXX",63,"Adam Gunn","Male","Competitive Mixed",8
+"128",127,"0:44:01","Aunt Janie’s Mt. Baker Ski Trip",245,"Blas Nadal","Male","Family",3
+"129",129,"0:44:02","Everett Firefighters Association",289,"Jonathan Voos","Male","Corporate",16
+"130",130,"0:44:08","The Ski Otters",273,"Hope Spargo","Female","Whatcom County Mixed",2
+"131",131,"0:44:11","BC Ski to Sea",91,"William Schuurman","Male","Recreational Mixed",17
+"132",132,"0:44:16","Swedish First Hill: No Gumby For Old Men",120,"Eliza Hutchinson","Female","Recreational Open",28
+"133",133,"0:44:18","Nooksack Never Landlubbers",284,"David Skippom","Male","Recreational Mixed",18
+"134",134,"0:44:21","Pflueger inc.",156,"Dalton Rockwell","Male","Recreational Open",29
+"135",135,"0:44:24","The Supersheeters",199,"Scott Parmely","Male","Recreational Open",30
+"136",136,"0:44:27","Nacho Average Dudes",253,"Cameron Groh","Male","Recreational Open",31
+"137",137,"0:44:30","Spark Museum",30,"Lina Dahlberg","Female","Recreational Women",5
+"138",138,"0:44:34","Squires of Kenmore",83,"christian moore","Male","Recreational Open",32
+"139",139,"0:44:36","Grub's Pain Parade",44,"Paul Gutzler","Male","Competitive Open",23
+"140",140,"0:44:37","Higher Plane",138,"Jim Lackey","Male","Competitive Open",24
+"141",141,"0:44:39","Ski To Seamen",297,"Marina Dosch","Female","Recreational Open",33
+"142",142,"0:44:44","KIND",322,"Max DeMeritt","Male","Recreational Mixed",19
+"143",143,"0:44:45","Northwestern Mutual",135,"Joseph Montgomery","Male","Corporate",17
+"144",144,"0:44:49","Shuksan our Nooksacks",71,"Leslie Gains-Germain","Female","Recreational Open",34
+"145",145,"0:44:52","Legal Cowboy",160,"Nick Sotak","Male","Recreational Open",35
+"146",146,"0:44:55","Fustercluck!",152,"Annie Senner","Female","Recreational Mixed",20
+"147",147,"0:44:56","Bassetti Broilers",100,"Megan Moore","Female","Recreational Mixed",21
+"148",148,"0:44:59","Pretty Princess Kittens",110,"Jordan Beaudin","Male","Recreational Open",36
+"149",149,"0:45:03","Wenatchee Valley Brewing",265,"Bridget Shae","Female","Family",4
+"150",150,"0:45:06","The Downstairs Mixup",249,"Ilsa Barrett","Female","Recreational Mixed",22
+"151",151,"0:45:08","Landau Associates",137,"Celene Blair","Female","Recreational Open",37
+"152",152,"0:45:10","Sluggaluggafus",210,"Simon Graves","Male","Car-Free",6
+"153",153,"0:45:11","Whatcom 7 Firefighters",183,"Charles Drury","Male","Corporate",18
+"154",154,"0:45:21","#calmerthanyouare",189,"Kris Jaeger","Female","Competitive Mixed",9
+"155",155,"0:45:23","Bottom of the Barrel",56,"Abe Thalhofer","Male","Corporate",19
+"156",156,"0:45:32","Dadbod",34,"Lincoln Farabee","Male","Recreational Open",38
+"157",157,"0:45:40","Ski to Tea",296,"Jonathan Kemp","Male","Recreational Mixed",23
+"158",157,"0:45:40","The Whatcom Athletic Team",37,"Don Pocus","Male","Whatcom County Open",8
+"159",159,"0:45:43","No one told us this was a race",86,"Lisa Burgess","Female","Whatcom County Open",9
+"160",160,"0:45:48","Eastside Hosers",318,"Kenneth Henderson","Male","Competitive Open",25
+"161",161,"0:45:53","ZERO-FTG",53,"Matt Carlson","Male","Recreational Open",39
+"162",162,"0:45:55","Ludicrous Speed",7,"Nate Sloat","Male","Recreational Open",40
+"163",163,"0:45:56","Remember the Name!",208,"Kai Farrar","Male","Recreational Open",41
+"164",163,"0:45:56","PsychoPATHs",17,"Dan Phillips","Male","Recreational Mixed",24
+"165",165,"0:46:06","Sojourn Clothier",31,"Dana Ringler","Female","Whatcom County Mixed",3
+"166",166,"0:46:08","Beans and Biscuits",15,"Kirkby Tickell","Male","Recreational Open",42
+"167",167,"0:46:10","Praying For A Miracle",149,"Christoph Limbach","Male","Recreational Open",43
+"168",168,"0:46:14","WompMobile",313,"Jeremy Hensley","Male","Car-Free",7
+"169",169,"0:46:20","Bitches from Hell",64,"Sheri Russell","Female","Recreational Women",6
+"170",170,"0:46:27","Half and Half",168,"Aleksandr Vozovik","Male","Competitive Open",26
+"171",171,"0:46:32","It's all downhill from here",234,"Eric Smith","Male","Recreational Open",44
+"172",172,"0:46:33","Portland Moustache Club",195,"Ben Whitehead","Male","Recreational Open",45
+"173",173,"0:46:35","Last of the Brohicans",172,"Alex Frank","Male","Recreational Open",46
+"174",174,"0:46:40","City Haul",204,"Seth Fleetwood","Male","Competitive Open",27
+"175",174,"0:46:40","There's Gotta Be a Better Way",143,"Matt Luxon","Male","Recreational Mixed",25
+"176",176,"0:46:43","Haggard's bull",215,"Hans-Rudolf Guenter-Schlesinger","Male","Recreational Open",47
+"177",177,"0:46:46","What's On Your List?",295,"Alieta Gregg","Female","Recreational Open",48
+"178",178,"0:46:48","Rudy's Pizzeria",4,"Nathalie Cushing","Female","Whatcom County Open",10
+"179",179,"0:46:50","LIFE Aesthetic Center",92,"Chris Stacey","Male","Whatcom County Open",11
+"180",180,"0:47:08","The Fighting Snails of Snowline, Team 2",201,"Jeana Vasey","Female","Recreational Open",49
+"181",181,"0:47:13","Josh's Hammer",128,"Josh Johnsen","Male","Recreational Open",50
+"182",182,"0:47:20","It's All Relative",271,"Nancy Richards","Female","Recreational Mixed",26
+"183",183,"0:47:25","Master Blaster",9,"Drew Lommen","Male","Recreational Open",51
+"184",184,"0:47:33","Team of Subdued Talent",51,"Molly Booth","Female","Corporate",20
+"185",185,"0:47:41","BP Machine Supernuts",290,"Ira Ash","Male","Corporate",21
+"186",186,"0:47:43","HardCorePhysio",190,"Alison Lubeck","Female","Whatcom County Mixed",4
+"187",187,"0:47:44","Jedi Ponies",176,"Jennifer Cloutier","Female","Car-Free",8
+"188",188,"0:47:51","Essential Ten",111,"Patrick Bi","Male","High School",4
+"189",189,"0:47:56","Mostly Old Friends",212,"Gary Stoyka","Male","Car-Free",9
+"190",190,"0:47:59","Allen8tors",1,"Katy Allen-Schmid","Female","Family",5
+"191",191,"0:48:02","Ski to Sea Sissies",228,"Jeanie Pflueger","Female","Competitive Women",5
+"192",192,"0:48:05","Worst Pace Scenario",288,"Zachary Hakso","Male","Recreational Open",52
+"193",193,"0:48:09","Bassetti Blazers",58,"Don Brubeck","Male","Corporate",22
+"194",194,"0:48:12","Grandpa Shart",323,"Miriam Ban","Female","Recreational Open",53
+"195",195,"0:48:13","The Funky Funke's",62,"chris spalding","Male","Recreational Mixed",27
+"196",196,"0:48:15","Team Tesoro",299,"Jim Kopkowski","Male","Corporate",23
+"197",197,"0:48:26","The Team Formally Known as Prince",258,"Race Engbar","Male","Recreational Open",54
+"198",198,"0:48:28","We Needed Cooper",308,"Liana Phillips","Female","High School",5
+"199",199,"0:48:41","North Sound Family Medicine",304,"Jeff Marker","Male","Recreational Open",55
+"200",200,"0:48:43","Thor's Jackhammer",98,"R Michael Lee","Male","Recreational Mixed",28
+"201",201,"0:48:44","Student Loan Zone",321,"Peter Finfrock","Male","Whatcom County Open",12
+"202",202,"0:48:46","Hamster Endurance Running",294,"Kelly Krieger","Female","Recreational Mixed",29
+"203",203,"0:48:48","G Spot",45,"Cassia Hershenow","Female","Recreational Mixed",30
+"204",204,"0:48:51","BEAUTIFUL DISASTER",317,"Rachel Gordon-Ball","Female","Competitive Open",28
+"205",205,"0:49:03","Steam Punks",139,"Paul Aegerter","Male","Corporate",24
+"206",206,"0:49:07","Faithlife #2",69,"Thomas Osborn","Male","Corporate",25
+"207",207,"0:49:12","RB3",148,"Joanna Dunn","Female","Recreational Mixed",31
+"208",208,"0:49:13","Indefatigable",89,"Kerrie bauer","Female","Recreational Open",56
+"209",209,"0:49:17","Make Ski to Sea Great Again 2016",251,"Hans Eriksson","Male","Recreational Open",57
+"210",210,"0:49:23","Struggle Bus FC",250,"Andrew Monks","Male","Whatcom County Open",13
+"211",211,"0:49:25","Turn N' Burn",305,"Dain Wright","Male","Whatcom County Mixed",5
+"212",212,"0:49:27","Pacific Tree Octopi",252,"Trevor Maczuga","Male","Recreational Mixed",32
+"213",213,"0:49:29","Checkmate Pawn Loaners",314,"Eric Swanson","Male","Recreational Open",58
+"214",214,"0:49:43","W.D.F.A.",73,"Thomas Hartnett","Male","Recreational Open",59
+"215",215,"0:49:46","Lezbehonest",312,"Rachael LeValley","Female","Recreational Women",7
+"216",216,"0:49:50","Ballard Adventures",224,"Robert Black","Male","Recreational Mixed",33
+"217",217,"0:49:55","Taylor Shellfish-We've Got Mussels!",77,"Susan DeBari","Female","Masters",6
+"218",218,"0:49:57","MasterBakers",151,"Natalia Slobodina","Female","Recreational Open",60
+"219",219,"0:49:58","Speed Limited",97,"Lorraine Earle","Female","Recreational Mixed",34
+"220",220,"0:50:01","Samson Rope Technologies",26,"Greg Mozsgai","Male","Corporate",26
+"221",221,"0:50:04","Ping Pong Club",126,"Matthew Miller","Male","Whatcom County Open",14
+"222",222,"0:50:09","KombuchaTownies",281,"Elizabeth Knope","Female","Whatcom County Mixed",6
+"223",223,"0:50:13","#TeamJoe",19,"Liz Busse","Female","Recreational Women",8
+"224",224,"0:50:15","Wolf Pack",283,"Kayla Nash","Female","Recreational Mixed",35
+"225",225,"0:50:18","Sinking Hummingbirds",269,"Kyla Hovda","Female","Competitive Open",29
+"226",226,"0:50:19","Family Circus",150,"Sandra Andress","Female","Family",6
+"227",227,"0:50:24","Northwest Washington Medical Society",115,"Christoph Reitz","Male","Whatcom County Open",15
+"228",228,"0:50:30","The Locust Rundgrave Band Ski to Sea Race Tea",101,"Cole Soli","Male","Competitive Open",30
+"229",229,"0:50:38","Howlin' Heartland Bastards",219,"T.A. McCann","Male","Recreational Open",61
+"230",230,"0:50:50","Bill Murray is My Spirt Animal",3,"Hilary Law","Female","Recreational Mixed",36
+"231",231,"0:50:57","Kulshan Brewing Company",184,"Eric Aislinn","Male","Recreational Mixed",37
+"232",231,"0:50:57","Bay to Baker Trading Company",198,"Emily Rhoades","Female","Recreational Mixed",37
+"233",233,"0:51:07","Mountain Zygoats",52,"Amanda Stahlke","Female","Recreational Mixed",39
+"234",234,"0:51:11","Fast and Bicurious",123,"Reilly Rosbotham","Male","Recreational Mixed",40
+"235",235,"0:51:28","A Mighty Wind",21,"Jim Sturgul","Male","Recreational Open",62
+"236",236,"0:51:31","DAPPER SNAPPER",230,"Terry Lewis","Male","Whatcom County Open",16
+"237",237,"0:51:40","Papa John",18,"Calvin Milbach","Male","Recreational Open",63
+"238",238,"0:51:44","Mills Electric Shockers",286,"Justin Hammond","Male","Whatcom County Open",17
+"239",239,"0:51:54","Alpha Dogs",238,"Brandon Witman","Male","Corporate",27
+"240",240,"0:52:02","Blood, Sweat and Beers",242,"Kyle Huleatt","Male","Recreational Mixed",41
+"241",241,"0:52:09","FeLions",302,"Rebecca Gisclair","Female","Whatcom County Women",4
+"242",242,"0:52:13","Cirque du Sore Legs",88,"Sonya Morrison","Female","Whatcom County Mixed",7
+"243",243,"0:52:27","Janicowski Jumpers",127,"Andrei Kubail Kalousdian","Male","Recreational Open",64
+"244",244,"0:52:30","Performance Health Northwest's Sexy Disasters",133,"Jacquelyn Styrna","Female","Competitive Open",31
+"245",245,"0:52:35","The Fighting Snails of Snowline, Team 1",200,"Mark Svetcos","Male","Recreational Open",65
+"246",246,"0:52:40","Team Oly Taproom",147,"Bobak Talebi","Male","Recreational Mixed",42
+"247",247,"0:52:47","Hadfields",130,"Hunter Hadfield","Male","Family",7
+"248",248,"0:52:49","Kicked in the Nooksack",268,"Alexandra Gehring","Female","Whatcom County Open",18
+"249",249,"0:52:54","5 Lawyers and 3 miscellaneous individuals",74,"Sabory Huddle","Female","Recreational Mixed",43
+"250",250,"0:52:59","Straight West Coastin'",157,"Tom Laws","Male","Recreational Open",66
+"251",251,"0:53:03","Morrobros",66,"Brett Hubner","Male","Recreational Open",67
+"252",252,"0:53:06","Straight Outta Whatcom",116,"Michael Fraas","Male","Recreational Open",68
+"253",253,"0:53:26","The Bridge Bellingham",162,"Jamie Power","Female","Recreational Open",69
+"254",254,"0:53:30","Seeking Health Screaming Sheagles",276,"Allison Barrett","Female","Recreational Women",9
+"255",255,"0:53:33","Legion of Boob",205,"Kristina Johnson","Female","Whatcom County Women",5
+"256",256,"0:53:45","PTown Papas",23,"Brian Devereux","Male","Recreational Open",70
+"257",257,"0:53:54","One Van",196,"michael schau","Male","Competitive Open",32
+"258",258,"0:54:13","Cargill",309,"Brad Scheib","Male","Recreational Mixed",44
+"259",259,"0:54:21","Beer Runs Downhill",78,"Jonah Douglas","Male","Competitive Open",33
+"260",260,"0:54:29","If you ain’t first, you’re last",235,"Wesley Kelln","Male","Whatcom County Mixed",8
+"261",261,"0:55:04","Baker Buds",48,"Jacob Baker","Male","Recreational Open",71
+"262",262,"0:55:05","The Young and the Rest of Us",301,"Jack Shull","Male","Recreational Open",72
+"263",263,"0:55:09","Victory But For Injury",75,"Mary Ryan","Female","Recreational Open",73
+"264",264,"0:55:21","Marga-Relay-Ville",122,"Pat Hughes","Male","Recreational Open",74
+"265",265,"0:55:31","Ruby's Rascals",140,"Lael Wentland","Female","Family",8
+"266",266,"0:55:35","Love Train",5,"Lisa Staton","Female","Masters",7
+"267",267,"0:55:47","Spankya",192,"Laura Sankey","Female","Family",9
+"268",268,"0:55:58","Off Constantly",285,"Karl Lauth","Male","Competitive Mixed",10
+"269",269,"0:56:18","Eclectica",59,"Bob Mosher","Male","Veterans",6
+"270",270,"0:56:24","Struggle Bus",141,"Sebastian Freigang","Male","Recreational Mixed",45
+"271",271,"0:56:27","Overcome by Events",20,"Cindie Kuhn","Female","Recreational Open",75
+"272",272,"0:56:30","Zombie Llamas",246,"Mike Arbiter","Male","Competitive Open",34
+"273",273,"0:56:34","Chugglekug",272,"Steve Derrig","Male","Recreational Open",76
+"274",274,"0:56:39","The WetBoyz of Aslan Brew",206,"Cale Wilber","Male","Car-Free",10
+"275",275,"0:56:41","Movement Project",274,"Marika Saarinen","Female","Recreational Open",77
+"276",276,"0:56:47","EOD Warriors",32,"Ron Wilson","Male","Competitive Open",35
+"277",277,"0:57:04","Kulshan CrossFit",320,"Cheryl Thonney","Female","Whatcom County Open",19
+"278",278,"0:57:17","Big Sticky Dept. of Athletics",279,"Jason Chadick","Male","Recreational Open",78
+"279",279,"0:57:21","Your pace or mine?",136,"Kelly Sandberg","Female","Whatcom County Mixed",9
+"280",280,"0:58:01","Tight and Bright",106,"Miyabi Gladstein","Female","Competitive Women",6
+"281",281,"0:58:26","indomitable",90,"Dave Green","Male","Recreational Mixed",46
+"282",282,"0:58:30","Groom's Goons",2,"Rose Howe","Female","Recreational Open",79
+"283",283,"0:58:35","Well Groomed",87,"Melinda Vickers","Female","Recreational Open",80
+"284",284,"0:58:36","Tumwater Shadies",54,"Mary Rabourn","Female","Recreational Open",81
+"285",285,"0:58:41","Our Oxen Have Died",10,"Scott Leppla","Male","Recreational Mixed",47
+"286",286,"0:58:45","TBD",38,"MinWah Leung","Female","Recreational Mixed",48
+"287",287,"0:59:40","itek Energy",146,"Jonathan Storvick","Male","Corporate",28
+"288",288,"0:59:41","Emily and Co",217,"Oliver Hartman","Male","Recreational Mixed",49
+"289",289,"0:59:56","The Clean Shaven Wizards",216,"Tony Gallina","Male","Recreational Open",82
+"290",290,"1:00:17","NO MA'AM",223,"Kevin Barton","Male","Recreational Open",83
+"291",291,"1:00:41","Flotsam",112,"Liz Bodner","Female","Recreational Open",84
+"292",292,"1:00:44","lil fanny packers",257,"Tristan Sokol","Male","Recreational Mixed",50
+"293",293,"1:00:47","Rabble Rousers III",293,"Crissey Trick","Female","Recreational Mixed",51
+"294",294,"1:00:54","Ryoko Netsu",79,"Marc Carkeek","Male","Recreational Open",85
+"295",295,"1:01:03","Zero Dynamics",214,"Benjamin Burnett","Male","Recreational Open",86
+"296",296,"1:01:27","Shell Thunder",67,"Jason Smolsnik","Male","Corporate",29
+"297",297,"1:01:35","Definitely not lost",42,"Cale Hoopes","Male","Recreational Open",87
+"298",298,"1:01:55","Fresh off the Couch",298,"Deborah Harstad","Female","Recreational Open",88
+"299",299,"1:02:03","Pretty Princess Puppies",109,"Marc Staiger","Male","Recreational Mixed",52
+"300",300,"1:02:06","Green Eggs and Bellingham",209,"Holly Folk","Female","Recreational Mixed",53
+"301",301,"1:03:15","Sin it to Win it",226,"Greg Tudor","Male","Recreational Open",89
+"302",302,"1:03:42","Door Knobs",280,"Kevin Fazio","Male","Whatcom County Open",20
+"303",303,"1:03:58","The Wasatchsquatches",24,"Justin Shine","Male","Recreational Mixed",54
+"304",304,"1:04:22","We Are Not a Brewery",153,"Charlotte Plog","Female","Recreational Women",10
+"305",305,"1:04:33","Therapists gone wild",131,"Mary Metcalf","Female","Recreational Mixed",55
+"306",306,"1:04:56","Lucid Consulting",96,"Teague Barry","Male","Competitive Open",36
+"307",307,"1:06:48","BTRC Destination Masochists",134,"Lois Peterson","Female","Recreational Mixed",56
+"308",308,"1:06:53","Argonauts",169,"Melissa Stanley","Female","Recreational Mixed",57
+"309",309,"1:09:44","Dialog-Vancouver",207,"Kyle Brucw","Male","Corporate",30
+"310",310,"1:09:52","Rockwood Realty Rogues",155,"Jon Mutchler","Male","Whatcom County Open",21
+"311",311,"1:10:38","Cuboid Enginerds",239,"Cecile Grubb","Female","Recreational Mixed",58
+"312",312,"1:13:40","Mechanism of Action",85,"Kurt Schmidt","Male","Recreational Open",90
+"313",313,"1:20:25","Cowboys and Indians",267,"Jason Durfee","Male","Recreational Open",91
+"314",314,"1:20:41","Nut House",261,"Jacob Steele","Male","Recreational Open",92
+"315",315,"1:25:09","The Family",292,"Paul Brionez","Male","Family",10
+"316",316,"1:31:56","Cascade Dafo, Inc.",174,"Bethany Graham","Female","Recreational Open",93
+"317",317,"1:37:05","Third Place Goals",114,"Amanda Evans","Female","Recreational Mixed",59
+"318",318,"1:47:51","Southwest Airlines",61,"Christopher Cole","Male","Corporate",31
+"319",319,"DQ","This Won't Hurt a Bit",65,"Anne Barnard","Female","Recreational Open",94
+"320",319,"DQ","Burning Bunions",76,"Kurt Sahl","Male","Recreational Open",94
+"321",319,"DQ","Nut-n-Better",262,"Les Pillow","Male","Recreational Open",94
+"322",319,"DQ","my safe word will be WHiskey",6,"","","Recreational Open",94

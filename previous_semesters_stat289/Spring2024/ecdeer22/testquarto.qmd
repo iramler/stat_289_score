@@ -1,0 +1,200 @@
+---
+title: "Untitled"
+author: "Emma"
+format: html
+---
+
+Upload Data:
+```{r}
+library(readr)
+divingdata <- read_csv("ecdeer22/divingdata.csv")
+library(tidyverse)
+```
+
+Clean Data:
+```{r}
+divingdata <- divingdata |> filter(Age != 15) |> select(-16, -17)
+```
+
+DS234 
+```{r}
+#count attempts per dive
+divingdata |> group_by(DiveName) |> summarise(n_DiveName = n()) 
+
+#remove 15yrold from data
+divingdata |> filter(Age != 15)
+
+#histogram of total points
+ggplot(data=divingdata, aes(x=TotalPoints)) + geom_histogram(bins = 20, fill = "white", colour = "black")
+
+#find divers who do specific dives
+divingdata |> filter(DiveName == "105C") |> select(LastName,Judge1:Judge7)
+
+#which country had the most divers:
+divingdata |> group_by(Country) |> summarise(count = n()/9) |> arrange(desc(count))
+
+#count dives of each difficulty
+divingdata |> group_by(Difficulty) |> summarise(n_difficulty = n())
+
+divingdata |> group_by(Age) |> summarise(mean = mean(TotalPoints))
+```
+
+STAT113/213
+```{r}
+#comparative box plots comparing total points by age
+boxplot(TotalPoints~Age, data = divingdata)
+
+#linear model predicting points by difficulty
+model = lm(Points~Difficulty, data=divingdata)
+summary(model)
+
+#anova of model
+anova(model)
+
+#summary statistics 
+mean(divingdata$TotalPoints)
+mean(divingdata$Age)
+
+#histogram of total points
+hist(divingdata$TotalPoints)
+hist(divingdata$Points)
+
+#anova difference in means
+mean(divingdata$Judge1)
+mean(divingdata$Judge2)
+mean(divingdata$Judge3)
+mean(divingdata$Judge4)
+mean(divingdata$Judge5)
+mean(divingdata$Judge6)
+mean(divingdata$Judge7)
+
+#anova difference in means
+library(mosaic)
+library(tidyverse)
+newData <- divingdata |> filter(Age != 15) |> group_by(LastName) |> slice(1) |> select(TotalPoints, Age, LastName) 
+amod = aov(TotalPoints ~ factor(Age), data = divingdata)
+summary(amod)
+
+nongroup <- divingdata 
+group <- divingdata |> group_by(LastName) |> slice(1) 
+
+nongroupmod = aov(Points ~ factor(Difficulty), data = nongroup)
+summary(nongroupmod)
+
+groupmod = aov(TotalPoints ~ factor(Age), data = group)
+summary(groupmod)
+
+qt(.975, 348)
+
+pairwise.t.test(newData$TotalPoints,newData$Age,p.adj="none")
+TukeyHSD(nongroupmod)
+
+(305.59 - 304.96) + (1.966804 * sqrt(2151) * sqrt((1/162) + (1/126)))
+sqrt((1/18) + (1/7))
+```
+
+**Ideas for Questions:**
+  - Test for difference in means: is one judge harsher then the others? 
+  - Compare divers doing the same dive and points: is one diver significantly better than the other?
+  - Do higher difficulty dives actually mean higher points? 
+  - Do older divers score more points?
+  - Do divers get better results by doing harder dives (difficult <= 2) in the beginning (DivNum <=3), middle (DivNum >3, DivNum <=6), or end (DivNum >6, DivNum <= 9)?
+  - Summary Statistics: What is the most common dive? What is the average age? What is the range of total points scored? What is the average score that Judge3 gave? Which country had the most divers? 
+  - Plots: Comparative box plots by age, Comparative box plots of points by diveNames,
+  - Finding p-value on histograms (divingdata$Points is veyr symmetrical)
+  - CI: A dive of difficulty 1.7 (has most dives(n = 75)) what can expect the points to be
+  - PI:
+
+
+Sums of squares:
+```{r}
+diving2 <- divingdata |> group_by(LastName) |> 
+  slice(1) |>
+  ungroup() |> 
+  mutate(OverallMean = mean(TotalPoints)) |>
+  mutate(OverallSD = sd(TotalPoints)) |>
+  group_by(Age) |> 
+  mutate(n = n()) |> 
+  mutate(mean = mean(TotalPoints)) |> 
+  mutate(sd = sd(TotalPoints)) |> 
+  select(TotalPoints, Age, n, mean, sd, OverallMean, OverallSD) |> 
+  ungroup() |>
+  mutate(yOverallMean = TotalPoints - OverallMean) |>
+  mutate(meanOverallMean = mean - OverallMean) |>
+  mutate(ymean = TotalPoints - mean) |>
+  filter(Age == 17)
+
+divingdata16 <- divingdata |> 
+  filter(Age == 16)|> 
+  select(LastName, Age, TotalPoints) |> 
+  group_by(LastName) |> 
+  slice(1) |> 
+  ungroup() |> 
+  mutate(mean = mean(TotalPoints)) |> 
+  mutate(sd = sd(TotalPoints))
+
+divingdata17 <- divingdata |> filter(Age == 17)|> select(LastName, Age, TotalPoints) |> group_by(LastName) |> slice(1) |> ungroup() |> mutate(mean = mean(TotalPoints)) |> mutate(sd = sd(TotalPoints))
+
+divingdata18 <- divingdata |> filter(Age == 18)|> select(LastName, Age, TotalPoints) |> group_by(LastName) |> slice(1) |> ungroup() |> mutate(mean = mean(TotalPoints))|> mutate(sd = sd(TotalPoints))
+
+qt(0.975,348)
+qt(.975, 36)
+
+```
+
+```{r}
+JudgeData <- divingdata |> select(8:14) |> 
+  mutate(Judge1 = sum(Judge1) /351) |> 
+  mutate(Judge2 = sum(Judge2)/351 ) |>
+  mutate(Judge3 = sum(Judge3)/351 ) |>
+  mutate(Judge4 = sum(Judge4)/351 ) |>
+  mutate(Judge5 = sum(Judge5)/351 ) |>
+  mutate(Judge6 = sum(Judge6)/351 ) |>
+  mutate(Judge7 = sum(Judge7)/351 ) |>
+  slice(1) |> pivot_longer(cols = 1:7, names_to = "Judge", values_to = "Value")
+
+other <- divingdata |> select(8:14) |> pivot_longer(cols = 1:7, names_to = "Judge", values_to = "Value")
+
+judgemod = aov(Value ~ factor(Judge), data = other)
+summary(judgemod)
+```
+
+```{r}
+mod1 = aov(TotalPoints ~ factor(Age), data = divingdata)
+summary(mod1)
+
+groupeddata <- divingdata |> group_by(LastName) |> slice(1)
+mod2 = aov(TotalPoints ~ factor(Age), data = groupeddata)
+summary(mod2)
+
+divingdata |> 
+
+# are the means different?
+divingdata |> group_by(Age) |> summarise(mean = mean(TotalPoints))
+groupeddata |> group_by(Age) |> summarise(mean = mean(TotalPoints))
+# no, the same
+
+# ind. t-test on grouped data
+tstar = qt(.975, 36)
+tstat = (305.5861 - 268.25) / (sqrt(2310) * sqrt((1/18) + (1/7)))
+# p-value = 0.045 (1 tail)
+
+
+# do more difficult dives give significantly higher points
+difficultydata <- divingdata |> filter(Difficulty == 1.6 | Difficulty == 2.6 | Difficulty == 2.2) |> group_by(Difficulty)
+difficultymod = aov(Points ~ factor(Difficulty), data = difficultydata)
+summary(difficultymod)
+
+difficultydata |> group_by(Difficulty) |> mutate(n = n()) |> mutate(mean = mean(Points)) |> select(n, mean, Difficulty) |> arrange(n)
+
+divingdata |> group_by(Difficulty) |> mutate(n = n()) |> mutate(mean = mean(Points)) |> select(n, mean, Difficulty) |> arrange(desc(n)) |> ggplot(aes(x = n)) + geom_histogram()
+
+TukeyHSD(difficultymod)
+1- qt(.975, 116)
+
+
+divingdata |> group_by(Difficulty) |> summarise(n = n())
+
+qtukey(1-.05, 3, 116)
+```
+

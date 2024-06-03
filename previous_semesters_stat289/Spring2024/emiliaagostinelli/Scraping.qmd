@@ -1,0 +1,139 @@
+---
+title: "Scrape with Chrome"
+format: html
+---
+
+```{r}
+library(rvest)
+library(chromote)
+library(tidyverse)
+library(lubridate)
+```
+
+```{r}
+fix_time <- function(time){
+  n = length(time)
+  Diff = time[2:n]
+  t1 = time[1] |> ms() |> period_to_seconds()
+  Diff <- parse_number(Diff)
+  Diff <- t1 + Diff
+  return(c(t1, Diff))
+}
+
+```
+
+```{r}
+fix_time(results_matrix$Total)
+```
+
+Pick a page to scrape from and read it with embedded Chrome browser
+```{r}
+url = "https://live.fis-ski.com/lv-al5009.htm#/follow"
+
+xnewpage <- ChromoteSession$new()
+{
+  xnewpage$Page$navigate(url)
+  xnewpage$Page$loadEventFired()
+}
+xnewpage$view()
+```
+
+Extract all html elements
+```{r}
+elements <- newpage$Runtime$evaluate("document.querySelector('html').outerHTML")$result$value |>
+  read_html()
+```
+
+
+```{r}
+results_table<- elements |>
+  html_elements(".sortable") |>
+  html_text2()
+```
+
+```{r}
+results_table
+```
+
+```{r}
+results_matrix = matrix(results_table, ncol = 9,byrow = TRUE)
+```
+
+Copying the first row to names
+Delete first row
+Convert to a data frame
+Cleaning up
+```{r}
+results_matrix = matrix(results_table, ncol = 9, byrow = TRUE)
+colnames(results_matrix) = results_matrix[1,]
+results_matrix = results_matrix[-1,] |>
+  as_tibble()
+```
+
+Cleaning
+Separating columns, getting rid of symbols, converting to seconds, replacing NA values with 0, adjusting "Total" columns
+```{r}
+results_matrix1 <- results_matrix |> rename(Number = `N°`) 
+results_matrix1$Total <- fix_time(results_matrix$Total)
+results_matrix2 <- results_matrix1 |>
+  mutate(Pr=parse_number(Pr)) |>
+  separate(col = `Run 1`, into = c("Run_1_Time", "Run_1_Rank"),
+           sep = "\\(")|>
+  mutate(Run_1_Rank = parse_number(Run_1_Rank)) |>
+  separate(col = `Run 2`, into = c("Run_2_Time", "Run_2_Rank"),
+           sep = "\\(")|>
+  mutate(Run_2_Rank = parse_number(Run_2_Rank))
+results_matrix2$Run_1_Time <- fix_time(results_matrix2$Run_1_Time)
+results_matrix2$Run_2_Time <- fix_time(results_matrix2$Run_2_Time)
+
+```
+
+```{r}
+write.csv(results_matrix, "emiliaagostinelli/Tremblant.csv", row.names = FALSE)
+```
+
+
+```{r}
+get_ski <- function(id_code){
+  first <- "https://live.fis-ski.com/lv-al"
+  end <- ".htm#/follow"
+  url <- paste(first, id_code, end, sep = "")
+
+newpage <- ChromoteSession$new()
+{
+  newpage$Page$navigate(url)
+  newpage$Page$loadEventFired()
+}
+
+elements <- newpage$Runtime$evaluate("document.querySelector('html').outerHTML")$result$value |>
+  read_html()
+
+results_table<- elements |>
+  html_elements(".sortable") |>
+  html_text2()
+
+results_matrix = matrix(results_table, ncol = 9,byrow = TRUE)
+colnames(results_matrix) = results_matrix[1,]
+results_matrix = results_matrix[-1,] |>
+  as_tibble()
+
+results_matrix1 <- results_matrix |> rename(Number = `N°`) 
+results_matrix1$Total <- fix_time(results_matrix$Total)
+results_matrix2 <- results_matrix1 |>
+  mutate(Pr=parse_number(Pr)) |>
+  separate(col = `Run 1`, into = c("Run_1_Time", "Run_1_Rank"),
+           sep = "\\(")|>
+  mutate(Run_1_Rank = parse_number(Run_1_Rank)) |>
+  separate(col = `Run 2`, into = c("Run_2_Time", "Run_2_Rank"),
+           sep = "\\(")|>
+  mutate(Run_2_Rank = parse_number(Run_2_Rank))
+results_matrix2$Run_1_Time <- fix_time(results_matrix2$Run_1_Time)
+results_matrix2$Run_2_Time <- fix_time(results_matrix2$Run_2_Time)
+return(results_matrix2)
+}
+```
+
+```{r}
+x = get_ski(5010)
+```
+

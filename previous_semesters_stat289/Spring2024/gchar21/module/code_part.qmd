@@ -1,0 +1,164 @@
+---
+title: "Code"
+author: "George Charalambous"
+format: html
+---
+
+
+```{r}
+library(here)
+library(tidyverse)
+library(dplyr)
+
+data <- read_csv("~/Desktop/Sixth Semester/Stat289Spring2024/gchar21/data/data_correct.csv")
+```
+
+Logistic Regression Modelling Probability of Winning 
+
+```{r}
+interest_df <- data |>
+  select(c(1, 2, 7, 22, 23)) |>
+  pivot_wider(names_from = Meta,
+              values_from = championName) 
+##|>  unnest(cols = c(Support, `AD Carry`))
+```
+
+
+```{r}
+# https://stackoverflow.com/questions/71780575/struggling-to-unnest-tibble-dput-code-and-error-included-in-r
+# finds the length of each entry
+# goal is to remove any rows with length > 1
+interest_df_2 <- apply(interest_df,
+                            c(1,2), # go into every cell 
+                            function(x) length(# get length of
+                              unlist(x, recursive = FALSE) # a tibble cell is 
+                              # a list itself, therefore unlist first
+                            )
+)
+
+matches_with_wonky_roles <- which( (interest_df_2[,4] != 1) | (interest_df_2[,5] != 1) )
+
+interest_df_3 <- interest_df[-matches_with_wonky_roles, ] |>
+  rename(ADC = `AD Carry`,
+         SUP = Support
+         )
+```
+
+
+```{r}
+interest_df_4 <- 
+interest_df_3 |>
+  group_by(teamId, matchId) |>
+  mutate(winner = if_else(winner == 1,
+                          true = "Wins",
+                          false = "Losses")) |>
+  group_by(ADC, SUP, winner) |>
+  summarise(outcome = n()) |>
+  pivot_wider(names_from = winner, 
+              values_from = outcome)|>
+  filter(Wins + Losses > 10) |>
+  mutate(ADC = unlist(ADC),
+         SUP = unlist(SUP)
+         ) 
+```
+
+```{r}
+popularity_df_ADC <- 
+  interest_df_3 |>
+  group_by(teamId, matchId) |>
+  mutate(winner = if_else(winner == 1,
+                          true = "Wins",
+                          false = "Losses")) |>
+  group_by(ADC) |>
+  summarise(count = n()) |>
+  arrange(desc(count))
+```
+
+```{r}
+popularity_df_SUP <- 
+  interest_df_3 |>
+  group_by(teamId, matchId) |>
+  mutate(winner = if_else(winner == 1,
+                          true = "Wins",
+                          false = "Losses")) |>
+  group_by(SUP) |>
+  summarise(count = n()) |>
+  arrange(desc(count))
+```
+
+```{r}
+top5_df_ADC <- popularity_df_ADC |>
+  ungroup() |>
+  slice(1:5) |>
+  pull(ADC) |>
+  unlist()
+```
+
+```{r}
+top5_df_SUP <- popularity_df_SUP |>
+  ungroup() |>
+  slice(1:5) |>
+  pull(SUP) |>
+  unlist()
+```
+
+```{r}
+rest_df <- interest_df_4 |>
+  mutate(ADC = fct_other(ADC,
+                         top5_df_ADC),
+         SUP = fct_other(SUP,
+                         top5_df_SUP)) |>
+  mutate(ADC = fct_relevel(ADC,
+                           "Other"),
+         SUP = fct_relevel(SUP,
+                           "Other"))
+```
+
+```{r}
+## save as a csv
+rest_df <- rest_df |>
+  group_by(ADC, SUP) |>
+  summarise(n_matches = sum(Losses) + sum(Wins))
+```
+
+```{r}
+popularity_df_ADC <- 
+  popularity_df_ADC |>
+  mutate(ADC = as.character(ADC), 
+         count = as.numeric(count))
+```
+
+```{r}
+popularity_df_SUP <- 
+  popularity_df_SUP |>
+  mutate(SUP = as.character(SUP), 
+         count = as.numeric(count))
+```
+
+```{r}
+write.csv(interest_df_4, "Combinations_Total.csv", row.names = FALSE)
+write.csv(popularity_df_ADC, "ADC.csv", row.names = FALSE)
+write.csv(popularity_df_SUP, "SUP.csv", row.names = FALSE)
+write.csv(rest_df, "Rest.csv", row.names = FALSE)
+```
+
+```{r}
+## save as a csv
+table <- rest_df |>
+  pivot_wider(names_from = c(ADC),
+              values_from = n_matches, 
+              ) |>
+              column_to_rownames("SUP")
+```
+
+```{r}
+write.csv(table, "table.csv", row.names = TRUE)
+```
+
+```{r}
+chisq.test(table)
+```
+
+
+
+

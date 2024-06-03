@@ -1,0 +1,13 @@
+---
+title: "Introduction to Chi-Square Distribution"
+author: "George Charalambous"
+format: 
+  html:
+    embed-resources: true
+---
+
+```{r}
+table <- read.csv("~/Desktop/Sixth Semester/Stat289Spring2024/gchar21/module/table.csv")
+table
+```
+

@@ -1,0 +1,43 @@
+---
+title: "Worksheet"
+format: html
+editor: visual
+---
+
+Load Data and Libraries
+```{r}
+library(readr)
+library(tidyverse)
+Ski_to_Sea_Data <- read_csv("module/Ski_to_Sea_Data.csv")
+View(Ski_to_Sea_Data)
+```
+
+Overall Correlation Matrix
+```{r}
+# Select specific variables
+selected_data <- Ski_to_Sea_Data[, c("overall_minutes", "canoe_minutes", "xcski_minutes", "downhill_minutes", "kayak_minutes", "roadbike_minutes", "run_minutes", "xcbike_minutes")]
+
+# Compute correlation matrix
+cor(selected_data)
+```
+
+2009 Correlation Matrix
+```{r}
+first <- Ski_to_Sea_Data %>% filter(Year == "2009")
+
+first_selected_data <- first[, c("overall_minutes", "canoe_minutes", "xcski_minutes", "downhill_minutes", "kayak_minutes", "roadbike_minutes", "run_minutes", "xcbike_minutes")]
+
+# Compute correlation matrix
+cor(first_selected_data)
+```
+
+2019 Correlation Matrix
+```{r}
+last <- Ski_to_Sea_Data %>% filter(Year == "2019")
+
+last_selected_data <- last[, c("overall_minutes", "canoe_minutes", "xcski_minutes", "downhill_minutes", "kayak_minutes", "roadbike_minutes", "run_minutes", "xcbike_minutes")]
+
+# Compute correlation matrix
+cor(last_selected_data)
+```
+
