@@ -11,6 +11,8 @@ links to disc golf statistics pages
 2024 FPO Stats: https://statmando.com/stats/season-stats-main-dgpt-2024-fpo
 
 2024 MPO Earnings and Placement: https://statmando.com/stats/stats-elite-series-majors-2024-mpo
+2024 FPO Earnings and Placement:
+https://statmando.com/stats/stats-elite-series-majors-2024-fpo
 
 statistics for 2024 are through the Portland Open
 
@@ -31,6 +33,16 @@ table_fpo_2024 <- read_html(url_fpo_2024) |> html_nodes("table")
 fpo_stats_2024 <- table_fpo_2024[[1]] |> html_table()
 fpo_stats_2024
 ```
+
+
+```{r}
+url_fpo24_earnings <- "https://statmando.com/stats/stats-elite-series-majors-2024-fpo"
+table_fpo24_earnings <- read_html(url_fpo24_earnings) |> html_nodes("table")
+fpo_stats24 <- table_fpo24_earnings[[1]] |> html_table()
+fpo_stats24
+```
+
+
 
 ```{r}
 url_mpo_2024 <- "https://statmando.com/stats/season-stats-main-dgpt-2024-mpo"
@@ -93,6 +105,45 @@ fpo_stats_2024_clean <- fpo_stats_2024 |> rename(Player = X1,
          Rounds = as.integer(Rounds))
 fpo_stats_2024_clean
 ```
+
+
+```{r}
+fpo24_clean <- fpo_stats24 |> rename(Player = X1, 
+                                     Starts = X2,
+                                     Wins = X3, 
+                                     Podiums = X4, 
+                                     "Top 10s" = X5, 
+                                     "Top 20s" = X6,
+                                     "Avg Place" = X7, 
+                                     "DNFs" = X8, 
+                                     "Win %" = X9,
+                                     "Podium %" = X10,
+                                     "Top 10 %" = X11,
+                                     "Top 20 %" = X12, 
+                                     "Total Earnings" = X13,
+                                     "Avg Earnings" = X14, 
+                                     "Earnings as Winner" = X15,
+                                     "Total Strokes" = X16) |>
+  slice(-1,-2) |>
+  mutate(Starts = as.integer(Starts), 
+         Wins = as.integer(Wins), 
+         Podiums = as.integer(Podiums), 
+         `Top 10s` = as.integer(`Top 10s`),
+         `Top 20s` = as.integer(`Top 20s`), 
+         `Avg Place` = as.double(`Avg Place`),
+         DNFs = as.integer(DNFs), 
+         `Win %` = as.double(`Win %`),
+         `Podium %` = as.double(`Podium %`), 
+         `Top 10 %` = as.double(`Top 10 %`),
+         `Top 20 %` = as.double(`Top 20 %`), 
+         `Total Earnings` = parse_number(`Total Earnings`),
+         `Avg Earnings` = parse_number(`Avg Earnings`),
+         `Earnings as Winner` = parse_number(`Earnings as Winner`),
+         `Total Strokes` = parse_number(`Total Strokes`))
+
+fpo24_clean
+```
+
 
 
 ```{r}
@@ -163,27 +214,24 @@ mpo24_clean <- mpo_stats24 |> rename(Player = X1,
          `Podium %` = as.double(`Podium %`), 
          `Top 10 %` = as.double(`Top 10 %`),
          `Top 20 %` = as.double(`Top 20 %`), 
-         `Total Earnings` = as.integer(`Total Earnings`),
-         `Avg Earnings` = as.double(`Avg Earnings`),
-         `Earnings as Winner` = as.integer(`Earnings as Winner`),
-         `Total Strokes` = as.integer(`Total Strokes`))
+         `Total Earnings` = parse_number(`Total Earnings`),
+         `Avg Earnings` = parse_number(`Avg Earnings`),
+         `Earnings as Winner` = parse_number(`Earnings as Winner`),
+         `Total Strokes` = parse_number(`Total Strokes`))
 
 mpo24_clean
 ```
 
 ```{r}
-full_mpo24 <- left_join(mpo_stats_2024_clean, mpo24_clean, by = "Player")
+full_mpo24 <- inner_join(mpo_stats_2024_clean, mpo24_clean, by = "Player")
 full_mpo24
 ```
 
 ```{r}
-ggplot(data = full_mpo24, aes(x = PKD, y = `Total Earnings`)) +
-  geom_point()
-full_mpo24 |> select(1,`Total Earnings`)
-
-
-
+full_fpo24 <- inner_join(fpo_stats_2024_clean, fpo24_clean, by = "Player")
+full_fpo24
 ```
+
 
 
 
