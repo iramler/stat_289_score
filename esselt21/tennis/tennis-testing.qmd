@@ -1,0 +1,66 @@
+---
+title: "tennis-testing"
+author: "eric seltzer"
+format: html
+---
+
+```{r}
+tennis <- read_csv(here::here("esselt21/tennis/total.csv"))
+```
+
+```{r}
+tennis <-
+  tennis |>
+  filter(Surface != "All") |>
+  select(-c("PlayerIOC", "EloRankSurface")) |>
+  filter()
+```
+
+```{r}
+# check win percentage distribution, what is the shape, center, and spread
+tennis |>
+  ggplot(aes(x = WinPercentage)) +
+  geom_histogram(colour = "black",
+                 fill = "lightblue",
+                 bins = 23)
+```
+
+```{r}
+# five number summary and standard deviation
+wPercentage <-
+  tennis |>
+  pull(WinPercentage)
+
+summary(wPercentage)
+sd(wPercentage)
+```
+
+```{r}
+# check distributions across different surfaces
+tennis |>
+  ggplot(aes(x = Surface,
+             y = WinPercentage,
+             fill = Surface)) +
+  geom_boxplot()
+```
+
+```{r}
+# anova test to see if surface has impact on win percentage
+# small impact size
+one.way <- aov(WinPercentage ~ Surface,
+               data = tennis)
+
+summary(one.way)
+report(one.way)
+```
+
+```{r}
+# two way anova to see if surface and return games won has higher impact
+# high impact, why might that be
+two.way <- aov(WinPercentage ~ Surface:ReturnGamesWonPercentage,
+               data = tennis)
+
+summary(two.way)
+report(two.way)
+```
+
