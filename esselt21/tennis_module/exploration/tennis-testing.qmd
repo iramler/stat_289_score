@@ -12,7 +12,7 @@ tennis <- read_csv(here::here("esselt21/tennis_module/exploration/tennis.csv"))
 tennis <-
   tennis |>
   filter(Surface != "All") |>
-  select(-c("PlayerIOC", "EloRankSurface")) |>
+  select(c("Player", "Surface", "WinPercentage", "DoubleFaultPercentage", "ReturnPointsWonPercentage")) |>
   filter()
 ```
 
@@ -22,7 +22,18 @@ tennis |>
   ggplot(aes(x = WinPercentage)) +
   geom_histogram(colour = "black",
                  fill = "lightblue",
-                 bins = 23)
+                 bins = 23,
+                 aes(y=..density..)) +
+  theme_minimal() +
+  labs(x = "Win Percentage",
+       title = "Histogram of Win Percentages by Surface") +
+  facet_grid(~Surface,
+             scales = "free") +
+  theme(
+    axis.text.x = element_text(angle = 45,
+                                   hjust = 1,
+                                   vjust = 1)
+  )
 ```
 
 ```{r}
@@ -41,12 +52,15 @@ tennis |>
   ggplot(aes(x = Surface,
              y = WinPercentage,
              fill = Surface)) +
-  geom_boxplot()
+  geom_boxplot() +
+  theme_minimal() +
+  labs(y = "Win Percentage",
+       title = "Box Plots of Win Percentages by Surface") +
+  theme(legend.position = "none")
 ```
 
 ```{r}
-# anova test to see if surface has impact on win percentage
-# small impact size
+# regression test to see difference 
 one.way <- aov(WinPercentage ~ Surface,
                data = tennis)
 
@@ -62,5 +76,9 @@ two.way <- aov(WinPercentage ~ Surface:ReturnPointsWonPercentage,
 
 summary(two.way)
 report(two.way)
+```
+
+```{r}
+# check to see which numerical variables have the largest correlation to win percentage
 ```
 

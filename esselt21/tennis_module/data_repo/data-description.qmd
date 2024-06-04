@@ -20,15 +20,15 @@ This file is Markdown, so you *can* use formatting; [here is a guide to the basi
 
 ## Data
 
-This data is made up of 485 rows and 45 columns. Each row represents a player on a particular surface of court. The three options for these surfaces are Clay, Grass, and Hard.
+This data is made up of 485 rows and 5 columns. Each row represents a player on a particular surface of court. The three options for these surfaces are Clay, Grass, and Hard.
 
-| Variable                  | Description                                                   |
-|---------------------------|---------------------------------------------------------------|
-| Player                    | A description of this variable, including units when possible |
-| Surface                   | A description of this variable, including units when possible |
-| WinPercentage             | A description of this variable, including units when possible |
-| DoubleFaultPercentage     | A description of this variable, including units when possible |
-| ReturnPointsWonPercentage | A description of this variable, including units when possible |
+| Variable                  | Description                                          |
+|---------------------------|------------------------------------------------------|
+| Player                    | The player for which the data corresponds to         |
+| Surface                   | The type of surface that was played on for this data |
+| WinPercentage             | The percentage of matches won                        |
+| DoubleFaultPercentage     | The percentage of double faults                      |
+| ReturnPointsWonPercentage | The percentage of return points won                  |
 
 : [tennis.csv](../data/tennis.csv)
 
