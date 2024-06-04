@@ -25,7 +25,7 @@ mean(weights_ratio$Ratio)
 ```{r}
 plot1 <- ggplot(data = weights_ratio,
                 mapping = aes(x = Ratio)) +
-  geom_histogram()
+  geom_histogram(binwidth = 0.005, fill = "blue")
 
 plot1
 ```
@@ -35,13 +35,20 @@ making a 95% confidence interval for the mean ratio: between  0.3411180 and 0.38
 t.test(weights_ratio$Ratio)
 ```
 ```{r}
+t.test(weights_ratio$Ratio, conf.level = 0.99)
+```
+```{r}
+IQR(weights_ratio$Ratio)
+```
+
+```{r}
 summary(weights_ratio)
 ```
 ```{r}
 sd(weights_ratio$Ratio)
 ```
 
-seems to follow a normal distribution 
+seems to follow a normal distribution
 ```{r}
 nDist <- rnorm(weights_ratio$Ratio, mean = 0.3628333, sd = 0.04366753)
 hist(nDist, breaks = 10)
