@@ -1,0 +1,32 @@
+---
+title: "rowing_start"
+format: html
+---
+
+I am playing around with this Olympics data set I found on [Kaggle](https://www.kaggle.com/code/kalilurrahman/olympic-games-eda){}. I want to look specifically at rowing and medals. The data set contains data from the 1896 Olympics to the 2022 Olympics. 
+
+# Loading the packages and reading in the data
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+```{r}
+rowing_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/rowing_module/athlete_events.csv")
+```
+
+# Playing with the data
+
+This table has the total number of medals per nation in rowing with na values ommitted
+```{r}
+rowing_sum <- rowing_df |> filter(Sport == "Rowing", !is.na(Medal)) |> mutate(n_medal = case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 1)) |> group_by(NOC) |> summarise(total_medal = sum(n_medal))
+```
+
+```{r}
+
+ggplot(data = rowing_sum, aes(x = NOC, y = total_medal)) + geom_col()
+```
+
+
+
