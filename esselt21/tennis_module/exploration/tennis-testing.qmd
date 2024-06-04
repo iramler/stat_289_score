@@ -5,7 +5,7 @@ format: html
 ---
 
 ```{r}
-tennis <- read_csv(here::here("esselt21/tennis/total.csv"))
+tennis <- read_csv(here::here("esselt21/tennis_module/exploration/tennis.csv"))
 ```
 
 ```{r}
@@ -57,7 +57,7 @@ report(one.way)
 ```{r}
 # two way anova to see if surface and return games won has higher impact
 # high impact, why might that be
-two.way <- aov(WinPercentage ~ Surface:ReturnGamesWonPercentage,
+two.way <- aov(WinPercentage ~ Surface:ReturnPointsWonPercentage,
                data = tennis)
 
 summary(two.way)

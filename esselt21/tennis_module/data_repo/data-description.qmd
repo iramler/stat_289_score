@@ -1,0 +1,45 @@
+---
+title: Investigating Surfaces Impact on Win Percentages in Professional Tenni
+author: Eric Seltzer
+date: June 4, 2024
+description: Data of the ATP players from the last 52 weeks as of May 27, 2024. Players who have played a minimum of 10 matches overall or 5 matches on a particular surface are included in the table.
+categories:
+  - Five Number Summary
+  - Distribution
+  - ANOVA
+editor:
+  markdown: 
+    canonical: true
+---
+
+## Motivation
+
+In this first section, describe the source of the dataset and what it's about. Give any necessary background about it and the sports research question of interest. See other datasets on the website for examples.
+
+This file is Markdown, so you *can* use formatting; [here is a guide to the basics](https://quarto.org/docs/authoring/markdown-basics.html).
+
+## Data
+
+This data is made up of 485 rows and 45 columns. Each row represents a player on a particular surface of court. The three options for these surfaces are Clay, Grass, and Hard.
+
+| Variable                  | Description                                                   |
+|---------------------------|---------------------------------------------------------------|
+| Player                    | A description of this variable, including units when possible |
+| Surface                   | A description of this variable, including units when possible |
+| WinPercentage             | A description of this variable, including units when possible |
+| DoubleFaultPercentage     | A description of this variable, including units when possible |
+| ReturnPointsWonPercentage | A description of this variable, including units when possible |
+
+: [tennis.csv](../data/tennis.csv)
+
+## Questions
+
+If possible, list some analyses or research questions that could be answered with this dataset, or the types of questions you'd ask students. This is mainly meant to give other instructors ideas for how they could use the data.
+
+## References
+
+Give references to the original source here, such as by pasting the package citation:
+
+Petti B, Gilani S (2022). *baseballr: Acquiring and Analyzing Baseball Data*. R package version 1.3.0, <https://CRAN.R-project.org/package=baseballr>.
+
+If the dataset has a particular license, mention the license here. For example, "Data available under the Creative Commons Attribution license."
