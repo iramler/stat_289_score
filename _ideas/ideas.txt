@@ -1,0 +1,17 @@
+### Use this file to list some ideas for modules ###
+
+
+Ratio of Dumbbell Press to (Flat) Bench Press
+
+Potential Stat Topics:
+ - one-sample t-interval
+ - Normal dist? (or other distributions if needed)
+ - Histograms and/or other simple EDA
+ 
+
+https://www.reddit.com/r/Fitness/comments/35q4i3/how_much_do_you_dumbbell_flat_bench_compared_to/
+
+-- Check the first comment for a small dataset
+
+##################################################
+
