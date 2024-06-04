@@ -1,0 +1,189 @@
+---
+title: "Disc Golf Exploration"
+author: "Gavin Cassidy"
+format: html
+---
+
+
+links to disc golf statistics pages
+
+2024 MPO Stats: https://statmando.com/stats/season-stats-main-dgpt-2024-mpo
+2024 FPO Stats: https://statmando.com/stats/season-stats-main-dgpt-2024-fpo
+
+2024 MPO Earnings and Placement: https://statmando.com/stats/stats-elite-series-majors-2024-mpo
+
+statistics for 2024 are through the Portland Open
+
+Statistics from 2016 to 2023 located on UDisc live
+
+UDisc Live Links: https://www.udisclive.com/stats
+different table format for these
+
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+```{r}
+url_fpo_2024 <- "https://statmando.com/stats/season-stats-main-dgpt-2024-fpo"
+table_fpo_2024 <- read_html(url_fpo_2024) |> html_nodes("table")
+fpo_stats_2024 <- table_fpo_2024[[1]] |> html_table()
+fpo_stats_2024
+```
+
+```{r}
+url_mpo_2024 <- "https://statmando.com/stats/season-stats-main-dgpt-2024-mpo"
+table_mpo_2024 <- read_html(url_mpo_2024) |> html_nodes("table")
+mpo_stats_2024 <- table_mpo_2024[[1]] |> html_table()
+mpo_stats_2024
+```
+
+```{r}
+url_mpo24_earnings <- "https://statmando.com/stats/stats-elite-series-majors-2024-mpo"
+table_mpo24_earnings <- read_html(url_mpo24_earnings) |> html_nodes("table")
+mpo_stats24 <- table_mpo24_earnings[[1]] |> html_table()
+mpo_stats24
+```
+
+
+
+```{r}
+##url_mpo_2016 <- "https://www.udisclive.com/stats?t=stats&y=2016&z=season"
+##table_mpo_2016 <- read_html(url_mpo_2016) |> html_nodes("table")
+##mpo_stats_2016 <- table_mpo_2016[[1]] |> html_table()
+```
+
+
+
+```{r}
+fpo_stats_2024_clean <- fpo_stats_2024 |> rename(Player = X1, 
+                                                 "Birdie Avg" = X2,
+                                                 "Bogey Avg" = X3, 
+                                                 PKD = X4,
+                                                 C1R = X5,
+                                                 C2R = X6,
+                                                 FWY = X7,
+                                                 SCR = X8, 
+                                                 "OB/18" = X9,
+                                                 C1X = X10, 
+                                                 C2P = X11,
+                                                 "Tot. SG:TG" = X12, 
+                                                 "Tot. SG:P" = X13, 
+                                                 "Throws/SG:TG" = X14, 
+                                                 "Putts/SG:P" = X15, 
+                                                 Events = X16, 
+                                                 Rounds = X17) |>
+  slice(-1, -2) |>
+  mutate(`Birdie Avg` = as.double(`Birdie Avg`),
+         `Bogey Avg` = as.double(`Bogey Avg`),
+         PKD = as.double(PKD), 
+         C1R = as.double(C1R), 
+         C2R = as.double(C2R),
+         FWY = as.double(FWY),
+         SCR = as.double(SCR),
+         `OB/18` = as.double(`OB/18`),
+         C1X = as.double(C1X),
+         C2P = as.double(C2P), 
+         `Tot. SG:TG` = as.double(`Tot. SG:TG`), 
+         `Tot. SG:P` = as.double(`Tot. SG:P`),
+         `Throws/SG:TG` = as.double(`Throws/SG:TG`), 
+         `Putts/SG:P` = as.double(`Putts/SG:P`),
+         Events = as.integer(Events),
+         Rounds = as.integer(Rounds))
+fpo_stats_2024_clean
+```
+
+
+```{r}
+mpo_stats_2024_clean <- mpo_stats_2024 |> rename(Player = X1, 
+                                                 "Birdie Avg" = X2,
+                                                 "Bogey Avg" = X3, 
+                                                 PKD = X4,
+                                                 C1R = X5, 
+                                                 C2R = X6, 
+                                                 FWY = X7,
+                                                 SCR = X8, 
+                                                 "OB/18" = X9,
+                                                 C1X = X10,
+                                                 C2P = X11,
+                                                 "Tot. SG:TG" = X12, 
+                                                 "Tot. SG:P" = X13, 
+                                                 "Throws/SG:TG" = X14, 
+                                                 "Putts/SG:P" = X15, 
+                                                 Events = X16, 
+                                                 Rounds = X17) |>
+  slice(-1, -2) |>
+  mutate(`Birdie Avg` = as.double(`Birdie Avg`), 
+         `Bogey Avg` = as.double(`Bogey Avg`),
+         PKD = as.double(PKD),
+         C1R = as.double(C1R),
+         C2R = as.double(C2R),
+         FWY = as.double(FWY), 
+         SCR = as.double(SCR),
+         `OB/18` = as.double(`OB/18`),
+         C1X = as.double(C1X), 
+         C2P = as.double(C2P), 
+         `Tot. SG:TG` = as.double(`Tot. SG:TG`),
+         `Tot. SG:P` = as.double(`Tot. SG:P`),
+         `Throws/SG:TG` = as.double(`Throws/SG:TG`), 
+         `Putts/SG:P` = as.double(`Putts/SG:P`),
+         Events = as.integer(Events),
+         Rounds = as.integer(Rounds))
+mpo_stats_2024_clean
+```
+
+
+```{r}
+mpo24_clean <- mpo_stats24 |> rename(Player = X1, 
+                                     Starts = X2,
+                                     Wins = X3, 
+                                     Podiums = X4, 
+                                     "Top 10s" = X5, 
+                                     "Top 20s" = X6,
+                                     "Avg Place" = X7, 
+                                     "DNFs" = X8, 
+                                     "Win %" = X9,
+                                     "Podium %" = X10,
+                                     "Top 10 %" = X11,
+                                     "Top 20 %" = X12, 
+                                     "Total Earnings" = X13,
+                                     "Avg Earnings" = X14, 
+                                     "Earnings as Winner" = X15,
+                                     "Total Strokes" = X16) |>
+  slice(-1,-2) |>
+  mutate(Starts = as.integer(Starts), 
+         Wins = as.integer(Wins), 
+         Podiums = as.integer(Podiums), 
+         `Top 10s` = as.integer(`Top 10s`),
+         `Top 20s` = as.integer(`Top 20s`), 
+         `Avg Place` = as.double(`Avg Place`),
+         DNFs = as.integer(DNFs), 
+         `Win %` = as.double(`Win %`),
+         `Podium %` = as.double(`Podium %`), 
+         `Top 10 %` = as.double(`Top 10 %`),
+         `Top 20 %` = as.double(`Top 20 %`), 
+         `Total Earnings` = as.integer(`Total Earnings`),
+         `Avg Earnings` = as.double(`Avg Earnings`),
+         `Earnings as Winner` = as.integer(`Earnings as Winner`),
+         `Total Strokes` = as.integer(`Total Strokes`))
+
+mpo24_clean
+```
+
+```{r}
+full_mpo24 <- left_join(mpo_stats_2024_clean, mpo24_clean, by = "Player")
+full_mpo24
+```
+
+```{r}
+ggplot(data = full_mpo24, aes(x = PKD, y = `Total Earnings`)) +
+  geom_point()
+full_mpo24 |> select(1,`Total Earnings`)
+
+
+
+```
+
+
+
