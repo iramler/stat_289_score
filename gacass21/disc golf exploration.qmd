@@ -4,6 +4,7 @@ author: "Gavin Cassidy"
 format: html
 ---
 
+## Finding/Scraping Data
 
 links to disc golf statistics pages
 
@@ -14,7 +15,7 @@ links to disc golf statistics pages
 2024 FPO Earnings and Placement:
 https://statmando.com/stats/stats-elite-series-majors-2024-fpo
 
-statistics for 2024 are through the Portland Open
+statistics for 2024 are through the Portland Open DGPT Event and scraped 6/4/24
 
 Statistics from 2016 to 2023 located on UDisc live
 
@@ -25,6 +26,7 @@ different table format for these
 ```{r}
 library(tidyverse)
 library(rvest)
+
 ```
 
 ```{r}
@@ -231,6 +233,43 @@ full_mpo24
 full_fpo24 <- inner_join(fpo_stats_2024_clean, fpo24_clean, by = "Player")
 full_fpo24
 ```
+
+
+## Data Exploration
+
+```{r}
+ggplot(data = full_mpo24, aes(x = `Avg Place`, y = `Total Earnings`)) +
+  geom_point(aes(color = Events)) +
+  theme_minimal()
+  
+```
+
+```{r}
+ggplot(data = full_mpo24, aes(x = `Total Earnings`, y = `Total Strokes`)) +
+  geom_point() +
+  geom_text(aes(label = Player))
+```
+
+```{r}
+full_mpo24 |> summarise(Player, `$/Shot` = `Total Earnings`/`Total Strokes`) |>
+  arrange(desc(`$/Shot`))
+```
+
+```{r}
+ggplot(data = full_mpo24, aes(x = `Tot. SG:TG`, y = `Total Earnings`)) +
+  geom_point()
+```
+
+```{r}
+ggplot(data = full_mpo24, aes(x = `Tot. SG:P`, y = `Total Earnings`)) +
+  geom_point()
+```
+
+```{r}
+ggplot(data = full_mpo24, aes(x = FWY, y = `Total Earnings`)) +
+  geom_point()
+```
+
 
 
 
