@@ -23,7 +23,7 @@ Many weightlifters like to track this ratio to work towards specific strength go
 
 ## Data
 
-The `weights_ratio` data set contains observed ratios from 18 different weightlifters. Each row represents a different weightlifter.
+The `weights_ratio` data set contains observed strength ratios from 18 different weightlifters. Each row represents a different weightlifter.
 
 | Variable | Description                                             |
 |----------|---------------------------------------------------------|
