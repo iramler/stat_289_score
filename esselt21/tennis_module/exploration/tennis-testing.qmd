@@ -16,15 +16,7 @@ tennis <- read_csv(here::here("esselt21/tennis_module/exploration/tennis.csv"))
 ```
 
 ```{r}
-tennis <-
-  tennis |>
-  filter(Surface != "All") |>
-  select(c(Player, Surface, EloRank, WinPercentage, DoubleFaultPercentage, ReturnPointsWonPercentage)) |>
-  mutate(Surface = as_factor(Surface))
-```
-
-```{r}
-# check win percentage distribution, what is the shape, center, and spread
+# check win percentage distribution, what is the shape, center, and spread, is there a a big difference between the three surfaces?
 tennis |>
   ggplot(aes(x = WinPercentage)) +
   geom_histogram(colour = "black",
@@ -113,8 +105,6 @@ eliteModel <- lm(WinPercentage ~ Surface + ReturnPointsWonPercentage + EloRank,
             data = elite)
 
 summary(eliteModel)
-
-
 
 eliteAug <-
   augment(eliteModel)
