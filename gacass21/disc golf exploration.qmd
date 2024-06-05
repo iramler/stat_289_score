@@ -29,6 +29,8 @@ library(rvest)
 
 ```
 
+
+
 ```{r}
 url_fpo_2024 <- "https://statmando.com/stats/season-stats-main-dgpt-2024-fpo"
 table_fpo_2024 <- read_html(url_fpo_2024) |> html_nodes("table")
@@ -71,9 +73,9 @@ mpo_stats24
 
 
 ```{r}
-fpo_stats_2024_clean <- fpo_stats_2024 |> rename(Player = X1, 
-                                                 "Birdie Avg" = X2,
-                                                 "Bogey Avg" = X3, 
+fpo_stats_2024_clean <- fpo_stats_2024 |> rename(player = X1, 
+                                                 "birdie Avg" = X2,
+                                                 "bogey Avg" = X3, 
                                                  PKD = X4,
                                                  C1R = X5,
                                                  C2R = X6,
@@ -82,15 +84,15 @@ fpo_stats_2024_clean <- fpo_stats_2024 |> rename(Player = X1,
                                                  "OB/18" = X9,
                                                  C1X = X10, 
                                                  C2P = X11,
-                                                 "Tot. SG:TG" = X12, 
-                                                 "Tot. SG:P" = X13, 
-                                                 "Throws/SG:TG" = X14, 
-                                                 "Putts/SG:P" = X15, 
-                                                 Events = X16, 
-                                                 Rounds = X17) |>
+                                                 "tot. SG:TG" = X12, 
+                                                 "tot. SG:P" = X13, 
+                                                 "throws/SG:TG" = X14, 
+                                                 "putts/SG:P" = X15, 
+                                                 events = X16, 
+                                                 rounds = X17) |>
   slice(-1, -2) |>
-  mutate(`Birdie Avg` = as.double(`Birdie Avg`),
-         `Bogey Avg` = as.double(`Bogey Avg`),
+  mutate(`birdie Avg` = as.double(`birdie Avg`),
+         `bogey Avg` = as.double(`bogey Avg`),
          PKD = as.double(PKD), 
          C1R = as.double(C1R), 
          C2R = as.double(C2R),
@@ -99,49 +101,49 @@ fpo_stats_2024_clean <- fpo_stats_2024 |> rename(Player = X1,
          `OB/18` = as.double(`OB/18`),
          C1X = as.double(C1X),
          C2P = as.double(C2P), 
-         `Tot. SG:TG` = as.double(`Tot. SG:TG`), 
-         `Tot. SG:P` = as.double(`Tot. SG:P`),
-         `Throws/SG:TG` = as.double(`Throws/SG:TG`), 
-         `Putts/SG:P` = as.double(`Putts/SG:P`),
-         Events = as.integer(Events),
-         Rounds = as.integer(Rounds))
+         `tot. SG:TG` = as.double(`tot. SG:TG`), 
+         `tot. SG:P` = as.double(`tot. SG:P`),
+         `throws/SG:TG` = as.double(`throws/SG:TG`), 
+         `putts/SG:P` = as.double(`putts/SG:P`),
+         events = as.integer(events),
+         rounds = as.integer(rounds))
 fpo_stats_2024_clean
 ```
 
 
 ```{r}
-fpo24_clean <- fpo_stats24 |> rename(Player = X1, 
-                                     Starts = X2,
-                                     Wins = X3, 
-                                     Podiums = X4, 
-                                     "Top 10s" = X5, 
-                                     "Top 20s" = X6,
-                                     "Avg Place" = X7, 
+fpo24_clean <- fpo_stats24 |> rename(player = X1, 
+                                     starts = X2,
+                                     wins = X3, 
+                                     podiums = X4, 
+                                     "top 10s" = X5, 
+                                     "top 20s" = X6,
+                                     "avg Place" = X7, 
                                      "DNFs" = X8, 
-                                     "Win %" = X9,
-                                     "Podium %" = X10,
-                                     "Top 10 %" = X11,
-                                     "Top 20 %" = X12, 
-                                     "Total Earnings" = X13,
-                                     "Avg Earnings" = X14, 
-                                     "Earnings as Winner" = X15,
-                                     "Total Strokes" = X16) |>
+                                     "win %" = X9,
+                                     "podium %" = X10,
+                                     "top 10 %" = X11,
+                                     "top 20 %" = X12, 
+                                     "total Earnings" = X13,
+                                     "avg Earnings" = X14, 
+                                     "earnings as Winner" = X15,
+                                     "total Strokes" = X16) |>
   slice(-1,-2) |>
-  mutate(Starts = as.integer(Starts), 
-         Wins = as.integer(Wins), 
-         Podiums = as.integer(Podiums), 
-         `Top 10s` = as.integer(`Top 10s`),
-         `Top 20s` = as.integer(`Top 20s`), 
-         `Avg Place` = as.double(`Avg Place`),
+  mutate(starts = as.integer(starts), 
+         wins = as.integer(wins), 
+         podiums = as.integer(podiums), 
+         `top 10s` = as.integer(`top 10s`),
+         `top 20s` = as.integer(`top 20s`), 
+         `avg Place` = as.double(`avg Place`),
          DNFs = as.integer(DNFs), 
-         `Win %` = as.double(`Win %`),
-         `Podium %` = as.double(`Podium %`), 
-         `Top 10 %` = as.double(`Top 10 %`),
-         `Top 20 %` = as.double(`Top 20 %`), 
-         `Total Earnings` = parse_number(`Total Earnings`),
-         `Avg Earnings` = parse_number(`Avg Earnings`),
-         `Earnings as Winner` = parse_number(`Earnings as Winner`),
-         `Total Strokes` = parse_number(`Total Strokes`))
+         `win %` = as.double(`win %`),
+         `podium %` = as.double(`podium %`), 
+         `top 10 %` = as.double(`top 10 %`),
+         `top 20 %` = as.double(`top 20 %`), 
+         `total Earnings` = parse_number(`total Earnings`),
+         `avg Earnings` = parse_number(`avg Earnings`),
+         `earnings as Winner` = parse_number(`earnings as Winner`),
+         `total Strokes` = parse_number(`total Strokes`))
 
 fpo24_clean
 ```
@@ -149,9 +151,9 @@ fpo24_clean
 
 
 ```{r}
-mpo_stats_2024_clean <- mpo_stats_2024 |> rename(Player = X1, 
-                                                 "Birdie Avg" = X2,
-                                                 "Bogey Avg" = X3, 
+mpo_stats_2024_clean <- mpo_stats_2024 |> rename(player = X1, 
+                                                 "birdie_avg" = X2,
+                                                 "bogey_avg" = X3, 
                                                  PKD = X4,
                                                  C1R = X5, 
                                                  C2R = X6, 
@@ -160,79 +162,92 @@ mpo_stats_2024_clean <- mpo_stats_2024 |> rename(Player = X1,
                                                  "OB/18" = X9,
                                                  C1X = X10,
                                                  C2P = X11,
-                                                 "Tot. SG:TG" = X12, 
-                                                 "Tot. SG:P" = X13, 
-                                                 "Throws/SG:TG" = X14, 
-                                                 "Putts/SG:P" = X15, 
-                                                 Events = X16, 
-                                                 Rounds = X17) |>
+                                                 "tot_SG:TG" = X12, 
+                                                 "tot_SG:P" = X13, 
+                                                 "throws/SG:TG" = X14, 
+                                                 "putts/SG:P" = X15, 
+                                                 events = X16, 
+                                                 rounds = X17) |>
   slice(-1, -2) |>
-  mutate(`Birdie Avg` = as.double(`Birdie Avg`), 
-         `Bogey Avg` = as.double(`Bogey Avg`),
-         PKD = as.double(PKD),
-         C1R = as.double(C1R),
+  mutate(birdie_avg = as.double(`birdie_avg`),
+         bogey_avg = as.double(`bogey_avg`),
+         PKD = as.double(PKD), 
+         C1R = as.double(C1R), 
          C2R = as.double(C2R),
-         FWY = as.double(FWY), 
+         FWY = as.double(FWY),
          SCR = as.double(SCR),
          `OB/18` = as.double(`OB/18`),
-         C1X = as.double(C1X), 
+         C1X = as.double(C1X),
          C2P = as.double(C2P), 
-         `Tot. SG:TG` = as.double(`Tot. SG:TG`),
-         `Tot. SG:P` = as.double(`Tot. SG:P`),
-         `Throws/SG:TG` = as.double(`Throws/SG:TG`), 
-         `Putts/SG:P` = as.double(`Putts/SG:P`),
-         Events = as.integer(Events),
-         Rounds = as.integer(Rounds))
+         `tot_SG:TG` = as.double(`tot_SG:TG`), 
+         `tot_SG:P` = as.double(`tot_SG:P`),
+         `throws/SG:TG` = as.double(`throws/SG:TG`), 
+         `putts/SG:P` = as.double(`putts/SG:P`),
+         events = as.integer(events),
+         rounds = as.integer(rounds))
 mpo_stats_2024_clean
 ```
 
 
 ```{r}
-mpo24_clean <- mpo_stats24 |> rename(Player = X1, 
-                                     Starts = X2,
-                                     Wins = X3, 
-                                     Podiums = X4, 
-                                     "Top 10s" = X5, 
-                                     "Top 20s" = X6,
-                                     "Avg Place" = X7, 
+mpo24_clean <- mpo_stats24 |> rename(player = X1, 
+                                     starts = X2,
+                                     wins = X3, 
+                                     podiums = X4, 
+                                     "top_10s" = X5, 
+                                     "top_20s" = X6,
+                                     "avg_place" = X7, 
                                      "DNFs" = X8, 
-                                     "Win %" = X9,
-                                     "Podium %" = X10,
-                                     "Top 10 %" = X11,
-                                     "Top 20 %" = X12, 
-                                     "Total Earnings" = X13,
-                                     "Avg Earnings" = X14, 
-                                     "Earnings as Winner" = X15,
-                                     "Total Strokes" = X16) |>
+                                     "win%" = X9,
+                                     "podium%" = X10,
+                                     "top_10%" = X11,
+                                     "top_20%" = X12, 
+                                     "total_earnings" = X13,
+                                     "avg_earnings" = X14, 
+                                     "earnings_as_winner" = X15,
+                                     "total_strokes" = X16) |>
   slice(-1,-2) |>
-  mutate(Starts = as.integer(Starts), 
-         Wins = as.integer(Wins), 
-         Podiums = as.integer(Podiums), 
-         `Top 10s` = as.integer(`Top 10s`),
-         `Top 20s` = as.integer(`Top 20s`), 
-         `Avg Place` = as.double(`Avg Place`),
+  mutate(starts = as.integer(starts), 
+         wins = as.integer(wins), 
+         podiums = as.integer(podiums), 
+         top_10s = as.integer(`top_10s`),
+         top_20s = as.integer(`top_20s`), 
+         avg_place = as.double(`avg_place`),
          DNFs = as.integer(DNFs), 
-         `Win %` = as.double(`Win %`),
-         `Podium %` = as.double(`Podium %`), 
-         `Top 10 %` = as.double(`Top 10 %`),
-         `Top 20 %` = as.double(`Top 20 %`), 
-         `Total Earnings` = parse_number(`Total Earnings`),
-         `Avg Earnings` = parse_number(`Avg Earnings`),
-         `Earnings as Winner` = parse_number(`Earnings as Winner`),
-         `Total Strokes` = parse_number(`Total Strokes`))
+         `win%` = as.double(`win%`),
+         `podium%` = as.double(`podium%`), 
+         `top_10%` = as.double(`top_10%`),
+         `top_20%` = as.double(`top_20%`), 
+         total_earnings = parse_number(`total_earnings`),
+         avg_earnings = parse_number(`avg_earnings`),
+         earnings_as_winner = parse_number(`earnings_as_winner`),
+         total_strokes = parse_number(`total_strokes`))
 
 mpo24_clean
 ```
 
 ```{r}
-full_mpo24 <- inner_join(mpo_stats_2024_clean, mpo24_clean, by = "Player")
+full_mpo24 <- inner_join(mpo_stats_2024_clean, mpo24_clean, by = "player")
 full_mpo24
 ```
 
 ```{r}
-full_fpo24 <- inner_join(fpo_stats_2024_clean, fpo24_clean, by = "Player")
+full_mpo24 <- full_mpo24 |> select(-starts, -`throws/SG:TG`, -`putts/SG:P`, -DNFs, -`win%`, -`podium%`, -earnings_as_winner, -total_strokes)
+```
+
+```{r}
+full_fpo24 <- inner_join(fpo_stats_2024_clean, fpo24_clean, by = "player")
 full_fpo24
 ```
+
+```{r}
+full_fpo24 <- full_fpo24 |> select(-18)
+```
+
+```{r}
+write.csv(full_mpo24)
+```
+
 
 
 ## Data Exploration
@@ -251,8 +266,16 @@ ggplot(data = full_mpo24, aes(x = `Total Earnings`, y = `Total Strokes`)) +
 ```
 
 ```{r}
-full_mpo24 |> summarise(Player, `$/Shot` = `Total Earnings`/`Total Strokes`) |>
-  arrange(desc(`$/Shot`))
+dollar_per_shot <- full_mpo24 |> group_by(Player) |> 
+  summarise(`$/Shot` = `Total Earnings`/`Total Strokes`) |>
+  arrange(desc(`$/Shot`)) |>
+  slice(1:20) |>
+  mutate(Player = fct_reorder(Player, desc(`$/Shot`)))
+```
+
+```{r}
+ggplot(data = dollar_per_shot, aes(y = Player, x = `$/Shot`)) +
+  geom_col()
 ```
 
 ```{r}
@@ -270,7 +293,33 @@ ggplot(data = full_mpo24, aes(x = FWY, y = `Total Earnings`)) +
   geom_point()
 ```
 
+```{r}
+ggplot(data = full_mpo24, aes(x = C2P, y = `Total Earnings`)) +
+  geom_point()
+```
 
+```{r}
+ggplot(data = full_mpo24, aes(x = `Tot. SG:TG`)) +
+  geom_histogram()
+```
+
+```{r}
+dollar_per_shot_fpo <- full_fpo24 |> group_by(Player) |> 
+  summarise(`$/Shot` = `Total Earnings`/`Total Strokes`) |>
+  arrange(desc(`$/Shot`)) |>
+  slice(1:20) |>
+  mutate(Player = fct_reorder(Player, desc(`$/Shot`)))
+```
+
+```{r}
+ggplot(data = dollar_per_shot_fpo, aes(y = Player, x = `$/Shot`)) +
+  geom_col()
+```
+
+```{r}
+ggplot(data = full_mpo24, aes(x = `Birdie Avg`, y = `Total Earnings`)) +
+  geom_point()
+```
 
 
 
