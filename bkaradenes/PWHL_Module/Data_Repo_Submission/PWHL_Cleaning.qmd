@@ -69,36 +69,35 @@ PWHL_Scoring %>%
   filter(Pos %in% c("F", "D"))
 ```
 
-4. Which position Forward or Defense averages the most points per player?
-
-```{r}
-PWHL_Scoring %>%
-```
-
-
-```{r}
-ggplot(data = PWHL_Scoring, mapping = aes(x = Pos, y = P))
-```
 
 4. Prepping Dataset for Repository
 
 ```{r}
 ## Switching columns from character to numeric
-PWHL_Scoring<- PWHL_Scoring %>%
+PWHL_Scoring <- PWHL_Scoring %>%
+  rename(Plus_Minus = `+/-`,
+         G_Per_GP = `G/GP`,
+         A_Per_GP = `A/GP`,
+         P_Per_GP = `P/GP`) %>%
   mutate(Rk = as.numeric(Rk),
          Age = as.numeric(Age),
          GP = as.numeric(GP),
          G = as.numeric(G),
          A = as.numeric(A),
-         Points = as.numeric(Points),
+         P = as.numeric(P),
          PIM = as.numeric(PIM),
-        `+/-` = as.numeric(`+/-`),
+        Plus_Minus = as.numeric(Plus_Minus),
         PPG = as.numeric(PPG),
         SHG = as.numeric(SHG),
         GWG = as.numeric(GWG),
-        `G/GP` = as.numeric(`G/GP`),
-        `A/GP` = as.numeric(`A/GP`),
-        `P/GP` = as.numeric(`P/GP`))
+        G_Per_GP = as.numeric(G_Per_GP),
+        A_Per_GP = as.numeric(A_Per_GP),
+        P_Per_GP = as.numeric(P_Per_GP))
+```
+
+```{r}
+# writing the new cleaned csv
+write.csv(PWHL_Scoring, "C:/users/bkara/OneDrive - St. Lawrence University/stat_289_score/bkaradenes/PWHL_Module/data/PWHL_Final.csv", row.names = FALSE)
 ```
 
 

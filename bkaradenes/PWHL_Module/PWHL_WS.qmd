@@ -1,0 +1,54 @@
+---
+title: "PWHL_WS"
+author: "Brendan Karadenes"
+format: html
+---
+
+```{r}
+# Load in the necessary packages and data
+library(tidyverse)
+library(here)
+PWHL_Final <- read.csv(here("bkaradenes/PWHL_Module/data/PWHL_Final.csv"))
+```
+
+```{r}
+ggplot(data = PWHL_Final) + 
+  geom_density(aes(G_Per_GP, color = Pos, fill = Pos), alpha = 0.25) +
+  theme_minimal()
+```
+
+## Question 1
+
+In the density plot above, explain the differences between the `color`, `fill`, and `alpha` commands. 
+
+## Question 2
+
+In the same density plot add a title and change the x-axis label to "Goals Per Games Played".
+
+## Question 3
+
+First create three different age groups Youngest (22-25), Middle (26-30), and Oldest (31-36). Then, create side-by-side boxplots that display the range of points for each group. Make sure to add a theme and flip the coordinates.
+
+```{r}
+PWHL_Graph <- PWHL_Final %>%
+  mutate(Age_Group = case_when(
+    Age >= 22 & Age <= 26 ~ "youngest",
+    Age >= 27 & Age <= 30  ~ "middle",
+    Age >= 31 & Age <= 36 ~ "oldest"
+  )) %>%
+  filter(Pos != "G")
+PWHL_Graph <- PWHL_Graph %>%
+  mutate(Age_Group = factor(Age_Group, levels = c("youngest", "middle", "oldest")))
+```
+
+```{r}
+ggplot(data = PWHL_Graph, aes(x = Age_Group, y = P, color = Pos)) + 
+  geom_boxplot() +
+  coord_flip() +
+  labs(x = "Age Group", y = "Number of Points", title = "Points between different Age Groups and Positions") +
+  theme_minimal()
+```
+
+
+
+
