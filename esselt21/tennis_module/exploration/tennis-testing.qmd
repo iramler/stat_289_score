@@ -39,12 +39,29 @@ tennis |>
 
 ```{r}
 # five number summary and standard deviation
-wPercentage <-
+cWPercentage <-
   tennis |>
+  filter(Surface == 'Clay') |>
   pull(WinPercentage)
 
-summary(wPercentage)
-sd(wPercentage)
+hWPercentage <-
+  tennis |>
+  filter(Surface == 'Hard') |>
+  pull(WinPercentage)
+
+gWPercentage <-
+  tennis |>
+  filter(Surface == 'Grass') |>
+  pull(WinPercentage)
+
+claySummary <- summary(cWPercentage)
+hardSummary <- summary(hWPercentage)
+grassSummary <- summary(gWPercentage)
+
+claySummary
+hardSummary
+grassSummary
+
 ```
 
 
