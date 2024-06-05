@@ -13,20 +13,83 @@ library(readr)
 ```
 
 ```{r}
-rowing_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/rowing_module/athlete_events.csv")
+athletes_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/rowing_module/athlete_events.csv")
 ```
 
 # Playing with the data
 
 This table has the total number of medals per nation in rowing with na values ommitted
+
 ```{r}
-rowing_sum <- rowing_df |> filter(Sport == "Rowing", !is.na(Medal)) |> mutate(n_medal = case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 1)) |> group_by(NOC) |> summarise(total_medal = sum(n_medal))
+rowing_df <- athletes_df |> filter(Sport == "Rowing")
 ```
 
 ```{r}
-
-ggplot(data = rowing_sum, aes(x = NOC, y = total_medal)) + geom_col()
+rowingsum <- rowing_df |> mutate(n_medal= case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 1, is.na(Medal) ~ 0)) |> group_by(NOC) |> summarise(total_medals = sum(n_medal))
 ```
 
+```{r}
+rowing_sum <- rowing_df |> filter(NOC == "USA" & !is.na(Medal)) |> mutate(n_medal= case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 1, is.na(Medal) ~ 0)) |> group_by(NOC, Medal) |> summarise(total_medals = sum(n_medal))
+```
 
+```{r}
+ggplot(data = rowing_sum, aes(x = Medal, y = total_medals)) + geom_boxplot()
+```
 
+List of all the rowing events that the US competed in between 1896 and 2022. 
+
+```{r}
+rowing_df |> filter(NOC == "USA") |> group_by(Event) |> summarise()
+```
+
+Something strange is that after properly dividing up the medals, it seems that the is an uneven number i figured out it was because of this https://www.olympedia.org/athletes/40630, I found Durbrow's ID number and filtered the dataset so that he would not be included, making the number even.
+
+I looked it up and in the olympics a team sport medal counts as one medal, not the number of medals of the athletes on the team so I divided the medals by the number of rowers in each event so that the medals would be more accurate.
+
+```{r}
+events_df <- rowing_df |> filter(NOC == "USA" & ID != 30817) |> mutate(n_medal= case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 1, is.na(Medal) ~ 0)) |> group_by(Event) |> summarise(total_medals = sum(n_medal)) |> mutate(total_medals = case_when(Event == "Rowing Women's Coxed Eights" ~ total_medals/9, Event == "Rowing Men's Coxed Eights" ~ total_medals/9, Event == "Rowing Men's Coxed Fours" ~ total_medals/5, Event == "Rowing Men's Coxed Pairs" ~ total_medals/3, Event == "Rowing Men's Coxed Fours" ~ total_medals/5, Event == "Rowing Men's Coxless Fours" ~ total_medals/4, Event == "Rowing Men's Coxless Pairs" ~ total_medals/2, Event == "Rowing Men's Double Sculls" ~ total_medals/2, Event == "Rowing Men's Lightweight Coxless Fours" ~ total_medals/4, Event == "Rowing Men's Lightweight Double Sculls" ~ total_medals/2, Event == "Rowing Men's Quadruple Sculls" ~ total_medals/4, Event == "Rowing Men's Single Sculls" ~ total_medals/1, Event == "Rowing Women's Coxed Fours" ~ total_medals/5, Event == "Rowing Women's Coxed Quadruple Sculls" ~ total_medals/5, Event == "Rowing Women's Coxless Fours" ~ total_medals/4, Event == "Rowing Women's Coxless Pairs" ~ total_medals/2, Event == "Rowing Women's Double Sculls" ~ total_medals/2, Event == "Rowing Women's Lightweight Double Sculls" ~ total_medals/2, Event == "Rowing Women's Quadruple Sculls" ~ total_medals/4, Event == "Rowing Women's Single Sculls" ~ total_medals/1))
+```
+
+```{r}
+rowing_df |> mutate(n_medal= case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 1, is.na(Medal) ~ 0)) |> group_by(Event, NOC, Year) |> summarise(total_medals = sum(n_medal)) |> mutate(total_medals = case_when(Event == "Rowing Women's Coxed Eights" ~ total_medals/9, Event == "Rowing Men's Coxed Eights" ~ total_medals/9, Event == "Rowing Men's Coxed Fours" ~ total_medals/5, Event == "Rowing Men's Coxed Pairs" ~ total_medals/3, Event == "Rowing Men's Coxed Fours" ~ total_medals/5, Event == "Rowing Men's Coxless Fours" ~ total_medals/4, Event == "Rowing Men's Coxless Pairs" ~ total_medals/2, Event == "Rowing Men's Double Sculls" ~ total_medals/2, Event == "Rowing Men's Lightweight Coxless Fours" ~ total_medals/4, Event == "Rowing Men's Lightweight Double Sculls" ~ total_medals/2, Event == "Rowing Men's Quadruple Sculls" ~ total_medals/4, Event == "Rowing Men's Single Sculls" ~ total_medals/1, Event == "Rowing Women's Coxed Fours" ~ total_medals/5, Event == "Rowing Women's Coxed Quadruple Sculls" ~ total_medals/5, Event == "Rowing Women's Coxless Fours" ~ total_medals/4, Event == "Rowing Women's Coxless Pairs" ~ total_medals/2, Event == "Rowing Women's Double Sculls" ~ total_medals/2, Event == "Rowing Women's Lightweight Double Sculls" ~ total_medals/2, Event == "Rowing Women's Quadruple Sculls" ~ total_medals/4, Event == "Rowing Women's Single Sculls" ~ total_medals/1, Event == "Rowing Men's 17-Man Naval Rowing Boats" ~ total_medals/17, Event == "Rowing Men's 6-Man Naval Rowing Boats" ~ total_medals/6, Event == "Rowing Men's Coxed Fours, Inriggers" ~ total_medals/5,  Event == "Rowing Men's Coxed Fours, Outriggers" ~ total_medals/5, Event == "Rowing Men's Coxed Pairs (1 kilometres)" ~ total_medals/3, Event == "Rowing Men's Coxed Pairs (1 mile)" ~ total_medals/3))
+```
+
+```{r}
+nozeros <-rowingsum |> filter(total_medals !=0)
+```
+
+I am thinking to ignore the Olympics rules on the medals and just look at the medals data as is. 
+
+# Working on coming up with some simple questions
+
+Sumamry statistics
+
+```{r}
+summary(nozeros$total_medals)
+```
+
+```{r}
+rowingyear <- rowing_df |> mutate(n_medal= case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 1, is.na(Medal) ~ 0)) |> group_by(Year) |> summarise(total_medals = sum(n_medal))
+```
+
+```{r}
+ggplot(data = rowingyear, aes(x = Year, y = total_medals)) + geom_line()
+```
+
+```{r}
+usaonly <- rowing_df |> filter(NOC == "USA") |>mutate(n_medal= case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 1, is.na(Medal) ~ 0)) |> group_by(Year) |> summarise(total_medals = sum(n_medal))
+```
+
+```{r}
+ggplot(data = usaonly, aes(x = Year, y = total_medals)) + geom_line()
+```
+
+```{r}
+year_noc <- rowing_df |> mutate(n_medal= case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 1, is.na(Medal) ~ 0)) |> group_by(Year, NOC) |> summarise(total_medals = sum(n_medal))
+```
+
+```{r}
+ggplot(data = year_noc, aes(x = Year, y = total_medals, colour = NOC)) + geom_line()
+```
+
+making progress
