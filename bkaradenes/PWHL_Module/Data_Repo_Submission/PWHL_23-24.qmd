@@ -43,9 +43,9 @@ The data set contains 147 rows of 16 variables. Each row representing a player d
 
 ## Questions
 
--   Create a density plot that explores the relationship between goals per games played and position. Describe the shape of each curve.
--   Which dplyr function could you use to create different age groups for the players?
--   Analyze boxplots displaying the number of points vs age groups of the players by describing shape, skew, and noting any outliers.
+-   Explore the relationship between goals per games played and position.
+-   Use dplyr to create some new variables and explain what they do.
+-   Describie shape, skew, and noting any outliers of visualizations displaying the data.
 
 ## References
 

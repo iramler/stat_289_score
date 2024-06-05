@@ -17,8 +17,8 @@ hockey3 <- read.csv(here("bkaradenes/PWHL_Module/data/HockeyStats-3.csv"))
 data1 <- full_join(hockey1, hockey2)
 PWHL_data <- full_join(data1, hockey3)
 ## Write full dataset as a csv
-write.csv(PWHL_data, "PWHL_Scoring.csv", row.names = FALSE)
-PWHL_Scoring <- read.csv("PWHL_Scoring.csv")
+#write.csv(PWHL_data, "PWHL_Scoring.csv", row.names = FALSE)
+#PWHL_Scoring <- read.csv("PWHL_Scoring.csv")
 ```
 
 ```{r}

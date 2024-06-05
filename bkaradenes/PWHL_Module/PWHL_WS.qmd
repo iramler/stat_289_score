@@ -19,15 +19,24 @@ ggplot(data = PWHL_Final) +
 
 ## Question 1
 
-In the density plot above, explain the differences between the `color`, `fill`, and `alpha` commands. 
+Describe the distributions for each position in the density plot above. Make sure to mention shape and skew.
 
 ## Question 2
 
-In the same density plot add a title and change the x-axis label to "Goals Per Games Played".
+What would you need to add to the R code below to add a title and change the x-axis label to "Goals Per Games Played". 
+
+```{r}
+ggplot(data = PWHL_Graph, aes(x = Age_Group, y = P, color = Pos)) + 
+  geom_boxplot() +
+  coord_flip() +
+  labs(x = "Age Group", y = "Number of Points", title = "Points between different Age Groups and Positions") +
+  theme_minimal()
+```
+
 
 ## Question 3
 
-First create three different age groups Youngest (22-25), Middle (26-30), and Oldest (31-36). Then, create side-by-side boxplots that display the range of points for each group. Make sure to add a theme and flip the coordinates.
+First create three different age groups Youngest (22-25), Middle (26-30), and Oldest (31-36). Then, create side-by-side boxplots that display the range of points for each group. Make sure to add a theme, flip the axis, and change the x and y axis labels.
 
 ```{r}
 PWHL_Graph <- PWHL_Final %>%
