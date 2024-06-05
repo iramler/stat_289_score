@@ -232,7 +232,7 @@ full_mpo24
 ```
 
 ```{r}
-full_mpo24 <- full_mpo24 |> select(-starts, -`throws/SG:TG`, -`putts/SG:P`, -DNFs, -`win%`, -`podium%`, -earnings_as_winner, -total_strokes)
+full_mpo24 <- full_mpo24 |> select(-starts, -`throws/SG:TG`, -`putts/SG:P`, -DNFs, -`win%`, -`podium%`, -earnings_as_winner)
 ```
 
 ```{r}
@@ -244,80 +244,65 @@ full_fpo24
 full_fpo24 <- full_fpo24 |> select(-18)
 ```
 
-```{r}
-write.csv(full_mpo24)
-```
 
 
 
 ## Data Exploration
 
 ```{r}
-ggplot(data = full_mpo24, aes(x = `Avg Place`, y = `Total Earnings`)) +
-  geom_point(aes(color = Events)) +
+ggplot(data = full_mpo24, aes(x = avg_place, y = total_earnings)) +
+  geom_point(aes(color = events)) +
   theme_minimal()
   
 ```
 
 ```{r}
-ggplot(data = full_mpo24, aes(x = `Total Earnings`, y = `Total Strokes`)) +
+ggplot(data = full_mpo24, aes(x = total_earnings, y = total_strokes)) +
   geom_point() +
-  geom_text(aes(label = Player))
+  geom_text(aes(label = player))
 ```
 
 ```{r}
-dollar_per_shot <- full_mpo24 |> group_by(Player) |> 
-  summarise(`$/Shot` = `Total Earnings`/`Total Strokes`) |>
+dollar_per_shot <- full_mpo24 |> group_by(player) |> 
+  summarise(`$/Shot` = total_earnings/total_strokes) |>
   arrange(desc(`$/Shot`)) |>
   slice(1:20) |>
-  mutate(Player = fct_reorder(Player, desc(`$/Shot`)))
+  mutate(player = fct_reorder(player, desc(`$/Shot`)))
 ```
 
 ```{r}
-ggplot(data = dollar_per_shot, aes(y = Player, x = `$/Shot`)) +
+ggplot(data = dollar_per_shot, aes(y = player, x = `$/Shot`)) +
   geom_col()
 ```
 
 ```{r}
-ggplot(data = full_mpo24, aes(x = `Tot. SG:TG`, y = `Total Earnings`)) +
+ggplot(data = full_mpo24, aes(x = `tot_SG:TG`, y = total_earnings)) +
   geom_point()
 ```
 
 ```{r}
-ggplot(data = full_mpo24, aes(x = `Tot. SG:P`, y = `Total Earnings`)) +
+ggplot(data = full_mpo24, aes(x = `tot_SG:P`, y = total_earnings)) +
   geom_point()
 ```
 
 ```{r}
-ggplot(data = full_mpo24, aes(x = FWY, y = `Total Earnings`)) +
+ggplot(data = full_mpo24, aes(x = FWY, y = total_earnings)) +
   geom_point()
 ```
 
 ```{r}
-ggplot(data = full_mpo24, aes(x = C2P, y = `Total Earnings`)) +
+ggplot(data = full_mpo24, aes(x = C2P, y = total_earnings)) +
   geom_point()
 ```
 
 ```{r}
-ggplot(data = full_mpo24, aes(x = `Tot. SG:TG`)) +
+ggplot(data = full_mpo24, aes(x = `tot_SG:TG`)) +
   geom_histogram()
 ```
 
-```{r}
-dollar_per_shot_fpo <- full_fpo24 |> group_by(Player) |> 
-  summarise(`$/Shot` = `Total Earnings`/`Total Strokes`) |>
-  arrange(desc(`$/Shot`)) |>
-  slice(1:20) |>
-  mutate(Player = fct_reorder(Player, desc(`$/Shot`)))
-```
 
 ```{r}
-ggplot(data = dollar_per_shot_fpo, aes(y = Player, x = `$/Shot`)) +
-  geom_col()
-```
-
-```{r}
-ggplot(data = full_mpo24, aes(x = `Birdie Avg`, y = `Total Earnings`)) +
+ggplot(data = full_mpo24, aes(x = birdie_avg, y = total_earnings)) +
   geom_point()
 ```
 
