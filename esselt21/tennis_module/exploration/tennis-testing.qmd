@@ -8,6 +8,7 @@ format: html
 library(tidyverse)
 library(ggplot2)
 library(broom)
+library(modelr)
 ```
 
 ```{r}
@@ -53,11 +54,12 @@ sd(wPercentage)
 ```
 
 ```{r}
-# check distributions across different surfaces
+# approximate the median, iqr, and range for each surface
 tennis |>
   ggplot(aes(x = Surface,
              y = WinPercentage,
              fill = Surface)) +
+  stat_boxplot(geom = 'errorbar') +
   geom_boxplot() +
   theme_minimal() +
   labs(y = "Win Percentage",
@@ -66,7 +68,7 @@ tennis |>
 ```
 
 ```{r}
-# regression test to see difference 
+# regression test to see difference
 model <- lm(WinPercentage ~ Surface + ReturnPointsWonPercentage + EloRank,
             data = tennis)
 
@@ -88,20 +90,54 @@ aug |>
              aes(x = ReturnPointsWonPercentage,
                  y = WinPercentage),
              alpha = 0.4) +
-  theme_minimal()
+  theme_minimal() +
+  labs(y = 'Win Percentage',
+       x = 'Return Points Won Percentage',
+       title = 'Predictions vs. Actual Values of Win Percentages')
 ```
 
 ```{r}
-# two way anova to see if surface and return games won has higher impact
-# high impact, why might that be
-two.way <- aov(WinPercentage ~ Surface:ReturnPointsWonPercentage,
-               data = tennis)
-
-summary(two.way)
-report(two.way)
+# does this meet the assumptions for a multiple linear regression model?
+plot(model)
 ```
 
 ```{r}
-# check to see which numerical variables have the largest correlation to win percentage
+# look at it for top 20 ranked players
+elite <-
+  tennis |>
+  filter(EloRank <= 20)
 ```
+
+```{r}
+eliteModel <- lm(WinPercentage ~ Surface + ReturnPointsWonPercentage + EloRank,
+            data = elite)
+
+summary(eliteModel)
+
+
+
+eliteAug <-
+  augment(eliteModel)
+```
+
+```{r}
+# plotting regression model
+eliteAug |>
+  ggplot(aes(x = ReturnPointsWonPercentage,
+             y = .fitted,
+             colour = Surface)) +
+  geom_smooth(method = 'lm',
+              se = FALSE) +
+  geom_point(data = elite,
+             aes(x = ReturnPointsWonPercentage,
+                 y = WinPercentage),
+             alpha = 0.4) +
+  theme_minimal() +
+  labs(y = 'Win Percentage',
+       x = 'Return Points Won Percentage',
+       title = 'Predictions vs. Actual Values of Win Percentages',
+       subtitle = 'Only top 20 ranked players included')
+# talk about differences between overall and elite players
+```
+
 
