@@ -5,6 +5,12 @@ format: html
 ---
 
 ```{r}
+library(tidyverse)
+library(ggplot2)
+library(broom)
+```
+
+```{r}
 tennis <- read_csv(here::here("esselt21/tennis_module/exploration/tennis.csv"))
 ```
 
@@ -12,8 +18,8 @@ tennis <- read_csv(here::here("esselt21/tennis_module/exploration/tennis.csv"))
 tennis <-
   tennis |>
   filter(Surface != "All") |>
-  select(c("Player", "Surface", "WinPercentage", "DoubleFaultPercentage", "ReturnPointsWonPercentage")) |>
-  filter()
+  select(c(Player, Surface, EloRank, WinPercentage, DoubleFaultPercentage, ReturnPointsWonPercentage)) |>
+  mutate(Surface = as_factor(Surface))
 ```
 
 ```{r}
@@ -61,11 +67,28 @@ tennis |>
 
 ```{r}
 # regression test to see difference 
-one.way <- aov(WinPercentage ~ Surface,
-               data = tennis)
+model <- lm(WinPercentage ~ Surface + ReturnPointsWonPercentage + EloRank,
+            data = tennis)
 
-summary(one.way)
-report(one.way)
+summary(model)
+
+aug <-
+  augment(model)
+```
+
+```{r}
+# plotting regression model
+aug |>
+  ggplot(aes(x = ReturnPointsWonPercentage,
+             y = .fitted,
+             colour = Surface)) +
+  geom_smooth(method = 'lm',
+              se = FALSE) +
+  geom_point(data = tennis,
+             aes(x = ReturnPointsWonPercentage,
+                 y = WinPercentage),
+             alpha = 0.4) +
+  theme_minimal()
 ```
 
 ```{r}
