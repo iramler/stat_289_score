@@ -1,12 +1,13 @@
 ---
-title: Investigating Surfaces Impact on Win Percentages in Professional Tenni
+title: Investigating Surfaces Impact on Win Percentages in Professional Tennis
 author: Eric Seltzer
 date: June 4, 2024
 description: Data of the ATP players from the last 52 weeks as of May 27, 2024. Players who have played a minimum of 10 matches overall or 5 matches on a particular surface are included in the table.
 categories:
   - Five Number Summary
   - Distribution
-  - ANOVA
+  - Multiple Linear Regression
+  - Assumptions
 editor:
   markdown: 
     canonical: true
@@ -14,9 +15,7 @@ editor:
 
 ## Motivation
 
-In this first section, describe the source of the dataset and what it's about. Give any necessary background about it and the sports research question of interest. See other datasets on the website for examples.
-
-This file is Markdown, so you *can* use formatting; [here is a guide to the basics](https://quarto.org/docs/authoring/markdown-basics.html).
+This data set is provided by Wheelo Ratings. They create an Elo ratings system for tennis players that takes into account who they are playing rather than just how many points a win gets like the ATP rankings do. The data here is from the past 52 weeks as of May 27, 2024 and includes many variables but for simplification, the variables have been narrowed down to 5 of what I believe to be the most important indicators of a players ability to win a match.
 
 ## Data
 
@@ -38,8 +37,4 @@ If possible, list some analyses or research questions that could be answered wit
 
 ## References
 
-Give references to the original source here, such as by pasting the package citation:
-
-Petti B, Gilani S (2022). *baseballr: Acquiring and Analyzing Baseball Data*. R package version 1.3.0, <https://CRAN.R-project.org/package=baseballr>.
-
-If the dataset has a particular license, mention the license here. For example, "Data available under the Creative Commons Attribution license."
+Wheelo Ratings <https://www.wheeloratings.com/tennis_atp_stats_last52.html>.
