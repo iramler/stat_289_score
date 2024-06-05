@@ -25,13 +25,15 @@ tennis |>
                  aes(y=..density..)) +
   theme_minimal() +
   labs(x = "Win Percentage",
-       title = "Histogram of Win Percentages by Surface") +
+       title = "Histogram of Win Percentages by Surface",
+       y = "Density") +
   facet_grid(~Surface,
              scales = "free") +
   theme(
     axis.text.x = element_text(angle = 45,
                                    hjust = 1,
-                                   vjust = 1)
+                                   vjust = 1),
+    plot.title = element_text(hjust = .5)
   )
 ```
 
@@ -45,6 +47,7 @@ summary(wPercentage)
 sd(wPercentage)
 ```
 
+
 ```{r}
 # approximate the median, iqr, and range for each surface
 tennis |>
@@ -56,16 +59,15 @@ tennis |>
   theme_minimal() +
   labs(y = "Win Percentage",
        title = "Box Plots of Win Percentages by Surface") +
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5))
 ```
 
 ```{r}
 # regression test to see difference
 model <- lm(WinPercentage ~ Surface + ReturnPointsWonPercentage + EloRank,
             data = tennis)
-
 summary(model)
-
 aug <-
   augment(model)
 ```
