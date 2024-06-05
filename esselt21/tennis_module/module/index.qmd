@@ -26,7 +26,7 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-In tennis the rankings are typically based on set parameters. Throughout the year there are tournaments that are worth different numbers of points. There are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. You receive the most points in your [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) from winning a Grand Slam, and the least from winning an ATP 250 tournament. In the data that we will be using, the provider has calculated an Elo ranking. This ranking takes into account what the tournaments are, as well as who each player is playing. So playing a "harder" opponent in a Grand Slam counts for more than playing an "easy" opponent.
+In professional tennis the rankings are typically based on set parameters. Throughout the year there are tournaments that are worth different numbers of points. There are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. You receive the most points in your [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) from winning a Grand Slam, and the least from winning an ATP 250 tournament. In the data that we will be using, the provider has calculated an Elo ranking. This ranking takes into account what the tournaments are, as well as who each player is playing. So playing a "harder" opponent in a Grand Slam counts for more than playing an "easy" opponent.
 
 In this worksheet, we will look at the data including this Elo ranking and look at distributions, shapes, and a multiple linear regression model. There will be questions about each of these, some of them being more open ended than others.
 
