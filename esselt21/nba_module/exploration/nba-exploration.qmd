@@ -5,7 +5,11 @@ format: html
 ---
 
 ```{r}
-regularSeason <- read_csv("esselt21/nba_players/data/regular-season.csv")
+library(tidyverse)
+```
+
+```{r}
+regularSeason <- read_csv(here::here("esselt21/nba_module/data/regular-season.csv"))
 regularSeason <-
   regularSeason |>
   select(-1)
