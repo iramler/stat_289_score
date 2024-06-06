@@ -1,0 +1,33 @@
+---
+title: "Strength Ratios - Flat Dumbbell Press to Barbell Bench Press "
+date: "June 6, 2024"
+description: "Exploring the spread and mean of the reported strength ratios."
+editor: 
+  canonical: true
+categories:
+  - Histogram 
+  - Mean, IQR 
+  - One Sample T-Interval 
+---
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction
+
+Weightlifters may be inclined to track the specific ratio between flat dumbbell press and barbell bench press. Flat dumbbell press is when the lifter lies on a flat bench with their arms positioned at roughly 45 degree angles, lifts two equal sized dumbbells, brings them back to the chest, and then keeps going. Barbell bench press is when the lifter lies on a bench and lifts a horizontal bar (the barbell) with equal weighted plates on both sides and brings it back down to the chest.
+
+The ratio of flat dumbbell press to barbell bench press works to track how much someone is lifting two dumbbells compared to how much they are able to lift the weighted barbell. When calculating the ratio, it was multiplied by two in order to account for the total weight lifted when doing a flat dumbbell press, as there are two dumbbells that would have to be held by the lifter.
+
+This worksheet involves using the strength ratio to look at histograms, confidence intervals, and discuss the effect that data collection methods have on the variance and potential distribution of the data.
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will be able to:
+
+1.  Enhance proficiency in constructing and interpreting confidence intervals with varying degrees of confidence.
+
+2.  Explain the importance of obtaining a large sample size that reaches across multiple audiences.
+
+3.  Detecting outliers in a data set through applying techniques, including the "1.5 Interquartile Range Rule"
+:::
