@@ -1,0 +1,38 @@
+---
+title: "horse_exploration"
+author: "eric seltzer"
+format: html
+---
+
+```{r}
+library(tidyverse)
+```
+
+Variables and Descriptions
+
+| Variable  | Description                                              |
+|-----------|----------------------------------------------------------|
+| rid       | Race ID                                                  |
+| horseName | Name of horse                                            |
+| age       | Age of horse                                             |
+| saddle    | Saddle # where horse starts                              |
+| isFav     | Was horse a favorite before race? (Can be more than one) |
+| position  | Finishing position, 40 if horse didn't finish            |
+| RPR       | RP rating                                                |
+| TR        | Topspeed                                                 |
+| OR        | Official rating                                          |
+| Weight    | Horse weight (kg)                                        |
+| res_win   | Did the horse win or not                                 |
+| res_place | Did the horse place or not                               |
+
+```{r}
+horse <-
+  read_csv(here::here("esselt21/module_exploration/data/horses.csv"))
+```
+
+```{r}
+horseClean <-
+  horse |>
+  select(c(rid, horseName, age, saddle, isFav, position, RPR, TR, OR, weight, res_win, res_place))
+```
+
