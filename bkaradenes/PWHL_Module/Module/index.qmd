@@ -62,7 +62,7 @@ Download Data
 <summary><b>Variable Descriptions</b></summary>
 
 | Variable   | Description                                                           |
-|--------------------|----------------------------------------------------|
+|---------------------|---------------------------------------------------|
 | Rk         | League ranking for number of total points                             |
 | Name       | First and last name of the player                                     |
 | Age        | Age in years of the player                                            |
