@@ -18,7 +18,6 @@ The two tables were scraped from the PDGA's statistics partner, StatMando, and t
 ```{r}
 library(tidyverse)
 library(rvest)
-library(here)
 ```
 
 ```{r}
@@ -113,7 +112,7 @@ full_mpo24 <- full_mpo24 |> select(-starts, -`throws/SG:TG`, -`putts/SG:P`, -DNF
 ```
 
 ```{r}
-read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score/gacass21/data repo/DGPT.csv")
+write.csv(full_mpo24, "DGPT.csv")
 ```
 
 
