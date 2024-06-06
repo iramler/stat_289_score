@@ -18,3 +18,10 @@ bettingClean <-
   select(HomeTeam, AwayTeam, FTR, AvgH, AvgD, AvgA) 
 ```
 
+```{r}
+bettingClean <-
+  bettingClean |>
+  mutate(Prediction = ifelse(AvgH < AvgD & AvgH < AvgA, "H",
+                             ifelse(AvgD < AvgA, "D", "A")))
+```
+
