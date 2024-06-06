@@ -1,0 +1,20 @@
+---
+title: "soccer_bet_exploration"
+author: "eric seltzer"
+format: html
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+betting <- read_csv(here::here("esselt21/soccer_bet_module/exploration/betting.csv"))
+```
+
+```{r}
+bettingClean <-
+  betting |>
+  select(HomeTeam, AwayTeam, FTR, AvgH, AvgD, AvgA) 
+```
+

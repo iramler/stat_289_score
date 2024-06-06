@@ -44,3 +44,5 @@ The `weights_ratio` data set contains observed strength ratios from 18 different
 [Weight Ratio](https://www.reddit.com/r/Fitness/comments/35q4i3/how_much_do_you_dumbbell_flat_bench_compared_to/)
 
 The data is compiled from a Reddit thread where users self reported their weight and it was compiled into a list of ratio.
+
+

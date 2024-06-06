@@ -26,7 +26,6 @@ different table format for these
 ```{r}
 library(tidyverse)
 library(rvest)
-
 ```
 
 
@@ -296,8 +295,9 @@ ggplot(data = full_mpo24, aes(x = C2P, y = total_earnings)) +
 ```
 
 ```{r}
-ggplot(data = full_mpo24, aes(x = `tot_SG:TG`)) +
-  geom_histogram()
+ggplot(data = full_mpo24, aes(x = total_earnings)) +
+  geom_histogram(bins = 40, fill = "darkblue") +
+  theme_minimal()
 ```
 
 
@@ -306,5 +306,15 @@ ggplot(data = full_mpo24, aes(x = birdie_avg, y = total_earnings)) +
   geom_point()
 ```
 
+```{r}
+dgpt <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score/gacass21/data repo/DGPT.csv")
+
+dgpt2 <-  dgpt |> select(-1, -2, -4, -5, -9, -10, -15, -16, -17, -18, -20, -21, -22, -23, -25) |>
+  select(2, 3, 4, 7, 5, 6, 8, 1, 9, 10)
+
+dgpt_cor_table <- cor(dgpt2)
+dgpt_cor_table
+
+```
 
 

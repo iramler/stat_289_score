@@ -1,0 +1,12 @@
+---
+title: "Disc Golf Pro Tour - Driving or Putting?"
+date: June  6, 2024
+description: What is more correlated with success on the Disc Golf Pro Tour, Driving or Putting?
+editor: 
+  canonical: true
+categories:
+  - Correlation
+---
+
+
+
