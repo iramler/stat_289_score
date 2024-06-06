@@ -26,10 +26,10 @@ The ratio of flat dumbbell press to barbell bench press works to track how much 
 
 Many weightlifters like to track this ratio to work towards specific strength goals and target any weakness in certain muscle groups. For example, if someone's ratio is low (i.e. they can barbell bench press much more than they can flat dumbbell press), it highlights that they might want to work on targeting the muscles used in flat dumbbell press. Since the two exercises can focus on different muscle groups, weightlifters like this ratio as a tool for seeing where progress could be made. Weightlifters also use this ratio as a measure of progress. A common goal in weightlifting is to increase the ratio, and as one continues lifting, their starting ratio is often compared to their current one. While many professional weightlifters use this ratio for tracking progress and examining muscle balance, it isn't an official statistic used in competitions, only a personal one. 
 
-This worksheet involves using the strength ratio to look at outliers, histograms, confidence intervals, and discuss the effect that data collection methods have on the variance and potential distribution of the data.
+This worksheet involves using the strength ratio to look at outliers, histograms, confidence intervals, and discussing the effect that data collection methods have on the variance and potential distribution of the data.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
-By the end of this activity, you will be able to:
+By the end of this activity, you will:
 
 1.  Enhance proficiency in constructing and interpreting confidence intervals with varying degrees of confidence.
 
@@ -73,3 +73,9 @@ The data is compiled from a Reddit thread where users self reported their weight
 [Class handout](weight_ratio_worksheet.docx)
 
 [Class handout - with solutions](weight_ratio_worksheet_SOLUTIONS.docx)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Upon conclusion, it is realized that while we can assume that this data follows a normal distribution and there are no obvious discernible outliers, it is not a large enough sample to make concrete conclusions. There are some biases in data collection, those who report their ratios belong to similar audiences, and we can't assume that the sample is reflective. Nevertheless, it presents a valuable opportunity for thought and good practice at constructing one sample T tests. 
+:::
+
+### Authors
