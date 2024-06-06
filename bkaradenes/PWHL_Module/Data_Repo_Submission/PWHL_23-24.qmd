@@ -1,7 +1,7 @@
 ---
 title: 2023-24 PWHL Skaters 
 author: Brendan Karadenes
-date: June 5, 2024
+date: June 6, 2024
 description: The data set looks at statistics from PWHL skaters during the 2023-24 regular season. If possible, give a brief summary of the sports problem and statistical situation.
 categories:
   - data visualization
@@ -20,32 +20,32 @@ The Professional Woman's Hockey League (PWHL) began in 2023 in the United States
 
 The data set contains 147 rows of 16 variables. Each row representing a player during the 2023-24 PWHL season.
 
-| Variable   | Description                                                          |
-|------------|----------------------------------------------------------------------|
-| Rk         | League ranking for number of total points                            |
-| Name       | First and last name of the player                                    |
-| Age        | Age in years of the player                                           |
-| Pos        | Position of the player, either Guard (G), Defense (D) or Forward (F) |
-| GP         | Number of games played by the player                                 |
-| G          | Number of goals by the player                                        |
-| A          | Number of assists by the player                                      |
-| P          | Number of points by the player (Goals + Assists)                     |
-| PIM        | Penalty minutes accumulated by the player                            |
-| Plus_Minus | Plus/Minus rating for the player                                     |
-| PPG        | Points per game for the player                                       |
-| SHG        | Number of short-handed goals for the player                          |
-| GWG        | Number of game winning goals for the player                          |
-| G_Per_GP   | Number of goals per games played                                     |
-| A_Per_GP   | Number of assists per games played                                   |
-| P_Per_GP   | Number of points per games played                                    |
+| Variable   | Description                                                           |
+|---------------|---------------------------------------------------------|
+| Rk         | League ranking for number of total points                             |
+| Name       | First and last name of the player                                     |
+| Age        | Age in years of the player                                            |
+| Pos        | Position of the player, either Goalie (G), Defense (D) or Forward (F) |
+| GP         | Number of games played by the player                                  |
+| G          | Number of goals by the player                                         |
+| A          | Number of assists by the player                                       |
+| P          | Number of points by the player (Goals + Assists)                      |
+| PIM        | Penalty minutes accumulated by the player                             |
+| Plus_Minus | Plus/Minus rating for the player                                      |
+| PPG        | Points per game for the player                                        |
+| SHG        | Number of short-handed goals for the player                           |
+| GWG        | Number of game winning goals for the player                           |
+| G_Per_GP   | Number of goals per games played                                      |
+| A_Per_GP   | Number of assists per games played                                    |
+| P_Per_GP   | Number of points per games played                                     |
 
 : [PWHL_Final.csv](../data/PWHL_Final.csv)
 
 ## Questions
 
--   Explore the relationship between goals per games played and position.
+-   Explore the relationship between goals per game played and position.
 -   Use dplyr to create some new variables and explain what they do.
--   Describie shape, skew, and noting any outliers of visualizations displaying the data.
+-   Describe shape, skew, and noting any outliers of visualizations displaying the data.
 
 ## References
 

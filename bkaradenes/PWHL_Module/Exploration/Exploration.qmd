@@ -1,8 +1,18 @@
 ---
-title: "PWHL_WS"
+title: "Exploration"
 author: "Brendan Karadenes"
 format: html
 ---
+
+## Data Exploration
+
+# 213/234 Example Ideas
+
+1. Load in the necessary packages
+2. Load in the datasets
+3. Reconstruct Plots
+4. Clean Data
+
 
 ```{r}
 # Load in the necessary packages and data
@@ -58,6 +68,26 @@ ggplot(data = PWHL_Graph, aes(x = Age_Group, y = P, color = Pos)) +
   theme_minimal()
 ```
 
+1. Use the dplyr package to change the variable name "P" to "Points".
 
+```{r}
+PWHL_Scoring <-
+  PWHL_Scoring %>%
+    rename(Points = P)
+```
+
+2. Filter for rows with players over the age of 25.
+
+```{r}
+PWHL_Scoring %>%
+  filter(Age > 25)
+```
+
+3. Filter the rows for players that are either Forwards (F) or Defense (D).
+
+```{r}
+PWHL_Scoring %>%
+  filter(Pos %in% c("F", "D"))
+```
 
 

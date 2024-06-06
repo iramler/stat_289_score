@@ -4,21 +4,21 @@ author: "Brendan Karadenes"
 format: html
 ---
 
-## Steps 1 & 2 Finding and Cleaning the Data
+## Step 1: Setting up the data
 
 ```{r}
-## Import Packages
+# Import Packages
 library(tidyverse)
-library(here)
-## Load and join data
-hockey1 <- read.csv(here("bkaradenes/PWHL_Module/data/HockeyStats-1.csv"))
-hockey2 <- read.csv(here("bkaradenes/PWHL_Module/data/HockeyStats-2.csv"))
-hockey3 <- read.csv(here("bkaradenes/PWHL_Module/data/HockeyStats-3.csv"))
+library(readxl)
+# Load and join data
+# hockey 1, 2, and 3 are from clicking the import to excel button on the
+# website
+# https://www.quanthockey.com/pwhl/en/seasons/pwhl-players-stats.html
+hockey1 <- read_excel("hockey1.xlsx")
+hockey2 <- read_excel("hockey2.xlsx")
+hockey3 <- read_excel("hockey3.xlsx")
 data1 <- full_join(hockey1, hockey2)
 PWHL_data <- full_join(data1, hockey3)
-## Write full dataset as a csv
-#write.csv(PWHL_data, "PWHL_Scoring.csv", row.names = FALSE)
-#PWHL_Scoring <- read.csv("PWHL_Scoring.csv")
 ```
 
 ```{r}
@@ -33,47 +33,15 @@ PWHL_Scoring <- PWHL_Scoring[-1, ]
 ```
 
 ```{r}
-## Removing NA columns
+# Removing NA columns
 PWHL_Scoring <- PWHL_Scoring[ , colSums(is.na(PWHL_Scoring))==0]
 ```
 
-## Step 3 Data Exploration
-
-# 213/234 Example Ideas
-
-1. Load in the necessary packages
-2. Load in the datasets
-3. Reconstruct Plots
-4. Clean Data
-
-
-1. Use the dplyr package to change the variable name "P" to "Points".
+## Step 2: Cleaning Dataset
 
 ```{r}
-PWHL_Scoring <-
-  PWHL_Scoring %>%
-    rename(Points = P)
-```
-
-2. Filter for rows with players over the age of 25.
-
-```{r}
-PWHL_Scoring %>%
-  filter(Age > 25)
-```
-
-3. Filter the rows for players that are either Forwards (F) or Defense (D).
-
-```{r}
-PWHL_Scoring %>%
-  filter(Pos %in% c("F", "D"))
-```
-
-
-4. Prepping Dataset for Repository
-
-```{r}
-## Switching columns from character to numeric
+# Renaming columns to make easier to use
+# Switching columns from character to numeric
 PWHL_Scoring <- PWHL_Scoring %>%
   rename(Plus_Minus = `+/-`,
          G_Per_GP = `G/GP`,
@@ -96,8 +64,8 @@ PWHL_Scoring <- PWHL_Scoring %>%
 ```
 
 ```{r}
-# writing the new cleaned csv
-write.csv(PWHL_Scoring, "C:/users/bkara/OneDrive - St. Lawrence University/stat_289_score/bkaradenes/PWHL_Module/data/PWHL_Final.csv", row.names = FALSE)
+# writing the new cleaned data as csv file
+write.csv(PWHL_Scoring, "PWHL_Final.csv", row.names = FALSE)
 ```
 
 
