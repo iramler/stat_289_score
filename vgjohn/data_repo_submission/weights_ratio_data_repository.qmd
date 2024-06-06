@@ -19,7 +19,7 @@ The ratio of flat dumbbell press to barbell bench press works to track how much 
 
 Say Melissa is able to flat dumbbell press two $30$ lbs dumbbells. The total amount she can flat dumbbell press is $60$ lbs (one dumbbell for each arm). On flat bench press, she can lift $75$ lbs. Her ratio would be calculated by dividing flat dumbbell press by barbell bench press $60/75$ which equals $0.8$, meaning that Melissa can lift two dumbbells up to $80$% as heavy as she can bench press the barbell.
 
-Many weightlifters like to track this ratio to work towards specific strength goals and target any weakness in certain muscle groups. For example, if someone's ratio is low (i.e. they can barbell bench press much more than they can flat dumbbell press), it highlights that they might want to work on targeting the muscles used in flat dumbbell press.
+Many weightlifters like to track this ratio to work towards specific strength goals and target any weakness in certain muscle groups. For example, if someone's ratio is low (i.e. they can barbell bench press much more than they can flat dumbbell press), it highlights that they might want to work on targeting the muscles used in flat dumbbell press.        
 
 ## Data
 
