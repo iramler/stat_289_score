@@ -1,6 +1,10 @@
 ---
 title: "SLU SCORE Materials"
-format: gfm
+format:
+   gfm:
+     html-math-method: 
+       method: webtex
+       url: https://latex.codecogs.com/png.image?%5Cbg_black&space;
 ---
 
 This repository contains the in progress materials for the St. Lawrence University students working on building content for the [SCORE Network](https://scorenetwork.org/){target="_blank"}.
