@@ -36,3 +36,7 @@ horseClean <-
   select(c(rid, horseName, age, saddle, isFav, position, RPR, TR, OR, weight, res_win, res_place))
 ```
 
+```{r}
+
+```
+

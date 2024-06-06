@@ -25,3 +25,7 @@ bettingClean <-
                              ifelse(AvgD < AvgA, "D", "A")))
 ```
 
+```{r}
+
+```
+
