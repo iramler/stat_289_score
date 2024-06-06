@@ -21,7 +21,7 @@ The Professional Woman's Hockey League (PWHL) began in 2023 in the United States
 The data set contains 147 rows of 16 variables. Each row representing a player during the 2023-24 PWHL season.
 
 | Variable   | Description                                                           |
-|---------------|---------------------------------------------------------|
+|------------|-----------------------------------------------------------------------|
 | Rk         | League ranking for number of total points                             |
 | Name       | First and last name of the player                                     |
 | Age        | Age in years of the player                                            |
