@@ -295,8 +295,9 @@ ggplot(data = full_mpo24, aes(x = C2P, y = total_earnings)) +
 ```
 
 ```{r}
-ggplot(data = full_mpo24, aes(x = `tot_SG:TG`)) +
-  geom_histogram()
+ggplot(data = full_mpo24, aes(x = total_earnings)) +
+  geom_histogram(bins = 40, fill = "darkblue") +
+  theme_minimal()
 ```
 
 
