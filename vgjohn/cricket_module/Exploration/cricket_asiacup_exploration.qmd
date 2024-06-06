@@ -1,1 +1,34 @@
-exploration 
+exploration
+
+```{r}
+library(tidyverse)
+```
+Tidying the data to get it how i want 
+```{r}
+asia_cup <- read_csv("~/Desktop/asiacup.csv", col_names = TRUE)
+View(asia_cup)
+```
+```{r}
+asia_cup <- select(asia_cup, `Team`,
+         `Opponent`,
+         `Ground`,
+         `Year`,
+         `Toss`,
+         `Selection`,
+         `Run Scored`,
+         `Fours`,
+         `Sixes`,
+         `Extras`,
+         `Highest Score`,
+         `Result`,
+         `Given Extras`) %>%
+  rename(Host = Ground,
+         `Extras Scored` = Extras)
+```
+
+stat 213 level, 
+r handout 
+predicting win/loss based on fours sixes and extra runs scored
+proportions 
+difference in means for countries? 
+making a new varaible ? diff in proportions 
