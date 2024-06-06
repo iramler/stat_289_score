@@ -194,48 +194,35 @@ summary(final_no_zeros$total_points)
 
 Most likely I will do a histogram of the total_points and ask about the distribution of the data. I will also ask for summary statistics of the total_points variable. In addition, I will choose a country to see if it is an outlier. 
 
-Make a df combining both the points and medals
-```{r}
-final_df
-final
-
-rowing_medals <- full_join(final, final_df)
-```
+# Worksheet questions
 
 ```{r}
-medals|>group_by(Event) |> summarise()
-```
-
-```{r}
-ggplot(medals, aes(x = total_points)) + geom_histogram()
-```
-
-```{r}
-summary(medals$total_points)
-```
-
-```{r}
-medals |> filter(NOC == "USA") 
-```
-
-```{r}
-ggplot(medals, aes(x = NOC, y = total_medals)) + geom_col() + coord_flip()
-```
-
-```{r}
-medals_reordered <- medals|> filter(total_medals != 0) |> mutate(NOC = fct_reorder(NOC, total_medals))
-```
-
-```{r}
-ggplot(medals_reordered, aes(x = NOC, y = total_medals)) + geom_col() + coord_flip()
-```
-
-# Visualizations for the worksheet
-
-```{r}
+#Question 1
 medals_hist <- medals |> filter(total_points >= 5) |> arrange(desc(total_points)) 
 
 ggplot(medals, aes(x = total_medals)) + geom_histogram(fill = "lightblue", colour = "black", bins = 20) + theme_minimal() + labs(title = "Histogram of total_medals for all countries in all events")
 ```
+
+```{r}
+#Question 2
+summary(medals$total_points)
+```
+
+```{r}
+#Question 3
+medals |> filter(NOC == "USA" & Event == "Rowing Women's Coxed Eights")
+```
+
+```{r}
+# Question 4
+sum_medals <- medals |> filter(total_medals != 0) |> group_by(NOC) |> summarise(total_medals = sum(total_medals)) 
+
+medals_reordered <- sum_medals |> mutate(NOC = fct_reorder(NOC, total_medals))
+
+ggplot(data = medals_reordered, aes(x = NOC, y = total_medals)) + geom_col(fill = "lightblue", colour = "grey") + coord_flip() + theme_minimal() + labs(title = "Bar plot of total_medals ranked by NOC")
+```
+
+
+
 
 
