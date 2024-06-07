@@ -34,6 +34,40 @@ speed_skating |>
 speed_skating |> group_by(Season) |> summarise(n())
 ```
 
+```{r}
+time_outliers <- speed_skating |> filter(Time < 60 )
+```
+
+
+```{r}
+ggplot(data = time_outliers, aes(x = Time)) +
+  geom_histogram()
+```
+
+
+```{r}
+time_outliers |> group_by(Round) |> summarise(mean = mean(Time, na.rm = TRUE), n()) |> arrange(desc(mean))
+```
+
+
+```{r}
+speed_skating |> group_by(Year) |> summarise(mean = mean(Time, na.rm = TRUE), n())
+```
+
+
+```{r}
+speed_skating |> filter(Year == 2015, Month > 7) |> summarise(mean = mean(Time, na.rm = TRUE))
+```
+
+```{r}
+speed_skating |> group_by(Name) |> summarise(mean = mean(Time, na.rm = TRUE), n()) |> arrange(desc(mean))
+```
+
+```{r}
+time_outliers |> group_by(Nationality) |> summarise(mean = mean(Time, na.rm = TRUE), n()) |> arrange(desc(mean))
+```
+
+
 
 
 
