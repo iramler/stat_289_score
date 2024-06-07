@@ -317,4 +317,9 @@ dgpt_cor_table
 
 ```
 
+```{r}
+dgpt_reg <- lm(total_earnings ~ C1R + , data = dgpt)
+summary(dgpt_reg)
+```
+
 

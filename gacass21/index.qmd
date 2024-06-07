@@ -15,11 +15,36 @@ categories:
   - Correlation
 ---
 
+## Module
+
+
+
+
 ### Introduction
 
 Disc Golf is a rapidly growing sport with a full fledged professional circuit and tournaments all over the world. The Disc Golf Pro Tour allows top level players to compete week after week across the United States, Canada, and Europe. With top level tournaments offering over $100,000 of prize money at many tournaments, players need a vast skill set to compete at the highest level. Similarly to ball golf, the two main types of shots in disc golf are driving and putting. Driving happens from the teeing area and putting happens on the 'green' where players try to throw their disc into the basket. 
 
 The data set for this activity was taken from DGPT and Major tournament statistics found on the Professional Disc Golf Association's official statistics website, [StatMando](https://statmando.com/). Each row contains a player who has played at least 40% of rounds during the DGPT season and has finished the tournament above the cash line at least once. Each row has the name of the player along with a collection of statistics covering a variety of different skills including driving, putting, and performance.
+
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+The learning objectives associated with this module are:
+
+-   Being able to use correlation coefficients to compare the connection between quantitative variables.
+
+-   Reading a correlation table
+
+:::
+
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+
+-   The handout provides a correlation table using stats from the 2024 DGPT season
+
+-   Up to date statistics can be obtained from the [DGPT24 data extraction.qmd](DGPT24 data extraction.qmd)
+
+
+:::
 
 ### Data
 
@@ -78,18 +103,16 @@ The data is obtained from the PDGA's official statistics provider [StatMando](ht
 
 ### Materials
 
+[DGPT.csv](DGPT.csv) - data set containing statistics from the 2024 DGPT season
 
- 
+[DGPT24 questions.docx](DGPT24 questions.docx) - questions about correlation between total earnings and putting and driving
 
+Solutions for questions
 
-
-
-
-
-
+[DGPT24 questions ans.docx](DGPT24 questions ans.docx)
 
 
-
+[DGPT24 data extraction.qmd](DGPT24 data extraction.qmd) - code for scraping updated DGPT data from the StatMando website
 
 
 
@@ -97,3 +120,7 @@ The data is obtained from the PDGA's official statistics provider [StatMando](ht
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should find that there is a stronger correlation between driving and performance statistics than putting and performance statistics.
 :::
+
+### Authors
+
+Fill in later
