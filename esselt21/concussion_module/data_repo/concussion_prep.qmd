@@ -18,7 +18,7 @@ concussion <-
   mutate(Position = as_factor(Position),
          `Reported Injury Type` = as_factor(`Reported Injury Type`)) |>
   filter(`Pre-Season Injury?` == 'No') |>
-  select(-c(ID, Game, Season, `Pre-Season Injury?`, `Unknown Injury?`, `Winning Team?`)) |>
+  select(-c(ID, Game, Season, `Pre-Season Injury?`, `Unknown Injury?`, `Winning Team?`, `Opposing Team`, `Week of Injury`, `Weeks Injured`, `Total Snaps`)) |>
   na.omit()
 
 # changed variable from character to numeric, and made na values equal to 0

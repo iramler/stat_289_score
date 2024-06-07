@@ -1,7 +1,7 @@
 ---
-title: Investigating Surfaces Impact on Win Percentages in Professional Tennis
+title: Visualizing and Modeling Differences in Number of Concussions in the NFL
 author: Eric Seltzer
-date: June 4, 2024
+date: June 7, 2024
 description: Data of the ATP players from the last 52 weeks as of May 27, 2024. Players who have played a minimum of 10 matches overall or 5 matches on a particular surface are included in the table.
 categories:
   - Five Number Summary
@@ -22,13 +22,16 @@ This data set is provided by Wheelo Ratings. They create an Elo ratings system f
 
 This data is made up of 485 rows and 5 columns. Each row represents a player on a particular surface of court. The three options for these surfaces are Clay, Grass, and Hard.
 
-| Variable                  | Description                                          |
-|---------------------------|------------------------------------------------------|
-| Player                    | The player for which the data corresponds to         |
-| Surface                   | The type of surface that was played on for this data |
-| WinPercentage             | The percentage of matches won                        |
-| DoubleFaultPercentage     | The percentage of double faults                      |
-| ReturnPointsWonPercentage | The percentage of return points won                  |
+| Variable                       | Description                                                       |
+|--------------------------------|-------------------------------------------------------------------|
+| Player                         | The player for which the data corresponds to                      |
+| Team                           | The team that the player plays for                                |
+| Date                           | The date in which the concussion happened                         |
+| Position                       | The position that the player plays                                |
+| Games Missed                   | The number of games the player missed with the injury             |
+| Reported Injury Type           | What the injury was reported as                                   |
+| Play Time After Injury         | How many downs the player played after getting injured            |
+| Average Playtime Before Injury | How much the player was playing on average before getting injured |
 
 : [tennis.csv](../data/tennis.csv)
 
@@ -46,4 +49,4 @@ If possible, list some analyses or research questions that could be answered wit
 
 ## References
 
-Wheelo Ratings <https://www.wheeloratings.com/tennis_atp_stats_last52.html>.
+Kaggle (Rishi Damarla) <https://www.kaggle.com/datasets/rishidamarla/concussions-in-the-nfl-20122014/data>.
