@@ -51,4 +51,31 @@ none <- lm(HPI~1,data=handball_df)
 step(none,scope=list(upper=full),scale=mse)
 ```
 
+just curious to see the teams ranked in descending order
+
+```{r}
+handball_df |> arrange(desc(HPI)) |> group_by(CLUB) |> summarise()
+```
+
+```{r}
+handball <- handball_df |> mutate(total_rc = RC + BK) |> select(!(BK))
+```
+
+```{r}
+barplot <- handball |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) |> mutate(CLUB = fct_reorder(CLUB, club_hpi))
+
+ggplot(data = plot, aes(x = CLUB, y = club_hpi)) + geom_col() + coord_flip()
+```
+
+```{r}
+boxplot <- handball |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) |> arrange(desc(club_hpi)) |> slice(1:5)
+
+ggplot(data = boxplot, aes(x = CLUB, y = club_hpi)) + geom_boxplot() 
+```
+
+```{r}
+handball_sum <- handball |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) 
+
+ggplot(data = handball_sum, aes(x = club_hpi)) + geom_freqpoly()
+```
 
