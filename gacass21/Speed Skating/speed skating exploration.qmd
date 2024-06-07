@@ -35,13 +35,17 @@ speed_skating |> group_by(Season) |> summarise(n())
 ```
 
 ```{r}
-time_outliers <- speed_skating |> filter(Time < 60 )
+time_outliers <- speed_skating |> filter(Time < 60)
 ```
 
 
 ```{r}
 ggplot(data = time_outliers, aes(x = Time)) +
   geom_histogram()
+```
+
+```{r}
+speed_skating |> group_by(Name) |> summarise(races = n()) |> arrange(desc(races))
 ```
 
 
@@ -64,10 +68,66 @@ speed_skating |> group_by(Name) |> summarise(mean = mean(Time, na.rm = TRUE), n(
 ```
 
 ```{r}
-time_outliers |> group_by(Nationality) |> summarise(mean = mean(Time, na.rm = TRUE), n()) |> arrange(desc(mean))
+speed_skating |> group_by(Name) |> filter(Time == min(Time)) |> ungroup() |> group_by(Nationality) |> summarise(mean = mean(Time, na.rm = TRUE), athletes = n()) |> arrange(athletes)
+```
+
+```{r}
+lap1_slow <- speed_skating |> filter(time_lap1 < 9)
+ggplot(data = lap1_slow, aes(x = time_lap1)) +
+  geom_histogram(bins = 50, fill = "darkblue")
+```
+
+```{r}
+speed_skating |> group_by(Name) |> filter(!is.na(Time)) |> summarise(pr = min(Time)) |> arrange(pr) |> slice(1:20) |> select(Name) |>
+  write.csv()
+```
+
+```{r}
+fast_skater <- speed_skating |> filter(Name == "HAMELIN Charles" |
+                                       Name ==  "GIRARD Samuel" | 
+                                       Name =="WU Dajing" ) |>
+                                  filter(Time < 44, Year >= 2015)
+  
+
+ggplot(data = fast_skater, aes(y = Time, x = Time_Event)) +
+  geom_point(aes(color = Name))
+
+fast_skater |> arrange(desc(Time_Event)) |> slice(1:25) |> select(Name, Time) |> arrange(Time)
+```
+
+```{r}
+wu_improvement <- speed_skating |> filter(Name == "Freek van der WART" |
+                                            Name == "WU Dajing" | 
+                                            Name == "HAMELIN Charles" |
+                                            Name == "LIU Shaoang", Time <= 50) |> group_by(Time_Event, Name) |> filter(Time == min(Time)) |> ungroup()
+
+ggplot(data = wu_improvement, aes(x = Time_Event, y = Time)) +
+  geom_point(aes(color = Name)) +
+  geom_line(aes(color = Name))
 ```
 
 
+```{r}
+home_field <- speed_skating |> filter(Country == Nationality, Time < 60) |> 
+  group_by(City, Year) |> 
+  summarise(advantage = mean(Time, na.rm = TRUE)) 
+
+away_event <- speed_skating |> filter(Country != Nationality, Time < 60) |> 
+  group_by(City, Year) |> 
+  summarise(advantage = mean(Time, na.rm = TRUE)) 
+```
+
+```{r}
+speed_skating |> group_by(City) |> 
+  summarise(location_time = mean(Time, na.rm = TRUE), 
+            fastest = min(Time, na.rm = TRUE), 
+            total_sk8r = n()) |> 
+  arrange(location_time)
+```
+
+```{r}
+
+```
 
 
 
