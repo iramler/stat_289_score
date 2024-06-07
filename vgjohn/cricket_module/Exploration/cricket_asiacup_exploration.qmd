@@ -2,12 +2,17 @@ exploration
 
 ```{r}
 library(tidyverse)
+library(forcats)
 ```
 Tidying the data to get it how i want 
 ```{r}
 asia_cup <- read_csv("~/Desktop/asiacup.csv", col_names = TRUE)
 View(asia_cup)
 ```
+Coin toss - 1 is won 0 is lost coin toss 
+result- 1 is won 0 is lost 
+
+data cleaning
 ```{r}
 asia_cup <- select(asia_cup, `Team`,
          `Opponent`,
@@ -23,12 +28,86 @@ asia_cup <- select(asia_cup, `Team`,
          `Result`,
          `Given Extras`) %>%
   rename(Host = Ground,
-         `Extras Scored` = Extras)
+         `Extras Scored` = Extras) %>%
+  mutate(Result = ifelse(Result == "Win D/L", "Win", Result),
+         Result = ifelse(Result == "Lose D/L", "Lose", Result),
+         Result = ifelse(Result == "Win", 1, 0),
+         Toss = ifelse(Toss == "Win", 1, 0)) %>%
+  filter(Result != "No Result") %>%
+  na.omit()
 ```
 
-stat 213 level, 
+```{r}
+write_csv(asia_cup,
+          file = "~/GitHub/stat_289_score/vgjohn/cricket_module/Data_Repo_Submission/asia_cup.csv")
+```
+
+stat 213/234 level, 
 r handout 
 predicting win/loss based on fours sixes and extra runs scored
 proportions 
 difference in means for countries? 
-making a new varaible ? diff in proportions 
+making a new variable ? diff in proportions 
+
+```{r}
+n_distinct(asia_cup$Team)
+```
+
+There can be no result in a cricket match. it is the case when the match cannot be finished in time, usually due to weather or lighting. It has the same significance as a draw in most cases for the sake of this they have been removed  
+
+Make a table that contains 5 new variables: `Total Games`, `Wins`, `Losses`, and `Win Percentage` that calculates the corresponding win percentage for each distinct country. Which country has the highest win percentage? 
+
+```{r}
+win_percentage <- asia_cup %>%
+  group_by(Team) %>%
+  summarize(
+    `Total Games` = n(), 
+    `Wins` = sum(Result == 1),
+    `Losses` = sum(Result == 0),
+    `Win Percentage` = Wins/`Total Games`
+  )
+
+win_percentage
+```
+```{r}
+asia_cup %>% filter(Team == "Afghanistan")
+```
+looking at runs scored for the teams with the highest win percentage 
+
+what year did India score the most runs
+```{r}
+runs_year <- asia_cup %>% filter(Team == "India") %>%
+  group_by(Year) %>%
+  summarize(Runs = sum(`Run Scored`))
+
+max <- slice_max(runs_year, Runs)
+
+runs_year
+max
+```
+most extras scored 
+```{r}
+asia_cup$Team
+group_by(asia_cup, Team) %>% slice_max(`Extras Scored`) %>%
+  arrange(desc(`Extras Scored`))
+```
+
+density plot of the wins over time  for each team 
+```{r}
+
+```
+
+is there a significant difference in number of runs scored for teams that won the toss and teams that lost the toss? 
+
+logistic regression 
+
+fit a logistic regression for result using run scored, extras scored, given extras, and highest score as predictors
+```{r}
+logit.result = glm(Result ~ `Run Scored` + `Extras Scored` + `Given Extras`,
+                   family = binomial,
+                   data = asia_cup)
+
+summary(logit.result)
+```
+
+What would the estimated model say about the chance that a team with _____ extra runs _____ given extras and _____ runs scored wins the game 
