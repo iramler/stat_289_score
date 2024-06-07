@@ -1,0 +1,89 @@
+---
+title: "Swim_Exploration"
+author: "Brendan Karadenes"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(here)
+swimming <- read.csv(here("bkaradenes/Swim_Module/data_repo/olympic_swimming.csv"))
+```
+
+```{r}
+ggplot(data = swimming, mapping = aes(x = Stroke, y = Results, color = dist_m))+
+  geom_col()
+```
+
+```{r}
+swimming_graph <- swimming %>%
+  filter(dist_m == 100)
+```
+
+```{r}
+ggplot(data = swimming_graph, mapping = aes(x = Stroke, y = Results)) +
+  geom_boxplot() +
+  theme_minimal()
+```
+
+```{r}
+ggplot(data = swimming_graph, mapping = aes(x = Stroke, y = Results, color = Gender)) +
+  geom_boxplot() +
+  theme_minimal()
+```
+
+```{r}
+ggplot(data = swimming_graph, mapping = aes(x = Year, y = Results)) +
+  geom_point() +
+  geom_smooth() +
+  theme_minimal()
+```
+
+```{r}
+ggplot(data = swimming_graph, mapping = aes(x = Year, y = Results, color = Gender)) +
+  geom_point() +
+  geom_smooth() +
+  theme_minimal()
+```
+
+```{r}
+avg_times <- swimming_graph %>%
+  group_by(Year, Gender) %>%
+  summarise(yearly_avg = mean(Results)) 
+```
+
+```{r}
+avg_times <- avg_times %>%
+  mutate(yearly_avg = round(yearly_avg, 2))
+```
+
+```{r}
+swimming_graph <- swimming_graph %>%
+  left_join(avg_times, by = c("Year", "Gender.y"))
+```
+
+```{r}
+swimming_graph <- swimming_graph %>%
+  select(-Gender.x, -yearly_avg.x)
+```
+
+```{r}
+swimming_graph <- swimming_graph %>%
+  rename(Gender = Gender.y,
+         yearly_avg = yearly_avg.y)
+```
+
+```{r}
+ggplot(data = swimming_graph, mapping = aes(x = Year, y = yearly_avg, color = Gender)) +
+  geom_point() +
+  geom_smooth() +
+  theme_minimal()
+```
+
+
+
+
+
+
+
+

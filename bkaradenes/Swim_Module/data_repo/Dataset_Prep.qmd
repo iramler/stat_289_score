@@ -1,0 +1,50 @@
+---
+title: "Prep File"
+author: "Brendan Karadenes"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(here)
+swimming <- read.csv(here("bkaradenes/Swim_Module/Exploration/Olympic_Swimming_Results_1912to2020.csv"))
+```
+
+# Cleaning Data Set
+
+```{r}
+swimming <- swimming %>%
+  rename(Relay = Relay.) %>%
+  rename(dist_m = Distance..in.meters.) %>%
+  mutate(Results = as.numeric(Results)) %>%
+  filter(!is.na(Results)) 
+```
+
+```{r}
+swimming <- swimming %>%
+  rename(Relay = Relay.) 
+```
+
+```{r}
+swimming$dist_m <- gsub("m", "", swimming$dist_m)
+```
+
+```{r}
+swimming <- swimming %>%
+  mutate(dist_m = as.numeric(dist_m))
+```
+
+# Writing cleaned data as csv
+
+```{r}
+write.csv(swimming, "olympic_swimming.csv", row.names = FALSE)
+```
+
+
+
+
+
+
+
+
+
