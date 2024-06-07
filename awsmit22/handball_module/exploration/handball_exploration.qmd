@@ -2,6 +2,7 @@
 title: "handball_exploration"
 format: html
 ---
+
 # Libraries
 
 ```{r}
@@ -31,6 +32,7 @@ ggplot(data = handball_df, aes(x = POSITION, y = HPI)) + geom_boxplot()
 *thinking to do a question with different visualizations to choose from and ask which is best to measure what*
 
 *Actually I think I could do something with confidence and prediction intervals*
+
 ```{r}
 handball_df |> group_by(CLUB) |> summarise()
 ```
@@ -83,23 +85,91 @@ ggplot(data = handball_pg, aes(x = offense_pg, y = pen_pg, colour = POSITION)) +
 ```
 
 ```{r}
-ggplot(data = handball_clean, aes(x = total_offense, y = total_penalties, colour = POSITION)) + geom_point(alpha = 0.5) + theme_minimal()
+ggplot(data = handball_clean, aes(x = total_offense, y = total_penalties)) + geom_point(alpha = 0.5) + theme_minimal() + geom_smooth(method = "lm")
 ```
-
 
 ```{r}
 ggplot(data = handball_pg, aes(x = POSITION, y = pen_pg)) + geom_col()
 ```
 
-***anova for overall fit***
-
-Ho: 
-Ha: Some i  0
-
 ```{r}
+modplot <- handball_pg |> group_by(CLUB) |> summarise(club_offense = mean(offense_pg), club_pen = mean(pen_pg), club_hpi = mean(HPI))
 
+ggplot(data = modplot, aes(x = club_offense, y = club_hpi)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+ggplot(data = modplot, aes(x = club_pen, y = club_hpi)) +
+  geom_point() +
+  geom_smooth(method = "lm")
 ```
 
+***Prediction interval for an individual y ***
+
+```{r}
+# Fit a linear model
+model <- lm(club_hpi ~ club_pen, data = modplot)
+
+# Create a prediction interval
+prediction_intervals <- predict(
+  model, 
+  newdata = modplot, 
+  interval = "prediction", 
+  level = 0.90
+  )
+
+# Print the prediction interval
+head(prediction_intervals)
+```
+
+***Confidence interval for a mean y ***
+
+```{r}
+# Fit a linear model
+model <- lm(club_hpi ~ club_pen, data = modplot)
+
+# Create a prediction interval
+confidence_intervals <- predict(
+  model, 
+  newdata = modplot, 
+  interval = "confidence", 
+  level = 0.90
+  )
+
+# Print the prediction interval
+head(confidence_intervals)
+```
+
+***anova for overall fit***
+
+H~o~: 𝛽~total_offense~ = 𝛽~total_penalties~ = 0
+
+H~a~: 𝛽~total_offense~ OR 𝛽~total_penalties~ ≠ 0
+
+```{r}
+anovamod <- lm(HPI~total_offense+total_penalties, data=handball_clean)
+summary(anovamod)
+anova(anovamod)
+```
+
+ correlation 
+ 
+```{r}
+cor(handball_clean$total_offense, handball_clean$total_penalties)
+```
+
+t test for correlation
+
+```{r}
+cor.test(handball_clean$total_offense, handball_clean$total_penalties)
+```
+
+correlation matrix
+
+```{r}
+handball_numeric <- handball_clean |> select(!c(CLUB, POSITION))
+cor(handball_numeric)
+```
 
 ```{r}
 barplot <- handball_clean |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) |> mutate(CLUB = fct_reorder(CLUB, club_hpi))
@@ -130,6 +200,4 @@ rc_sum <- handball_clean |> group_by(CLUB) |> summarise(sum_rc = sum(total_penal
 
 ggplot(data = rc_sum, aes(x = sum_rc, y = sum_g)) + geom_point()
 ```
-
-
 

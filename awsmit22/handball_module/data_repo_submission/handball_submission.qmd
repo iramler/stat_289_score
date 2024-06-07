@@ -9,6 +9,8 @@ categories:
   - stepwise regression
   - linear regression
   - identifying outliers
+  - anova for overall fit
+  - t.test for correlation
   
 editor: 
   markdown: 
@@ -16,7 +18,9 @@ editor:
 ---
 ## Motivation
 
-Handball is a popular sport in many European countries such as Germany where it is said to have originated. Handball is typically played indoors on a rectangular court (20m x 40m). There are two goals (3m x 2m) on opposite sides of the court, the goal for each team is to score a goal by getting the ball in the other team's goal. The challenge to this is that there is a semicircle with a radius of 6m surrounding the goal which players other than the goal keeper are not allowed in, making it challenging to score. 
+Handball is a popular sport in many European countries such as Germany where it is said to have originated. Handball is typically played indoors on a rectangular court (20m x 40m). There are two goals (3m x 2m) on opposite sides of the court, the goal for each team is to score a goal by getting the ball in the other team's goal. The challenge to this is that there is a semicircle with a radius of 6m surrounding the goal which players other than the goal keeper are not allowed in, making it challenging to score. Players run back and forth down the court passing the ball to each other and trying to score. There are both offensive and defensive positions. 
+
+Handball is considered a contact sport which means aggressive strategies are often used in games. This data set could provide insight on if players or teams that are more aggressive are more successful than those who are more passive. Aggressiveness can be measured in the penalty statistics as players who tend to get more penalties are usually more considered more aggressive players overall. Their success can be measured both in offensive statistics as well as the handball performance index.  
 
 ## Data
 
@@ -48,15 +52,9 @@ The dataset has 342 players from 18 different clubs, with 18 variables, 15 of wh
 
 ## Questions
 
-1.    Describe the distribution of the total_medals for all countries in all events.
-
-2.    Obtain the summary statistics for total_points for all countries in all events. 
-
-3.    USA has 94.2 points in the women's coxed eight event, determine whether or not that is an outlier. 
-
-4.    Based on the distribution of total_medals amongst the countries in the dataset, would it be fair to assume that poverty is a confounding variable? Explain why or why not
+1.    
 
 ## References
 
-[Kaggle Original Dataset](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download){target="_blank"}
+[Kaggle Original Dataset](https://www.kaggle.com/datasets/nemanjagojkovic/handball-bundesliga-stats-202223)
 
