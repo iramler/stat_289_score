@@ -1,0 +1,60 @@
+---
+title: "concussion_prep"
+author: "eric seltzer"
+format: html
+---
+
+```{r}
+# data is from kaggle data set at this link: https://www.kaggle.com/datasets/rishidamarla/concussions-in-the-nfl-20122014/data
+library(tidyverse)
+concussion <- read_csv("concussion.csv")
+```
+
+```{r}
+# changing format of some variables, and selecting variables to use
+# chosen to get rid of NA values, but they can be dealt with in different ways
+concussion <-
+  concussion|>
+  mutate(Position = as_factor(Position),
+         `Reported Injury Type` = as_factor(`Reported Injury Type`)) |>
+  filter(`Pre-Season Injury?` == 'No') |>
+  select(-c(ID, Game, Season, `Pre-Season Injury?`, `Unknown Injury?`, `Winning Team?`)) |>
+  na.omit()
+
+# changed variable from character to numeric, and made na values equal to 0
+concussion <-
+  concussion |>
+  mutate(`Play Time After Injury` = parse_number(`Play Time After Injury`, na = "Did not return from injury"),
+         `Average Playtime Before Injury` = parse_number(`Average Playtime Before Injury`),
+         `Play Time After Injury` = replace_na(`Play Time After Injury`, 0))
+```
+
+```{r}
+# looking into individual teams, creating new data set from modified version to do so
+# factored team variable
+teams <-
+  concussion |>
+  mutate(Team = as_factor(Team))
+
+# made some new variables to analyze differences in teams
+teams <-
+  teams |>
+  group_by(Team) |>
+  summarise(totalConcussions = n(),
+            avgDownsAfter = mean(`Play Time After Injury`),
+            avgGamesMissed = mean(`Games Missed`))
+```
+
+```{r}
+# adding offense and defense variable to break down data set more for graphing purposes
+concussion <-
+  concussion |>
+  mutate(Offense = if_else(Position %in% c("Wide Receiver", "Offensive Tackle", "Center", "Running Back", "Guard", "Tight End", "Quarterback", "Full Back"), "Offense", "Defense"),
+         Skilled = if_else(Position %in% c("Wide Receiver", "Running Back", "Tight End", "Quarterback", "Full Back"), "Skilled", "Non-Skilled"))
+```
+
+```{r}
+write_csv(concussion, "concussion.csv")
+write_csv(teams, "teams.csv")
+```
+

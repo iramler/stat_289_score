@@ -1,0 +1,89 @@
+---
+title: "Investigating Surfaces Impact on Win Percentages in Professional Tennis"
+date: March 8, 2024
+author:
+  - name: Eric Seltzer
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - ref: slu
+description: Describing distribution shapes and looking at multiple linear regression.
+editor: 
+  canonical: true
+categories:
+  - Five Number Summary
+  - Distribution
+  - Multiple Linear Regression
+  - Assumptions
+---
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction
+
+In professional tennis the rankings are typically based on set parameters. Throughout the year there are tournaments that are worth different numbers of points. There are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. You receive the most points in your [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) from winning a Grand Slam, and the least from winning an ATP 250 tournament. In the data that we will be using, the provider has calculated an Elo ranking. This ranking takes into account what the tournaments are, as well as who each player is playing. So playing a "harder" opponent in a Grand Slam counts for more than playing an "easy" opponent.
+
+In this worksheet, we will look at the data including this Elo ranking and look at distributions, shapes, and a multiple linear regression model. There will be questions about each of these, some of them being more open ended than others.
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will be able to:
+
+1.  Understand the shapes of distribution as well as terms used to describe distribution.
+
+2.  Understand the five number summary and be able to calculate some of its numbers.
+
+3.  Be able to interpret a multiple regression visualization as well as its coefficients.
+
+4.  Check to see if the multiple linear regression model meets all of the required assumptions.
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Technology requirement: The activity handout will require nothing more than the handout and a writing utensil to complete.
+
+1.  Knowledge of distribution types and terms that come along with it/
+
+2.  Knowledge of the five number summary and how the numbers are calculated.
+
+3.  Knowledge of multiple linear regression, the assumptions it must meet, and how to interpret its coefficients. 
+:::
+
+### Data
+
+There is one data set for this exercise. The data is made up of 485 rows and 5 columns and is provided by Wheelo Ratings. Each row represents a player on a particular surface of court. The three options for these surfaces are Clay, Grass, and Hard.
+
+Download non tidy data: [tennis.csv](data/tennis.csv)
+
+**Tennis**
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable                  | Description                                          |
+|-------------------------|-----------------------------------------------|
+| Player                    | The player for which the data corresponds to         |
+| Surface                   | The type of surface that was played on for this data |
+| WinPercentage             | The percentage of matches won                        |
+| DoubleFaultPercentage     | The percentage of double faults                      |
+| ReturnPointsWonPercentage | The percentage of return points won                  |
+
+</details>
+
+#### Data Source
+
+[Wheelo Ratings](Wheelo%20Ratings%20%3Chttps://www.wheeloratings.com/tennis_atp_stats_last52.html%3E.){target="_blank"}
+
+### Materials
+
+[Class Handout](Class-Handout.qmd)
+
+[Class Handout - Solutions](Class-Handout-Solutions.qmd)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Forthcoming
+:::

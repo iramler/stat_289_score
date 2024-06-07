@@ -48,7 +48,7 @@ teams |>
                              .desc = FALSE),
              y = totalConcussions,
              fill = Team)) +
-  geom_col() +
+  geom_col(alpha = 0.5) +
   coord_flip() +
   theme_minimal() +
   theme(legend.position = "none")
@@ -59,7 +59,7 @@ teams |>
                              .desc = FALSE),
              y = avgDownsAfter,
              fill = Team)) +
-  geom_col() +
+  geom_col(alpha = 0.5) +
   coord_flip() +
   theme_minimal() +
   theme(legend.position = "none") 
@@ -70,7 +70,7 @@ teams |>
                              .desc = FALSE),
              y = avgGamesMissed,
              fill = Team)) +
-  geom_col() +
+  geom_col(alpha = 0.5) +
   coord_flip() +
   theme_minimal() +
   theme(legend.position = "none")
@@ -91,43 +91,8 @@ concussion |>
   geom_density(aes(fill = Position),
                alpha = 0.2) +
   theme_minimal() +
-  labs(y = "Density")
-
-concussion |>
-  filter(Offense == "Offense" & Skilled == "Skilled") |>
-  ggplot(aes(x = `Play Time After Injury`,
-             color = Position)) +
-  geom_density(aes(fill = Position),
-               alpha = 0.1) +
-  theme_minimal() +
-  labs(y = "Density")
-
-concussion |>
-  filter(Offense == "Offense" & Skilled == "Non-Skilled") |>
-  ggplot(aes(x = `Play Time After Injury`,
-             color = Position)) +
-  geom_density(aes(fill = Position),
-               alpha = 0.1) +
-  theme_minimal() +
-  labs(y = "Density")
-
-concussion |>
-  filter(Offense == "Offense") |>
-  ggplot(aes(x = `Play Time After Injury`,
-             color = Position)) +
-  geom_density(aes(fill = Position),
-               alpha = 0.1) +
-  theme_minimal() +
-  labs(y = "Density")
-
-concussion |>
-  filter(Offense == "Defense") |>
-  ggplot(aes(x = `Play Time After Injury`,
-             color = Position)) +
-  geom_density(aes(fill = Position),
-               alpha = 0.1) +
-  theme_minimal() +
-  labs(y = "Density")
+  labs(y = "Density") +
+  facet_wrap(~Offense)
 ```
 
 ```{r}
