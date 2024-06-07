@@ -9,6 +9,7 @@ library(tidyverse)
 library(readr)
 library(modelr)
 library(broom)
+library(stringr)
 ```
 
 # Data
@@ -58,24 +59,77 @@ handball_df |> arrange(desc(HPI)) |> group_by(CLUB) |> summarise()
 ```
 
 ```{r}
-handball <- handball_df |> mutate(total_rc = RC + BK) |> select(!(BK))
+handball_rc <- handball_df |> mutate(total_rc = RC + BK) |> select(!(BK))
 ```
 
 ```{r}
-barplot <- handball |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) |> mutate(CLUB = fct_reorder(CLUB, club_hpi))
-
-ggplot(data = plot, aes(x = CLUB, y = club_hpi)) + geom_col() + coord_flip()
+handball_pen <- handball_rc |> mutate(total_penalties = total_rc + TF + YC + `2MIN`) |> select(c(total_penalties, CLUB, POSITION, P, G, M, FG, G.1, `%`, AS, ST, BL, HPI))
 ```
 
 ```{r}
-boxplot <- handball |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) |> arrange(desc(club_hpi)) |> slice(1:5)
+handball_percent <- handball_pen |> mutate(percentage = as.double(str_remove(`%`, "%"))) |> relocate(percentage)
+```
+
+```{r}
+handball_clean <- handball_percent |> mutate(total_offense = G + M + FG + G.1 + AS + ST) |> select(c(CLUB, POSITION, total_offense, total_penalties, P, BL, percentage, HPI))
+```
+
+```{r}
+handball_pg <- handball_clean |> mutate(offense_pg = total_offense/P, pen_pg = total_penalties/P) 
+```
+
+```{r}
+ggplot(data = handball_pg, aes(x = offense_pg, y = pen_pg, colour = POSITION)) + geom_point(alpha = 0.5) + theme_minimal()
+```
+
+```{r}
+ggplot(data = handball_clean, aes(x = total_offense, y = total_penalties, colour = POSITION)) + geom_point(alpha = 0.5) + theme_minimal()
+```
+
+
+```{r}
+ggplot(data = handball_pg, aes(x = POSITION, y = pen_pg)) + geom_col()
+```
+
+***anova for overall fit***
+
+Ho: 
+Ha: Some i  0
+
+```{r}
+
+```
+
+
+```{r}
+barplot <- handball_clean |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) |> mutate(CLUB = fct_reorder(CLUB, club_hpi))
+
+ggplot(data = barplot, aes(x = CLUB, y = club_hpi)) + geom_col() + coord_flip()
+```
+
+```{r}
+boxplot <- handball_clean |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) |> arrange(desc(club_hpi)) |> slice(1:5)
 
 ggplot(data = boxplot, aes(x = CLUB, y = club_hpi)) + geom_boxplot() 
 ```
 
 ```{r}
-handball_sum <- handball |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) 
-
-ggplot(data = handball_sum, aes(x = club_hpi)) + geom_density()
+handball_sum <- handball_clean |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) 
 ```
+
+```{r}
+ggplot(data = handball_clean, aes(x = HPI)) + geom_density(fill = "lightgreen", colour = "forestgreen", alpha = 0.5) + theme_minimal()
+```
+
+```{r}
+ggplot(data = handball_clean, aes(x= CLUB, y = HPI)) + geom_boxplot()
+```
+
+```{r}
+rc_sum <- handball_clean |> group_by(CLUB) |> summarise(sum_rc = sum(total_penalties), sum_g = sum(total_offense))
+
+ggplot(data = rc_sum, aes(x = sum_rc, y = sum_g)) + geom_point()
+```
+
+
 
