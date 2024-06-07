@@ -1,5 +1,14 @@
 ---
 title: "Strength Ratios - Flat Dumbbell Press to Barbell Bench Press "
+author:
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Vivian Johnson
+    affiliation:
+      - ref: slu
 date: "June 6, 2024"
 description: "Exploring the spread and mean of the reported strength ratios."
 editor: 
@@ -78,4 +87,3 @@ The data is compiled from a Reddit thread where users self reported their weight
 Upon conclusion, it is realized that while we can assume that this data follows a normal distribution and there are no obvious discernible outliers, it is not a large enough sample to make concrete conclusions. There are some biases in data collection, those who report their ratios belong to similar audiences, and we can't assume that the sample is reflective. Nevertheless, it presents a valuable opportunity for thought and good practice at constructing one sample T tests. 
 :::
 
-### Authors
