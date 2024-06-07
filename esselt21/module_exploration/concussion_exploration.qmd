@@ -19,7 +19,7 @@ concussion <-
   mutate(Position = as_factor(Position),
          `Reported Injury Type` = as_factor(`Reported Injury Type`)) |>
   filter(`Pre-Season Injury?` == 'No') |>
-  select(-c(ID, Date, Game, Season, `Pre-Season Injury?`, `Unknown Injury?`, `Winning Team?`)) |>
+  select(-c(ID, Game, Season, `Pre-Season Injury?`, `Unknown Injury?`, `Winning Team?`)) |>
   na.omit()
 
 concussion <-
@@ -27,6 +27,53 @@ concussion <-
   mutate(`Play Time After Injury` = parse_number(`Play Time After Injury`, na = "Did not return from injury"),
          `Average Playtime Before Injury` = parse_number(`Average Playtime Before Injury`),
          `Play Time After Injury` = replace_na(`Play Time After Injury`, 0))
+```
+
+```{r}
+# looking into individual teams
+teams <-
+  concussion |>
+  mutate(Team = as_factor(Team))
+
+teams <-
+  teams |>
+  group_by(Team) |>
+  summarise(totalConcussions = n(),
+            avgDownsAfter = mean(`Play Time After Injury`),
+            avgGamesMissed = mean(`Games Missed`))
+
+teams |>
+  ggplot(aes(x = fct_reorder(Team,
+                             totalConcussions,
+                             .desc = FALSE),
+             y = totalConcussions,
+             fill = Team)) +
+  geom_col() +
+  coord_flip() +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+teams |>
+  ggplot(aes(x = fct_reorder(Team,
+                             avgDownsAfter,
+                             .desc = FALSE),
+             y = avgDownsAfter,
+             fill = Team)) +
+  geom_col() +
+  coord_flip() +
+  theme_minimal() +
+  theme(legend.position = "none") 
+
+teams |>
+  ggplot(aes(x = fct_reorder(Team,
+                             avgGamesMissed,
+                             .desc = FALSE),
+             y = avgGamesMissed,
+             fill = Team)) +
+  geom_col() +
+  coord_flip() +
+  theme_minimal() +
+  theme(legend.position = "none")
 ```
 
 ```{r}
@@ -65,6 +112,15 @@ concussion |>
   labs(y = "Density")
 
 concussion |>
+  filter(Offense == "Offense") |>
+  ggplot(aes(x = `Play Time After Injury`,
+             color = Position)) +
+  geom_density(aes(fill = Position),
+               alpha = 0.1) +
+  theme_minimal() +
+  labs(y = "Density")
+
+concussion |>
   filter(Offense == "Defense") |>
   ggplot(aes(x = `Play Time After Injury`,
              color = Position)) +
@@ -75,12 +131,23 @@ concussion |>
 ```
 
 ```{r}
+# looking into anova, according to report, effect of position on play time after injury is significant and medium
+# need to look into assumptions
 library(AICcmodavg)
 library(report)
 one.way <- aov(`Play Time After Injury` ~ Position,
                data = concussion)
+plot(one.way)
+# doesn't look normal,
+# variance looks good
+# independent is true
 summary(one.way)
 report(one.way)
+```
+
+```{r}
+# tukey
+TukeyHSD(one.way)
 ```
 
 ```{r}
@@ -93,40 +160,5 @@ concussion |>
   coord_flip() +
   theme_minimal() +
   theme(legend.position = "none") 
-```
-
-```{r}
-# look at outliers and differences in distribution
-concussion |>
-  ggplot(aes(x = Position,
-             y = `Games Missed`,
-             fill = Position)) +
-  geom_boxplot() +
-  coord_flip() +
-  theme_minimal() +
-  theme(legend.position = "none")
-```
-
-```{r}
-concussion |>
-  ggplot(aes(x = Position,
-             y = ))
-```
-
-```{r}
-# check for normality and anova assumptions
-# independence of observations (each player has only one position)
-# no significant outliers
-library(rstatix)
-outliers <-
-  identify_outliers(concussion,
-                  `Games Missed`)
-outliers |>
-  filter(`is.extreme` == "FALSE")
-# there are a lot of outliers, we will keep them for now and see how they affect the one way anova test
-# normality check
-concussion |>
-  ggplot(aes(x = `Games Missed`)) +
-  geom_histogram()
 ```
 
