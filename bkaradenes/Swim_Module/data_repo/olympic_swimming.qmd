@@ -1,0 +1,15 @@
+---
+title: "Olympic_Swimming"
+author: "Brendan Karadenes"
+date: June 7, 2024
+description: The data set looks at Olympic swimmers in 50 and 100 meter races from 1912 to 2020.
+categories:
+  - 
+editor:
+  markdown: 
+    canonical: true
+---
+
+## Motivation
+
+Olympic swimming is over a century old and contains a diverse background of athletes from across the world.
