@@ -318,8 +318,16 @@ dgpt_cor_table
 ```
 
 ```{r}
-dgpt_reg <- lm(total_earnings ~ C1R + , data = dgpt)
+dgpt_reg <- lm(total_earnings ~ PKD + birdie_avg + C2R + C2P, data = dgpt)
 summary(dgpt_reg)
 ```
+
+
+```{r}
+ggplot(data = dgpt, aes(x = , y = total_earnings)) +
+  geom_point()
+```
+
+
 
 

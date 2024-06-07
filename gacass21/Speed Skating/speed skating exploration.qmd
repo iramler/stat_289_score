@@ -1,0 +1,39 @@
+---
+title: "Short Track Speed Skating"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(here)
+```
+
+```{r}
+speed_skating <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score/gacass21/Speed Skating/m500_lap_time_rank_ver5.csv")
+speed_skating
+```
+
+```{r}
+speed_skating |> summary()
+```
+ 
+
+```{r}
+ggplot(data = speed_skating, aes(x = Rank_In_Group, y = Time)) +
+  geom_jitter(aes(color = rank_lap1))
+```
+
+```{r}
+speed_skating |>  
+  group_by(rank_lap1) |>
+  summarise(avg_finish = mean(Rank_In_Group, na.rm = TRUE), n())
+```
+
+```{r}
+speed_skating |> group_by(Season) |> summarise(n())
+```
+
+
+
+
