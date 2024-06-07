@@ -76,6 +76,6 @@ ggplot(data = boxplot, aes(x = CLUB, y = club_hpi)) + geom_boxplot()
 ```{r}
 handball_sum <- handball |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) 
 
-ggplot(data = handball_sum, aes(x = club_hpi)) + geom_freqpoly()
+ggplot(data = handball_sum, aes(x = club_hpi)) + geom_density()
 ```
 
