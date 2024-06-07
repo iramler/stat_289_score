@@ -14,7 +14,7 @@ library(readr)
 ```
 
 ```{r}
-athletes_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/rowing_module/athlete_events.csv")
+athletes_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/rowing_module/data_repo_submission/athlete_events.csv")
 ```
 
 # Playing with the data
@@ -112,7 +112,7 @@ write_excel_csv(events, "events.csv")
 ```
 
 ```{r}
-events_athletes <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/rowing_module/events_athletes.csv")
+events_athletes <- read_csv("~/Desktop/stat289/awsmit22/rowing_module/exploration/events_athletes.csv")
 ```
 
 ```{r}
@@ -219,7 +219,7 @@ sum_medals <- medals |> filter(total_medals != 0) |> group_by(NOC) |> summarise(
 
 medals_reordered <- sum_medals |> mutate(NOC = fct_reorder(NOC, total_medals))
 
-ggplot(data = medals_reordered, aes(x = NOC, y = total_medals)) + geom_col(fill = "lightblue", colour = "grey") + coord_flip() + theme_minimal() + labs(title = "Bar plot of total_medals ranked by NOC")
+ggplot(data = medals_reordered, aes(x = NOC, y = total_medals)) + geom_col(fill = "lightblue", colour = "grey") + coord_flip() + theme_minimal() + labs(title = "Barplot of NOC ranked by total_medals")
 ```
 
 
