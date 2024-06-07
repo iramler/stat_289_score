@@ -1,0 +1,49 @@
+---
+title: Handball Individual Player Statistics for the 2022-2023 Season
+author: Abigail Smith
+date: June 6, 2024
+description: A variety of statistics for individual players in the Handball-Bundesliga for the 2022-23 season.
+categories:
+  - confidence intervals
+  - prediction intervals
+  - stepwise regression
+  - linear regression
+  - identifying outliers
+  
+editor: 
+  markdown: 
+    wrap: 72
+---
+## Motivation
+
+Handball is a popular sport in many European countries such as Germany where it is said to have originated. Handball is similar to soccer except players use their hands to move the ball instead of their feet. 
+
+## Data
+
+The dataset has 342 players from 18 different clubs, with 18 variables, 15 of which are statistics. Each row in the data set is a player in the Handball-Bundesliga during the 2022-23 season. 
+
+| Variable | Description                                                                                                                |
+|-------------------|-----------------------------------------------------|
+| `NAME` | The name of the player, in `last name, first name` order. |
+| `CLUB` | The club the player is on. t|
+| `POSITION`| The position of the player.  |
+| `total_medals` | The total number of medals for that country in that event. |
+| `total_points` | The total number of points for that country in that event. The points are scaled with a gold medal counting for 3 points, a silver for 2, and a bronze for 1. |
+
+: [medals.csv](medals.csv){target="_blank"}
+
+
+## Questions
+
+1.    Describe the distribution of the total_medals for all countries in all events.
+
+2.    Obtain the summary statistics for total_points for all countries in all events. 
+
+3.    USA has 94.2 points in the women's coxed eight event, determine whether or not that is an outlier. 
+
+4.    Based on the distribution of total_medals amongst the countries in the dataset, would it be fair to assume that poverty is a confounding variable? Explain why or why not
+
+## References
+
+[Kaggle Original Dataset](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download){target="_blank"}
+

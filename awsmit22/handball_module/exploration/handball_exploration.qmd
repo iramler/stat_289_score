@@ -1,0 +1,54 @@
+---
+title: "handball_exploration"
+format: html
+---
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+library(modelr)
+library(broom)
+```
+
+# Data
+
+[Kaggle](https://www.kaggle.com/datasets/nemanjagojkovic/handball-bundesliga-stats-202223)
+
+```{r}
+handball_df <- read_csv("~/Desktop/stat289/awsmit22/handball_module/exploration/handball_stats.csv")
+```
+
+```{r}
+ggplot(data = handball_df, aes(x = POSITION, y = RC)) + geom_col()
+```
+
+```{r}
+ggplot(data = handball_df, aes(x = POSITION, y = HPI)) + geom_boxplot()
+```
+
+*thinking to do a question with different visualizations to choose from and ask which is best to measure what*
+
+*Actually I think I could do something with confidence and prediction intervals*
+```{r}
+handball_df |> group_by(CLUB) |> summarise()
+```
+
+```{r}
+summary(handball_df$HPI)
+```
+
+stepwise regression
+
+```{r}
+full <- lm(HPI ~ P + G + M + FG + G.1 + `%` + AS + TF + ST + BL + YC + `2MIN` + RC + BK + HPI,
+          data = handball_df)
+
+mse <- (summary(full)$sigma)^2
+
+none <- lm(HPI~1,data=handball_df)
+
+step(none,scope=list(upper=full),scale=mse)
+```
+
+
