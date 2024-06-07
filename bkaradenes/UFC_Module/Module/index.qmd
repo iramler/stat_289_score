@@ -1,0 +1,97 @@
+---
+title: "UFC: Striking Accuracy Percentages and the Normal Distribution"
+author:
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Brendan Karadenes
+    affiliation:
+      - ref: slu
+date: June 6, 2024
+description: Analyzing UFC data from 1993-2021 using the Normal Distribution
+categories:
+  - Normal Distribution
+  - Quantiles
+  - Proportions
+---
+
+### Welcome Video
+
+### Introduction
+
+For this activity, you will be examining striking accuracy percentages in the UFC from 1993 to 2021.
+
+Specifically, you will use the normal distribution to calculate proportions and quantiles of fighter's striking accuracy percentages.
+
+Analyzing this data is useful for several key reasons. First, exploring the data can help the student understand which factors are most important for accuracy percentage, such as height, wingspan, or age. It also provides insights to the highly competitive and consequential nature of professional fighting. It also provides ways to compare how the top fighters compare to the average athletes. Analyzing this data can help determine the most important factors that go into striking accuracy and potentially give insight on who's most likely to win a given fight.
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This activity would be suitable for an in-class example or quiz.
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of the activity, you will be able to:
+
+1.  Analyze the normal distribution
+2.  Calculate proportions and quantiles
+3.  Use StatKey to solve normal distribution problems
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+For this activity, students will primarily use basic concepts of the normal distributions and the idea of quantiles and proportions.
+:::
+
+::: {.callout-note collapse="true" title="Technology Requiremens" appearance="minimal"}
+The provided worksheet will likely require StatKey or a similar software.
+
+Since the data are provided, instructors are encouraged to modify the worksheet to have students furthur their analysis of striking accuracy and other variables.
+:::
+
+### Data
+
+The data set contains 3586 rows and 14 columns. Each row represents a fighter and their career statistics.
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable      | Description                       |
+|---------------|-----------------------------------|
+| fighter_name  | First and last name of fighter    |
+| height_inches | Fighter's height in inches        |
+| Weight        | Weight in lbs. of the fighter     |
+| Reach         | Wingspan in inches of the fighter |
+| Stance        | Fighter's orientation             |
+| birthyear     | Fighter's birth year              |
+| SLpM          | Strikes landed per minute         |
+| Str_Acc       | Striking accuracy percentage      |
+| SApm          | Strikes attempted per minute      |
+| Str_Def       | Striking defense percentage       |
+| TD_Avg        | Takedown average per fight        |
+| TD_Acc        | Takedown accuracy percentage      |
+| TD_Def        | Takedown defence percentage       |
+| Sub_Avg       | Submission average                |
+
+**Data Source**
+
+[Kaggle](https://www.kaggle.com/){target="_blank"}
+
+## Materials
+
+We provide an editable Microsoft Word handout along with it's key.
+
+[Class handout](ufc-normal.docx)
+
+[Class handout - with key](UFC-Solutions.docx)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+In conclusion, the UFC normal distribution worksheet provides students with a valuable learning opportunity in several key areas. It allows them to understand and practice using the Normal distribution and be introduced to new statistical softwares. Also, student's will be able to properly analyze and interpret percentages and quantiles of the distribution. The striking accuracies provide a real-world example to engage into level statistics students. The data set also allows them to analyze several factors that go into winning a fight and gives them the opportunity to compare performances over different years. Overall, this worksheet allows students to investigate almost 20 years of the UFC and draw meaningful conclusions about fighter performances over the years.
+:::
+
+
+
+
+
+
