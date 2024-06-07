@@ -14,7 +14,7 @@ library(readr)
 ```
 
 ```{r}
-athletes_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/rowing_module/data_repo_submission/athlete_events.csv")
+athletes_df <- read_csv("/Users/abigailsmith/Desktop/git/stat_289_score/awsmit22/rowing_module/data_repo_submission/athlete_events.csv")
 ```
 
 # Playing with the data
@@ -112,7 +112,7 @@ write_excel_csv(events, "events.csv")
 ```
 
 ```{r}
-events_athletes <- read_csv("~/Desktop/stat289/awsmit22/rowing_module/exploration/events_athletes.csv")
+events_athletes <- read_csv("~/Desktop/git/stat_289_score/awsmit22/rowing_module/exploration/events_athletes.csv")
 ```
 
 ```{r}

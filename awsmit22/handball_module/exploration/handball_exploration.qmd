@@ -16,7 +16,7 @@ library(broom)
 [Kaggle](https://www.kaggle.com/datasets/nemanjagojkovic/handball-bundesliga-stats-202223)
 
 ```{r}
-handball_df <- read_csv("~/Desktop/stat289/awsmit22/handball_module/exploration/handball_stats.csv")
+handball_df <- read_csv("~/Desktop/git/stat_289_score/awsmit22/handball_module/data_repo_submission/handball_stats.csv")
 ```
 
 ```{r}
