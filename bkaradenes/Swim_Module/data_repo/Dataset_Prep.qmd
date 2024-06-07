@@ -6,8 +6,8 @@ format: html
 
 ```{r}
 library(tidyverse)
-library(here)
-swimming <- read.csv(here("bkaradenes/Swim_Module/Exploration/Olympic_Swimming_Results_1912to2020.csv"))
+# csv downloaded from Kaggle
+swimming <- read.csv("Olympic_Swimming_Results_1912to2020.csv")
 ```
 
 # Cleaning Data Set
