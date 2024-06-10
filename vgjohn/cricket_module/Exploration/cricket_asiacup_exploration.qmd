@@ -119,15 +119,16 @@ t.test(`Fours` ~ Result, data = asia_cup)
 logistic regression 
 
 fit a logistic regression for result using run scored, extras scored, given extras, and highest score as predictors
-```{r}
-logit.result = glm(Result ~ `Run Scored` + `Extras Scored` + `Given Extras`,
-                   family = binomial,
-                   data = asia_cup)
 
-summary(logit.result)
+```{r}
+logit <- glm(Result ~ `Run Scored` + `Sixes` + `Highest Score` + `Given Extras`,
+    family = binomial,
+    data = asia_cup1)
+
+summary(logit)
 ```
 ```{r}
-logit.result2 = glm(Result ~  `Run.Scored` + `Fours` + `Sixes` + `Highest.Score`,
+logit.result2 = glm(Result ~  `Run.Scored` + `Sixes` + `,
                    family = binomial,
                    data = asia_cup)
 
@@ -137,3 +138,12 @@ summary(logit.result2)
 What would the estimated model say about the chance that a team with _____ extra runs _____ given extras and _____ runs scored wins the game 
 
 interpret the coefficients 
+
+```{r}
+asia_cup1 <- read_csv("~/GitHub/stat_289_score/vgjohn/cricket_module/Data_Repo_Submission/asia_cup.csv")
+```
+
+```{r}
+
+```
+
