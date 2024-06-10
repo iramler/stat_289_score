@@ -80,7 +80,12 @@ ggplot(data = swimming_graph, mapping = aes(x = Year, y = yearly_avg, color = Ge
   theme_minimal()
 ```
 
-
+```{r}
+ggplot(data = swimming_graph, mapping = aes(x = Stroke, y = Results)) +
+  geom_boxplot() +
+  labs(y = "Time (s)", title = "Effects of Different Styles on Race Times") +
+  theme_minimal() 
+```
 
 
 

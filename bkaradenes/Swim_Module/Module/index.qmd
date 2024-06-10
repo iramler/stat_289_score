@@ -1,0 +1,17 @@
+---
+title: "Olympic Swimming - Variability in Event Times"
+author:
+  - name: "Ivan Ramler"
+    email: iramler@stlawu.edu
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: "Brendan Karadenes"
+    affiliation:
+      - ref: slu
+date: June 10, 2024
+description: 
+format: html
+---
+
+

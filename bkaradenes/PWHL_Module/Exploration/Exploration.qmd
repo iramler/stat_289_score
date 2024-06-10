@@ -90,4 +90,29 @@ PWHL_Scoring %>%
   filter(Pos %in% c("F", "D"))
 ```
 
+```{r}
+ggplot(data = PWHL_Graph, mapping = aes(x = Pos, y = G_Per_GP)) +
+  geom_boxplot() + 
+  labs(x = "Position", y = "Goals Per Game Played", title = "Goals per Game Played by Position") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5)) 
+```
+
+```{r}
+ggplot(data = PWHL_Graph, mapping = aes(x = Age_Group, y = G_Per_GP)) +
+  geom_boxplot() +
+  labs(x = "Age Group", y = "Goals Per Game Played", title = "Goals per Game Played by Age Group") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+ggplot(data = PWHL_Graph, aes(x = Age_Group, y = G_Per_GP, color = Pos)) + 
+  geom_boxplot() +
+  coord_flip() +
+  labs(x = "Age Group", y = "Number of Points", title = "Points between different Age Groups and Positions") +
+  theme_minimal()
+```
+
+
 
