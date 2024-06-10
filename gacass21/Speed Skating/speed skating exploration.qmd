@@ -126,8 +126,52 @@ speed_skating |> group_by(City) |>
 ```
 
 ```{r}
-
+speed_skating |> group_by(Time_Event, Name) |> 
+  filter(!is.na(Time)) |> 
+  filter(Time == min(Time)) |> 
+  ungroup() |>
+  group_by(Time_Event, City) |>
+  summarise(participants = n()) |>
+  arrange(desc(participants))
 ```
 
+```{r}
+speed_skating |> group_by(Time_Event) |> 
+  filter(!is.na(Time)) |> 
+  filter(!is.na(Qualification)) |>
+  summarise(avg_time = mean(Time)) |>
+  arrange(avg_time)
+```
+
+
+```{r}
+speed_skating |> filter(Round == "Preliminaries" | Round == "PrePreliminaries") |>
+  filter(!is.na(Time)) |>
+  summarise(avg_time = mean(Time), total = n())
+```
+
+```{r}
+speed_skating |> filter(Round == "FinalA" | Round == "FinalB") |>
+  filter(!is.na(Time)) |>
+  summarise(avg_time = mean(Time), total = n())
+```
+
+```{r}
+speed_skating |> filter(Country == "GER", Year == 2013, Round == "FinalA"| Round == "FinalB") |> arrange(Time)
+```
+
+```{r}
+speed_skating |> group_by(Name) |>
+  filter(!is.na(Time)) |>
+  arrange(Time) |> slice(1:10) |>
+  summarise(top_10 = mean(Time)) |>
+  arrange(top_10)
+```
+
+```{r}
+speed_skating |> filter(Round == "FinalA"| Round == "FinalB") |>
+  group_by(Round) |>
+  summarise(avg_time = mean(Time, na.rm = TRUE), racers = n())
+```
 
 
