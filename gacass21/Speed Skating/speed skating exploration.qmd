@@ -190,3 +190,79 @@ speed_skating |> filter(!is.na(time_lap4)) |> filter(time_lap4 == min(time_lap4)
 speed_skating |> filter(!is.na(time_lap5)) |> filter(time_lap5 == min(time_lap5))
 ```
 
+
+```{r}
+speed_skating |> group_by(Distance) |> summarise(n())
+speed_skating |> filter(Distance == "500m(1)" | Distance == "500m(2)") |> 
+  group_by(Series, City, Year, Distance, Round, Name) |>
+  summarise(avg_time = mean(Time, na.rm = TRUE), n()) |>
+  arrange(avg_time) |> filter(Name == "GIRARD Samuel")
+```
+
+
+```{r}
+time_outliers1 <- speed_skating |> filter(!is.na(time_lap1)) |> filter(time_lap1 < 9)
+
+time_outliers1 |> summarise(mean(time_lap1))
+speed_skating |> summarise(mean(time_lap1, na.rm = TRUE))
+
+ggplot(data = time_outliers1, aes(x = time_lap1)) +
+  geom_histogram(bins = 75)
+```
+
+```{r}
+time_outliers2 <- speed_skating |> filter(!is.na(time_lap2)) |> filter(time_lap2 < 11)
+
+time_outliers2 |> summarise(mean(time_lap2))
+speed_skating |> summarise(mean(time_lap2, na.rm = TRUE))
+
+ggplot(data = time_outliers2, aes(x = time_lap2)) +
+  geom_histogram(bins = 75)
+```
+
+
+```{r}
+time_outliers3 <- speed_skating |> filter(!is.na(time_lap3)) |> filter(time_lap3 < 11)
+
+time_outliers3 |> summarise(mean(time_lap3))
+speed_skating |> summarise(mean(time_lap3, na.rm = TRUE))
+
+ggplot(data = time_outliers3, aes(x = time_lap3)) +
+  geom_histogram(bins = 75)
+```
+
+```{r}
+time_outliers4 <- speed_skating |> filter(!is.na(time_lap4)) |> filter(time_lap4 < 11)
+
+time_outliers4 |> summarise(mean(time_lap4))
+speed_skating |> summarise(mean(time_lap4, na.rm = TRUE))
+
+ggplot(data = time_outliers4, aes(x = time_lap4)) +
+  geom_histogram(bins = 75)
+```
+
+```{r}
+time_outliers5 <- speed_skating |> filter(!is.na(time_lap5)) |> filter(time_lap5 < 12)
+
+time_outliers5 |> summarise(mean(time_lap5))
+speed_skating |> summarise(mean(time_lap5, na.rm = TRUE))
+
+ggplot(data = time_outliers5, aes(x = time_lap5)) +
+  geom_histogram(bins = 75) 
+```
+
+```{r}
+speed_skating |> filter(!is.na(Time)) |> filter(Time == min(Time)) |>
+  select(time_lap1, time_lap2, time_lap3, time_lap4, time_lap5)
+```
+
+```{r}
+speed_skating |> filter(Series == "Olympic Games", Round == "FinalA", Name == "AN Victor") |> 
+  select(time_lap1, time_lap2, time_lap3, time_lap4, time_lap5)
+```
+
+```{r}
+speed_skating |> filter(!is.na(time_lap1)) |> summary(time_lap1)
+```
+
+
