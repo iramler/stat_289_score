@@ -13,7 +13,7 @@ library(broom)
 library(stringr)
 ```
 
-# Data
+# Original Data
 
 [Kaggle](https://www.kaggle.com/datasets/nemanjagojkovic/handball-bundesliga-stats-202223)
 
@@ -21,44 +21,7 @@ library(stringr)
 handball_df <- read_csv("~/Desktop/git/stat_289_score/awsmit22/handball_module/data_repo_submission/handball_stats.csv")
 ```
 
-```{r}
-ggplot(data = handball_df, aes(x = POSITION, y = RC)) + geom_col()
-```
-
-```{r}
-ggplot(data = handball_df, aes(x = POSITION, y = HPI)) + geom_boxplot()
-```
-
-*thinking to do a question with different visualizations to choose from and ask which is best to measure what*
-
-*Actually I think I could do something with confidence and prediction intervals*
-
-```{r}
-handball_df |> group_by(CLUB) |> summarise()
-```
-
-```{r}
-summary(handball_df$HPI)
-```
-
-stepwise regression
-
-```{r}
-full <- lm(HPI ~ P + G + M + FG + G.1 + `%` + AS + TF + ST + BL + YC + `2MIN` + RC + BK + HPI,
-          data = handball_df)
-
-mse <- (summary(full)$sigma)^2
-
-none <- lm(HPI~1,data=handball_df)
-
-step(none,scope=list(upper=full),scale=mse)
-```
-
-just curious to see the teams ranked in descending order
-
-```{r}
-handball_df |> arrange(desc(HPI)) |> group_by(CLUB) |> summarise()
-```
+# Cleaning to get the ideal dataset
 
 ```{r}
 handball_rc <- handball_df |> mutate(total_rc = RC + BK) |> select(!(BK))
@@ -73,25 +36,86 @@ handball_percent <- handball_pen |> mutate(percentage = as.double(str_remove(`%`
 ```
 
 ```{r}
+# total offense and total penalties for the season
 handball_clean <- handball_percent |> mutate(total_offense = G + M + FG + G.1 + AS + ST) |> select(c(CLUB, POSITION, total_offense, total_penalties, P, BL, percentage, HPI))
 ```
 
 ```{r}
+# per game
 handball_pg <- handball_clean |> mutate(offense_pg = total_offense/P, pen_pg = total_penalties/P) 
 ```
+
+# Plots Unlikely to use
+
+*probably not going to use*
 
 ```{r}
 ggplot(data = handball_pg, aes(x = offense_pg, y = pen_pg, colour = POSITION)) + geom_point(alpha = 0.5) + theme_minimal()
 ```
 
-```{r}
-ggplot(data = handball_clean, aes(x = total_offense, y = total_penalties)) + geom_point(alpha = 0.5) + theme_minimal() + geom_smooth(method = "lm")
-```
+*probably not going to use*
 
 ```{r}
 ggplot(data = handball_pg, aes(x = POSITION, y = pen_pg)) + geom_col()
 ```
 
+*probably not going to use*
+
+```{r}
+barplot <- handball_clean |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) |> mutate(CLUB = fct_reorder(CLUB, club_hpi))
+
+ggplot(data = barplot, aes(x = CLUB, y = club_hpi)) + geom_col() + coord_flip()
+```
+
+*probably not going to use*
+
+```{r}
+boxplot <- handball_clean |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) |> arrange(desc(club_hpi)) |> slice(1:5)
+
+ggplot(data = boxplot, aes(x = CLUB, y = club_hpi)) + geom_boxplot() 
+```
+
+*probably not going to use*
+
+```{r}
+handball_sum <- handball_clean |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) 
+```
+
+*probably not going to use*
+
+```{r}
+ggplot(data = handball_clean, aes(x = HPI)) + geom_density(fill = "lightgreen", colour = "forestgreen", alpha = 0.5) + theme_minimal()
+```
+
+*probably not going to use*
+
+```{r}
+ggplot(data = handball_clean, aes(x= CLUB, y = HPI)) + geom_boxplot()
+```
+
+*probably not going to use* 
+
+```{r}
+rc_sum <- handball_clean |> group_by(CLUB) |> summarise(sum_rc = sum(total_penalties), sum_g = sum(total_offense))
+
+ggplot(data = rc_sum, aes(x = sum_rc, y = sum_g)) + geom_point() 
+```
+
+*probably not going to use* 
+
+```{r}
+ggplot(data = handball_df, aes(x = POSITION, y = RC)) + geom_col()
+```
+
+*probably not going to use* 
+
+```{r}
+ggplot(data = handball_df, aes(x = POSITION, y = HPI)) + geom_boxplot()
+```
+
+# Plots likely to use
+
+SLM Plots *might use*
 ```{r}
 modplot <- handball_pg |> group_by(CLUB) |> summarise(club_offense = mean(offense_pg), club_pen = mean(pen_pg), club_hpi = mean(HPI))
 
@@ -104,40 +128,32 @@ ggplot(data = modplot, aes(x = club_pen, y = club_hpi)) +
   geom_smooth(method = "lm")
 ```
 
+SLM Plots *might use*
+
+```{r}
+ggplot(data = handball_clean, aes(x = total_offense, y = total_penalties)) + geom_point(alpha = 0.5) + theme_minimal() + geom_smooth(method = "lm")
+```
+
+# Question Ideas likely to use
+
 ***Prediction interval for an individual y ***
 
 ```{r}
-# Fit a linear model
-model <- lm(club_hpi ~ club_pen, data = modplot)
+mod <- lm(club_hpi ~ club_pen, data=modplot)
 
-# Create a prediction interval
-prediction_intervals <- predict(
-  model, 
-  newdata = modplot, 
-  interval = "prediction", 
-  level = 0.90
-  )
+newx <- data.frame(club_pen=0.793)
 
-# Print the prediction interval
-head(prediction_intervals)
+predict(mod, newx,interval="prediction")
 ```
 
 ***Confidence interval for a mean y ***
 
 ```{r}
-# Fit a linear model
-model <- lm(club_hpi ~ club_pen, data = modplot)
+mod <- lm(club_hpi ~ club_pen, data=modplot)
 
-# Create a prediction interval
-confidence_intervals <- predict(
-  model, 
-  newdata = modplot, 
-  interval = "confidence", 
-  level = 0.90
-  )
+newx <- data.frame(club_pen=0.793)
 
-# Print the prediction interval
-head(confidence_intervals)
+predict(mod, newx,interval="confidence")
 ```
 
 ***anova for overall fit***
@@ -152,52 +168,42 @@ summary(anovamod)
 anova(anovamod)
 ```
 
- correlation 
- 
-```{r}
-cor(handball_clean$total_offense, handball_clean$total_penalties)
-```
-
-t test for correlation
+**t test for correlation**
 
 ```{r}
 cor.test(handball_clean$total_offense, handball_clean$total_penalties)
 ```
 
-correlation matrix
+# Likely to not use
+
+correlation matrix *probably not going to use*
 
 ```{r}
 handball_numeric <- handball_clean |> select(!c(CLUB, POSITION))
 cor(handball_numeric)
 ```
 
+ correlation *probably not going to use*
+ 
 ```{r}
-barplot <- handball_clean |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) |> mutate(CLUB = fct_reorder(CLUB, club_hpi))
-
-ggplot(data = barplot, aes(x = CLUB, y = club_hpi)) + geom_col() + coord_flip()
+cor(handball_clean$total_offense, handball_clean$total_penalties)
 ```
 
-```{r}
-boxplot <- handball_clean |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) |> arrange(desc(club_hpi)) |> slice(1:5)
-
-ggplot(data = boxplot, aes(x = CLUB, y = club_hpi)) + geom_boxplot() 
-```
+stepwise regression **probably not going to use**
 
 ```{r}
-handball_sum <- handball_clean |> group_by(CLUB) |> summarise(club_hpi = mean(HPI)) 
+full <- lm(HPI ~ P + G + M + FG + G.1 + `%` + AS + TF + ST + BL + YC + `2MIN` + RC + BK + HPI,
+          data = handball_df)
+
+mse <- (summary(full)$sigma)^2
+
+none <- lm(HPI~1,data=handball_df)
+
+step(none,scope=list(upper=full),scale=mse)
 ```
+
+just curious to see the teams ranked in descending order *wont use*
 
 ```{r}
-ggplot(data = handball_clean, aes(x = HPI)) + geom_density(fill = "lightgreen", colour = "forestgreen", alpha = 0.5) + theme_minimal()
+handball_df |> arrange(desc(HPI)) |> group_by(CLUB) |> summarise()
 ```
-
-```{r}
-ggplot(data = handball_clean, aes(x= CLUB, y = HPI)) + geom_boxplot()
-```
-
-```{r}
-rc_sum <- handball_clean |> group_by(CLUB) |> summarise(sum_rc = sum(total_penalties), sum_g = sum(total_offense))
-
-ggplot(data = rc_sum, aes(x = sum_rc, y = sum_g)) + geom_point()
-```
-
