@@ -28,7 +28,7 @@ handball_rc <- handball_df |> mutate(total_rc = RC + BK) |> select(!(BK))
 ```
 
 ```{r}
-handball_pen <- handball_rc |> mutate(total_penalties = total_rc + TF + YC + `2MIN`) |> select(c(total_penalties, CLUB, POSITION, P, G, M, FG, G.1, `%`, AS, ST, BL, HPI))
+handball_pen <- handball_rc |> mutate(total_penalties = total_rc + TF + YC + `2MIN`) |> select(c(total_penalties, CLUB, POSITION, P, G, M, FG, G.1, `%`, AS, ST, BL, HPI, NAME))
 ```
 
 ```{r}
@@ -37,12 +37,15 @@ handball_percent <- handball_pen |> mutate(percentage = as.double(str_remove(`%`
 
 ```{r}
 # total offense and total penalties for the season
-handball_clean <- handball_percent |> mutate(total_offense = G + M + FG + G.1 + AS + ST) |> select(c(CLUB, POSITION, total_offense, total_penalties, P, BL, percentage, HPI))
+handball_clean <- handball_percent |> mutate(total_offense = G + M + FG + G.1 + AS + ST) |> select(c(NAME, CLUB, POSITION, total_offense, total_penalties, P, BL, percentage, HPI))
+
+handball_clean <- handball_clean |> filter(P >= 10)
 ```
 
 ```{r}
 # per game
 handball_pg <- handball_clean |> mutate(offense_pg = total_offense/P, pen_pg = total_penalties/P) 
+summary(handball_clean$P)
 ```
 
 # Plots Unlikely to use
