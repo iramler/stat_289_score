@@ -213,7 +213,7 @@ summary(medals$total_points)
 medals |> filter(NOC == "USA" & Event == "Rowing Women's Coxed Eights")
 ```
 
-```{r}
+```{r, fig.height= 10}
 # Question 4
 sum_medals <- medals |> filter(total_medals != 0) |> group_by(NOC) |> summarise(total_medals = sum(total_medals)) 
 

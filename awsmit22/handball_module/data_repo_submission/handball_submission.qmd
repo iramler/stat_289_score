@@ -6,9 +6,7 @@ description: A variety of statistics for individual players in the Handball-Bund
 categories:
   - confidence intervals
   - prediction intervals
-  - stepwise regression
-  - linear regression
-  - identifying outliers
+  - multiple linear regression
   - anova for overall fit
   - t.test for correlation
   
@@ -24,35 +22,31 @@ Handball is considered a contact sport which means aggressive strategies are oft
 
 ## Data
 
-The dataset has 342 players from 18 different clubs, with 18 variables, 15 of which are statistics. Each row in the data set is a player in the Handball-Bundesliga during the 2022-23 season. 
+The dataset has 372 players from 18 different clubs, with 8 variables, 6 of which are statistics. Each row in the data set is a player in the Handball-Bundesliga during the 2022-23 season. The statistics are cumulative for the entirety of the season.
 
 | Variable | Description |
 |-------------------|-----------------------------------------------------|
-| `NAME` | The name of the player, in `last name, first name` order. |
 | `CLUB` | The club the player is on. There are 18 in the Bundesliga.|
 | `POSITION`| The position of the player. There are 7 positions in handball: goalkeeper, fullbacks (left and right), center backcourt, wingers (left and right), and pivot.  |
 | `P` | The number of games the player was in that season. |
-| `G` | The number of goals scored by the player in the season. |
-| `M` | The number of shots missed by the player in the season. |
-| `FG` | The number of field goals scored by the player in the season. |
-| `G.1` | The number of penalty kicks scored by the player in the season. |
-| `%` | The shot percantage of the player in the season. |
-| `AS` | The number of assists the player had in the season. |
-| `TF` | The number of technical fouls the player had in the season. |
-| `ST` | The number of steals the player had in the season. |
+| `total_offense` | The total offensive plays made by the player in the season. Calculated by adding the 6 offensive focused statistics from the original dataset.|
+| `total_penalties` | The total penalties the player had in the season. Calculated by adding the 5 penalty related statistics from the original dataset.|
+| `percentage` | The shot percantage of the player in the season. |
 | `BL` | The number of shots blocked by the player in the season. |
-| `YC` | The number of yellow cards the player had in the season. |
-| `2MIN` | The number of two minute suspensions the player had in the season. |
-| `RC` | The number of red cards the player had in the season. |
-| `BK` | The number of red cards the player had in the season. |
 | `HPI` | Handball performance index, formulaic calculation equivalent to how well the player performed in the season. |
 
-: [handball_stats.csv](handball_stats.csv){target="_blank"}
+: [handball_total.csv](handball_total.csv){target="_blank"}
 
 
 ## Questions
 
-1.    
+1.    Calculate and interpret a 98% confidence interval for the mean HPI of a player with 30 total_penalties. Check your work with R. 
+
+2.    Calculate and interpret a 98% prediction interval for the HPI of a player with 30 total_penalties. Check your work with R.
+
+3.    Perform an ANOVA test to assess the overall fit of `HPI = total_offense + total_penalties`. Provide an interpretation of the results. Check your work with R.
+
+4.    Test the significance of the correlation between the `total_offense` and the `total_penalties` of a player. Provide an interpretation of the results. Check your work with R.
 
 ## References
 
