@@ -1,18 +1,27 @@
+---
+editor: 
+  markdown: 
+    wrap: 72
+---
+
 exploration
 
 ```{r}
 library(tidyverse)
 library(forcats)
 ```
-Tidying the data to get it how i want 
+
+Tidying the data to get it how i want
+
 ```{r}
 asia_cup <- read_csv("~/Desktop/asiacup.csv", col_names = TRUE)
 View(asia_cup)
 ```
-Coin toss - 1 is won 0 is lost coin toss 
-result- 1 is won 0 is lost 
+
+Coin toss - 1 is won 0 is lost coin toss result- 1 is won 0 is lost
 
 data cleaning
+
 ```{r}
 asia_cup <- select(asia_cup, `Team`,
          `Opponent`,
@@ -32,7 +41,8 @@ asia_cup <- select(asia_cup, `Team`,
   mutate(Result = ifelse(Result == "Win D/L", "Win", Result),
          Result = ifelse(Result == "Lose D/L", "Lose", Result),
          Result = ifelse(Result == "Win", 1, 0),
-         Toss = ifelse(Toss == "Win", 1, 0)) %>%
+         Toss = ifelse(Toss == "Win", 1, 0),
+         Selection = ifelse(Selection == "Batting", 0, 1)) %>%
   filter(Result != "No Result") %>%
   na.omit()
 ```
@@ -42,20 +52,23 @@ write_csv(asia_cup,
           file = "~/GitHub/stat_289_score/vgjohn/cricket_module/Data_Repo_Submission/asia_cup.csv")
 ```
 
-stat 213/234 level, 
-r handout 
-predicting win/loss based on fours sixes and extra runs scored
-proportions 
-difference in means for countries? 
-making a new variable ? diff in proportions 
+stat 213/234 level, r handout predicting win/loss based on fours sixes
+and extra runs scored proportions difference in means for countries?
+making a new variable ? diff in proportions
 
 ```{r}
 n_distinct(asia_cup$Team)
 ```
 
-There can be no result in a cricket match. it is the case when the match cannot be finished in time, usually due to weather or lighting. It has the same significance as a draw in most cases for the sake of this they have been removed  
+There can be no result in a cricket match. it is the case when the match
+cannot be finished in time, usually due to weather or lighting. It has
+the same significance as a draw in most cases for the sake of this they
+have been removed
 
-Make a table that contains 5 new variables: `Total Games`, `Wins`, `Losses`, and `Win Percentage` that calculates the corresponding win percentage for each distinct country. Which country has the highest win percentage? 
+Make a table that contains 5 new variables: `Total Games`, `Wins`,
+`Losses`, and `Win Percentage` that calculates the corresponding win
+percentage for each distinct country. Which country has the highest win
+percentage?
 
 ```{r}
 win_percentage <- asia_cup %>%
@@ -69,12 +82,15 @@ win_percentage <- asia_cup %>%
 
 win_percentage
 ```
+
 ```{r}
 asia_cup %>% filter(Team == "Afghanistan")
 ```
-looking at runs scored for the teams with the highest win percentage 
+
+looking at runs scored for the teams with the highest win percentage
 
 what year did India score the most runs
+
 ```{r}
 runs_year <- asia_cup %>% filter(Team == "India") %>%
   group_by(Year) %>%
@@ -85,65 +101,93 @@ max_runs <- slice_max(runs_year, Runs)
 runs_year
 max_runs
 ```
-most extras scored 
+
+most extras scored
+
 ```{r}
 asia_cup$Team
 group_by(asia_cup, Team) %>% slice_max(`Extras Scored`) %>%
   arrange(desc(`Extras Scored`))
 ```
 
-density plot of the wins over time  for each team 
+density plot of the wins over time for each team
+
 ```{r}
 
 ```
 
 difference in means
 
-Conduct the appropriate test if want to figure out if there is a significant difference in the number of runs scored between a team that lost the coin toss and a team that won the coin toss. what are the null and alternative hypothesis in context. 
+Conduct the appropriate test if want to figure out if there is a
+significant difference in the number of runs scored between a team that
+lost the coin toss and a team that won the coin toss. what are the null
+and alternative hypothesis in context.
 
-null - the difference in average runs scored between a team that won the coin toss and a team that lost the coin toss is zero
-alternative - the difference in average runs scored between a team that won the coin toss and that lost the coin toss is not equal to zero. 
+null - the difference in average runs scored between a team that won the
+coin toss and a team that lost the coin toss is zero alternative - the
+difference in average runs scored between a team that won the coin toss
+and that lost the coin toss is not equal to zero.
 
-At the 0.05 level, is there a significant difference in number of runs scored for teams that won the toss and teams that lost the toss? why? interpret it
+At the 0.05 level, is there a significant difference in number of runs
+scored for teams that won the toss and teams that lost the toss? why?
+interpret it
+
 ```{r}
 t.test(`Run Scored` ~ Toss, data = asia_cup)
 ```
-We cannot conclude that there is a significant difference in runs scored in a cricket match between a team that won the coin toss and a team that lost the coin toss. We know this because the p-value of the two sample t test is 0.0582, which is above 0.05 which we would need to reject the null hypothesis that the difference in means between the two groups is zero. 
 
-diff means for 4s between won and lost match 
+We cannot conclude that there is a significant difference in runs scored
+in a cricket match between a team that won the coin toss and a team that
+lost the coin toss. We know this because the p-value of the two sample t
+test is 0.0582, which is above 0.05 which we would need to reject the
+null hypothesis that the difference in means between the two groups is
+zero.
+
+diff means for 4s between won and lost match
 
 ```{r}
 t.test(`Fours` ~ Result, data = asia_cup)
 ```
 
-logistic regression 
+logistic regression
 
-fit a logistic regression for result using run scored, extras scored, given extras, and highest score as predictors
+fit a logistic regression for result using run scored, extras scored,
+given extras, and highest score as predictors
 
 ```{r}
-logit <- glm(Result ~ `Run Scored` + `Sixes` + `Highest Score` + `Given Extras`,
+logit <- glm(Result ~ `Run Scored` + `Sixes` + `Selection` + `Given Extras` + Selection:`Run Scored`,
     family = binomial,
-    data = asia_cup1)
+    data = asia_cup)
 
 summary(logit)
 ```
+
 ```{r}
-logit.result2 = glm(Result ~  `Run.Scored` + `Sixes` + `,
+logit.result2 = glm(Result ~  `Fours` + `Highest Score` + `Given Extras`,
                    family = binomial,
                    data = asia_cup)
 
 summary(logit.result2)
 ```
 
-What would the estimated model say about the chance that a team with _____ extra runs _____ given extras and _____ runs scored wins the game 
+What would the estimated model say about the chance that a team with
+\_\_\_\_\_ extra runs \_\_\_\_\_ given extras and \_\_\_\_\_ runs scored
+wins the game
 
-interpret the coefficients 
-
-```{r}
-asia_cup1 <- read_csv("~/GitHub/stat_289_score/vgjohn/cricket_module/Data_Repo_Submission/asia_cup.csv")
-```
+interpret the coefficients
 
 ```{r}
+logit3 <- glm(Result ~ `Highest Score` + Selection + Selection:`Highest Score`+ `Toss`, 
+family = binomial,
+data = asia_cup)
 
+summary(logit3)
 ```
 
+
+```{r}
+-4.814+0.018(265)+0.147(8)+4.440(0)+0.007(5)-0.018(0)
+```
+-4.814+0.018(265)+0.147(8)+4.440(0)+0.007(5)-0.018(0)
+
+e^(-4.814+0.018(265)+0.147(8)+4.440(0)+0.007(5)-0.018(0))/(1+ e^(-4.814+0.018(265)+0.147(8)+4.440(0)+0.007(5)-0.018(0)) )
