@@ -34,6 +34,12 @@ swimming <- swimming %>%
   mutate(dist_m = as.numeric(dist_m))
 ```
 
+```{r}
+swimming <- swimming %>%
+  select(-Relay)
+```
+
+
 # Writing cleaned data as csv
 
 ```{r}
