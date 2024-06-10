@@ -1,7 +1,7 @@
 ---
 title: Visualizing and Modeling Differences in Number of Concussions in the NFL
 author: Eric Seltzer
-date: June 7, 2024
+date: June 10, 2024
 description: Data of the number of concussions in the NFL from the 2012 season until the 2014 season.
 categories:
   - Data Visualization
@@ -44,6 +44,8 @@ This data is made up of 392 rows and 10 columns. Each row represents a player th
 3.  Finding differences in variables through visualizations.
 
 4.  Discuss whether it is worth exploring these questions further.
+
+5.  Creating models to explore questions.
 
 ## References
 
