@@ -174,4 +174,19 @@ speed_skating |> filter(Round == "FinalA"| Round == "FinalB") |>
   summarise(avg_time = mean(Time, na.rm = TRUE), racers = n())
 ```
 
+```{r}
+speed_skating |> group_by(Start_Position) |>
+  summarise(avg_time = mean(Time, na.rm = TRUE), 
+            tot = n(), 
+            avg_finish = mean(Rank_In_Group, na.rm = TRUE))
+```
+
+
+```{r}
+speed_skating |> filter(!is.na(time_lap1)) |> filter(time_lap1 == min(time_lap1))
+speed_skating |> filter(!is.na(time_lap2)) |> filter(time_lap2 == min(time_lap2))
+speed_skating |> filter(!is.na(time_lap3)) |> filter(time_lap3 == min(time_lap3))
+speed_skating |> filter(!is.na(time_lap4)) |> filter(time_lap4 == min(time_lap4))
+speed_skating |> filter(!is.na(time_lap5)) |> filter(time_lap5 == min(time_lap5))
+```
 

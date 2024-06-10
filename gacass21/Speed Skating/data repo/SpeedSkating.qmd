@@ -8,7 +8,7 @@ categories:
 
 ## Motivation
 
-Speed Skating is a competition where athletes compete to see who can complete a distance in the shortest amount of time. There are two iterations of Speed Skating, long track, where athletes have their own lane and compete on a 400m oval without any contact with competitors, and short track, where 4-6 athletes compete simultaneously on a 111m circuit. A 500m race consists of 4 and 1/2 laps with flying around turns and drafting off each other. Short track speed skating tends to be very contact heavy and crowded, with competitors jostling for position while flying around turns leading to some chaotic races and dangerous crashes.
+Speed Skating is a competition where athletes compete to see who can complete a distance in the shortest amount of time. There are two iterations of Speed Skating, long track, where athletes have their own lane and compete on a 400m oval without any contact with competitors, and short track, where 4-6 athletes compete simultaneously on a 111m circuit. A 500m race consists of 4 and 1/2 laps with flying around turns and drafting off each other. Short track speed skating tends to be very contact heavy and crowded, with competitors jostling for position while flying around turns leading to some chaotic races and dangerous crashes. Skaters are able to complete a full lap of the 111m track in just over 8 seconds, leading to quick but exciting races.
 
 ## Data
 
@@ -44,6 +44,8 @@ The Short Track Speed Skating data set contains 5125 rows and 28 columns, where 
 | rank_lap5      | the rank of the racer after lap 5                                               |
 | time_lap5      | the time of the racer after lap 5                                               |
 | Time_Event     | the date of event expressed as year followed by a decimal month and day         |
+
+
 
 ## Questions
 
