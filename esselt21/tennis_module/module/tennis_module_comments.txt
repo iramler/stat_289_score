@@ -1,0 +1,23 @@
+Eric Seltzer (Tennis)
+
+
+YAML:
+- Update the Date
+- Description: Be sure to connect the topic to tennis
+
+Introduction:
+- Should be sure to ay what ATP is before using the abbreviation
+- There isn't anything about the court surface in your introduction. Be sure to clearly discuss this as it is a focal point of the worksheets.
+- Should better describe the basic idea of Elo. (It is sort of there, but isn't exactly clear that the harder vs easier thing is about Elo.)
+
+Tech requirement:
+- We'll want to provide an alternate set of handouts that allow the students to use software (like Minitab) to do these things.
+
+Data:
+- With the data now on the Data Repository, replace the local tennis.csv link to the Data Repo's link.
+
+Materials:
+- See comments in the word docs (solutions file)
+
+Conclusions:
+- Summarize the results of the analysis.
