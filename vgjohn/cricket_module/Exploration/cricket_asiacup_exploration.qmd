@@ -80,10 +80,10 @@ runs_year <- asia_cup %>% filter(Team == "India") %>%
   group_by(Year) %>%
   summarize(Runs = sum(`Run Scored`))
 
-max <- slice_max(runs_year, Runs)
+max_runs <- slice_max(runs_year, Runs)
 
 runs_year
-max
+max_runs
 ```
 most extras scored 
 ```{r}
@@ -97,7 +97,24 @@ density plot of the wins over time  for each team
 
 ```
 
-is there a significant difference in number of runs scored for teams that won the toss and teams that lost the toss? 
+difference in means
+
+Conduct the appropriate test if want to figure out if there is a significant difference in the number of runs scored between a team that lost the coin toss and a team that won the coin toss. what are the null and alternative hypothesis in context. 
+
+null - the difference in average runs scored between a team that won the coin toss and a team that lost the coin toss is zero
+alternative - the difference in average runs scored between a team that won the coin toss and that lost the coin toss is not equal to zero. 
+
+At the 0.05 level, is there a significant difference in number of runs scored for teams that won the toss and teams that lost the toss? why? interpret it
+```{r}
+t.test(`Run Scored` ~ Toss, data = asia_cup)
+```
+We cannot conclude that there is a significant difference in runs scored in a cricket match between a team that won the coin toss and a team that lost the coin toss. We know this because the p-value of the two sample t test is 0.0582, which is above 0.05 which we would need to reject the null hypothesis that the difference in means between the two groups is zero. 
+
+diff means for 4s between won and lost match 
+
+```{r}
+t.test(`Fours` ~ Result, data = asia_cup)
+```
 
 logistic regression 
 
@@ -109,5 +126,14 @@ logit.result = glm(Result ~ `Run Scored` + `Extras Scored` + `Given Extras`,
 
 summary(logit.result)
 ```
+```{r}
+logit.result2 = glm(Result ~  `Run.Scored` + `Fours` + `Sixes` + `Highest.Score`,
+                   family = binomial,
+                   data = asia_cup)
+
+summary(logit.result2)
+```
 
 What would the estimated model say about the chance that a team with _____ extra runs _____ given extras and _____ runs scored wins the game 
+
+interpret the coefficients 

@@ -1,13 +1,10 @@
 ---
 title: "Exploring Win/Losses of Various Teams in the Asia Cup (Cricket)"
-author: "Vivian Johnson" 
-date: "June 7, 2024" 
-
-categories:
-  - Logistic Regression  
+author: ""
+date:  ""
 ---
 
-## Motivation
+## Introduction
 
 Cricket is a game watched and played by billions of people across the world. Second in global popularity only to football (soccer), it is extremely popular in South Asia, Australia, Africa, and Europe.
 
@@ -35,7 +32,7 @@ The duration of cricket matches can range from hours to days, depending on what 
 The `asia_cup` data set includes data from each cricket match played in all Asia Cup Tournaments from 1984 (the first one) to 2022. The Asia Cup is a tournament now takes place every two years, alternating host cities in different countries throughout Asia.
 
 | Variable      | Description                                                              |
-|----------------------|--------------------------------------------------|
+|------------------------|-----------------------------------------------|
 | Team          | One team of the match                                                    |
 | Opponent      | The team played                                                          |
 | Host          | Venue played at                                                          |
@@ -50,14 +47,26 @@ The `asia_cup` data set includes data from each cricket match played in all Asia
 | Result        | 0 = lost match, 1 = won match                                            |
 | Given Extras  | Number of extra runs given up                                            |
 
-: [asia_cup.csv](stat_289_score/vgjohn/cricket_module/Data_Repo_Submission/asia_cup.csv)
+## Exercises
 
-## Questions
+#### 1. To get started, load in the file `asia_cup.csv` and the necessary packages
 
-1.  Building Simple Logistic Regression and Multiple Logistic Regression
-2.  Interpreting Logistic Regression 
-3.  Finding odds and log odds of an event 
+(will be different for each specific relative path)
 
-## References
+```{r}
+library(tidyverse)
+asia_cup <- read.csv("~/GitHub/stat_289_score/vgjohn/cricket_module/Data_Repo_Submission/asia_cup.csv")
+```
 
-[Asia Cup 1984-2022](https://www.kaggle.com/datasets/hasibalmuzdadid/asia-cup-cricket-1984-to-2022/data)
+#### 2. In what year did India score the most total runs? (Remember they may play more than one game each year)
+
+```{r}
+runs_year <- asia_cup %>% filter(Team == "India") %>%
+  group_by(Year) %>%
+  summarize(Runs = sum(`Run.Scored`))
+
+max_runs <- slice_max(runs_year, Runs)
+
+runs_year
+max_runs
+```
