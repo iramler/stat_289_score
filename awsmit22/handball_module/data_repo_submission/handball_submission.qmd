@@ -54,20 +54,19 @@ statistic which essentially ranks how good a player is.
 
 ## Data
 
-The dataset has 309 players from 18 different clubs, with 8 variables, 6
+The dataset has 309 players from 18 different clubs, with 7 variables, 4
 of which are statistics. Each row in the data set is a player in the
 Handball-Bundesliga during the 2022-23 season. The statistics are
 cumulative for the entirety of the season. The dataset only contains players who played in 10 games or more.
 
 | Variable          | Description                                                                                                                                                                                                                   |
 |--------------------|----------------------------------------------------|
+| `NAME` | The name of the player. |
 | `CLUB`            | The club the player is on. There are 18 in the Bundesliga.                                                                                                                                                                    |
 | `POSITION`        | The position of the player. There are 7 positions in handball: goalkeeper, fullbacks (left and right), center backcourt, wingers (left and right), and pivot.                                                                 |
 | `P`               | The number of games the player was in that season.                                                                                                                                                                            |
 | `total_offense`   | The total offensive plays made by the player in the season. Calculated by adding the 6 offensive focused statistics from the original dataset.                                                                                |
-| `total_penalties` | The total penalties the player had in the season. Calculated by adding the 5 penalty related statistics from the original dataset.                                                                                            |
-| `percentage`      | The shot percantage of the player in the season.                                                                                                                                                                              |
-| `BL`              | The number of shots blocked by the player in the season.                                                                                                                                                                      |
+| `total_penalties` | The total penalties the player had in the season. Calculated by adding the 5 penalty related statistics from the original dataset.|                                                             
 | `HPI`             | Handball performance index, complex formulaic calculation equivalent to how well the player performed in the season. Players with HPIs in the 70s are considered good, while players in the 60s are considered not as strong. |
 
 : [handball.csv](handball.csv){target="_blank"}

@@ -1,0 +1,32 @@
+---
+title: "handball_data_prep"
+format: html
+---
+
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+library(modelr)
+library(broom)
+library(stringr)
+```
+
+# Load the original data set
+
+[Kaggle Original
+Dataset](https://www.kaggle.com/datasets/nemanjagojkovic/handball-bundesliga-stats-202223){target="_blank"} 
+
+```{r}
+handball_df <- read_csv("handball_stats.csv")
+```
+
+# Cleaning to get the ideal data
+
+```{r}
+handball_clean <- handball_df |> mutate(total_penalties = RC + BK + TF + YC + `2MIN`, total_offense = G + M + FG + G.1 + AS + ST) |> select(c(NAME, CLUB, POSITION, total_offense, total_penalties, P, HPI))
+
+handball_clean <- handball_clean |> filter(P >= 10)
+```
+
