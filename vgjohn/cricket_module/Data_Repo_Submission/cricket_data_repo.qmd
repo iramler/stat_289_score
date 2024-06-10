@@ -35,18 +35,18 @@ The duration of cricket matches can range from hours to days, depending on what 
 The `asia_cup` data set includes data from each cricket match played in all Asia Cup Tournaments from 1984 (the first one) to 2022. The Asia Cup is a tournament now takes place every two years, alternating host cities in different countries throughout Asia.
 
 | Variable      | Description                                                              |
-|----------------------|-------------------------------------------------|
+|-----------------------|-------------------------------------------------|
 | Team          | One team of the match                                                    |
 | Opponent      | The team played                                                          |
 | Host          | Venue played at                                                          |
 | Year          | Tournament year played                                                   |
 | Toss          | Coin toss to determine who starts batting or bowling (0 = lost, 1 = won) |
-| Selection     | Team's selection after winning / losing the toss                         |
+| Selection     | Team's selection after winning / losing the toss (0 = Batting, 1 = Bowling)                     |
 | Run Scored    | Total runs scored by that team                                           |
 | Fours         | Total scored fours for that team                                         |
 | Sixes         | Total scored sixes for that team                                         |
 | Extras        | Amount of extra runs scored by that team                                 |
-| Highest Score | Highest individual number of runs scored                |
+| Highest Score | Highest individual number of runs scored                                 |
 | Result        | 0 = lost match, 1 = won match                                            |
 | Given Extras  | Number of extra runs given up                                            |
 
