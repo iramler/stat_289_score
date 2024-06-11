@@ -12,21 +12,60 @@ library(tidyverse)
 # can download updated data from Wheelo Ratings, make sure to select All and not All combined
 # read in the data
 # this file comes from this website: https://www.wheeloratings.com/tennis_atp_stats_last52.html
-tennis <- read_csv("original_tennis.csv")
+atp <- read_csv(here::here("esselt21/tennis_module/data_repo/original_atp.csv"))
+wta <- read.csv(here::here("esselt21/tennis_module/data_repo/original_wta.csv"))
 ```
 
 ```{r}
-# select whichever variables you want to use
-# and change surface to a factored variable and get rid of all
-tennis <-
-  tennis |>
-  select(c(Player, Surface, ReturnPointsWonPercentage, DoubleFaultPercentage, WinPercentage)) |>
-  filter(Surface != "All") |>
-  mutate(Surface = as_factor(Surface))
+# filtering atp data to only include players who are represented in all three surfaces
+atp <-
+  atp |>
+  filter(Surface != "All")
+
+names <-
+  atp |>
+  group_by(Player) |>
+  summarise(n = n()) |>
+  filter(n == 3) |>
+  pull(Player)
+
+atp <-
+  atp |>
+  filter(Player %in% names)
+```
+
+```{r}
+# filtering wta data to only include players who are represented in all three surfaces
+wta <-
+  wta |>
+  filter(Surface != "All")
+
+names <-
+  wta |>
+  group_by(Player) |>
+  summarise(n = n()) |>
+  filter(n == 3) |>
+  pull(Player)
+
+wta <-
+  wta |>
+  filter(Player %in% names)
+```
+
+```{r}
+# can select fewer variables if not all are needed
+atp <-
+  atp |>
+  select(c(Player, Surface, Matches, EloRank, WinPercentage, DoubleFaultPercentage, ReturnPointsWonPercentage))
+
+wta <-
+  wta |>
+  select(c(Player, Surface, Matches, EloRank, WinPercentage, DoubleFaultPercentage, ReturnPointsWonPercentage))
 ```
 
 ```{r}
 # write the reduced file as a new csv
-write_csv(tennis, "tennis.csv")
+write_csv(atp, here::here("esselt21/tennis_module/data_repo/new_atp.csv"))
+write_csv(wta, here::here("esselt21/tennis_module/data_repo/new_wta.csv"))
 ```
 

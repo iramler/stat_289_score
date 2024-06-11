@@ -12,29 +12,27 @@ library(modelr)
 ```
 
 ```{r}
-men <- read_csv(here::here("esselt21/tennis_module/exploration/men.csv"))
+atp <- read_csv(here::here("esselt21/tennis_module/exploration/new_atp.csv"))
 ```
 
 ```{r}
-men <-
-  men |>
-  filter(Surface != "All")
-
+# filtering data to only include people who are represented in all three surfaces
 names <-
-  men |>
+  atp |>
   group_by(Player) |>
   summarise(n = n()) |>
   filter(n == 3) |>
   pull(Player)
 
-men <-
-  men |>
+atp <-
+  atp |>
+  filter(Surface != "All") |>
   filter(Player %in% names)
 ```
 
 ```{r}
 # check win percentage distribution, what is the shape, center, and spread, is there a a big difference between the three surfaces?
-men |>
+atp |>
   ggplot(aes(x = WinPercentage)) +
   geom_histogram(colour = "black",
                  fill = "lightblue",
@@ -57,17 +55,17 @@ men |>
 ```{r}
 # five number summary and standard deviation
 cWPercentage <-
-  men |>
+  atp |>
   filter(Surface == 'Clay') |>
   pull(WinPercentage)
 
 hWPercentage <-
-  men |>
+  atp |>
   filter(Surface == 'Hard') |>
   pull(WinPercentage)
 
 gWPercentage <-
-  men |>
+  atp |>
   filter(Surface == 'Grass') |>
   pull(WinPercentage)
 
@@ -81,14 +79,8 @@ hardSummary
 ```
 
 ```{r}
-men |>
-  group_by(Surface) |>
-  summarise(N = n())
-```
-
-```{r}
-# approximate the median, iqr, and range for each surface
-men |>
+# atp box plot
+atp |>
   ggplot(aes(x = Surface,
              y = WinPercentage,
              fill = Surface)) +
@@ -96,11 +88,48 @@ men |>
   geom_boxplot() +
   theme_minimal() +
   labs(y = "Win Percentage",
-       title = "Box Plots of Win Percentages by Surface") +
+       title = "Box Plots of Win Percentages by Surface",
+       caption = "ATP") +
   theme(legend.position = "none",
-        plot.title = element_text(hjust = 0.5))
+        plot.title = element_text(hjust = 0.5),
+        plot.caption = element_text(face = "bold",
+                                    size = 20))
 ```
 
+```{r}
+wta <- read_csv(here::here("esselt21/tennis_module/exploration/new_wta.csv"))
+```
+
+```{r}
+names <-
+  wta |>
+  group_by(Player) |>
+  summarise(n = n()) |>
+  filter(n == 3) |>
+  pull(Player) 
+
+wta <-
+  wta |>
+  filter(Surface != "All") |>
+  filter(Player %in% names)
+```
+
+```{r}
+wta |>
+  ggplot(aes(x = Surface,
+             y = WinPercentage,
+             fill = Surface)) +
+  stat_boxplot(geom = 'errorbar') +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(y = "Win Percentage",
+       title = "Box Plots of Win Percentages by Surface",
+       caption = "WTA") +
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0.5),
+        plot.caption = element_text(face = "bold",
+                                    size = 20))
+```
 
 
 ```{r}
@@ -136,45 +165,7 @@ plot(model)
 ```
 
 ```{r}
-women <- read_csv(here::here("esselt21/tennis_module/exploration/women.csv"))
-```
-
-```{r}
-women <-
-  women |>
-  filter(Surface != "All") |>
-  filter(Player %in% names)
-```
-
-```{r}
-names <-
-  women |>
-  group_by(Player) |>
-  summarise(n = n()) |>
-  filter(n == 3) |>
-  pull(Player) 
-```
-
-```{r}
-women |>
-  ggplot(aes(x = Matches,
-             y = WinPercentage,
-             color = Surface)) +
-  geom_jitter() +
-  geom_smooth() +
-  labs(title = "Women") +
-  facet_grid(~Surface,
-             scales = "free_x")
-```
-
-```{r}
 men <- read_csv(here::here("esselt21/tennis_module/exploration/men.csv"))
-```
-
-```{r}
-men <-
-  men |>
-  filter(Surface != "All" & EloRank <= 100)
 ```
 
 ```{r}
