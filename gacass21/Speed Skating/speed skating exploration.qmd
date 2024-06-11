@@ -10,7 +10,7 @@ library(here)
 ```
 
 ```{r}
-speed_skating <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score/gacass21/Speed Skating/m500_lap_time_rank_ver5.csv")
+speed_skating <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score/gacass21/Speed Skating/data repo/data/short_track.csv")
 speed_skating
 ```
 
@@ -201,13 +201,16 @@ speed_skating |> filter(Distance == "500m(1)" | Distance == "500m(2)") |>
 
 
 ```{r}
-time_outliers1 <- speed_skating |> filter(!is.na(time_lap1)) |> filter(time_lap1 < 9)
+speed_skating |> filter(!is.na(time_lap1)) |> filter(time_lap1 < 10) |> summary()
+
+time_outliers1 <- speed_skating |> filter(!is.na(time_lap1)) |> filter(time_lap1 < 10)
 
 time_outliers1 |> summarise(mean(time_lap1))
 speed_skating |> summarise(mean(time_lap1, na.rm = TRUE))
 
 ggplot(data = time_outliers1, aes(x = time_lap1)) +
-  geom_histogram(bins = 75)
+  geom_histogram(bins = 75, fill = "lightgray", color = "black") +
+  theme_minimal()
 ```
 
 ```{r}
@@ -253,16 +256,24 @@ ggplot(data = time_outliers5, aes(x = time_lap5)) +
 
 ```{r}
 speed_skating |> filter(!is.na(Time)) |> filter(Time == min(Time)) |>
-  select(time_lap1, time_lap2, time_lap3, time_lap4, time_lap5)
+  select(Name, Time, time_lap1, time_lap2, time_lap3, time_lap4, time_lap5)
 ```
 
 ```{r}
 speed_skating |> filter(Series == "Olympic Games", Round == "FinalA", Name == "AN Victor") |> 
-  select(time_lap1, time_lap2, time_lap3, time_lap4, time_lap5)
+  select(Time, time_lap1, time_lap2, time_lap3, time_lap4, time_lap5)
 ```
 
 ```{r}
-speed_skating |> filter(!is.na(time_lap1)) |> summary(time_lap1)
+speed_skating |> filter(!is.na(time_lap5)) |>  summary()
+```
+
+```{r}
+time_hist <- speed_skating |> filter(!is.na(Time)) |> filter(Time <= 70)
+
+ggplot(data = time_hist, aes(x = Time)) +
+  geom_histogram(bins = 100, fill = "lightgray", color = "black") +
+  theme_minimal()
 ```
 
 

@@ -267,6 +267,7 @@ dollar_per_shot <- full_mpo24 |> group_by(player) |>
   arrange(desc(`$/Shot`)) |>
   slice(1:20) |>
   mutate(player = fct_reorder(player, desc(`$/Shot`)))
+dollar_per_shot
 ```
 
 ```{r}
