@@ -36,6 +36,9 @@ ggplot(data = mod_plot, aes(x = club_pen, y = club_hpi)) +
 
 # Question 2
 
+***Just noticed that i should have a question interpreting the slope for the model***
+# Question 3
+
 	Perform an ANOVA test to assess the overall fit of HPI = total_offense + total_penalties. Fill in the ANOVA table below and interpret the results. Check your work with R.
 
 H~o~: 𝛽~total_offense~ = 𝛽~total_penalties~ = 0
@@ -48,7 +51,7 @@ summary(anovamod)
 anova(anovamod)
 ```
 
-# Question 3
+# Question 4
 
 Calculate and interpret a 98% confidence interval for the mean HPI of a player with 30 total_penalties. Check your work with R.
 
@@ -60,7 +63,7 @@ newx <- data.frame(total_penalties=30)
 predict(mod, newx,interval="confidence", level = 0.98)
 ```
 
-# Question 4
+# Question 5
 
 Calculate and interpret a 98% prediction interval for the HPI of a player with 30 total_penalties. Check your work with R.
 
@@ -72,7 +75,7 @@ newx <- data.frame(total_penalties=30)
 predict(mod, newx,interval="prediction", level = 0.98)
 ```
 
-# Question 5
+# Question 6
 
 The below scatterplot shows total_penalties against total_offense with a regression line. Based on this plot what do you expect the correlation between total_penalties and total_offense to be?
 
@@ -80,7 +83,7 @@ The below scatterplot shows total_penalties against total_offense with a regress
 ggplot(data = handball_clean, aes(x = total_offense, y = total_penalties)) + geom_point(alpha = 0.5, aes(colour = POSITION)) + theme_minimal() + geom_smooth(method = "lm") + labs(title = "Scatterplot of total_penalties against total_offense with a regression line")
 ```
 
-# Question 6
+# Question 7
 
 Test the significance of the correlation between the total_offense and the total_penalties of a player. Provide an interpretation of the results. Check your work with R.
 
@@ -88,7 +91,7 @@ Test the significance of the correlation between the total_offense and the total
 cor.test(handball_clean$total_offense, handball_clean$total_penalties)
 ```
 
-# Question 7
+# Question 8
 
 Could it be concluded that having more penalties increases the skill and success of a player in the form of HPI?
 

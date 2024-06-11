@@ -26,8 +26,11 @@ In the data set there are 41 medalling nations that competed in 25 different eve
 | Variable | Description                                                                                                                |
 |-------------------|-----------------------------------------------------|
 | `NOC` | National Olympic Committee or the nation competing. |
-| `total_medals` | The total number of medals for that country in that event. |
-| `total_points` | The total number of points for that country in that event. The points are scaled with a gold medal counting for 3 points, a silver for 2, and a bronze for 1. |
+| `total_medals` | The total number of medals for that country. |
+| `total_points` | The total number of points for that country. The points are scaled with a gold medal counting for 3 points, a silver for 2, and a bronze for 1. |
+| `total_gold` | The total number of gold medals for that country. |
+| `total_silver` | The total number of silver medals for that country. |
+| `total_bronze` | The total number of bronze medals for that country. |
 
 : [rowing_medals.csv](rowing_medals.csv){target="_blank"}
 
