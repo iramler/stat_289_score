@@ -33,7 +33,8 @@ mean(weights_ratio$Ratio)
 ```{r}
 plot1 <- ggplot(data = weights_ratio,
                 mapping = aes(x = Ratio)) +
-  geom_histogram(binwidth = 0.01, fill = "blue")
+  geom_histogram(binwidth = 0.01, fill = "blue") +
+  scale_x_continuous(limits = c(0,1), breaks = seq(0,1, by = 0.1))
 
 plot1
 ```
@@ -51,11 +52,35 @@ IQR(weights_ratio$Ratio)
 ```
 
 ```{r}
-summary(weights_ratio)
+sum <- fivenum(x = weights_ratio$Ratio)
+sum
 ```
 ```{r}
-sd(weights_ratio$Ratio)
+stdev <- sd(weights_ratio$Ratio)
+stdev
+
+mean <- mean(weights_ratio$Ratio)
+mean
 ```
+
+```{r}
+summary_df <-
+  data.frame(
+    Statistic = c("Min", "Q1", "Median", "Q3", "Max", "Mean", "St. Dev"),
+    Value = c(sum, mean, stdev)
+  )
+
+summary_df <- summary_df %>%
+  mutate(
+    Value = round(Value, 3)
+  )
+print(summary_df)
+```
+sum_transposed <- t(summary_df)
+colnames(sum_transposed) <- summary_df$Statistic
+sum_transposed <- as.data.frame(sum_transposed)
+sum_transposed <- sum_transposed[-1,]
+sum_transposed <- sum_transposed %>%
 
 seems to follow a normal distribution
 ```{r}
@@ -63,3 +88,16 @@ nDist <- rnorm(weights_ratio$Ratio, mean = 0.7257, sd = 0.08733505)
 hist(nDist, breaks = 10)
 ```
 
+```{r}
+library(ggplot2)
+library(readr)
+weights_ratio <- read.csv("~/GitHub/stat_289_score/vgjohn/weights_ratio/module/weights_ratio.csv")
+ggplot(data = weights_ratio,
+       mapping = aes(y = Ratio)) +
+  geom_boxplot() +
+  scale_y_continuous(limits = c(0,1), breaks = seq(0, 1, by = 0.1))+
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank()
+    )
+```
