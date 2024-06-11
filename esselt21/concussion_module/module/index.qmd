@@ -10,14 +10,13 @@ author:
     email: iramler@stlawu.edu
     affiliation:
       - ref: slu
-description: Describing distribution shapes and looking at multiple linear regression.
+description: Exploring data through visualizations to create questions.
 editor: 
   canonical: true
 categories:
-  - Five Number Summary
-  - Distribution
-  - Multiple Linear Regression
-  - Assumptions
+  - Data Visualization
+  - Data Exploration
+  - Modeling
 ---
 
 ## Module
@@ -26,57 +25,60 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-In professional tennis the rankings are typically based on set parameters. Throughout the year there are tournaments that are worth different numbers of points. There are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. You receive the most points in your [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) from winning a Grand Slam, and the least from winning an ATP 250 tournament. In the data that we will be using, the provider has calculated an Elo ranking. This ranking takes into account what the tournaments are, as well as who each player is playing. So playing a "harder" opponent in a Grand Slam counts for more than playing an "easy" opponent.
-
-In this worksheet, we will look at the data including this Elo ranking and look at distributions, shapes, and a multiple linear regression model. There will be questions about each of these, some of them being more open ended than others.
+The NFL, one of America's most popular sports league has some of the most available data. As the sport has evolved, many questions have been raised about the safety of the players and how to protect them. As it is a full contact sport, there are lots of injuries, particularly a large amount of head injuries. In this worksheet, we will be looking into investigating differences in concussions in the NFL. Some of the things we will look at are teams, positions, and seeing how the treatment of players differs.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
 
-1.  Understand the shapes of distribution as well as terms used to describe distribution.
+1.  Understand a process for investigating data and deciding if there are questions to be looked into.
 
-2.  Understand the five number summary and be able to calculate some of its numbers.
+2.  Be comfortable using ggplot and creating sound data visualizations.
 
-3.  Be able to interpret a multiple regression visualization as well as its coefficients.
+3.  Be able to decide if there is any questions worth pursuing further.
 
-4.  Check to see if the multiple linear regression model meets all of the required assumptions.
+4.  Create an ANOVA model.
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-Technology requirement: The activity handout will require nothing more than the handout and a writing utensil to complete.
+Technology requirement: The activity handout provides examples of how to clean and summarize data. For this, the use of R Studio is required and we will be using a quarto document. However, the activity could be modified to ask students to produce that information from the raw dataset and/or extend the activity to investigate other variables available in the data.
 
-1.  Knowledge of distribution types and terms that come along with it/
+1.  Knowledge of tidyverse and creating variables
 
-2.  Knowledge of the five number summary and how the numbers are calculated.
+2.  Knowledge of ggplot
 
-3.  Knowledge of multiple linear regression, the assumptions it must meet, and how to interpret its coefficients. 
+3.  Knowledge of interpreting visualizations and creating models
 :::
 
 ### Data
 
-There is one data set for this exercise. The data is made up of 485 rows and 5 columns and is provided by Wheelo Ratings. Each row represents a player on a particular surface of court. The three options for these surfaces are Clay, Grass, and Hard.
+This data is made up of 392 rows and 10 columns. Each row represents a player that experienced a concussion during the set time frame.
 
-Download non tidy data: [tennis.csv](data/tennis.csv)
+Download non tidy data: [concussion.csv](data/concussion.csv)
 
-**Tennis**
+**American Football**
 
 <details>
 
 <summary><b>Variable Descriptions</b></summary>
 
-| Variable                  | Description                                          |
-|-------------------------|-----------------------------------------------|
-| Player                    | The player for which the data corresponds to         |
-| Surface                   | The type of surface that was played on for this data |
-| WinPercentage             | The percentage of matches won                        |
-| DoubleFaultPercentage     | The percentage of double faults                      |
-| ReturnPointsWonPercentage | The percentage of return points won                  |
+| Variable                       | Description                                                       |
+|------------------------|------------------------------------------------|
+| Player                         | The player's name                                                 |
+| Team                           | The team that the player plays for                                |
+| Date                           | The date in which the concussion happened                         |
+| Position                       | The position that the player plays                                |
+| Games Missed                   | The number of games the player missed with the injury             |
+| Reported Injury Type           | What the injury was reported as                                   |
+| Play Time After Injury         | How many downs the player played after getting injured            |
+| Average Playtime Before Injury | How much the player was playing on average before getting injured |
+| Offense                        | Whether the player was an offensive player or not                 |
+| Skilled                        | Whether the player was a skilled position or not                  |
 
 </details>
 
 #### Data Source
 
-[Wheelo Ratings](Wheelo%20Ratings%20%3Chttps://www.wheeloratings.com/tennis_atp_stats_last52.html%3E.){target="_blank"}
+[Kaggle](https://www.kaggle.com/datasets/rishidamarla/concussions-in-the-nfl-20122014/data){target="_blank"}
 
 ### Materials
 

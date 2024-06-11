@@ -1,0 +1,101 @@
+---
+title: "class_handout_solutions"
+author: "eric seltzer"
+format: html
+---
+
+# Introduction
+
+The National Football League (NFL) is a professional American football league that consists of 32 teams, divided equally between the American Football Conference (AFC) and the National Football Conference (NFC). Each of these teams compete every year to win the Super Bowl, the greatest achievement in American Football. As the sport has evolved, many questions have been raised about the safety of the players and how to protect them. As it is a full contact sport, there are lots of injuries, particularly a large amount of head injuries. In this worksheet, we will be looking into investigating differences in concussions in the NFL. Some of the things we will look at are teams, positions, and seeing how the treatment of players differs.
+
+## 1. Load in the data, and create a new data frame team that shows the total number of concussions, the average downs played after a concussion, and the average games missed, by NFL team.
+```{r}
+library(tidyverse)
+concussion <- read_csv(here::here("esselt21/concussion_module/module/concussion.csv"))
+```
+
+```{r}
+team <-
+  concussion |>
+  mutate(Team = as_factor(Team)) |>
+  group_by(Team) |>
+  summarise(totalConcussions = n(),
+            avgDownsAfter = mean(`Play Time After Injury`),
+            avgGamesMissed = mean(`Games Missed`))
+```
+
+## 2. Investigage differences in teams by creating column charts with ggplot for each variable. Use forcats to reorder the factor to make the visualization easier to interpret.
+```{r}
+team |>
+  ggplot(aes(x = fct_reorder(Team,
+                             totalConcussions,
+                             .desc = FALSE),
+             y = totalConcussions,
+             fill = Team)) +
+  geom_col(alpha = 0.5) +
+  coord_flip() +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  labs(x = "NFL Teams",
+       y = "Number of Concussions",
+       title = "Total Number of Concussions by Team")
+
+team |>
+  ggplot(aes(x = fct_reorder(Team,
+                             avgDownsAfter,
+                             .desc = FALSE),
+             y = avgDownsAfter,
+             fill = Team)) +
+  geom_col(alpha = 0.5) +
+  coord_flip() +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  labs(x = "NFL Teams",
+       y = "Average Downs Played",
+       title = "Average Downs Played After a Concussion")
+
+team |>
+  ggplot(aes(x = fct_reorder(Team,
+                             avgGamesMissed,
+                             .desc = FALSE),
+             y = avgGamesMissed,
+             fill = Team)) +
+  geom_col(alpha = 0.5) +
+  coord_flip() +
+  theme_minimal() +
+  theme(legend.position = "none",
+        plot.title = element_text(hjust = 0)) +
+  labs(y = "Average Games Missed",
+       x= "NFL Teams",
+       title = "Average Games Missed After a Concussion by NFL Team")
+```
+
+## 3. Do you think that there are any discrepancies in how teams deal with concussions?
+
+## 4. Create density plots of the play time after injury by position and if they are skilled or not and offense/defense.
+```{r}
+concussion |>
+  filter(Offense == "Offense" & Skilled == "Skilled") |>
+  ggplot(aes(x = `Play Time After Injury`,
+             fill = Position)) +
+  geom_density(aes(colour = Position),
+               alpha = 0.2) +
+  theme_minimal()
+
+concussion |>
+  filter(Offense == "Offense" & Skilled == "Non-Skilled") |>
+  ggplot(aes(x = `Play Time After Injury`,
+             fill = Position)) +
+  geom_density(aes(colour = Position),
+               alpha = 0.2) +
+  theme_minimal()
+
+concussion |>
+  filter(Offense == "Defense") |>
+  ggplot(aes(x = `Play Time After Injury`,
+             fill = Position)) +
+  geom_density(aes(colour = Position),
+               alpha = 0.2) +
+  theme_minimal()
+```
+

@@ -1,6 +1,6 @@
 ---
 title: "Investigating Surfaces Impact on Win Percentages in Professional Tennis"
-date: March 8, 2024
+date: June 10, 2024
 author:
   - name: Eric Seltzer
     affiliation:
@@ -26,7 +26,10 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-In professional tennis the rankings are typically based on set parameters. Throughout the year there are tournaments that are worth different numbers of points. There are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. You receive the most points in your [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) from winning a Grand Slam, and the least from winning an ATP 250 tournament. In the data that we will be using, the provider has calculated an Elo ranking. This ranking takes into account what the tournaments are, as well as who each player is playing. So playing a "harder" opponent in a Grand Slam counts for more than playing an "easy" opponent.
+In the Association of Tennis Professionals (ATP) the rankings are typically based on set parameters. Throughout the year there are tournaments that are worth different numbers of points. There are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. You receive the most points in your [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) from winning a Grand Slam, and the least from winning an ATP 250 tournament. In Tennis, there are also three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Certain players perform better on certain surfaces. This data set contains information for each player on each surface. Throughout the year, there are two Grand Slams on a Hard court, one on Clay, and one on Grass. In the data that we will be using, the provider has calculated an Elo ranking. This ranking takes into account what the tournaments are, as well as who each player is playing. So playing a "harder" opponent in a Grand Slam counts for more than playing an "easy" opponent. For instance, if number 9 Elo ranked Casper Ruud plays number 1 Elo ranked Jannik Sinner and wins, it will be worth more than if Ruud played number 111 Elo ranked Stan Wawrinka.
+
+#### Additional Tennis Information
+
 
 In this worksheet, we will look at the data including this Elo ranking and look at distributions, shapes, and a multiple linear regression model. There will be questions about each of these, some of them being more open ended than others.
 
@@ -37,9 +40,9 @@ By the end of this activity, you will be able to:
 
 2.  Understand the five number summary and be able to calculate some of its numbers.
 
-3.  Be able to interpret a multiple regression visualization as well as its coefficients.
+3.  Be able to interpret a side-by-side box plots.
 
-4.  Check to see if the multiple linear regression model meets all of the required assumptions.
+4.  Compare differences between two populations through visualizations. 
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}

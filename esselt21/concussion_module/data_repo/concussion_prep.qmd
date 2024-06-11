@@ -55,6 +55,5 @@ concussion <-
 
 ```{r}
 write_csv(concussion, "concussion.csv")
-write_csv(teams, "teams.csv")
 ```
 

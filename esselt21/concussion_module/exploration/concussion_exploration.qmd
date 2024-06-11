@@ -121,7 +121,7 @@ report(one.way)
 ```
 
 ```{r}
-# tukey
+# tukey test
 TukeyHSD(one.way)
 ```
 

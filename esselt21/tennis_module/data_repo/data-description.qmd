@@ -1,8 +1,8 @@
 ---
 title: Investigating Surfaces Impact on Win Percentages in Professional Tennis
 author: Eric Seltzer
-date: June 4, 2024
-description: Data of the ATP players from the last 52 weeks as of May 27, 2024. Players who have played a minimum of 10 matches overall or 5 matches on a particular surface are included in the table.
+date: June 10, 2024
+description: Data of the Association of Tennis Professionals (ATP) players from the last 52 weeks as of May 27, 2024. Players who have played a minimum of 10 matches overall or 5 matches on a particular surface are included in the table. We will be looking into this tennis data.
 categories:
   - Five Number Summary
   - Distribution

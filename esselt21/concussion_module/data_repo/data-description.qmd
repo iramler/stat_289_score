@@ -6,7 +6,7 @@ description: Data of the number of concussions in the NFL from the 2012 season u
 categories:
   - Data Visualization
   - Data Exploration
-  - Correlation
+  - Modeling
 editor:
   markdown: 
     canonical: true
