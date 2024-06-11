@@ -47,6 +47,8 @@ In the data set there are 41 medalling nations that competed in 25 different eve
 
 5.    What could be a reason for the distribution of medals and points being so heavily skewed towards certain nations winning more than others?
 
+6.    There is a lot of debate about how to best weigh the points for the different types of medals, what is a method you think would be best for weighing these medals? How would the new method alter the data?
+
 ## References
 
 [Kaggle Original Dataset](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download){target="_blank"}

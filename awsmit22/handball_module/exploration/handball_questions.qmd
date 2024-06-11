@@ -2,6 +2,7 @@
 title: "handball_questions"
 format: html
 ---
+
 # Libraries
 
 ```{r}
@@ -20,7 +21,31 @@ handball_clean <- read_csv("~/Desktop/git/stat_289_score/awsmit22/handball_modul
 
 # Question 1
 
-The below scatterplots show the mean HPI of each club against clubs’ mean penalties and offense. In comparing the two plots, what do you expect from the model: HPI = total_offense + total_penalties?
+Calculate and interpret a 98% confidence interval for the mean HPI of a player with 30 total_penalties. Check your work with R.
+
+```{r}
+mod <- lm(HPI ~ total_penalties, data=handball_clean)
+
+newx <- data.frame(total_penalties=30)
+
+predict(mod, newx,interval="confidence", level = 0.98)
+```
+
+# Question 2
+
+Calculate and interpret a 98% prediction interval for the HPI of a player with 30 total_penalties. Check your work with R.
+
+```{r}
+mod <- lm(HPI ~ total_penalties, data=handball_clean)
+
+newx <- data.frame(total_penalties=30)
+
+predict(mod, newx,interval="prediction", level = 0.98)
+```
+
+# Question 3
+
+The below scatterplots show the mean HPI of each club against clubs' mean penalties and offense. In comparing the two plots, what do you expect from the model: HPI = total_offense + total_penalties?
 
 ```{r}
 mod_plot <- handball_clean |> group_by(CLUB) |> summarise(club_offense = mean(total_offense), club_pen = mean(total_penalties), club_hpi = mean(HPI))
@@ -33,13 +58,21 @@ ggplot(data = mod_plot, aes(x = club_pen, y = club_hpi)) +
   geom_point() +
   geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of club_hpi against club_penalties with regression line")
 ```
+         
 
-# Question 2
+# Question 4
 
-***Just noticed that i should have a question interpreting the slope for the model***
-# Question 3
+Below is a table of the coefficients for the model HPI = ß~total_offense~ + ß~total_penalties~, interpret ß~total_offense~ and ß~total_penalties~ in the context of HPI.
 
-	Perform an ANOVA test to assess the overall fit of HPI = total_offense + total_penalties. Fill in the ANOVA table below and interpret the results. Check your work with R.
+```{r}
+hpi_mod <- lm(HPI~total_offense+total_penalties, data=handball_clean)
+summary(hpi_mod)
+```
+
+# Question 5
+
+Perform an ANOVA test to assess the overall fit of HPI = total_offense + total_penalties. Fill in the ANOVA table below and interpret the results. Check your work with R.
+
 
 H~o~: 𝛽~total_offense~ = 𝛽~total_penalties~ = 0
 
@@ -49,30 +82,6 @@ H~a~: 𝛽~total_offense~ OR 𝛽~total_penalties~ ≠ 0
 anovamod <- lm(HPI~total_offense+total_penalties, data=handball_clean)
 summary(anovamod)
 anova(anovamod)
-```
-
-# Question 4
-
-Calculate and interpret a 98% confidence interval for the mean HPI of a player with 30 total_penalties. Check your work with R.
-
-```{r}
-mod <- lm(HPI ~ total_penalties, data=handball_clean)
-
-newx <- data.frame(total_penalties=30)
-
-predict(mod, newx,interval="confidence", level = 0.98)
-```
-
-# Question 5
-
-Calculate and interpret a 98% prediction interval for the HPI of a player with 30 total_penalties. Check your work with R.
-
-```{r}
-mod <- lm(HPI ~ total_penalties, data=handball_clean)
-
-newx <- data.frame(total_penalties=30)
-
-predict(mod, newx,interval="prediction", level = 0.98)
 ```
 
 # Question 6
@@ -85,13 +94,21 @@ ggplot(data = handball_clean, aes(x = total_offense, y = total_penalties)) + geo
 
 # Question 7
 
+Find the correlation of total_penalties and total_offense. 
+
+```{r}
+cor(handball_clean$total_penalties, handball_clean$total_offense)
+```
+
+
+# Question 8
+
 Test the significance of the correlation between the total_offense and the total_penalties of a player. Provide an interpretation of the results. Check your work with R.
 
 ```{r}
 cor.test(handball_clean$total_offense, handball_clean$total_penalties)
 ```
 
-# Question 8
+# Question 9
 
 Could it be concluded that having more penalties increases the skill and success of a player in the form of HPI?
-
