@@ -9,7 +9,7 @@ library(tidyverse)
 ```
 
 ```{r}
-atp <- read_csv(here::here("esselt21/tennis_module/exploration/atp_2023.csv"))
+atp <- read_csv(here::here("esselt21/tennis_module/exploration/atp_matches_2023.csv"))
 
 wta <- read_csv(here::here("esselt21/tennis_module/exploration/wta_2023.csv"))
 ```
@@ -17,6 +17,12 @@ wta <- read_csv(here::here("esselt21/tennis_module/exploration/wta_2023.csv"))
 ```{r}
 atpClean <-
   atp |>
+  select(-c(tourney_id, tourney_level, tourney_date, draw_size, match_num, winner_id, winner_seed, winner_entry, loser_id, loser_seed, loser_entry, round, winner_rank_points, loser_rank_points))
+```
+
+```{r}
+atpClean <-
+  atpClean |>
   select(-score) |>
   rename("Winner" = winner_name) |>
   rename("Loser" = loser_name) |>
@@ -145,30 +151,28 @@ atpClean <-
 ```
 
 ```{r}
-<<<<<<< HEAD
 matches <-
-  atp |>
+  atpClean |>
   group_by(player) |>
   summarise(matches = n()) |>
   filter(matches >= 10) |>
   pull(player)
 
-atp <-
-  atp |>
+atpClean <-
+  atpClean |>
   filter(player %in% matches)
 
-atp <-
-  atp |>
+atpClean <-
+  atpClean |>
   relocate(break_points_saved, .after = first_serve_in)
-=======
-atp <-
-  atp |>
+
+atpClean <-
+  atpClean |>
   relocate(result, .after = surface) |>
   relocate(player, .after = result)
->>>>>>> ca93f92d5574e031a44b8a4c811a25f7ae0137b5
 ```
 
 ```{r}
-write_csv(atp, here::here("esselt21/tennis_module/exploration/atp_2023.csv"))
+write_csv(atpClean, here::here("esselt21/tennis_module/exploration/atp_2023.csv"))
 ```
 
