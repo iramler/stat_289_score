@@ -13,19 +13,8 @@ atp <- read_csv(here::here("esselt21/tennis_module/exploration/atp_2023.csv"))
 ```
 
 ```{r}
-GS <-
-  atp |>
-  filter(best_of != 3) |>
-  select(-best_of)
-
-nGS <-
-  atp |>
-  filter(best_of == 3) |>
-  select(-best_of)
-```
-
-```{r}
-BeewinPercentage <-
+# creating win percentages
+GSwinPercentage <-
   atp |>
   group_by(player, best_of) |>
   summarise(winPct = mean(result == "Winner"),
@@ -41,81 +30,10 @@ winPercentage <-
   filter(matches >= 5) |>
   mutate(surface = as_factor(surface),
          surface = fct_relevel(surface, c("Clay", "Grass", "Hard")))
-
-GSwinPercentage <-
-  GS |>
-  group_by(player, surface) |>
-  summarise(winPct = mean(result == "Winner"),
-            matches = n()) |>
-  filter(matches >= 5) |>
-  mutate(surface = as_factor(surface),
-         surface = fct_relevel(surface, c("Clay", "Grass", "Hard")))
-
-nGSwinPercentage <-
-  nGS |>
-  group_by(player, surface) |>
-  summarise(winPct = mean(result == "Winner"),
-            matches = n()) |>
-  filter(matches >= 5) |>
-  mutate(surface = as_factor(surface),
-         surface = fct_relevel(surface, c("Clay", "Grass", "Hard")))
 ```
 
 ```{r}
-winPercentage |>
-  ggplot(aes(x = surface,
-             y = winPct,
-             fill = surface)) +
-  stat_boxplot(geom = 'errorbar') +
-  geom_boxplot() +
-  theme_minimal() +
-  theme(panel.background = element_rect(fill = 'white'),
-        plot.background = element_rect(fill = 'white'),
-        plot.title = element_text(size = 20,
-                                  hjust = 0.5),
-        plot.caption = element_text(size = 20,
-                                    face = 'bold'),
-        legend.position = 'none') +
-  labs(x = 'Best Of',
-       y = 'Win Percentage',
-       title = 'Side-by-side Box Plots of Win Percentage',
-       caption = 'ATP')
-
-nGSwinPercentage |>
-  ggplot(aes(x = surface,
-             y = winPct,
-             fill = surface)) +
-  geom_boxplot(alpha = 0.75) +
-  theme_minimal()
-
-GSwinPercentage |>
-  ggplot(aes(x = surface,
-             y = winPct,
-             fill = surface)) +
-  geom_boxplot(alpha = 0.75) +
-  theme_minimal()
-```
-
-```{r}
-library(ggbeeswarm)
-BeewinPercentage |>
-  ggplot(aes(x = best_of,
-             y = winPct,
-             color = best_of)) +
-  geom_beeswarm(cex = 3) +
-  labs(x = "Best Of",
-       y = "Win Percentage",
-       title = "Bee Swarm Plot of Win Percentages by Grand Slam or Not",
-       caption = "ATP") +
-  theme_minimal() +
-  theme(plot.background = element_rect(fill = 'white'),
-        panel.background = element_rect(fill = 'white'),
-        plot.caption = element_text(size = 20,
-                                    face = 'bold'),
-        legend.position = "none")
-```
-
-```{r}
+# histogram of win percentage by surface
 winPercentage |>
   ggplot(aes(x = winPct,
              y = after_stat(density))) +
@@ -137,5 +55,74 @@ winPercentage |>
        y = 'Density',
        title = 'Histogram of Win Percentages by Surface',
        caption = "ATP")
+```
+
+```{r}
+# five number summary and standard deviation
+cWPercentage <-
+  winPercentage |>
+  filter(surface == 'Clay') |>
+  pull(winPct)
+
+gWPercentage <-
+  winPercentage |>
+  filter(surface == 'Grass') |>
+  pull(winPct)
+
+hWPercentage <-
+  winPercentage |>
+  filter(surface == 'Hard') |>
+  pull(winPct)
+
+claySummary <- summary(cWPercentage)
+hardSummary <- summary(hWPercentage)
+grassSummary <- summary(gWPercentage)
+
+claySummary
+grassSummary
+hardSummary
+```
+
+```{r}
+# box plot of win percentage by surface
+winPercentage |>
+  ggplot(aes(x = surface,
+             y = winPct,
+             fill = surface)) +
+  stat_boxplot(geom = 'errorbar') +
+  geom_boxplot() +
+  theme_minimal() +
+  theme(panel.background = element_rect(fill = 'white'),
+        plot.background = element_rect(fill = 'white'),
+        plot.title = element_text(size = 20,
+                                  hjust = 0.5),
+        plot.caption = element_text(size = 20,
+                                    face = 'bold'),
+        legend.position = 'none') +
+  labs(x = 'Best Of',
+       y = 'Win Percentage',
+       title = 'Side-by-side Box Plots of Win Percentage',
+       caption = 'ATP')
+```
+
+```{r}
+# bee swarm plot of win percentage by type of tournament
+library(ggbeeswarm)
+
+GSwinPercentage |>
+  ggplot(aes(x = best_of,
+             y = winPct,
+             color = best_of)) +
+  geom_beeswarm(cex = 3) +
+  labs(x = "Best Of",
+       y = "Win Percentage",
+       title = "Bee Swarm Plot of Win Percentages by Grand Slam or Not",
+       caption = "ATP") +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = 'white'),
+        panel.background = element_rect(fill = 'white'),
+        plot.caption = element_text(size = 20,
+                                    face = 'bold'),
+        legend.position = "none")
 ```
 

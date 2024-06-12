@@ -1,0 +1,122 @@
+---
+title: "tennis_handout234_key"
+author: "eric seltzer"
+format: html
+---
+
+```{r}
+# read in the data set titled "original_atp_2023.csv" in data_repo
+library(tidyverse)
+
+atp <- read_csv(here::here("esselt21/tennis_module/data_repo/original_atp_2023.csv"))
+```
+
+```{r}
+# the task is going to be cleaning this data set up, here is what it looks like to begin
+head(atp)
+# first, get rid of some unnecessary information
+atpClean <-
+  atp |>
+  select(-c(tourney_id, tourney_level, tourney_date, draw_size, match_num, winner_id, winner_seed, winner_entry, loser_id, loser_seed, loser_entry, round, winner_rank_points, loser_rank_points))
+```
+
+```{r}
+# second, to be able to analyze this data set we want to combine each match into one observation. What tidyr function should we use to do this?
+
+# pivot_longer()
+```
+
+```{r}
+# when it is all combined, we will need a way to know who is the winner and who isn't
+# let's create a result winner out of the winner_name and loser_name columns
+atpClean <-
+  atpClean |>
+  select(-score) |>
+  rename("Winner" = winner_name) |>
+  rename("Loser" = loser_name) |>
+  pivot_longer(cols = c(Winner, Loser),
+               names_to = "result",
+               values_to = "player") |>
+  mutate(result = as_factor(result))
+```
+
+```{r}
+# the rest of the columns need to be combined in similar format, use the same method to combine the rest of the columns
+atpClean <-
+  atpClean |>
+  mutate(hand = if_else(result == "Winner", winner_hand, loser_hand)) |>
+  relocate(hand, .after = loser_hand) |>
+  select(-c(winner_hand, loser_hand)) |>
+  mutate(age = if_else(result == "Winner", winner_age, loser_age)) |>
+  relocate(age, .after = winner_ioc) |>
+  select(-c(winner_age, loser_age)) |>
+  mutate(height = if_else(result == "Winner", winner_ht, loser_ht)) |>
+  relocate(height, .after = hand) |>
+  select(-c(winner_ht, loser_ht)) |>
+  mutate(country = if_else(result == "Winner", winner_ioc, loser_ioc)) |>
+  relocate(country, .after = height) |>
+  select(-c(winner_ioc, loser_ioc)) |>
+  mutate(rank = if_else(result == "Winner", winner_rank, loser_rank)) |>
+  relocate(rank, .before = result) |>
+  select(-c(winner_rank, loser_rank)) |>
+  mutate(numAces = if_else(result == "Winner", w_ace, l_ace)) |>
+  relocate(numAces, .after = minutes) |>
+  select(-c(w_ace, l_ace)) |>
+  mutate(numDF = if_else(result == "Winner", w_df, l_df)) |>
+  relocate(numDF, .after = numAces) |>
+  select(-c(w_df, l_df)) |>
+  mutate(servePoints = if_else(result == "Winner", w_svpt, l_svpt)) |>
+  relocate(servePoints, .after = numDF) |>
+  select(-c(w_svpt, l_svpt)) |>
+  mutate(first_serve_in = if_else(result == "Winner", w_1stIn, l_1stIn)) |>
+  relocate(first_serve_in, .after = servePoints) |>
+  select(-c(w_1stIn, l_1stIn)) |>
+  mutate(first_serve_won = if_else(result == "Winner", w_1stWon, l_1stWon)) |>
+  relocate(first_serve_won, .after = first_serve_in) |>
+  select(-c(w_1stWon, l_1stWon)) |>
+  mutate(second_serve_won = if_else(result == "Winner", w_2ndWon, l_2ndWon)) |>
+  relocate(second_serve_won, .after = first_serve_won) |>
+  select(-c(w_2ndWon, l_2ndWon)) |>
+  mutate(serve_games_won = if_else(result == "Winner", w_SvGms, l_SvGms)) |>
+  relocate(serve_games_won, .after = second_serve_won) |>
+  select(-c(w_SvGms, l_SvGms)) |>
+  mutate(break_points_saved = if_else(result == "Winner", w_bpSaved, l_bpSaved)) |>
+  relocate(break_points_saved, .after = serve_games_won) |>
+  select(-c(w_bpSaved, l_bpSaved)) |>
+  mutate(break_points_faced = if_else(result == "Winner", w_bpFaced, l_bpFaced)) |>
+  relocate(break_points_faced, .after = break_points_saved) |>
+  select(-c(w_bpFaced, l_bpFaced))
+```
+
+```{r}
+# now the data is in a format to be worked with, there are many ways to do this cleaning process
+# here is what the data set looks like now
+head(atpClean)
+```
+
+```{r}
+# lets set some parameters, only include players who have played a minimum of 10 matches
+matches <-
+  atpClean |>
+  group_by(player) |>
+  summarise(matches = n()) |>
+  filter(matches >= 10) |>
+  pull(player)
+
+# how would you use this vector of players to filter the data set
+atpClean <-
+  atpClean |>
+  filter(player %in% matches)
+```
+
+```{r}
+# write a chunk of code that will get a win percentage and number of matches played for each player on each surface and sort it from highest win percentage to lowest
+# make sure there is a minimum of 5 matches played on each surface
+atpClean |>
+  group_by(player, surface) |>
+  summarise(winPercentage = mean(result == "Winner"),
+            numMatches = n()) |>
+  filter(numMatches >= 5) |>
+  arrange(desc(winPercentage))
+```
+

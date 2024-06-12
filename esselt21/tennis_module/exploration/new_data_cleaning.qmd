@@ -45,16 +45,6 @@ wtaClean <-
 ```{r}
 atpClean <-
   atpClean |>
-  relocate(loser_hand, .after = winner_hand)
-
-wtaClean <-
-  wtaClean |>
-  relocate(loser_hand, .after = winner_hand)
-```
-
-```{r}
-atpClean <-
-  atpClean |>
   mutate(hand = if_else(result == "Winner", winner_hand, loser_hand)) |>
   relocate(hand, .after = loser_hand) |>
   select(-c(winner_hand, loser_hand))
