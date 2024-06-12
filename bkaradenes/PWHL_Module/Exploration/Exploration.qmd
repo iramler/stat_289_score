@@ -23,7 +23,7 @@ PWHL_Final <- read.csv(here("bkaradenes/PWHL_Module/data/PWHL_Final.csv"))
 
 ```{r}
 ggplot(data = PWHL_Final) + 
-  geom_density(aes(G_Per_GP, color = Pos, fill = Pos), alpha = 0.25) +
+  geom_density(aes(P_Per_GP, color = Pos, fill = Pos), alpha = 0.25) +
   theme_minimal()
 ```
 
@@ -51,8 +51,8 @@ First create three different age groups Youngest (22-25), Middle (26-30), and Ol
 ```{r}
 PWHL_Graph <- PWHL_Final %>%
   mutate(Age_Group = case_when(
-    Age >= 22 & Age <= 26 ~ "youngest",
-    Age >= 27 & Age <= 30  ~ "middle",
+    Age >= 22 & Age <= 25 ~ "youngest",
+    Age >= 26 & Age <= 30  ~ "middle",
     Age >= 31 & Age <= 36 ~ "oldest"
   )) %>%
   filter(Pos != "G")
@@ -91,28 +91,29 @@ PWHL_Scoring %>%
 ```
 
 ```{r}
-ggplot(data = PWHL_Graph, mapping = aes(x = Pos, y = G_Per_GP)) +
+ggplot(data = PWHL_Graph, mapping = aes(x = Pos, y = P_Per_GP)) +
   geom_boxplot() + 
-  labs(x = "Position", y = "Goals Per Game Played", title = "Goals per Game Played by Position") +
+  labs(x = "Position", y = "Points Per Game Played", title = "Points per Game Played by Position") +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5)) 
 ```
 
 ```{r}
-ggplot(data = PWHL_Graph, mapping = aes(x = Age_Group, y = G_Per_GP)) +
+ggplot(data = PWHL_Graph, mapping = aes(x = Age_Group, y = P_Per_GP)) +
   geom_boxplot() +
-  labs(x = "Age Group", y = "Goals Per Game Played", title = "Goals per Game Played by Age Group") +
+  labs(x = "Age Group", y = "Points Per Game Played", title = "Points per Game Played by Age Group") +
   theme_minimal() +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
 ```{r}
-ggplot(data = PWHL_Graph, aes(x = Age_Group, y = G_Per_GP, color = Pos)) + 
+ggplot(data = PWHL_Graph, aes(x = Pos, y = P_Per_GP, color = Age_Group )) + 
   geom_boxplot() +
+  labs(x = "Position", y = "Number of Points Per Game Played", title = "Points Between Different Age Groups and Positions") +
+  theme_minimal() +
   coord_flip() +
-  labs(x = "Age Group", y = "Number of Points", title = "Points between different Age Groups and Positions") +
-  theme_minimal()
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
 
-
+Points per game, encourage making more graphs, question on why old is better

@@ -83,11 +83,57 @@ ggplot(data = swimming_graph, mapping = aes(x = Year, y = yearly_avg, color = Ge
 ```{r}
 ggplot(data = swimming_graph, mapping = aes(x = Stroke, y = Results)) +
   geom_boxplot() +
-  labs(y = "Time (s)", title = "Effects of Different Styles on Race Times") +
-  theme_minimal() 
+  labs(y = "Time (s)", title = "Effects of Different Styles on 100m Race Times") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
 ```
 
+```{r}
+fifty_m_graph <-
+  swimming %>%
+  filter(dist_m == 50)
+```
 
+```{r}
+# only freestyle is used for 50 m races
+ggplot(data = fifty_m_graph, mapping = aes(x = Stroke, y = Results)) +
+  geom_boxplot() +
+  labs(y = "Time (s)", title = "Effects of Different Styles on 50m Race Times") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+old_swimmers <-
+swimming_graph %>%
+  filter(Year >= 1924 & Year < 1976)
+```
+
+```{r}
+ggplot(data = old_swimmers, mapping = aes(x = Stroke, y = Results)) +
+  geom_boxplot() +
+  labs(title = "Results from the 100m Event from 1924 to 1972") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+new_swimmers <-
+swimming_graph %>%
+  filter(Year >= 1976 & Year < 2020)
+```
+
+```{r}
+ggplot(data = new_swimmers, mapping = aes(x = Stroke, y = Results)) +
+  geom_boxplot() +
+  labs(title = "Results from the 100m Event from 1976 to 2020") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+
+```
 
 
 
