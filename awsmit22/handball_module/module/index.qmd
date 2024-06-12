@@ -1,7 +1,15 @@
 ---
-title: Handball Individual Player Statistics for the 2022-2023 Season
-author: Abigail Smith
-date: June 7, 2024
+title: "Handball Individual Player Statistics for the 2022-2023 Season"
+author:
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Abigail Smith
+    affiliation:
+      - ref: slu
+date: June 12, 2024
 description: Comparing offensive statistics to penalties for individual players in the Handball-Bundesliga for the 2022-23 season.
 categories:
   - confidence intervals
@@ -9,13 +17,15 @@ categories:
   - multiple linear regression
   - anova for overall fit
   - t.test for correlation
-  
-editor: 
-  markdown: 
-    wrap: 72
 ---
 
-## Motivation
+### Welcome video
+
+{{< video  title="Handball Individual Player Statistics for the 2022-2023 Season" >}}
+
+### Introduction
+
+This activity looks at individual player statistics for handball's [Bundesliga 2022-2023 season](https://www.kaggle.com/datasets/nemanjagojkovic/handball-bundesliga-stats-202223){target="_blank"}. 
 
 Handball is a popular sport in many European countries such as Germany
 where it is said to have originated. The Bundesliga, for example, is a
@@ -52,12 +62,41 @@ statistic which essentially ranks how good a player is. This data set could prov
 players or teams that are more aggressive are more successful than those
 who are more passive. 
 
-## Data
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This activity could be used as a quiz or a take home-assessment. 
+:::
 
-The dataset has 309 players from 18 different clubs, with 7 variables, 4
-of which are statistics. Each row in the data set is a player in the
-Handball-Bundesliga during the 2022-23 season. The statistics are
-cumulative for the entirety of the season. The dataset only contains players who played in 10 games or more.
+
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of the activity, students will be able to:
+
+1.  Discern the difference between prediction and confidence intervals
+2.  Find and interpret prediction and confidence intervals using statistical software
+3.  Interpret the slope of multiple linear regression models
+4.  Interpret multiple linear regression coefficients
+5.  Assess the overall fit of a multiple linear regression model using ANOVA
+6.  Evaluate and test the correlation between two variables
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Students will utilize an understanding of confidence intervals for a mean *y* and prediction intervals for an individual *y*. Students will also use scatter plots with regression lines and data tables to interpret multiple linear regression model coefficients. Students will assess the fit of multiple linear regresisson models and the significance of correlations. 
+:::
+
+::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
+The standard worksheet will require the use of statistical software for most of the questions. The no-tech worksheet will not require any technology other than a calculator. 
+:::
+
+### Data
+
+The dataset has 309 players from 18 different clubs, with 7 variables, 4 of which are statistics. Each row in the data set is a player in the Handball-Bundesliga during the 2022-23 season. The statistics are cumulative for the entirety of the season. The dataset only contains players who played in 10 games or more.
+
+Download data: 
+
+: [handball.csv](handball.csv){target="_blank"}
+
+<details>
+<summary><b>Variable Descriptions</b></summary>
 
 | Variable          | Description                                                                                                                                                                                                                   |
 |--------------------|----------------------------------------------------|
@@ -69,33 +108,14 @@ cumulative for the entirety of the season. The dataset only contains players who
 | `total_penalties` | The total penalties the player had in the season. Calculated by adding the 5 penalty related statistics from the original dataset.|                                                             
 | `HPI`             | Handball performance index, complex formulaic calculation equivalent to how well the player performed in the season. Players with HPIs in the 70s are considered good, while players in the 60s are considered not as strong. |
 
-: [handball.csv](handball.csv){target="_blank"}
 
-## Questions
 
-1.  Find and interpret a 98% confidence interval for the mean HPI
-    of a player with 30 total_penalties. 
-
-2.  Find and interpret a 98% prediction interval for the HPI of a
-    player with 30 total_penalties. 
-
-3.  Perform an ANOVA test to assess the overall fit of `HPI` =
-    `total_offense` + `total_penalties`. Provide an interpretation of
-    the results. 
-    
-4.	 Find the correlation of total_penalties and total_offense. 
-
-5.  Test the significance of the correlation between the `total_offense`
-    and the `total_penalties` of a player. Provide an interpretation of
-    the results.
-
-6.  Could it be concluded that having more penalties increases the skill
-    and success of a player in the form of HPI?
-
-## References
+**Data Source**
 
 [Kaggle Original
 Dataset](https://www.kaggle.com/datasets/nemanjagojkovic/handball-bundesliga-stats-202223){target="_blank"}
+
+**More information on the rules**
 
 [Olympic Handball
 Rules](https://olympics.com/en/news/handball-game-rules-regulations-how-to-play){target="_blank"}
@@ -104,3 +124,21 @@ Rules](https://olympics.com/en/news/handball-game-rules-regulations-how-to-play)
 Positions](https://www.theukrules.co.uk/rules/sport/handball/player-positions/#google_vignette){target="_blank"}
 
 [Handball Performance Index (HPI)](https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/){target="_blank"}
+
+</details>
+
+### Materials
+
+We provide editable MS Word handouts along with their solutions.
+
+[Worksheet](handball_worksheet.docx)
+
+[Worksheet Answers](handball_worksheet_answers.docx)
+
+[No Tech Worksheet](handball_worksheet_no_tech.docx)
+
+[No Tech Worksheet Answers](handball_worksheet_answers_no_tech.docx)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+After completing this activity, students should be able to draw a conclusion about if an aggressive strategy in handball really garners more success. Students should come to this conclusion through statistical analysis of the use of `total_penalties` and `total_offense` to predict `HPI`. Students will also be able to assess the relationship between `total_penalties` and `total_offense` which can provide furtehr insight on the relationship between aggressive play and offensive strength. 
+:::

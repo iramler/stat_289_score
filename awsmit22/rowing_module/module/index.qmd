@@ -92,5 +92,5 @@ We provide editable MS Word handouts along with their solutions.
 [Tech Worksheet Answers](medals_worksheet_answers_tech.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-This Olympic rowing medals worksheet builds students' understanding of data distribution through histograms, summary statistics, and outliers. It also strengthens students' ability to critically evalutate confounding variables and devising relationships amongst variables through looking at barplots. Additionally, it provides an interesting opportunity for studenst to look at patterns in medals for Olympic rowing. 
+This Olympic rowing medals worksheet builds students' understanding of data distribution through histograms, summary statistics, and outliers. It also strengthens students' ability to critically evaluate confounding variables and devising relationships amongst variables through looking at barplots. Additionally, it provides an interesting opportunity for students to look at patterns in medals for Olympic rowing. 
 :::
