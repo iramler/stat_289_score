@@ -1,0 +1,129 @@
+---
+title: "new_data_exploration"
+author: "eric seltzer"
+format: html
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+atp <- read_csv(here::here("esselt21/tennis_module/exploration/atp_2023.csv"))
+```
+
+```{r}
+matches <-
+  atp |>
+  group_by(player) |>
+  summarise(matches = n()) |>
+  filter(matches >= 10) |>
+  pull(player)
+```
+
+```{r}
+atp <-
+  atp |>
+  filter(player %in% matches)
+```
+
+
+```{r}
+GS <-
+  atp |>
+  filter(best_of != 3) |>
+  select(-best_of)
+
+nGS <-
+  atp |>
+  filter(best_of == 3) |>
+  select(-best_of)
+```
+
+```{r}
+winPercentage <-
+  atp |>
+  group_by(player, surface) |>
+  summarise(winPct = mean(result == "Winner"),
+            matches = n()) |>
+  filter(matches >= 5) |>
+  mutate(surface = as_factor(surface),
+         surface = fct_relevel(surface, c("Clay", "Grass", "Hard")))
+
+GSwinPercentage <-
+  GS |>
+  group_by(player, surface) |>
+  summarise(winPct = mean(result == "Winner"),
+            matches = n()) |>
+  filter(matches >= 5) |>
+  mutate(surface = as_factor(surface),
+         surface = fct_relevel(surface, c("Clay", "Grass", "Hard")))
+
+nGSwinPercentage <-
+  nGS |>
+  group_by(player, surface) |>
+  summarise(winPct = mean(result == "Winner"),
+            matches = n()) |>
+  filter(matches >= 5) |>
+  mutate(surface = as_factor(surface),
+         surface = fct_relevel(surface, c("Clay", "Grass", "Hard")))
+```
+
+```{r}
+winPercentage |>
+  ggplot(aes(x = surface,
+             y = winPct,
+             fill = surface)) +
+  stat_boxplot(geom = 'errorbar') +
+  geom_boxplot() +
+  theme_minimal() +
+  theme(panel.background = element_rect(fill = 'ivory'),
+        plot.background = element_rect(fill = 'ivory'),
+        plot.title = element_text(size = 20),
+        plot.caption = element_text(size = 20,
+                                    face = 'bold'),
+        legend.position = 'none') +
+  labs(x = 'Surface',
+       y = 'Win Percentage',
+       title = 'Side-by-side Box Plots of Win Percentage',
+       caption = 'ATP')
+
+nGSwinPercentage |>
+  ggplot(aes(x = surface,
+             y = winPct,
+             fill = surface)) +
+  geom_boxplot(alpha = 0.75) +
+  theme_minimal()
+
+GSwinPercentage |>
+  ggplot(aes(x = surface,
+             y = winPct,
+             fill = surface)) +
+  geom_boxplot(alpha = 0.75) +
+  theme_minimal()
+```
+
+```{r}
+winPercentage |>
+  ggplot(aes(x = winPct,
+             y = after_stat(density))) +
+  geom_histogram(fill = 'lightblue',
+                 color = 'black',
+                 bins = 15) +
+  facet_grid(~surface) +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = 'ivory'),
+        panel.background = element_rect(fill = 'ivory'),
+        strip.background = element_rect(colour = 'black',
+                                        fill = 'gray90'),
+        strip.text = element_text(size = 15,
+                                  face = 'bold'),
+        plot.caption = element_text(size = 20,
+                                    face = 'bold'),
+        plot.title = element_text(size = 20)) +
+  labs(x = 'Win Percentage',
+       y = 'Density',
+       title = 'Histogram of Win Percentages by Surface',
+       caption = "ATP")
+```
+
