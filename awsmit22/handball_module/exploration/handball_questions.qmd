@@ -48,12 +48,13 @@ predict(mod, newx,interval="prediction", level = 0.98)
 The below scatterplots show the mean HPI of each club against clubs' mean penalties and offense. In comparing the two plots, what do you expect from the model: HPI = total_offense + total_penalties?
 
 ```{r}
+#a&b)
 mod_plot <- handball_clean |> group_by(CLUB) |> summarise(club_offense = mean(total_offense), club_pen = mean(total_penalties), club_hpi = mean(HPI))
-
+#b)
 ggplot(data = mod_plot, aes(x = club_offense, y = club_hpi)) +
   geom_point() +
   geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of club_hpi against club_offense with regression line")
-
+#a)
 ggplot(data = mod_plot, aes(x = club_pen, y = club_hpi)) +
   geom_point() +
   geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of club_hpi against club_penalties with regression line")

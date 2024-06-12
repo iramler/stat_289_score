@@ -84,7 +84,7 @@ Students will utilize an understanding of confidence intervals for a mean *y* an
 :::
 
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
-The standard worksheet will require the use of statistical software for most of the questions. The no-tech worksheet will not require any technology other than a calculator. 
+The tech worksheet will require the use of statistical software for most of the questions. The no-tech worksheet will not require any technology other than a calculator. 
 :::
 
 ### Data
@@ -131,9 +131,9 @@ Positions](https://www.theukrules.co.uk/rules/sport/handball/player-positions/#g
 
 We provide editable MS Word handouts along with their solutions.
 
-[Worksheet](handball_worksheet.docx)
+[Tech Worksheet](handball_worksheet_tech.docx)
 
-[Worksheet Answers](handball_worksheet_answers.docx)
+[Tech Worksheet Answers](handball_worksheet_tech_answers.docx)
 
 [No Tech Worksheet](handball_worksheet_no_tech.docx)
 
