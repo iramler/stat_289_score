@@ -1,0 +1,97 @@
+---
+title: "Exploring Logistic Regression Through Cricket"
+author:
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Vivian Johnson
+    affiliation:
+      - ref: slu
+date: "June 12, 2024"
+description: "Using data from the Asia Cup Tournament to create a multiple logistic regression model."
+editor: 
+  canonical: true
+categories:
+  - Logistic Regression 
+---
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction
+
+Cricket is a game watched and played by billions of people across the world. Second in global popularity only to football (soccer), it is extremely popular in South Asia, Australia, Africa, and Europe.
+
+### The Rules of Cricket
+
+Cricket is played on a rectangular pitch inside an oval boundary. In the pitch, on either side, there is a vertical **wicket**, made up of three vertical wooden "stumps" with two wooden bails (small blocks of wood) resting atop the stumps. There are two teams, each with 11 players (a batting team and a bowling team).
+
+**The bowling team:** The bowler bounces a small leather ball at the batter. The goal of the bowler is to get the batter out and ultimately knock the bails off of the stumps.
+
+**The batting team:** The goal of the batting team is to score as many runs as possible and not let the bowler hit the bail off of the stumps. There are two batters at a time for the batting team. After the batter hits the ball, the two batters will attempt to switch sides. Each batter will go until they get out, when at that time, they will switch with another teammate.
+
+**Scoring Runs:** Each time the two batters switch sides without getting out counts as a run scored. For example, if you hit the ball and are able to run to the other wicket and back without getting out, that would score two runs for your team. If the batter hits the ball on a bounce to the oval boundary, it counts as four runs scored. If the batter hits the ball over the oval boundary on a fly, it counts as six runs.
+
+**Outs:** Below are a few common ways in which a batter can get out
+
+-   If the batter hits the ball and it is caught in the air (caught out)
+-   If a player on the bowling team throws the ball and it hits the bails off the stumps before the batter can cross the line while trying to score a run (run out)
+-   If the bowler throws the ball past the batter and it knocks a bail off the wicket
+-   If the batter gets hit in the legs by a ball that would have hit the wicket (Note: if the batter gets hit and the ball wasn't ruled as one that would have hit the wicket, the batter is not out)
+
+The duration of cricket matches can range from hours to days, depending on what format is being played, and scores are often high as each individual batter usually scores many runs on multiple pitches before getting out.
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will:
+
+1.  Enhance proficiency in constructing and interpreting confidence intervals with varying degrees of confidence.
+
+2.  Explain the importance of obtaining a large sample size that reaches across multiple audiences.
+
+3.  Detecting outliers in a data set through applying techniques, including the "1.5 Interquartile Range Rule"
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Knowledge of basic statistical measures, such as mean and the five number summary, is necessary. Understanding the effect that data collection methods have on the spread and reliability of the data is important. Knowing how to use a t-test to calculate a confidence interval for a population mean by hand is also useful. Familiarity with critical values is also necessary when constructing the confidence interval by hand.
+:::
+
+::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
+No explicit technology is required, although a calculator is recommended.
+:::
+
+Below shows a box plot, including summary statistics for the data containing the strength ratios, as well as the five number summary.  
+
+### Data
+
+The `weights_ratio` data set contains observed strength ratios from 18 different weightlifters. Each row represents a different weightlifter.
+
+Download data: [weights_ratio.csv](weights_ratio.csv)
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable | Description                                             |
+|----------|---------------------------------------------------------|
+| Ratio    | Flat dumbbell press to barbell bench press weight ratio |
+
+</details>
+
+#### Data Source
+
+[Weight Ratio](https://www.reddit.com/r/Fitness/comments/35q4i3/how_much_do_you_dumbbell_flat_bench_compared_to/)
+
+The data is sourced from a self-reported Reddit open forum. Users provided their weight for both a flat dumbbell press and a barbell bench press, and it was compiled by another user into the corresponding weight ratio. It is important to note that as this is a self-reported open forum, biases may be introduced that wouldn't otherwise be present.
+
+### Materials
+
+[Class handout](weight_ratio_worksheet.docx)
+
+[Class handout - with solutions](weight_ratio_worksheet_SOLUTIONS.docx)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Upon conclusion, it is realized that while we can assume that this data follows a normal distribution and there are no obvious discernible outliers, it is not a large enough sample to make concrete conclusions. There are some biases in data collection, those who report their ratios belong to similar audiences, and we can't assume that the sample is reflective. Nevertheless, it presents a valuable opportunity for thought and good practice at constructing one sample T tests.
+:::
