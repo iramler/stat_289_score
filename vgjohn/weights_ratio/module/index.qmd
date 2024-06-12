@@ -59,8 +59,6 @@ Knowledge of basic statistical measures, such as mean and the five number summar
 No explicit technology is required, although a calculator is recommended.
 :::
 
-Below shows a box plot, including summary statistics for the data containing the strength ratios, as well as the five number summary.  
-
 ### Data
 
 The `weights_ratio` data set contains observed strength ratios from 18 different weightlifters. Each row represents a different weightlifter.
