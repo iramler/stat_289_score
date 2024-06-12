@@ -145,6 +145,7 @@ atpClean <-
 ```
 
 ```{r}
+<<<<<<< HEAD
 matches <-
   atp |>
   group_by(player) |>
@@ -159,6 +160,12 @@ atp <-
 atp <-
   atp |>
   relocate(break_points_saved, .after = first_serve_in)
+=======
+atp <-
+  atp |>
+  relocate(result, .after = surface) |>
+  relocate(player, .after = result)
+>>>>>>> ca93f92d5574e031a44b8a4c811a25f7ae0137b5
 ```
 
 ```{r}

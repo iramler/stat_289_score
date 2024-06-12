@@ -1,5 +1,5 @@
 ---
-title: "Strength Ratios - Flat Dumbbell Press to Barbell Bench Press "
+title: "Exploring Logistic Regression Through Cricket"
 author:
   - name: Ivan Ramler
     email: iramler@stlawu.edu
@@ -9,14 +9,12 @@ author:
   - name: Vivian Johnson
     affiliation:
       - ref: slu
-date: "June 6, 2024"
-description: "Exploring the spread and mean of the reported strength ratios."
+date: "June 12, 2024"
+description: "Using data from the Asia Cup Tournament to create a multiple logistic regression model."
 editor: 
   canonical: true
 categories:
-  - Histogram 
-  - Mean, IQR 
-  - One Sample T-Interval 
+  - Logistic Regression 
 ---
 
 ## Module
@@ -25,21 +23,26 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-Weightlifters may be inclined to track the specific ratio between flat dumbbell press and barbell bench press.
+Cricket is a game watched and played by billions of people across the world. Second in global popularity only to football (soccer), it is extremely popular in South Asia, Australia, Africa, and Europe.
 
-A **dumbbell** is a short bar with equal weight on both sides designed to be held in the lifter's hands. Flat dumbbell press is when the lifter lies on a flat bench with their arms positioned at roughly 45 degree angles, lifts two equal sized dumbbells, brings them back to the chest, and then keeps going.
+### The Rules of Cricket
 
-A **barbell** is similar in shape to a dumbbell, but is a longer, much heavier bar where multiple weighted plates can be placed on either side. Barbell bench press is when the lifter lies on a bench with the barbell positioned at their chest, lifts the barbell, and then brings it back down.
+Cricket is played on a rectangular pitch inside an oval boundary. In the pitch, on either side, there is a vertical **wicket**, made up of three vertical wooden "stumps" with two wooden bails (small blocks of wood) resting atop the stumps. There are two teams, each with 11 players (a batting team and a bowling team).
 
-The ratio of flat dumbbell press to barbell bench press works to track how much someone is lifting two dumbbells compared to how much they are able to lift the weighted barbell. When calculating the ratio, it was multiplied by two in order to account for the total weight lifted when doing a flat dumbbell press, as there are two dumbbells that would have to be held by the lifter.
+**The bowling team:** The bowler bounces a small leather ball at the batter. The goal of the bowler is to get the batter out and ultimately knock the bails off of the stumps.
 
-**An example of this is as follows:**
+**The batting team:** The goal of the batting team is to score as many runs as possible and not let the bowler hit the bail off of the stumps. There are two batters at a time for the batting team. After the batter hits the ball, the two batters will attempt to switch sides. Each batter will go until they get out, when at that time, they will switch with another teammate.
 
-*Say Melissa is able to flat dumbbell press two 30 lbs dumbbells. The total amount she can flat dumbbell press is 60 lbs (one dumbbell for each arm). On flat bench press, she can lift 75 lbs. Her ratio would be calculated by dividing flat dumbbell press by barbell bench press (60/75) which equals 0.8, meaning that Melissa can lift two dumbbells up to 80% as heavy as she can bench press the barbell.*
+**Scoring Runs:** Each time the two batters switch sides without getting out counts as a run scored. For example, if you hit the ball and are able to run to the other wicket and back without getting out, that would score two runs for your team. If the batter hits the ball on a bounce to the oval boundary, it counts as four runs scored. If the batter hits the ball over the oval boundary on a fly, it counts as six runs.
 
-Many weightlifters like to track this ratio to work towards specific strength goals and target any weakness in certain muscle groups. For example, if someone's ratio is low (i.e. they can barbell bench press much more than they can flat dumbbell press), it highlights that they might want to work on targeting the muscles used in flat dumbbell press. Since the two exercises can focus on different muscle groups, weightlifters like this ratio as a tool for seeing where progress could be made. Weightlifters also use this ratio as a measure of progress. A common goal in weightlifting is to increase the ratio, and as one continues lifting, their starting ratio is often compared to their current one. While many professional weightlifters use this ratio for tracking progress and examining muscle balance, it isn't an official statistic used in competitions, only a personal one.
+**Outs:** Below are a few common ways in which a batter can get out
 
-This worksheet involves using the strength ratio to look at outliers, histograms, confidence intervals, and discussing the effect that data collection methods have on the variance and potential distribution of the data.
+-   If the batter hits the ball and it is caught in the air (caught out)
+-   If a player on the bowling team throws the ball and it hits the bails off the stumps before the batter can cross the line while trying to score a run (run out)
+-   If the bowler throws the ball past the batter and it knocks a bail off the wicket
+-   If the batter gets hit in the legs by a ball that would have hit the wicket (Note: if the batter gets hit and the ball wasn't ruled as one that would have hit the wicket, the batter is not out)
+
+The duration of cricket matches can range from hours to days, depending on what format is being played, and scores are often high as each individual batter usually scores many runs on multiple pitches before getting out.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will:
@@ -58,6 +61,8 @@ Knowledge of basic statistical measures, such as mean and the five number summar
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
 No explicit technology is required, although a calculator is recommended.
 :::
+
+Below shows a box plot, including summary statistics for the data containing the strength ratios, as well as the five number summary.  
 
 ### Data
 

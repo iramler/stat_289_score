@@ -27,7 +27,10 @@ atp <-
   filter(player %in% matches)
 ```
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ca93f92d5574e031a44b8a4c811a25f7ae0137b5
 ```{r}
 GS <-
   atp |>
