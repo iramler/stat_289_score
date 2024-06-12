@@ -1,0 +1,41 @@
+---
+title: "rowing_dataprep_worksheet_ANSWERS"
+format: html
+---
+# Question 1
+
+Adjust the data so that it contains rowing as the only `Sport` and remove any NA values for `Medal`, meaning the dataset will only have medalling countries.
+
+```{r}
+rowing_df <- athletes_df |> filter(Sport == "Rowing")
+```
+
+```{r}
+rowing_df <- rowing_df |> filter(!is.na(Medal))
+```
+
+# Question 2
+
+Organize the data so that there is only one athlete representing each team in each event in each year.
+
+```{r}
+country_event <- rowing_df |> group_by(Year, Event, Medal, NOC) |> select(Year, Event, NOC, Medal) |> slice(1) |> arrange(Year, Event, Medal)
+```
+
+# Question 3
+
+There is a lot of debate about how to best weigh the points for the different types of medals. Read [this page](https://www.topendsports.com/events/summer/medal-tally/rankings-weighted.htm){target="_blank"} for more information about different medal point scales.
+
+Create a variable for the total number of points each country won using any point scale you want. Create another variable for the total number of medals each country won.
+
+```{r}
+country_medals <- country_event |> mutate(n_point= case_when(Medal == "Gold" ~ 3, Medal == "Silver" ~ 2, Medal == "Bronze" ~ 1), n_gold = case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 0, Medal == "Bronze" ~ 0), n_silver = case_when(Medal == "Gold" ~ 0, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 0), n_bronze = case_when(Medal == "Gold" ~ 0, Medal == "Silver" ~ 0, Medal == "Bronze" ~ 1)) |> group_by(NOC) |> summarise(total_medals = n(), total_points = sum(n_point), total_gold = sum(n_gold), total_silver = sum(n_silver), total_bronze = sum(n_bronze))
+```
+
+# Question 4
+
+Save the dataset you made and use it for both [medals_worksheet.docx](medals_worksheet.docx) and [medals_worksheet_tech.docx](medals_worksheet_tech.docx).
+
+```{r}
+write_csv(country_medals, "rowing_medals.csv")
+```
