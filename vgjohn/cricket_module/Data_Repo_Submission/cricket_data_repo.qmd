@@ -4,7 +4,7 @@ author: "Vivian Johnson"
 date: "June 10, 2024" 
 
 categories:
-  - Logistic Regression  
+  - Multiple Logistic Regression
 ---
 
 ## Motivation
@@ -32,7 +32,7 @@ The duration of cricket matches can range from hours to days, depending on what 
 
 ## Data
 
-The `asia_cup` data set includes data from each cricket match played in all Asia Cup Tournaments from 1984 (the first one) to 2022. The Asia Cup is a tournament now takes place every two years, alternating host cities in different countries throughout Asia.
+The `asia_cup` data set includes data from each cricket match played in all Asia Cup Tournaments from 1984 (the first one) to 2022. The Asia Cup is a tournament that now takes place every two years, alternating host cities in different countries throughout Asia.
 
 | Variable      | Description                                                              |
 |-----------------------|-------------------------------------------------|
