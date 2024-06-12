@@ -50,6 +50,62 @@ ggplot(data = medals_reordered, aes(x = NOC, y = total_medals)) + geom_col(fill 
 ```
 
 
+#Considering adding a question
+
+```{r}
+summary(medals_df$total_points)
+IQR(medals_df$total_points)
+1.5*IQR(medals_df$total_points)
+57.00 + (1.5*IQR(medals_df$total_points))
+6.00 - (1.5*IQR(medals_df$total_points))
+```
+
+```{r}
+points <- medals_df |> arrange(desc(total_points))
+head(points)
+tail(points)
+```
+
+```{r}
+medals_df |> filter(total_points >=133.5)
+```
+
+```{r}
+summary(medals_df$total_medals)
+IQR(medals_df$total_medals)
+1.5*IQR(medals_df$total_medals)
+31.00 + (1.5*IQR(medals_df$total_medals))
+4.00 - (1.5*IQR(medals_df$total_medals))
+```
+
+```{r}
+medals <- medals_df |> arrange(desc(total_medals))
+head(medals)
+tail(medals)
+```
+
+```{r}
+medals_df |> filter(total_medals >=71.5)
+```
+****is there an event that is more coveted than others****
+```{r}
+events <- country_event |> mutate(n_point= case_when(Medal == "Gold" ~ 3, Medal == "Silver" ~ 2, Medal == "Bronze" ~ 1)) |> group_by(NOC, Event) |> summarise(total_medals = n(), total_points = sum(n_point))
+```
+
+```{r}
+medals_df |> arrange(total_medals) 
+```
+
+```{r}
+usa <- events |> filter(NOC == "NOR" | NOC == "USA") |> mutate(Event = fct_reorder(Event, total_medals))
+ggplot(data = usa, aes(y = total_medals, x = Event, fill = NOC)) + geom_col(position = "dodge") + coord_flip()
+```
+
+```{r}
+events |> 
+```
+
+
 
 
 

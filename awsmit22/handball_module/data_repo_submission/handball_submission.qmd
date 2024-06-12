@@ -48,16 +48,15 @@ are often used in games. Aggressiveness can be measured in the penalty
 statistics as players who tend to get more penalties are usually more
 considered more aggressive players overall. Their success can be
 measured with the handball performance index (HPI) , a calculated
-statistic which essentially ranks how good a player is. This data set could provide insight on if
-players or teams that are more aggressive are more successful than those
+statistic which essentially ranks how good a player is. This data set could provide insight on if players or teams that are more aggressive are more successful than those
 who are more passive. 
 
 ## Data
 
-The dataset has 309 players from 18 different clubs, with 7 variables, 4
+The data set has 309 players from 18 different clubs, with 7 variables, 4
 of which are statistics. Each row in the data set is a player in the
 Handball-Bundesliga during the 2022-23 season. The statistics are
-cumulative for the entirety of the season. The dataset only contains players who played in 10 games or more.
+cumulative for the entirety of the season. The data set only contains players who played in 10 games or more.
 
 | Variable          | Description                                                                                                                                                                                                                   |
 |--------------------|----------------------------------------------------|

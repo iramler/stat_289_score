@@ -52,3 +52,5 @@ In the data set there are 41 medalling nations that competed in 25 different eve
 ## References
 
 [Kaggle Original Dataset](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download){target="_blank"}
+
+[Olympic Medal Weighing Methods](https://www.topendsports.com/events/summer/medal-tally/rankings-weighted.htm){target="_blank"}
