@@ -1,157 +1,157 @@
-Player,Surface,Matches,EloRank,WinPercentage,DoubleFaultPercentage,ReturnPointsWonPercentage
-Jannik Sinner,Clay,10,1,0.7,0.01801,0.4146
-Jannik Sinner,Grass,11,1,0.72727,0.02715,0.39279
-Jannik Sinner,Hard,56,1,0.89286,0.023,0.39944
-Carlos Alcaraz,Clay,14,2,0.71429,0.02736,0.45818
-Carlos Alcaraz,Grass,12,2,1,0.03491,0.4049
-Carlos Alcaraz,Hard,41,2,0.7561,0.02657,0.4078
-Novak Djokovic,Clay,16,3,0.8125,0.02907,0.46047
-Novak Djokovic,Grass,7,3,0.85714,0.01385,0.35488
-Novak Djokovic,Hard,36,3,0.86111,0.03264,0.39925
-Daniil Medvedev,Clay,10,4,0.6,0.05917,0.39024
-Daniil Medvedev,Grass,10,4,0.7,0.04474,0.37648
-Daniil Medvedev,Hard,51,4,0.7451,0.05728,0.40064
-Alexander Zverev,Clay,27,5,0.81481,0.03974,0.41078
-Alexander Zverev,Grass,7,5,0.71429,0.03273,0.32028
-Alexander Zverev,Hard,55,5,0.72727,0.02178,0.36707
-Grigor Dimitrov,Clay,11,6,0.63636,0.05335,0.40641
-Grigor Dimitrov,Grass,7,6,0.71429,0.05282,0.40957
-Grigor Dimitrov,Hard,52,6,0.75,0.03692,0.3663
-Alex De Minaur,Clay,12,7,0.58333,0.04208,0.42135
-Alex De Minaur,Grass,9,7,0.66667,0.03641,0.38875
-Alex De Minaur,Hard,62,7,0.70968,0.02866,0.41467
-Andrey Rublev,Clay,19,8,0.73684,0.03212,0.39583
-Andrey Rublev,Grass,10,8,0.8,0.01836,0.36302
-Andrey Rublev,Hard,47,8,0.65957,0.02188,0.37685
-Hubert Hurkacz,Clay,17,10,0.76471,0.0138,0.37081
-Hubert Hurkacz,Grass,9,10,0.66667,0.02241,0.31399
-Hubert Hurkacz,Hard,51,10,0.68627,0.01821,0.34266
-Stefanos Tsitsipas,Clay,21,11,0.80952,0.04284,0.39186
-Stefanos Tsitsipas,Grass,8,11,0.5,0.02225,0.29393
-Stefanos Tsitsipas,Hard,44,11,0.61364,0.02806,0.35077
-Taylor Fritz,Clay,18,12,0.66667,0.01592,0.37509
-Taylor Fritz,Grass,7,12,0.42857,0.02987,0.33437
-Taylor Fritz,Hard,44,12,0.70455,0.02775,0.38533
-Tommy Paul,Clay,9,15,0.66667,0.02706,0.41176
-Tommy Paul,Grass,12,15,0.58333,0.03923,0.373
-Tommy Paul,Hard,47,15,0.6383,0.02775,0.39889
-Holger Rune,Clay,15,16,0.66667,0.04282,0.36378
-Holger Rune,Grass,9,16,0.77778,0.04757,0.34308
-Holger Rune,Hard,39,16,0.53846,0.03742,0.34467
-Ugo Humbert,Clay,10,17,0.5,0.01938,0.39077
-Ugo Humbert,Grass,7,17,0.42857,0.05225,0.37138
-Ugo Humbert,Hard,53,17,0.69811,0.02047,0.3729
-Jiri Lehecka,Clay,9,18,0.66667,0.02479,0.35656
-Jiri Lehecka,Grass,8,18,0.625,0.02857,0.34665
-Jiri Lehecka,Hard,41,18,0.56098,0.03082,0.3555
-Ben Shelton,Clay,10,19,0.6,0.06036,0.34793
-Ben Shelton,Grass,5,19,0.4,0.05,0.32995
-Ben Shelton,Hard,41,19,0.63415,0.04695,0.3447
-Tallon Griekspoor,Clay,12,20,0.5,0.04188,0.33746
-Tallon Griekspoor,Grass,9,20,0.77778,0.02432,0.3415
-Tallon Griekspoor,Hard,42,20,0.54762,0.03986,0.31887
-Nicolas Jarry,Clay,20,21,0.6,0.02382,0.3581
-Nicolas Jarry,Grass,7,21,0.57143,0.02568,0.36193
-Nicolas Jarry,Hard,35,21,0.6,0.02501,0.34362
-Alexander Bublik,Clay,11,24,0.54545,0.08355,0.3542
-Alexander Bublik,Grass,11,24,0.81818,0.09169,0.3692
-Alexander Bublik,Hard,35,24,0.57143,0.09644,0.36988
-Jan Lennard Struff,Clay,13,25,0.69231,0.03842,0.41674
-Jan Lennard Struff,Grass,7,25,0.71429,0.05751,0.33821
-Jan Lennard Struff,Hard,25,25,0.4,0.03329,0.34447
-Sebastian Korda,Clay,9,27,0.44444,0.01606,0.37926
-Sebastian Korda,Grass,5,27,0.6,0.04278,0.3392
-Sebastian Korda,Hard,42,27,0.57143,0.0269,0.36566
-Cameron Norrie,Clay,16,31,0.5625,0.0316,0.40675
-Cameron Norrie,Grass,5,31,0.6,0.03233,0.3766
-Cameron Norrie,Hard,28,31,0.39286,0.02795,0.3505
-Matteo Berrettini,Clay,6,32,0.83333,0.02519,0.40093
-Matteo Berrettini,Grass,5,32,0.6,0.02016,0.28571
-Matteo Berrettini,Hard,6,32,0.33333,0.01584,0.34228
-Marton Fucsovics,Clay,11,33,0.72727,0.03444,0.41733
-Marton Fucsovics,Grass,7,33,0.71429,0.05183,0.36842
-Marton Fucsovics,Hard,23,33,0.43478,0.02881,0.35022
-Frances Tiafoe,Clay,11,39,0.54545,0.02053,0.36417
-Frances Tiafoe,Grass,9,39,0.77778,0.03836,0.34749
-Frances Tiafoe,Hard,33,39,0.48485,0.03068,0.35175
-Emil Ruusuvuori,Clay,7,41,0.28571,0.02941,0.41225
-Emil Ruusuvuori,Grass,7,41,0.42857,0.04223,0.33391
-Emil Ruusuvuori,Hard,31,41,0.58065,0.03231,0.38087
-Alejandro Davidovich Fokina,Clay,12,42,0.41667,0.02213,0.4053
-Alejandro Davidovich Fokina,Grass,5,42,0.4,0.01866,0.37094
-Alejandro Davidovich Fokina,Hard,33,42,0.54545,0.02258,0.38524
-Jordan Thompson,Clay,8,43,0.375,0.01408,0.33632
-Jordan Thompson,Grass,14,43,0.64286,0.01306,0.3624
-Jordan Thompson,Hard,38,43,0.55263,0.01397,0.36476
-Francisco Cerundolo,Clay,29,45,0.55172,0.03475,0.4167
-Francisco Cerundolo,Grass,8,45,0.75,0.05165,0.39774
-Francisco Cerundolo,Hard,21,45,0.42857,0.03698,0.34967
-Roman Safiullin,Clay,5,49,0.2,0.04872,0.32781
-Roman Safiullin,Grass,8,49,0.625,0.04743,0.37353
-Roman Safiullin,Hard,30,49,0.5,0.04369,0.36667
-Roberto Bautista Agut,Clay,12,55,0.5,0.0216,0.40694
-Roberto Bautista Agut,Grass,5,55,0.6,0.01591,0.36017
-Roberto Bautista Agut,Hard,16,55,0.375,0.01806,0.34733
-Christopher Oconnell,Clay,7,58,0,0.04662,0.32708
-Christopher Oconnell,Grass,7,58,0.57143,0.01987,0.3156
-Christopher Oconnell,Hard,26,58,0.5,0.02013,0.34109
-Marcos Giron,Clay,11,59,0.45455,0.01858,0.38587
-Marcos Giron,Grass,5,59,0.2,0.02772,0.34524
-Marcos Giron,Hard,34,59,0.47059,0.01998,0.36267
-Lorenzo Musetti,Clay,17,62,0.52941,0.02019,0.39969
-Lorenzo Musetti,Grass,9,62,0.66667,0.06168,0.37295
-Lorenzo Musetti,Hard,33,62,0.39394,0.02722,0.34912
-Miomir Kecmanovic,Clay,16,65,0.4375,0.01926,0.38179
-Miomir Kecmanovic,Grass,6,65,0.33333,0.02632,0.35153
-Miomir Kecmanovic,Hard,32,65,0.46875,0.02535,0.37032
-Roberto Carballes Baena,Clay,26,66,0.5,0.02527,0.38907
-Roberto Carballes Baena,Grass,5,66,0.4,0.04358,0.34529
-Roberto Carballes Baena,Hard,14,66,0.35714,0.02966,0.37094
-Zhizhen Zhang,Clay,19,67,0.57895,0.02982,0.37831
-Zhizhen Zhang,Grass,5,67,0.4,0.02725,0.34761
-Zhizhen Zhang,Hard,29,67,0.48276,0.03008,0.34163
-Aslan Karatsev,Clay,6,68,0.33333,0.05157,0.356
-Aslan Karatsev,Grass,5,68,0.4,0.06545,0.3447
-Aslan Karatsev,Hard,18,68,0.55556,0.07341,0.36444
-Brandon Nakashima,Clay,9,71,0.44444,0.01907,0.34337
-Brandon Nakashima,Grass,5,71,0.2,0.02153,0.32563
-Brandon Nakashima,Hard,17,71,0.41176,0.01805,0.34863
-Alex Michelsen,Clay,8,77,0.375,0.029760000000000002,0.36741
-Alex Michelsen,Grass,6,77,0.66667,0.02586,0.35551
-Alex Michelsen,Hard,25,77,0.44,0.03235,0.36086
-Laslo Djere,Clay,18,80,0.5,0.03357,0.36695
-Laslo Djere,Grass,7,80,0.57143,0.03073,0.31717
-Laslo Djere,Hard,21,80,0.52381,0.03176,0.36369
-Denis Shapovalov,Clay,11,82,0.45455,0.08806,0.35677
-Denis Shapovalov,Grass,7,82,0.57143,0.08411,0.36073
-Denis Shapovalov,Hard,12,82,0.33333,0.07957,0.3584
-Yannick Hanfmann,Clay,23,83,0.43478,0.02711,0.38453
-Yannick Hanfmann,Grass,7,83,0.57143,0.02519,0.37391
-Yannick Hanfmann,Hard,20,83,0.35,0.02573,0.3346
-Christopher Eubanks,Clay,5,84,0,0.04315,0.31016
-Christopher Eubanks,Grass,12,84,0.75,0.03476,0.29836
-Christopher Eubanks,Hard,24,84,0.375,0.03035,0.29278
-Corentin Moutet,Clay,15,88,0.46667,0.01842,0.3879
-Corentin Moutet,Grass,9,88,0.44444,0.0492,0.35973
-Corentin Moutet,Hard,8,88,0.125,0.02491,0.34356
-Lorenzo Sonego,Clay,17,89,0.47059,0.02838,0.33931
-Lorenzo Sonego,Grass,6,89,0.33333,0.02096,0.34007
-Lorenzo Sonego,Hard,32,89,0.4375,0.02003,0.33051
-Gregoire Barrere,Clay,6,97,0.5,0.02947,0.39453
-Gregoire Barrere,Grass,9,97,0.55556,0.0245,0.34543
-Gregoire Barrere,Hard,16,97,0.3125,0.02771,0.34206
-Marc Andrea Huesler,Clay,7,106,0.28571,0.04299,0.33528
-Marc Andrea Huesler,Grass,5,106,0.4,0.04731,0.33469
-Marc Andrea Huesler,Hard,9,106,0.22222,0.03418,0.32162
-Arthur Rinderknech,Clay,14,142,0.42857,0.04509,0.33646
-Arthur Rinderknech,Grass,6,142,0.33333,0.03162,0.33267
-Arthur Rinderknech,Hard,15,142,0.4,0.02692,0.3178
-Richard Gasquet,Clay,6,151,0.16667,0.03153,0.38269
-Richard Gasquet,Grass,6,151,0.33333,0.04207,0.32941
-Richard Gasquet,Hard,14,151,0.21429,0.035,0.32019
-Aleksandar Vukic,Clay,10,155,0.4,0.02307,0.363
-Aleksandar Vukic,Grass,5,155,0.4,0.01965,0.30921
-Aleksandar Vukic,Hard,26,155,0.38462,0.02404,0.3266
-Daniel Elahi Galan,Clay,17,172,0.29412,0.02105,0.36772
-Daniel Elahi Galan,Grass,5,172,0.6,0.01906,0.36437
-Daniel Elahi Galan,Hard,12,172,0.25,0.02058,0.3588
+Player,Surface,Matches,EloRank,WinPercentage,DoubleFaultPercentage,ReturnPointsWonPercentage,AcesPerDoubleFault
+Jannik Sinner,Clay,10,1,0.7,0.01801,0.4146,2.84615
+Jannik Sinner,Grass,11,1,0.72727,0.02715,0.39279,4.30435
+Jannik Sinner,Hard,56,1,0.89286,0.023,0.39944,3.76596
+Carlos Alcaraz,Clay,14,2,0.71429,0.02736,0.45818,1.07407
+Carlos Alcaraz,Grass,12,2,1,0.03491,0.4049,1.87179
+Carlos Alcaraz,Hard,41,2,0.7561,0.02657,0.4078,2.17284
+Novak Djokovic,Clay,16,3,0.8125,0.02907,0.46047,2.13514
+Novak Djokovic,Grass,7,3,0.85714,0.01385,0.35488,6.18182
+Novak Djokovic,Hard,36,3,0.86111,0.03264,0.39925,3.03125
+Daniil Medvedev,Clay,10,4,0.6,0.05917,0.39024,0.82
+Daniil Medvedev,Grass,10,4,0.7,0.04474,0.37648,2.45
+Daniil Medvedev,Hard,51,4,0.7451,0.05728,0.40064,1.45935
+Alexander Zverev,Clay,27,5,0.81481,0.03974,0.41078,2.15068
+Alexander Zverev,Grass,7,5,0.71429,0.03273,0.32028,4.44444
+Alexander Zverev,Hard,55,5,0.72727,0.02178,0.36707,4.73529
+Grigor Dimitrov,Clay,11,6,0.63636,0.05335,0.40641,1.12766
+Grigor Dimitrov,Grass,7,6,0.71429,0.05282,0.40957,2.48276
+Grigor Dimitrov,Hard,52,6,0.75,0.03692,0.3663,2.64085
+Alex De Minaur,Clay,12,7,0.58333,0.04208,0.42135,0.79412
+Alex De Minaur,Grass,9,7,0.66667,0.03641,0.38875,1.57692
+Alex De Minaur,Hard,62,7,0.70968,0.02866,0.41467,2.06349
+Andrey Rublev,Clay,19,8,0.73684,0.03212,0.39583,2.19608
+Andrey Rublev,Grass,10,8,0.8,0.01836,0.36302,5.94737
+Andrey Rublev,Hard,47,8,0.65957,0.02188,0.37685,4.22619
+Hubert Hurkacz,Clay,17,10,0.76471,0.0138,0.37081,8.14286
+Hubert Hurkacz,Grass,9,10,0.66667,0.02241,0.31399,9.15789
+Hubert Hurkacz,Hard,51,10,0.68627,0.01821,0.34266,9.08642
+Stefanos Tsitsipas,Clay,21,11,0.80952,0.04284,0.39186,1.37143
+Stefanos Tsitsipas,Grass,8,11,0.5,0.02225,0.29393,4.66667
+Stefanos Tsitsipas,Hard,44,11,0.61364,0.02806,0.35077,3.7078700000000002
+Taylor Fritz,Clay,18,12,0.66667,0.01592,0.37509,7.55
+Taylor Fritz,Grass,7,12,0.42857,0.02987,0.33437,4
+Taylor Fritz,Hard,44,12,0.70455,0.02775,0.38533,4.84946
+Tommy Paul,Clay,9,15,0.66667,0.02706,0.41176,1.14286
+Tommy Paul,Grass,12,15,0.58333,0.03923,0.373,2.25581
+Tommy Paul,Hard,47,15,0.6383,0.02775,0.39889,2.9802
+Holger Rune,Clay,15,16,0.66667,0.04282,0.36378,0.87719
+Holger Rune,Grass,9,16,0.77778,0.04757,0.34308,1.69048
+Holger Rune,Hard,39,16,0.53846,0.03742,0.34467,2.49524
+Ugo Humbert,Clay,10,17,0.5,0.01938,0.39077,2.2
+Ugo Humbert,Grass,7,17,0.42857,0.05225,0.37138,2.06897
+Ugo Humbert,Hard,53,17,0.69811,0.02047,0.3729,4.2125
+Jiri Lehecka,Clay,9,18,0.66667,0.02479,0.35656,2.6
+Jiri Lehecka,Grass,8,18,0.625,0.02857,0.34665,3.63158
+Jiri Lehecka,Hard,41,18,0.56098,0.03082,0.3555,2.97872
+Ben Shelton,Clay,10,19,0.6,0.06036,0.34793,1.11765
+Ben Shelton,Grass,5,19,0.4,0.05,0.32995,2.77778
+Ben Shelton,Hard,41,19,0.63415,0.04695,0.3447,2.42771
+Tallon Griekspoor,Clay,12,20,0.5,0.04188,0.33746,1.625
+Tallon Griekspoor,Grass,9,20,0.77778,0.02432,0.3415,4.61111
+Tallon Griekspoor,Hard,42,20,0.54762,0.03986,0.31887,2.95588
+Nicolas Jarry,Clay,20,21,0.6,0.02382,0.3581,3.87805
+Nicolas Jarry,Grass,7,21,0.57143,0.02568,0.36193,4.94118
+Nicolas Jarry,Hard,35,21,0.6,0.02501,0.34362,4.57746
+Alexander Bublik,Clay,11,24,0.54545,0.08355,0.3542,1.09231
+Alexander Bublik,Grass,11,24,0.81818,0.09169,0.3692,2.11765
+Alexander Bublik,Hard,35,24,0.57143,0.09644,0.36988,1.39608
+Jan Lennard Struff,Clay,13,25,0.69231,0.03842,0.41674,2.07895
+Jan Lennard Struff,Grass,7,25,0.71429,0.05751,0.33821,3.41935
+Jan Lennard Struff,Hard,25,25,0.4,0.03329,0.34447,3.54054
+Sebastian Korda,Clay,9,27,0.44444,0.01606,0.37926,4.09091
+Sebastian Korda,Grass,5,27,0.6,0.04278,0.3392,3.9375
+Sebastian Korda,Hard,42,27,0.57143,0.0269,0.36566,4.46591
+Cameron Norrie,Clay,16,31,0.5625,0.0316,0.40675,1.17949
+Cameron Norrie,Grass,5,31,0.6,0.03233,0.3766,2.13333
+Cameron Norrie,Hard,28,31,0.39286,0.02795,0.3505,2.30882
+Matteo Berrettini,Clay,6,32,0.83333,0.02519,0.40093,2.8
+Matteo Berrettini,Grass,5,32,0.6,0.02016,0.28571,5.9
+Matteo Berrettini,Hard,6,32,0.33333,0.01584,0.34228,7.14286
+Marton Fucsovics,Clay,11,33,0.72727,0.03444,0.41733,1.48276
+Marton Fucsovics,Grass,7,33,0.71429,0.05183,0.36842,1.58824
+Marton Fucsovics,Hard,23,33,0.43478,0.02881,0.35022,1.87273
+Frances Tiafoe,Clay,11,39,0.54545,0.02053,0.36417,4.1
+Frances Tiafoe,Grass,9,39,0.77778,0.03836,0.34749,3.03448
+Frances Tiafoe,Hard,33,39,0.48485,0.03068,0.35175,3.24359
+Emil Ruusuvuori,Clay,7,41,0.28571,0.02941,0.41225,1.83333
+Emil Ruusuvuori,Grass,7,41,0.42857,0.04223,0.33391,2
+Emil Ruusuvuori,Hard,31,41,0.58065,0.03231,0.38087,1.88462
+Alejandro Davidovich Fokina,Clay,12,42,0.41667,0.02213,0.4053,1.33333
+Alejandro Davidovich Fokina,Grass,5,42,0.4,0.01866,0.37094,2.2
+Alejandro Davidovich Fokina,Hard,33,42,0.54545,0.02258,0.38524,2.71154
+Jordan Thompson,Clay,8,43,0.375,0.01408,0.33632,3.2
+Jordan Thompson,Grass,14,43,0.64286,0.01306,0.3624,8.92857
+Jordan Thompson,Hard,38,43,0.55263,0.01397,0.36476,6.68421
+Francisco Cerundolo,Clay,29,45,0.55172,0.03475,0.4167,0.8642
+Francisco Cerundolo,Grass,8,45,0.75,0.05165,0.39774,0.80556
+Francisco Cerundolo,Hard,21,45,0.42857,0.03698,0.34967,1.33784
+Roman Safiullin,Clay,5,49,0.2,0.04872,0.32781,0.89474
+Roman Safiullin,Grass,8,49,0.625,0.04743,0.37353,1.91429
+Roman Safiullin,Hard,30,49,0.5,0.04369,0.36667,2.09091
+Roberto Bautista Agut,Clay,12,55,0.5,0.0216,0.40694,1.25
+Roberto Bautista Agut,Grass,5,55,0.6,0.01591,0.36017,2
+Roberto Bautista Agut,Hard,16,55,0.375,0.01806,0.34733,2.40909
+Christopher Oconnell,Clay,7,58,0,0.04662,0.32708,0.95
+Christopher Oconnell,Grass,7,58,0.57143,0.01987,0.3156,3.66667
+Christopher Oconnell,Hard,26,58,0.5,0.02013,0.34109,5.40426
+Marcos Giron,Clay,11,59,0.45455,0.01858,0.38587,3.23529
+Marcos Giron,Grass,5,59,0.2,0.02772,0.34524,3
+Marcos Giron,Hard,34,59,0.47059,0.01998,0.36267,3.26
+Lorenzo Musetti,Clay,17,62,0.52941,0.02019,0.39969,2
+Lorenzo Musetti,Grass,9,62,0.66667,0.06168,0.37295,1.29787
+Lorenzo Musetti,Hard,33,62,0.39394,0.02722,0.34912,1.66667
+Miomir Kecmanovic,Clay,16,65,0.4375,0.01926,0.38179,2.25
+Miomir Kecmanovic,Grass,6,65,0.33333,0.02632,0.35153,2.84615
+Miomir Kecmanovic,Hard,32,65,0.46875,0.02535,0.37032,1.98551
+Roberto Carballes Baena,Clay,26,66,0.5,0.02527,0.38907,0.48889
+Roberto Carballes Baena,Grass,5,66,0.4,0.04358,0.34529,0.78947
+Roberto Carballes Baena,Hard,14,66,0.35714,0.02966,0.37094,1.28125
+Zhizhen Zhang,Clay,19,67,0.57895,0.02982,0.37831,1.92308
+Zhizhen Zhang,Grass,5,67,0.4,0.02725,0.34761,3.07692
+Zhizhen Zhang,Hard,29,67,0.48276,0.03008,0.34163,3
+Aslan Karatsev,Clay,6,68,0.33333,0.05157,0.356,0.82143
+Aslan Karatsev,Grass,5,68,0.4,0.06545,0.3447,1.11111
+Aslan Karatsev,Hard,18,68,0.55556,0.07341,0.36444,1.14563
+Brandon Nakashima,Clay,9,71,0.44444,0.01907,0.34337,4
+Brandon Nakashima,Grass,5,71,0.2,0.02153,0.32563,3.90909
+Brandon Nakashima,Hard,17,71,0.41176,0.01805,0.34863,5.66667
+Alex Michelsen,Clay,8,77,0.375,0.029760000000000002,0.36741,1.25
+Alex Michelsen,Grass,6,77,0.66667,0.02586,0.35551,2.5
+Alex Michelsen,Hard,25,77,0.44,0.03235,0.36086,1.74627
+Laslo Djere,Clay,18,80,0.5,0.03357,0.36695,2
+Laslo Djere,Grass,7,80,0.57143,0.03073,0.31717,2.63636
+Laslo Djere,Hard,21,80,0.52381,0.03176,0.36369,2.55357
+Denis Shapovalov,Clay,11,82,0.45455,0.08806,0.35677,0.56322
+Denis Shapovalov,Grass,7,82,0.57143,0.08411,0.36073,1.2037
+Denis Shapovalov,Hard,12,82,0.33333,0.07957,0.3584,1.7027
+Yannick Hanfmann,Clay,23,83,0.43478,0.02711,0.38453,1.58696
+Yannick Hanfmann,Grass,7,83,0.57143,0.02519,0.37391,3.46154
+Yannick Hanfmann,Hard,20,83,0.35,0.02573,0.3346,2.47727
+Christopher Eubanks,Clay,5,84,0,0.04315,0.31016,2.17647
+Christopher Eubanks,Grass,12,84,0.75,0.03476,0.29836,4.25
+Christopher Eubanks,Hard,24,84,0.375,0.03035,0.29278,4.13333
+Corentin Moutet,Clay,15,88,0.46667,0.01842,0.3879,1.12
+Corentin Moutet,Grass,9,88,0.44444,0.0492,0.35973,1.37838
+Corentin Moutet,Hard,8,88,0.125,0.02491,0.34356,0.92857
+Lorenzo Sonego,Clay,17,89,0.47059,0.02838,0.33931,1.76923
+Lorenzo Sonego,Grass,6,89,0.33333,0.02096,0.34007,5.2
+Lorenzo Sonego,Hard,32,89,0.4375,0.02003,0.33051,4.5098
+Gregoire Barrere,Clay,6,97,0.5,0.02947,0.39453,1.0625
+Gregoire Barrere,Grass,9,97,0.55556,0.0245,0.34543,2.09524
+Gregoire Barrere,Hard,16,97,0.3125,0.02771,0.34206,2.63889
+Marc Andrea Huesler,Clay,7,106,0.28571,0.04299,0.33528,1.78261
+Marc Andrea Huesler,Grass,5,106,0.4,0.04731,0.33469,2.90909
+Marc Andrea Huesler,Hard,9,106,0.22222,0.03418,0.32162,3.33333
+Arthur Rinderknech,Clay,14,142,0.42857,0.04509,0.33646,2.5098
+Arthur Rinderknech,Grass,6,142,0.33333,0.03162,0.33267,3.9375
+Arthur Rinderknech,Hard,15,142,0.4,0.02692,0.3178,4.75758
+Richard Gasquet,Clay,6,151,0.16667,0.03153,0.38269,1.21429
+Richard Gasquet,Grass,6,151,0.33333,0.04207,0.32941,1.22727
+Richard Gasquet,Hard,14,151,0.21429,0.035,0.32019,1.83784
+Aleksandar Vukic,Clay,10,155,0.4,0.02307,0.363,3.35294
+Aleksandar Vukic,Grass,5,155,0.4,0.01965,0.30921,5.55556
+Aleksandar Vukic,Hard,26,155,0.38462,0.02404,0.3266,4.30769
+Daniel Elahi Galan,Clay,17,172,0.29412,0.02105,0.36772,2.83333
+Daniel Elahi Galan,Grass,5,172,0.6,0.01906,0.36437,4.45455
+Daniel Elahi Galan,Hard,12,172,0.25,0.02058,0.3588,4.1

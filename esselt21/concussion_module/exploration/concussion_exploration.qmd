@@ -102,7 +102,9 @@ concussion |>
                alpha = 0.2) +
   theme_minimal() +
   labs(y = "Density") +
-  facet_wrap(~Offense)
+  facet_wrap(~Offense,
+             scales = "free_y") +
+  theme(plot.background = element_rect(fill = "ivory"))
 ```
 
 ```{r}

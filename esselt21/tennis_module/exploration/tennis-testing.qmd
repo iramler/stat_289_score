@@ -12,7 +12,7 @@ library(modelr)
 ```
 
 ```{r}
-atp <- read_csv(here::here("esselt21/tennis_module/exploration/new_atp.csv"))
+atp <- read_csv(here::here("esselt21/tennis_module/data_repo/new_atp.csv"))
 ```
 
 ```{r}
@@ -36,19 +36,44 @@ atp |>
   ggplot(aes(x = WinPercentage)) +
   geom_histogram(colour = "black",
                  fill = "lightblue",
-                 bins = 23,
+                 bins = 13,
                  aes(y=..density..)) +
   theme_minimal() +
   labs(x = "Win Percentage",
        title = "Histogram of Win Percentages by Surface",
-       y = "Density") +
+       y = "Density",
+       caption = "ATP") +
   facet_grid(~Surface,
              scales = "free") +
   theme(
     axis.text.x = element_text(angle = 45,
                                    hjust = 1,
                                    vjust = 1),
-    plot.title = element_text(hjust = .5)
+    plot.title = element_text(hjust = .5),
+    plot.caption = element_text(face = "bold",
+                                size = 20)
+  )
+
+wta |>
+  ggplot(aes(x = WinPercentage)) +
+  geom_histogram(colour = "black",
+                 fill = "lightblue",
+                 bins = 13,
+                 aes(y=..density..)) +
+  theme_minimal() +
+  labs(x = "Win Percentage",
+       title = "Histogram of Win Percentages by Surface",
+       y = "Density",
+       caption = "WTA") +
+  facet_grid(~Surface,
+             scales = "free") +
+  theme(
+    axis.text.x = element_text(angle = 45,
+                                   hjust = 1,
+                                   vjust = 1),
+    plot.title = element_text(hjust = .5),
+    plot.caption = element_text(face = "bold",
+                                size = 20)
   )
 ```
 
@@ -85,7 +110,7 @@ atp |>
              y = WinPercentage,
              fill = Surface)) +
   stat_boxplot(geom = 'errorbar') +
-  geom_boxplot() +
+  geom_boxplot(alpha = 0.5) +
   theme_minimal() +
   labs(y = "Win Percentage",
        title = "Box Plots of Win Percentages by Surface",
@@ -97,7 +122,7 @@ atp |>
 ```
 
 ```{r}
-wta <- read_csv(here::here("esselt21/tennis_module/exploration/new_wta.csv"))
+wta <- read_csv(here::here("esselt21/tennis_module/data_repo/new_wta.csv"))
 ```
 
 ```{r}
@@ -133,9 +158,10 @@ wta |>
 
 
 ```{r}
+library(broom)
 # regression test to see difference
-model <- lm(WinPercentage ~ Surface + ReturnPointsWonPercentage + EloRank,
-            data = tennis)
+model <- lm(WinPercentage ~ Surface:Matches + EloRank + ReturnPointsWonPercentage + AcesPerDoubleFault,
+            data = atp)
 summary(model)
 aug <-
   augment(model)
@@ -144,97 +170,36 @@ aug <-
 ```{r}
 # plotting regression model
 aug |>
-  ggplot(aes(x = ReturnPointsWonPercentage,
+  ggplot(aes(x = Matches,
              y = .fitted,
              colour = Surface)) +
-  geom_smooth(method = 'lm',
-              se = FALSE) +
-  geom_point(data = tennis,
-             aes(x = ReturnPointsWonPercentage,
+  geom_smooth(method = "lm",
+              se = TRUE,
+              aes(fill = Surface),
+              linewidth = 1.25,
+              alpha = 0.2) +
+  geom_jitter(data = atp,
+             aes(x = Matches,
                  y = WinPercentage),
              alpha = 0.4) +
   theme_minimal() +
   labs(y = 'Win Percentage',
-       x = 'Return Points Won Percentage',
-       title = 'Predictions vs. Actual Values of Win Percentages')
+       x = 'Number of Matches',
+       title = 'Predictions vs. Actual Values of Win Percentages') +
+  facet_wrap(~Surface,
+             scales = "free_x") +
+  theme(plot.background = element_rect(fill = "ivory"),
+        panel.border = element_rect(color = "black", 
+                                    fill = NA, 
+                                    size = 1), 
+        strip.background = element_rect(color = "black", 
+                                        fill = "ivory",
+                                        size = 1),
+        strip.text = element_text(size = 15))
 ```
 
 ```{r}
 # does this meet the assumptions for a multiple linear regression model?
 plot(model)
 ```
-
-```{r}
-men <- read_csv(here::here("esselt21/tennis_module/exploration/men.csv"))
-```
-
-```{r}
-men |>
-  ggplot(aes(x = Matches,
-             y = WinPercentage,
-             colour = Surface)) +
-  geom_point() +
-  geom_smooth() +
-  labs(title = "Men") +
-  facet_grid(~Surface)
-```
-
-```{r}
-women |>
-  ggplot(aes(x = Surface,
-             y = WinPercentage,
-             fill = Surface)) +
-  stat_boxplot(geom = 'errorbar') +
-  geom_boxplot() +
-  theme_minimal() +
-  labs(y = "Win Percentage",
-       title = "Box Plots of Win Percentages by Surface") +
-  theme(legend.position = "none",
-        plot.title = element_text(hjust = 0.5))
-```
-
-```{r}
-men |>
-  ggplot(aes(x = Surface,
-             y = WinPercentage,
-             fill = Surface)) +
-  stat_boxplot(geom = 'errorbar') +
-  geom_boxplot() +
-  theme_minimal() +
-  labs(y = "Win Percentage",
-       title = "Box Plots of Win Percentages by Surface") +
-  theme(legend.position = "none",
-        plot.title = element_text(hjust = 0.5))
-```
-
-```{r}
-eliteModel <- lm(WinPercentage ~ Surface + ReturnPointsWonPercentage + EloRank,
-            data = elite)
-
-summary(eliteModel)
-
-eliteAug <-
-  augment(eliteModel)
-```
-
-```{r}
-# plotting regression model
-eliteAug |>
-  ggplot(aes(x = ReturnPointsWonPercentage,
-             y = .fitted,
-             colour = Surface)) +
-  geom_smooth(method = 'lm',
-              se = FALSE) +
-  geom_point(data = elite,
-             aes(x = ReturnPointsWonPercentage,
-                 y = WinPercentage),
-             alpha = 0.4) +
-  theme_minimal() +
-  labs(y = 'Win Percentage',
-       x = 'Return Points Won Percentage',
-       title = 'Predictions vs. Actual Values of Win Percentages',
-       subtitle = 'Only top 20 ranked players included')
-# talk about differences between overall and elite players
-```
-
 

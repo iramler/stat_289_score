@@ -56,11 +56,11 @@ wta <-
 # can select fewer variables if not all are needed
 atp <-
   atp |>
-  select(c(Player, Surface, Matches, EloRank, WinPercentage, DoubleFaultPercentage, ReturnPointsWonPercentage))
+  select(c(Player, Surface, Matches, EloRank, WinPercentage, DoubleFaultPercentage, ReturnPointsWonPercentage, AcesPerDoubleFault))
 
 wta <-
   wta |>
-  select(c(Player, Surface, Matches, EloRank, WinPercentage, DoubleFaultPercentage, ReturnPointsWonPercentage))
+  select(c(Player, Surface, Matches, EloRank, WinPercentage, DoubleFaultPercentage, ReturnPointsWonPercentage, AcesPerDoubleFault))
 ```
 
 ```{r}
