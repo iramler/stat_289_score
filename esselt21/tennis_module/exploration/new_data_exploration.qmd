@@ -25,12 +25,22 @@ nGS <-
 ```
 
 ```{r}
-winPercentage <-
+BeewinPercentage <-
   atp |>
   group_by(player, best_of) |>
   summarise(winPct = mean(result == "Winner"),
             matches = n()) |>
-  mutate(best_of = as_factor(best_of))
+  mutate(best_of = as_factor(best_of),
+         best_of = fct_recode(best_of, "Non-Grand Slam" = "3", "Grand Slam" = "5"))
+
+winPercentage <-
+  atp |>
+  group_by(player, surface) |>
+  summarise(winPct = mean(result == "Winner"),
+            matches = n()) |>
+  filter(matches >= 5) |>
+  mutate(surface = as_factor(surface),
+         surface = fct_relevel(surface, c("Clay", "Grass", "Hard")))
 
 GSwinPercentage <-
   GS |>
@@ -53,15 +63,16 @@ nGSwinPercentage <-
 
 ```{r}
 winPercentage |>
-  ggplot(aes(x = best_of,
+  ggplot(aes(x = surface,
              y = winPct,
-             fill = best_of)) +
+             fill = surface)) +
   stat_boxplot(geom = 'errorbar') +
   geom_boxplot() +
   theme_minimal() +
-  theme(panel.background = element_rect(fill = 'ivory'),
-        plot.background = element_rect(fill = 'ivory'),
-        plot.title = element_text(size = 20),
+  theme(panel.background = element_rect(fill = 'white'),
+        plot.background = element_rect(fill = 'white'),
+        plot.title = element_text(size = 20,
+                                  hjust = 0.5),
         plot.caption = element_text(size = 20,
                                     face = 'bold'),
         legend.position = 'none') +
@@ -86,6 +97,25 @@ GSwinPercentage |>
 ```
 
 ```{r}
+library(ggbeeswarm)
+BeewinPercentage |>
+  ggplot(aes(x = best_of,
+             y = winPct,
+             color = best_of)) +
+  geom_beeswarm(cex = 3) +
+  labs(x = "Best Of",
+       y = "Win Percentage",
+       title = "Bee Swarm Plot of Win Percentages by Grand Slam or Not",
+       caption = "ATP") +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = 'white'),
+        panel.background = element_rect(fill = 'white'),
+        plot.caption = element_text(size = 20,
+                                    face = 'bold'),
+        legend.position = "none")
+```
+
+```{r}
 winPercentage |>
   ggplot(aes(x = winPct,
              y = after_stat(density))) +
@@ -94,8 +124,8 @@ winPercentage |>
                  bins = 15) +
   facet_grid(~surface) +
   theme_minimal() +
-  theme(plot.background = element_rect(fill = 'ivory'),
-        panel.background = element_rect(fill = 'ivory'),
+  theme(plot.background = element_rect(fill = 'white'),
+        panel.background = element_rect(fill = 'white'),
         strip.background = element_rect(colour = 'black',
                                         fill = 'gray90'),
         strip.text = element_text(size = 15,

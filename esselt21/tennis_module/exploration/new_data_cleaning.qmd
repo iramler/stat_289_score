@@ -1,5 +1,5 @@
 ---
-title: "new_data_cleaning"
+title: "tennis_prep"
 author: "eric seltzer"
 format: html
 ---
@@ -11,7 +11,7 @@ library(tidyverse)
 ```{r}
 atp <- read_csv(here::here("esselt21/tennis_module/exploration/atp_matches_2023.csv"))
 
-wta <- read_csv(here::here("esselt21/tennis_module/exploration/wta_2023.csv"))
+wta <- read_csv(here::here("esselt21/tennis_module/exploration/wta_matches_2023.csv"))
 ```
 
 ```{r}
@@ -30,17 +30,37 @@ atpClean <-
                names_to = "result",
                values_to = "player") |>
   mutate(result = as_factor(result))
+
+wtaClean <-
+  wta |>
+  select(-score) |>
+  rename("Winner" = winner_name) |>
+  rename("Loser" = loser_name) |>
+  pivot_longer(cols = c(Winner, Loser),
+               names_to = "result",
+               values_to = "player") |>
+  mutate(result = as_factor(result))
 ```
 
 ```{r}
 atpClean <-
   atpClean |>
   relocate(loser_hand, .after = winner_hand)
+
+wtaClean <-
+  wtaClean |>
+  relocate(loser_hand, .after = winner_hand)
 ```
 
 ```{r}
 atpClean <-
   atpClean |>
+  mutate(hand = if_else(result == "Winner", winner_hand, loser_hand)) |>
+  relocate(hand, .after = loser_hand) |>
+  select(-c(winner_hand, loser_hand))
+
+wtaClean <-
+  wtaClean |>
   mutate(hand = if_else(result == "Winner", winner_hand, loser_hand)) |>
   relocate(hand, .after = loser_hand) |>
   select(-c(winner_hand, loser_hand))
@@ -52,11 +72,23 @@ atpClean <-
   mutate(age = if_else(result == "Winner", winner_age, loser_age)) |>
   relocate(age, .after = winner_ioc) |>
   select(-c(winner_age, loser_age))
+
+wtaClean <-
+  wtaClean |>
+  mutate(age = if_else(result == "Winner", winner_age, loser_age)) |>
+  relocate(age, .after = winner_ioc) |>
+  select(-c(winner_age, loser_age))
 ```
 
 ```{r}
 atpClean <-
   atpClean |>
+  mutate(height = if_else(result == "Winner", winner_ht, loser_ht)) |>
+  relocate(height, .after = hand) |>
+  select(-c(winner_ht, loser_ht))
+
+wtaClean <-
+  wtaClean |>
   mutate(height = if_else(result == "Winner", winner_ht, loser_ht)) |>
   relocate(height, .after = hand) |>
   select(-c(winner_ht, loser_ht))
@@ -68,11 +100,23 @@ atpClean <-
   mutate(country = if_else(result == "Winner", winner_ioc, loser_ioc)) |>
   relocate(country, .after = height) |>
   select(-c(winner_ioc, loser_ioc))
+
+wtaClean <-
+  wtaClean |>
+  mutate(country = if_else(result == "Winner", winner_ioc, loser_ioc)) |>
+  relocate(country, .after = height) |>
+  select(-c(winner_ioc, loser_ioc))
 ```
 
 ```{r}
 atpClean <-
   atpClean |>
+  mutate(rank = if_else(result == "Winner", winner_rank, loser_rank)) |>
+  relocate(rank, .before = result) |>
+  select(-c(winner_rank, loser_rank))
+
+wtaClean <-
+  wtaClean |>
   mutate(rank = if_else(result == "Winner", winner_rank, loser_rank)) |>
   relocate(rank, .before = result) |>
   select(-c(winner_rank, loser_rank))
@@ -84,11 +128,23 @@ atpClean <-
   mutate(numAces = if_else(result == "Winner", w_ace, l_ace)) |>
   relocate(numAces, .after = minutes) |>
   select(-c(w_ace, l_ace))
+
+wtaClean <-
+  wtaClean |>
+  mutate(numAces = if_else(result == "Winner", w_ace, l_ace)) |>
+  relocate(numAces, .after = minutes) |>
+  select(-c(w_ace, l_ace))
 ```
 
 ```{r}
 atpClean <-
   atpClean |>
+  mutate(numDF = if_else(result == "Winner", w_df, l_df)) |>
+  relocate(numDF, .after = numAces) |>
+  select(-c(w_df, l_df))
+
+wtaClean <-
+  wtaClean |>
   mutate(numDF = if_else(result == "Winner", w_df, l_df)) |>
   relocate(numDF, .after = numAces) |>
   select(-c(w_df, l_df))
@@ -100,11 +156,23 @@ atpClean <-
   mutate(servePoints = if_else(result == "Winner", w_svpt, l_svpt)) |>
   relocate(servePoints, .after = numDF) |>
   select(-c(w_svpt, l_svpt))
+
+wtaClean <-
+  wtaClean |>
+  mutate(servePoints = if_else(result == "Winner", w_svpt, l_svpt)) |>
+  relocate(servePoints, .after = numDF) |>
+  select(-c(w_svpt, l_svpt))
 ```
 
 ```{r}
 atpClean <-
   atpClean |>
+  mutate(first_serve_in = if_else(result == "Winner", w_1stIn, l_1stIn)) |>
+  relocate(first_serve_in, .after = servePoints) |>
+  select(-c(w_1stIn, l_1stIn))
+
+wtaClean <-
+  wtaClean |>
   mutate(first_serve_in = if_else(result == "Winner", w_1stIn, l_1stIn)) |>
   relocate(first_serve_in, .after = servePoints) |>
   select(-c(w_1stIn, l_1stIn))
@@ -116,11 +184,23 @@ atpClean <-
   mutate(first_serve_won = if_else(result == "Winner", w_1stWon, l_1stWon)) |>
   relocate(first_serve_won, .after = first_serve_in) |>
   select(-c(w_1stWon, l_1stWon))
+
+wtaClean <-
+  wtaClean |>
+  mutate(first_serve_won = if_else(result == "Winner", w_1stWon, l_1stWon)) |>
+  relocate(first_serve_won, .after = first_serve_in) |>
+  select(-c(w_1stWon, l_1stWon))
 ```
 
 ```{r}
 atpClean <-
   atpClean |>
+  mutate(second_serve_won = if_else(result == "Winner", w_2ndWon, l_2ndWon)) |>
+  relocate(second_serve_won, .after = first_serve_won) |>
+  select(-c(w_2ndWon, l_2ndWon))
+
+wtaClean <-
+  wtaClean |>
   mutate(second_serve_won = if_else(result == "Winner", w_2ndWon, l_2ndWon)) |>
   relocate(second_serve_won, .after = first_serve_won) |>
   select(-c(w_2ndWon, l_2ndWon))
@@ -132,21 +212,39 @@ atpClean <-
   mutate(serve_games_won = if_else(result == "Winner", w_SvGms, l_SvGms)) |>
   relocate(serve_games_won, .after = second_serve_won) |>
   select(-c(w_SvGms, l_SvGms))
+
+wtaClean <-
+  wtaClean |>
+  mutate(serve_games_won = if_else(result == "Winner", w_SvGms, l_SvGms)) |>
+  relocate(serve_games_won, .after = second_serve_won) |>
+  select(-c(w_SvGms, l_SvGms))
 ```
 
 ```{r}
 atpClean <-
   atpClean |>
-  mutate(breakPoints_saved = if_else(result == "Winner", w_bpSaved, l_bpSaved)) |>
-  relocate(breakPoints_saved, .after = serve_games_won) |>
+  mutate(break_points_saved = if_else(result == "Winner", w_bpSaved, l_bpSaved)) |>
+  relocate(break_points_saved, .after = serve_games_won) |>
+  select(-c(w_bpSaved, l_bpSaved))
+
+wtaClean <-
+  wtaClean |>
+  mutate(break_points_saved = if_else(result == "Winner", w_bpSaved, l_bpSaved)) |>
+  relocate(break_points_saved, .after = serve_games_won) |>
   select(-c(w_bpSaved, l_bpSaved))
 ```
 
 ```{r}
 atpClean <-
   atpClean |>
-  mutate(breakPoints_faced = if_else(result == "Winner", w_bpFaced, l_bpFaced)) |>
-  relocate(first_serve_in, .after = breakPoints_saved) |>
+  mutate(break_points_faced = if_else(result == "Winner", w_bpFaced, l_bpFaced)) |>
+  relocate(break_points_faced, .after = break_points_saved) |>
+  select(-c(w_bpFaced, l_bpFaced))
+
+wtaClean <-
+  wtaClean |>
+  mutate(break_points_faced = if_else(result == "Winner", w_bpFaced, l_bpFaced)) |>
+  relocate(break_points_faced, .after = break_points_saved) |>
   select(-c(w_bpFaced, l_bpFaced))
 ```
 
@@ -164,15 +262,37 @@ atpClean <-
 
 atpClean <-
   atpClean |>
-  relocate(break_points_saved, .after = first_serve_in)
+  relocate(result, .after = surface) |>
+  relocate(player, .after = result)
+
+matches <-
+  wtaClean |>
+  group_by(player) |>
+  summarise(matches = n()) |>
+  filter(matches >= 10) |>
+  pull(player)
+
+wtaClean <-
+  wtaClean |>
+  filter(player %in% matches)
+
+wtaClean <-
+  wtaClean |>
+  relocate(result, .after = surface) |>
+  relocate(player, .after = result)
 
 atpClean <-
   atpClean |>
-  relocate(result, .after = surface) |>
-  relocate(player, .after = result)
+  relocate(rank, .after = player)
+
+wtaClean <-
+  wtaClean |>
+  relocate(rank, .after = player)
 ```
 
 ```{r}
 write_csv(atpClean, here::here("esselt21/tennis_module/exploration/atp_2023.csv"))
+
+write_csv(wtaClean, here::here("esselt21/tennis_module/exploration/wta_2023.csv"))
 ```
 
