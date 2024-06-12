@@ -11,6 +11,7 @@ I am playing around with this Olympics data set I found on [Kaggle](https://www.
 library(tidyverse)
 library(forcats)
 library(readr)
+library(stringr)
 ```
 
 ```{r}
@@ -102,9 +103,37 @@ ggplot(data = usa, aes(y = total_medals, x = Event, fill = NOC)) + geom_col(posi
 ```
 
 ```{r}
-events |> 
+event_df <- events |> group_by(NOC, Event) |> summarise(n = n()) 
 ```
 
+```{r}
+event <- event_df |> group_by(Event) |> summarise(n = n())
+order_event <-event |> mutate(Event = fct_reorder(Event, n))
+ggplot(order_event, aes(x = Event, y = n)) + geom_col() + coord_flip()
+```
+
+```{r}
+medals_df |> arrange(desc(total_medals))
+## make a variable for the top 5
+```
+
+```{r}
+top5 <- events |> mutate(top5 = if_else(NOC =="USA" | NOC == "GBR" | NOC == "GER" | NOC == "GDR" | NOC == "ITA", true = 1, false = 0))
+```
+
+```{r}
+eight <- events |> mutate(eight = if_else(Event =="Rowing Men's Coxed Eights" | Event == "Rowing Women's Coxed Eights", true = 1, false = 0))
+```
+
+```{r}
+#use stringr to see if its coxed
+coxed <- events |> mutate(eight = if_else(Event =="Rowing Men's Coxed Eights" | Event == "Rowing Women's Coxed Eights", true = 1, false = 0))
+```
+
+```{r}
+mod <- lm(total_medals ~ Event + NOC, data = events)
+summary(mod)
+```
 
 
 
