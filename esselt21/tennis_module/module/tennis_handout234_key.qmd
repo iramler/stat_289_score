@@ -117,6 +117,7 @@ atpClean |>
   summarise(winPercentage = mean(result == "Winner"),
             numMatches = n()) |>
   filter(numMatches >= 5) |>
-  arrange(desc(winPercentage))
+  arrange(desc(winPercentage)) |>
+  view()
 ```
 
