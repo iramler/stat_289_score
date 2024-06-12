@@ -277,7 +277,19 @@ ggplot(data = time_hist, aes(x = Time)) +
 ```
 
 ```{r}
-speed_skating |> filter(!is.na(time_lap1)) |> filter(time_lap1 == min(time_lap1))
+speed_skating |> filter(Series == "World Championships", Round == "FinalA", Rank_In_Group == 1) |> arrange(Time)
+
+speed_skating |> filter(Round == "FinalA", Rank_In_Group == 1) |> arrange(desc(Time))
 ```
+
+```{r}
+sd(speed_skating$Time, na.rm = TRUE)
+sd(speed_skating$time_lap1, na.rm = TRUE)
+sd(speed_skating$time_lap2, na.rm = TRUE)
+sd(speed_skating$time_lap3, na.rm = TRUE)
+sd(speed_skating$time_lap4, na.rm = TRUE)
+sd(speed_skating$time_lap5, na.rm = TRUE)
+```
+
 
 
