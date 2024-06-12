@@ -107,9 +107,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
 <p>Cricket is a game watched and played by billions of people across the world. Second in global popularity only to football (soccer), it is extremely popular in South Asia, Australia, Africa, and Europe.</p>
-</section>
-<section id="the-rules-of-cricket" class="level3">
-<h3 class="anchored" data-anchor-id="the-rules-of-cricket">The Rules of Cricket</h3>
+<section id="the-rules-of-cricket" class="level4">
+<h4 class="anchored" data-anchor-id="the-rules-of-cricket">The Rules of Cricket</h4>
 <p>Cricket is played on a rectangular pitch inside an oval boundary. In the pitch, on either side, there is a vertical <strong>wicket</strong>, made up of three vertical wooden “stumps” with two wooden bails (small blocks of wood) resting atop the stumps. There are two teams, each with 11 players (a batting team and a bowling team).</p>
 <p><strong>The bowling team:</strong> The bowler bounces a small leather ball at the batter. The goal of the bowler is to get the batter out and ultimately knock the bails off of the stumps.</p>
 <p><strong>The batting team:</strong> The goal of the batting team is to score as many runs as possible and not let the bowler hit the bail off of the stumps. There are two batters at a time for the batting team. After the batter hits the ball, the two batters will attempt to switch sides. Each batter will go until they get out, when at that time, they will switch with another teammate.</p>
@@ -136,9 +135,9 @@ Learning Objectives
 <div class="callout-body-container callout-body">
 <p>By the end of this activity, you will:</p>
 <ol type="1">
-<li><p>Enhance proficiency in constructing and interpreting confidence intervals with varying degrees of confidence.</p></li>
-<li><p>Explain the importance of obtaining a large sample size that reaches across multiple audiences.</p></li>
-<li><p>Detecting outliers in a data set through applying techniques, including the “1.5 Interquartile Range Rule”</p></li>
+<li><p>Enhance ability to interpret coefficients in a multiple logistic regression model, including interaction coefficients and binary predictors.</p></li>
+<li><p>Become proficient in being able to convert between log odds of an event and the probability.</p></li>
+<li><p>Be able to identify which predictors are useful to the model.</p></li>
 </ol>
 </div>
 </div>
@@ -155,7 +154,7 @@ Methods
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Knowledge of basic statistical measures, such as mean and the five number summary, is necessary. Understanding the effect that data collection methods have on the spread and reliability of the data is important. Knowing how to use a t-test to calculate a confidence interval for a population mean by hand is also useful. Familiarity with critical values is also necessary when constructing the confidence interval by hand.</p>
+<p>Knowledge of logistic regression and different components is necessary. R output is provided, and students should be familiar with writing simple R code and have the ability to read output clearly. Students should have knowledge of log odds and probability with regards to logistic regression, and have an understanding of how to interpret binary and numeric predictors.</p>
 </div>
 </div>
 </div>
@@ -175,17 +174,21 @@ Technology Requirements
 </div>
 </div>
 </div>
-<p>Below shows a box plot, including summary statistics for the data containing the strength ratios, as well as the five number summary.</p>
+</section>
 </section>
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
-<p>The <code>weights_ratio</code> data set contains observed strength ratios from 18 different weightlifters. Each row represents a different weightlifter.</p>
-<p>Download data: <a href="weights_ratio.csv">weights_ratio.csv</a></p>
+<p>The <code>asia_cup</code> data set includes data from each cricket match played in all Asia Cup Tournaments from 1984 (the first one) to 2022. The Asia Cup is a tournament that now takes place every two years, alternating host cities in different countries throughout Asia. Each row represents on game played.</p>
+<p>Download data: <a href="asia_cup.csv">asia_cup.csv</a></p>
 <details>
 <summary>
 <b>Variable Descriptions</b>
 </summary>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Variable</th>
@@ -194,22 +197,69 @@ Technology Requirements
 </thead>
 <tbody>
 <tr class="odd">
-<td>Ratio</td>
-<td>Flat dumbbell press to barbell bench press weight ratio</td>
+<td>Team</td>
+<td>One team of the match</td>
+</tr>
+<tr class="even">
+<td>Opponent</td>
+<td>The team played</td>
+</tr>
+<tr class="odd">
+<td>Host</td>
+<td>Venue played at</td>
+</tr>
+<tr class="even">
+<td>Year</td>
+<td>Tournament year played</td>
+</tr>
+<tr class="odd">
+<td>Toss</td>
+<td>Coin toss to determine who starts batting or bowling (0 = lost, 1 = won)</td>
+</tr>
+<tr class="even">
+<td>Selection</td>
+<td>Team’s selection after winning / losing the toss (0 = Batting, 1 = Bowling)</td>
+</tr>
+<tr class="odd">
+<td>Run Scored</td>
+<td>Total runs scored by that team</td>
+</tr>
+<tr class="even">
+<td>Fours</td>
+<td>Total scored fours for that team</td>
+</tr>
+<tr class="odd">
+<td>Sixes</td>
+<td>Total scored sixes for that team</td>
+</tr>
+<tr class="even">
+<td>Extras</td>
+<td>Amount of extra runs scored by that team</td>
+</tr>
+<tr class="odd">
+<td>Highest Score</td>
+<td>Highest individual number of runs scored</td>
+</tr>
+<tr class="even">
+<td>Result</td>
+<td>0 = lost match, 1 = won match</td>
+</tr>
+<tr class="odd">
+<td>Given Extras</td>
+<td>Number of extra runs given up</td>
 </tr>
 </tbody>
 </table>
 </details>
 <section id="data-source" class="level4">
 <h4 class="anchored" data-anchor-id="data-source">Data Source</h4>
-<p><a href="https://www.reddit.com/r/Fitness/comments/35q4i3/how_much_do_you_dumbbell_flat_bench_compared_to/">Weight Ratio</a></p>
-<p>The data is sourced from a self-reported Reddit open forum. Users provided their weight for both a flat dumbbell press and a barbell bench press, and it was compiled by another user into the corresponding weight ratio. It is important to note that as this is a self-reported open forum, biases may be introduced that wouldn’t otherwise be present.</p>
+<p>The data is sourced from this data set on <a href="https://www.kaggle.com/datasets/hasibalmuzdadid/asia-cup-cricket-1984-to-2022/data">Kaggle</a></p>
 </section>
 </section>
 <section id="materials" class="level3">
 <h3 class="anchored" data-anchor-id="materials">Materials</h3>
-<p><a href="weight_ratio_worksheet.docx">Class handout</a></p>
-<p><a href="weight_ratio_worksheet_SOLUTIONS.docx">Class handout - with solutions</a></p>
+<p><a href="cricket_worksheet.docx">Class handout</a></p>
+<p><a href="cricket_worksheet_SOLUTIONS.docx">Class handout - with solutions</a></p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Conclusion">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -222,7 +272,7 @@ Conclusion
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Upon conclusion, it is realized that while we can assume that this data follows a normal distribution and there are no obvious discernible outliers, it is not a large enough sample to make concrete conclusions. There are some biases in data collection, those who report their ratios belong to similar audiences, and we can’t assume that the sample is reflective. Nevertheless, it presents a valuable opportunity for thought and good practice at constructing one sample T tests.</p>
+<p>In conclusion, working with the Asia Cup tournament data provides a great opportunity to practice logistic regression. The mix of binary and numeric predictors allows for interesting models that make sense in the context and provide a lot of explanatory power regarding who wins the match or not.</p>
 </div>
 </div>
 </div>
