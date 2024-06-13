@@ -6,8 +6,10 @@ format: html
 
 ```{r}
 library(tidyverse)
+library(here)
 # csv downloaded from Kaggle
-swimming <- read.csv("Olympic_Swimming_Results_1912to2020.csv")
+# https://www.kaggle.com/datasets/datasciencedonut/olympic-swimming-1912-to-2020
+swimming <- read.csv(here("bkaradenes/Swim_Module/data_repo/Olympic_Swimming_Results_1912to2020.csv"))
 ```
 
 # Cleaning Data Set
@@ -39,6 +41,22 @@ swimming <- swimming %>%
   select(-Relay)
 ```
 
+# Filtering for 100m races
+
+```{r}
+swimming <- swimming %>%
+  filter(dist_m == 100)
+```
+
+# Add time period variable
+
+```{r}
+swimming <- swimming %>%
+  mutate(time_period = case_when(
+    Year >= 1924 & Year < 1976 ~ "early",
+    Year >= 1976 & Year <= 2020 ~ "recent"
+  ))
+```
 
 # Writing cleaned data as csv
 
