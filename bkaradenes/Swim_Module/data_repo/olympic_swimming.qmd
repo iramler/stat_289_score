@@ -6,7 +6,7 @@ description: The dataset looks at Olympic swimmers 100 meter races from 1924 to 
 categories:
   - Hypothesis Testing
   - Side-By-Side Boxplots
-  - Summary Statistics
+  - Confidence Intervals
 editor:
   markdown: 
     canonical: true
