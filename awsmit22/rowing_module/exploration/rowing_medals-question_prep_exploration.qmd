@@ -127,12 +127,16 @@ eight <- events |> mutate(eight = if_else(Event =="Rowing Men's Coxed Eights" | 
 
 ```{r}
 #use stringr to see if its coxed
-coxed <- events |> mutate(eight = if_else(Event =="Rowing Men's Coxed Eights" | Event == "Rowing Women's Coxed Eights", true = 1, false = 0))
+coxed <- events |> mutate(coxed = str_detect(Event, "Coxed", negate = FALSE))
 ```
 
 ```{r}
-mod <- lm(total_medals ~ Event + NOC, data = events)
+mod <- lm(total_medals ~ coxed, data = coxed)
 summary(mod)
+```
+
+```{r}
+coxed |> group_by(NOC) |> summarise(n_coxed = sum(coxed), total_medals = sum(total_medals))
 ```
 
 
