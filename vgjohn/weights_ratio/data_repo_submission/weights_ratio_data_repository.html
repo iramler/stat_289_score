@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Vivian Johnson">
-<meta name="dcterms.date" content="2024-06-04">
+<meta name="dcterms.date" content="2024-06-13">
 
 <title>Ratio Between Dumbbell Press and Flat Bench Press</title>
 <style>
@@ -49,8 +49,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title">
 <h1 class="title">Ratio Between Dumbbell Press and Flat Bench Press</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Histogram</div>
-    <div class="quarto-category">Mean, IQR</div>
+    <div class="quarto-category">Data Collection Methods</div>
     <div class="quarto-category">One Sample T-Interval</div>
   </div>
   </div>
@@ -69,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 4, 2024</p>
+      <p class="date">June 13, 2024</p>
     </div>
   </div>
   
@@ -83,16 +82,18 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Weightlifters may be inclined to track the specific ratio between flat dumbbell press and barbell bench press. Flat dumbbell press is when the lifter lies on a flat bench with their arms positioned at roughly 45 degree angles, lifts two equal sized dumbbells, brings them back to the chest, and then keeps going. Barbell bench press is when the lifter lies on a bench and lifts a horizontal bar (the barbell) with equal weighted plates on both sides and brings it back down to the chest.</p>
+<p>Weightlifters may be inclined to track the specific ratio between flat dumbbell press and barbell bench press.</p>
+<p><a href="https://www.youtube.com/watch?v=XMc1N3o-Qyw" target="_blank">Flat dumbbell press</a> is when the lifter lies on a flat bench with their arms positioned at roughly 45 degree angles, lifts two equal sized dumbbells, brings them back to the chest, and then keeps going.</p>
+<p><a href="https://www.youtube.com/watch?v=SCVCLChPQFY" target="_blank">Barbell bench press</a> is when the lifter lies on a bench and lifts a horizontal bar (the barbell) with equal weighted plates on both sides and brings it back down to the chest.</p>
 <p>The ratio of flat dumbbell press to barbell bench press works to track how much someone is lifting two dumbbells compared to how much they are able to lift the weighted barbell. When calculating the ratio, it was multiplied by two in order to account for the total weight lifted when doing a flat dumbbell press, as there are two dumbbells that would have to be held by the lifter.</p>
 <p><strong>An example of this is as follows:</strong></p>
-<p><em>Say Melissa is able to flat dumbbell press two 30 lbs dumbbells. The total amount she can flat dumbbell press is 60 lbs (one dumbbell for each arm). On flat bench press, she can lift 75 lbs. Her ratio would be calculated by dividing flat dumbbell press by barbell bench press (60/75) which equals 0.8, meaning that Melissa can lift two dumbbells up to 80% as heavy as she can bench press the barbell.</em></p>
+<p><em>Say Melissa is able to flat dumbbell press two 30 lbs dumbbells. The total amount she can flat dumbbell press is 60 lbs (one dumbbell for each arm). On barbell bench press, she can lift 75 lbs. Her ratio would be calculated by dividing flat dumbbell press by barbell bench press (60/75) which equals 0.8, meaning that Melissa can lift two dumbbells up to 80% as heavy as she can bench press the barbell.</em></p>
 <p>Many weightlifters like to track this ratio to work towards specific strength goals and target any weakness in certain muscle groups. For example, if someone’s ratio is low (i.e.&nbsp;they can barbell bench press much more than they can flat dumbbell press), it highlights that they might want to work on targeting the muscles used in flat dumbbell press. Since the two exercises can focus on different muscle groups, weightlifters like this ratio as a tool for seeing where progress could be made. Weightlifters also use this ratio as a measure of progress. A common goal in weightlifting is to increase the ratio, and as one continues lifting, their starting ratio is often compared to their current one. While many professional weightlifters use this ratio for tracking progress and examining muscle balance, it isn’t an official statistic used in competitions, only a personal one.</p>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
 <p>The <code>weights_ratio</code> data set contains observed strength ratios from 18 different weightlifters. Each row represents a different weightlifter.</p>
-<table class="table">
+<table class="caption-top table">
 <caption><a href="../vgjohn/weights_ratio.csv">weights_ratio.csv</a></caption>
 <thead>
 <tr class="header">
@@ -111,16 +112,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
 <ol type="1">
-<li>What percent of weight lifters had a ratio above 0.65?</li>
-<li>Construct a 90% confidence interval for the average weightlifter’s ratio and interpret it in context.</li>
-<li>Using the mean, explain whether or not you believe the variance of the data set to be high or low.</li>
-<li>What would a ratio greater than one suggest?</li>
-<li>What potential problems could arise from the way the data was collected?</li>
+<li>Discuss concerns that arise because of the way the data was collected. How does this affect the audience the data applies to?</li>
+<li>Construct a 95% confidence interval for the average weightlifter’s ratio.</li>
+<li>Discuss ways a weightlifter could use their ratio to become more “balanced”</li>
+<li>What steps would you take to make the data more reliable?</li>
 </ol>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p><a href="https://www.reddit.com/r/Fitness/comments/35q4i3/how_much_do_you_dumbbell_flat_bench_compared_to/">Weight Ratio</a></p>
+<p><a href="https://www.reddit.com/r/Fitness/comments/35q4i3/how_much_do_you_dumbbell_flat_bench_compared_to/" target="_blank">Weight Ratio</a></p>
 <p>The data is compiled from a Reddit thread where users self reported their weight and it was compiled into a list of ratio.</p>
 </section>
 
