@@ -41,8 +41,19 @@ summary(medals_df$total_points)
 medals_df |> filter(NOC == "GBR")
 ```
 
+```{r}
+#Question 4
+medals_df |> arrange(desc(total_points)) |> head()
+```
+
+```{r}
+#Question 5
+ggplot(data = medals_df, aes(x = total_points)) + geom_boxplot() + theme_minimal()
+```
+
+
 ```{r, fig.height= 7, fig.width=2}
-# Question 4
+# Question 6
 sum_medals <- medals_df |> group_by(NOC) |> summarise(total_medals = sum(total_medals)) 
 
 medals_reordered <- sum_medals |> mutate(NOC = fct_reorder(NOC, total_medals))
