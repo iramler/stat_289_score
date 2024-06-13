@@ -46,7 +46,7 @@ This data set has 97 rows with each rows containing the season statistics for a 
 <summary><b>Variable Descriptions</b></summary>
 
 | Variable       | Description                                                                   |
-|-------------------------|----------------------------------------------|
+|--------------------------|----------------------------------------------|
 | player         | player name                                                                   |
 | birdie_avg     | the average number of birdies from an 18 hole round                           |
 | bogey_avg      | the average number of bogeys from an 18 hole round                            |
@@ -98,16 +98,17 @@ The data is obtained from the PDGA's official statistics provider [StatMando](ht
 
 ### Materials
 
-[DGPT24.csv](DGPT24.csv) - data set containing statistics from the 2024 DGPT season
+[DGPT24.csv](DGPT24.csv) - data set containing statistics from the 2024 DGPT season found on the [SCORE Network Data Repository](https://data.scorenetwork.org/)
 
 [DGPT24_questions.docx](DGPT24_questions.docx) - questions about correlation between total earnings and putting and driving
 
 [DGPT24_questions_tech.docx](DGPT24_questions_tech.docx) - questions about correlation where students use the data to build their own solutions
 
-Solutions for questions: [DGPT24_questions_ans.docx](DGPT24_questions_ans.docx)
+Solutions for questions:
+
+[DGPT24_questions_ans.docx](DGPT24_questions_ans.docx)
 
 [DGPT24_questions_tech_ans.docx](DGPT24_questions_tech_ans.docx)
-
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should find that there is a stronger correlation between driving and performance statistics than putting and performance statistics.
