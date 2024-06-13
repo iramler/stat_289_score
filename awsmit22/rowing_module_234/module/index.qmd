@@ -1,6 +1,14 @@
 ---
-title: Olympic Rowing Medals Between 1900 and 2022
-author: Abigail Smith
+title: "Olympic Rowing Medals Between 1896 and 2022"
+author:
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Abigail Smith
+    affiliation:
+      - ref: slu
 date: June 13, 2024
 description: Arranging data to analyze the total number of medals and the weighted points for nations competing in rowing events in the Summer Olympic Games between 1900 and 2022.
 categories:
@@ -8,22 +16,52 @@ categories:
   - filtering
   - grouping and summarizing
   - mutating
-  
-editor: 
-  markdown: 
-    wrap: 72
 ---
-## Motivation
+
+### Welcome video
+
+{{< video  title="Olympic Rowing Medals Between 1900 and 2022" >}}
+
+### Introduction
+
+This activity organizes the data in [Olympic rowing between 1900 and 2022](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download){target="_blank"} so that the total medals and points for countries can be analyzed. 
 
 The Summer Olympic Games are an international athletics event held every four years and hosted in different countries around the world. Rowing was added to the Olympics in 1896 but was cancelled due to weather, it has been in every Summer Olympics since 1900. Rowing races in the Olympic context are typically regatta style, meaning that there are multiple boats racing head to head against each other in multiple lanes. Since 1912, the standard distance for Olympic regattas has been 2000m, but until then there had been a range in distances. The boat that is first to cross the finish line is awarded a gold medal, the second a silver medal, and the third a bronze. Over the course of its time as an Olympic sport there have been 25 different event entries. These events are separated by gender and range with the number of rowers in the boat (1, 2, 4, 6, 8, 17), the rigging (inrigged, outrigged), sculling, sweeping, and whether or not they are coxed. An inrigged shell means the riggers (where the oar is attached to the boat) are on the inside of the boat, outrigged shells mean the riggers are on the outside. Sculling is where the rowers have an oar on each side and sweeping is when each rower only has one oar on one side. The coxswain steers the boat and guides the rowers, some events have coxed boats whereas some others do not. 
 
 In the dataset the medals are given to each athlete in the boat. In Olympic scoring however, the medals should be counted as one towards the entire boat. It is important to make sure this is the case when arranging the data. In looking at the total medals and total points for each nation, it is interesting to see which nations dominate in Olympic rowing. Additionally, looking at the overall distribution of the medals for all countries provides insight on just how lob-sided medaling can be in rowing at the Olympic level. This effect could likely be attributed towards how much funding nations are placing towards their rowing teams. 
 
-## Data
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This activity could be used as an example or a short take home assessment. Best to use as a predecessor to the STAT213 level worksheets in the other rowing module. 
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of the activity, students will be able to:
+
+1.  Filter a dataset so there are no NA values
+2.  Group data to procure summarized data
+3.  Mutate data to create new variables
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Students will use basic Dplyr skills to structure data to match the descriptions listed in the questions.  
+:::
+
+::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
+All the questions will require the use of R and the tidyverse package. 
+:::
+
+### Data
 
 In the data set there are 271,106 athletes from 230 countries competing in 66 sports at 35 different Olympics. Each row represents an individual athlete competing in an event at an Olympics. There are 15 variables in the dataset. 
 
-| Variable | Description                                                                                                                |
+Download data: 
+
+: [athlete_events.csv](athlete_events.csv){target="_blank"}
+
+<details>
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable | Description |
 |-------------------|-----------------------------------------------------|
 | `ID` | The ID number assigned to the athlete. |
 | `Name` | The name of the athlete in `first name, last name` order. |
@@ -41,20 +79,20 @@ In the data set there are 271,106 athletes from 230 countries competing in 66 sp
 | `Event` | The event the athlete competed in. |
 | `Medal` | If the athlete medaled, which medal they won. |
 
-: [athlete_events.csv](athlete_events.csv){target="_blank"}
+**Data Source**
 
+[Kaggle](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download){target="_blank"}
 
-## Questions
+</details>
 
-1.    Adjust the data so that it contains rowing as the only `Sport` and remove any NA values for `Medal`, meaning the dataset will only have medalling countries.
+### Materials
 
-2.    Organize the data so that there is only one athlete representing each team in each event in each year.
+We provide editable MS Word handouts along with their solutions.
 
-3.    Create a variable for the total number of points each country won using any point scale you want. Create another variable for the total number of medals each country won.
+[Worksheet](rowing_dataprep_worksheet.qmd)
 
+[Worksheet Answers](rowing_dataprep_worksheet_ANSWERS.qmd)
 
-## References
-
-[Kaggle Original Dataset](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download){target="_blank"}
-
-[Olympic Medal Weighing Methods](https://www.topendsports.com/events/summer/medal-tally/rankings-weighted.htm){target="_blank"}
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+This dataprep worksheet helps students familiarize themselves with the use of basic Dplyr tools to structure data in a way that is easier to analyze. In doing so, it enables to students to draw conclusions about different patterns in rowing as an Olympic sport when it comes to medalling. 
+:::
