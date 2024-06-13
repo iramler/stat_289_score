@@ -9,13 +9,12 @@ author:
   - name: Vivian Johnson
     affiliation:
       - ref: slu
-date: "June 6, 2024"
+date: "June 13, 2024"
 description: "Exploring the spread and mean of the reported strength ratios."
 editor: 
   canonical: true
 categories:
-  - Histogram 
-  - Mean, IQR 
+  - Data Collection Methods 
   - One Sample T-Interval 
 ---
 
@@ -27,32 +26,32 @@ Please note that these material have not yet completed the required pedagogical 
 
 Weightlifters may be inclined to track the specific ratio between flat dumbbell press and barbell bench press.
 
-A **dumbbell** is a short bar with equal weight on both sides designed to be held in the lifter's hands. Flat dumbbell press is when the lifter lies on a flat bench with their arms positioned at roughly 45 degree angles, lifts two equal sized dumbbells, brings them back to the chest, and then keeps going.
+A **dumbbell** is a short bar with equal weight on both sides designed to be held in the lifter's hands. [Flat dumbbell press](https://www.youtube.com/watch?v=XMc1N3o-Qyw){target="_blank"} is when the lifter lies on a flat bench with their arms positioned at roughly 45 degree angles, lifts two equal sized dumbbells, brings them back to the chest, and then keeps going.
 
-A **barbell** is similar in shape to a dumbbell, but is a longer, much heavier bar where multiple weighted plates can be placed on either side. Barbell bench press is when the lifter lies on a bench with the barbell positioned at their chest, lifts the barbell, and then brings it back down.
+A **barbell** is similar in shape to a dumbbell, but is a longer, much heavier bar where multiple weighted plates can be placed on either side. [Barbell bench press](https://www.youtube.com/watch?v=SCVCLChPQFY){target="_blank"} is when the lifter lies on a bench with the barbell positioned at their chest, lifts the barbell, and then brings it back down.
 
 The ratio of flat dumbbell press to barbell bench press works to track how much someone is lifting two dumbbells compared to how much they are able to lift the weighted barbell. When calculating the ratio, it was multiplied by two in order to account for the total weight lifted when doing a flat dumbbell press, as there are two dumbbells that would have to be held by the lifter.
 
 **An example of this is as follows:**
 
-*Say Melissa is able to flat dumbbell press two 30 lbs dumbbells. The total amount she can flat dumbbell press is 60 lbs (one dumbbell for each arm). On flat bench press, she can lift 75 lbs. Her ratio would be calculated by dividing flat dumbbell press by barbell bench press (60/75) which equals 0.8, meaning that Melissa can lift two dumbbells up to 80% as heavy as she can bench press the barbell.*
+*Say Melissa is able to flat dumbbell press two 30 lbs dumbbells. The total amount she can flat dumbbell press is 60 lbs (one dumbbell for each arm). On barbell bench press, she can lift 75 lbs. Her ratio would be calculated by dividing flat dumbbell press by barbell bench press (60/75) which equals 0.8, meaning that Melissa can lift two dumbbells up to 80% as heavy as she can bench press the barbell.*
 
 Many weightlifters like to track this ratio to work towards specific strength goals and target any weakness in certain muscle groups. For example, if someone's ratio is low (i.e. they can barbell bench press much more than they can flat dumbbell press), it highlights that they might want to work on targeting the muscles used in flat dumbbell press. Since the two exercises can focus on different muscle groups, weightlifters like this ratio as a tool for seeing where progress could be made. Weightlifters also use this ratio as a measure of progress. A common goal in weightlifting is to increase the ratio, and as one continues lifting, their starting ratio is often compared to their current one. While many professional weightlifters use this ratio for tracking progress and examining muscle balance, it isn't an official statistic used in competitions, only a personal one.
 
-This worksheet involves using the strength ratio to look at outliers, histograms, confidence intervals, and discussing the effect that data collection methods have on the variance and potential distribution of the data.
+This worksheet involves using the strength ratio to look at dot plots, confidence intervals, and discussing the effect that data collection methods have on the reliability and potential distribution of the data.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will:
 
-1.  Enhance proficiency in constructing and interpreting confidence intervals with varying degrees of confidence.
+1.  Enhance proficiency in constructing and interpreting confidence intervals. 
 
 2.  Explain the importance of obtaining a large sample size that reaches across multiple audiences.
 
-3.  Detecting outliers in a data set through applying techniques, including the "1.5 Interquartile Range Rule"
+3.  Undersanding deeper the importance of reliable data collection methods and the implications 
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-Knowledge of basic statistical measures, such as mean and the five number summary, is necessary. Understanding the effect that data collection methods have on the spread and reliability of the data is important. Knowing how to use a t-test to calculate a confidence interval for a population mean by hand is also useful. Familiarity with critical values is also necessary when constructing the confidence interval by hand.
+Knowledge of basic statistical measures, such as mean and the five number summary, is helpful. Understanding the effect that data collection methods have on the reliability of the data is important, as well as how to improve data and make it applicable to wider audiences. Knowing how to use a t-test to calculate a confidence interval for a population mean by hand is also useful. Familiarity with critical values is also necessary when constructing the confidence interval by hand.
 :::
 
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
@@ -63,7 +62,10 @@ No explicit technology is required, although a calculator is recommended.
 
 The `weights_ratio` data set contains observed strength ratios from 18 different weightlifters. Each row represents a different weightlifter.
 
-Download data: [weights_ratio.csv](weights_ratio.csv)
+Data is available on the [SCORE Data Repository Website](https://data.scorenetwork.org){target="_blank"}
+
+
+Download data: [weights_ratio.csv](https://data.scorenetwork.org/data/dumbbell_barbell_weight_ratio.csv){target="_blank"}
 
 <details>
 
@@ -77,7 +79,7 @@ Download data: [weights_ratio.csv](weights_ratio.csv)
 
 #### Data Source
 
-[Weight Ratio](https://www.reddit.com/r/Fitness/comments/35q4i3/how_much_do_you_dumbbell_flat_bench_compared_to/)
+[Weight Ratio](https://www.reddit.com/r/Fitness/comments/35q4i3/how_much_do_you_dumbbell_flat_bench_compared_to/){target="_blank"}
 
 The data is sourced from a self-reported Reddit open forum. Users provided their weight for both a flat dumbbell press and a barbell bench press, and it was compiled by another user into the corresponding weight ratio. It is important to note that as this is a self-reported open forum, biases may be introduced that wouldn't otherwise be present.
 
@@ -88,5 +90,5 @@ The data is sourced from a self-reported Reddit open forum. Users provided their
 [Class handout - with solutions](weight_ratio_worksheet_SOLUTIONS.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Upon conclusion, it is realized that while we can assume that this data follows a normal distribution and there are no obvious discernible outliers, it is not a large enough sample to make concrete conclusions. There are some biases in data collection, those who report their ratios belong to similar audiences, and we can't assume that the sample is reflective. Nevertheless, it presents a valuable opportunity for thought and good practice at constructing one sample T tests.
+Upon conclusion, it is realized that while we can assume that this data follows a normal distribution and there are no obvious discernible outliers, it is not a large enough sample to make concrete conclusions. This learning module offers valuable insight into the process of data collection and the role it has in making concrete conclusions. There are some biases in the way the data was collected, those who report their ratios belong to similar audiences, and we can't assume that the sample is reflective. Nevertheless, it presents a valuable opportunity for thought and good practice at constructing one sample T tests.
 :::
