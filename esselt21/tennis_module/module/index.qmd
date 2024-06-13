@@ -10,7 +10,7 @@ author:
     email: iramler@stlawu.edu
     affiliation:
       - ref: slu
-description: Describing distribution shapes and looking at multiple linear regression.
+description: Describing distribution shapes and interpreting visualizations.
 editor: 
   canonical: true
 categories:
@@ -25,7 +25,7 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-In the Association of Tennis Professionals (ATP) the rankings are typically based on set parameters. Throughout the year there are tournaments that are worth different numbers of points. There are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. You receive the most points in your [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) from winning a Grand Slam, and the least from winning an ATP 250 tournament. In Tennis, there are also three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Certain players perform better on certain surfaces. This data set contains information for each player on each surface. Throughout the year, there are two Grand Slams on a Hard court, one on Clay, and one on Grass. In the data that we will be using, the provider has calculated an Elo ranking. This ranking takes into account what the tournaments are, as well as who each player is playing. So playing a "harder" opponent in a Grand Slam counts for more than playing an "easy" opponent. For instance, if number 9 Elo ranked Casper Ruud plays number 1 Elo ranked Jannik Sinner and wins, it will be worth more than if Ruud played number 111 Elo ranked Stan Wawrinka.
+In the Association of Tennis Professionals (ATP) the rankings are typically based on set parameters. Throughout the year there are tournaments that are worth different numbers of points. There are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. You receive the most points in your [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) from winning a Grand Slam, and the least from winning an ATP 250 tournament. In Tennis, there are also three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Certain players perform better on certain surfaces. This data set contains information for each player on each surface. Throughout the year, there are two Grand Slams on a Hard court, one on Clay, and one on Grass.
 
 #### Additional Tennis Information
 In Tennis, there is the Association of Tennis Professionals (ATP) for men, and the Women's Tennis Association (WTA) for women. The ATP has 60 tournaments a year while the WTA has over 70. Both the ATP have the WTA have four grand slam tournaments. In the ATP, these Grand Slam tournaments are played in a best of 5 format instead of a best of 3 like every other tournament. In the WTA, every tournament is played in a best of 3 format, including the Grand Slam tournaments.
@@ -56,9 +56,9 @@ Technology requirement: The activity handout will require nothing more than the 
 
 ### Data
 
-There is one data set for this exercise. The data is made up of 485 rows and 5 columns and is provided by Wheelo Ratings. Each row represents a player on a particular surface of court. The three options for these surfaces are Clay, Grass, and Hard.
+There is one data set for this exercise. The data is made up of 5194 rows and 20 columns and is provided by Jeff Sackman on GitHub. Each row represents a match played between two players.
 
-Download non tidy data: [tennis.csv](data/tennis.csv)
+Download non tidy data: [atp_2023_113](data/atp_2023_113.csv)
 
 **Tennis**
 
@@ -66,27 +66,40 @@ Download non tidy data: [tennis.csv](data/tennis.csv)
 
 <summary><b>Variable Descriptions</b></summary>
 
-| Variable                  | Description                                          |
-|---------------------------|------------------------------------------------------|
-| Player                    | The player for which the data corresponds to         |
-| Surface                   | The type of surface that was played on for this data |
-| Matches                   | Number of matches the player has played              |
-| EloRank                   | The player's calculated EloRank                      |
-| WinPercentage             | The percentage of matches won                        |
-| DoubleFaultPercentage     | The percentage of double faults                      |
-| ReturnPointsWonPercentage | The percentage of return points won                  |
+| Variable           | Description                                           |
+|--------------------|-------------------------------------------------------|
+| tourney_name       | The name of the tournament                            |
+| GS                 | Whether this tournament was a grand slam or not       |
+| surface            | The type of surface that was played on for this match |
+| result             | Whether this player was a winner or not               |
+| player             | The name of the player                                |
+| rank               | The ATP ranking of the player                         |
+| hand               | The handedness of the player                          |
+| height             | The height of the player (cm)                         |
+| country            | The country the player is representing                |
+| age                | The age of the player                                 |
+| minutes            | How long the match was in minutes                     |
+| numAces            | The number of aces                                    |
+| numDF              | The number of double faults                           |
+| servePoints        | The number of serve points                            |
+| first_serve_won    | The number of serve points won                        |
+| second_serve_won   | The number of second serve points won                 |
+| serve_games_won    | The number of serve games won                         |
+| first_serve_in     | The number of first serves in                         |
+| break_points_saved | The number of break points saved                      |
+| break_points_faced | The number of break points faced                      |
 
 </details>
 
 #### Data Source
 
-[Wheelo Ratings](Wheelo%20Ratings%20%3Chttps://www.wheeloratings.com/tennis_atp_stats_last52.html%3E.){target="_blank"}
+[Jeff Sackman](https://github.com/JeffSackmann/tennis_atp){target="_blank"}
 
 ### Materials
 
-[Class Handout](Class-Handout.qmd)
+[Class Handout](tennis_handout113.docx)
 
-[Class Handout - Solutions](Class-Handout-Solutions.qmd)
+[Class Handout - Solutions](tennis_handout113_key.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Forthcoming

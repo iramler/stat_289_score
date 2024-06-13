@@ -41,12 +41,22 @@ atpClean <-
 ```
 
 ```{r}
-# the rest of the columns need to be combined in similar format, use the same method to combine the rest of the columns
+# the rest of the columns need to be combined, how can we take advantage of the result variable we just created to combine these columns and maintain all information?
+
+# use mutate and if_else statements to create conditional variables
+
+# here is an example of how we make a handedness variable that applies to both players
 atpClean <-
   atpClean |>
   mutate(hand = if_else(result == "Winner", winner_hand, loser_hand)) |>
   relocate(hand, .after = loser_hand) |>
   select(-c(winner_hand, loser_hand)) |>
+```
+
+```{r}
+# use this same method to combine the rest of the columns
+atpClean <-
+  atpClean |>
   mutate(age = if_else(result == "Winner", winner_age, loser_age)) |>
   relocate(age, .after = winner_ioc) |>
   select(-c(winner_age, loser_age)) |>
@@ -117,7 +127,6 @@ atpClean |>
   summarise(winPercentage = mean(result == "Winner"),
             numMatches = n()) |>
   filter(numMatches >= 5) |>
-  arrange(desc(winPercentage)) |>
-  view()
+  arrange(desc(winPercentage))
 ```
 
