@@ -156,5 +156,24 @@ summary(mod)
 t.test(total_medals~coxed, var.equal=TRUE, data=coxed)
 ```
 
+```{r}
+summary(coxed$coxed)
+```
+
+```{r}
+ggplot(data = coxed, aes(x = coxed, y = total_medals)) + geom_boxplot() + theme_minimal()
+```
+
+```{r}
+ggplot(data = medals_df, aes(x = total_points)) + geom_boxplot() + theme_minimal()
+```
+
+```{r}
+summary(medals_df$total_medals)
+```
+
+```{r}
+medals_df |> arrange(desc(total_points)) |> head()
+```
 
 
