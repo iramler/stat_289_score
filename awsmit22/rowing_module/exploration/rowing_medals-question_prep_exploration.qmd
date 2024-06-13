@@ -136,9 +136,25 @@ summary(mod)
 ```
 
 ```{r}
-coxed |> group_by(NOC) |> summarise(n_coxed = sum(coxed), total_medals = sum(total_medals))
+plot <- coxed |> group_by(NOC) |> summarise(n_coxed = sum(coxed), total_medals = sum(total_medals))
 ```
 
+```{r}
+ggplot(plot, aes(x = n_coxed, y = total_medals)) + geom_col()
+```
+
+```{r}
+full <- left_join(coxed, top5)
+```
+
+```{r}
+mod <- lm(total_medals ~  coxed, data = coxed)
+summary(mod)
+```
+
+```{r}
+t.test(total_medals~coxed, var.equal=TRUE, data=coxed)
+```
 
 
 
