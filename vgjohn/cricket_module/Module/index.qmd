@@ -9,7 +9,7 @@ author:
   - name: Vivian Johnson
     affiliation:
       - ref: slu
-date: "June 12, 2024"
+date: "June 13, 2024"
 description: "Using data from the Asia Cup Tournament to create a multiple logistic regression model."
 editor: 
   canonical: true
@@ -23,7 +23,7 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-Cricket is a game watched and played by billions of people across the world. Second in global popularity only to football (soccer), it is extremely popular in South Asia, Australia, Africa, and Europe.
+[Cricket](https://www.youtube.com/watch?v=yPXAzgwwo0A){target="_blank"} is a game watched and played by billions of people across the world. Second in global popularity only to football (soccer), it is extremely popular in South Asia, Australia, Africa, and Europe.
 
 #### The Rules of Cricket
 
