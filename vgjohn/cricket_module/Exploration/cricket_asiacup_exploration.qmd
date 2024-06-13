@@ -40,8 +40,8 @@ asia_cup <- select(asia_cup, `Team`,
          `Extras Scored` = Extras) %>%
   mutate(Result = ifelse(Result == "Win D/L", "Win", Result),
          Result = ifelse(Result == "Lose D/L", "Lose", Result),
-         Result = ifelse(Result == "Win", 1, 0),
          Toss = ifelse(Toss == "Win", 1, 0),
+         Result = ifelse(Result == "Win" | Result == "win", 1, 0),
          Selection = ifelse(Selection == "Batting", 0, 1)) %>%
   filter(Result != "No Result") %>%
   na.omit()
