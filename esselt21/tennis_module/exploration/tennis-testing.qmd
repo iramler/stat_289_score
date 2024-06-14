@@ -13,163 +13,29 @@ library(modelr)
 
 ```{r}
 atp <- read_csv(here::here("esselt21/tennis_module/data_repo/new_atp.csv"))
+
+wta <- read.csv(here::here("esselt21/tennis_module/data_repo/new_wta.csv"))
 ```
-
-```{r}
-# filtering data to only include people who are represented in all three surfaces
-names <-
-  atp |>
-  group_by(Player) |>
-  summarise(n = n()) |>
-  filter(n == 3) |>
-  pull(Player)
-
-atp <-
-  atp |>
-  filter(Surface != "All") |>
-  filter(Player %in% names)
-```
-
-```{r}
-# check win percentage distribution, what is the shape, center, and spread, is there a a big difference between the three surfaces?
-atp |>
-  ggplot(aes(x = WinPercentage)) +
-  geom_histogram(colour = "black",
-                 fill = "lightblue",
-                 bins = 13,
-                 aes(y=..density..)) +
-  theme_minimal() +
-  labs(x = "Win Percentage",
-       title = "Histogram of Win Percentages by Surface",
-       y = "Density",
-       caption = "ATP") +
-  facet_grid(~Surface,
-             scales = "free") +
-  theme(
-    axis.text.x = element_text(angle = 45,
-                                   hjust = 1,
-                                   vjust = 1),
-    plot.title = element_text(hjust = .5),
-    plot.caption = element_text(face = "bold",
-                                size = 20)
-  )
-
-wta |>
-  ggplot(aes(x = WinPercentage)) +
-  geom_histogram(colour = "black",
-                 fill = "lightblue",
-                 bins = 13,
-                 aes(y=..density..)) +
-  theme_minimal() +
-  labs(x = "Win Percentage",
-       title = "Histogram of Win Percentages by Surface",
-       y = "Density",
-       caption = "WTA") +
-  facet_grid(~Surface,
-             scales = "free") +
-  theme(
-    axis.text.x = element_text(angle = 45,
-                                   hjust = 1,
-                                   vjust = 1),
-    plot.title = element_text(hjust = .5),
-    plot.caption = element_text(face = "bold",
-                                size = 20)
-  )
-```
-
-```{r}
-# five number summary and standard deviation
-cWPercentage <-
-  atp |>
-  filter(Surface == 'Clay') |>
-  pull(WinPercentage)
-
-hWPercentage <-
-  atp |>
-  filter(Surface == 'Hard') |>
-  pull(WinPercentage)
-
-gWPercentage <-
-  atp |>
-  filter(Surface == 'Grass') |>
-  pull(WinPercentage)
-
-claySummary <- summary(cWPercentage)
-hardSummary <- summary(hWPercentage)
-grassSummary <- summary(gWPercentage)
-
-claySummary
-grassSummary
-hardSummary
-```
-
-```{r}
-# atp box plot
-atp |>
-  ggplot(aes(x = Surface,
-             y = WinPercentage,
-             fill = Surface)) +
-  stat_boxplot(geom = 'errorbar') +
-  geom_boxplot(alpha = 0.5) +
-  theme_minimal() +
-  labs(y = "Win Percentage",
-       title = "Box Plots of Win Percentages by Surface",
-       caption = "ATP") +
-  theme(legend.position = "none",
-        plot.title = element_text(hjust = 0.5),
-        plot.caption = element_text(face = "bold",
-                                    size = 20))
-```
-
-```{r}
-wta <- read_csv(here::here("esselt21/tennis_module/data_repo/new_wta.csv"))
-```
-
-```{r}
-names <-
-  wta |>
-  group_by(Player) |>
-  summarise(n = n()) |>
-  filter(n == 3) |>
-  pull(Player) 
-
-wta <-
-  wta |>
-  filter(Surface != "All") |>
-  filter(Player %in% names)
-```
-
-```{r}
-wta |>
-  ggplot(aes(x = Surface,
-             y = WinPercentage,
-             fill = Surface)) +
-  stat_boxplot(geom = 'errorbar') +
-  geom_boxplot() +
-  theme_minimal() +
-  labs(y = "Win Percentage",
-       title = "Box Plots of Win Percentages by Surface",
-       caption = "WTA") +
-  theme(legend.position = "none",
-        plot.title = element_text(hjust = 0.5),
-        plot.caption = element_text(face = "bold",
-                                    size = 20))
-```
-
 
 ```{r}
 library(broom)
 # regression test to see difference
-model <- lm(WinPercentage ~ Surface:Matches + EloRank + ReturnPointsWonPercentage + AcesPerDoubleFault,
+model_atp <- lm(WinPercentage ~ Surface:Matches + EloRank + ReturnPointsWonPercentage + AcesPerDoubleFault,
             data = atp)
-summary(model)
-aug <-
-  augment(model)
+summary(model_atp)
+aug_atp <-
+  augment(model_atp)
+
+model_wta <- lm(WinPercentage ~ Surface:Matches + EloRank + ReturnPointsWonPercentage + AcesPerDoubleFault,
+            data = wta)
+summary(model_wta)
+aug_wta <-
+  augment(model_wta)
 ```
 
 ```{r}
-# plotting regression model
-aug |>
+# plotting regression model for both ATP and WTA
+aug_atp |>
   ggplot(aes(x = Matches,
              y = .fitted,
              colour = Surface)) +
@@ -185,21 +51,51 @@ aug |>
   theme_minimal() +
   labs(y = 'Win Percentage',
        x = 'Number of Matches',
-       title = 'Predictions vs. Actual Values of Win Percentages') +
+       title = 'Predictions vs. Actual Values of Win Percentages',
+       caption = 'ATP') +
   facet_wrap(~Surface,
              scales = "free_x") +
-  theme(plot.background = element_rect(fill = "ivory"),
+  theme(plot.background = element_rect(fill = "white"),
         panel.border = element_rect(color = "black", 
                                     fill = NA, 
                                     size = 1), 
         strip.background = element_rect(color = "black", 
-                                        fill = "ivory",
+                                        fill = "gray90",
                                         size = 1),
-        strip.text = element_text(size = 15))
-```
+        strip.text = element_text(size = 15),
+        plot.caption = element_text(size = 20,
+                                    face = 'bold'))
 
-```{r}
-# does this meet the assumptions for a multiple linear regression model?
-plot(model)
+aug_wta |>
+  ggplot(aes(x = Matches,
+             y = .fitted,
+             colour = Surface)) +
+  geom_smooth(method = "lm",
+              se = TRUE,
+              aes(fill = Surface),
+              linewidth = 1.25,
+              alpha = 0.4) +
+  geom_jitter(data = wta,
+             aes(x = Matches,
+                 y = WinPercentage),
+             alpha = 0.4) +
+  theme_minimal() +
+  facet_grid(~Surface,
+             scales = "free_x") +
+  labs(y = 'Win Percentage',
+       x = 'Number of Matches',
+       title = 'Predictions vs. Actual Values of Win Percentages',
+       caption = 'WTA') +
+  theme(plot.background = element_rect(fill = "white"),
+        panel.border = element_rect(color = "black", 
+                                    fill = NA, 
+                                    size = 1), 
+        strip.background = element_rect(color = "black", 
+                                        fill = "gray90",
+                                        size = 1),
+        strip.text = element_text(size = 15),
+        plot.caption = element_text(size = 20,
+                                    face = 'bold'),
+        plot.title = element_text(size = 20))
 ```
 
