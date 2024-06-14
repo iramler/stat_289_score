@@ -1,0 +1,53 @@
+---
+title: "Webscraping From Seamheads and Data Prep"
+author: "Brendan Karadenes"
+format: html
+---
+
+```{r}
+# load necessary packages
+library(rvest)
+library(tidyverse)
+```
+
+# Webscraping
+
+```{r}
+# store url
+ngl <- read_html("https://www.seamheads.com/NegroLgs/history.php?tab=bat_basic_at&first=1886&last=1948&lgID=All&lgType=N&bats=All&pos=nonP&HOF=All&minPA=500&results=500&sort=H_a")
+```
+
+```{r}
+# store batting table as data set
+ngl_batting <- ngl %>%
+  html_nodes("table") %>%
+  .[[5]] %>%
+  html_table()
+```
+ 
+# Cleaning
+
+```{r}
+ngl_batting$Player <- gsub("[\\^\\*]", "", ngl_batting$Player)
+```
+
+```{r}
+ngl_batting <- ngl_batting %>%
+  rename(rank = "#") %>%
+  separate(Years, into = c("begin_year", "end_year"), sep = "-") %>%
+  mutate(begin_year = as.numeric(begin_year),
+         end_year = paste0("19", end_year),
+         end_year = as.numeric(end_year),
+         ) 
+```
+
+# Write as csv
+```{r}
+write.csv(ngl_batting, "ngl_batting.csv", row.names = FALSE)
+```
+
+
+
+
+
+
