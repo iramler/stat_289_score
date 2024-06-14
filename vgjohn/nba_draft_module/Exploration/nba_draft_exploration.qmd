@@ -1,0 +1,24 @@
+exploration for nba draft module
+
+234 module designed to be done in r 
+
+```{r}
+nba_draft <- read_csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/nba_draft_module/Exploration/nba_draft.csv")
+```
+anova? difference in means ? 
+writing out null and alt hypotheses 
+
+who had the highest ppg
+```{r}
+nba_draft %>% slice_max(nba_draft$pts_per_game)
+```
+
+```{r}
+nba_draft %>% slice_max(nba_draft$total_pts)
+```
+```{r}
+nba_draft %>% group_by(team) %>%
+  ggplot(data = .,
+         mapping = aes(x = fg_percent)) + geom_histogram()
+```
+

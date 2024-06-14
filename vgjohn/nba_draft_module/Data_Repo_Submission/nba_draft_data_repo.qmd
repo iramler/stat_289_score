@@ -1,0 +1,40 @@
+---
+title: ""
+author: "" 
+date: "" 
+
+categories:
+  -
+---
+
+## Motivation
+
+Each year, the National Basketball Association (NBA) holds a draft, where teams are able to pick and choose prospective player
+
+## Data
+
+The `asia_cup` data set includes data from each cricket match played in all Asia Cup Tournaments from 1984 (the first one) to 2022. The Asia Cup is a tournament that now takes place every two years, alternating host cities in different countries throughout Asia.
+
+| Variable      | Description                                                              |
+|-----------------------|-------------------------------------------------|
+| draft_pick          | One team of the match                                                    |
+| team      | The team played                                                          |
+| player_name          | Venue played at                                                          |
+| college          | Tournament year played                                                   |
+| years_played          | Coin toss to determine who starts batting or bowling (0 = lost, 1 = won) |
+| games_played     | Team's selection after winning / losing the toss (0 = Batting, 1 = Bowling)                     |
+| total_mins_played    | Total runs scored by that team                                           |
+| total_pts         | Total scored fours for that team                                         |
+| total_rebounds         | Total scored sixes for that team                                         |
+| total_assists        | Amount of extra runs scored by that team                                 |
+| fg_percent | Highest individual number of runs scored                                 |
+| Result        | 0 = lost match, 1 = won match                                            |
+| Given Extras  | Number of extra runs given up                                            |
+
+: [asia_cup.csv](stat_289_score/vgjohn/cricket_module/Data_Repo_Submission/asia_cup.csv)
+
+## Questions
+
+
+## References
+
