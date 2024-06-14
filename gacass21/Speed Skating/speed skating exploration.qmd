@@ -293,12 +293,16 @@ sd(speed_skating$time_lap5, na.rm = TRUE)
 
 ```{r}
 speed_skating |> filter(Rank_In_Group <= 4, Start_Position <= 4) |> 
-  group_by(Season, Series, City, Year, Round, Group) 
+  group_by(Season, Series, City, Year, Round, Group) |> filter(Time > 50)
   
 ```
 
 ```{r}
-
+speed_skating |> group_by(Start_Position) |>
+  summarise(avg_time = mean(Time, na.rm = TRUE), 
+            tot = n(), 
+            avg_finish = mean(Rank_In_Group, na.rm = TRUE))
 ```
+
 
 
