@@ -22,6 +22,22 @@ Speed Skating is a competition where athletes see who can complete a distance in
 
 Short Track Speed Skating hold several high profile events each season, with the World Cup consisting of a series of events with a point series, the European Championships, the World Championships, and every 4 years the Olympic Games. 
 
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+The learning objectives associated with this module are:
+
+-   Read and understand histograms
+
+-   Read summary statistics and calculate outliers
+
+-   Label outliers and other points on a histogram
+
+-   Calculate and compare z-scores
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+-   The handout provide opportunities to read and understand histograms, summary statistics, and z-scores
+:::
+
 ### Data
 
 The Short Track Speed Skating data set contains 5125 rows and 28 columns, where each row is 1 race performance from an athlete at either the European Championship, World Cup, World Championship, or Olympics. Each row includes lap times and placements, as well as location, round, qualification status, and other data. This data set contains each race from the 2012/13 season up to the end of 2016 in the 2016/17 season. The list of variables is in the table below:
@@ -64,3 +80,12 @@ The Short Track Speed Skating data set contains 5125 rows and 28 columns, where 
 Data File: [short_track.csv](../data/short_track.csv)
 
 ### Materials
+
+[short_track.csv](short_track.csv) - Data set containing race data from high profile speed skating events
+
+[Speed_Skating_worksheet.docx](Speed_Skating_worksheet.docx) - Worksheet with questions on histograms, summary statistics, and z-score
+
+Solutions: 
+[Speed_Skating_worksheet_ans.docx](Speed_Skating_worksheet_ans.docx)
+
+
