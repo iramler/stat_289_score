@@ -10,7 +10,7 @@ library(readr)
 library(tidyverse)
 library(modelr)
 library(broom)
-ski_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/ski data/W10kTro_2257.csv")
+ski_df <- read_csv("/Users/abigailsmith/Desktop/git/stat_289_score/awsmit22/skimodule/module/W10kTro_2257.csv")
 ski_speeds <- ski_df |> mutate(Speed1 = 1.3/ Time1, Speed2 = 3/(Time2-Time1), Speed3 = 3.2/(Time3-Time2), Speed4 = 2.5/(Time4-Time3))
 ```
 

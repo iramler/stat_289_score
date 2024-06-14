@@ -35,6 +35,14 @@ racewalking <- complete |> select(POS, COUNTRY, ATHLETE, RECORD, DISTANCE, GENDE
 racewalking_df <- racewalking |> mutate(SPEED= DISTANCE/TIME) 
 ```
 
+```{r}
+racewalking_df <- racewalking_df |> mutate(GENDER = if_else(GENDER == 1, true = "Woman", false = "Man"))
+```
+
+```{r}
+racewalking_df <- racewalking_df |> mutate(DISTANCE = as.factor(DISTANCE))
+```
+
 Times in minutes
 Distance is in meters
 Gender 0 is Men
@@ -49,7 +57,57 @@ Speed is in m/min for now but could be adjusted to m/sec if i decide thats bette
 racewalking_df |> filter(POS == 1)
 ```
 
+```{r}
+ggplot(racewalking_df, aes(y = SPEED, x = DISTANCE)) + geom_boxplot()
+```
 
+```{r}
+ggplot(racewalking_df, aes(y = TIME, x = GENDER)) + geom_boxplot() + facet_wrap(~DISTANCE)
+```
 
+```{r}
+ggplot(racewalking_df, aes(y = TIME, x = DISTANCE)) + geom_boxplot() + facet_wrap(~GENDER)
+```
 
+```{r}
+ggplot(racewalking_df, aes(x = SPEED)) + geom_histogram(bins = 15, colour = "black", fill = "lightblue") + facet_wrap(~DISTANCE)
+```
+
+```{r}
+barplot <- racewalking_df |> group_by(RECORD) |> summarise(count = n())
+
+ggplot(barplot, aes(x = RECORD, y = count)) + geom_col() + geom_text(aes(label = count), nudge_y = 3)
+```
+
+```{r}
+prop <- racewalking_df |> group_by(RECORD) |> summarise(prop = n()/237) 
+
+prop_round <- round(prop$prop, digits = 3)
+
+ggplot(prop, aes(x = RECORD, y = prop)) + geom_col() + geom_text(aes(label = prop_round), nudge_y = 0.01)
+```
+
+```{r}
+ggplot(racewalking_df, aes(x = COUNTRY, y = POS)) + geom_col()
+```
+
+```{r}
+n_records <- racewalking_df |> mutate(n_record = if_else(RECORD == "NONE", true = 0, false = 1))
+
+records <- n_records |>group_by(COUNTRY) |> summarise(n_record = sum(n_record)) |> filter(n_record >=2) |>mutate(COUNTRY = fct_reorder(COUNTRY, n_record))
+
+ggplot(data = records, aes(x = COUNTRY, y = n_record)) + geom_col() + coord_flip() 
+```
+
+```{r}
+prop_records <- n_records |>group_by(COUNTRY) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) |> filter(n_record >=2) |>mutate(COUNTRY = fct_reorder(COUNTRY, n_record)) |> filter(prop < 1) |> mutate(COUNTRY = fct_reorder(COUNTRY, prop))
+
+ggplot(data = prop_records, aes(x = COUNTRY, y = prop)) + geom_col() + coord_flip() 
+```
+
+```{r}
+pb <-n_records |> filter(RECORD == "PB") |> group_by(COUNTRY) |> summarise(n = sum(n_record))
+
+ggplot(pb, aes(x = n)) + geom_freqpoly()
+```
 
