@@ -2,6 +2,8 @@
 title: "race_walk_exploration"
 format: html
 ---
+# Libraries and Data
+
 ```{r}
 library(tidyverse)
 library(readr)
@@ -11,66 +13,42 @@ library(readr)
 worldchamps <- read_csv("~/Desktop/git/stat_289_score/awsmit22/module_exploration/race_walking/worldchamps.csv")
 ```
 
+# Data Prep
+
 ```{r}
-worldchamps |> mutate(PB = str_detect(TIME, "PB", negate = FALSE))
+ten <- worldchamps |> filter(DISTANCE == 10000) |> separate(TIME, into = c("TIME", "RECORD"), sep = " ") |> separate(TIME, into = c("MIN", "SEC"), sep = ":") |> mutate(MIN = as.double(MIN), SEC = as.double(SEC)) |> mutate(SEC = SEC/60) |> mutate(TIME = SEC + MIN) |> mutate(RECORD = replace_na(RECORD, replace = "NONE")) 
 ```
 
 ```{r}
-worldchamps |> mutate(AU20R = str_detect(TIME, "AU20R", negate = FALSE))
-```
-https://en.wikipedia.org/wiki/Athletics_abbreviations
-
-```{r}
-worldchamps |> mutate(NU20R = str_detect(TIME, "NU20R", negate = FALSE))
+twenty <- worldchamps |> filter(DISTANCE == 20000) |> separate(TIME, into = c("TIME", "RECORD"), sep = " ") |> separate(TIME, into = c("HRS", "MIN", "SEC"), sep = ":") |> mutate(HRS = as.double(HRS), MIN = as.double(MIN), SEC = as.double(SEC)) |> mutate(HRS = HRS*60, SEC = SEC/60) |> mutate(TIME = HRS + SEC + MIN) |> mutate(RECORD = replace_na(RECORD, replace = "NONE")) 
 ```
 
 ```{r}
-worldchamps |> mutate(SB = str_detect(TIME, "SB", negate = FALSE))
+complete <- full_join(ten, twenty)
 ```
 
 ```{r}
-worldchamps |> mutate(NB = str_detect(TIME, "NB", negate = FALSE))
+racewalking <- complete |> select(POS, COUNTRY, ATHLETE, RECORD, DISTANCE, GENDER, TIME)
 ```
 
+```{r}
+racewalking_df <- racewalking |> mutate(SPEED= DISTANCE/TIME) 
+```
 
+Times in minutes
+Distance is in meters
+Gender 0 is Men
+Gender 1 is women
+Speed is in m/min for now but could be adjusted to m/sec if i decide thats better
+
+# Exploration
 
 * could do the speed and see if theres a difference for the distances *
 
 ```{r}
-worldchamps |> mutate(TIME = str_sub(TIME, start = 1, end = 5))
+racewalking_df |> filter(POS == 1)
 ```
 
-```{r}
-worldchamps_wide <- worldchamps |> mutate(PB = str_detect(TIME, "PB", negate = FALSE), AU20R = str_detect(TIME, "AU20R", negate = FALSE), NU20R = str_detect(TIME, "NU20R", negate = FALSE), SB = str_detect(TIME, "SB", negate = FALSE), NB = str_detect(TIME, "NB", negate = FALSE)) |> mutate(TIME = str_sub(TIME, start = 1, end = 5))
-```
-
-```{r}
-worldchamps_long <- worldchamps_wide |> pivot_longer(c(7:11), names_to = "RECORD_TYPE", values_to = "RECORD")
-```
-
-```{r}
-worldchamps |> mutate(separate(TIME, into = c("TIME", "RECORD"), sep = 5))
-```
-
-```{r}
-worldchamps_wide |> mutate(as.Date(TIME)) 
-```
-
-```{r}
-worldchamps_wide |> separate(TIME, into = c("MIN", "SEC"), sep = ".") |> mutate(TIME = (MIN*60) + SEC)
-```
-
-```{r}
-worldchamps_round <- worldchamps_wide |> mutate(TIME = str_replace(TIME, ":", ".")) |> mutate(TIME = as.double(TIME))
-```
-
-```{r}
-worldchamps_round |> separate(TIME, into = c("MIN","SEC"), sep = ".")
-```
-
-```{r}
-worldchamps_wide |> str_remove(TIME, ":")
-```
 
 
 
