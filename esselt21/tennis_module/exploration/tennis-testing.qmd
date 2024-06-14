@@ -26,11 +26,15 @@ summary(model_atp)
 aug_atp <-
   augment(model_atp)
 
-model_wta <- lm(WinPercentage ~ Surface:Matches + EloRank + ReturnPointsWonPercentage + AcesPerDoubleFault,
+model_wta <- lm(WinPercentage ~ Surface*Matches + EloRank + ReturnPointsWonPercentage + AcesPerDoubleFault,
             data = wta)
 summary(model_wta)
 aug_wta <-
   augment(model_wta)
+```
+
+```{r}
+plot(model_wta)
 ```
 
 ```{r}
