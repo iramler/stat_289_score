@@ -1,37 +1,71 @@
 ---
-title: ""
-author: "" 
-date: "" 
+title: "Exploring ANOVA Through the NBA Draft"
+author: "Vivian Johnson" 
+date: "June 17, 2024" 
 
 categories:
-  -
+  - ANOVA
+  - Difference in means 
+  - Difference in proportions
 ---
 
 ## Motivation
 
-Each year, the National Basketball Association (NBA) holds a draft, where teams are able to pick and choose prospective player
+#### The NBA Draft 
+
+Each year, the National Basketball Association (NBA) holds a [draft](https://www.bbc.co.uk/newsround/65997816){target="_blank"}, where prospective basketball players are able to be chosen to join one of the 30 professional teams across the United States and Canada. 
+
+In order to be eligible for the draft, a player must be at least 19 years old and out of high school for at least one year. Prior to 2006, this rule was not in effect, and players could be drafted during/right out of high school.
+
+The draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field. 
+
+#### Playing Basketball 
+
+The goal in basketball is to score as many points as possible by throwing the ball through the other teams hoop. There are two netted hoops, positioned on opposite ends of a rectangular [court](https://en.wikipedia.org/wiki/Basketball_court){target="_blank"}, are normally 10 feet high, and have a backboard behind them. 
+
+During play, each team has five players on the court. The game starts with the referee tossing the ball in the air in between a player from each team, while each player tries to swat the ball to a member of their team (called a jump ball). 
+
+**Scoring**
+
+Players can shoot towards the hoop from any point on the court. There is an arch that surrounds each hoop on both sides of the court called the three point line, and a line in the center of the court called the half-court line. 
+
+* Field Goal: Worth 2 points, scored by shooting within the three point line
+* Three Pointer: Worth 3 points, scored by shooting outside the three point line. 
+* Free Throw: Worth one point, taken from the free throw line after a foul. 
+
+Players move the ball up and down the court by dribbling[^1], passing the ball to teammates, or shooting the ball. At the end of the game, which are played in four quarters that are 12 minutes long, the team with the most points wins.  
+
+[^1]: bounce the ball while running or walking up and down the court
 
 ## Data
 
-The `asia_cup` data set includes data from each cricket match played in all Asia Cup Tournaments from 1984 (the first one) to 2022. The Asia Cup is a tournament that now takes place every two years, alternating host cities in different countries throughout Asia.
+The `nba_draft` data set includes data from players that were selected in the NBA drafts between the years 1990-2021. Each row represents a different player and statistics from their respective careers in the NBA.
 
-| Variable      | Description                                                              |
-|-----------------------|-------------------------------------------------|
-| draft_pick          | One team of the match                                                    |
-| team      | The team played                                                          |
-| player_name          | Venue played at                                                          |
-| college          | Tournament year played                                                   |
-| years_played          | Coin toss to determine who starts batting or bowling (0 = lost, 1 = won) |
-| games_played     | Team's selection after winning / losing the toss (0 = Batting, 1 = Bowling)                     |
-| total_mins_played    | Total runs scored by that team                                           |
-| total_pts         | Total scored fours for that team                                         |
-| total_rebounds         | Total scored sixes for that team                                         |
-| total_assists        | Amount of extra runs scored by that team                                 |
-| fg_percent | Highest individual number of runs scored                                 |
-| Result        | 0 = lost match, 1 = won match                                            |
-| Given Extras  | Number of extra runs given up                                            |
+| Variable              | Description                                                                                                           |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------|
+| draft_pick            | The pick number a player was selected in the NBA draft                                                                |
+| team                  | The NBA team that drafted the player                                                                                  |
+| player_name           | The name of the player selected                                                                                       |
+| college               | The college the player attended (NA for those drafted out of high school, G-League team for international prospects)  |
+| years_played          | Number of years spent in the NBA                                                                                      |
+| games_played          | Games played in the NBA                                                                                               |
+| total_mins_played     | Total minutes played in the NBA                                                                                       |
+| total_pts             | Total points scored in the NBA                                                                                        |
+| total_rebounds        | Total rebounds grabbed in the NBA                                                                                     |
+| total_assists         | Total assists recorded in the NBA                                                                                     |
+| fg_percent            | The percent of field goal shots made by the player in the NBA                                                                                  |
+| three_pt_percent      | The percent of three-point shots made by the player in the NBA                                                                           |
+| ft_percent            | The percent of free throws made by the player in the NBA                                                                                  |
+| win_shares            | Win shares in the NBA                                                                                                 |
+| win_shares_per_48     | Win shares in the NBA per 48 minutes                                                                                  |
+| draft_year            | Year the player was drafted                                                                                           |
+| mins_per_game         | Average number of minutes played per game for career in the NBA                                                       |
+| pts_per_game          | Average number of points scored per game for career in the NBA                                                        |
+| rebounds_per_game     | Average number of rebounds per game for career in the NBA                                                             |
+| assists_per_game      | Average number of assists per game for career in the NBA                                                              |
 
-: [asia_cup.csv](stat_289_score/vgjohn/cricket_module/Data_Repo_Submission/asia_cup.csv)
+
+: [nba_draft.csv](stat_289_score/vgjohn/nba_draft_module/Data_Repo_Submission/nba_draft.csv)
 
 ## Questions
 

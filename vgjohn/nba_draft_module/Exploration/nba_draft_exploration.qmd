@@ -3,6 +3,7 @@ exploration for nba draft module
 234 module designed to be done in r 
 
 ```{r}
+library(tidyverse)
 nba_draft <- read_csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/nba_draft_module/Exploration/nba_draft.csv")
 ```
 anova? difference in means ? 
@@ -20,5 +21,21 @@ nba_draft %>% slice_max(nba_draft$total_pts)
 nba_draft %>% group_by(team) %>%
   ggplot(data = .,
          mapping = aes(x = fg_percent)) + geom_histogram()
+```
+walk through anova if there is a difference in means for years played (could have them break up the number of years in the nba and make a categorical variable)
+
+difference in means anova for average points
+
+```{r}
+mean(nba_draft$years_played)
+
+nba_draft %>% slice_max(order_by = years_played)
+
+nba_draft %>% filter(years_played > 1 & years_played <= 7)
+nba_draft %>% filter(years_played > 7 & years_played <= 14)
+nba_draft %>% filter(years_played > 14)
+
+
+
 ```
 
