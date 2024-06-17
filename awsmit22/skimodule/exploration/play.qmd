@@ -8,7 +8,7 @@ library(readr)
 library(tidyverse)
 library(modelr)
 library(broom)
-ski_df <- read_csv("/Users/abigailsmith/Desktop/stat289/awsmit22/ski data/W10kTro_2257.csv")
+ski_df <- read_csv("~/Desktop/git/stat_289_score/awsmit22/skimodule/module/W10kTro_2257.csv")
 ```
 
 # Brainstorm

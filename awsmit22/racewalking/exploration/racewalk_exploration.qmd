@@ -7,10 +7,11 @@ format: html
 ```{r}
 library(tidyverse)
 library(readr)
+library(broom)
 ```
 
 ```{r}
-worldchamps <- read_csv("~/Desktop/git/stat_289_score/awsmit22/module_exploration/race_walking/worldchamps.csv")
+worldchamps <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/module/worldchamps.csv")
 ```
 
 # Data Prep
@@ -79,13 +80,6 @@ barplot <- racewalking_df |> group_by(RECORD) |> summarise(count = n())
 ggplot(barplot, aes(x = RECORD, y = count)) + geom_col() + geom_text(aes(label = count), nudge_y = 3)
 ```
 
-```{r}
-prop <- racewalking_df |> group_by(RECORD) |> summarise(prop = n()/237) 
-
-prop_round <- round(prop$prop, digits = 3)
-
-ggplot(prop, aes(x = RECORD, y = prop)) + geom_col() + geom_text(aes(label = prop_round), nudge_y = 0.01)
-```
 
 ```{r}
 ggplot(racewalking_df, aes(x = COUNTRY, y = POS)) + geom_col()
@@ -99,11 +93,6 @@ records <- n_records |>group_by(COUNTRY) |> summarise(n_record = sum(n_record)) 
 ggplot(data = records, aes(x = COUNTRY, y = n_record)) + geom_col() + coord_flip() 
 ```
 
-```{r}
-prop_records <- n_records |>group_by(COUNTRY) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) |> filter(n_record >=2) |>mutate(COUNTRY = fct_reorder(COUNTRY, n_record)) |> filter(prop < 1) |> mutate(COUNTRY = fct_reorder(COUNTRY, prop))
-
-ggplot(data = prop_records, aes(x = COUNTRY, y = prop)) + geom_col() + coord_flip() 
-```
 
 ```{r}
 pb <-n_records |> filter(RECORD == "PB") |> group_by(COUNTRY) |> summarise(n = sum(n_record))
@@ -111,17 +100,6 @@ pb <-n_records |> filter(RECORD == "PB") |> group_by(COUNTRY) |> summarise(n = s
 ggplot(pb, aes(x = n)) + geom_freqpoly()
 ```
 
-```{r}
-prop_records_dist <- n_records |>group_by(DISTANCE) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) 
-
-ggplot(data = prop_records_dist, aes(x = DISTANCE, y = prop)) + geom_col()
-```
-
-```{r}
-prop_records_dist <- n_records |>group_by(COUNTRY, DISTANCE) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) |> filter(prop <1 & prop > 0)
-
-ggplot(data = prop_records_dist, aes(x = DISTANCE, y = prop)) + geom_boxplot()
-```
 
 ```{r}
 ggplot(racewalking_df, aes(x = SPEED, colour = DISTANCE)) + geom_freqpoly() 
@@ -170,27 +148,192 @@ sum <- racewalking_df |> mutate(n_rec = if_else(RECORD != "NONE", true = 1, fals
 ggplot(data = sum, aes(x = avg_speed, y = tot_rec, colour = COUNTRY)) + geom_point()
 ```
 
-
 # Logistic regression for whether or not the athlete gets a record
 
 could do it predicted by speed as well as distance
 
 that would mean a binary response predicted by a binary predictor and a quantitative predictor
 
+```{r}
+recs <- racewalking_df |> mutate(rec = if_else(RECORD != "NONE", true = 1, false = 0))
+```
+
+```{r}
+rec_mod <- glm(rec ~ SPEED,
+                   data = recs, family = "binomial")
+rec_mod
+```
+
+```{r}
+rec_mod |> tidy()
+```
+
+```{r}
+ggplot(data = recs, aes(x = SPEED, y = rec)) +
+  geom_jitter(height = 0.05) +
+  geom_smooth(method = "glm", method.args = list(family = "binomial")) +
+  theme_minimal()
+```
+
+```{r}
+rec_large <- glm(rec ~ SPEED + GENDER + DISTANCE, data = recs,
+                     family = "binomial")
+rec_large |> tidy()
+```
+
+```{r}
+library(modelr)
+grid <- recs |>
+  data_grid(
+    SPEED = seq_range(SPEED, n = 10),
+    GENDER = c("Man", "Woman"),
+    DISTANCE = c("10000", "20000")
+  ) 
+grid
+```
+
+```{r}
+aug_rec <- augment(rec_large, newdata = grid,
+                    se_fit = TRUE)
+aug_rec
+```
+
+```{r}
+aug_pred <- aug_rec |> mutate(.predprob = exp(.fitted)/(1 + exp(.fitted)))
+```
+
+```{r}
+rec_large_int <- glm(rec ~ SPEED + GENDER + DISTANCE + GENDER:DISTANCE, data = recs,
+                     family = "binomial")
+rec_large_int |> tidy()
+```
+
+```{r}
+aug_rec_int <- augment(rec_large_int, newdata = grid,
+                    se_fit = TRUE)
+aug_rec_int
+
+aug_pred_int <- aug_rec_int |> mutate(.predprob = exp(.fitted)/(1 + exp(.fitted)))
+```
+
+```{r}
+rug_rec <- recs |> filter(rec == 1)
+rug_norec <- recs |> filter(rec == 0)
+ggplot(data = recs, aes(x = SPEED, y = rec)) +
+  geom_rug(data = rug_rec, sides = "t", alpha = 0.3) + geom_rug(data = rug_norec, sides = "b", alpha = 0.3) +
+  geom_smooth(method = "glm", method.args = list(family = "binomial")) +
+  theme_minimal()
+```
+
+```{r}
+plot <- bind_rows(lst(aug_pred, aug_pred_int), .id = "model")
+
+ggplot(data = plot, aes(x = SPEED, y = .predprob)) + geom_line(aes(colour = model), linewidth = 2) + facet_grid(GENDER ~ DISTANCE) + geom_rug(data = rug_rec, sides = "t", alpha = 0.3, aes(y = rec)) + geom_rug(data = rug_norec, sides = "b", alpha = 0.3, aes(y = rec)) + theme_minimal() + scale_color_viridis_d()
+```
+
 # Difference in props (records)
+
+```{r}
+prop_records <- n_records |>group_by(COUNTRY) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) |> filter(n_record >=2) |>mutate(COUNTRY = fct_reorder(COUNTRY, n_record)) |> filter(prop < 1) |> mutate(COUNTRY = fct_reorder(COUNTRY, prop))
+
+ggplot(data = prop_records, aes(x = COUNTRY, y = prop)) + geom_col() + coord_flip() 
+```
+
+```{r}
+prop <- racewalking_df |> group_by(RECORD) |> summarise(prop = n()/237) 
+
+prop_round <- round(prop$prop, digits = 3)
+
+ggplot(prop, aes(x = RECORD, y = prop)) + geom_col() + geom_text(aes(label = prop_round), nudge_y = 0.01)
+```
+
+```{r}
+prop_records_dist <- n_records |>group_by(DISTANCE) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) 
+
+ggplot(data = prop_records_dist, aes(x = DISTANCE, y = prop)) + geom_col()
+```
+
+```{r}
+prop_records_dist <- n_records |>group_by(COUNTRY, DISTANCE) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) |> filter(prop <1 & prop > 0)
+
+ggplot(data = prop_records_dist, aes(x = DISTANCE, y = prop)) + geom_boxplot()
+```
+
+```{r}
+success <- recs |> filter(rec == 1)
+success <- (success$rec)
+prop.test()
+```
 
 
 # Linear regression with POS predicted by COUNTRY, ATHLETE AND RECORD and maybe speed
 
+```{r}
+wins
+ggplot(data = wins, aes(x = as.factor(won), y = SPEED)) + geom_boxplot()
+ggplot(data = wins, aes(x = as.factor(won), y = SPEED)) + geom_boxplot()
+```
+
+```{r}
+fcts <- rec |> mutate(COUNTRY = as.factor(COUNTRY), ATHLETE = as.factor(ATHLETE))
+pos_mod <- lm(POS ~ COUNTRY + ATHLETE + rec + SPEED, data = fcts)
+
+pos_mod |> tidy()
+```
 
 # Linear regression with RECORD predicted by SPEED, POS, COUNTRY, GENDER, DISTANCE
 
+```{r}
+modr <- glm(rec ~ DISTANCE + SPEED + POS + COUNTRY + GENDER, data = rec, family = "binomial")
+summary(modr)
+```
 
-*could see about country predicting something
 
+# POS
 
+```{r}
+wins <- racewalking_df |> mutate(won = if_else(POS == 1, true = 1, false = 0))
+```
 
+# Randomized block design
 
+```{r}
+race_factors <- racewalking_df |> mutate(ATHLETE = as.factor(ATHLETE))
+mod1 <- lm(SPEED ~ DISTANCE, data = race_factors)
+summary(mod1)
+amodA <- aov(SPEED~DISTANCE,data=race_factors)
+summary(amodA)
+
+mod2 <- lm(SPEED ~ ATHLETE, data = race_factors)
+summary(mod2)
+amodB <- aov(SPEED~ATHLETE,data=race_factors)
+summary(amodB)
+
+mod3 <- lm(SPEED ~ DISTANCE + ATHLETE, data = race_factors)
+summary(mod3)
+amodC <- aov(SPEED~DISTANCE+ATHLETE,data=race_factors)
+summary(amodC)
+```
+
+```{r}
+summed <- racewalking_df |> group_by(COUNTRY, DISTANCE) |> summarise(mean_speed = mean(SPEED))
+
+amodA <- aov(mean_speed~DISTANCE,data=summed)
+summary(amodA)
+
+amodB <- aov(mean_speed~COUNTRY,data=summed)
+summary(amodB)
+
+amodC <- aov(mean_speed~DISTANCE+COUNTRY,data=summed)
+summary(amodC)
+```
+
+# Log reg with binary predictor
+
+```{r}
+rec_dist <- glm(rec ~ DISTANCE, family = "binomial", data = recs)
+summary(rec_dist)
+```
 
 
 
