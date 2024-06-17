@@ -26,7 +26,7 @@ summary(model_atp)
 aug_atp <-
   augment(model_atp)
 
-model_wta <- lm(WinPercentage ~ Surface*Matches + EloRank + ReturnPointsWonPercentage + AcesPerDoubleFault,
+model_wta <- lm(WinPercentage ~ Surface*Matches + EloRank + ReturnPointsWonPercentage + AcesPerDoubleFault + AcesPerDoubleFault*Surface,
             data = wta)
 summary(model_wta)
 aug_wta <-
