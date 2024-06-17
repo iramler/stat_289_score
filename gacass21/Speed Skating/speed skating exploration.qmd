@@ -294,6 +294,15 @@ sd(speed_skating$time_lap5, na.rm = TRUE)
 ```{r}
 speed_skating |> filter(Rank_In_Group <= 4, Start_Position <= 4) |> 
   group_by(Season, Series, City, Year, Round, Group) |> filter(Time > 50)
+
+
+speed_skating |> filter(Rank_In_Group <= 4, Start_Position <= 4) |>
+  group_by(Season, Series, City, Year, Round, Group) |> filter(Time < 50) |>
+  ungroup() |> group_by(Start_Position) |>
+  summarise(avg_time = mean(Time, na.rm = TRUE), 
+            tot = n(), 
+            avg_finish = mean(Rank_In_Group, na.rm = TRUE),
+            lap_1 = mean(time_lap1, na.rm = TRUE))
   
 ```
 
@@ -304,5 +313,16 @@ speed_skating |> group_by(Start_Position) |>
             avg_finish = mean(Rank_In_Group, na.rm = TRUE))
 ```
 
+```{r}
+speed_skating |> mutate(time_coeff = case_when(Time < 40.75 ~ 1,
+                                               Time >= 40.75 & Time <= 41.25 ~ 2,
+                                               Time >= 41.25 & Time <= 41.75 ~ 3,
+                                               Time >= 42.25 & Time <= 42.75 ~ 4,
+                                               Time >= 42.75 & Time <= 43.25 ~ 5))
+```
+
+```{r}
+speed_skating |> filter(!is.na(time_lap3)) |> filter(time_lap3 == min(time_lap3))
+```
 
 
