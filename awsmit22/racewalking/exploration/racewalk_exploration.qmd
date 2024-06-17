@@ -111,3 +111,86 @@ pb <-n_records |> filter(RECORD == "PB") |> group_by(COUNTRY) |> summarise(n = s
 ggplot(pb, aes(x = n)) + geom_freqpoly()
 ```
 
+```{r}
+prop_records_dist <- n_records |>group_by(DISTANCE) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) 
+
+ggplot(data = prop_records_dist, aes(x = DISTANCE, y = prop)) + geom_col()
+```
+
+```{r}
+prop_records_dist <- n_records |>group_by(COUNTRY, DISTANCE) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) |> filter(prop <1 & prop > 0)
+
+ggplot(data = prop_records_dist, aes(x = DISTANCE, y = prop)) + geom_boxplot()
+```
+
+```{r}
+ggplot(racewalking_df, aes(x = SPEED, colour = DISTANCE)) + geom_freqpoly() 
+```
+
+# Difference in means (speeds)
+
+speed predicted by distance
+
+```{r}
+race_walk <-racewalking |> mutate(DISTANCE = as.factor(DISTANCE)) |> mutate(SPEED = if_else(DISTANCE == 10000, true = 10000/TIME, false = 20000/TIME))
+
+mod <- lm(SPEED~DISTANCE, data = race_walk)
+summary(mod)
+```
+
+```{r}
+speedwalk <- racewalking |> mutate(DISTANCE = if_else(DISTANCE == 10000, true = 1, false = 0)) |> mutate(DISTANCE = as.logical(DISTANCE)) |> mutate(SPEED = if_else(DISTANCE == TRUE, true = 10000/TIME, false = 20000/TIME))
+```
+
+```{r}
+short <- subset(speedwalk,DISTANCE==TRUE)
+long <- subset(speedwalk,DISTANCE==FALSE)
+```
+
+```{r}
+modshort <- lm(SPEED~POS,data=short)
+modlong <- lm(SPEED~POS,data=long)
+```
+
+```{r}
+plot(SPEED~POS, data = speedwalk)
+abline(modshort)
+abline(modlong)
+```
+
+```{r}
+ggplot(data = racewalking_df, aes(x = POS, y = SPEED, colour = DISTANCE)) + geom_point() + facet_wrap(~GENDER)
+```
+
+```{r}
+sum <- racewalking_df |> mutate(n_rec = if_else(RECORD != "NONE", true = 1, false = 0)) |> filter(n_rec == 1) |> group_by(COUNTRY) |> summarise(tot_rec = sum(n_rec), avg_speed = mean(SPEED))
+```
+
+```{r}
+ggplot(data = sum, aes(x = avg_speed, y = tot_rec, colour = COUNTRY)) + geom_point()
+```
+
+
+# Logistic regression for whether or not the athlete gets a record
+
+could do it predicted by speed as well as distance
+
+that would mean a binary response predicted by a binary predictor and a quantitative predictor
+
+# Difference in props (records)
+
+
+# Linear regression with POS predicted by COUNTRY, ATHLETE AND RECORD and maybe speed
+
+
+# Linear regression with RECORD predicted by SPEED, POS, COUNTRY, GENDER, DISTANCE
+
+
+*could see about country predicting something
+
+
+
+
+
+
+
