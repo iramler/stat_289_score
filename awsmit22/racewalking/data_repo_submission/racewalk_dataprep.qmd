@@ -1,0 +1,54 @@
+---
+title: "racewalk_dataprep"
+format: html
+---
+# Load in libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+# Read in data
+
+Data was copied and pasted from [this link](https://www.watchathletics.com/page/5352/results-world-athletics-race-walking-team-championships-2024#google_vignette){target="_blank"} and then modified in an excel document to include  distance and sex.
+
+That excel document is read in below.
+
+```{r}
+worldchamps <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/module/worldchamps.csv")
+```
+
+# Data Prep
+
+Create a data set with only the 10k racers and separate the `TIME` variable so that it is `TIME`  and `RECORD` seperately. minutes and seconds, using these two new variables, the `TIME` variable can be recalculated as total minutes. 
+
+```{r}
+ten <- worldchamps |> filter(DISTANCE == 10000) |> separate(TIME, into = c("TIME", "RECORD"), sep = " ") |> separate(TIME, into = c("MIN", "SEC"), sep = ":") |> mutate(MIN = as.double(MIN), SEC = as.double(SEC)) |> mutate(SEC = SEC/60) |> mutate(TIME = SEC + MIN) |> mutate(RECORD = replace_na(RECORD, replace = "NONE")) 
+```
+
+Create a data set with only the 20k racers and separate the `TIME` variable so that it is minutes and seconds, using these two new variables, the `TIME` variable can be recalculated as total minutes.
+
+```{r}
+twenty <- worldchamps |> filter(DISTANCE == 20000) |> separate(TIME, into = c("TIME", "RECORD"), sep = " ") |> separate(TIME, into = c("HRS", "MIN", "SEC"), sep = ":") |> mutate(HRS = as.double(HRS), MIN = as.double(MIN), SEC = as.double(SEC)) |> mutate(HRS = HRS*60, SEC = SEC/60) |> mutate(TIME = HRS + SEC + MIN) |> mutate(RECORD = replace_na(RECORD, replace = "NONE")) 
+```
+
+```{r}
+complete <- full_join(ten, twenty)
+```
+
+```{r}
+racewalking <- complete |> select(POS, COUNTRY, ATHLETE, RECORD, DISTANCE, GENDER, TIME)
+```
+
+```{r}
+racewalking_df <- racewalking |> mutate(SPEED= DISTANCE/TIME) 
+```
+
+```{r}
+racewalking_df <- racewalking_df |> mutate(GENDER = if_else(GENDER == 1, true = "Woman", false = "Man"))
+```
+
+```{r}
+racewalking_df <- racewalking_df |> mutate(DISTANCE = as.factor(DISTANCE))
+```

@@ -328,12 +328,111 @@ amodC <- aov(mean_speed~DISTANCE+COUNTRY,data=summed)
 summary(amodC)
 ```
 
+* could do this one partially filled in *
+
 # Log reg with binary predictor
 
 ```{r}
 rec_dist <- glm(rec ~ DISTANCE, family = "binomial", data = recs)
 summary(rec_dist)
 ```
+
+# speed predicted by distance
+
+```{r}
+ggplot(data = racewalking_df, aes(x = DISTANCE, y = SPEED)) + geom_boxplot()
+```
+
+# T test for difference in mean speed for the two distances 
+
+```{r}
+t.test(SPEED~DISTANCE, var.equal=TRUE, data=racewalking_df)
+```
+
+# Attempt to compare two regression lines for the distances
+
+```{r}
+men <- subset(racewalking_df,GENDER=="Man")
+women <- subset(racewalking_df,GENDER=="Woman")
+modl <- lm(SPEED~TIME,data=men)
+mods <- lm(SPEED~TIME,data=women)
+
+plot(SPEED~TIME, data = racewalking_df)
+
+abline(men)
+abline(women)
+```
+
+```{r}
+mod =aov(POS~COUNTRY,data=racewalking_df)
+summary(mod)
+```
+
+```{r}
+range(racewalking_df$SPEED)
+```
+
+# simple logit mod 
+
+```{r}
+logit <- recs |> mutate(rec = as.factor(rec))
+logitmod <- glm(rec~SPEED,family=binomial,data=logit)
+summary(logitmod)
+```
+
+```{r}
+ggplot(data = logit, aes(y = rec, x = SPEED)) + geom_point()
+```
+
+```{r}
+plot(fitted(logitmod)~SPEED,data=logit)
+```
+
+```{r}
+emplogitplot2(rec~SPEED,data=recs,ngroups="all")
+```
+
+# predicted prop, odds, OR
+
+```{r}
+logitmod=glm(rec~SPEED,family=binomial,data=recs)
+summary(logitmod)
+```
+
+```{r}
+SPEED = 245
+predicted_prop <- (exp(-0.473731+0.003976*SPEED))/(1 +exp(-0.473731+0.003976*SPEED))
+```
+
+```{r}
+sample_prop <- sum(rec)/237
+```
+
+```{r}
+odds <- exp(-0.473731 + 0.003976)
+```
+
+```{r}
+odds_ratio <- exp(0.003976)
+```
+
+# rough try at 2-way anova 
+
+```{r}
+win_rec <- racewalking_df |> mutate(rec = if_else(RECORD != "NONE", true = 1, false = 0), win = if_else(POS == 1, true = 1, false = 0))
+  
+two_way=aov(SPEED~win+rec+win*rec,data=win_rec)
+summary(two_way)
+```
+
+```{r}
+with(win_rec,interaction.plot(rec,win,SPEED))
+```
+
+```{r}
+with(win_rec,interaction.plot(win,rec,SPEED))
+```
+
 
 
 
