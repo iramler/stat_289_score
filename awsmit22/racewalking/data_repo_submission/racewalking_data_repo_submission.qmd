@@ -41,7 +41,8 @@ In the dataset there are 237 cases with 10 variables. Each case is a male or fem
 
 ## Questions
 
-1.    
+1.    Compare the distribution of SPEED for the 10k races with the distribution for the 20k races. 
+2.    
 
 ## References
 

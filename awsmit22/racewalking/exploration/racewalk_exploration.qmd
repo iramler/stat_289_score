@@ -93,7 +93,7 @@ ggplot(data = records, aes(x = COUNTRY, y = n_record)) + geom_col() + coord_flip
 
 # migth use
 ```{r}
-ggplot(racewalking_df, aes(x = SPEED, colour = DISTANCE)) + geom_freqpoly() 
+ggplot(racewalking_df, aes(x = SPEED, colour = as.factor(DISTANCE))) + geom_freqpoly() 
 ```
 
 # Difference in means (speeds)
@@ -380,5 +380,5 @@ with(win_rec,interaction.plot(PODIUM,REC,SPEED))
 ```
 
 
-
+* Maybe do a 2 sided design with gender and distance * 
 

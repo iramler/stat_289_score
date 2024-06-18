@@ -1,0 +1,93 @@
+---
+title: "racewalk_question_prep"
+format: html
+---
+# Load in the libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+library(broom)
+```
+
+# Load in the prepped data 
+
+```{r}
+racewalkingdf <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/data_repo_submission/racewalking.csv")
+
+racewalking_df <- racewalkingdf |> mutate(DISTANCE = as.factor(DISTANCE), REC = as.factor(REC), PODIUM = as.factor(PODIUM))
+```
+
+# Question 1
+
+Compare the distribution of SPEED for the 10k races with the distribution for the 20k races. 
+
+```{r}
+ggplot(racewalking_df, aes(x = SPEED)) + geom_histogram(bins = 15, colour = "black", fill = "lightblue") + facet_wrap(~DISTANCE) + theme_minimal()
+```
+
+# Question 2
+
+Based on the below boxplot would you say that there is a considerable difference in the mean speed for the 10k races vs. the 20k races. 
+
+```{r}
+ggplot(racewalking_df, aes(y = SPEED, x = DISTANCE, fill = DISTANCE)) + geom_boxplot(show.legend = FALSE) + facet_wrap(~GENDER) + theme_minimal() + scale_fill_brewer()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
