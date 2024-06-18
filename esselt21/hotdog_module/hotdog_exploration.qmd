@@ -1,0 +1,25 @@
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+male <-
+  read_csv(here::here("esselt21/hotdog_module/hotdog_male.csv"))
+
+female <-
+  read_csv(here::here("esselt21/hotdog_module/hotdog_female.csv"))
+```
+
+```{r}
+female <-
+  female |>
+  mutate(bmi_dog_ratio = dogWeight / BMI)
+```
+
+```{r}
+female <-
+  female |>
+  relocate(BMI, .after = Height)
+```
+
