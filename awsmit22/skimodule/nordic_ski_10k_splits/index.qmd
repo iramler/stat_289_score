@@ -41,7 +41,8 @@ By the end of this activity, you will be able to:
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-To be written
+
+Students will use residual plots and histograms to evaluate the conditions of a simple linear regression model. Students will also use calculations or statistical software to find and assess the correlation between two variables. Additionally, using Randomized Block Design, students will test for a significant difference in means based on two factors.
 :::
 
 ### Data
@@ -113,7 +114,8 @@ Trondheim 4th World Cup Stage - Women's Interval Start 10.0 km Classic results v
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 
-To Be Written ...
+After completing this activity, students should be able check the conditions of a linear model. The activity should strengthen an understanding of correlation between two variables. Moreover, students will be able to test for a discernible difference in means using randomized block design. Using these skills, students can draw conclusions about patterns in skiers' pacing strategies in a 10k nordic ski race. Students can also evaluate which strategies are the most successful. 
+
 :::
 
 
