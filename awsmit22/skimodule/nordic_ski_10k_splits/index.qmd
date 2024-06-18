@@ -16,7 +16,7 @@ editor:
 categories:
   - Simple linear regression
   - Correlation
-  - Randomized block ANOVA
+  - Checking conditions for simple linear regression. 
 ---
 
 ## Module
@@ -33,20 +33,19 @@ The race in this dataset is a womens' 10k classic race set in Trondheim, Norway.
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
 
-1.  Fit a linear regression model.
+1.  Find and interpret the correlation between two variables.
 
-2.  Assess a correlation.
+2.  Fit a simple linear model.
 
-3.  Look at and ANOVA model for a randomized block design
+3.  Interpret the slope of a simple linear model.
+
+4.  Assess the conditions of a simple linear model.
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 
-Students will use residual plots and histograms to evaluate the conditions of a simple linear regression model. Students will also use calculations or statistical software to find and assess the correlation between two variables. Additionally, using Randomized Block Design, students will test for a significant difference in means based on two factors.
+Students will use statistical software to find and assess the correlation between two variables. Additionally, students will interpret the slope of a simple linear model after fitting it using statistical software. Students will also use residual plots and histograms to evaluate the conditions of a simple linear regression model. 
 :::
-```{r}
-
-```
 
 ### Data
 
@@ -109,15 +108,15 @@ Trondheim 4th World Cup Stage - Women's Interval Start 10.0 km Classic results v
 
 ### Materials
 
-[Class handout](Nordic10kWorksheet.docx)
+[Class handout](113_ski_worksheet.docx)
 
-[Class handout - Key](Nordic10kWorksheetKey.docx)
+[Class handout - Key](113_ski_worksheet_key.docx)
 
 
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 
-After completing this activity, students should be able check the conditions of a linear model. The activity should strengthen an understanding of correlation between two variables. Moreover, students will be able to test for a discernible difference in means using randomized block design. Using these skills, students can draw conclusions about patterns in skiers' pacing strategies in a 10k nordic ski race. Students can also evaluate which strategies are the most successful. 
+After completing this activity, students should be able check the conditions of a linear model. The activity should strengthen an understanding of correlation between two variables. Using these skills, students can draw conclusions about patterns in skiers' pacing strategies in a 10k nordic ski race. Students can also evaluate which strategies are the most successful. 
 
 :::
 
