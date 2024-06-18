@@ -11,15 +11,14 @@ female <-
   read_csv(here::here("esselt21/hotdog_module/hotdog_female.csv"))
 ```
 
-```{r}
-female <-
-  female |>
-  mutate(bmi_dog_ratio = dogWeight / BMI)
-```
 
 ```{r}
 female <-
   female |>
-  relocate(BMI, .after = Height)
+  mutate(dunkingEra = if_else(Year >= 2001, TRUE, FALSE))
+```
+
+```{r}
+write_csv(female, here::here("esselt21/hotdog_module/hotdog_female.csv"))
 ```
 
