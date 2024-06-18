@@ -4,7 +4,9 @@ author: Abigail Smith
 date: June 18, 2024
 description: Comparing both the 10 and 20k speeds and records for racers and countries in the 2024 World Athletics Race Walking Team Championships in Antalya, Turkey. 
 categories:
-
+ -  distribution and skewness
+ -  ANOVA for difference in means
+ -  
   
 editor: 
   markdown: 
@@ -20,36 +22,31 @@ Analyzing podium finishes, records, and speeds in long (20k) and shorter (10k) d
 
 ## Data
 
-In the data set there are 41 medalling nations that competed in 25 different events. Each row represents a nation and their `total_medals` and `total_points` which are cumulative from all rowing Olympics between 1900 and 2022. In total, there are 41 rows with 3 variables. In the original dataset, there were 101 nations in rowing, but the data has been adjusted to include only nations that medalled. 
+In the dataset there are 237 cases with 10 variables. Each case is a male or female athlete in either the 10k or the 20k. There are 98 walkers in the men's 10k and 47 in the women's. There are 63 walkers in the women's 20k and 76 in the men's. The dataset only includes athletes who completed the race, no disqualified or did not finish walkers are in the dataset. There are no walkers that competed in more than one event. 
 
 | Variable | Description                                                                                                                |
 |-------------------|-----------------------------------------------------|
-| `NOC` | National Olympic Committee or the nation competing. |
-| `total_medals` | The total number of medals for that country. |
-| `total_points` | The total number of points for that country. The points are scaled with a gold medal counting for 3 points, a silver for 2, and a bronze for 1. |
-| `total_gold` | The total number of gold medals for that country. |
-| `total_silver` | The total number of silver medals for that country. |
-| `total_bronze` | The total number of bronze medals for that country. |
-
-: [rowing_medals.csv](rowing_medals.csv){target="_blank"}
+| `POS` | The position the athlete finished in. |
+| `COUNTRY` | The country the athlete is in. |
+| `ATHLETE` | The name of the athlete in `first name, last name` order. |
+| `RECORD` | The record the athlete made if any. The record types are as follows: Personal Best (`PB`), Season's Best (`SB`), National Record (`NR`), Area Under 20 Record (`AU20R`), National Under 20 Record (`NU20R`)|
+| `DISTANCE` | The distance of the race the athlete competed in, either `10000`m or `20000`m.|
+| `GENDER` | The gender of the athlete, either `Man` or `Woman`. |
+| `TIME` | The total time it took the athlete to complete the race, measured in minutes. |
+| `SPEED` | The average speed of the athlete for the race, measured in meters/minute. |
+| `REC` | If the athlete made a record in the race, binary variable where `1` means they did and `0` means they did not.|
+| `PODIUM` | If the athlete had a podium finish in the race, binary variable where `1` means they did and `0` means they did not. A podium finish means the athletes `POS` was 1st, 2nd, or 3rd. |
+: [racewalking.csv](racewalking.csv){target="_blank"}
 
 
 ## Questions
 
-1.    Describe the distribution of total_points for all countries. Is there a skew, if so, what is it and what does it mean?
-
-2.    Obtain the summary statistics for total_points. 
-
-3.    The UK has 154 total_points in the dataset, determine whether or not that is an outlier. Use calculations to justify your answer.
-
-4.    Based on the distribution of total_medals amongst the countries in the dataset, would it be fair to assume that poverty is a confounding variable? Explain why or why not
-
-5.    What could be a reason for the distribution of medals and points being so heavily skewed towards certain nations winning more than others?
-
-6.    There is a lot of debate about how to best weigh the points for the different types of medals, what is a method you think would be best for weighing these medals? How would the new method alter the data?
+1.    
 
 ## References
 
-[Kaggle Original Dataset](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download){target="_blank"}
+[Original Dataset](https://www.watchathletics.com/page/5352/results-world-athletics-race-walking-team-championships-2024#google_vignette){target="_blank"}
 
-[Olympic Medal Weighing Methods](https://www.topendsports.com/events/summer/medal-tally/rankings-weighted.htm){target="_blank"}
+[Olympic Racewalking Rules](https://olympics.com/en/news/all-you-need-to-know-about-race-walking){target="_blank"}
+
+[Athletic Abbreviations](https://en.wikipedia.org/wiki/Athletics_abbreviations){target="_blank"}

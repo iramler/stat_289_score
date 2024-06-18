@@ -14,6 +14,10 @@ library(broom)
 worldchamps <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/module/worldchamps.csv")
 ```
 
+```{r}
+racewalking_df <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/data_repo_submission/racewalking.csv")
+```
+
 # Data Prep
 
 ```{r}
@@ -52,28 +56,25 @@ Speed is in m/min for now but could be adjusted to m/sec if i decide thats bette
 
 # Exploration
 
-* could do the speed and see if theres a difference for the distances *
-
-```{r}
-racewalking_df |> filter(POS == 1)
-```
-
+# might use 
 ```{r}
 ggplot(racewalking_df, aes(y = SPEED, x = DISTANCE)) + geom_boxplot()
 ```
-
+#might use
 ```{r}
-ggplot(racewalking_df, aes(y = TIME, x = GENDER)) + geom_boxplot() + facet_wrap(~DISTANCE)
+ggplot(racewalking_df, aes(y = SPEED, x = DISTANCE)) + geom_boxplot() + facet_wrap(~GENDER)
 ```
 
 ```{r}
-ggplot(racewalking_df, aes(y = TIME, x = DISTANCE)) + geom_boxplot() + facet_wrap(~GENDER)
+ggplot(racewalking_df, aes(y = SPEED, x = GENDER)) + geom_boxplot() + facet_wrap(~DISTANCE)
 ```
 
+# Definitely going to use
 ```{r}
 ggplot(racewalking_df, aes(x = SPEED)) + geom_histogram(bins = 15, colour = "black", fill = "lightblue") + facet_wrap(~DISTANCE)
 ```
 
+#might use
 ```{r}
 barplot <- racewalking_df |> group_by(RECORD) |> summarise(count = n())
 
@@ -81,10 +82,7 @@ ggplot(barplot, aes(x = RECORD, y = count)) + geom_col() + geom_text(aes(label =
 ```
 
 
-```{r}
-ggplot(racewalking_df, aes(x = COUNTRY, y = POS)) + geom_col()
-```
-
+# probably not going to use
 ```{r}
 n_records <- racewalking_df |> mutate(n_record = if_else(RECORD == "NONE", true = 0, false = 1))
 
@@ -93,14 +91,7 @@ records <- n_records |>group_by(COUNTRY) |> summarise(n_record = sum(n_record)) 
 ggplot(data = records, aes(x = COUNTRY, y = n_record)) + geom_col() + coord_flip() 
 ```
 
-
-```{r}
-pb <-n_records |> filter(RECORD == "PB") |> group_by(COUNTRY) |> summarise(n = sum(n_record))
-
-ggplot(pb, aes(x = n)) + geom_freqpoly()
-```
-
-
+# migth use
 ```{r}
 ggplot(racewalking_df, aes(x = SPEED, colour = DISTANCE)) + geom_freqpoly() 
 ```
@@ -108,7 +99,7 @@ ggplot(racewalking_df, aes(x = SPEED, colour = DISTANCE)) + geom_freqpoly()
 # Difference in means (speeds)
 
 speed predicted by distance
-
+# might use
 ```{r}
 race_walk <-racewalking |> mutate(DISTANCE = as.factor(DISTANCE)) |> mutate(SPEED = if_else(DISTANCE == 10000, true = 10000/TIME, false = 20000/TIME))
 
@@ -116,40 +107,15 @@ mod <- lm(SPEED~DISTANCE, data = race_walk)
 summary(mod)
 ```
 
-```{r}
-speedwalk <- racewalking |> mutate(DISTANCE = if_else(DISTANCE == 10000, true = 1, false = 0)) |> mutate(DISTANCE = as.logical(DISTANCE)) |> mutate(SPEED = if_else(DISTANCE == TRUE, true = 10000/TIME, false = 20000/TIME))
-```
-
-```{r}
-short <- subset(speedwalk,DISTANCE==TRUE)
-long <- subset(speedwalk,DISTANCE==FALSE)
-```
-
-```{r}
-modshort <- lm(SPEED~POS,data=short)
-modlong <- lm(SPEED~POS,data=long)
-```
-
-```{r}
-plot(SPEED~POS, data = speedwalk)
-abline(modshort)
-abline(modlong)
-```
-
-```{r}
-ggplot(data = racewalking_df, aes(x = POS, y = SPEED, colour = DISTANCE)) + geom_point() + facet_wrap(~GENDER)
-```
-
+# summarised df 
+* might use
 ```{r}
 sum <- racewalking_df |> mutate(n_rec = if_else(RECORD != "NONE", true = 1, false = 0)) |> filter(n_rec == 1) |> group_by(COUNTRY) |> summarise(tot_rec = sum(n_rec), avg_speed = mean(SPEED))
 ```
 
-```{r}
-ggplot(data = sum, aes(x = avg_speed, y = tot_rec, colour = COUNTRY)) + geom_point()
-```
 
 # Logistic regression for whether or not the athlete gets a record
-
+# Might use
 could do it predicted by speed as well as distance
 
 that would mean a binary response predicted by a binary predictor and a quantitative predictor
@@ -168,6 +134,7 @@ rec_mod
 rec_mod |> tidy()
 ```
 
+# might use
 ```{r}
 ggplot(data = recs, aes(x = SPEED, y = rec)) +
   geom_jitter(height = 0.05) +
@@ -175,12 +142,14 @@ ggplot(data = recs, aes(x = SPEED, y = rec)) +
   theme_minimal()
 ```
 
+# might use
 ```{r}
 rec_large <- glm(rec ~ SPEED + GENDER + DISTANCE, data = recs,
                      family = "binomial")
 rec_large |> tidy()
 ```
 
+# want to use but i dont think i can
 ```{r}
 library(modelr)
 grid <- recs |>
@@ -233,12 +202,13 @@ ggplot(data = plot, aes(x = SPEED, y = .predprob)) + geom_line(aes(colour = mode
 
 # Difference in props (records)
 
+# probably going to use
 ```{r}
 prop_records <- n_records |>group_by(COUNTRY) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) |> filter(n_record >=2) |>mutate(COUNTRY = fct_reorder(COUNTRY, n_record)) |> filter(prop < 1) |> mutate(COUNTRY = fct_reorder(COUNTRY, prop))
 
 ggplot(data = prop_records, aes(x = COUNTRY, y = prop)) + geom_col() + coord_flip() 
 ```
-
+# might use
 ```{r}
 prop <- racewalking_df |> group_by(RECORD) |> summarise(prop = n()/237) 
 
@@ -246,19 +216,20 @@ prop_round <- round(prop$prop, digits = 3)
 
 ggplot(prop, aes(x = RECORD, y = prop)) + geom_col() + geom_text(aes(label = prop_round), nudge_y = 0.01)
 ```
-
+# Don't think I'll use
 ```{r}
 prop_records_dist <- n_records |>group_by(DISTANCE) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) 
 
 ggplot(data = prop_records_dist, aes(x = DISTANCE, y = prop)) + geom_col()
 ```
-
+# might use
 ```{r}
 prop_records_dist <- n_records |>group_by(COUNTRY, DISTANCE) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) |> filter(prop <1 & prop > 0)
 
 ggplot(data = prop_records_dist, aes(x = DISTANCE, y = prop)) + geom_boxplot()
 ```
 
+# need to finish
 ```{r}
 success <- recs |> filter(rec == 1)
 success <- (success$rec)
@@ -267,16 +238,14 @@ prop.test()
 
 
 # Linear regression with POS predicted by COUNTRY, ATHLETE AND RECORD and maybe speed
-
+# might use
 ```{r}
-wins
-ggplot(data = wins, aes(x = as.factor(won), y = SPEED)) + geom_boxplot()
-ggplot(data = wins, aes(x = as.factor(won), y = SPEED)) + geom_boxplot()
+ggplot(data = racewalking_df, aes(x = as.factor(PODIUM), y = SPEED)) + geom_boxplot()
 ```
 
 ```{r}
-fcts <- rec |> mutate(COUNTRY = as.factor(COUNTRY), ATHLETE = as.factor(ATHLETE))
-pos_mod <- lm(POS ~ COUNTRY + ATHLETE + rec + SPEED, data = fcts)
+fcts <- racewalking_df |> mutate(COUNTRY = as.factor(COUNTRY), ATHLETE = as.factor(ATHLETE))
+pos_mod <- lm(POS ~ COUNTRY + ATHLETE + REC + SPEED, data = fcts)
 
 pos_mod |> tidy()
 ```
@@ -284,16 +253,11 @@ pos_mod |> tidy()
 # Linear regression with RECORD predicted by SPEED, POS, COUNTRY, GENDER, DISTANCE
 
 ```{r}
-modr <- glm(rec ~ DISTANCE + SPEED + POS + COUNTRY + GENDER, data = rec, family = "binomial")
+modr <- glm(REC ~ DISTANCE + SPEED + POS + COUNTRY + GENDER, data = racewalking_df, family = "binomial")
 summary(modr)
+modr |> tidy()
 ```
 
-
-# POS
-
-```{r}
-wins <- racewalking_df |> mutate(won = if_else(POS == 1, true = 1, false = 0))
-```
 
 # Randomized block design
 
@@ -315,6 +279,7 @@ amodC <- aov(SPEED~DISTANCE+ATHLETE,data=race_factors)
 summary(amodC)
 ```
 
+# might use
 ```{r}
 summed <- racewalking_df |> group_by(COUNTRY, DISTANCE) |> summarise(mean_speed = mean(SPEED))
 
@@ -331,20 +296,15 @@ summary(amodC)
 * could do this one partially filled in *
 
 # Log reg with binary predictor
-
+# might use
 ```{r}
-rec_dist <- glm(rec ~ DISTANCE, family = "binomial", data = recs)
+rec_dist <- glm(REC ~ DISTANCE, family = "binomial", data = racewalking_df)
 summary(rec_dist)
 ```
 
-# speed predicted by distance
-
-```{r}
-ggplot(data = racewalking_df, aes(x = DISTANCE, y = SPEED)) + geom_boxplot()
-```
 
 # T test for difference in mean speed for the two distances 
-
+# might use
 ```{r}
 t.test(SPEED~DISTANCE, var.equal=TRUE, data=racewalking_df)
 ```
@@ -373,29 +333,17 @@ range(racewalking_df$SPEED)
 ```
 
 # simple logit mod 
-
+# might use
 ```{r}
-logit <- recs |> mutate(rec = as.factor(rec))
-logitmod <- glm(rec~SPEED,family=binomial,data=logit)
+logit <- racewalking_df |> mutate(REC = as.factor(REC))
+logitmod <- glm(REC~SPEED,family=binomial,data=logit)
 summary(logitmod)
 ```
 
-```{r}
-ggplot(data = logit, aes(y = rec, x = SPEED)) + geom_point()
-```
-
-```{r}
-plot(fitted(logitmod)~SPEED,data=logit)
-```
-
-```{r}
-emplogitplot2(rec~SPEED,data=recs,ngroups="all")
-```
-
 # predicted prop, odds, OR
-
+# MIGHT USE
 ```{r}
-logitmod=glm(rec~SPEED,family=binomial,data=recs)
+logitmod=glm(REC~SPEED,family=binomial,data=racewalking_df)
 summary(logitmod)
 ```
 
@@ -417,20 +365,18 @@ odds_ratio <- exp(0.003976)
 ```
 
 # rough try at 2-way anova 
-
+# might use
 ```{r}
-win_rec <- racewalking_df |> mutate(rec = if_else(RECORD != "NONE", true = 1, false = 0), win = if_else(POS == 1, true = 1, false = 0))
-  
-two_way=aov(SPEED~win+rec+win*rec,data=win_rec)
+two_way=aov(SPEED~PODIUM+REC+PODIUM*REC,data=racewalking_df)
 summary(two_way)
 ```
 
 ```{r}
-with(win_rec,interaction.plot(rec,win,SPEED))
+with(win_rec,interaction.plot(REC,PODIUM,SPEED))
 ```
 
 ```{r}
-with(win_rec,interaction.plot(win,rec,SPEED))
+with(win_rec,interaction.plot(PODIUM,REC,SPEED))
 ```
 
 
