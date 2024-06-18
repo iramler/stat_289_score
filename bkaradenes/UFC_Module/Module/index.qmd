@@ -1,12 +1,12 @@
 ---
 title: "UFC: Striking Accuracy Percentages and the Normal Distribution"
 author:
-  - name: Ivan Ramler
-    email: iramler@stlawu.edu
+  - name: Brendan Karadenes
     affiliation:
       - id: slu
         name: St. Lawrence University
-  - name: Brendan Karadenes
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
     affiliation:
       - ref: slu
 date: June 6, 2024
@@ -21,11 +21,19 @@ categories:
 
 ### Introduction
 
-For this activity, you will be examining striking accuracy percentages in the UFC from 1993 to 2021.
+For this activity, you will be examining striking accuracy percentages in the Ultimate Fighting Championship [(UFC)](https://www.ufc.com/){target="_blank"} from 1993 to 2021.
 
 Specifically, you will use the normal distribution to calculate proportions and quantiles of fighter's striking accuracy percentages.
 
-Analyzing this data is useful for several key reasons. First, exploring the data can help the student understand which factors are most important for accuracy percentage, such as height, wingspan, or age. It also provides insights to the highly competitive and consequential nature of professional fighting. It also provides ways to compare how the top fighters compare to the average athletes. Analyzing this data can help determine the most important factors that go into striking accuracy and potentially give insight on who's most likely to win a given fight.
+::: {.callout-note collapse="true" title="About the UFC" appearance="minimal"}
+The Ultimate Fighting Championship (UFC) is a premier mixed martial arts (MMA) organization, founded in 1993, that has grown to become the largest and most recognized name in the sport. The UFC features some of the world's most skilled fighters, who compete in a range of weight classes and employ a variety of fighting techniques, including striking[^1] and grappling[^2]. The organization has revolutionized the sport by introducing a structured set of rules, weight divisions, and a scoring system to ensure athlete safety and fair competition. With events held globally, the UFC has a massive following and has led to the mainstream popularity of MMA. The UFC's events are broadcasted to millions of viewers worldwide, making it a dominant force in the combat sports industry.
+:::
+
+[^1]: Striking refers to offensive techniques that involve hitting an opponent with various parts of the body, such as fists, elbows, knees, and legs. Striking techniques include punches, kicks, knees, and elbows. The goal of striking is to damage or knock out the opponent. Martial arts disciplines that focus heavily on striking include boxing, Muay Thai, kickboxing, and karate.
+
+[^2]: Grappling involves maneuvers and techniques used to control, throw, or submit an opponent without striking them. This includes techniques like clinching, takedowns, throws, joint locks, and chokeholds. The aim is to dominate the opponent through superior positioning and leverage, often leading to submissions. Grappling is a core component of martial arts such as Brazilian Jiu-Jitsu, wrestling, Judo, and Sambo.
+
+Analyzing this data is useful for several key reasons. It provides insights to the highly competitive and consequential nature of professional fighting. It also provides ways to compare how the top fighters compare to the average athletes. Although not directly applied in this module, further analyzing these data can help determine the most important factors that go into striking accuracy and give insight on what makes a successful fighter.
 
 ::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
 This activity would be suitable for an in-class example or quiz.
@@ -35,8 +43,8 @@ This activity would be suitable for an in-class example or quiz.
 By the end of the activity, you will be able to:
 
 1.  Analyze the normal distribution
-2.  Calculate proportions and quantiles
-3.  Use StatKey to solve normal distribution problems
+2.  Calculate proportions and quantiles from normal distributions
+3.  Use statistical software to solve normal distribution problems
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
@@ -44,14 +52,16 @@ For this activity, students will primarily use basic concepts of the normal dist
 :::
 
 ::: {.callout-note collapse="true" title="Technology Requiremens" appearance="minimal"}
-The provided worksheet will likely require StatKey or a similar software.
+The provided worksheet will likely require software capable of calculating normal distribution tail probabilities and percentiles. (e.g., [StatKey](https://www.lock5stat.com/StatKey/){target="_blank"})
 
-Since the data are provided, instructors are encouraged to modify the worksheet to have students furthur their analysis of striking accuracy and other variables.
+Since the data are provided, instructors are encouraged to modify the worksheet to have students further their analysis of striking accuracy and other variables.
 :::
 
 ### Data
 
-The data set contains 3586 rows and 14 columns. Each row represents a fighter and their career statistics.
+The data set contains 1673 rows and 14 columns. Each row represents a fighter and their career statistics.
+
+Download: [ufc data](ufc_data.csv)
 
 <details>
 
@@ -71,12 +81,14 @@ The data set contains 3586 rows and 14 columns. Each row represents a fighter an
 | Str_Def       | Striking defense percentage       |
 | TD_Avg        | Takedown average per fight        |
 | TD_Acc        | Takedown accuracy percentage      |
-| TD_Def        | Takedown defence percentage       |
+| TD_Def        | Takedown defense percentage       |
 | Sub_Avg       | Submission average                |
 
 **Data Source**
 
-[Kaggle](https://www.kaggle.com/){target="_blank"}
+[Kaggle - UFC Data](https://www.kaggle.com/datasets/rajeevw/ufcdata){target="_blank"}
+
+</details>
 
 ## Materials
 
@@ -84,14 +96,10 @@ We provide an editable Microsoft Word handout along with it's key.
 
 [Class handout](ufc-normal.docx)
 
-[Class handout - with key](UFC-Solutions.docx)
+[Class handout - with key](ufc-normal-solutions.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-In conclusion, the UFC normal distribution worksheet provides students with a valuable learning opportunity in several key areas. It allows them to understand and practice using the Normal distribution and be introduced to new statistical softwares. Also, student's will be able to properly analyze and interpret percentages and quantiles of the distribution. The striking accuracies provide a real-world example to engage into level statistics students. The data set also allows them to analyze several factors that go into winning a fight and gives them the opportunity to compare performances over different years. Overall, this worksheet allows students to investigate almost 20 years of the UFC and draw meaningful conclusions about fighter performances over the years.
+In conclusion, the UFC normal distribution worksheet provides students with a valuable learning opportunity in several key areas. It allows them to understand and practice using the Normal distribution. Also, student's will be able to properly analyze and interpret percentages and quantiles of the distribution. The striking accuracies provide a real-world example to engage into level statistics students.
+
+The data set can also be used to allows students to analyze several factors that go into winning a fight and gives them the opportunity to compare performances over different years. Overall, this worksheet allows students to investigate almost 20 years of the UFC and draw conclusions about fighter performances over the years.
 :::
-
-
-
-
-
-
