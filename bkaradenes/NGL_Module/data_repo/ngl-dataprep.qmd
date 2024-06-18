@@ -10,7 +10,7 @@ library(rvest)
 library(tidyverse)
 ```
 
-# Webscraping
+# Webscraping Basic Batting
 
 ```{r}
 # store url
@@ -24,8 +24,23 @@ ngl_batting <- ngl %>%
   .[[5]] %>%
   html_table()
 ```
+
+# Webscraping Advanced Batting
  
-# Cleaning
+```{r}
+advanced_batting <- read_html("https://www.seamheads.com/NegroLgs/history.php?tab=bat_adv_at&first=1886&last=1948&lgID=All&lgType=N&HOF=All&pos=nonP&bats=All&minPA=500&results=500&sort=wOBA_a")
+```
+ 
+```{r}
+# store advanced batting table as data set
+advanced_batting <- advanced_batting %>%
+  html_nodes("table") %>%
+  .[[5]] %>%
+  html_table()
+```
+ 
+ 
+# Cleaning for basic batting
 
 ```{r}
 ngl_batting$Player <- gsub("[\\^\\*]", "", ngl_batting$Player)
@@ -38,12 +53,57 @@ ngl_batting <- ngl_batting %>%
   mutate(begin_year = as.numeric(begin_year),
          end_year = paste0("19", end_year),
          end_year = as.numeric(end_year),
-         ) 
+         ) %>%
+  rename(OPS_plus = OPS.)
+```
+
+# Cleaning for advanced batting
+
+```{r}
+advanced_batting$Player <- gsub("[\\^\\*]", "", advanced_batting$Player)
+```
+
+```{r}
+advanced_batting <- advanced_batting %>%
+  separate(Years, into = c("begin_year", "end_year"), sep = "-") %>%
+  mutate(begin_year = as.numeric(begin_year),
+         end_year = as.numeric(end_year),
+         ) %>%
+  select(-rank)
+advanced_batting$`BB%` <- as.numeric(gsub("\\%", "", advanced_batting$`BB%`))
+advanced_batting$`K%` <- as.numeric(gsub("\\%", "", advanced_batting$`K%`))
+advanced_batting$`HR%` <- as.numeric(gsub("\\%", "", advanced_batting$`HR%`))
+```
+
+# Join the two datasets
+
+```{r}
+combined_data <- ngl_batting %>%
+  full_join(advanced_batting, by = "Player")
+```
+
+```{r}
+combined_data <- combined_data %>%
+  mutate(begin_year = begin_year.x,
+         end_year = end_year.x,
+         Pos = Pos.x,
+         PA = PA.x) %>%
+  rename(Doubles = X2B,
+         Triples = X3B) %>%
+  select(-begin_year.y,
+         -end_year.y,
+         -Pos.y,
+         -PA.y,
+         -begin_year.x,
+         -end_year.x,
+         -Pos.x,
+         -PA.x)
+combined_data[1, "OPS"] <- 1.000
 ```
 
 # Write as csv
 ```{r}
-write.csv(ngl_batting, "ngl_batting.csv", row.names = FALSE)
+write.csv(combined_data, "ngl_batting.csv", row.names = FALSE)
 ```
 
 
