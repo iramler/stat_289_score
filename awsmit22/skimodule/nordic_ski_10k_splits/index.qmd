@@ -44,6 +44,9 @@ By the end of this activity, you will be able to:
 
 Students will use residual plots and histograms to evaluate the conditions of a simple linear regression model. Students will also use calculations or statistical software to find and assess the correlation between two variables. Additionally, using Randomized Block Design, students will test for a significant difference in means based on two factors.
 :::
+```{r}
+
+```
 
 ### Data
 
