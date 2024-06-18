@@ -30,8 +30,6 @@ In the Association of Tennis Professionals (ATP) the rankings are typically base
 #### Additional Tennis Information
 In Tennis, there is the Association of Tennis Professionals (ATP) for men, and the Women's Tennis Association (WTA) for women. The ATP has 60 tournaments a year while the WTA has over 70. Both the ATP have the WTA have four grand slam tournaments. In the ATP, these Grand Slam tournaments are played in a best of 5 format instead of a best of 3 like every other tournament. In the WTA, every tournament is played in a best of 3 format, including the Grand Slam tournaments.
 
-In this worksheet, we will look at the data including this Elo ranking and look at distributions, shapes, and a multiple linear regression model. There will be questions about each of these, some of them being more open ended than others.
-
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
 

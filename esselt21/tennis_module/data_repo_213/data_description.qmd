@@ -1,0 +1,48 @@
+---
+title: Investigating Surfaces Impact on Win Percentages in Professional Tennis
+author: Eric Seltzer
+date: June 18, 2024
+description: Data of the Association of Tennis Professionals (ATP) players and the Women's Tennis Associaion (WTA) from the 2023 season. Players who have played a minimum of 10 matches overall and 5 matches on a particular surface are included in the table. We will be looking into this tennis data.
+categories:
+  - Multiple linear regression
+  - Assumptions
+  - Interpretations
+editor:
+  markdown: 
+    canonical: true
+---
+
+## Motivation
+
+This data set is provided by Jeff Sackman on GitHub. There is an extensive repository of all tennis data. The data here is from the 2023 season.
+
+## Data
+
+This data is made up of 111 rows and 8 columns. Each row represents a player on a given type of surface.
+
+| Variable                     | Description                                       |
+|------------------------------|---------------------------------------------------|
+| Player                       | The name of the player                            |
+| Surface                      | The type of court surface for this observation    |
+| Matches                      | The number of matches played on this surface      |
+| Elo Rank                     | The calculated Elo rank of the player             |
+| Win Percentage               | The win percentage of the player                  |
+| Double Fault Percentage      | The percentage of serves that are a double fault  |
+| Return Points Won Percentage | The percentage of points won while returning      |
+| Aces Per Double Fault        | The ratio of aces to double faults for the player |
+
+: [tennis.csv](../data/tennis.csv)
+
+## Questions
+
+1.  Discuss which variables are important
+
+2.  Decide which variables should be included in interactions
+
+3.  Is the model good, assess its' effectiveness
+
+4.  Interpret the coefficients of the model
+
+## References
+
+Wheelo Ratings, *WTA Player Statistics*. <https://www.wheeloratings.com/tennis_wta_stats_last52.htmlp>.
