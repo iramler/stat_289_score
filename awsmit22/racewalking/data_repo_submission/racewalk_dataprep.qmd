@@ -51,7 +51,7 @@ Calculate a `SPEED` variable using `TIME` and `DISTANCE`.
 racewalking_df <- racewalking |> mutate(SPEED= DISTANCE/TIME) 
 ```
 
-Alter the `GENDER` variable so that it is a binary (0,1) variable. 
+Alter the values of the `GENDER` variable so that instead of (0,1) they are woman and man where *woman = 1* and *man = 0*.  
 
 ```{r}
 racewalking_df <- racewalking_df |> mutate(GENDER = if_else(GENDER == 1, true = "Woman", false = "Man"))
@@ -62,4 +62,17 @@ Make the `DISTANCE` variable a factor, not a double variable.
 ```{r}
 racewalking_df <- racewalking_df |> mutate(DISTANCE = as.factor(DISTANCE))
 ```
+
+Create a binary (0,1) variable for if a racer got a record, make sure to make the variable is a factor. 
+
+```{r}
+racewalking_df <- racewalking_df |> mutate(REC = if_else(RECORD != "NONE", true = 1, false = 0)) |> mutate(REC = as.factor(REC))
+```
+
+Create another binary (0,1) variable for if a racer had a podium finish, make sure to make the variable is a factor as well. 
+
+```{r}
+racewalking_df <- racewalking_df |> mutate(PODIUM = if_else(POS <= 3, true = 1, false = 0)) |> mutate(PODIUM = as.factor(PODIUM))
+```
+
 
