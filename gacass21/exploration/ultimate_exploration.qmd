@@ -1,0 +1,360 @@
+---
+title: "ultimate experiment"
+format: html
+---
+
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+```{r}
+per_game <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/exploration/ultimate_per_game.csv")
+total_stats <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/exploration/ultimate_total.csv")
+```
+
+```{r}
+per_game <- per_game |> pivot_wider(names_from = Measure.Names, values_from = Measure.Values) |> select(-2, -3, -4, -5, -6)
+```
+
+```{r}
+total_stats <- total_stats |> pivot_wider(names_from = Measure.Names, values_from = Measure.Values) 
+```
+
+```{r}
+ultimate_data <- left_join(total_stats, per_game, by = "Player")
+```
+
+```{r}
+ultimate_full <- ultimate_data |> mutate(turns_per_game = (Turns/`Team Games`),
+                        ds_per_game = (Ds/`Team Games`),
+                        ast_per_game = (Assists/`Team Games`),
+                        pts_per_game = (Points/`Team Games`),
+                        `+/-_per_game` = (`Plus Minus`/`Team Games`))
+```
+
+
+```{r}
+top_scores <- ultimate_full |> group_by(Full.Division.Name) |> 
+  arrange(desc(Points)) |> 
+  slice(1:10)
+```
+
+```{r}
+ultimate_full |> arrange(desc(`Plus Minus`)) |> select(Player, Points, Assists, `Plus Minus`, Turns, Ds, `Team Games`, Full.Team.Name)
+```
+
+```{r}
+ultimate_full |> filter(Full.Division.Name == "Division 1 Women" |
+                        Full.Division.Name == "Division 3 Women") |>
+  arrange(desc(`Plus Minus`)) |> 
+  select(Player, Points, Assists, `Plus Minus`, Turns, Ds, `Team Games`, Full.Team.Name)
+```
+
+```{r}
+ultimate_full |> group_by(Full.Division.Name) |> 
+  summarise(total_pts = sum(Points), total_ast = sum(Assists))
+```
+
+```{r}
+div_1_m <- ultimate_full |> filter(Full.Division.Name == "Division 1 Men")
+```
+
+```{r}
+div_1_w <- ultimate_full |> filter(Full.Division.Name == "Division 1 Women")
+```
+
+```{r}
+div_3_m <- ultimate_full |> filter(Full.Division.Name == "Division 3 Men")
+```
+
+```{r}
+div_3_w <- ultimate_full |> filter(Full.Division.Name == "Division 3 Women")
+```
+
+## Cumulative
+
+```{r}
+top_scores <- ultimate_full |> group_by(Full.Division.Name) |> 
+  arrange(desc(Points)) |> 
+  slice(1:10)
+```
+
+```{r}
+ultimate_full |> arrange(desc(`Plus Minus`)) |> select(Player, Points, Assists, `Plus Minus`, Turns, Ds, `Team Games`, Full.Team.Name)
+```
+
+```{r}
+ultimate_full |> filter(Full.Division.Name == "Division 1 Women" |
+                        Full.Division.Name == "Division 3 Women") |>
+  arrange(desc(`Plus Minus`)) |> 
+  select(Player, Points, Assists, `Plus Minus`, Turns, Ds, `Team Games`, Full.Team.Name)
+```
+
+```{r}
+ultimate_full |> group_by(Full.Division.Name) |> 
+  summarise(total_pts = sum(Points), total_ast = sum(Assists))
+```
+
+```{r}
+apg <- ultimate_full |> arrange(desc(ast_per_game)) |> slice(1:10) |> mutate(Player = reorder(Player, ast_per_game))
+
+ggplot(data = apg, aes(x = ast_per_game, y = Player)) +
+  geom_col(aes(fill = Full.Division.Name))
+```
+
+```{r}
+tot_plus_minus <- ultimate_full |> arrange(desc(`Plus Minus`)) |> slice(1:10) |> mutate(Player = reorder(Player, `Plus Minus`))
+
+ggplot(data = tot_plus_minus, aes(x = `Plus Minus`, y = Player)) +
+  geom_col(aes(fill = Full.Team.Name))
+```
+
+```{r}
+turns <- ultimate_full |> arrange(desc(Turns)) |> slice(1:10) |> mutate(Player = reorder(Player, Turns))
+
+ggplot(data = turns, aes(x = Turns, y = Player)) +
+  geom_col(aes(fill = Full.Division.Name))
+```
+
+```{r}
+ds <- ultimate_full |> arrange(desc(Ds)) |> slice(1:10) |> mutate(Player = reorder(Player, Ds))
+
+ggplot(data = ds, aes(x = Ds, y = Player)) +
+  geom_col(aes(fill = Full.Team.Name))
+```
+
+```{r}
+ultimate_full |> group_by(Full.Division.Name) |> summarise(sum = sum(`Plus Minus`))
+
+ggplot(data = ultimate_full, aes(x = `Plus Minus`)) +
+  geom_histogram(bins = 75)
+```
+
+```{r}
+ggplot(data = ultimate_full, aes(x = ast_per_game, y = turns_per_game)) +
+  geom_point(aes(color = Full.Division.Name)) +
+  geom_text(data = top_assists_m, aes(label = Player))
+```
+
+```{r}
+ggplot(data = ultimate_full, aes(x = `Plus Minus`, y = Ds)) +
+  geom_point(aes(color = Full.Division.Name)) +
+  geom_text(data = top_assists_m, aes(label = Player))
+```
+
+
+## Div 1 Men
+
+```{r}
+finalists_d1m <- div_1_m |> filter(Full.Team.Name == "Brown Brownian Motion" | Full.Team.Name == "Cal Poly-SLO Slocore")
+```
+
+```{r}
+top_scores_m <- ultimate_full |> filter(Full.Division.Name == "Division 1 Men") |> 
+  arrange(desc(Points)) |> 
+  slice(1:10)
+```
+
+```{r}
+top_assists_m <- ultimate_full |> filter(Full.Division.Name == "Division 1 Men") |> 
+  arrange(desc(Assists)) |> 
+  slice(1:10)
+```
+
+```{r}
+ggplot(data = div_1_m, aes(x = Points, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = finalists_d1m, aes(label = Full.Team.Name))
+```
+
+
+```{r}
+ggplot(data = div_1_m, aes(x = pts_per_game, y = `+/-_per_game`)) +
+  geom_point(aes(colour = Full.Team.Name)) +
+   geom_text(data = finalists_d1m, aes(label = Full.Team.Name))
+```
+
+
+```{r}
+ggplot(data = div_1_m, aes(x = Turns, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_scores_m, aes(label = Player))
+```
+
+```{r}
+ggplot(data = div_1_m, aes(x = Turns, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_assists_m, aes(label = Player))
+```
+
+```{r}
+ggplot(data = div_1_m, aes(x = ast_per_game, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_assists_m, aes(label = Player))
+```
+
+```{r}
+d1_apg_m <- div_1_m |> arrange(desc(ast_per_game)) |> slice(1:10) |> mutate(Player = reorder(Player, ast_per_game))
+
+ggplot(data = d1_apg_m, aes(x = ast_per_game, y = Player)) +
+  geom_col(aes(fill = Full.Team.Name))
+```
+
+
+
+## Div 1 Women
+
+```{r}
+finaliststs_d1w <- ultimate_full |> filter(Full.Team.Name == "")
+```
+
+
+
+```{r}
+top_scores_w <- ultimate_full |> filter(Full.Division.Name == "Division 1 Women") |> 
+  arrange(desc(Points)) |> 
+  slice(1:10)
+
+top_assists_w <- ultimate_full |> filter(Full.Division.Name == "Division 1 Women") |> 
+  arrange(desc(Assists)) |> 
+  slice(1:10)
+```
+
+```{r}
+ggplot(data = div_1_w, aes(x = Turns, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_scores_w, aes(label = Player))
+```
+
+```{r}
+ggplot(data = div_1_w, aes(x = Turns, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_assists_w, aes(label = Player))
+```
+
+```{r}
+ggplot(data = div_1_w, aes(x = Ds, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_scores_w, aes(label = Player))
+```
+
+```{r}
+ggplot(data = div_1_w, aes(x = ast_per_game, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_assists_w, aes(label = Player))
+
+```
+
+```{r}
+d1_apg_w <- div_1_w |> arrange(desc(ast_per_game)) |> slice(1:10) |> mutate(Player = reorder(Player, ast_per_game))
+
+ggplot(data = d1_apg_w, aes(x = ast_per_game, y = Player)) +
+  geom_col()
+```
+
+
+
+## Div 3 Men
+
+```{r}
+top_scores_m3 <- ultimate_full |> filter(Full.Division.Name == "Division 3 Men") |> 
+  arrange(desc(Points)) |> 
+  slice(1:10)
+
+top_assists_m3 <- ultimate_full |> filter(Full.Division.Name == "Division 3 Men") |> 
+  arrange(desc(Assists)) |> 
+  slice(1:10)
+```
+
+```{r}
+ggplot(data = div_3_m, aes(x = Points, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_scores_m3, aes(label = Player))
+```
+
+
+```{r}
+ggplot(data = div_3_m, aes(x = pts_per_game, y = `+/-_per_game`)) +
+  geom_point(aes(colour = Full.Team.Name)) +
+   geom_text(data = top_assists_m3, aes(label = Player))
+```
+
+
+```{r}
+ggplot(data = div_3_m, aes(x = Turns, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_scores_m3, aes(label = Player))
+```
+
+```{r}
+ggplot(data = div_3_m, aes(x = Turns, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_assists_m3, aes(label = Player))
+```
+
+```{r}
+ggplot(data = div_3_m, aes(x = Ds, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_assists_m3, aes(label = Player))
+```
+
+```{r}
+d3_apg_m <- div_3_m |> arrange(desc(ast_per_game)) |> slice(1:10) |> mutate(Player = reorder(Player, ast_per_game))
+
+ggplot(data = d3_apg_m, aes(x = ast_per_game, y = Player)) +
+  geom_col()
+```
+
+
+## Div 3 Women
+
+```{r}
+top_scores_w3 <- ultimate_full |> filter(Full.Division.Name == "Division 3 Women") |> 
+  arrange(desc(Points)) |> 
+  slice(1:10)
+
+top_assists_w3 <- ultimate_full |> filter(Full.Division.Name == "Division 3 Women") |> 
+  arrange(desc(Assists)) |> 
+  slice(1:10)
+```
+
+```{r}
+ggplot(data = div_3_w, aes(x = Points, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_scores_w3, aes(label = Player))
+```
+
+```{r}
+ggplot(data = div_3_w, aes(x = Points, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_assists_w3, aes(label = Player))
+```
+
+```{r}
+ggplot(data = div_3_w, aes(x = Turns, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Team.Name)) +
+  geom_text(data = top_assists_w3, aes(label = Player))
+```
+
+```{r}
+div_3_w |> arrange(desc(Turns)) |> summarise(Player, Turns, Ds, Assists, Points, `Plus Minus`, `Team Games`)
+```
+
+```{r}
+d3_apg_w <- div_3_w |> arrange(desc(ast_per_game)) |> slice(1:10) |> mutate(Player = reorder(Player, ast_per_game))
+
+ggplot(data = d3_apg_w, aes(x = ast_per_game, y = Player)) +
+  geom_col()
+```
+
+
+Ideas for what to do with data:
+Data 234 module with practice using dply, and ggplot.
+Could also use tidyr and stringr for more content.
+
+
+
+
+
