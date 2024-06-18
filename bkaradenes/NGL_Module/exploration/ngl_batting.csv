@@ -1,4 +1,4 @@
-"rank","Player","G","AB","R","H","Doubles","Triples","HR","RBI","SB","CS","BB","SO","IBB","HBP","SH","SF","DP","BA","OBP","SLG","OPS","OPS_plus","wOBA","BB%","K%","BB/K","HR%","ISO","begin_year","end_year","Pos","PA"
+"rank","Player","G","AB","R","H","Doubles","Triples","HR","RBI","SB","CS","BB","SO","IBB","HBP","SH","SF","DP","BA","OBP","SLG","OPS","OPS_plus","wOBA","BB_rate","K_rate","BB_K_ratio","homerun_rate","ISO","begin_year","end_year","Pos","PA"
 1,"Oscar Charleston",1358,4978,1174,1733,327,113,187,1150,310,7,657,21,0,38,141,1,0,0.348,0.428,0.572,1,172,0.444,11.3,0.8,13.33,3.2,0.224,1915,1941,"CF",5815
 2,"Cool Papa Bell",1297,5135,1227,1658,279,83,58,634,304,1,586,19,1,17,110,1,0,0.323,0.394,0.443,0.837,119,0.383,10,0.6,18.68,1,0.121,1922,1946,"CF",5849
 3,"Turkey Stearnes",1061,4068,983,1413,252,124,200,1078,143,3,441,15,0,33,69,1,0,0.347,0.415,0.618,1.033,173,0.451,9.6,0.8,11.93,4.3,0.27,1923,1940,"CF",4612

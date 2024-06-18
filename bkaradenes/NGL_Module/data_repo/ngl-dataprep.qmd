@@ -101,6 +101,16 @@ combined_data <- combined_data %>%
 combined_data[1, "OPS"] <- 1.000
 ```
 
+# Clean Up Joined Data
+
+```{r}
+combined_data <- combined_data %>%
+  rename(BB_rate = `BB%`,
+         K_rate = `K%`,
+         BB_K_ratio = `BB/K`,
+         homerun_rate = `HR%`)
+```
+
 # Write as csv
 ```{r}
 write.csv(combined_data, "ngl_batting.csv", row.names = FALSE)

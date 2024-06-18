@@ -1,0 +1,37 @@
+---
+title: "data-exploration"
+author: "Brendan Karadenes"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(here)
+batting <- read.csv(here("bkaradenes/NGL_Module/exploration/ngl_batting.csv"))
+```
+
+```{r}
+ggplot(data = batting, mapping = aes(x = OPS_plus, y = Pos)) +
+  geom_boxplot()
+```
+
+```{r}
+batting_mod <- batting %>%
+  filter(!is.na(OPS & OPS_plus & wOBA & BB_K_ratio & ISO))
+model <- lm(R ~ SB + OPS_plus + homerun_rate + `BB_K_ratio` + RBI, data = batting_mod)
+summary(model)
+```
+
+```{r}
+install.packages("GGally")
+library(GGally)
+ggpairs(data = batting_mod, columns = c("R", "SB", "BB_K_ratio", "OPS_plus", "homerun_rate", "RBI"))
+```
+
+```{r}
+install.packages("car")
+library(car)
+vif(model)
+```
+
+

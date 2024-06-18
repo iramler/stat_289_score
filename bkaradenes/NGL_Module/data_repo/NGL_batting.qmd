@@ -1,0 +1,42 @@
+---
+title: "Negro League Batting"
+author: "Brendan Karadenes"
+date: 06/18/2024
+description: The dataset looks at Negro League batting statistics from 1886 to 1948.
+categories:
+  - Linear Regression
+  - Correlation
+  - Multicollinearity
+---
+
+## Motivation
+
+The Negro Leagues were a group of leagues containing professional African-American baseball players from the late 19th century into the 1940s. Although the MLB didn't desegregate until the 1940s, the Negro Leagues still produce some of the game's all-time great players.
+
+## Data
+
+The dataset contains 502 rows and 34 columns. Each row represents a player that played in the Negro Leagues from 1896 to 1948 and their career statistics.
+
+| Variable | Description                     |
+|----------|---------------------------------|
+| rank     | career hit rank                 |
+| Player   | first and last name of player   |
+| G        | number of games played          |
+| AB       | number of at-bats               |
+| R        | number of runs scored           |
+| H        | number of hits                  |
+| Doubles  | number of doubles               |
+| Triples  | number of triples               |
+| HR       | number of homeruns              |
+| RBI      | number of runs batted in        |
+| SB       | number of stolen bases          |
+| CS       | number of times caught stealing |
+| BB       | number of walks                 |
+| SO       | number of strikeouts            |
+| IBB      | number of intentional walks     |
+| HBP      | number of times hit by a pitch  |
+| SH | number of sacrifice hits |
+| SF | number of sacrifice flys |
+| DP | number of times hit into a double play |
+| BA | career batting average |
+
