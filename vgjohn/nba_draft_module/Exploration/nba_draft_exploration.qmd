@@ -217,7 +217,7 @@ ggplot(nba_round1s,
        fill = "Pick in draft in NBA") +
   theme_minimal()
 ```
-the skewness for 1-10 draft picks makes sense because they're going to teams that probably need them more and they're the "most talented" because they're ranked higher. 
+the skewness for 1-10 draft picks makes sense because they're going to teams that probably need them more and they're the "most talented" because they're ranked higher. so it makes sense that they play more minutes. 
 
 boxplots 
 ```{r}
@@ -259,5 +259,20 @@ ggplot(data = .,
   stat_qq_line(col = "red")
 ```
 
+ANOVA test for difference in means between the minutes per game for the different ranks in round one of the nba draft 
+
+```{r}
+mpg_aov <- aov(mins_per_game ~ pick_category,
+                 data = nba_round1s)
+
+summary(mpg_aov)
+```
+there is a significant difference in the mean number of minutes played per game between the groups but we don't know which groups 
+
+tukey hsd 
+```{r}
+TukeyHSD(mpg_aov)
+```
+All of the groups are different as seen by the p values 
 
 
