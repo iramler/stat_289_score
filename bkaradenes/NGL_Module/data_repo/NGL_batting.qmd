@@ -11,32 +11,65 @@ categories:
 
 ## Motivation
 
-The Negro Leagues were a group of leagues containing professional African-American baseball players from the late 19th century into the 1940s. Although the MLB didn't desegregate until the 1940s, the Negro Leagues still produce some of the game's all-time great players.
+The Negro Leagues were a group of leagues containing professional African-American baseball players from the late 19th century into the 1940s. Although the MLB didn't desegregate until the 1940s, the Negro Leagues still produced some of the game's all-time great players.
 
 ## Data
 
 The dataset contains 502 rows and 34 columns. Each row represents a player that played in the Negro Leagues from 1896 to 1948 and their career statistics.
 
-| Variable | Description                     |
-|----------|---------------------------------|
-| rank     | career hit rank                 |
-| Player   | first and last name of player   |
-| G        | number of games played          |
-| AB       | number of at-bats               |
-| R        | number of runs scored           |
-| H        | number of hits                  |
-| Doubles  | number of doubles               |
-| Triples  | number of triples               |
-| HR       | number of homeruns              |
-| RBI      | number of runs batted in        |
-| SB       | number of stolen bases          |
-| CS       | number of times caught stealing |
-| BB       | number of walks                 |
-| SO       | number of strikeouts            |
-| IBB      | number of intentional walks     |
-| HBP      | number of times hit by a pitch  |
-| SH | number of sacrifice hits |
-| SF | number of sacrifice flys |
-| DP | number of times hit into a double play |
-| BA | career batting average |
+| Variable     | Description                                               |
+|--------------|-----------------------------------------------------------|
+| rank         | career hit rank                                           |
+| Player       | first and last name of player                             |
+| G            | number of games played                                    |
+| AB           | number of at-bats                                         |
+| R            | number of runs scored                                     |
+| H            | number of hits                                            |
+| Doubles      | number of doubles                                         |
+| Triples      | number of triples                                         |
+| HR           | number of homeruns                                        |
+| RBI          | number of runs batted in                                  |
+| SB           | number of stolen bases                                    |
+| CS           | number of times caught stealing                           |
+| BB           | number of walks                                           |
+| SO           | number of strikeouts                                      |
+| IBB          | number of intentional walks                               |
+| HBP          | number of times hit by a pitch                            |
+| SH           | number of sacrifice hits                                  |
+| SF           | number of sacrifice flys                                  |
+| DP           | number of times hit into a double play                    |
+| BA           | career batting average                                    |
+| OBP          | career on-base percentage                                 |
+| SLG          | career slugging percentage                                |
+| OPS          | career on-base plus slugging percentage                   |
+| OPS_plus     | career on-base plus slugging normalized across the league |
+| wOBA         | career weighted on-base average                           |
+| BB_rate      | career walk percentage                                    |
+| K_rate       | career strikeout percentage                               |
+| BB_K_ratio   | career walk to strikeout ratio                            |
+| homerun_rate | career homerun percentage                                 |
+| ISO          | career extra-base hits averaged per at bat                |
+| begin_year   | year the player begin their career                        |
+| end_year     | final year the player played                              |
+| Pos          | primary position of the player                            |
+| PA           | number of career plate appearences                        |
 
+Data file
+
+:   [olympic_swimming.csv](../data/olympic_swimming.csv)
+
+## Questions
+
+-   Report the least squares regression equation for predicting the number of runs scored.
+
+-   How many runs scored does the model predict for a strikeout rate of 15%.
+
+-   Is there evidence of multicollinearity?
+
+-   Is there a strong correlation between runs scored and strikeouts?
+
+## References
+
+Seamheads
+
+<https://www.seamheads.com/NegroLgs/>
