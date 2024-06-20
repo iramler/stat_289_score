@@ -382,3 +382,14 @@ with(win_rec,interaction.plot(PODIUM,REC,SPEED))
 
 * Maybe do a 2 sided design with gender and distance * 
 
+```{r}
+amodA <- aov(SPEED~DISTANCE,data=racewalking_df)
+summary(amodA)
+
+amodB <- aov(SPEED~GENDER,data=racewalking_df)
+summary(amodB)
+
+amodC <- aov(SPEED~DISTANCE+GENDER,data=racewalking_df)
+summary(amodC)
+```
+
