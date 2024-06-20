@@ -4,9 +4,10 @@ author: Abigail Smith
 date: June 18, 2024
 description: Comparing both the 10 and 20k speeds and records for racers and countries in the 2024 World Athletics Race Walking Team Championships in Antalya, Turkey. 
 categories:
- -  distribution and skewness
+ -  Distribution and skewness
+ -  Two-Sample t.test
  -  Two-Way ANOVA for difference in means
- -  
+ -  G-test for overall fit 
   
 editor: 
   markdown: 
@@ -14,7 +15,7 @@ editor:
 ---
 ## Motivation
 
-Race walking is a competitive individual sport with a similar layout to cross country running, except instead of running, competitors walk. Athletes utilize a swift walking motion which involves a lot of movement of the hips and arms, enabling them to move faster. Just like in running the first participant to cross the finish line wins. According to [Olympic rules](https://olympics.com/en/news/all-you-need-to-know-about-race-walking){target="_blank"}. The main rule in racewalking is that racewalkers **must** maintain contact with the ground at all times, unlike in running when the stride often involves both feet being off the ground. Additionally, racewalkers can not bend their leading knee when they are walking. Judges are posititoned throughout courses to ensure these rules are withheld. If an athlete violates either of the rules, judges show them a "warning paddle". Three warning paddles result in a red paddle which means the athlete is disqualified from the event. These rules provide an added challenge to the sport. 
+[Race walking](https://en.wikipedia.org/wiki/Racewalking){target="_blank"} is a competitive individual sport with a similar layout to cross country running, except instead of running, competitors walk. Athletes utilize a swift walking motion which involves a lot of movement of the hips and arms, enabling them to move faster. Just like in running the first participant to cross the finish line wins. According to [Olympic rules](https://olympics.com/en/news/all-you-need-to-know-about-race-walking){target="_blank"}. The main rule in racewalking is that racewalkers **must** maintain contact with the ground at **all times**, unlike in running when the stride often involves both feet being off the ground. Additionally, racewalkers can not bend their leading knee when they are walking. Judges are positioned throughout courses to ensure these rules are withheld. If an athlete violates either of the rules, judges show them a "warning paddle". Three warning paddles result in a red paddle which means the athlete is disqualified from the event. These rules provide an added challenge to the sport. 
 
 The World Athletics Race Walking Team Championships are an international race walking event hosted annually in different cities. After events are completed, total medals are tallied for each country competing, which is why they are considered the "team" championships.In addition to winning medals for 1st, 2nd, and 3rd place respectively, athletes can also set new records for both themselves as well as others.The [2024 championship](https://worldathletics.org/competitions/world-athletics-race-walking-team-championshi/world-athletics-race-walking-team-championshi-7199325){target="_blank"} was hosted in Antalya, Turkey and consisted of four events, a women's 10 and 20k, and a men's 10 and 20k. 
 
@@ -44,8 +45,14 @@ In the dataset there are 237 cases with 10 variables. Each case is a male or fem
 1.    Compare the distribution of SPEED for the 10k races with the distribution for the 20k races. 
 
 2.    Perform a t.test to determine if there is a significant difference in the mean speed for each distance.
+
 3.    Use a two-way ANOVA to determine if their is a significant difference in the mean speed for each distance and for each gender? 
-4.    
+
+4.    Calculate the log(odds), odds, and predicted odds for a female athlete walking in the 10k with a podium finish and a speed of 221 meters per minute. 
+
+5.    Perform a g-test to assess the overall fit of the multiple logistic regression model: REC = DISTANCE + PODIUM + SPEED + GENDER 
+
+6.    After performing all of these tests on different models, are there any noticeable differences in the different races the athletes competed in?
 
 ## References
 

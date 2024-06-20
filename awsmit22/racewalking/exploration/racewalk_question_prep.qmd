@@ -2,6 +2,7 @@
 title: "racewalk_question_prep"
 format: html
 ---
+
 # Load in the libraries
 
 ```{r}
@@ -10,7 +11,7 @@ library(readr)
 library(broom)
 ```
 
-# Load in the prepped data 
+# Load in the prepped data
 
 ```{r}
 racewalkingdf <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/data_repo_submission/racewalking.csv")
@@ -20,7 +21,7 @@ racewalking_df <- racewalkingdf |> mutate(DISTANCE = as.factor(DISTANCE), REC = 
 
 # Question 1
 
-Compare the distribution of SPEED for the 10k races with the distribution for the 20k races. 
+Compare the distribution of SPEED for the 10k races with the distribution for the 20k races.
 
 ```{r}
 ggplot(racewalking_df, aes(x = SPEED)) + geom_histogram(bins = 15, colour = "black", fill = "lightblue") + facet_wrap(~DISTANCE) + theme_minimal()
@@ -36,7 +37,7 @@ t.test(SPEED~DISTANCE, var.equal=TRUE, data=racewalking_df)
 
 # Question 3
 
-Based on the below boxplot would you say that there is a significant difference in the mean speed for each distance and for each gender? 
+Based on the below boxplot would you say that there is a significant difference in the mean speed for each distance and for each gender?
 
 ```{r}
 ggplot(racewalking_df, aes(y = SPEED, x = DISTANCE, fill = DISTANCE)) + geom_boxplot(show.legend = FALSE) + facet_wrap(~GENDER) + theme_minimal() + scale_fill_brewer()
@@ -44,7 +45,7 @@ ggplot(racewalking_df, aes(y = SPEED, x = DISTANCE, fill = DISTANCE)) + geom_box
 
 # Question 4
 
-Use a two-way ANOVA to determine if their is a significant difference in the mean speed for each distance and for each gender? 
+Use a two-way ANOVA to determine if their is a significant difference in the mean speed for each distance and for each gender?
 
 ```{r}
 amodA <- aov(SPEED~DISTANCE,data=racewalking_df)
@@ -57,59 +58,26 @@ amodC <- aov(SPEED~DISTANCE+GENDER,data=racewalking_df)
 summary(amodC)
 ```
 
+# Question 5
+
+Calculate the log(odds), odds, and predicted odds for a female athlete walking in the 10k with a podium finish and a speed of 221 meters per minute.
 
 
+# Question 6
 
+Perform a g-test to assess the overall fit of the multiple logistic regression model: REC = DISTANCE + PODIUM + SPEED + GENDER 
 
+```{r}
+record_mod <- glm(REC ~ DISTANCE + PODIUM + SPEED + GENDER, family = "binomial", data = factors)
+record_mod |> tidy()
+record_mod |> summary()
+```
 
+```{r}
+g_stat = 319.17 - 291.97
+g_stat
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```{r}
+1-pchisq(g_stat,4)
+```
