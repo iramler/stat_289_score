@@ -17,8 +17,8 @@ editor:
 
 ## Motivation
 
-Handball is a popular sport in many European countries such as Germany
-where it is said to have originated. The Bundesliga, for example, is a
+[Handball](https://en.wikipedia.org/wiki/Handball){target="_blank"} is a popular sport in many European countries such as Germany
+where it is said to have originated. The [Bundesliga](https://en.wikipedia.org/wiki/Bundesliga){target="_blank"}, for example, is a
 German men's professional handball league. Handball is typically played
 indoors on a rectangular court (20m x 40m). There are two goals (3m x
 2m) on opposite sides of the court, the goal for each team is to score a
@@ -47,8 +47,7 @@ Handball is considered a contact sport which means aggressive strategies
 are often used in games. Aggressiveness can be measured in the penalty
 statistics as players who tend to get more penalties are usually more
 considered more aggressive players overall. Their success can be
-measured with the handball performance index (HPI) , a calculated
-statistic which essentially ranks how good a player is. This data set could provide insight on if players or teams that are more aggressive are more successful than those
+measured with the [handball performance index (HPI)](https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/){target="_blank"}. According to Bundesliga, HPI "measures and illustrates a player's performance during a game, a month or an entire season with the help of a concrete numerical value". Players' HPIs are calculated by plus and minus points based on their actions during games. This data set could provide insight on if players or teams that are more aggressive are more successful than those
 who are more passive. 
 
 ## Data

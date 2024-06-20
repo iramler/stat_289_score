@@ -6,7 +6,6 @@ format: html
 # Libraries
 
 ```{r}
-library(tidyverse)
 library(readr)
 library(modelr)
 library(broom)
@@ -28,5 +27,11 @@ handball_df <- read_csv("handball_stats.csv")
 handball_clean <- handball_df |> mutate(total_penalties = RC + BK + TF + YC + `2MIN`, total_offense = G + M + FG + G.1 + AS + ST) |> select(c(NAME, CLUB, POSITION, total_offense, total_penalties, P, HPI))
 
 handball_clean <- handball_clean |> filter(P >= 10)
+```
+
+# Create the CSV file
+
+```{r}
+write_csv(handball_clean, "handball.csv")
 ```
 
