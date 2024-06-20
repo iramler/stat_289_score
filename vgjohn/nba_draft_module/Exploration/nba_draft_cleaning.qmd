@@ -7,7 +7,7 @@ library(tidyverse)
 nba_draft <- read_csv("/Users/vivianjohnson/Desktop/draft-data-20-years.csv")
 ```
 ```{r}
- nba_draft$DraftYr <- as.factor(nba_draft$DraftYr)
+ #nba_draft$DraftYr <- as.factor(nba_draft$DraftYr)
 
 nba_draft <- nba_draft %>% group_by(DraftYr) %>%
   mutate(

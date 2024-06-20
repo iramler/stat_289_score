@@ -1,0 +1,158 @@
+---
+title: "Examining Analysis of Variance Using the NBA Draft"
+author: " " 
+---
+
+In this activity, we are going to be using data from the NBA draft to explore Analysis of Variance (ANOVA).
+
+## Part 1 - Introduction
+
+#### The NBA Draft
+
+Each year, the National Basketball Association (NBA) holds a draft, where prospective basketball players are able to be chosen to join one of the 30 professional teams across the United States and Canada.
+
+In order to be eligible for the draft, a player must be at least 19 years old and out of high school for at least one year. Prior to 2006, this rule was not in effect, and players could be drafted during/right out of high school.
+
+The draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field.
+
+#### Playing Basketball
+
+The goal in basketball is to score as many points as possible by throwing the ball through the other team's hoop. The two netted baskets, positioned on opposite ends of a rectangular court, are normally 10 feet high, and have a backboard behind them.
+
+In the middle of the court, there is a half-court line that divides the two sides. On both sides, surrounding the hoops, there is an arch called the three-point line. Within the three-point line stands the free-throw line, where a player would shoot from should there be a foul called.
+
+During play, each team has five players on the court. The game starts with the referee tossing the ball in the air in between a player from each team, while each player tries to swat the ball to a member of their team (called a jump ball).
+
+**Scoring**
+
+Players can shoot towards the hoop from any point on the court. A different number of points is rewarded based on where the player is standing when they release the ball. The three shots are explained below.
+
+-   Field Goal: Worth 2 points, scored by shooting within the three point line
+-   Three Pointer: Worth 3 points, scored by shooting outside the three point line.
+-   Free Throw: Worth one point, taken from the free throw line after a foul.
+
+Players move the ball up and down the court by dribbling, passing the ball to teammates, or shooting the ball. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.
+
+## Part 2 - Loading and Cleaning the Data 
+
+1.  Load the necessary packages into your R Environment
+
+```{r echo=TRUE}
+
+```
+
+2.  Load in the data file `nba_draft`. Store it in an object called `nba_draft`
+
+```{r echo=TRUE}
+
+```
+
+3.  Right now, we only want to look at players that were selected in the first round of the draft. Write the correct code that selects only those who were chosen in the first round. Store it in an object called `nba_round1s`.
+
+```{r echo=TRUE}
+# nba_round1s <- nba_draft %>% filter(round_picked == 1)
+```
+
+4. In order to being our ANOVA exploration, we need to look at different groups within the round one selections. Since we have the order in which the players were selected (stored in the `pick_in_round` variable), we can make an additional categorical variable to keep track of where in the draft the player was selected. Make a new variable, called `pick_category`, which follows the following conditions: 
+
+    * `pick_category` = "1-10" if the player was selected in picks 1-10, 
+    * `pick_category` = "10-20" if the player was selected in picks 10-20,
+    * `pick_category` = "20-30" if the player was selected in picks 20-30
+
+    Note that the first number is exclusive and the second number is inclusive, except for number 1, which should be included in the first group. 
+
+```{r}
+# nba_round1s <- nba_round1s %>%
+#   mutate(
+#     pick_category = case_when(
+#       pick_in_round >= 1 & pick_in_round <= 10 ~ "1-10",
+#       pick_in_round > 10 & pick_in_round <= 20 ~ "10-20",
+#       pick_in_round > 20 & pick_in_round <= 30 ~ "20-30"
+#     )
+#   )
+```
+
+5. Make the `pick_category` variable a factor with three levels.
+
+```{r}
+# nba_round1s$pick_category <- factor(nba_round1s$pick_category,
+#                                   levels = c("1-10", "10-20", "20-30"))
+```
+
+## Part 3 - ANOVA
+
+1. Create a box plot that compares the average minutes played per game based on a player's selection in the first round of the NBA draft. Make sure to include a title, color coded legend, and axis labels.
+
+```{r}
+# ggplot(nba_round1s,
+#        mapping = aes(x = mins_per_game,
+#                      y = pick_category,
+#                      fill = pick_category)) +
+#   geom_boxplot() +
+#   labs(title = "Boxplot of MPG based on Round 1 NBA draft picks",
+#        x = "Minutes Per Game",
+#        y= "Category in Draft",
+#        fill = "Pick in NBA Draft") +
+#   theme_minimal()
+```
+
+2. Below is the code to create a density plot comparing the average minutes played per game based on a player's selection in the first round of the NBA draft. Based on this density plot and the box plots you created above, do you feel as though ANOVA is appropriate? What conclusions can you draw upon first glance of the two data visualizations? Are there any concerns? 
+
+```{r}
+# means = nba_round1s %>%
+#   group_by(pick_category) %>%
+#   summarize(
+#     mean_value = mean(mins_per_game))
+# 
+# 
+# ggplot(nba_round1s,
+#        mapping = aes(x = mins_per_game,
+#                      fill = pick_category)) +
+#   geom_density(alpha = 0.4) +
+#   geom_vline(data = means,
+#              mapping = aes(xintercept = mean_value, color = pick_category),
+#              linetype = "dashed",
+#              size = 1,
+#              show.legend = FALSE) +
+#   labs(title = "Distribution of MPG based on Round 1 NBA draft picks",
+#        x = "Minutes Per Game",
+#        y = "Density",
+#        fill = "Pick in draft in NBA") +
+#   theme_minimal()
+```
+
+3. Now that we've determined ANOVA is most likely appropriate, write and interpret in context the null and alternative hypotheses we'll be using for the ANOVA test. 
+
+* $H_0: \mu_1 = \mu_2 = \mu_3$
+
+  (where $\mu_x$ is the population mean for that group)
+  
+  * The mean number of minutes played in the NBA for players who were picked 1-10, 10-20, and 20-30 in the NBA draft are all equal. 
+
+* $H_a:$ at least one $\mu_1 \neq \mu_2$
+
+  * For at least one group, the mean number of minutes played in the NBA is not equal. (There is at least one group of draft picks that played a different mean number of minutes in the NBA.) 
+  
+4. Run an ANOVA test in R and store it in an object called `mpg_aov`. Print the summary table 
+
+```{r}
+# mpg_aov <- aov(mins_per_game ~ pick_category,
+#                  data = nba_round1s)
+# 
+# summary(mpg_aov)
+```
+
+5. Using the ANOVA table, interpret the sum of squares for the groups. What does it imply about the data? 
+
+* SSG = 13839 This number represents the total variability between the three groups and measures how far apart the mean minutes per game played between the players that were picked 1-10, 10-20, and 20-30. Since it is large, it suggests that there is a relatively large difference between the averages of the three groups. 
+
+6. Can we conclude there is a difference in the mean amount of minutes played per game based on when a player was selected in the draft? Provide evidence. 
+
+  * We can conclude that there is sufficient evidence to reject the null hypothesis that the mean number of minutes played per game is the same regardless of when a player was selected in the first round of the draft. The p-value given in the ANOVA table is $2*10^{-6}$ meaning there is strong evidence to reject the null hypothesis. 
+  
+7. In the 2011 NBA draft, Kawhi Leonard was selected 15th in the first round by the Indiana Pacers. Jimmy Butler was selected 30th in the first round by the Chicago Bulls. Based on the ANOVA table alone, do you think one player would play more/less minutes on average compared to the other? Why or why not. 
+
+  * Based on the ANOVA table alone, you can't make the conclusion that one group is more/less than the other. You can only conclude that at least one of the averages are different. Therefore you can't conclude strictly from this test that one player would have more minutes compared to the other. To do that, another test would have to be done. (Such as Tukey's HSD or other post-hoc tests)
+
+
+ 

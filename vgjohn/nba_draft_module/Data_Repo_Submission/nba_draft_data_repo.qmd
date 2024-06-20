@@ -41,10 +41,10 @@ Players move the ball up and down the court by dribbling[^1], passing the ball t
 
 ## Data
 
-The `nba_draft` data set includes data from players that were selected in the NBA drafts between the years 1990-2021. Each row represents a different player and statistics from their respective careers in the NBA, some of which are still ongoing. 
+The `nba_draft` data set includes data from players that were selected in the NBA drafts between the years 1990-2021. Each row represents a different player and statistics from their respective careers in the NBA, some of which are still ongoing.
 
 | Variable          | Description                                                                                                          |
-|----------------|--------------------------------------------------------|
+|------------------|------------------------------------------------------|
 | draft_pick        | The pick number a player was selected in the NBA draft                                                               |
 | team              | The NBA team that drafted the player                                                                                 |
 | player_name       | The name of the player selected                                                                                      |

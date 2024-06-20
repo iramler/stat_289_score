@@ -26,6 +26,7 @@ mean(nba_draft$years_played)
 
 nba_draft %>% slice_max(order_by = years_played)
 
+#seeing divisions based on years played 
 nba_draft %>% filter(years_played >= 0 & years_played <= 5)
 nba_draft %>% filter(years_played > 5 & years_played <= 10)
 nba_draft %>% filter(years_played > 10 & years_played <= 15)
@@ -151,7 +152,6 @@ ggplot(nba_draft,
        fill = "Round Picked in NBA Draft") +
   theme_minimal()
 ```
-
 points per game per round picked in the nba 
 ```{r}
 nba_round1s <- nba_draft %>% filter(round_picked == 1)
@@ -226,8 +226,9 @@ ggplot(nba_round1s,
                      y = pick_category,
                      fill = pick_category)) +
   geom_boxplot() +
-  labs(title = "Boxplot of PPG based on Round 1 NBA draft picks",
+  labs(title = "Boxplot of MPG based on Round 1 NBA draft picks",
        x = "Minutes Per Game",
+       y= "Category in Draft",
        fill = "Pick in NBA Draft") +
   theme_minimal()
 ```
@@ -269,10 +270,19 @@ summary(mpg_aov)
 ```
 there is a significant difference in the mean number of minutes played per game between the groups but we don't know which groups 
 
-tukey hsd 
+tukey hsd to determine between groups 
 ```{r}
 TukeyHSD(mpg_aov)
 ```
 All of the groups are different as seen by the p values 
+
+```{r}
+sd((nba_round1s %>% filter(pick_category == "1-10"))$mins_per_game)
+sd((nba_round1s %>% filter(pick_category == "10-20"))$mins_per_game)
+sd((nba_round1s %>% filter(pick_category == "20-30"))$mins_per_game)
+```
+equal variance looks good 
+
+something with both the rounds and the pick categories ?? 
 
 
