@@ -10,8 +10,8 @@ library(readr)
 ```
 
 ```{r}
-per_game <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/exploration/ultimate_per_game.csv")
-total_stats <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/exploration/ultimate_total.csv")
+per_game <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Ultimate/ultimate_per_game.csv")
+total_stats <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Ultimate/ultimate_total.csv")
 ```
 
 ```{r}
@@ -143,6 +143,41 @@ ggplot(data = ultimate_full, aes(x = `Plus Minus`, y = Ds)) +
   geom_point(aes(color = Full.Division.Name)) +
   geom_text(data = top_assists_m, aes(label = Player))
 ```
+
+```{r}
+ggplot(data = ultimate_full, aes(x = ast_per_game, y = turns_per_game)) +
+  geom_point(aes(color = Full.Division.Name)) +
+  geom_text(data = top_assists_m3, aes(label = Player))
+```
+
+```{r}
+ggplot(data = ultimate_full, aes(x = ast_per_game, y = turns_per_game)) +
+  geom_point(aes(color = Full.Division.Name)) +
+  geom_text(data = top_assists_w, aes(label = Player))
+```
+
+```{r}
+ggplot(data = ultimate_full, aes(x = ast_per_game, y = turns_per_game)) +
+  geom_point(aes(color = Full.Division.Name)) +
+  geom_text(data = top_scores_m3, aes(label = Player))
+```
+
+```{r}
+ggplot(data = ultimate_full, aes(x = Ds, y = `Plus Minus`)) +
+  geom_point(aes(color = Full.Division.Name))
+```
+
+```{r}
+ggplot(data = ultimate_full, aes(x = Ds)) +
+  geom_histogram(bins = 75)
+```
+
+```{r}
+
+```
+
+
+
 
 
 ## Div 1 Men
@@ -339,7 +374,7 @@ ggplot(data = div_3_w, aes(x = Turns, y = `Plus Minus`)) +
 ```
 
 ```{r}
-div_3_w |> arrange(desc(Turns)) |> summarise(Player, Turns, Ds, Assists, Points, `Plus Minus`, `Team Games`)
+div_3_w |> arrange(desc(Turns)) |> select(Player, Turns, Ds, Assists, Points, `Plus Minus`, `Team Games`)
 ```
 
 ```{r}
