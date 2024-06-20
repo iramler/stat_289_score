@@ -28,7 +28,7 @@ In the dataset there are 237 cases with 10 variables. Each case is a male or fem
 | Variable | Description                                                                                                                |
 |-------------------|-----------------------------------------------------|
 | `POS` | The position the athlete finished in. |
-| `COUNTRY` | The country the athlete is in. |
+| `COUNTRY` | The country the athlete is from. |
 | `ATHLETE` | The name of the athlete in `first name, last name` order. |
 | `RECORD` | The record the athlete made if any. The record types are as follows: Personal Best (`PB`), Season's Best (`SB`), National Record (`NR`), Area Under 20 Record (`AU20R`), National Under 20 Record (`NU20R`)|
 | `DISTANCE` | The distance of the race the athlete competed in, either `10000`m or `20000`m.|

@@ -62,7 +62,6 @@ summary(amodC)
 
 Calculate the log(odds), odds, and predicted odds for a female athlete walking in the 10k with a podium finish and a speed of 221 meters per minute.
 
-
 # Question 6
 
 Perform a g-test to assess the overall fit of the multiple logistic regression model: REC = DISTANCE + PODIUM + SPEED + GENDER 
