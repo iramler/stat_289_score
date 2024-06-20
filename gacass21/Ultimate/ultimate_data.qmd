@@ -1,0 +1,48 @@
+---
+title: 2024 College Ultimate Championship Statistics
+author: Gavin Cassidy
+date: June 20, 2024
+description: College Ultimate Chamionship Statistics contianing statistics from the 2024 Division 1 and 3 Men's and Women's Ultimate Championships 
+categories:
+---
+
+## Motivation
+
+Ultimate, also known as Ultimate Frisbee is a non-contact sport where 2 teams of 7 players pass a frisbee to each other and try to reach the opposing teams 'end zone' and score a point without dropping the frisbee. Each point starts with a pull, where the defensive team throws the frisbee from their end zone to the end zone of the offensive team. The goal of the defensive team is to force the offensive team to turnover the disc by dropping it or throwing it out of bounds. If the defensive team forces a turnover, they can then try to score while the offensive team tries to stop them. The team that scores a point then executes the next pull to the team that got scored on.
+
+College ultimate games follow the USA Ultimate rules, which dictate a game to 15 goals, with halftime occurring when a team has scored 8 goals. The rules also allow for a time cap, where once the cap is reached the game is played to a score determined by the score of the team that is winning. Like other sports, there are two main positions in ultimate called handler and cutter. Teams often have 2 or 3 handlers playing at a time and they are players who are versatile throwers and orchestrate how the offense is run. Cutters are players who run around and try to escape defenders in order to receive the frisbee from the handlers. Teams have different formations and offensive schemes they use to try and find openings to make gaining yardage and scoring points easier. Teams tend to have offensive and defensive lines in order to save players from playing every point and split the load of games.
+
+## Data
+
+This data comes from the 2024 Division 1 and 3 Men's and Women's College Ultimate Championships. It contains scoring and defensive statistics for players from each game played at the two tournaments. Each row contains information for a player including division and team information and individual statistics.
+
+| Variable           | Description                                                                                     |
+|-----------------------|-------------------------------------------------|
+| Player             | player name                                                                                     |
+| Competition level  | The level that the player was competing at                                                      |
+| Full Division Name | level and gender of the competing player's division                                             |
+| Full Team Name     | full name of the players team                                                                   |
+| Gender Division    | gender of the player's division                                                                 |
+| Points             | number of points the player scored                                                              |
+| Assists            | number of assists the player scored                                                             |
+| Turns              | number of turnovers the player threw                                                            |
+| Ds                 | number of defensive blocks the player made                                                      |
+| Plus Minus         | the point differential while the player was on the field(+1 when team score, -1 when scored on) |
+| Total Games        | number of games the player's team played                                                        |
+| pts_per_game       | average points scored per game                                                                  |
+| ast_per_game       | average assists thrown per game                                                                 |
+| turns_per_game     | average turnovers thrown per game                                                               |
+| ds_per_game        | average defensive blocks made per game                                                          |
+| +/-\_per_game      | average plus minus per game                                                                     |
+
+Background Information:
+
+The 2024 Division 3 College Ultimate Championships took place May 18th-20th, where St. Olaf's Berzerkers won the Men's Championship over Williams WUFO. In the Women's Championship, Portland UPRoar defeated Carleton College Eclipse in the finals. Each division had 16 teams.
+
+The 2024 Division 1 College Ultimate Championships took place May 24th-27th, where Brown Brownian Motion defeated Cal Poly-SLO Slocore in the Men's Championship. North Carolina Pleiades defeated Stanford Superfly in the Women's Championship. Each division had 20 teams. 
+
+## Questions
+
+
+
+## References

@@ -173,7 +173,16 @@ ggplot(data = ultimate_full, aes(x = Ds)) +
 ```
 
 ```{r}
+mens_ultimate <- ultimate_full |> filter(Full.Division.Name == "Division 1 Men" | Full.Division.Name == "Division 3 Men")
+```
 
+```{r}
+womens_ultimate <- ultimate_full |> filter(Full.Division.Name == "Division 1 Women" | Full.Division.Name == "Division 3 Women")
+```
+
+```{r}
+ggplot(data = ultimate_full, aes(x = `Plus Minus`)) +
+  geom_boxplot(aes(y = Full.Division.Name))
 ```
 
 
@@ -388,7 +397,6 @@ ggplot(data = d3_apg_w, aes(x = ast_per_game, y = Player)) +
 Ideas for what to do with data:
 Data 234 module with practice using dply, and ggplot.
 Could also use tidyr and stringr for more content.
-
 
 
 
