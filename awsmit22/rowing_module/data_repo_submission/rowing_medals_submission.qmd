@@ -47,7 +47,9 @@ In the data set there are 41 medalling nations that competed in 25 different eve
 
 5.    What could be a reason for the distribution of medals and points being so heavily skewed towards certain nations winning more than others?
 
-6.    There is a lot of debate about how to best weigh the points for the different types of medals, what is a method you think would be best for weighing these medals? How would the new method alter the data?
+6.	In the data set, notice that the German Democratic Republic (GDR) or East Germany is listed as a country. Since the end of the Cold War the GDR is no longer a country. What would you do with countries in the dataset that are no longer existent today? How would it impact the data?
+
+7.    There is a lot of debate about how to best weigh the points for the different types of medals, what is a method you think would be best for weighing these medals? How would the new method alter the data?
 
 ## References
 

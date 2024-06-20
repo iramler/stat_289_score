@@ -16,7 +16,7 @@ Data was copied and pasted from [this link](https://www.watchathletics.com/page/
 That excel document is read in below.
 
 ```{r}
-worldchamps <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/module/worldchamps.csv")
+worldchamps <- read_csv("worldchamps.csv")
 ```
 
 # Data Prep
@@ -75,9 +75,11 @@ Create another binary (0,1) variable for if a racer had a podium finish, make su
 podium <- record |> mutate(PODIUM = if_else(POS <= 3, true = 1, false = 0)) |> mutate(PODIUM = as.factor(PODIUM))
 ```
 
+Write the csv file.
 
-
-
+```{r}
+write_csv(podium, "racewalking.csv")
+```
 
 
 

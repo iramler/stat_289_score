@@ -5,7 +5,7 @@ date: June 18, 2024
 description: Comparing both the 10 and 20k speeds and records for racers and countries in the 2024 World Athletics Race Walking Team Championships in Antalya, Turkey. 
 categories:
  -  distribution and skewness
- -  ANOVA for difference in means
+ -  Two-Way ANOVA for difference in means
  -  
   
 editor: 
@@ -42,7 +42,10 @@ In the dataset there are 237 cases with 10 variables. Each case is a male or fem
 ## Questions
 
 1.    Compare the distribution of SPEED for the 10k races with the distribution for the 20k races. 
-2.    
+
+2.    Perform a t.test to determine if there is a significant difference in the mean speed for each distance.
+3.    Use a two-way ANOVA to determine if their is a significant difference in the mean speed for each distance and for each gender? 
+4.    
 
 ## References
 

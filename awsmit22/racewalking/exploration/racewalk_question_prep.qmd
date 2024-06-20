@@ -28,12 +28,34 @@ ggplot(racewalking_df, aes(x = SPEED)) + geom_histogram(bins = 15, colour = "bla
 
 # Question 2
 
-Based on the below boxplot would you say that there is a considerable difference in the mean speed for the 10k races vs. the 20k races. 
+Perform a t.test to determine if there is a significant difference in the mean speed for each distance.
+
+```{r}
+t.test(SPEED~DISTANCE, var.equal=TRUE, data=racewalking_df)
+```
+
+# Question 3
+
+Based on the below boxplot would you say that there is a significant difference in the mean speed for each distance and for each gender? 
 
 ```{r}
 ggplot(racewalking_df, aes(y = SPEED, x = DISTANCE, fill = DISTANCE)) + geom_boxplot(show.legend = FALSE) + facet_wrap(~GENDER) + theme_minimal() + scale_fill_brewer()
 ```
 
+# Question 4
+
+Use a two-way ANOVA to determine if their is a significant difference in the mean speed for each distance and for each gender? 
+
+```{r}
+amodA <- aov(SPEED~DISTANCE,data=racewalking_df)
+summary(amodA)
+
+amodB <- aov(SPEED~GENDER,data=racewalking_df)
+summary(amodB)
+
+amodC <- aov(SPEED~DISTANCE+GENDER,data=racewalking_df)
+summary(amodC)
+```
 
 
 
