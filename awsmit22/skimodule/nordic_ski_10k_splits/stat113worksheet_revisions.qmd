@@ -1,0 +1,117 @@
+---
+title: "stat113worksheet_revisions"
+format: html
+---
+# Load in the libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+# Read in the data set
+```{r}
+ski_speeds <- read_csv("~/Desktop/git/stat_289_score/awsmit22/skimodule/nordic_ski_10k_splits/Nordic10K_ski_speeds.csv")
+```
+
+# Question 1
+
+Fit the following models and create scatter plots with regression lines for each of them. Record their R2 values and comment on the linearity.
+
+```{r}
+# part a
+mod_1 <- lm(Rank4 ~ Time1, data = ski_speeds)
+# part i
+plot(Rank4 ~ Time1, data = ski_speeds) 
+abline(mod_1)
+# part ii
+summary(mod_1) 
+
+# part b
+mod_2 <- lm(Time4 ~ Time1, data = ski_speeds)
+# part i
+plot(Time4 ~ Time1, data = ski_speeds)
+abline(mod_2)
+# part ii
+summary(mod_2)
+
+# part c
+mod_3 <- lm(Rank4 ~ Rank1, data = ski_speeds)
+# part i
+plot(Rank4 ~ Rank1, data = ski_speeds) 
+abline(mod_3)
+# part ii
+summary(mod_3)
+
+# part d
+mod_4 <- lm(Time4 ~ Rank1, data = ski_speeds)
+# part i
+plot(Time4 ~ Rank1, data = ski_speeds) 
+abline(mod_4)
+# part ii
+summary(mod_4) 
+```
+
+# Question 2
+Which one of the models from Question 1 do you think is best? Why?
+***best mod is mod_2***
+
+# Question 3
+
+Interpret the slope coefficient (in context)  for the best of these models to predict Rank4.
+
+```{r}
+summary(mod_3)
+# For every additional place in Rank1, Rank4 increases by 0.88 places. 
+```
+
+# Question 4
+
+If a skier is ranked #14 after the first split, what rank would you predict for her finish?
+
+```{r}
+mod_3 <- lm(Rank4 ~ Rank1, data = ski_speeds)
+summary(mod_3) 
+
+Rank1 <- 14
+
+Rank4 <- 2.95897 + 0.87807*Rank1
+
+Rank4
+
+# Predicted Rank4 is 15.25 which is about 15th place at the finish?
+```
+
+# Question 5
+
+Interpret the slope coefficient (in context)  for the best of these models to predict Time4.
+
+```{r}
+summary(mod_2)
+
+# For every additional minute Time1 increases, Time4 increases by 4.66 minutes. 
+```
+
+# Question 6
+
+If a skier had a time of 5.00 minutes after the first split, what time would you predict for her finish?
+
+```{r}
+mod_2 <- lm(Time4 ~ Time1, data = ski_speeds)
+summary(mod_2) 
+
+Time1 <- 5
+
+Time4 <- 6.7561 + 4.6618*Time1
+Time4
+
+# Predicted Time4 is 30.07 minutes. 
+```
+
+# Question 7
+
+Can it be concluded that the time and/or rank of a skier after the first distance interval has a substantial impact on their finishing rank and/or time? Explain your answer. 
+
+***Yes, these models show a strong relationship between either Time4 and Time1 or Rank1 and Rank4. They both show that the if Rank1 or Time1 were to increase, so would Time4 or Rank4. This means that if a skier performs poorly in the beginning of a 10k, they are unlikely to improve their performance by the end of the race.***
+
+

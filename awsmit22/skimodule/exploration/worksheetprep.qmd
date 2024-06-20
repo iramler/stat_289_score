@@ -86,6 +86,81 @@ abline(mod_1)
 
 The linearity and variance are both relatively good. I would say that the variance is stronger than the linearity.
 
+```{r}
+# Mod 1
+mod_1 <- lm(Rank4 ~ Time1, data = ski_speeds)
+summary(mod_1) # R^2: 77.7% 
+plot(Rank4 ~ Time1, data = ski_speeds) # bad linearity
+abline(h = 30)
+
+# Mod 2 
+mod_2 <- lm(Time4 ~ Time1, data = ski_speeds)
+summary(mod_2) # R^2: 85.8%
+plot(Time4 ~ Time1, data = ski_speeds) # better linearity
+abline(h = 30.5)
+
+# Mod 3
+mod_3 <- lm(Rank4 ~ Rank1, data = ski_speeds)
+summary(mod_3) # R^2: 83.7%
+plot(Rank4 ~ Rank1, data = ski_speeds) # better linearity
+abline(h = 30)
+
+# Mod 4
+mod_4 <- lm(Time4 ~ Rank1, data = ski_speeds)
+summary(mod_4) # R^2: 81.9%
+plot(Time4 ~ Rank1, data = ski_speeds) # bad linearity again
+abline(h = 30.5)
+```
+
+***best mod is mod_2***
+
+# possible follow-up questions
+
+Interpret the slope coefficient (in context)  for the best of these models to predict Rank4.
+
+```{r}
+summary(mod_3)
+# For every additional place in Rank1, Rank4 increases by 0.88 places. 
+```
+
+If a skier is ranked #14 after the first split, what rank would you predict for her finish?
+
+```{r}
+mod_3 <- lm(Rank4 ~ Rank1, data = ski_speeds)
+summary(mod_3) 
+
+Rank1 <- 14
+
+Rank4 <- 2.95897 + 0.87807*Rank1
+
+Rank4
+
+# Predicted Rank4 is 15.25 which is about 15th place at the finish?
+```
+
+Interpret the slope coefficient (in context)  for the best of these models to predict Time4.
+
+```{r}
+summary(mod_2)
+
+# For every additional minute Time1 increases, Time4 increases by 4.66 minutes. 
+```
+
+If a skier had a time of 5.00 minutes after the first split, what time would you predict for her finish?
+
+```{r}
+mod_2 <- lm(Time4 ~ Time1, data = ski_speeds)
+summary(mod_2) 
+
+Time1 <- 5
+
+Time4 <- 6.7561 + 4.6618*Time1
+Time4
+
+# Predicted Time4 is 30.07 minutes. 
+```
+
+
 
 # residual normality
 ```{r}

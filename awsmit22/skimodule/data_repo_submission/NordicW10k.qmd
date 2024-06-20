@@ -5,7 +5,7 @@ date: February 29, 2024
 description: The times and ranks of skiers taken at four different distance points (1.3, 4.3, 7.5, and 10k) in a 10k classic race in Trondheim, Norway.
 categories:
   - simple linear regression analysis
-  - correlation
+  - multiple r-squared
   - checking conditions for simple linear regression
   
 editor: 
@@ -52,14 +52,20 @@ ski race in Trondheim. There are 61 racers in the dataset and 20 variables.
 
 ## Questions
 
-1.	Find the correlation between Time1 and Rank4. Is there a strong correlation and if so, is it positive or negative?
+1.    Fit the following models and create scatter plots with regression lines for each of them. Record their R2 values and comment on the linearity. 
 
-2.	Fit a simple linear regression model of Rank4 predicted by Time1. Interpret the coefficient of Time1.
+2.    Which one of the models from Question 1 do you think is best? Why?
 
-3.	Check the conditions for the model, assess its variance, linearity, and residual normality.
+3.    Interpret the slope coefficient for the model you just chose in Question 2. Remember to contextualize. 
 
-4.	Jessie Diggins had a time of 4.82 minutes in Time1, use the model to predict what her Rank4 will be.  
+4.    If a skier is ranked #14 after the first split, what rank would you predict for her finish?
 
+5.    Interpret the slope coefficient for the best of these models to predict Time4. Remember to contextualize.
+
+6.    If a skier had a time of 5.00 minutes after the first split, what time would you predict for her finish?
+
+7.    Can it be concluded that the time and/or rank of a skier after the first distance interval has a substantial impact on their finishing rank and/or time? Explain your answer. 
+ 
 ## References
 
 [FIS Results](https://live.fis-ski.com/cc-2257/results-pda.htm){target="_blank"}
