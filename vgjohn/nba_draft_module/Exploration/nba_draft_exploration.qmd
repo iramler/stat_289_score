@@ -285,4 +285,14 @@ equal variance looks good
 
 something with both the rounds and the pick categories ?? 
 
+```{r}
+nba_round1s %>% group_by(pick_category) %>%
+  summarize(
+    `Sample Size` = n(),
+    Mean = mean(mins_per_game),
+    `Standard Deviation` = sd(mins_per_game)
+  )
+
+
+```
 

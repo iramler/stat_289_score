@@ -35,12 +35,23 @@ Players move the ball up and down the court by dribbling, passing the ball to te
 
 ## Part 2 - Loading and Cleaning the Data 
 
-
 **1.  Load the necessary packages into your R Environment**
+
+```{r echo=TRUE}
+
+```
 
 **2.  Load in the data file `nba_draft`. Store it in an object called `nba_draft`**
 
+```{r echo=TRUE}
+
+```
+
 **3.  Right now, we only want to look at players that were selected in the first round of the draft. Write the correct code that selects only those who were chosen in the first round. Store it in an object called `nba_round1s`.**
+
+```{r echo=TRUE}
+# nba_round1s <- nba_draft %>% filter(round_picked == 1)
+```
 
 **4. In order to being our ANOVA exploration, we need to look at different groups within the round one selections. Since we have the order in which the players were selected (stored in the `pick_in_round` variable), we can make an additional categorical variable to keep track of where in the draft the player was selected. Make a new variable, called `pick_category`, which follows the following conditions: **
 
@@ -48,15 +59,42 @@ Players move the ball up and down the court by dribbling, passing the ball to te
     * `pick_category` = "10-20" if the player was selected in picks 10-20,
     * `pick_category` = "20-30" if the player was selected in picks 20-30
 
-    Note that the first number is exclusive and the second number is inclusive, except for number 1, which should be included in the first group. 
+Note that the first number is exclusive and the second number is inclusive, except for number 1, which should be included in the first group. 
+
+```{r}
+# nba_round1s <- nba_round1s %>%
+#   mutate(
+#     pick_category = case_when(
+#       pick_in_round >= 1 & pick_in_round <= 10 ~ "1-10",
+#       pick_in_round > 10 & pick_in_round <= 20 ~ "10-20",
+#       pick_in_round > 20 & pick_in_round <= 30 ~ "20-30"
+#     )
+#   )
+```
 
 **5. Make the `pick_category` variable a factor with three levels.**
 
+```{r}
+# nba_round1s$pick_category <- factor(nba_round1s$pick_category,
+#                                   levels = c("1-10", "10-20", "20-30"))
+```
 
 ## Part 3 - ANOVA
 
-
 **1. Create a box plot that compares the average minutes played per game based on a player's selection in the first round of the NBA draft. Make sure to include a title, color coded legend, and axis labels.**
+
+```{r}
+# ggplot(nba_round1s,
+#        mapping = aes(x = mins_per_game,
+#                      y = pick_category,
+#                      fill = pick_category)) +
+#   geom_boxplot() +
+#   labs(title = "Boxplot of MPG based on Round 1 NBA draft picks",
+#        x = "Minutes Per Game",
+#        y= "Category in Draft",
+#        fill = "Pick in NBA Draft") +
+#   theme_minimal()
+```
 
 **2. Below is the code to create a density plot comparing the average minutes played per game based on a player's selection in the first round of the NBA draft. Based on this density plot and the box plots you created above, do you feel as though ANOVA is appropriate? What conclusions can you draw upon first glance of the two data visualizations? Are there any concerns? **
 
@@ -83,13 +121,36 @@ Players move the ball up and down the court by dribbling, passing the ball to te
 #   theme_minimal()
 ```
 
+The box plots show that the variance between the three groups seems to be relatively similar, which is necessary for an ANOVA test. There are limited extreme outliers which is good when looking at the distribution and variance. The distribution of the 10-20 and 20-30 groups seem to follow a relatively normal shape and have means somewhat close together. The 1-10 group is skewed slightly to the right which could be slightly concerning. A one-way ANOVA does seem appropriate, the conditions seem met and there could be a significant difference among the groups. 
+
 **3. Now that we've determined ANOVA is most likely appropriate, write and interpret in context the null and alternative hypotheses we'll be using for the ANOVA test. **
+
+* $H_0: \mu_1 = \mu_2 = \mu_3$
+
+  (where $\mu_x$ is the population mean for that group)
+  
+  * The mean number of minutes played in the NBA for players who were picked 1-10, 10-20, and 20-30 in the NBA draft are all equal. 
+
+* $H_a:$ at least one $\mu_1 \neq \mu_2$
+
+  * For at least one group, the mean number of minutes played in the NBA is not equal. (There is at least one group of draft picks that played a different mean number of minutes in the NBA.) 
   
 **4. Run an ANOVA test in R and store it in an object called `mpg_aov`. Print the summary table** 
 
+```{r}
+# mpg_aov <- aov(mins_per_game ~ pick_category,
+#                  data = nba_round1s)
+# 
+# summary(mpg_aov)
+```
+
 **5. Using the ANOVA table, interpret the sum of squares for the groups. What does it imply about the data?** 
+
+* SSG = 13839 This number represents the total variability between the three groups and measures how far apart the mean minutes per game played between the players that were picked 1-10, 10-20, and 20-30. Since it is large, it suggests that there is a relatively large difference between the averages of the three groups. 
 
 **6. Can we conclude there is a difference in the mean amount of minutes played per game based on when a player was selected in the draft? Between which groups are we *most likely* to see a significant difference. Between which groups are we *least likely* to see a significant difference in minutes played. Provide evidence.**
 
+  * We can conclude that there is sufficient evidence to reject the null hypothesis that the mean number of minutes played per game is the same regardless of when a player was selected in the first round of the draft. The p-value given in the ANOVA table is $2*10^{-16}$ meaning there is strong evidence to reject the null hypothesis. From looking at the means in the density plot and box plot, we are most likely to find a difference between those selected 1-10 and those selected 20-30 because there is the largest difference in mean number of minutes played. We are least likely to find a difference between those selected 10-20 and 20-30 because the difference in mean is the smallest. 
+  
 
  
