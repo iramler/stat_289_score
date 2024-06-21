@@ -101,3 +101,10 @@ Calculate by hand here:
 
 
 
+7. Add a predictor variable that will bring at least one of the VIFs over 5 to the model with walk rate, weighted on-base average, and isolated power as predictors of runs. Explain what the variable was and why you think it made one of the VIFs increase.
+
+
+
+8. Brainstorm why multicollinearity can be a problem.
+
+

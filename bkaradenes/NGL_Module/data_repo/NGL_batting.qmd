@@ -52,7 +52,7 @@ The dataset contains 502 rows and 34 columns. Each row represents a player that 
 | begin_year   | year the player begin their career                        |
 | end_year     | final year the player played                              |
 | Pos          | primary position of the player                            |
-| PA           | number of career plate appearences                        |
+| PA           | number of career plate appearances                        |
 
 Data file
 

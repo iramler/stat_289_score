@@ -104,3 +104,19 @@ Sample Answer: Since both isolated power and weighted on-base average both give 
 
 Sample Answer: They should want to maximize their weighted on-base average because that's the most highly correlated with runs scored. So, they should focus on combining high on base numbers with power not just one or the other.
 
+7. Add a predictor variable that will bring at least one of the VIFs over 5 to the model with walk rate, weighted on-base average, and isolated power as predictors of runs. Explain what the variable was and why you think it made one of the VIFs increase.
+
+Sample answer:
+
+```{r}
+modVIF = lm(R ~ wOBA + BB_rate + ISO + OPS, data=batting)
+vif(modVIF)
+```
+
+The OPS variable had a high VIF and made the isolated power and weighted on-base average VIFs increase because it created a high correlation between the variables and raised the possibility that multicollinearity now exists in the model.
+
+8. Brainstorm why multicollinearity can be a problem.
+
+Multicollinearity can be a problem because it undermines the statistical significance of the predictor variables. Meaning, it reduces the precision of the model which makes the p-values untrustworthy.
+
+
