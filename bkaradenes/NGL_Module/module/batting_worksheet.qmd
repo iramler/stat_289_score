@@ -58,7 +58,7 @@ Model 4: Walk percentage, weighted on-base average, and isolated power as a pred
 
 ```
 
-Sample Answer: The p-values are much higher than when I did each individually, likely due to correlations between the independent variables. Also, adding more variables changes the model itself, so it's likely that the model and the p-values change as well. It's surprising that the t-value for the predictor variables decreased by such a large amount due to adding the other variables in the model, perhaps due to correlation between them.
+
 
 e. Install and load the package `GGally` and use the `ggpairs` function to construct a correlation matrix. What do you notice?
 
