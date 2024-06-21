@@ -2,7 +2,7 @@
 title: Visualizing and Modeling Differences in Number of Concussions in the NFL
 author: Eric Seltzer
 date: June 10, 2024
-description: Data of the number of concussions in the NFL from the 2012 season until the 2014 season.
+description: Data of the number of concussions in the NFL from the 2012 season until the 2014 season. It allows for looking into if teams treat their players differntly than other teams, as well as if there is a difference by position on how concussions are treated.
 categories:
   - Data Visualization
   - Data Exploration
@@ -14,11 +14,11 @@ editor:
 
 ## Motivation
 
-This data set is found on Kaggle. It has data on the number of concussions that were reported in the NFL from 2012-2014. Some of the variables it has are the player's name, their team, their position, how long the play on average, and how long they played after the injury occurred.
+This data set is found on Kaggle. It has data on the number of concussions that were reported in the NFL from 2012-2014. Some of the variables it has are the player's name, their team, their position, how long the play on average, and how long they played after the injury occurred. This is an important data set to look at because of the controversy surrounding the NFL and how brain injuries are treated. Many think that they aren't given substantial amounts of time to recover. This could either be coming from the management side, or the player side.
 
 ## Data
 
-This data is made up of 392 rows and 10 columns. Each row represents a player that experienced a concussion during the set time frame.
+This data is made up of 392 rows and 10 columns. Each row represents a player that experienced a concussion during the set time frame. All concussions happened during the regular season, any concussions that happened during pre-season have been left out as they were missing many variables.
 
 | Variable                       | Description                                                       |
 |--------------------------------|-------------------------------------------------------------------|
@@ -33,7 +33,7 @@ This data is made up of 392 rows and 10 columns. Each row represents a player th
 | Offense                        | Whether the player was an offensive player or not                 |
 | Skilled                        | Whether the player was a skilled position or not                  |
 
-: [tennis.csv](../data/tennis.csv)
+: [concussion.csv](../data/concussion.csv)
 
 ## Questions
 
@@ -46,6 +46,8 @@ This data is made up of 392 rows and 10 columns. Each row represents a player th
 4.  Discuss whether it is worth exploring these questions further.
 
 5.  Creating models to explore questions.
+
+6.  Talking about why it's important to look at concussion numbers
 
 ## References
 
