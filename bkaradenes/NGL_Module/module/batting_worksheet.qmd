@@ -17,7 +17,7 @@ ISO – isolated power
 
 1.	Before looking at any output, which of the variables (besides runs scored) in the data description above do you think will be most correlated with runs scored? Explain.
 
-Sample Answer: I think weighted on-base average would be most correlated with runs scored because it takes into account a combination of getting on base and hitting for power. This makes it a more dynamic stat than walk rate and isolated power because it doesn't just focus on one aspect of a hitter's game.
+
 
 ```{r}
 ## Load the necessary packages and data for this worksheet
@@ -31,22 +31,22 @@ batting <- read.csv(here("bkaradenes/NGL_Module/exploration/ngl_batting.csv"))
 a. Model 1: Walk percentage as a predictor of runs scored. Create the model and obtain the summary output.
 
 ```{r}
-mod1 = lm(R ~ BB_rate, data = batting)
-summary(mod1)
+# model here
+
 ```
 
 b. Model 2: Weighted on-base average as a predictor of runs scored. Create the model and obtain the summary output.
 
 ```{r}
-mod2 = lm(R ~ wOBA, data = batting)
-summary(mod2)
+# model here
+
 ```
 
 c. Model 3: Isolated Power as a predictor for runs scored. Create the model and obtain the summary output. 
 
 ```{r}
-mod3 = lm(R ~ ISO, data = batting)
-summary(mod3)
+# model here
+
 ```
 
 d. Now create a model that uses all three (isolated power, weighted on base average, and walk rate) as predictors for runs scored. Look at the summary output. Is there anything surprising about your results? How do the p-values differ from when you did each individually and why?
@@ -54,8 +54,8 @@ d. Now create a model that uses all three (isolated power, weighted on base aver
 Model 4: Walk percentage, weighted on-base average, and isolated power as a predictor for runs scored
 
 ```{r}
-mod4 = lm(R ~ BB_rate + wOBA + ISO, data = batting)
-summary(mod4)
+# model here
+
 ```
 
 Sample Answer: The p-values are much higher than when I did each individually, likely due to correlations between the independent variables. Also, adding more variables changes the model itself, so it's likely that the model and the p-values change as well. It's surprising that the t-value for the predictor variables decreased by such a large amount due to adding the other variables in the model, perhaps due to correlation between them.
@@ -63,44 +63,41 @@ Sample Answer: The p-values are much higher than when I did each individually, l
 e. Install and load the package `GGally` and use the `ggpairs` function to construct a correlation matrix. What do you notice?
 
 ```{r}
-library(GGally)
-ggpairs(data = batting, columns = c("R", "wOBA", "BB_rate", "ISO"))
+# construct matrix here
+
 ```
 
-Sample Answer: There is a high correlation between wOBA and ISO and correlations between all of the variables. This explains why the p-values and standard errors increased when we added them all together in one model. 
+ 
 
 3. Compute the vif of the model with all of the predictor variables by hand and verify your answers by using the `vif()` function from the car package.
 
 ```{r}
-modwOBA = lm(wOBA ~ R + BB_rate + ISO, data=batting)
-modBB = lm(BB_rate ~ R + wOBA + ISO, data=batting)
-modISO = lm(ISO ~ R + BB_rate + wOBA, data=batting)
+# make your models here
+
 ```
 
 ```{r}
-summary(modwOBA)
-summary(modBB)
-summary(modISO)
+# get the summary output here
+
 ```
 
-wOBA: 1/(1-0.79) = 4.762
-BB_rate: 1/(1-0.2667) = 1.364
-ISO: 1/(1-0.7528) = 4.045
+Calculate by hand here:
+
 
 ```{r}
-library(car)
-vif(mod4)
+# find VIFs using car package here
+
 ```
 
 4. Are any of these VIFs high? Explain.
 
-Sample Answer: No, all of the VIFs are under 5, so they wouldn't be considered high indicating that the predictors have low correlations with the other predictors. In particular, walk rate has the lowest VIF, so it has the lowest correlation with the other predictor variables. This is good because lower VIFs mean the model is more likely to be more accurate.
+
 
 5. Looking back at the correlation matrix you constructed in question 2e, why do you think isolated power and weighted on-base average had the highest correlation? Why do you think walk rate and isolated power had the lowest. Refer back the top of this file for detailed descriptions of the variables.
 
-Sample Answer: Since both isolated power and weighted on-base average both give high weights to extra base hits, it makes sense that they would be highly correlated with each other. Walk rate and isolated power had the lowest correlation because they use different metrics to calculate their stats. Walk rate uses walks per plate appearance while isolated power only takes into account doubles triples and homeruns per at-bat. 
+
 
 6. Of the three predictors, which do you think a player should focus on maximizing if they want to score more runs? Explain.
 
-Sample Answer: They should want to maximize their weighted on-base average because that's the most highly correlated with runs scored. So, they should focus on combining high on base numbers with power not just one or the other.
+
 
