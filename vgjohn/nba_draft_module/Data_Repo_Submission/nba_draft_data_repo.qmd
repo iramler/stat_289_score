@@ -4,9 +4,8 @@ author: "Vivian Johnson"
 date: "June 17, 2024" 
 
 categories:
-  - ANOVA
+  - One-Way ANOVA
   - Difference in means 
-  - Difference in proportions
 ---
 
 ## Motivation
@@ -65,9 +64,20 @@ The `nba_draft` data set includes data from players that were selected in the NB
 | pts_per_game      | Average number of points scored per game for career in the NBA                                                       |
 | rebounds_per_game | Average number of rebounds per game for career in the NBA                                                            |
 | assists_per_game  | Average number of assists per game for career in the NBA                                                             |
+| round_picked | Indicates the round the player was selected (either round 1 or round 2) |
+| pick_in_round | Indicates the order in which players were selected in that round | 
 
 : [nba_draft.csv](stat_289_score/vgjohn/nba_draft_module/Data_Repo_Submission/nba_draft.csv)
 
 ## Questions
 
+1. State the null and alternative hypotheses for a one-way ANOVA test in the context of the data. 
+
+2. Comment on the amount of variability within groups compared to amount of variability between groups. 
+
+3. Explain the results of the one-way ANOVA test and some of the applications the results can be used for. 
+
 ## References
+
+[20 Years of NBA Draft Data - Kaggle](https://www.kaggle.com/datasets/benwieland/nba-draft-data){target="_blank"}
+

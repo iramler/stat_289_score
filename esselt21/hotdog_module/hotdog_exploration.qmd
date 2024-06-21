@@ -10,15 +10,3 @@ male <-
 female <-
   read_csv(here::here("esselt21/hotdog_module/hotdog_female.csv"))
 ```
-
-
-```{r}
-female <-
-  female |>
-  mutate(dunkingEra = if_else(Year >= 2001, TRUE, FALSE))
-```
-
-```{r}
-write_csv(female, here::here("esselt21/hotdog_module/hotdog_female.csv"))
-```
-

@@ -677,6 +677,22 @@ $pick_category
 </div>
 </div>
 <p>All of the groups are different as seen by the p values</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>((nba_round1s <span class="sc">%&gt;%</span> <span class="fu">filter</span>(pick_category <span class="sc">==</span> <span class="st">"1-10"</span>))<span class="sc">$</span>mins_per_game)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.812554</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>((nba_round1s <span class="sc">%&gt;%</span> <span class="fu">filter</span>(pick_category <span class="sc">==</span> <span class="st">"10-20"</span>))<span class="sc">$</span>mins_per_game)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.178399</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>((nba_round1s <span class="sc">%&gt;%</span> <span class="fu">filter</span>(pick_category <span class="sc">==</span> <span class="st">"20-30"</span>))<span class="sc">$</span>mins_per_game)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.256302</code></pre>
+</div>
+</div>
+<p>equal variance looks good</p>
+<p>something with both the rounds and the pick categories ??</p>
 </section>
 
 </main>
