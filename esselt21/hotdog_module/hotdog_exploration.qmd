@@ -10,3 +10,50 @@ male <-
 female <-
   read_csv(here::here("esselt21/hotdog_module/hotdog_female.csv"))
 ```
+
+```{r}
+model <- lm(HDB ~ BMI + Gender + dunkingEra, data = total)
+
+summary(model)
+```
+
+```{r}
+male |>
+  ggplot(aes(x = as_factor(Year),
+             y = HDB,
+             fill = dunkingEra)) +
+  geom_col(alpha = 0.5) +
+  theme_minimal() +
+  coord_flip() +
+  labs(fill = "Buns Dunked?",
+       x = "Year of Contest",
+       y = "Hot Dogs and Buns Eaten",
+       title = "Winning Number of Hot Dogs Eaten")
+```
+
+
+```{r}
+avg_ratio <-
+  male |>
+  group_by(Winner) |>
+  summarise(avg_ratio = mean(bmi_dog_ratio))
+
+female_ratio <-
+  female |>
+  group_by(Winner) |>
+  summarise(avg_ratio = mean(bmi_dog_ratio))
+
+avg_ratio <-
+  bind_rows(avg_ratio,
+            femalef)
+
+avg_ratio |>
+  ggplot(aes(x = reorder(Winner, avg_ratio),
+             y = avg_ratio,
+             fill = Winner)) +
+  geom_col(alpha = 0.6) +
+  theme_minimal() +
+  coord_flip() +
+  theme(legend.position = "none")
+```
+
