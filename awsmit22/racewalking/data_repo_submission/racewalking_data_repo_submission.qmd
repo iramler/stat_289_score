@@ -46,13 +46,13 @@ In the dataset there are 237 cases with 10 variables. Each case is a male or fem
 
 2.    Perform a t.test to determine if there is a significant difference in the mean speed for each distance.
 
-3.    Use a two-way ANOVA to determine if their is a significant difference in the mean speed for each distance and for each gender? 
+3.    Use a two-way ANOVA test to determine if there is a significant difference in the mean speed for each distance and for each gender? 
 
-4.    Calculate the log(odds), odds, and predicted odds for a female athlete walking in the 10k with a podium finish and a speed of 221 meters per minute. 
+4.    Fit the model: REC = DISTANCE + PODIUM + SPEED + GENDER. A female athlete walked in the 10k with a podium finish and a speed of 221 meters per minute. Calculate the log(odds), odds, and predicted odds of her making a record.  
 
 5.    Perform a g-test to assess the overall fit of the multiple logistic regression model: REC = DISTANCE + PODIUM + SPEED + GENDER 
 
-6.    After performing all of these tests on different models, are there any noticeable differences in the different races the athletes competed in?
+6.    After performing all of these tests on different models, are there any noticeable differences in the different races the athletes competed in? Are there any discernable patterns with records?
 
 ## References
 

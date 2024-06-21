@@ -40,12 +40,12 @@ t.test(SPEED~DISTANCE, var.equal=TRUE, data=racewalking_df)
 Based on the below boxplot would you say that there is a significant difference in the mean speed for each distance and for each gender?
 
 ```{r}
-ggplot(racewalking_df, aes(y = SPEED, x = DISTANCE, fill = DISTANCE)) + geom_boxplot(show.legend = FALSE) + facet_wrap(~GENDER) + theme_minimal() + scale_fill_brewer()
+ggplot(racewalking_df, aes(y = SPEED, x = DISTANCE, fill = DISTANCE)) + geom_boxplot(show.legend = FALSE) + facet_wrap(~GENDER) + theme_minimal() + scale_fill_brewer() 
 ```
 
 # Question 4
 
-Use a two-way ANOVA to determine if their is a significant difference in the mean speed for each distance and for each gender?
+Use a two-way ANOVA test to determine if there is a significant difference in the mean speed for each distance and for each gender?
 
 ```{r}
 amodA <- aov(SPEED~DISTANCE,data=racewalking_df)
@@ -60,23 +60,42 @@ summary(amodC)
 
 # Question 5
 
-Calculate the log(odds), odds, and predicted odds for a female athlete walking in the 10k with a podium finish and a speed of 221 meters per minute.
+Fit the model: REC = DISTANCE + PODIUM + SPEED + GENDER. 
+
+```{r}
+# a)
+mod_rec <- glm(REC ~ DISTANCE + PODIUM + SPEED + GENDER, family = "binomial", data = racewalking_df)
+mod_rec |> tidy()
+
+# b)
+# i)
+log_odds <- -0.255-(1.27*0)-(1.98*1)+(0.00729*221)-(0.123*1)
+log_odds
+
+# ii)
+odds <- exp(-0.74691)
+odds
+
+# iii)
+pihat <- 0.4738284/(1+0.4738284)
+pihat
+```
+
+
+A female athlete walked in the 10k with a podium finish and a speed of 221 meters per minute. Calculate the log(odds), odds, and predicted odds of her making a record. 
 
 # Question 6
 
 Perform a g-test to assess the overall fit of the multiple logistic regression model: REC = DISTANCE + PODIUM + SPEED + GENDER 
 
 ```{r}
-record_mod <- glm(REC ~ DISTANCE + PODIUM + SPEED + GENDER, family = "binomial", data = factors)
-record_mod |> tidy()
+record_mod <- glm(REC ~ DISTANCE + PODIUM + SPEED + GENDER, family = "binomial", data = racewalking_df)
 record_mod |> summary()
-```
 
-```{r}
-g_stat = 319.17 - 291.97
+# g-stat)
+g_stat <-319.17 - 291.97
 g_stat
-```
 
-```{r}
+# p-value)
 1-pchisq(g_stat,4)
 ```
