@@ -52,6 +52,10 @@ Since the data are provided, instructors are encouraged to modify the worksheets
 
 The data set contains 606 rows and 10 columns. Each row represents a swimmer who competed in the 100m Olympic event during the period 1924 to 2020.
 
+Download data:
+
+Available on the [SCORE Data Repository](https://data.scorenetwork.org/): [olympic_swimming.csv](https://github.com/SCOREnetworkorg/sports-data-repository/raw/main/data/olympic_swimming.csv)
+
 <details>
 
 <summary><b>Variable Descriptions</b></summary>
