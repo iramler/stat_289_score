@@ -89,13 +89,106 @@ ultimate_full <- ultimate_data |> mutate(turns_per_game = Turns/team_games,
 ultimate_full |> arrange(desc(Assists)) |> slice(1:15) |> select(Player, Assists, ast_per_game)
 ```
 
+2. Which player had the most points and assists combined in each division?
 
-2. Make a jitter comparing division and assists
+```{r}
+ultimate_full |> mutate(pts_contributed = Points + Assists) |> group_by(full_division_name) |> arrange(desc(pts_contributed)) |> select(Player, Points, Assists, pts_contributed) |> slice(1)
+
+## Leo Gordon, Jolie Krebs, Jacob Felton, Julianna Galian
+```
+
+
+3. Make a plot comparing division and assists
 
 ```{r}
 ggplot(data = ultimate_full, aes(y = Assists, x = full_division_name)) +
   geom_jitter(aes(color = full_division_name))
+
+
+ggplot(data = ultimate_full, aes(y = Assists, x = full_division_name)) +
+  geom_boxplot(aes(color = full_division_name))
+
+ggplot(data = ultimate_full, aes(y = Assists, x = full_division_name)) +
+  geom_violin(aes(color = full_division_name))
+
+
+## Could do boxplot or strip plot, violin plot would also work but doesn't display the data very well
 ```
+
+
+4. 
+
+a. Make a plot that compares Turns and Assists, label the players in the top 10 for assists using geom_text().
+
+```{r}
+top_10_assists <- ultimate_full |> arrange(desc(Assists)) |> slice(1:10)
+
+ggplot(data = ultimate_full, aes(x = Assists, y = Turns)) +
+  geom_point(color = "skyblue4") +
+  geom_text(data = top_10_assists, aes(label = Player))
+
+
+## Could also color = full_division_name
+
+ggplot(data = ultimate_full, aes(x = Assists, y = Turns)) +
+  geom_point(aes(color = full_division_name)) +
+  geom_text(data = top_10_assists, aes(label = Player))
+```
+
+
+b. Based on this plot, should any of the players in the top 10 for assists throw the disc less? 
+
+
+5. 
+
+a. Make a plot comparing Turns and Division. Are there any differences between the divisions?
+
+```{r}
+ggplot(data = ultimate_full, aes(x = full_division_name, y = Turns)) +
+  geom_boxplot(aes(color = full_division_name)) +
+  geom_text(data = top_10_assists, aes(label = Player))
+```
+
+b. Add in the players that are top 10 in assists. What does a high assist total indicate about your turnover rate?
+
+Players with a high assist count all tend to be outliers in the Turnover category. They likely are handlers who throw the disc significantly more than most other players.
+
+
+6. Plot Turns vs. plus_minus and use full_division_name as the color aesthetic, describe the relationship between Turns and plus_minus.
+
+```{r}
+ggplot(data = ultimate_full, aes(x = plus_minus, y = Turns)) +
+  geom_point(aes(color = full_division_name))
+
+## This is a moderate negative linear relationship. Not a very strong relationship, but there is definitely a correlation between large amounts of turnovers and a lower plus/minus.
+```
+
+
+7. 
+
+a. Make a bar plot with the top 15 point scorers in order using reorder if necessary. Group by full division name and note if any players are in the same division.
+
+```{r}
+top_15_points <- ultimate_full |> arrange(desc(Points)) |> slice(1:15) |> mutate(Player = reorder(Player, Points))
+
+ggplot(data = top_15_points, aes(y = Player, x = Points)) +
+  geom_col(aes(fill = full_division_name))
+```
+
+b. Make the same bar plot with the top 15 players in Ds and compare the distribution of divisions.
+
+```{r}
+top_15_ds <- ultimate_full |> arrange(desc(Ds)) |> slice(1:15) |> mutate(Player = reorder(Player, Ds))
+
+ggplot(data = top_15_ds, aes(y = Player, x = Ds)) +
+  geom_col(aes(fill = full_division_name))
+
+
+## Points is fairly balanced, with every division included while Ds only has the women's divisions, with D3 taking 11 of the top 15 spots.
+```
+
+
+8. 
 
 
 
