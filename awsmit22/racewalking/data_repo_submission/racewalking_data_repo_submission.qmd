@@ -7,6 +7,7 @@ categories:
  -  Distribution and skewness
  -  Two-Sample t.test
  -  Two-Way ANOVA for difference in means
+ -  Odds, predicted odds, and log(odds)
  -  G-test for overall fit 
   
 editor: 

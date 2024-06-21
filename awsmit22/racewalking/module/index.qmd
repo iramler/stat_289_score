@@ -1,0 +1,139 @@
+---
+title: "World Athletics Race Walking Team Championships 2024"
+author:
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Abigail Smith
+    affiliation:
+      - ref: slu
+date: June 21, 2024
+description: Comparing both the 10 and 20k speeds and records for racers and countries in the 2024 World Athletics Race Walking Team Championships in Antalya, Turkey.
+categories:
+ -  Distribution and skewness
+ -  Two-Sample t.test
+ -  Two-Way ANOVA for difference in means
+ -  Odds, predicted odds and log(odds)
+ -  G-test for overall fit 
+---
+
+### Welcome video
+
+{{< video  title="World Athletics Race Walking Team Championships 2024" >}}
+
+### Introduction
+
+This activity examines the speeds, records and podium finishes of race walkers at the [World Athletics Race Walking Team Championships 2024](https://worldathletics.org/competitions/world-athletics-race-walking-team-championshi/world-athletics-race-walking-team-championshi-7199325){target="_blank"}. 
+
+[Race walking](https://en.wikipedia.org/wiki/Racewalking){target="_blank"} is a competitive individual sport with a similar layout to cross country running, except instead of running, competitors walk. Athletes utilize a swift walking motion which involves a lot of movement of the hips and arms, enabling them to move faster. Just like in running the first participant to cross the finish line wins. According to [Olympic rules](https://olympics.com/en/news/all-you-need-to-know-about-race-walking){target="_blank"}. The main rule in racewalking is that racewalkers **must** maintain contact with the ground at **all times**, unlike in running when the stride often involves both feet being off the ground. Additionally, racewalkers can not bend their leading knee when they are walking. Judges are positioned throughout courses to ensure these rules are withheld. If an athlete violates either of the rules, judges show them a "warning paddle". Three warning paddles result in a red paddle which means the athlete is disqualified from the event. These rules provide an added challenge to the sport. 
+
+The World Athletics Race Walking Team Championships are an international race walking event hosted annually in different cities. After events are completed, total medals are tallied for each country competing, which is why they are considered the "team" championships.In addition to winning medals for 1st, 2nd, and 3rd place respectively, athletes can also set new records for both themselves as well as others.The 2024 championship was hosted in Antalya, Turkey and consisted of four events, a women's 10 and 20k, and a men's 10 and 20k. 
+
+Analyzing podium finishes, records, and speeds in long (20k) and shorter (10k) distance races can provide insight on patterns in either event, such as which countries dominate. Additionally, comparing the speeds between the distances can show if there is a difference in pacing approaches in a long race versus a shorter race. Assessing the number of records can further discern whether or not certain approaches are more successful than others.
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This activity could be used as a cumulative quiz or take home assignment for final exam prep. 
+:::
+
+
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of the activity, students will be able to:
+
+1.  Assess the difference in means for two groups
+2.  Evaluate the difference in means across two factors
+3.  Fit a multiple logistic regression model
+4.  Calculate odds, log(odds), and predicted odds for a multiple logistic regression model
+5.  Evaluate the overall fit of a multiple logistic regression model
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Students will use a basic understanding of histograms and boxplots to assess the distribution of grouped data. Students will further assess the difference in groups, using 
+:::
+
+::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
+The tech worksheet will require the use of statistical software for most of the questions. The no-tech worksheet will not require any technology other than a calculator. 
+:::
+
+### Data
+
+The dataset has 309 players from 18 different clubs, with 7 variables, 4 of which are statistics. Each row in the data set is a player in the Handball-Bundesliga during the 2022-23 season. The statistics are cumulative for the entirety of the season. The dataset only contains players who played in 10 games or more.
+
+Download data: 
+
+: [handball.csv](handball.csv){target="_blank"}
+
+<details>
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description                                                                                                                                                                                                                   |
+|--------------------|----------------------------------------------------|
+| `NAME` | The name of the player. |
+| `CLUB`            | The club the player is on. There are 18 in the Bundesliga.                                                                                                                                                                    |
+| `POSITION`        | The position of the player. There are 7 positions in handball: goalkeeper, fullbacks (left and right), center backcourt, wingers (left and right), and pivot.                                                                 |
+| `P`               | The number of games the player was in that season.                                                                                                                                                                            |
+| `total_offense`   | The total offensive plays made by the player in the season. Calculated by adding the 6 offensive focused statistics from the original dataset.                                                                                |
+| `total_penalties` | The total penalties the player had in the season. Calculated by adding the 5 penalty related statistics from the original dataset.|                                                             
+| `HPI`             | Handball performance index, complex formulaic calculation equivalent to how well the player performed in the season. Players with HPIs in the 70s are considered good, while players in the 60s are considered not as strong. |
+
+
+
+**Data Source**
+
+[Kaggle Original
+Dataset](https://www.kaggle.com/datasets/nemanjagojkovic/handball-bundesliga-stats-202223){target="_blank"}
+
+**More information on the rules**
+
+[Olympic Handball
+Rules](https://olympics.com/en/news/handball-game-rules-regulations-how-to-play){target="_blank"}
+
+[Handball
+Positions](https://www.theukrules.co.uk/rules/sport/handball/player-positions/#google_vignette){target="_blank"}
+
+[Handball Performance Index (HPI)](https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/){target="_blank"}
+
+</details>
+
+### Materials
+
+We provide editable MS Word handouts along with their solutions.
+
+[Tech Worksheet](handball_worksheet_tech.docx)
+
+[Tech Worksheet Answers](handball_worksheet_tech_answers.docx)
+
+[No Tech Worksheet](handball_worksheet_no_tech.docx)
+
+[No Tech Worksheet Answers](handball_worksheet_answers_no_tech.docx)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+After completing this activity, students should be able to draw a conclusion about if an aggressive strategy in handball really garners more success. Students should come to this conclusion through statistical analysis of the use of `total_penalties` and `total_offense` to predict `HPI`. Students will also be able to assess the relationship between `total_penalties` and `total_offense` which can provide furtehr insight on the relationship between aggressive play and offensive strength. 
+:::
+---
+title: "index"
+format: html
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this 
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).

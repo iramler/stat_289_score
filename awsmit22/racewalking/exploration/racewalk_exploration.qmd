@@ -115,85 +115,6 @@ summary(mod)
 sum <- racewalking_df |> mutate(n_rec = if_else(RECORD != "NONE", true = 1, false = 0)) |> filter(n_rec == 1) |> group_by(COUNTRY) |> summarise(tot_rec = sum(n_rec), avg_speed = mean(SPEED))
 ```
 
-
-# Logistic regression for whether or not the athlete gets a record
-# Might use
-could do it predicted by speed as well as distance
-
-that would mean a binary response predicted by a binary predictor and a quantitative predictor
-
-```{r}
-recs <- racewalking_df |> mutate(rec = if_else(RECORD != "NONE", true = 1, false = 0))
-```
-
-```{r}
-rec_mod <- glm(rec ~ SPEED,
-                   data = recs, family = "binomial")
-rec_mod
-```
-
-```{r}
-rec_mod |> tidy()
-```
-
-
-# want to use but i dont think i can
-```{r}
-library(modelr)
-grid <- racewalking_df |>
-  data_grid(
-    SPEED = seq_range(SPEED, n = 10),
-    GENDER = c("Man", "Woman"),
-    DISTANCE = c("10000", "20000")
-  ) 
-grid
-```
-
-```{r}
-rec_large <- glm(REC ~ SPEED + GENDER + DISTANCE, data = racewalking_df,
-                     family = "binomial")
-rec_large |> tidy()
-```
-
-```{r}
-aug_rec <- augment(rec_large, newdata = grid,
-                    se_fit = TRUE)
-aug_rec
-```
-
-```{r}
-aug_pred <- aug_rec |> mutate(.predprob = exp(.fitted)/(1 + exp(.fitted)))
-```
-
-```{r}
-rec_large_int <- glm(REC ~ SPEED + GENDER + DISTANCE + GENDER:DISTANCE, data = racewalking_df,
-                     family = "binomial")
-rec_large_int |> tidy()
-```
-
-```{r}
-aug_rec_int <- augment(rec_large_int, newdata = grid,
-                    se_fit = TRUE)
-aug_rec_int
-
-aug_pred_int <- aug_rec_int |> mutate(.predprob = exp(.fitted)/(1 + exp(.fitted)))
-```
-
-```{r}
-rug_rec <- racewalking_df |> filter(REC == 1)
-rug_norec <- racewalking_df |> filter(REC == 0)
-ggplot(data = racewalking_df, aes(x = SPEED, y = REC)) +
-  geom_rug(data = rug_rec, sides = "t", alpha = 0.3) + geom_rug(data = rug_norec, sides = "b", alpha = 0.3) +
-  geom_smooth(method = "glm", method.args = list(family = "binomial")) +
-  theme_minimal()
-```
-
-```{r}
-plot <- bind_rows(lst(aug_pred, aug_pred_int), .id = "model")
-
-ggplot(data = plot, aes(x = SPEED, y = .predprob)) + geom_line(aes(colour = model), linewidth = 2) + facet_grid(GENDER ~ DISTANCE) + geom_rug(data = rug_rec, sides = "t", alpha = 0.3, aes(y = REC)) + geom_rug(data = rug_norec, sides = "b", alpha = 0.3, aes(y = REC)) + theme_minimal() + scale_color_viridis_d()
-```
-
 # Difference in props (records)
 
 # probably going to use
@@ -202,11 +123,6 @@ ggplot(data = plot, aes(x = SPEED, y = .predprob)) + geom_line(aes(colour = mode
 prop_records <- racewalking_df |>group_by(COUNTRY) |> summarise(n_record = sum(REC), prop = n_record/n()) |> filter(n_record >=2) |>mutate(COUNTRY = fct_reorder(COUNTRY, n_record)) |> filter(prop < 1) |> mutate(COUNTRY = fct_reorder(COUNTRY, prop))
 
 ggplot(data = prop_records, aes(x = COUNTRY, y = prop)) + geom_col() + coord_flip() 
-```
-
-```{r}
-lgl <- racewalking_df |> mutate(REC = if_else(RECORD != "NONE", true = TRUE, false = FALSE))
-lgl |> group_by(COUNTRY) |> summarise(total_rec = sum(REC))
 ```
 
 # might use
@@ -218,25 +134,25 @@ prop_round <- round(prop$prop, digits = 3)
 
 ggplot(prop, aes(x = RECORD, y = prop)) + geom_col() + geom_text(aes(label = prop_round), nudge_y = 0.01)
 ```
-# Don't think I'll use
-```{r}
-prop_records_dist <- n_records |>group_by(DISTANCE) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) 
 
-ggplot(data = prop_records_dist, aes(x = DISTANCE, y = prop)) + geom_col()
-```
 # might use
 ```{r}
-prop_records_dist <- podium |>group_by(COUNTRY, DISTANCE) |> summarise(n= n(), n_record = sum(REC), prop = n_record/n) |> filter(prop <1 & prop > 0)
+prop_records_dist <- racewalking_df |>group_by(COUNTRY, DISTANCE) |> summarise(n= n(), n_record = sum(REC), prop = n_record/n) |> filter(prop <1 & prop > 0)
 
 ggplot(data = prop_records_dist, aes(x = DISTANCE, y = prop)) + geom_boxplot()
 ```
 
 # need to finish
 ```{r}
-success <- recs |> filter(rec == 1)
-success <- (success$rec)
-prop.test()
+success <- racewalking_df |> mutate(SUCCESS = if_else(REC == TRUE, true = 1, false = 0), FAILURE = if_else(REC == FALSE, true = 1, false = 0))
+
+prop_test <- success |> group_by(DISTANCE) |> summarise(n_athletes = n(), tot_success = sum(SUCCESS), tot_fail = sum(FAILURE)) |> mutate(prop = tot_success/n_athletes) |> filter(prop > 0 & prop <1)
+
+successvec <- prop_test$tot_success
+athletesvec <- prop_test$n_athletes
+prop.test(successvec, athletesvec)
 ```
+
 
 
 # Linear regression with POS predicted by COUNTRY, ATHLETE AND RECORD and maybe speed
