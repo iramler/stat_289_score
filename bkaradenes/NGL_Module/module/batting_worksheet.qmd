@@ -64,7 +64,7 @@ e. Install and load the package `GGally` and use the `ggpairs` function to const
 
 ```{r}
 # construct matrix here
-
+## install.packages("GGally")
 ```
 
  

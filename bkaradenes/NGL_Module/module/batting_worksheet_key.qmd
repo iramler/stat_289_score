@@ -22,8 +22,7 @@ Sample Answer: I think weighted on-base average would be most correlated with ru
 ```{r}
 ## Load the necessary packages and data for this worksheet
 library(tidyverse)
-library(here)
-batting <- read.csv(here("bkaradenes/NGL_Module/exploration/ngl_batting.csv"))
+batting <- ("ngl_batting.csv")
 ```
 
 2. Let's consider three different models to predict runs scored.
@@ -63,6 +62,7 @@ Sample Answer: The p-values are much higher than when I did each individually, l
 e. Install and load the package `GGally` and use the `ggpairs` function to construct a correlation matrix. What do you notice?
 
 ```{r}
+## install.packages("GGally")
 library(GGally)
 ggpairs(data = batting, columns = c("R", "wOBA", "BB_rate", "ISO"))
 ```
