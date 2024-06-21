@@ -1,0 +1,107 @@
+---
+title: "Ultimate Worksheet"
+author: "Gavin Cassidy"
+format: html
+---
+
+Ultimate, also known as Ultimate Frisbee is a sport playe with 2 teams of 7
+
+## Import Packages
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+## Data Import
+
+Load in both tables with data from the 2024 College Ultimate Championships.
+```{r}
+ultimate_statistics <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Ultimate/data_repo/ultimate_total.csv")
+ultimate_games <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Ultimate/data_repo/ultimate_per_game.csv")
+```
+
+
+## Tidy and Clean Data
+
+Starting with the ultimate_statistics table, make the table in a tidy format using the pivot_wider() function.
+
+```{r}
+ultimate_statistics <- ultimate_statistics |> pivot_wider(names_from = Measure.Names, values_from = Measure.Values)
+```
+
+After Using pivot_wider to make each row contain the statistics from 1 player, use pivot wider on ultimate_games as well.
+
+```{r}
+ultimate_games <- ultimate_games |> pivot_wider(names_from = Measure.Names, values_from = Measure.Values)
+```
+
+Then use a join to combine the 2 tables by Player.
+
+```{r}
+ultimate_data <- left_join(ultimate_statistics, ultimate_games, by = join_by(Player))
+```
+
+Are there any repeated columns, if so use select to remove these columns.
+
+```{r}
+ultimate_data <- ultimate_data |> select(Player, 
+                                         Competition.Level.x, 
+                                         Full.Division.Name.x, 
+                                         Full.Team.Name.x, 
+                                         Gender.Division.x, 
+                                         Turns, 
+                                         Ds, 
+                                         Assists, 
+                                         Points, 
+                                         `Plus Minus`, 
+                                         `Team Games`)
+```
+
+Are columns named appropriately? Use a rename function to rename columns.
+
+```{r}
+ultimate_data <- ultimate_data |> rename(competition_level = Competition.Level.x, 
+                        full_division_name = Full.Division.Name.x, 
+                        full_team_name = Full.Team.Name.x,
+                        gender_division = Gender.Division.x,
+                        plus_minus = `Plus Minus`,
+                        team_games = `Team Games`)
+## Could also rename other variables to be lowercase
+```
+
+
+Now that the current data is in a tidy form, create new variables that have statistics in a per_game format using a mutate function.
+
+```{r}
+ultimate_full <- ultimate_data |> mutate(turns_per_game = Turns/team_games, 
+                                         ds_per_game = Ds/team_games,
+                                         ast_per_game = Assists/team_games,
+                                         pts_per_game = Points/team_games,
+                                         pls_mns_per_game = plus_minus/team_games)
+```
+
+## Data Visualization
+
+1. Using dplyr functions, make a table that finds the top 15 players in assist totals from any division. Only include, player name, assists, and assists per game in your final table.
+
+```{r}
+ultimate_full |> arrange(desc(Assists)) |> slice(1:15) |> select(Player, Assists, ast_per_game)
+```
+
+
+2. Make a jitter comparing division and assists
+
+```{r}
+ggplot(data = ultimate_full, aes(y = Assists, x = full_division_name)) +
+  geom_jitter(aes(color = full_division_name))
+```
+
+
+
+
+
+
+
+
+
