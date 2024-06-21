@@ -1,9 +1,12 @@
 ---
 title: 2024 College Ultimate Championship Statistics
 author: Gavin Cassidy
-date: June 20, 2024
+date: June 21, 2024
 description: College Ultimate Chamionship Statistics contianing statistics from the 2024 Division 1 and 3 Men's and Women's Ultimate Championships 
 categories:
+  - Data Cleaning
+  - Merging
+  - Data Visualization
 ---
 
 ## Motivation
@@ -14,35 +17,52 @@ College ultimate games follow the USA Ultimate rules, which dictate a game to 15
 
 ## Data
 
-This data comes from the 2024 Division 1 and 3 Men's and Women's College Ultimate Championships. It contains scoring and defensive statistics for players from each game played at the two tournaments. Each row contains information for a player including division and team information and individual statistics.
+This data comes from the 2024 Division 1 and 3 Men's and Women's College Ultimate Championships. It contains scoring and defensive statistics for players from each game played at the two tournaments. There are 2 tables, the first one contains player statistics. This table has 8325 rows and 8 columns, 5 rows for each player in the data set.
 
-| Variable           | Description                                                                                     |
-|-----------------------|-------------------------------------------------|
-| Player             | player name                                                                                     |
-| Competition level  | The level that the player was competing at                                                      |
-| Full Division Name | level and gender of the competing player's division                                             |
-| Full Team Name     | full name of the players team                                                                   |
-| Gender Division    | gender of the player's division                                                                 |
-| Points             | number of points the player scored                                                              |
-| Assists            | number of assists the player scored                                                             |
-| Turns              | number of turnovers the player threw                                                            |
-| Ds                 | number of defensive blocks the player made                                                      |
-| Plus Minus         | the point differential while the player was on the field(+1 when team score, -1 when scored on) |
-| Total Games        | number of games the player's team played                                                        |
-| pts_per_game       | average points scored per game                                                                  |
-| ast_per_game       | average assists thrown per game                                                                 |
-| turns_per_game     | average turnovers thrown per game                                                               |
-| ds_per_game        | average defensive blocks made per game                                                          |
-| +/-\_per_game      | average plus minus per game                                                                     |
+| Variable               | Description                                                                       |
+|-------------------------|----------------------------------------------|
+| Player                 | player name                                                                       |
+| Measure Names          | the statistic measured by Measure Values (Points, Assists, Turns, Ds, Plus Minus) |
+| Competition Level      | The level that the player was competing at                                        |
+| Full Division Name     | level and gender of the competing player's division                               |
+| Full Team Name Correct | full name of the players team(Same as Full Team Name)                             |
+| Full Team Name         | full name of the players team                                                     |
+| Gender Division        | gender of the player's division                                                   |
+| Measure Values         | the measured value of the statistic from Measure Name                             |
 
-Background Information:
+::: {.callout-note collapse="true" title="Measured Statistics" appearance="minimal"}
+Points: number of points the player scored Assists: number of assists the player scored Turns: number of turnovers the player threw Ds: number of defensive blocks the player made Plus Minus: the point differential while the player was on the field(+1 when team score, -1 when scored on)
+:::
 
-The 2024 Division 3 College Ultimate Championships took place May 18th-20th, where St. Olaf's Berzerkers won the Men's Championship over Williams WUFO. In the Women's Championship, Portland UPRoar defeated Carleton College Eclipse in the finals. Each division had 16 teams.
+The 2nd table contains the total games played by each player in the College Ultimate Championships. It has 1665 rows and 8 columns.
 
-The 2024 Division 1 College Ultimate Championships took place May 24th-27th, where Brown Brownian Motion defeated Cal Poly-SLO Slocore in the Men's Championship. North Carolina Pleiades defeated Stanford Superfly in the Women's Championship. Each division had 20 teams. 
+| Variable               | Description                                                                |
+|-------------------------|----------------------------------------------|
+| Player                 | player name                                                                |
+| Measure Names          | the statistic measured by Measure Values (Only Total Games for this Table) |
+| Competition Level      | The level that the player was competing at                                 |
+| Full Division Name     | level and gender of the competing player's division                        |
+| Full Team Name Correct | full name of the players team(Same as Full Team Name)                      |
+| Full Team Name         | full name of the players team                                              |
+| Gender Division        | gender of the player's division                                            |
+| Measure Values         | the measured value of the statistic from Measure Name                      |
+
+::: {.callout-note collapse="true" title="Background Information" appearance="minimal"}
+-   The 2024 Division 3 College Ultimate Championships took place May 18th-20th, where St. Olaf's Berzerkers won the Men's Championship over Williams WUFO. In the Women's Championship, Portland UPRoar defeated Carleton College Eclipse in the finals. Each division had 16 teams.
+
+-   The 2024 Division 1 College Ultimate Championships took place May 24th-27th, where Brown Brownian Motion defeated Cal Poly-SLO Slocore in the Men's Championship. North Carolina Pleiades defeated Stanford Superfly in the Women's Championship. Each division had 20 teams.
+:::
 
 ## Questions
 
+-   Is the current data format the best for visualizing the data? What changes need to be made?
 
+-   How would you combine the games played table and make per_game variables?
+
+-   What are some issues with the plus/minus variable?
+
+-   What are some ways to graphically represent variables together to compare divisions?
 
 ## References
+
+Statistics found on [USA Ultimate](https://play.usaultimate.org/) and taken from a data visualization on [Tableau](https://public.tableau.com/app/profile/ben.ayres7024/viz/USAU2024CollegeNationals/Dashboard1).

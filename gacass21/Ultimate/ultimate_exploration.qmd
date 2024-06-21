@@ -394,6 +394,7 @@ ggplot(data = d3_apg_w, aes(x = ast_per_game, y = Player)) +
 ```
 
 
+
 Ideas for what to do with data:
 Data 234 module with practice using dply, and ggplot.
 Could also use tidyr and stringr for more content.
