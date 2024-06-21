@@ -66,13 +66,13 @@ distance <- gender |> mutate(DISTANCE = as.factor(DISTANCE))
 Create a binary (0,1) variable for if a racer got a record, make sure to make the variable is a factor. 
 
 ```{r}
-record <- distance |> mutate(REC = if_else(RECORD != "NONE", true = 1, false = 0)) |> mutate(REC = as.factor(REC))
+record <- distance |> mutate(REC = if_else(RECORD != "NONE", true = TRUE, false = FALSE))
 ```
 
 Create another binary (0,1) variable for if a racer had a podium finish, make sure to make the variable is a factor as well. 
 
 ```{r}
-podium <- record |> mutate(PODIUM = if_else(POS <= 3, true = 1, false = 0)) |> mutate(PODIUM = as.factor(PODIUM))
+podium <- record |> mutate(PODIUM = if_else(POS <= 3, true = TRUE, false = FALSE)) 
 ```
 
 Write the csv file.

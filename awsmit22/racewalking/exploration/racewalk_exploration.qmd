@@ -16,6 +16,8 @@ worldchamps <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/modul
 
 ```{r}
 racewalking_df <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/data_repo_submission/racewalking.csv")
+
+racewalking_df <- racewalkingdf |> mutate(DISTANCE = as.factor(DISTANCE), REC = as.factor(REC), PODIUM = as.factor(PODIUM))
 ```
 
 # Data Prep
@@ -134,31 +136,23 @@ rec_mod
 rec_mod |> tidy()
 ```
 
-# might use
-```{r}
-ggplot(data = recs, aes(x = SPEED, y = rec)) +
-  geom_jitter(height = 0.05) +
-  geom_smooth(method = "glm", method.args = list(family = "binomial")) +
-  theme_minimal()
-```
-
-# might use
-```{r}
-rec_large <- glm(rec ~ SPEED + GENDER + DISTANCE, data = recs,
-                     family = "binomial")
-rec_large |> tidy()
-```
 
 # want to use but i dont think i can
 ```{r}
 library(modelr)
-grid <- recs |>
+grid <- racewalking_df |>
   data_grid(
     SPEED = seq_range(SPEED, n = 10),
     GENDER = c("Man", "Woman"),
     DISTANCE = c("10000", "20000")
   ) 
 grid
+```
+
+```{r}
+rec_large <- glm(REC ~ SPEED + GENDER + DISTANCE, data = racewalking_df,
+                     family = "binomial")
+rec_large |> tidy()
 ```
 
 ```{r}
@@ -172,7 +166,7 @@ aug_pred <- aug_rec |> mutate(.predprob = exp(.fitted)/(1 + exp(.fitted)))
 ```
 
 ```{r}
-rec_large_int <- glm(rec ~ SPEED + GENDER + DISTANCE + GENDER:DISTANCE, data = recs,
+rec_large_int <- glm(REC ~ SPEED + GENDER + DISTANCE + GENDER:DISTANCE, data = racewalking_df,
                      family = "binomial")
 rec_large_int |> tidy()
 ```
@@ -186,9 +180,9 @@ aug_pred_int <- aug_rec_int |> mutate(.predprob = exp(.fitted)/(1 + exp(.fitted)
 ```
 
 ```{r}
-rug_rec <- recs |> filter(rec == 1)
-rug_norec <- recs |> filter(rec == 0)
-ggplot(data = recs, aes(x = SPEED, y = rec)) +
+rug_rec <- racewalking_df |> filter(REC == 1)
+rug_norec <- racewalking_df |> filter(REC == 0)
+ggplot(data = racewalking_df, aes(x = SPEED, y = REC)) +
   geom_rug(data = rug_rec, sides = "t", alpha = 0.3) + geom_rug(data = rug_norec, sides = "b", alpha = 0.3) +
   geom_smooth(method = "glm", method.args = list(family = "binomial")) +
   theme_minimal()
@@ -197,18 +191,26 @@ ggplot(data = recs, aes(x = SPEED, y = rec)) +
 ```{r}
 plot <- bind_rows(lst(aug_pred, aug_pred_int), .id = "model")
 
-ggplot(data = plot, aes(x = SPEED, y = .predprob)) + geom_line(aes(colour = model), linewidth = 2) + facet_grid(GENDER ~ DISTANCE) + geom_rug(data = rug_rec, sides = "t", alpha = 0.3, aes(y = rec)) + geom_rug(data = rug_norec, sides = "b", alpha = 0.3, aes(y = rec)) + theme_minimal() + scale_color_viridis_d()
+ggplot(data = plot, aes(x = SPEED, y = .predprob)) + geom_line(aes(colour = model), linewidth = 2) + facet_grid(GENDER ~ DISTANCE) + geom_rug(data = rug_rec, sides = "t", alpha = 0.3, aes(y = REC)) + geom_rug(data = rug_norec, sides = "b", alpha = 0.3, aes(y = REC)) + theme_minimal() + scale_color_viridis_d()
 ```
 
 # Difference in props (records)
 
 # probably going to use
+
 ```{r}
-prop_records <- n_records |>group_by(COUNTRY) |> summarise(n= n(), n_record = sum(n_record), prop = n_record/n) |> filter(n_record >=2) |>mutate(COUNTRY = fct_reorder(COUNTRY, n_record)) |> filter(prop < 1) |> mutate(COUNTRY = fct_reorder(COUNTRY, prop))
+prop_records <- racewalking_df |>group_by(COUNTRY) |> summarise(n_record = sum(REC), prop = n_record/n()) |> filter(n_record >=2) |>mutate(COUNTRY = fct_reorder(COUNTRY, n_record)) |> filter(prop < 1) |> mutate(COUNTRY = fct_reorder(COUNTRY, prop))
 
 ggplot(data = prop_records, aes(x = COUNTRY, y = prop)) + geom_col() + coord_flip() 
 ```
+
+```{r}
+lgl <- racewalking_df |> mutate(REC = if_else(RECORD != "NONE", true = TRUE, false = FALSE))
+lgl |> group_by(COUNTRY) |> summarise(total_rec = sum(REC))
+```
+
 # might use
+
 ```{r}
 prop <- racewalking_df |> group_by(RECORD) |> summarise(prop = n()/237) 
 

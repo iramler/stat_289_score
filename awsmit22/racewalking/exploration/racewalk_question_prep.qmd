@@ -16,7 +16,7 @@ library(broom)
 ```{r}
 racewalkingdf <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/data_repo_submission/racewalking.csv")
 
-racewalking_df <- racewalkingdf |> mutate(DISTANCE = as.factor(DISTANCE), REC = as.factor(REC), PODIUM = as.factor(PODIUM))
+racewalking_df <- racewalkingdf |> mutate(DISTANCE = as.factor(DISTANCE))
 ```
 
 # Question 1

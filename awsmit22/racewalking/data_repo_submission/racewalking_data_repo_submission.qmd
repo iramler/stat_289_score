@@ -35,8 +35,8 @@ In the dataset there are 237 cases with 10 variables. Each case is a male or fem
 | `GENDER` | The gender of the athlete, either `Man` or `Woman`. |
 | `TIME` | The total time it took the athlete to complete the race, measured in minutes. |
 | `SPEED` | The average speed of the athlete for the race, measured in meters/minute. |
-| `REC` | If the athlete made a record in the race, binary variable where `1` means they did and `0` means they did not.|
-| `PODIUM` | If the athlete had a podium finish in the race, binary variable where `1` means they did and `0` means they did not. A podium finish means the athletes `POS` was 1st, 2nd, or 3rd. |
+| `REC` | If the athlete made a record in the race, binary variable where `TRUE` means they did and `FALSE` means they did not.|
+| `PODIUM` | If the athlete had a podium finish in the race, binary variable where `TRUE` means they did and `FALSE` means they did not. A podium finish means the athletes `POS` was 1st, 2nd, or 3rd. |
 : [racewalking.csv](racewalking.csv){target="_blank"}
 
 
