@@ -35,7 +35,7 @@ country_event <- rowing_df |> group_by(Year, Event, Medal, NOC) |> select(Year, 
 ```
 
 ```{r}
-country_medals <- country_event |> mutate(n_point= case_when(Medal == "Gold" ~ 3, Medal == "Silver" ~ 2, Medal == "Bronze" ~ 1), n_gold = case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 0, Medal == "Bronze" ~ 0), n_silver = case_when(Medal == "Gold" ~ 0, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 0), n_bronze = case_when(Medal == "Gold" ~ 0, Medal == "Silver" ~ 0, Medal == "Bronze" ~ 1)) |> group_by(NOC) |> summarise(total_medals = n(), total_points = sum(n_point), total_gold = sum(n_gold), total_silver = sum(n_silver), total_bronze = sum(n_bronze))
+country_medals <- country_event |> mutate(n_point= case_when(Medal == "Gold" ~ 3, Medal == "Silver" ~ 2, Medal == "Bronze" ~ 1), n_gold = case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 0, Medal == "Bronze" ~ 0), n_silver = case_when(Medal == "Gold" ~ 0, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 0), n_bronze = case_when(Medal == "Gold" ~ 0, Medal == "Silver" ~ 0, Medal == "Bronze" ~ 1)) |> group_by(NOC) |> summarise(medals = n(), points = sum(n_point), gold = sum(n_gold), silver = sum(n_silver), bronze = sum(n_bronze))
 ```
 
 ```{r}
