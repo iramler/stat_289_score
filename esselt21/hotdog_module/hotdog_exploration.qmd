@@ -9,6 +9,9 @@ male <-
 
 female <-
   read_csv(here::here("esselt21/hotdog_module/hotdog_female.csv"))
+
+total <-
+  read_csv(here::here("esselt21/hotdog_module/hotdog_total.csv"))
 ```
 
 ```{r}
@@ -56,4 +59,38 @@ avg_ratio |>
   coord_flip() +
   theme(legend.position = "none")
 ```
+
+
+```{r}
+library(png)
+library(grid)
+img <- readPNG(system.file("img", "hotdog.png", package="png"))
+g <- rasterGrob(img, interpolate=TRUE)
+
+```
+
+```{r}
+
+```
+
+```{r}
+library(ggplot2)
+library(cowplot)
+library(magick)
+
+theme_set(theme_cowplot())
+
+my_plot <- 
+  total |>
+  ggplot(aes(x = Height)) +
+  geom_dotplot(fill = "white",
+               color = "black") +
+  theme_minimal() 
+
+# Example with PNG (for fun, the OP's avatar - I love the raccoon)
+ggdraw() +
+  draw_image("https://thumbs.dreamstime.com/b/hot-dog-mustard-hand-drawing-delicious-classic-american-drawn-vector-illustration-isolated-white-background-146434962.jpg") +
+  draw_plot(my_plot)
+```
+
 
