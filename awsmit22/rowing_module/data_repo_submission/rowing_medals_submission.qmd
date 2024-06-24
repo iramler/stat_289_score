@@ -41,7 +41,7 @@ In the data set there are 41 medalling nations that competed in 25 different eve
 
 2.    Obtain the summary statistics for points. 
 
-3.    Determine if there are any outliers for points
+3.    Determine if there are any outliers for points. 
 
 4.    What could be a reason for certain nations winning more than others?
 
