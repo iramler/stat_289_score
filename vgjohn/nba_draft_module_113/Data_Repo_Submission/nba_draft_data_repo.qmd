@@ -67,7 +67,7 @@ The `nba_draft` data set includes data from players that were selected in the NB
 | round_picked | Indicates the round the player was selected (either round 1 or round 2) |
 | pick_in_round | Indicates the order in which players were selected in that round | 
 
-: [nba_draft.csv](stat_289_score/vgjohn/nba_draft_module/Data_Repo_Submission/nba_draft.csv)
+: [nba_draft.csv](stat_289_score/vgjohn/nba_draft_module_113/Data_Repo_Submission/nba_draft.csv)
 
 ## Questions
 

@@ -1,0 +1,66 @@
+cleaning for nba draft data module 
+
+```{r}
+library(tidyverse)
+```
+```{r}
+nba_draft <- read_csv("/Users/vivianjohnson/Desktop/draft-data-20-years.csv")
+```
+```{r}
+ #nba_draft$DraftYr <- as.factor(nba_draft$DraftYr)
+
+nba_draft <- nba_draft %>% group_by(DraftYr) %>%
+  mutate(
+    round_picked = ifelse(Pk <= (max(Rk) / 2), 1, 2)
+  )
+
+nba_draft <- nba_draft %>%
+  group_by(DraftYr, round_picked) %>%
+  mutate(
+    pick_in_round = row_number()
+  ) %>%
+  ungroup()
+```
+
+```{r}
+#keeping cols where years != 0 
+nba_draft <- nba_draft %>% filter(!is.na(Yrs))
+
+nba_draft<- nba_draft %>% select(-playerurl, -BPM, -VORP, -DraftYear, -Rk, -`...1`)
+
+nba_draft<- nba_draft %>%
+  rename(
+    years_played = Yrs, 
+    games_played = G,
+    draft_year = DraftYr,
+    total_mins_played = TOTMP,
+    total_pts = TOTPTS,
+    total_rebounds = TOTTRB,
+    total_assists = TOTAST,
+    fg_percent = `FG%`,
+    three_pt_percent = `3P%`,
+    ft_percent = `FT%`,
+    win_shares = WS,
+    win_shares_per_48 = `WS/48`,
+    mins_per_game = MPG,
+    pts_per_game = PPG,
+    rebounds_per_game = RPG,
+    assists_per_game = APG,
+    pick_overall = Pk,
+    team = Tm,
+    player_name = Player,
+    college = College
+  )
+```
+
+```{r}
+# changing na for years played and other cols to zero except college
+nba_draft <- nba_draft %>%
+  mutate(across(-college, ~ifelse(is.na(.), 0, .)))
+```
+
+```{r}
+write_csv(nba_draft,
+          file = "/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/nba_draft_module/nba_draft.csv")
+```
+

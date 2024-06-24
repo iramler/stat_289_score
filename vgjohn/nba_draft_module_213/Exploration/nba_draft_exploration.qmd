@@ -1,0 +1,298 @@
+exploration for nba draft module
+
+234 module designed to be done in r 
+
+```{r}
+library(tidyverse)
+nba_draft <- read_csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/nba_draft_module/Exploration/nba_draft.csv")
+```
+anova? difference in means ? 
+writing out null and alt hypotheses 
+
+who had the highest ppg
+```{r}
+nba_draft %>% slice_max(nba_draft$pts_per_game)
+```
+
+```{r}
+nba_draft %>% slice_max(nba_draft$total_pts)
+```
+walk through anova if there is a difference in means for years played (could have them break up the number of years in the nba and make a categorical variable)
+
+difference in means anova for average points, percent 
+
+```{r}
+mean(nba_draft$years_played)
+
+nba_draft %>% slice_max(order_by = years_played)
+
+#seeing divisions based on years played 
+nba_draft %>% filter(years_played >= 0 & years_played <= 5)
+nba_draft %>% filter(years_played > 5 & years_played <= 10)
+nba_draft %>% filter(years_played > 10 & years_played <= 15)
+nba_draft %>% filter(years_played > 15)
+
+
+nba_draft2 <- nba_draft %>%
+  mutate(
+    yrs_category = case_when(
+      years_played >= 0 & years_played <= 5 ~ "0-5",
+      years_played > 5 & years_played <= 10 ~ "5-10",
+      years_played > 10 & years_played <= 15 ~ "10-15",
+      years_played > 15 ~ "15+"
+    )
+  )
+
+head(nba_draft2)
+```
+
+maybe density plots showing the distribution - shape looks ok 
+```{r}
+
+nba_draft2$yrs_category <- factor(nba_draft2$yrs_category,
+                                  levels = c("0-5", "5-10", "10-15", "15+"))
+
+means = nba_draft2 %>%
+  group_by(yrs_category) %>%
+  summarize(
+    mean_value = mean(pts_per_game))
+
+
+ggplot(nba_draft2,
+       mapping = aes(x = pts_per_game,
+                     fill = yrs_category)) +
+  geom_density(alpha = 0.5) +
+  geom_vline(data = means,
+             mapping = aes(xintercept = mean_value, color = yrs_category),
+             linetype = "dashed",
+             size = 1,
+             show.legend = FALSE) +
+  labs(title = "Distribution of PPG per Years in the NBA",
+       x = "Points Per Game",
+       y = "Density",
+       fill = "Years in NBA") +
+  theme_minimal()
+```
+
+```{r}
+nba_draft2 %>% group_by(yrs_category) %>%
+  summarize(mean(pts_per_game))
+
+sd((nba_draft2 %>% filter(yrs_category == "0-6"))$pts_per_game)
+sd((nba_draft2 %>% filter(yrs_category == "6-12"))$pts_per_game)
+sd((nba_draft2 %>% filter(yrs_category == "12+"))$pts_per_game)
+```
+
+box plots - not that many outliers 
+```{r}
+ggplot(nba_draft2,
+       mapping = aes(x = pts_per_game,
+                     y = yrs_category,
+                     fill = yrs_category)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of PPG per Years in the NBA",
+       x = "Points Per Game",
+       fill = "Years in NBA") +
+  theme_minimal()
+```
+
+```{r}
+# 1 
+nba_draft2 %>% filter(yrs_category == "0-5") %>%
+  
+ggplot(data = .,
+       mapping = aes(sample = pts_per_game)) +
+  stat_qq() +
+  stat_qq_line(col = "red")
+
+nba_draft2 %>% filter(yrs_category == "5-10") %>%
+ 
+  # 2 
+ggplot(data = .,
+       mapping = aes(sample = pts_per_game)) +
+  stat_qq() +
+  stat_qq_line(col = "red")
+
+nba_draft2 %>% filter(yrs_category == "10-15") %>%
+
+   # 3  
+ggplot(data = .,
+       mapping = aes(sample = pts_per_game)) +
+  stat_qq() +
+  stat_qq_line(col = "red")
+```
+
+## Stuff that could actually be used 
+
+trying different variables 
+first round vs second round 
+divide up first round - discussion q about second round  
+
+pick vs rookie year, then as career goes on 
+mean and sd for each group 
+
+ppg per round picked 
+```{r}
+nba_draft$round_picked <- factor(nba_draft$round_picked, levels = c("1","2"))
+                                 
+means <- nba_draft %>% group_by(round_picked) %>% summarize(mean_value = mean(mins_per_game))
+
+ggplot(nba_draft,
+       mapping = aes(x = mins_per_game,
+                     fill = round_picked)) +
+  geom_density(alpha = 0.5) +
+  geom_vline(data = means,
+             mapping = aes(xintercept = mean_value, color = round_picked),
+             linetype = "dashed",
+             size = 1,
+             show.legend = FALSE) +
+  labs(title = "Distribution of MPG Based on Round Selected in the Draft",
+       x = "Minutes Per Game",
+       y = "Density",
+       fill = "Round Picked in NBA Draft") +
+  theme_minimal()
+```
+points per game per round picked in the nba 
+```{r}
+nba_round1s <- nba_draft %>% filter(round_picked == 1)
+
+means <- nba_round1s %>% summarize(mean_value = mean(mins_per_game))
+
+ggplot(nba_round1s,
+       mapping = aes(x = mins_per_game)) +
+  geom_density(alpha = 0.5,fill = "lightblue") +
+  geom_vline(data = means,
+             mapping = aes(xintercept = mean_value),
+             linetype = "dashed",
+             size = 1,
+             show.legend = FALSE) +
+  labs(title = "Distribution of MPG For First Round Draft Picks in the NBA",
+       x = "Minutes Per Game",
+       y = "Density",
+       fill = "Round Picked in NBA Draft") +
+  theme_minimal()
+```
+looks pretty normal 
+
+
+```{r}
+nba_round1s %>% filter(pick_in_round >= 1 & pick_in_round <= 10)
+nba_round1s %>% filter(pick_in_round > 10 & pick_in_round <= 20)
+nba_round1s %>% filter(pick_in_round > 20 & pick_in_round <= 30)
+
+nba_round1s <- nba_round1s %>%
+  mutate(
+    pick_category = case_when(
+      pick_in_round >= 1 & pick_in_round <= 10 ~ "1-10",
+      pick_in_round > 10 & pick_in_round <= 20 ~ "10-20",
+      pick_in_round > 20 & pick_in_round <= 30 ~ "20-30"
+    )
+  )
+
+
+```
+
+```{r}
+nba_round1s$pick_category <- factor(nba_round1s$pick_category,
+                                  levels = c("1-10", "10-20", "20-30"))
+
+means = nba_round1s %>%
+  group_by(pick_category) %>%
+  summarize(
+    mean_value = mean(mins_per_game))
+
+
+ggplot(nba_round1s,
+       mapping = aes(x = mins_per_game,
+                     fill = pick_category)) +
+  geom_density(alpha = 0.4) +
+  geom_vline(data = means,
+             mapping = aes(xintercept = mean_value, color = pick_category),
+             linetype = "dashed",
+             size = 1,
+             show.legend = FALSE) +
+  labs(title = "Distribution of MPG based on Round 1 NBA draft picks",
+       x = "Minutes Per Game",
+       y = "Density",
+       fill = "Pick in draft in NBA") +
+  theme_minimal()
+```
+the skewness for 1-10 draft picks makes sense because they're going to teams that probably need them more and they're the "most talented" because they're ranked higher. so it makes sense that they play more minutes. 
+
+boxplots 
+```{r}
+ggplot(nba_round1s,
+       mapping = aes(x = mins_per_game,
+                     y = pick_category,
+                     fill = pick_category)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of MPG based on Round 1 NBA draft picks",
+       x = "Minutes Per Game",
+       y= "Category in Draft",
+       fill = "Pick in NBA Draft") +
+  theme_minimal()
+```
+does it look like a anova is appropriate 
+
+```{r}
+# 1 
+nba_round1s %>% filter(pick_category == "1-10") %>%
+  
+ggplot(data = .,
+       mapping = aes(sample = mins_per_game)) +
+  stat_qq() +
+  stat_qq_line(col = "red")
+
+nba_round1s %>% filter(pick_category == "10-20") %>%
+ 
+  # 2 
+ggplot(data = .,
+       mapping = aes(sample = mins_per_game)) +
+  stat_qq() +
+  stat_qq_line(col = "red")
+
+nba_round1s %>% filter(pick_category == "20-30") %>%
+
+   # 3  
+ggplot(data = .,
+       mapping = aes(sample = mins_per_game)) +
+  stat_qq() +
+  stat_qq_line(col = "red")
+```
+
+ANOVA test for difference in means between the minutes per game for the different ranks in round one of the nba draft 
+
+```{r}
+mpg_aov <- aov(mins_per_game ~ pick_category,
+                 data = nba_round1s)
+
+summary(mpg_aov)
+```
+there is a significant difference in the mean number of minutes played per game between the groups but we don't know which groups 
+
+tukey hsd to determine between groups 
+```{r}
+TukeyHSD(mpg_aov)
+```
+All of the groups are different as seen by the p values 
+
+```{r}
+sd((nba_round1s %>% filter(pick_category == "1-10"))$mins_per_game)
+sd((nba_round1s %>% filter(pick_category == "10-20"))$mins_per_game)
+sd((nba_round1s %>% filter(pick_category == "20-30"))$mins_per_game)
+```
+equal variance looks good 
+
+something with both the rounds and the pick categories ?? 
+
+```{r}
+nba_round1s %>% group_by(pick_category) %>%
+  summarize(
+    `Sample Size` = n(),
+    Mean = mean(mins_per_game),
+    `Standard Deviation` = sd(mins_per_game)
+  )
+
+
+```
+
