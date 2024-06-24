@@ -50,7 +50,7 @@ Since the data is provided, instructors are encouraged to modify the worksheets 
 
 ### Data
 
-The data set contains 502 rows and 34 columns. Each row represents a player who competed in the negro leagues during the period 1886 to 1948.
+The data set contains 502 rows and 34 columns. Each row represents a player who competed in the negro leagues during the period from 1886 to 1948.
 
 Download data:
 
@@ -92,7 +92,7 @@ Available on the [SCORE Data Repository](https://data.scorenetwork.org/): [ngl_b
 | BB_K_ratio   | career walk to strikeout ratio                            |
 | homerun_rate | career homerun percentage                                 |
 | ISO          | career extra-base hits averaged per at bat                |
-| begin_year   | year the player begin their career                        |
+| begin_year   | year the player began their career                        |
 | end_year     | final year the player played                              |
 | Pos          | primary position of the player                            |
 | PA           | number of career plate appearances                        |
@@ -111,7 +111,7 @@ We provide an editable Quarto File and its solutions.
 [Class Handout - with solutions](batting_worksheet_key.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-In conclusion, the Negro Leagues Batting worksheet provides valuable learning opportunities for students in several important areas. It allows them to understand reasons why correlations exist and how models can change significantly just by adding one or two variables. The calculation of VIF and p-values allows the students to compare and contrast different models and how small differences between batter outcomes can have a large impact on the outcome of the game. Overall, this worksheet allows students to conduct an in-depth analysis on hitter data from the Negro Leagues and draw meaningful conclusions about the performances of the players who helped make baseball America's pastime. 
+In conclusion, the Negro Leagues Batting worksheet provides valuable learning opportunities for students in several important areas. It allows them to understand reasons why correlations exist and how models can change significantly just by adding one or two variables. The calculation of VIF and p-values allows the students to compare and contrast different models and show how small differences between batter outcomes can have a large impact on the outcome of the game. Overall, this worksheet allows students to conduct an in-depth analysis on hitter data from the Negro Leagues and draw meaningful conclusions about the performances of the players who helped make baseball America's pastime. 
 :::
 
 
