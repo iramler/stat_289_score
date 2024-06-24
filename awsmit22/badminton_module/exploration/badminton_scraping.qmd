@@ -13,17 +13,17 @@ library(rvest)
 
 ```{r}
 ## provide the URL and name it something (in this case, url).
-url <- "https://www.badmintonstatistics.net/Reports?reportname=MostPointsH2H&category=WS&year=2023&level=worldtour&country=%"
+urlws <- "https://www.badmintonstatistics.net/Reports?reportname=MostPointsH2H&category=WS&year=2023&level=worldtour&country=%"
 
 
 ## read_html() convert the html code from the URL into something R can read
-tab <- read_html(url) |> 
+tabws <- read_html(urlws) |> 
   html_nodes("table") ## html_nodes can grab only the tables 
 ```
 
 ```{r}
-test1 <- tab[[1]] |> html_table()
-test1
+testws <- tabws[[1]] |> html_table()
+testws
 ```
 
 
@@ -38,8 +38,8 @@ tabwd <- read_html(urlwd) |>
 ```
 
 ```{r}
-test2 <- tabwd[[1]] |> html_table()
-test2
+testwd <- tabwd[[1]] |> html_table()
+testwd
 ```
 
 ```{r}
@@ -54,6 +54,51 @@ ws <- test1 |> rename(player_1 = Players)
 left_join(ws, wd)
 ```
 
+```{r}
+## provide the URL and name it something (in this case, url).
+urlms <- "https://www.badmintonstatistics.net/Reports?reportname=MostPointsH2H&category=MS&year=2023&level=worldtour&country=%"
 
 
+## read_html() convert the html code from the URL into something R can read
+tabms <- read_html(urlms) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
 
+```{r}
+testms <- tabms[[1]] |> html_table()
+testms
+```
+
+```{r}
+## provide the URL and name it something (in this case, url).
+urlmd <- "https://www.badmintonstatistics.net/Reports?reportname=MostPointsH2H&category=MD&year=2023&level=worldtour&country=%"
+
+
+## read_html() convert the html code from the URL into something R can read
+tabmd <- read_html(urlmd) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r}
+testmd <- tabmd[[1]] |> html_table()
+testmd
+```
+
+```{r}
+## provide the URL and name it something (in this case, url).
+urlxd <- "https://www.badmintonstatistics.net/Reports?reportname=MostPointsH2H&category=XD&year=2023&level=worldtour&country=%"
+
+
+## read_html() convert the html code from the URL into something R can read
+tabxd <- read_html(urlxd) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r}
+testxd <- tabxd[[1]] |> html_table()
+testxd
+```
+
+Make a table for the top 25 in each category, find out what xd is and create a variable for gender and category, join them all. 
+
+the year is 2023 for all ofthem 
