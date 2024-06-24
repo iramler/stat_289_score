@@ -1,5 +1,5 @@
 ---
-title: "concussion_handout"
+title: "NFL Head, Neck and Spine Committe Interview Case Study"
 author: "eric seltzer"
 format: html
 ---
