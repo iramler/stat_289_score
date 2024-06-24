@@ -1,0 +1,56 @@
+---
+title: "concussion_handout"
+author: "eric seltzer"
+format: html
+---
+# Introduction
+The NFL, one of America's most popular sports leagues has some of the most available data. As the sport has evolved, many questions have been raised about the safety of the players and how to protect them. As it is a full contact sport, there are lots of injuries, particularly a large amount of head injuries. In this worksheet, we will be looking into investigating differences in concussions in the NFL. This has created many jobs throughout the NFL including those regarding the player’s safety.
+
+One of the roles that has been created is working in the NFL Head, Neck and Spine Committee. Below is a list of their goals.
+  o	Advise the NFL on medical policies, procedures and protocols
+  o	Determine and advise the NFL on best practices
+  o	Identify and recommend medical research that impacts the health and safety of active
+  o	NFL players
+  o	Oversee research when requested by the NFL and its collaborators
+  o	Analyze injury data and propose interventions
+  o	Create and supervise focused research groups with specific goals and assignments (e.g. biomechanical engineering)
+  o	Improve public education and advocate for enhanced sports safety
+  
+Today is your lucky day, a new position just opened for the lead Data Visualization Expert of the NFL Head, Neck and Spine Committee. As an expert on the subject, Dr. Nicholas Theodore, the Chairman, has invited you in for a formal case study before he can just hand you the job.
+
+# Question 1
+First, Dr. Nicholas Theodore asks you to put together a visualization to compare the total number of concussions by NFL Teams. 
+
+To do this we'll need to make a summarized table with some metrics by team. We are interested in these metrics. The average number of downs played after a concussion, the average number of games missed, and the total number of concussions. All by team.
+```{r}
+library(tidyverse)
+```
+
+```{r}
+concussion <- read_csv(here::here("esselt21/concussion_module/module/concussion.csv"))
+```
+
+# Question 2
+Create a visualization to show the average number of downs played after a concussion for each team.
+```{r}
+
+```
+
+# Question 3
+What can you infer from this visualization if you wanted to improve the safety and care of the players in the NFL? (Hint: All teams have a high number of concussions)
+```{r}
+
+```
+
+# Question 4
+Create a visualization of the average games missed per team and discuss if this is a helpful visualization.
+```{r}
+
+```
+
+# Question 5
+As a final task, take whichever visualization you created above that you feel is most important and proves a point and make it look better using the themes in R. This will be presented to all the NFL GMs to show your point. (Note: A balance between interpretability and visual aesthetics is important)
+```{r}
+
+```
+
