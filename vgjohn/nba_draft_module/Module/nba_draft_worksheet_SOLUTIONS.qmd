@@ -55,9 +55,9 @@ Players move the ball up and down the court by dribbling, passing the ball to te
 
 **4. In order to being our ANOVA exploration, we need to look at different groups within the round one selections. Since we have the order in which the players were selected (stored in the `pick_in_round` variable), we can make an additional categorical variable to keep track of where in the draft the player was selected. Make a new variable, called `pick_category`, which follows the following conditions: **
 
-    * `pick_category` = "1-10" if the player was selected in picks 1-10, 
-    * `pick_category` = "10-20" if the player was selected in picks 10-20,
-    * `pick_category` = "20-30" if the player was selected in picks 20-30
+- `pick_category` = "1-10" if the player was selected in picks 1-10, 
+- `pick_category` = "10-20" if the player was selected in picks 10-20,
+- `pick_category` = "20-30" if the player was selected in picks 20-30
 
 Note that the first number is exclusive and the second number is inclusive, except for number 1, which should be included in the first group. 
 
@@ -148,9 +148,21 @@ The box plots show that the variance between the three groups seems to be relati
 
 * SSG = 13839 This number represents the total variability between the three groups and measures how far apart the mean minutes per game played between the players that were picked 1-10, 10-20, and 20-30. Since it is large, it suggests that there is a relatively large difference between the averages of the three groups. 
 
-**6. Can we conclude there is a difference in the mean amount of minutes played per game based on when a player was selected in the draft? Between which groups are we *most likely* to see a significant difference. Between which groups are we *least likely* to see a significant difference in minutes played. Provide evidence.**
+**6. Can we conclude there is a difference in the mean amount of minutes played per game based on when a player was selected in the draft?**
 
-  * We can conclude that there is sufficient evidence to reject the null hypothesis that the mean number of minutes played per game is the same regardless of when a player was selected in the first round of the draft. The p-value given in the ANOVA table is $2*10^{-16}$ meaning there is strong evidence to reject the null hypothesis. From looking at the means in the density plot and box plot, we are most likely to find a difference between those selected 1-10 and those selected 20-30 because there is the largest difference in mean number of minutes played. We are least likely to find a difference between those selected 10-20 and 20-30 because the difference in mean is the smallest. 
+  * We can conclude that there is sufficient evidence to reject the null hypothesis that the mean number of minutes played per game is the same regardless of when a player was selected in the first round of the draft. The p-value given in the ANOVA table is $2*10^{-16}$ meaning there is strong evidence to reject the null hypothesis. 
   
+
+**7. Between which groups are we *most likely* to see a significant difference. Between which groups are we *least likely* to see a significant difference in minutes played. Provide evidence.**
+
+* From looking at the means in the density plot and box plot, we are most likely to find a difference between those selected 1-10 and those selected 20-30 because there is the largest difference in mean number of minutes played. We are least likely to find a difference between those selected 10-20 and 20-30 because the difference in mean is the smallest. 
+
+**8. In the 2011 draft, Kyrie Irving was selected 1st in the first round by the Cleveland Cavaliers, and Klay Thompson was selected 11th by the Golden State Warriors. Is there a significant difference between the number of minutes we would expect them to play? If so, what is the difference? Provide evidence as well as a specific number. (Hint: Use Tukey's HSD)**
+
+```{r}
+# TukeyHSD(mpg_aov)
+```
+
+* From the output, we can see that there is a significant difference between the number of minutes played by Kyrie Irving (who was chosen 1-10), and Klay Thompson (who was chosen 10-20). We know this because the p-value of that specific comparison is significant (0.0000). From the output, the difference between number of minutes played between those who were selected 1-10 and 10-20 is 7.035, with those who were selected 1-10 playing on average 7.035 more minutes. So we would expect Kyrie Irving to be that much more. 
 
  

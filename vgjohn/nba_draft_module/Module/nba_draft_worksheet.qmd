@@ -44,9 +44,9 @@ Players move the ball up and down the court by dribbling, passing the ball to te
 
 **4. In order to being our ANOVA exploration, we need to look at different groups within the round one selections. Since we have the order in which the players were selected (stored in the `pick_in_round` variable), we can make an additional categorical variable to keep track of where in the draft the player was selected. Make a new variable, called `pick_category`, which follows the following conditions: **
 
-    * `pick_category` = "1-10" if the player was selected in picks 1-10, 
-    * `pick_category` = "10-20" if the player was selected in picks 10-20,
-    * `pick_category` = "20-30" if the player was selected in picks 20-30
+- `pick_category` = "1-10" if the player was selected in picks 1-10, 
+- `pick_category` = "10-20" if the player was selected in picks 10-20,
+- `pick_category` = "20-30" if the player was selected in picks 20-30
 
     Note that the first number is exclusive and the second number is inclusive, except for number 1, which should be included in the first group. 
 
@@ -89,7 +89,11 @@ Players move the ball up and down the court by dribbling, passing the ball to te
 
 **5. Using the ANOVA table, interpret the sum of squares for the groups. What does it imply about the data?** 
 
-**6. Can we conclude there is a difference in the mean amount of minutes played per game based on when a player was selected in the draft? Between which groups are we *most likely* to see a significant difference. Between which groups are we *least likely* to see a significant difference in minutes played. Provide evidence.**
+**6. Can we conclude there is a difference in the mean amount of minutes played per game based on when a player was selected in the draft?**
+
+**7. Between which groups are we *most likely* to see a significant difference. Between which groups are we *least likely* to see a significant difference in minutes played. Provide evidence.**
+
+**8. In the 2011 draft, Kyrie Irving was selected 1st in the first round by the Cleveland Cavaliers, and Klay Thompson was selected 11th by the Golden State Warriors. Is there a significant difference between the number of minutes we would expect them to play? If so, what is the difference? Provide evidence as well as a specific number. (Hint: Use Tukey's HSD)**
 
 
  
