@@ -33,10 +33,7 @@ concussion <- read_csv(here::here("esselt21/concussion_module/exploration/concus
 # looking into individual teams
 teams <-
   concussion |>
-  mutate(Team = as_factor(Team))
-
-teams <-
-  teams |>
+  mutate(Team = as_factor(Team)) |>
   group_by(Team) |>
   summarise(totalConcussions = n(),
             avgDownsAfter = mean(`Play Time After Injury`),
@@ -95,47 +92,13 @@ concussion <-
 ```
 
 ```{r}
+# ggridges
+library(ggridges)
 concussion |>
   ggplot(aes(x = `Play Time After Injury`,
-             color = Position)) +
-  geom_density(aes(fill = Position),
-               alpha = 0.2) +
-  theme_minimal() +
-  labs(y = "Density") +
-  facet_wrap(~Offense,
-             scales = "free_y") +
-  theme(plot.background = element_rect(fill = "ivory"))
-```
-
-```{r}
-# looking into anova, according to report, effect of position on play time after injury is significant and medium
-# need to look into assumptions
-library(AICcmodavg)
-library(report)
-one.way <- aov(`Play Time After Injury` ~ Position,
-               data = concussion)
-plot(one.way)
-# doesn't look normal,
-# variance looks good
-# independent is true
-summary(one.way)
-report(one.way)
-```
-
-```{r}
-# tukey test
-TukeyHSD(one.way)
-```
-
-```{r}
-concussion |>
-  ggplot(aes(x = Position,
-             `Play Time After Injury`,
-             fill = Position,
-             alpha = .3)) +
-  geom_boxplot() +
-  coord_flip() +
+             y = Position,
+             fill = Position)) +
+  geom_density_ridges(alpha = 0.4) +
   theme_minimal() +
   theme(legend.position = "none") 
 ```
-

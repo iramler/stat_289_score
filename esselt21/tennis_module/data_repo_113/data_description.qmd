@@ -1,7 +1,7 @@
 ---
-title: Investigating Surfaces Impact on Win Percentages in Professional Tennis
+title: Investigating the Impact of Tournament Length and Surface Type on Win Percentages in Professional Tennis
 author: Eric Seltzer
-date: June 10, 2024
+date: June 24, 2024
 description: Data of the Association of Tennis Professionals (ATP) players and the Women's Tennis Associaion (WTA) from the 2023 season. Players who have played a minimum of 10 matches overall and 5 matches on a particular surface are included in the table. We will be looking into this tennis data.
 categories:
   - Five Number Summary

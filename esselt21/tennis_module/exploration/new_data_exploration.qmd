@@ -22,6 +22,8 @@ GSwinPercentage <-
   mutate(best_of = as_factor(best_of),
          best_of = fct_recode(best_of, "Non-Grand Slam" = "3", "Grand Slam" = "5"))
 
+write_csv(winPercentage, here::here("esselt21/tennis_module/module_113/win_percentage_summarized.csv"))
+
 winPercentage <-
   atp |>
   group_by(player, surface) |>
@@ -30,6 +32,8 @@ winPercentage <-
   filter(matches >= 5) |>
   mutate(surface = as_factor(surface),
          surface = fct_relevel(surface, c("Clay", "Grass", "Hard")))
+
+
 ```
 
 ```{r}
