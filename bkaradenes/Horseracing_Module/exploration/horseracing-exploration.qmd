@@ -1,0 +1,57 @@
+---
+title: "exploration"
+author: "Brendan Karadenes"
+format: html
+---
+
+# Impact of Poor Track Conditions on low odds horse winning
+
+```{r}
+ggplot(data = horseracing, mapping = aes(x = Odds, y = final_place)) +
+  geom_point()
+```
+
+```{r}
+poor_track <- horseracing %>%
+  filter(final_place < 4,
+         track_condition == "Fast")
+```
+
+```{r}
+ggplot(data = poor_track, mapping = aes(x = Odds, y = final_place)) +
+  geom_point()
+```
+
+```{r}
+horse_graph <- horseracing %>%
+  filter(final_place == 1,
+         track_condition == "Sloppy")
+```
+
+```{r}
+sloppy_track <- horseracing %>%
+  filter(track_condition == "Sloppy")
+```
+
+```{r}
+ggplot(data = horseracing, mapping = aes(x = track_condition, y = Odds)) +
+  geom_boxplot() + 
+  theme_minimal()
+```
+
+```{r}
+first <- horseracing %>%
+  filter(final_place == 1)
+```
+
+```{r}
+ggplot(data = first, mapping = aes(x = track_condition, y = Odds)) +
+  geom_boxplot()
+```
+
+
+
+
+
+
+

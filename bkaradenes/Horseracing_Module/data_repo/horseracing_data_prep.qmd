@@ -1,0 +1,26 @@
+---
+title: "data prep"
+author: "Brendan Karadenes"
+format: html
+---
+
+## Setting Up the Data
+
+```{r}
+# load in package and data downloaded from kaggle
+library(tidyverse)
+race_results <- read.csv("TripleCrownRaces_2005-2019.csv")
+track_conditions <- read.csv("TrackConditions.csv")
+```
+
+```{r}
+# join the 2 datasets
+horseracing <- inner_join(race_results, track_conditions, by = c("year", "race"))
+```
+
+```{r}
+# writing as csv
+write.csv(horseracing, "triple-crown.csv", row.names = FALSE)
+```
+
+
