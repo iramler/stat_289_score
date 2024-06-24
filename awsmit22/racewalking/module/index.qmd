@@ -50,50 +50,50 @@ By the end of the activity, students will be able to:
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-Students will use a basic understanding of histograms and boxplots to assess the distribution of grouped data. Students will further assess the difference in groups, using 
+Students will use a basic understanding of histograms and boxplots to assess the distribution of grouped data. Students will further assess the difference in groups, using a t.test as well as a two-way ANOVA test for a difference in means. Additionally, students will use multiple logistic regression to calculate the odds, predicted odds, and log(odds) of a binary response variable. 
 :::
 
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
-The tech worksheet will require the use of statistical software for most of the questions. The no-tech worksheet will not require any technology other than a calculator. 
+The normal worksheet will only require the use of basic statistical software for one question. The tech worksheet however, will require the use of more complicated statistical software such as R. 
 :::
 
 ### Data
 
-The dataset has 309 players from 18 different clubs, with 7 variables, 4 of which are statistics. Each row in the data set is a player in the Handball-Bundesliga during the 2022-23 season. The statistics are cumulative for the entirety of the season. The dataset only contains players who played in 10 games or more.
+In the dataset there are 237 cases with 10 variables. Each case is a male or female athlete in either the 10k or the 20k. There are 98 walkers in the men's 10k and 47 in the women's. There are 63 walkers in the women's 20k and 76 in the men's. The dataset only includes athletes who completed the race, no disqualified or did not finish walkers are in the dataset. There are no walkers that competed in more than one event. 
 
 Download data: 
 
-: [handball.csv](handball.csv){target="_blank"}
+: [racewalking.csv](racewalking.csv){target="_blank"}
 
 <details>
 <summary><b>Variable Descriptions</b></summary>
 
 | Variable          | Description                                                                                                                                                                                                                   |
 |--------------------|----------------------------------------------------|
-| `NAME` | The name of the player. |
-| `CLUB`            | The club the player is on. There are 18 in the Bundesliga.                                                                                                                                                                    |
-| `POSITION`        | The position of the player. There are 7 positions in handball: goalkeeper, fullbacks (left and right), center backcourt, wingers (left and right), and pivot.                                                                 |
-| `P`               | The number of games the player was in that season.                                                                                                                                                                            |
-| `total_offense`   | The total offensive plays made by the player in the season. Calculated by adding the 6 offensive focused statistics from the original dataset.                                                                                |
-| `total_penalties` | The total penalties the player had in the season. Calculated by adding the 5 penalty related statistics from the original dataset.|                                                             
-| `HPI`             | Handball performance index, complex formulaic calculation equivalent to how well the player performed in the season. Players with HPIs in the 70s are considered good, while players in the 60s are considered not as strong. |
+| `POS` | The position the athlete finished in. |
+| `COUNTRY` | The country the athlete is from. |
+| `ATHLETE` | The name of the athlete in `first name, last name` order. |
+| `RECORD` | The record the athlete made if any. The record types are as follows: Personal Best (`PB`), Season's Best (`SB`), National Record (`NR`), Area Under 20 Record (`AU20R`), National Under 20 Record (`NU20R`)|
+| `DISTANCE` | The distance of the race the athlete competed in, either `10000`m or `20000`m.|
+| `GENDER` | The gender of the athlete, either `Man` or `Woman`. |
+| `TIME` | The total time it took the athlete to complete the race, measured in minutes. |
+| `SPEED` | The average speed of the athlete for the race, measured in meters/minute. |
+| `REC` | If the athlete made a record in the race, binary variable where `TRUE` means they did and `FALSE` means they did not.|
+| `PODIUM` | If the athlete had a podium finish in the race, binary variable where `TRUE` means they did and `FALSE` means they did not. A podium finish means the athletes `POS` was 1st, 2nd, or 3rd. |
 
 
 
 **Data Source**
 
-[Kaggle Original
-Dataset](https://www.kaggle.com/datasets/nemanjagojkovic/handball-bundesliga-stats-202223){target="_blank"}
+[Original Dataset](https://worldathletics.org/competitions/world-athletics-race-walking-team-championshi/world-athletics-race-walking-team-championshi-7199325){target="_blank"}
 
 **More information on the rules**
 
-[Olympic Handball
-Rules](https://olympics.com/en/news/handball-game-rules-regulations-how-to-play){target="_blank"}
+[Olympic Racewalking Rules](https://olympics.com/en/news/all-you-need-to-know-about-race-walking){target="_blank"}
 
-[Handball
-Positions](https://www.theukrules.co.uk/rules/sport/handball/player-positions/#google_vignette){target="_blank"}
+[Athletic Abbreviations](https://en.wikipedia.org/wiki/Athletics_abbreviations){target="_blank"}
 
-[Handball Performance Index (HPI)](https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/){target="_blank"}
+[Race walking Wikipedia](https://en.wikipedia.org/wiki/Racewalking){target="_blank"}
 
 </details>
 
@@ -101,39 +101,14 @@ Positions](https://www.theukrules.co.uk/rules/sport/handball/player-positions/#g
 
 We provide editable MS Word handouts along with their solutions.
 
-[Tech Worksheet](handball_worksheet_tech.docx)
+[Tech Worksheet](racewalking_tech_worksheet.docx)
 
-[Tech Worksheet Answers](handball_worksheet_tech_answers.docx)
+[Tech Worksheet Answers](racewalking_worksheet_tech_KEY.docx)
 
-[No Tech Worksheet](handball_worksheet_no_tech.docx)
+[No Tech Worksheet](racewalking_worksheet.docx)
 
-[No Tech Worksheet Answers](handball_worksheet_answers_no_tech.docx)
+[No Tech Worksheet Answers](racewalking_worksheet_KEY.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-After completing this activity, students should be able to draw a conclusion about if an aggressive strategy in handball really garners more success. Students should come to this conclusion through statistical analysis of the use of `total_penalties` and `total_offense` to predict `HPI`. Students will also be able to assess the relationship between `total_penalties` and `total_offense` which can provide furtehr insight on the relationship between aggressive play and offensive strength. 
+After finishing this activity, students should discern whether or not there are any clear patterns in the data. These patterns can relate to differences in mean speeds based on distance and/or gender. The patterns can also relate to the predictability of whether or not an athlete will make a record in the event. 
 :::
----
-title: "index"
-format: html
----
-
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this 
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
