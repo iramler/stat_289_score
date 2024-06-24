@@ -1,6 +1,6 @@
 ---
-title: "Investigating Surfaces Impact on Win Percentages in Professional Tennis"
-date: June 11, 2024
+title: "Investigating the Impact of Tournament Length and Surface Type on Win Percentages in Professional Tennis"
+date: June 24, 2024
 author:
   - name: Eric Seltzer
     affiliation:
@@ -14,9 +14,9 @@ description: Describing distribution shapes and interpreting visualizations.
 editor: 
   canonical: true
 categories:
-  - Five Number Summary
+  - Visualizations
   - Distribution
-  - Side-by-side boxplots
+  - Interpretation
 ---
 
 ## Module
@@ -25,21 +25,20 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-In the Association of Tennis Professionals (ATP) the rankings are typically based on set parameters. Throughout the year there are tournaments that are worth different numbers of points. There are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. You receive the most points in your [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) from winning a Grand Slam, and the least from winning an ATP 250 tournament. In Tennis, there are also three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Certain players perform better on certain surfaces. This data set contains information for each player on each surface. Throughout the year, there are two Grand Slams on a Hard court, one on Clay, and one on Grass.
+In professional tennis, there are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. Players receive the most points in their Association of Tennis Professionals [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) for winning a Grand Slam, and the least from winning an ATP 250 tournament. There are four Grand Slams throughout the year, the Australian Open (Hard surface), Roland Garros (Clay surface), Wimbledon (Grass surface), and the U.S. Open (Hard surface). This leads to more competitive players wanting to play in the Grand Slams. In the ATP, Grand Slam tournaments are played in a best of five format, and non-Grand Slam tournaments in a best of three. 
 
-#### Additional Tennis Information
-In Tennis, there is the Association of Tennis Professionals (ATP) for men, and the Women's Tennis Association (WTA) for women. The ATP has 60 tournaments a year while the WTA has over 70. Both the ATP have the WTA have four grand slam tournaments. In the ATP, these Grand Slam tournaments are played in a best of 5 format instead of a best of 3 like every other tournament. In the WTA, every tournament is played in a best of 3 format, including the Grand Slam tournaments.
+In Tennis, there are three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Individual players perform better on certain surfaces and may favor playing on their preferred surface. 
+
+This dataset contains information for each player on each surface. To be included in the data set, players must have played a minimum of 10 matches overall or 5 matches on a particular surface. This data was filtered so only players who have recorded data on all three surfaces are present. This data is available in the file atp_2023.csv.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
 
 1.  Understand the shapes of distribution as well as terms used to describe distribution.
 
-2.  Understand the five number summary and be able to calculate some of its numbers.
+2.  Be able to discuss open ended questions regarding why distributions might differ
 
-3.  Be able to interpret a side-by-side box plots.
-
-4.  Compare differences between two populations through visualizations. 
+3.  Compare differences between two populations through visualizations. 
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
@@ -47,9 +46,7 @@ Technology requirement: The activity handout will require nothing more than the 
 
 1.  Knowledge of distribution types and terms that come along with it.
 
-2.  Knowledge of the five number summary and how the numbers are calculated.
-
-3.  Knowledge of interpreting box plots and what they represent.
+2.  Knowledge of interpreting visualizations and what they represent.
 :::
 
 ### Data

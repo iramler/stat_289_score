@@ -14,19 +14,19 @@ concussion <- read_csv(here::here("esselt21/concussion_module/exploration/concus
 
 ```{r}
 # cleaning data into format I want
-concussion <-
-  concussion|>
-  mutate(Position = as_factor(Position),
-         `Reported Injury Type` = as_factor(`Reported Injury Type`)) |>
-  filter(`Pre-Season Injury?` == 'No') |>
-  select(-c(ID, Game, Season, `Pre-Season Injury?`, `Unknown Injury?`, `Winning Team?`, `Opposing Team`, `Week of Injury`, `Weeks Injured`, `Total Snaps`)) |>
-  na.omit()
-
-concussion <-
-  concussion |>
-  mutate(`Play Time After Injury` = parse_number(`Play Time After Injury`, na = "Did not return from injury"),
-         `Average Playtime Before Injury` = parse_number(`Average Playtime Before Injury`),
-         `Play Time After Injury` = replace_na(`Play Time After Injury`, 0))
+# concussion <-
+#   concussion|>
+#   mutate(Position = as_factor(Position),
+#          `Reported Injury Type` = as_factor(`Reported Injury Type`)) |>
+#   filter(`Pre-Season Injury?` == 'No') |>
+#   select(-c(ID, Game, Season, `Pre-Season Injury?`, `Unknown Injury?`, `Winning Team?`, `Opposing Team`, `Week of Injury`, `Weeks Injured`, `Total Snaps`)) |>
+#   na.omit()
+# 
+# concussion <-
+#   concussion |>
+#   mutate(`Play Time After Injury` = parse_number(`Play Time After Injury`, na = "Did not return from injury"),
+#          `Average Playtime Before Injury` = parse_number(`Average Playtime Before Injury`),
+#          `Play Time After Injury` = replace_na(`Play Time After Injury`, 0))
 ```
 
 ```{r}
