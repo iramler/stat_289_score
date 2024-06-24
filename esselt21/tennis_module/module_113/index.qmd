@@ -25,11 +25,11 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-In professional tennis, there are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. Players receive the most points in their Association of Tennis Professionals [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) for winning a Grand Slam, and the least from winning an ATP 250 tournament. There are four Grand Slams throughout the year, the Australian Open (Hard surface), Roland Garros (Clay surface), Wimbledon (Grass surface), and the U.S. Open (Hard surface). This leads to more competitive players wanting to play in the Grand Slams. In the ATP, Grand Slam tournaments are played in a best of five format, and non-Grand Slam tournaments in a best of three. 
+In professional tennis, there are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. Players receive the most points in their Association of Tennis Professionals [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) for winning a Grand Slam, and the least from winning an ATP 250 tournament. There are four Grand Slams throughout the year, the Australian Open (Hard surface), Roland Garros (Clay surface), Wimbledon (Grass surface), and the U.S. Open (Hard surface). This leads to more competitive players wanting to play in the Grand Slams. In the ATP, Grand Slam tournaments are played in a best of five format, and non-Grand Slam tournaments in a best of three.
 
-In Tennis, there are three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Individual players perform better on certain surfaces and may favor playing on their preferred surface. 
+In Tennis, there are three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Individual players perform better on certain surfaces and may favor playing on their preferred surface.
 
-This dataset contains information for each player on each surface. To be included in the data set, players must have played a minimum of 10 matches overall or 5 matches on a particular surface. This data was filtered so only players who have recorded data on all three surfaces are present. This data is available in the file atp_2023.csv.
+This dataset contains information for each player on each surface. To be included in the data set, players must have played a minimum of 10 matches overall or 5 matches on a particular surface. This data was filtered so only players who have recorded data on all three surfaces are present. This data is available in the file `atp_2023.csv` located in Data section below.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
@@ -38,7 +38,7 @@ By the end of this activity, you will be able to:
 
 2.  Be able to discuss open ended questions regarding why distributions might differ
 
-3.  Compare differences between two populations through visualizations. 
+3.  Compare differences between two populations through visualizations.
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
@@ -53,7 +53,7 @@ Technology requirement: The activity handout will require nothing more than the 
 
 There is one data set for this exercise. The data is made up of 5194 rows and 20 columns and is provided by Jeff Sackman on GitHub. Each row represents a match played between two players.
 
-Download non tidy data: [atp_2023_113](data/atp_2023_113.csv)
+Download non tidy data: [atp_2023](atp_2023.csv)
 
 **Tennis**
 
@@ -86,16 +86,54 @@ Download non tidy data: [atp_2023_113](data/atp_2023_113.csv)
 
 </details>
 
+The two summarized datasets used in the handout can be downloaded here.
+
+**Grand Slam**
+
+Download Grand Slam vs Non-Grand Slam data: [grand_slam_summarized.csv](grand_slam_summarized.csv)
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable | Description                                          |
+|----------|------------------------------------------------------|
+| player   | The name of the player                               |
+| best_of  | Non-Grand Slam (best of 3) or Grand Slam (best of 5) |
+| winPct   | win percentage (recorded as a proportion)            |
+| matches  | number of matches played (used to calculate winPct)  |
+
+</details>
+
+**Surface Type**
+
+Download Surface Type Win Percentage data: [court_surface_summarized.csv](court_surface_summarized.csv)
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable | Description                                           |
+|----------|-------------------------------------------------------|
+| player   | The name of the player                                |
+| surface  | The type of surface that was played on for this match |
+| winPct   | win percentage (recorded as a proportion)             |
+| matches  | number of matches played (used to calculate winPct)   |
+
+</details>
+
 #### Data Source
 
 [Jeff Sackman](https://github.com/JeffSackmann/tennis_atp){target="_blank"}
 
 ### Materials
 
-[Class Handout](tennis_handout113.docx)
+[Class Handout](tennis_handout_intro_stat.docx)
 
-[Class Handout - Solutions](tennis_handout113_key.docx)
+[Class Handout - Solutions](tennis_handout_intro_stat_key.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Forthcoming
+By the end of the activity students should be able to see how longer format tournaments increase the variability in win percentages - implying that the best-of-five used in Men's Grand Slams favors the better player.
+
+Further, they can see how looking at just the top players (or, more specifically, just the players that actively play in many matches) can give interesting displays of distributions for win percentages. (By excluding the lesser talented professionals that have low win rates, but aren't included in the given data.)
 :::
