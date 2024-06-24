@@ -1,0 +1,59 @@
+---
+title: "badminton_scraping"
+format: html
+---
+# Libraries
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+# Attempt to scrape
+
+```{r}
+## provide the URL and name it something (in this case, url).
+url <- "https://www.badmintonstatistics.net/Reports?reportname=MostPointsH2H&category=WS&year=2023&level=worldtour&country=%"
+
+
+## read_html() convert the html code from the URL into something R can read
+tab <- read_html(url) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r}
+test1 <- tab[[1]] |> html_table()
+test1
+```
+
+
+```{r}
+## provide the URL and name it something (in this case, url).
+urlwd <- "https://www.badmintonstatistics.net/Reports?reportname=MostPointsH2H&category=WD&year=2023&level=worldtour&country=%"
+
+
+## read_html() convert the html code from the URL into something R can read
+tabwd <- read_html(urlwd) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r}
+test2 <- tabwd[[1]] |> html_table()
+test2
+```
+
+```{r}
+wd <- test2 |> separate(Players, into = c("player_1", "player_2"), sep= " / ") |> separate(Opponents, into = c("opponent_1", "opponent_2"), sep= " / ")
+```
+
+```{r}
+ws <- test1 |> rename(player_1 = Players)
+```
+
+```{r}
+left_join(ws, wd)
+```
+
+
+
+
