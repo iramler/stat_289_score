@@ -54,9 +54,7 @@ ski race in Trondheim. There are 61 racers in the dataset and 20 variables.
 
 1.    Fit the following models and create scatter plots with regression lines for each of them. Record their R2 values and comment on the linearity. 
 
-2.    Which one of the models from Question 1 do you think is best? Why?
-
-3.    Interpret the slope coefficient for the model you just chose in Question 2. Remember to contextualize. 
+2.    Interpret the slope coefficient for the best of these models to predict Rank4. Remember to contextualize. 
 
 4.    If a skier is ranked #14 after the first split, what rank would you predict for her finish?
 
@@ -64,7 +62,6 @@ ski race in Trondheim. There are 61 racers in the dataset and 20 variables.
 
 6.    If a skier had a time of 5.00 minutes after the first split, what time would you predict for her finish?
 
-7.    Can it be concluded that the time and/or rank of a skier after the first distance interval has a substantial impact on their finishing rank and/or time? Explain your answer. 
  
 ## References
 
