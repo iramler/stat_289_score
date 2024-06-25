@@ -20,3 +20,32 @@ badminton_df
 
 # Graphical Explorations
 
+```{r}
+ggplot(data = badminton_df, aes(x = Category, y = `Points For`)) + geom_boxplot() + facet_wrap(~Gender)
+```
+
+```{r}
+mens_singles <- badminton_df |> filter(Category == "Singles" & Gender == "Men") 
+
+mens_singles_sum <- mens_singles |> group_by(Year) |> summarise(`Points For` = mean(`Points For`))
+ggplot(data = mens_singles_sum, aes(x = Year, y = `Points For`)) + geom_line() 
+```
+
+```{r}
+badminton_sum <- badminton_df |> group_by(Year, Gender, Category) |> summarise(mean_pts_for = mean(`Points For`)) |> filter(Year != 2020)
+
+ggplot(data = badminton_sum, aes(x = Year, y = mean_pts_for, colour = Gender)) + geom_line() + facet_wrap(~Category)
+```
+
+```{r}
+ggplot(data = badminton_df, aes(x = `Points For`, y = `Points Against`, colour = Gender)) + geom_point(alpha = 0.5) + facet_wrap(~Category)
+```
+
+```{r}
+ggplot(data = badminton_df, aes(x = Wins, y = `Points Against`)) + geom_point()
+```
+
+```{r}
+badminton_df |> 
+```
+
