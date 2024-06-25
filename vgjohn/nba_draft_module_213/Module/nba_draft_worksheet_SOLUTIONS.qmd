@@ -35,22 +35,27 @@ Players move the ball up and down the court by dribbling, passing the ball to te
 
 ## Part 2 - Loading and Cleaning the Data 
 
-**1.  Load the necessary packages into your R Environment**
+**1.  Place to load the necessary packages into your R Environment**
 
 ```{r echo=TRUE}
-
+library(dplyr)
+library(readr)
+library(forcats)
+library(ggplot2)
+students could also load the entire tidyverse
 ```
 
 **2.  Load in the data file `nba_draft`. Store it in an object called `nba_draft`**
 
 ```{r echo=TRUE}
-
+# make sure the dataset is downloaded and is saved to the student's computer. 
+# nba_draft <- read_csv( "/the path to the file")
 ```
 
 **3.  Right now, we only want to look at players that were selected in the first round of the draft. Write the correct code that selects only those who were chosen in the first round. Store it in an object called `nba_round1s`.**
 
 ```{r echo=TRUE}
-# nba_round1s <- nba_draft %>% filter(round_picked == 1)
+nba_round1s <- nba_draft %>% filter(round_picked == 1)
 ```
 
 **4. In order to being our ANOVA exploration, we need to look at different groups within the round one selections. Since we have the order in which the players were selected (stored in the `pick_in_round` variable), we can make an additional categorical variable to keep track of where in the draft the player was selected. Make a new variable, called `pick_category`, which follows the following conditions: **
@@ -62,21 +67,21 @@ Players move the ball up and down the court by dribbling, passing the ball to te
 Note that the first number is exclusive and the second number is inclusive, except for number 1, which should be included in the first group. 
 
 ```{r}
-# nba_round1s <- nba_round1s %>%
-#   mutate(
-#     pick_category = case_when(
-#       pick_in_round >= 1 & pick_in_round <= 10 ~ "1-10",
-#       pick_in_round > 10 & pick_in_round <= 20 ~ "10-20",
-#       pick_in_round > 20 & pick_in_round <= 30 ~ "20-30"
-#     )
-#   )
+nba_round1s <- nba_round1s %>%
+  mutate(
+    pick_category = case_when(
+      pick_in_round >= 1 & pick_in_round <= 10 ~ "1-10",
+      pick_in_round > 10 & pick_in_round <= 20 ~ "10-20",
+      pick_in_round > 20 & pick_in_round <= 30 ~ "20-30"
+    )
+  )
 ```
 
 **5. Make the `pick_category` variable a factor with three levels.**
 
 ```{r}
-# nba_round1s$pick_category <- factor(nba_round1s$pick_category,
-#                                   levels = c("1-10", "10-20", "20-30"))
+nba_round1s$pick_category <- factor(nba_round1s$pick_category,
+                                  levels = c("1-10", "10-20", "20-30"))
 ```
 
 ## Part 3 - ANOVA
@@ -84,41 +89,41 @@ Note that the first number is exclusive and the second number is inclusive, exce
 **1. Create a box plot that compares the average minutes played per game based on a player's selection in the first round of the NBA draft. Make sure to include a title, color coded legend, and axis labels.**
 
 ```{r}
-# ggplot(nba_round1s,
-#        mapping = aes(x = mins_per_game,
-#                      y = pick_category,
-#                      fill = pick_category)) +
-#   geom_boxplot() +
-#   labs(title = "Boxplot of MPG based on Round 1 NBA draft picks",
-#        x = "Minutes Per Game",
-#        y= "Category in Draft",
-#        fill = "Pick in NBA Draft") +
-#   theme_minimal()
+ggplot(nba_round1s,
+       mapping = aes(x = mins_per_game,
+                     y = pick_category,
+                     fill = pick_category)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of MPG based on Round 1 NBA draft picks",
+       x = "Minutes Per Game",
+       y= "Category in Draft",
+       fill = "Pick in NBA Draft") +
+  theme_minimal()
 ```
 
 **2. Below is the code to create a density plot comparing the average minutes played per game based on a player's selection in the first round of the NBA draft. Based on this density plot and the box plots you created above, do you feel as though ANOVA is appropriate? What conclusions can you draw upon first glance of the two data visualizations? Are there any concerns? **
 
 ```{r}
-# means = nba_round1s %>%
-#   group_by(pick_category) %>%
-#   summarize(
-#     mean_value = mean(mins_per_game))
-# 
-# 
-# ggplot(nba_round1s,
-#        mapping = aes(x = mins_per_game,
-#                      fill = pick_category)) +
-#   geom_density(alpha = 0.4) +
-#   geom_vline(data = means,
-#              mapping = aes(xintercept = mean_value, color = pick_category),
-#              linetype = "dashed",
-#              size = 1,
-#              show.legend = FALSE) +
-#   labs(title = "Distribution of MPG based on Round 1 NBA draft picks",
-#        x = "Minutes Per Game",
-#        y = "Density",
-#        fill = "Pick in draft in NBA") +
-#   theme_minimal()
+means = nba_round1s %>%
+  group_by(pick_category) %>%
+  summarize(
+    mean_value = mean(mins_per_game))
+
+
+ggplot(nba_round1s,
+       mapping = aes(x = mins_per_game,
+                     fill = pick_category)) +
+  geom_density(alpha = 0.4) +
+  geom_vline(data = means,
+             mapping = aes(xintercept = mean_value, color = pick_category),
+             linetype = "dashed",
+             size = 1,
+             show.legend = FALSE) +
+  labs(title = "Distribution of MPG based on Round 1 NBA draft picks",
+       x = "Minutes Per Game",
+       y = "Density",
+       fill = "Pick in draft in NBA") +
+  theme_minimal()
 ```
 
 The box plots show that the variance between the three groups seems to be relatively similar, which is necessary for an ANOVA test. There are limited extreme outliers which is good when looking at the distribution and variance. The distribution of the 10-20 and 20-30 groups seem to follow a relatively normal shape and have means somewhat close together. The 1-10 group is skewed slightly to the right which could be slightly concerning. A one-way ANOVA does seem appropriate, the conditions seem met and there could be a significant difference among the groups. 
@@ -138,10 +143,10 @@ The box plots show that the variance between the three groups seems to be relati
 **4. Run an ANOVA test in R and store it in an object called `mpg_aov`. Print the summary table** 
 
 ```{r}
-# mpg_aov <- aov(mins_per_game ~ pick_category,
-#                  data = nba_round1s)
-# 
-# summary(mpg_aov)
+mpg_aov <- aov(mins_per_game ~ pick_category,
+                 data = nba_round1s)
+
+summary(mpg_aov)
 ```
 
 **5. Using the ANOVA table, interpret the sum of squares for the groups. What does it imply about the data?** 
@@ -157,12 +162,16 @@ The box plots show that the variance between the three groups seems to be relati
 
 * From looking at the means in the density plot and box plot, we are most likely to find a difference between those selected 1-10 and those selected 20-30 because there is the largest difference in mean number of minutes played. We are least likely to find a difference between those selected 10-20 and 20-30 because the difference in mean is the smallest. 
 
-**8. In the 2011 draft, Kyrie Irving was selected 1st in the first round by the Cleveland Cavaliers, and Klay Thompson was selected 11th by the Golden State Warriors. Is there a significant difference between the number of minutes we would expect them to play? If so, what is the difference? Provide evidence as well as a specific number. (Hint: Use Tukey's HSD)**
+**8. In the 2011 draft, Kyrie Irving was selected 1st in the first round by the Cleveland Cavaliers, and Klay Thompson was selected 11th by the Golden State Warriors. Is there a significant difference between the number of minutes we would expect them to play? If so, what is the difference? Provide evidence as well as a specific number.**
 
 ```{r}
-# TukeyHSD(mpg_aov)
+TukeyHSD(mpg_aov)
 ```
 
 * From the output, we can see that there is a significant difference between the number of minutes played by Kyrie Irving (who was chosen 1-10), and Klay Thompson (who was chosen 10-20). We know this because the p-value of that specific comparison is significant (0.0000). From the output, the difference between number of minutes played between those who were selected 1-10 and 10-20 is 7.035, with those who were selected 1-10 playing on average 7.035 more minutes. So we would expect Kyrie Irving to be that much more. 
+
+**9. Were your predictions in question 7 correct? Are there any comparisons that don't have a significant difference?** 
+
+* The predictions from questions seven were correct. The difference in minutes played between those picked 1-10 and 20-30 was the largest (8.98), and the difference in minutes played between those picked 10-20 and 20-30 is the smallest (1.95). All of the differences are significant, with p-values below 0.05. 
 
  

@@ -53,6 +53,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-categories">
     <div class="quarto-category">One-Way Analysis of Variance</div>
     <div class="quarto-category">Difference in Means</div>
+    <div class="quarto-category">Tukey’s HSD</div>
   </div>
   </div>
 
@@ -140,9 +141,9 @@ Learning Objectives
 <div class="callout-body-container callout-body">
 <p>By the end of this activity, you will:</p>
 <ol type="1">
-<li><p>Further understand the different components of a one-way ANOVA test and how to solve for them.</p></li>
-<li><p>Be able to explain the significance of the F-statistic and the implications it has on the result of the ANOVA test</p></li>
-<li><p>Become proficient in ability to interpret the results of an ANOVa test in context and apply it to real world examples.</p></li>
+<li><p>Increase ability to clean and manipulate data in R using multiple packages</p></li>
+<li><p>Understand the components to an ANOVA test and how they contribute to the overall F-statistic and p-value</p></li>
+<li><p>Be comfortable running post-hoc tests to determine specific relationships</p></li>
 </ol>
 </div>
 </div>
@@ -159,7 +160,7 @@ Methods
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Students should have prior knowledge of conducting one-way analysis of variance tests and the implications. Students should be able to explain the different components of an ANOVA table as well as familiarity with the formulas necessary to complete the table.</p>
+<p>Students should have prior knowledge of conducting one-way analysis of variance tests and the implications. Students should be able to explain the different components of an ANOVA table as well as familiarity with the idea of post-hoc tests to ANOVA, specifically Tukey’s HSD. Students should also be comfortable with the statistical software, R, such as know how to make basic data visualizations and statistical tests.</p>
 </div>
 </div>
 </div>
@@ -175,7 +176,7 @@ Technology Requirements
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>No explicit technology is necessary, although a calculator is recommended.</p>
+<p>The statistical software R is required to complete the learning materials in this module.</p>
 </div>
 </div>
 </div>
@@ -298,8 +299,8 @@ Technology Requirements
 </section>
 <section id="materials" class="level3">
 <h3 class="anchored" data-anchor-id="materials">Materials</h3>
-<p><a href="nba_draft_worksheet_word.docx">Class handout</a></p>
-<p><a href="nba_draft_worksheet_word_SOLUTIONS.docx">Class handout - with solutions</a></p>
+<p><a href="nba_draft_worksheet.qmd" target="_blank">Class handout</a></p>
+<p><a href="nba_draft_worksheet_SOLUTIONS.qmd" target="_blank">Class handout - with solutions</a></p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Conclusion">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -312,7 +313,7 @@ Conclusion
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Upon conclusion of this module,</p>
+<p>Upon conclusion of this module, students will discover that there does seem to be a significant difference between the average number of minutes played based on which group a player was selected in the NBA draft. They also practice their skills in data cleaning and manipulation on statistical software and delve deeper into which groups have significant differences. This learning module offers a valuable opportunity to start from the beginning with a data set and complete the necessary steps to run an ANOVA test and see the real world applications.</p>
 </div>
 </div>
 </div>

@@ -10,7 +10,7 @@ author:
     affiliation:
       - ref: slu
 date: "June 24, 2024"
-description: "Critically exploring self reported strength ratios."
+description: "Conducting an ANOVA test and analyzing the results"
 editor: 
   canonical: true
 categories:
@@ -60,7 +60,7 @@ By the end of this activity, you will:
 
 2. Be able to explain the significance of the F-statistic and the implications it has on the result of the ANOVA test
 
-3. Become proficient in ability to interpret the results of an ANOVa test in context and apply it to real world examples. 
+3. Become proficient in ability to interpret the results of an ANOVA test in context and apply it to real world examples. 
 
 :::
 

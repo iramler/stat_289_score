@@ -61,26 +61,26 @@ Players move the ball up and down the court by dribbling, passing the ball to te
 **2. Below is the code to create a density plot comparing the average minutes played per game based on a player's selection in the first round of the NBA draft. Based on this density plot and the box plots you created above, do you feel as though ANOVA is appropriate? What conclusions can you draw upon first glance of the two data visualizations? Are there any concerns? **
 
 ```{r}
-# means = nba_round1s %>%
-#   group_by(pick_category) %>%
-#   summarize(
-#     mean_value = mean(mins_per_game))
-# 
-# 
-# ggplot(nba_round1s,
-#        mapping = aes(x = mins_per_game,
-#                      fill = pick_category)) +
-#   geom_density(alpha = 0.4) +
-#   geom_vline(data = means,
-#              mapping = aes(xintercept = mean_value, color = pick_category),
-#              linetype = "dashed",
-#              size = 1,
-#              show.legend = FALSE) +
-#   labs(title = "Distribution of MPG based on Round 1 NBA draft picks",
-#        x = "Minutes Per Game",
-#        y = "Density",
-#        fill = "Pick in draft in NBA") +
-#   theme_minimal()
+means = nba_round1s %>%
+  group_by(pick_category) %>%
+  summarize(
+    mean_value = mean(mins_per_game))
+
+
+ggplot(nba_round1s,
+       mapping = aes(x = mins_per_game,
+                     fill = pick_category)) +
+  geom_density(alpha = 0.4) +
+  geom_vline(data = means,
+             mapping = aes(xintercept = mean_value, color = pick_category),
+             linetype = "dashed",
+             size = 1,
+             show.legend = FALSE) +
+  labs(title = "Distribution of MPG based on Round 1 NBA draft picks",
+       x = "Minutes Per Game",
+       y = "Density",
+       fill = "Pick in draft in NBA") +
+  theme_minimal()
 ```
 
 **3. Now that we've determined ANOVA is most likely appropriate, write and interpret in context the null and alternative hypotheses we'll be using for the ANOVA test. **
@@ -95,5 +95,6 @@ Players move the ball up and down the court by dribbling, passing the ball to te
 
 **8. In the 2011 draft, Kyrie Irving was selected 1st in the first round by the Cleveland Cavaliers, and Klay Thompson was selected 11th by the Golden State Warriors. Is there a significant difference between the number of minutes we would expect them to play? If so, what is the difference? Provide evidence as well as a specific number. (Hint: Use Tukey's HSD)**
 
+**9. Were your predictions in question 7 correct? Are there any comparisons that don't have a significant difference?**
 
  
