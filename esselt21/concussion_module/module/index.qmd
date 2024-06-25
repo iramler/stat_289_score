@@ -35,8 +35,6 @@ By the end of this activity, you will be able to:
 2.  Be comfortable using ggplot and creating sound data visualizations.
 
 3.  Be able to decide if there is any questions worth pursuing further.
-
-4.  Create an ANOVA model.
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
@@ -69,7 +67,7 @@ Download non tidy data: [concussion.csv](data/concussion.csv)
 | Position                       | The position that the player plays                                |
 | Games Missed                   | The number of games the player missed with the injury             |
 | Reported Injury Type           | What the injury was reported as                                   |
-| Play Time After Injury         | How many downs the player played after getting injured            |
+|Downs Played After Concussion   | How many downs the player played after getting injured            |
 | Average Playtime Before Injury | How much the player was playing on average before getting injured |
 | Offense                        | Whether the player was an offensive player or not                 |
 | Skilled                        | Whether the player was a skilled position or not                  |

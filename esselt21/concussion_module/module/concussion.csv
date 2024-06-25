@@ -1,4 +1,4 @@
-Player,Team,Date,Position,Games Missed,Reported Injury Type,Play Time After Injury,Average Playtime Before Injury,Offense,Skilled
+Player,Team,Date,Position,Games Missed,Reported Injury Type,Downs Played After Concussion,Average Playtime Before Injury,Offense,Skilled
 Aldrick Robinson,Washington Redskins,30/09/2012,Wide Receiver,1,Head,14,37,Offense,Skilled
 D.J. Fluker,San Diego Chargers,22/09/2013,Offensive Tackle,1,Concussion,78,73.5,Offense,Non-Skilled
 Marquise Goodwin,Buffalo Bills,28/09/2014,Wide Receiver,1,Concussion,25,17.5,Offense,Skilled
@@ -49,7 +49,7 @@ Terron Armstead,New Orleans Saints,28/09/2014,Offensive Tackle,0,Concussion,89,7
 Christopher Conte,Chicago Bears,5/10/2014,Safety,0,Concussion,26,42,Defense,Non-Skilled
 Michael Hoomanawanui,New England Patriots,30/09/2012,Tight End,2,Concussion,20,17.67,Offense,Skilled
 Phillip Adams,Oakland Raiders,16/12/2012,Comerback,0,Concussion,25,23.77,Defense,Non-Skilled
-Gino Gradkowski,Baltimore Ravens,12/01/2013,Guard,0,Head,5,11.709999999999999,Offense,Non-Skilled
+Gino Gradkowski,Baltimore Ravens,12/01/2013,Guard,0,Head,5,11.71,Offense,Non-Skilled
 Devin Hester,Chicago Bears,25/11/2012,Wide Receiver,1,Concussion,61,36.7,Offense,Skilled
 Kevin Rutland,Jacksonville Jaguars,23/09/2012,Comerback,2,Concussion,6,19.5,Defense,Non-Skilled
 Joshua Cribbs,Cleveland Browns,27/09/2012,Wide Receiver,0,Head,27,23.67,Offense,Skilled
@@ -116,7 +116,7 @@ David Amerson,Washington Redskins,13/10/2013,Comerback,0,Concussion,32,65,Defens
 Dwayne Gratz,Jacksonville Jaguars,28/09/2014,Comerback,1,Concussion,28,84.66999999999999,Defense,Non-Skilled
 Vernon Davis,San Francisco 49ers,10/11/2013,Tight End,0,Concussion,56,46.5,Offense,Skilled
 Eugene Sims,St. Louis Rams,30/09/2012,Defensive End,1,Head,36,49.33,Defense,Non-Skilled
-John Carlson,Minnesota Vikings,21/10/2012,Tight End,2,Concussion,12,22.830000000000002,Offense,Skilled
+John Carlson,Minnesota Vikings,21/10/2012,Tight End,2,Concussion,12,22.83,Offense,Skilled
 Donald Brown,San Diego Chargers,5/10/2014,Linebacker,3,Concussion,20,43.75,Defense,Non-Skilled
 Stephen Burton,Jacksonville Jaguars,10/11/2013,Wide Receiver,7,Concussion,0,45.33,Offense,Skilled
 Julian Edelman,New England Patriots,22/11/2012,Wide Receiver,0,Concussion,59,41,Offense,Skilled
@@ -188,7 +188,7 @@ Jordan Reed,Washington Redskins,17/11/2013,Tight End,6,Concussion,0,48.14,Offens
 Tiquan Underwood,Tampa Bay Buccaneers,18/11/2012,Wide Receiver,0,Head,29,25.86,Offense,Skilled
 Terence Newman,Cincinnati Bengals,18/11/2012,Comerback,0,Head,63,62,Defense,Non-Skilled
 Donnie Avery,Indianapolis Colts,18/11/2012,Wide Receiver,0,Head,71,66.44000000000001,Offense,Skilled
-Roy Miller,Tampa Bay Buccaneers,2/12/2012,Defensive Tackle,1,Head,29,40.730000000000004,Defense,Non-Skilled
+Roy Miller,Tampa Bay Buccaneers,2/12/2012,Defensive Tackle,1,Head,29,40.73,Defense,Non-Skilled
 Sheldon Brown,Cleveland Browns,23/12/2012,Comerback,1,Head,0,61.21,Defense,Non-Skilled
 George Iloka,Cincinnati Bengals,8/12/2013,Safety,0,Concussion,63,70,Defense,Non-Skilled
 Jason Campbell,Cleveland Browns,24/11/2013,Quarterback,1,Concussion,74,51.25,Offense,Skilled
@@ -201,7 +201,7 @@ Jon Baldwin,Kansas City Chiefs,12/11/2012,Wide Receiver,1,Head,26,39,Offense,Ski
 Morris Claiborne,Dallas Cowboys,9/12/2012,Comerback,1,Concussion,93,58.5,Defense,Non-Skilled
 Joe Reitz,Indianapolis Colts,30/12/2012,Guard,1,Concussion,0,58.63,Offense,Non-Skilled
 Johnathan Cyprien,Jacksonville Jaguars,7/09/2014,Safety,1,Concussion,78,37,Defense,Non-Skilled
-Omar Bolden,Denver Broncos,19/10/2014,Comerback,1,Concussion,17,24.330000000000002,Defense,Non-Skilled
+Omar Bolden,Denver Broncos,19/10/2014,Comerback,1,Concussion,17,24.33,Defense,Non-Skilled
 Anthony Fasano,Kansas City Chiefs,1/12/2013,Tight End,2,Concussion,53,59.86,Offense,Skilled
 Eric Reid,San Francisco 49ers,15/09/2013,Safety,0,Concussion,77,67,Defense,Non-Skilled
 Jerrell Freeman,Indianapolis Colts,14/10/2013,Linebacker,0,Concussion,78,56.8,Defense,Non-Skilled
@@ -223,7 +223,7 @@ Terrell McClain,Dallas Cowboys,21/09/2014,Defensive Tackle,1,Concussion,18,20,De
 Jeremy Mincey,Jacksonville Jaguars,29/09/2013,Defensive End,3,Concussion,21,29.67,Defense,Non-Skilled
 Trumaine Johnson,St. Louis Rams,24/11/2013,Comerback,0,Concussion,65,57.2,Defense,Non-Skilled
 Vontaze Burfict,Cincinnati Bengals,22/12/2013,Linebacker,0,Concussion,69,70.21000000000001,Defense,Non-Skilled
-Fred Jackson,Buffalo Bills,11/11/2012,Running Back,1,Concussion,32,30.330000000000002,Offense,Skilled
+Fred Jackson,Buffalo Bills,11/11/2012,Running Back,1,Concussion,32,30.33,Offense,Skilled
 Drayton Florence,Detroit Lions,18/11/2012,Comerback,0,Concussion,84,45.5,Defense,Non-Skilled
 Antonio Allen,New York Jets,3/11/2013,Safety,0,Concussion,6,53.13,Defense,Non-Skilled
 Vance Walker,Oakland Raiders,8/12/2013,Defensive Tackle,1,Concussion,60,55.58,Defense,Non-Skilled
