@@ -1,6 +1,6 @@
 ---
 title: "NFL Head, Neck and Spine Committe Interview Case Study"
-author: "eric seltzer"
+author: "Eric Seltzer"
 format: html
 ---
 # Introduction
@@ -13,7 +13,7 @@ One of the roles that has been created is working in the NFL Head, Neck and Spin
   o	NFL players
   o	Oversee research when requested by the NFL and its collaborators
   o	Analyze injury data and propose interventions
-  o	Create and supervise focused research groups with specific goals and assignments (e.g. biomechanical engineering)
+  o	Create and supervise focused research groups with specific goals and assignments (e.g. biomechanical                engineering)
   o	Improve public education and advocate for enhanced sports safety
   
 Today is your lucky day, a new position just opened for the lead Data Visualization Expert of the NFL Head, Neck and Spine Committee. As an expert on the subject, Dr. Nicholas Theodore, the Chairman, has invited you in for a formal case study before he can just hand you the job.
@@ -30,27 +30,86 @@ library(tidyverse)
 concussion <- read_csv(here::here("esselt21/concussion_module/module/concussion.csv"))
 ```
 
+```{r}
+teams <-
+  concussion |>
+  mutate(Team = as_factor(Team)) |>
+  group_by(Team) |>
+  summarise(avgDowns = mean(`Downs Played After Concussion`),
+            avgGames = mean(`Games Missed`),
+            totalConcussions = n())
+```
+
 # Question 2
 Create a visualization to show the average number of downs played after a concussion for each team.
 ```{r}
-
+teams |>
+  ggplot(aes(x = avgDowns,
+             y = fct_reorder(Team,
+                             avgDowns,
+                             .desc = FALSE))) +
+  geom_col()
 ```
 
 # Question 3
 What can you infer from this visualization if you wanted to improve the safety and care of the players in the NFL? (Hint: All teams have a high number of concussions)
-```{r}
 
-```
+All teams have a high number of concussions. As a member of the NFL Head, Neck and Spine committee, our goal should be to decrease this number across the board. Ideally, we should implement a system in which if a concussion is diagnosed, that player will play no more remaining downs.
 
 # Question 4
 Create a visualization of the average games missed per team and discuss if this is a helpful visualization.
 ```{r}
-
+teams |>
+  ggplot(aes(x = avgGames,
+             y = fct_reorder(Team,
+                             avgGames,
+                             .desc = FALSE))) +
+  geom_col()
 ```
 
+This visualization isn't super helpful because the x axis range is very small. As well, it is important to note that there might be outliers influencing the higher numbers of the Detroit Lions and the Jacksonville Jaguars. More research must be done to ensure that the higher numbers of games missed in outliers are strictly from concussions and not from other injuries/reasons.
+
 # Question 5
+If we wanted to identify hwo many downs players are playing after their concussion, what type of plot might be most helpful. (Hint: ggridges package)
+
+A density plot, we can use the ggridges to use their geom_density_ridges() function
+
+# Question 6
+```{r}
+library(ggridges)
+```
+
+```{r}
+concussion |>
+  ggplot(aes(x = `Downs Played After Concussion`,
+             y = Position,
+             fill = Position)) +
+  geom_density_ridges(alpha = 0.5) +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  labs(x = "Downs",
+       title = "Density of Downs Played After Concussion by Position")
+```
+
+# Question 7
+What can you infer from this plot, which positions have the most players playing zero downs after a concussion, and therefore the teams are looking out for most?
+
+Both quarterbacks and guards have a peak at zero games played, as well, tight ends are also playing zero downs after a concussion than most other positions. Overall, there are a lot of players at every position playing too many downs after getting a concussion.
+
+# Question 8
 As a final task, take whichever visualization you created above that you feel is most important and proves a point and make it look better using the themes in R. This will be presented to all the NFL GMs to show your point. (Note: A balance between interpretability and visual aesthetics is important)
 ```{r}
-
+teams |>
+  ggplot(aes(x = avgDowns,
+             y = fct_reorder(Team,
+                             avgDowns,
+                             .desc = FALSE),
+             fill = Team)) +
+  geom_col(alpha = 0.5) +
+  theme_minimal() +
+  labs(x = "Number of Downs",
+       y = "Team",
+       title = "Average Downs Played After Concussion by Team") +
+  theme(legend.position = "none")
 ```
 
