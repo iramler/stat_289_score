@@ -219,7 +219,7 @@ time_outliers2 <- speed_skating |> filter(!is.na(time_lap2)) |> filter(time_lap2
 time_outliers2 |> summarise(mean(time_lap2))
 speed_skating |> summarise(mean(time_lap2, na.rm = TRUE))
 
-ggplot(data = time_outliers2, aes(x = time_lap2)) +
+ggplot(data = speed_skating, aes(x = time_lap2)) +
   geom_histogram(bins = 75)
 ```
 
@@ -324,5 +324,19 @@ speed_skating |> mutate(time_coeff = case_when(Time < 40.75 ~ 1,
 ```{r}
 speed_skating |> filter(!is.na(time_lap3)) |> filter(time_lap3 == min(time_lap3))
 ```
+
+```{r}
+speed_skating |> filter(!is.na(time_lap4)) |> summary()
+```
+
+```{r}
+mad(speed_skating$Time, na.rm = TRUE)
+mad(speed_skating$time_lap1, na.rm = TRUE)
+mad(speed_skating$time_lap2, na.rm = TRUE)
+mad(speed_skating$time_lap3, na.rm = TRUE)
+mad(speed_skating$time_lap4, na.rm = TRUE)
+mad(speed_skating$time_lap5, na.rm = TRUE)
+```
+
 
 

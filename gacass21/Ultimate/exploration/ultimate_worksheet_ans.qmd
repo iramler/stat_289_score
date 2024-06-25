@@ -139,19 +139,19 @@ ggplot(data = ultimate_full, aes(y = Assists, x = full_division_name)) +
 
 5. 
 
-a. Make a plot that compares Turns and Assists, label the players in the top 10 for assists using geom_text().
+a. Make a plot that compares turns per game and Assists, label the players in the top 10 for assists using geom_text().
 
 ```{r}
 top_10_assists <- ultimate_full |> arrange(desc(Assists)) |> slice(1:10)
 
-ggplot(data = ultimate_full, aes(x = Assists, y = Turns)) +
+
+ggplot(data = ultimate_full, aes(x = Assists, y = turns_per_game)) +
   geom_point(color = "skyblue4") +
   geom_text(data = top_10_assists, aes(label = Player))
 
-
 ## Could also color = full_division_name
 
-ggplot(data = ultimate_full, aes(x = Assists, y = Turns)) +
+ggplot(data = ultimate_full, aes(x = Assists, y = turns_per_game)) +
   geom_point(aes(color = full_division_name)) +
   geom_text(data = top_10_assists, aes(label = Player))
 ```
