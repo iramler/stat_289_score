@@ -1,0 +1,22 @@
+---
+title: "badminton_data_exploration"
+format: html
+---
+
+# Libraries
+
+```{r}
+library(tidyverse)
+```
+
+# Data
+
+```{r}
+badminton_df <- read_csv("~/Desktop/git/stat_289_score/awsmit22/badminton_module/exploration/badminton.csv")
+
+badminton_df <- badminton_df |> select(!...1)
+badminton_df
+```
+
+# Graphical Explorations
+

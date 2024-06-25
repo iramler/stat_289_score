@@ -33,8 +33,9 @@ testws2023
 # Cleaning
 
 ```{r}
-ws2023 <- testws2023 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2023)
+ws2023 <- testws2023 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2023) |> mutate(Rank = rank(desc(`Points For`)))
 ```
+
 
 # 2023 top 25 women's doubles scraping
 
@@ -56,7 +57,7 @@ testwd2023
 # Cleaning
 
 ```{r}
-wd2023 <- testwd2023 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2023)
+wd2023 <- testwd2023 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2023) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2023 top 25 men's doubles scraping
@@ -79,7 +80,7 @@ testms2023
 # Cleaning
 
 ```{r}
-ms2023 <- testms2023 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2023)
+ms2023 <- testms2023 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2023) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2023 top 25 men's doubles scraping
@@ -102,7 +103,7 @@ testmd2023
 # Cleaning
 
 ```{r}
-md2023 <- testmd2023 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2023)
+md2023 <- testmd2023 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2023)|> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2023 top 25 mixed doubles scraping
@@ -125,7 +126,7 @@ testxd2023
 # Cleaning
 
 ```{r}
-mixed2023 <- testxd2023 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2023)
+mixed2023 <- testxd2023 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2023)|> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2022 top 25 women's singles scraping
@@ -148,7 +149,7 @@ testws2022
 # Cleaning
 
 ```{r}
-ws2022 <- testws2022 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2022)
+ws2022 <- testws2022 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2022)|> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2022 top 25 women's doubles scraping
@@ -171,7 +172,7 @@ testwd2022
 # Cleaning
 
 ```{r}
-wd2022 <- testwd2022 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2022)
+wd2022 <- testwd2022 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2022) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2022 top 25 men's doubles scraping
@@ -194,7 +195,7 @@ testms2022
 # Cleaning
 
 ```{r}
-ms2022 <- testms2022 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2022)
+ms2022 <- testms2022 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2022) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2022 top 25 men's doubles scraping
@@ -217,7 +218,7 @@ testmd2022
 # Cleaning
 
 ```{r}
-md2022 <- testmd2022 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2022)
+md2022 <- testmd2022 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2022) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2022 top 25 mixed doubles scraping
@@ -240,7 +241,7 @@ testxd2022
 # Cleaning
 
 ```{r}
-mixed2022 <- testxd2022 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2022)
+mixed2022 <- testxd2022 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2022) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2021 top 25 women's singles scraping
@@ -263,7 +264,7 @@ testws2021
 # Cleaning
 
 ```{r}
-ws2021 <- testws2021 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2021)
+ws2021 <- testws2021 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2021) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2021 top 25 women's doubles scraping
@@ -286,7 +287,7 @@ testwd2021
 # Cleaning
 
 ```{r}
-wd2021 <- testwd2021 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2021)
+wd2021 <- testwd2021 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2021) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2021 top 25 men's doubles scraping
@@ -309,7 +310,7 @@ testms2021
 # Cleaning
 
 ```{r}
-ms2021 <- testms2021 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2021)
+ms2021 <- testms2021 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2021) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2021 top 25 men's doubles scraping
@@ -332,7 +333,7 @@ testmd2021
 # Cleaning
 
 ```{r}
-md2021 <- testmd2021 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2021)
+md2021 <- testmd2021 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2021) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2021 top 25 mixed doubles scraping
@@ -355,7 +356,7 @@ testxd2021
 # Cleaning
 
 ```{r}
-mixed2021 <- testxd2021 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2021)
+mixed2021 <- testxd2021 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2021) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2020 top 25 women's singles scraping
@@ -378,7 +379,7 @@ testws2020
 # Cleaning
 
 ```{r}
-ws2020 <- testws2020 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2020)
+ws2020 <- testws2020 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2020) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2020 top 25 women's doubles scraping
@@ -401,7 +402,7 @@ testwd2020
 # Cleaning
 
 ```{r}
-wd2020 <- testwd2020 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2020)
+wd2020 <- testwd2020 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2020) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2020 top 25 men's doubles scraping
@@ -424,7 +425,7 @@ testms2020
 # Cleaning
 
 ```{r}
-ms2020 <- testms2020 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2020)
+ms2020 <- testms2020 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2020) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2020 top 25 men's doubles scraping
@@ -447,7 +448,7 @@ testmd2020
 # Cleaning
 
 ```{r}
-md2020 <- testmd2020 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2020)
+md2020 <- testmd2020 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2020)|> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2020 top 25 mixed doubles scraping
@@ -470,7 +471,7 @@ testxd2020
 # Cleaning
 
 ```{r}
-mixed2020 <- testxd2020 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2020)
+mixed2020 <- testxd2020 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2020)|> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2019 top 25 women's singles scraping
@@ -493,7 +494,7 @@ testws2019
 # Cleaning
 
 ```{r}
-ws2019 <- testws2019 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2019)
+ws2019 <- testws2019 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2019) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2019 top 25 women's doubles scraping
@@ -516,7 +517,7 @@ testwd2019
 # Cleaning
 
 ```{r}
-wd2019 <- testwd2019 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2019)
+wd2019 <- testwd2019 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2019) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2019 top 25 men's doubles scraping
@@ -539,7 +540,7 @@ testms2019
 # Cleaning
 
 ```{r}
-ms2019 <- testms2019 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2019)
+ms2019 <- testms2019 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2019) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2019 top 25 men's doubles scraping
@@ -562,7 +563,7 @@ testmd2019
 # Cleaning
 
 ```{r}
-md2019 <- testmd2019 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2019)
+md2019 <- testmd2019 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2019) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2019 top 25 mixed doubles scraping
@@ -585,7 +586,7 @@ testxd2019
 # Cleaning
 
 ```{r}
-mixed2019 <- testxd2019 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2019)
+mixed2019 <- testxd2019 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2019) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2018 top 25 women's singles scraping
@@ -608,7 +609,7 @@ testws2018
 # Cleaning
 
 ```{r}
-ws2018 <- testws2018 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2018)
+ws2018 <- testws2018 |> separate(c("Cat"), into = c("Gender", "Category"), sep = 1) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> rename(Player1 = Players, Opponent1 = Opponents) |> mutate(Year = 2018) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2018 top 25 women's doubles scraping
@@ -631,7 +632,7 @@ testwd2018
 # Cleaning
 
 ```{r}
-wd2018 <- testwd2018 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2018)
+wd2018 <- testwd2018 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "W", "Women")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2018) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2018 top 25 men's doubles scraping
@@ -654,7 +655,7 @@ testms2018
 # Cleaning
 
 ```{r}
-ms2018 <- testms2018 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2018)
+ms2018 <- testms2018 |> rename(Player1 = Players, Opponent1 = Opponents) |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "S", "Singles")) |> mutate(Year = 2018) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2018 top 25 men's doubles scraping
@@ -677,7 +678,7 @@ testmd2018
 # Cleaning
 
 ```{r}
-md2018 <- testmd2018 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2018)
+md2018 <- testmd2018 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "M", "Men")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2018) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # 2018 top 25 mixed doubles scraping
@@ -700,7 +701,7 @@ testxd2018
 # Cleaning
 
 ```{r}
-mixed2018 <- testxd2018 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2018)
+mixed2018 <- testxd2018 |> separate(Players, into = c("Player1", "Player2"), sep = " / ") |> separate(Opponents, into = c("Opponent1", "Opponent2"), sep = " / ") |> separate(Cat, into = c("Gender", "Category"), sep = 1) |> mutate(Gender = str_replace_all(Gender, "X", "Mixed")) |> mutate(Category = str_replace_all(Category, "D", "Doubles")) |> mutate(Year = 2018) |> mutate(Rank = rank(desc(`Points For`)))
 ```
 
 # Joining the datasets
@@ -762,6 +763,9 @@ all19_18 <- full_join(all2019, all2018)
 all23_20 <- full_join(all23_22, all21_20)
 
 badminton <- full_join(all23_20, all19_18)
+
+# Last minute cleaning
+badminton <- badminton |> relocate(Rank) |> mutate(Rank = as.integer(Rank))
 ```
 
 # Write csv file
