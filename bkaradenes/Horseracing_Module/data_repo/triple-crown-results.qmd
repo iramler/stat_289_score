@@ -1,7 +1,7 @@
 ---
 title: "Triple Crown Results 2005-2019"
 author: "Brendan Karadenes"
-date: 06/24/2024
+date: 06/25/2024
 description: The data set looks at the 2005-2019 Triple Crown results.
 categories:
   - Hypothesis Tests
@@ -11,11 +11,11 @@ categories:
 
 ## Motivation
 
-The Triple Crown is an annual series of horse races containing the Kentucky Derby, Preakness Stakes, and Belmont Stakes. These premier races attract the top three year old Thoroughbread horses and their jockey's to compete in front of millions of fans. 
+The Triple Crown is an annual series of horse races containing the Kentucky Derby, Preakness Stakes, and Belmont Stakes. These premier races attract the top three year old Thoroughbred horses and their jockey's to compete in front of thousands of fans. 
 
 ## Data
 
-The data set contains 627 rows and 17 columns. Each row represents a horse that competed in one of the events during the period from 2005 to 2019.
+The data set contains 627 rows and 17 columns. Each row represents a horse that competed in one of the races during the period from 2005 to 2019.
 
 | Variable       | Description                                                              |
 |-----------------|-------------------------------------------------------|
@@ -27,13 +27,35 @@ The data set contains 627 rows and 17 columns. Each row represents a horse that 
 | Odds         | betting odds of winning pre-race                                                         |
 | Win           | winning bet payout (in dollars)                                       |
 | Place     | payout of a place bet (in dollars)                                                    |
-| half_time      | half marathon time of runner                                             |
-| finish_net     | finishing time timed from when they cross the starting gate              |
-| finish_gun     | finishing time of runner timed from when the starter gun is fired        |
-| age_group      | age group of the runner                                                  |
-| half_time_sec  | half marathon time in seconds                                            |
-| finish_net_sec | net finish in seconds                                                    |
-| finish_gun_sec | gun finish in seconds                                                    |
+| Show     | payout of a show bet (in dollars)                                             |
+| year    | year of the race             |
+| race    | name of the race        |
+| high_temp      | high temperature on day of the race (Fahrenheit)                                                  |
+| low_temp  | low temperature on day of the race (Fahrenheit)                                            |
+| precipitation_24hrs | amount of total rainfall on day of the race (inches)                                                    |
+| weather | description of weather on race day                                                    |
+| track_condition | description of condition of the track surface on race day |
+| attendance | total number of spectators at the race |
+
+Data file
+
+:   [triple-crown.csv](../data/triple-crown.csv)
+
+## Questions
+
+-   Conduct a hypothesis test that tests whether or not running with poor conditions levels the playing field between high and low betting odds horses.
+
+-   Interpret linear regression coefficients to determine how betting odds affect the probability of winning.
+
+-   Create a linear regression model that predicts the odds of winning based off of betting odds and track condition.
+
+## References
+
+Kaggle
+
+<https://www.kaggle.com/>
+
+
 
 
 
