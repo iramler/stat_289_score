@@ -1,0 +1,38 @@
+---
+title: "salary_exploration"
+author: "eric seltzer"
+format: html
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+stats <- read_csv(here::here("esselt21/nba_salary_module/exploration/stats.csv"))
+
+statsnew <- read_csv(here::here("esselt21/nba_salary_module/exploration/statsnew.csv"))
+```
+
+```{r}
+stats <-
+  stats |>
+  filter(Season < 2022)
+```
+
+```{r}
+players <-
+  stats |>
+  filter(Player %in% names & Tm == "TOT")
+```
+
+```{r}
+stats <-
+  stats |>
+  filter(Player %in% names & Tm != "TOT")
+```
+
+```{r}
+write_csv(stats, here::here("esselt21/nba_salary_module/exploration/statsnew.csv"))
+```
+
