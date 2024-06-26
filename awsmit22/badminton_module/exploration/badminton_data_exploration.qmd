@@ -7,6 +7,8 @@ format: html
 
 ```{r}
 library(tidyverse)
+library(modelr)
+library(broom)
 ```
 
 # Data
@@ -55,6 +57,10 @@ ggplot(data = badminton_df, aes(x = `Points For`, y = Difference))+ geom_point()
 
 ```{r}
 ggplot(data = badminton_df, aes(x = `Points For`, y = `Points Against`))+ geom_point() + geom_smooth(method = "lm")
+```
+
+```{r}
+ggplot(data = badminton_df, aes(x = Category, y = `Points For`)) + geom_boxplot()
 ```
 
 # Grouping
@@ -107,28 +113,70 @@ badminton_df |> group_by(Player1) |> summarise(mean_rank = mean(Rank))
 badminton_df |> group_by(Player1) |> summarise(n_wins = sum(Wins))
 ```
 
-# Trying something weird with reorganizing the data 
+```{r}
+badminton_df |> filter(Category == "Doubles") |> group_by(Player1, Player2) |> summarise(n_matches = n())
+
+badminton_df |> filter(Category == "Doubles")
+```
+
+```{r}
+badminton_df |> filter(Player1 == "Se Young AN" | Opponent1 == "Se Young AN") |> group_by(Player1, Player2) |> summarise()
+```
+
+# Trying something weird with reorganizing the data
 
 ```{r}
 names <- badminton_df |> pivot_longer(c("Player1", "Opponent1", "Player2", "Opponent2"), names_to = "Position", values_to = "Name") |> filter(!is.na(Name))
 ```
 
 ```{r}
-badminton_df |> filter(Matches >=1) 
+badminton_df |> filter(Matches > 1) |> arrange(desc(Matches)) |> tail()
+```
+
+# Modelling attempts
+
+```{r}
+singles <- badminton_df |> filter(Category == "Singles")
+mod <- lm(`Points For`~ Gender + Category + Matches + `Points Against` + Rank + Player1 + Opponent1 + Wins + Losses + Difference, data = singles)
+
+mod |> tidy()
 ```
 
 
+*t.test for difference in means*
 
+```{r}
+t.test(`Points For` ~ Category, data = badminton_df)
+```
 
+```{r}
+mod_1 <- lm(`Points For` ~ Year, data = badminton_df)
+mod_1 |> tidy()
+```
 
+```{r}
+mod_2 <- lm(`Points For` ~ `Points Against`, data = badminton_df)
+mod_2 |> tidy()
+```
 
+```{r}
+mod_3 <- lm(`Points For` ~ Category, data = badminton_df)
+mod_3 |> tidy()
+```
 
+```{r}
+mod_4 <- lm(`Points For` ~ Gender, data = badminton_df)
+mod_4 |> tidy()
+```
 
+```{r}
+mod_5 <- lm(`Points For` ~ Rank, data = badminton_df)
+mod_5 |> tidy()
+```
 
-
-
-
-
-
+```{r}
+mod_6 <- lm(`Points For` ~ Matches, data = badminton_df)
+mod_6 |> tidy()
+```
 
 
