@@ -93,7 +93,7 @@ ultimate_full <- ultimate_data |> mutate(turns_per_game = Turns/team_games,
 
 ## Data Visualization
 
-1. The data set has 1,665 total players that participated in the College Ultimate Championships, figure out how many actually contributed in a statistical category using a filter function.
+1. The data set has 1,665 total players that participated in the College Ultimate Championships, figure out how many actually contributed in a statistical category using a filter function. (Don't include Team Games as a category)
 
 ```{r}
 ultimate_full |> filter(Points > 0 | Assists > 0 | Turns > 0 | Ds > 0 | plus_minus != 0) |> 
@@ -223,12 +223,6 @@ ultimate_full |> group_by(full_division_name) |> summarise(tot_plus_minus = sum(
 b. When a team on defense scores a point, the players on the field on the offensive team lose a plus minus point. With the information that plus minus is only counted for offensive possessions where teams start with the Frisbee and are more likely to score, what do the total plus minus numbers say about the dominance of offense in each division?
 
 In Division 1 Men, the offense is very dominant and scores much more often than the defense. Division 1 Women and Division 3 Men are similar where the offense is still very efficient and score much more than the defense. In Division 3 Women, the defense has a slight edge in plus_minus, meaning that teams on offense scores on slightly less than half of all points in this division. We can see this in both the Ds statistics and the Turns statistic, where Division 3 Women have the lead in both categories. This makes for very back and forth games when two teams are defensively strong and slightly weaker at offense.
-
-
-
-
-
-
 
 
 

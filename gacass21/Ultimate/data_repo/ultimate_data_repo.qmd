@@ -11,7 +11,7 @@ categories:
 
 ## Motivation
 
-Ultimate, also known as Ultimate Frisbee is a non-contact sport where 2 teams of 7 players pass a frisbee to each other and try to reach the opposing teams 'end zone' and score a point without dropping the frisbee. Each point starts with a pull, where the defensive team throws the frisbee from their end zone to the end zone of the offensive team. The goal of the defensive team is to force the offensive team to turnover the disc by dropping it or throwing it out of bounds. If the defensive team forces a turnover, they can then try to score while the offensive team tries to stop them. The team that scores a point then executes the next pull to the team that got scored on.
+Ultimate, also known as Ultimate Frisbee, is a non-contact sport where 2 teams of 7 players pass a frisbee to each other and try to reach the opposing teams 'end zone' and score a point without dropping the frisbee. Each point starts with a pull, where the defensive team throws the frisbee from their end zone to the end zone of the offensive team. The goal of the defensive team is to force the offensive team to turnover the disc by dropping it or throwing it out of bounds. If the defensive team forces a turnover, they can then try to score while the offensive team tries to stop them. The team that scores a point then executes the next pull to the team that got scored on.
 
 College ultimate games follow the USA Ultimate rules, which dictate a game to 15 goals, with halftime occurring when a team has scored 8 goals. The rules also allow for a time cap, where once the cap is reached the game is played to a score determined by the score of the team that is winning. Like other sports, there are two main positions in ultimate called handler and cutter. Teams often have 2 or 3 handlers playing at a time and they are players who are versatile throwers and orchestrate how the offense is run. Cutters are players who run around and try to escape defenders in order to receive the frisbee from the handlers. Teams have different formations and offensive schemes they use to try and find openings to make gaining yardage and scoring points easier. Teams tend to have offensive and defensive lines in order to save players from playing every point and split the load of games.
 
@@ -19,7 +19,7 @@ College ultimate games follow the USA Ultimate rules, which dictate a game to 15
 
 This data comes from the 2024 Division 1 and 3 Men's and Women's College Ultimate Championships. It contains scoring and defensive statistics for players from each game played at the two tournaments. There are 2 tables, the first one contains player statistics. This table has 8325 rows and 8 columns, 5 rows for each player in the data set.
 
-[ultimate_per_game.csv](ultimate_per_game.csv)
+[ultimate_total.csv](ultimate_total.csv)
 
 | Variable               | Description                                                                       |
 |--------------------------|----------------------------------------------|
@@ -42,7 +42,7 @@ This data comes from the 2024 Division 1 and 3 Men's and Women's College Ultimat
 
 The 2nd table contains the total games played by each player in the College Ultimate Championships. It has 1665 rows and 8 columns. There is only 1 row for each player and it contains the data for games played.
 
-[ultimate_total.csv](ultimate_total.csv)
+[ultimate_per_game.csv](ultimate_per_game.csv)
 
 | Variable               | Description                                                                |
 |--------------------------|----------------------------------------------|

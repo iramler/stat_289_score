@@ -39,10 +39,9 @@ Use a summary function to check if the type of each column is appropriate for th
 Now that the current data is in a tidy form, create new variables that have statistics for each player in a per_game format using a mutate function and the team games column.
 
 
-
 ## Data Visualization
 
-1. The data set has 1,665 total players that participated in the College Ultimate Championships, figure out how many actually contributed in a statistical category using a filter function.
+1. The data set has 1,665 total players that participated in the College Ultimate Championships, figure out how many actually contributed in a statistical category using a filter function. (Don't include team games as a category)
 
 ```{r}
 
@@ -126,15 +125,6 @@ a. Make a table with the sum of plus_minus for each division.
 
 
 b. With the information that plus minus is only counted for offensive possessions where teams are more likely to score, what do the total plus minus numbers say about the dominance of offense in each division?
-
-
-
-
-
-
-
-
-
 
 
 
