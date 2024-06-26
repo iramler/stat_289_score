@@ -38,7 +38,7 @@ ggplot(data = badminton_sum, aes(x = Year, y = mean_pts_for, colour = Gender)) +
 ```
 
 ```{r}
-ggplot(data = badminton_df, aes(x = `Points For`, y = `Points Against`, colour = Gender)) + geom_point(alpha = 0.5) + facet_wrap(~Category)
+ggplot(data = badminton_df, aes(x = `Points For`, y = `Points Against`, colour = Gender)) + geom_point(alpha = 0.5) + facet_wrap(~Category) + geom_smooth(method = "lm")
 ```
 
 ```{r}
@@ -46,6 +46,89 @@ ggplot(data = badminton_df, aes(x = Wins, y = `Points Against`)) + geom_point()
 ```
 
 ```{r}
-badminton_df |> 
+ggplot(data = badminton_df, aes(x = `Points For`)) + geom_histogram(bins = 15, colour = "black", fill = "lightblue") + facet_wrap(~Year) + theme_minimal()
 ```
+
+```{r}
+ggplot(data = badminton_df, aes(x = `Points For`, y = Difference))+ geom_point() + geom_smooth(method = "lm")
+```
+
+```{r}
+ggplot(data = badminton_df, aes(x = `Points For`, y = `Points Against`))+ geom_point() + geom_smooth(method = "lm")
+```
+
+# Grouping
+
+```{r}
+badminton_df |> filter(Category == "Doubles") |> group_by(Player1, Player2) |> summarise()
+```
+
+```{r}
+badminton_df |> filter(Category == "Doubles") |> group_by(Player1, Player2, Opponent1, Opponent2) |> summarise()
+```
+
+```{r}
+badminton_df |> filter(Category == "Singles") |> group_by(Player1, Opponent1) |> summarise(n_matches = sum(Matches))
+```
+
+```{r}
+badminton_df |> filter(Category == "Doubles") |> group_by(Player1, Player2, Opponent2, Opponent1) |> summarise(n_matches = sum(Matches))
+```
+
+```{r}
+badminton_df |> filter(Category == "Doubles") |> group_by(Player1, Player2) |> summarise(n_matches = sum(Matches))
+```
+
+```{r}
+badminton_df |> filter(Category == "Doubles") |> group_by(Opponent1, Opponent2) |> summarise(n_matches = sum(Matches))
+```
+
+```{r}
+badminton_df |> group_by(Category) |> summarise(n = n())
+```
+
+```{r}
+badminton_df |> group_by(Gender) |> summarise(n = n())
+```
+
+```{r}
+badminton_df |> group_by(Year) |> summarise(n = n())
+```
+
+```{r}
+badminton_df |> group_by(Player1, Opponent1) |> summarise(n = n())
+```
+
+```{r}
+badminton_df |> group_by(Player1) |> summarise(mean_rank = mean(Rank))
+```
+
+```{r}
+badminton_df |> group_by(Player1) |> summarise(n_wins = sum(Wins))
+```
+
+# Trying something weird with reorganizing the data 
+
+```{r}
+names <- badminton_df |> pivot_longer(c("Player1", "Opponent1", "Player2", "Opponent2"), names_to = "Position", values_to = "Name") |> filter(!is.na(Name))
+```
+
+```{r}
+badminton_df |> filter(Matches >=1) 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
