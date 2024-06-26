@@ -10,44 +10,61 @@ editor:
   markdown: 
     wrap: 72
 ---
+
 ## Motivation
 
-[Badminton](https://en.wikipedia.org/wiki/badminton){target="_blank"} is a racket sport played by pairs (`Doubles`) or individuals (`Singles`). Badminton takes place on a court with a net in the middle separating the opponents. Players use rackets to hit a feathered ball known as the birdie across the net. Matches are won through the best of three games, each match is won by the first team to get 21 points. Points are won when the birdie hits the ground in the opposing side's court.  
+[Badminton](https://en.wikipedia.org/wiki/badminton){target="_blank"} is
+a racket sport played by pairs (`Doubles`) or individuals (`Singles`).
+Badminton takes place on a court with a net in the middle separating the
+opponents. Players use rackets to hit a feathered ball known as the
+birdie across the net. Matches are won through the best of three games,
+each match is won by the first team to get 21 points. Points are won
+when the birdie hits the ground in the opposing side's court.
 
-While often considered a recreational sport, it is also played at the professional and [Olympic](https://olympics.com/en/news/badminton-guide-how-to-play-rules-olympic-history){target="_blank"} level. The [BWF Badminton World Tour](https://en.wikipedia.org/wiki/BWF_World_Tour){target="_blank"} is a tournament series with opens hosted in different countries around the world. The tour has been running since 2018 and even took place in 2020 despite the covid-19 pandemic. Statistics have been compiled from each World Tour, a no 
+While often considered a recreational sport, it is also played at the
+professional and
+[Olympic](https://olympics.com/en/news/badminton-guide-how-to-play-rules-olympic-history){target="_blank"}
+level. The [BWF Badminton World
+Tour](https://en.wikipedia.org/wiki/BWF_World_Tour){target="_blank"} is
+a tournament series with opens hosted in different countries around the
+world. The tour has been running since 2018 and even took place in 2020
+despite the covid-19 pandemic. Statistics have been compiled from each
+World Tour, a notable statistic being the `Points H2H` which looks at
+the `Points For` a player or pair and the `Points Against` them.
+
+The `Points For` variable in this [badminton
+dataset](badminton.csv){target="_blank"} (badminton.csv) could provide
+some insight on patterns in badminton. **COME BACK TO AFTER QUESTIONS ARE DONE**
 
 ## Data
 
-The data set has 309 players from 18 different clubs, with 7 variables, 4
-of which are statistics. Each row in the data set is a player in the
-Handball-Bundesliga during the 2022-23 season. The statistics are
-cumulative for the entirety of the season. The data set only contains players who played in 10 games or more.
+The data set has 750 cases with 14 variables. Each case is a combination of players and opponents that has occured over the course of the World Tour. The data set has 5 years worth of data from 2018-2023. There are men's, women's, and mixed doubles along with men's and women's singles. 
 
 | Variable          | Description                                                                                                                                                                                                                   |
-|--------------------|----------------------------------------------------|
-| `NAME` | The name of the player. |
-| `CLUB`            | The club the player is on. There are 18 in the Bundesliga.                                                                                                                                                                    |
-| `POSITION`        | The position of the player. There are 7 positions in handball: goalkeeper, fullbacks (left and right), center backcourt, wingers (left and right), and pivot.                                                                 |
+|----------------------|-------------------------------------------------|
+| `Player1`            | The player who the stats in the case are based on. |
+| `Player2`            | The second player who the stats in the case are based on, value is `NA` if the `Category` is `Singles`.|
+| `Opponent1`        | The position of the player. There are 7 positions in handball: goalkeeper, fullbacks (left and right), center backcourt, wingers (left and right), and pivot.                                                                 |
 | `P`               | The number of games the player was in that season.                                                                                                                                                                            |
 | `total_offense`   | The total offensive plays made by the player in the season. Calculated by adding the 6 offensive focused statistics from the original dataset.                                                                                |
-| `total_penalties` | The total penalties the player had in the season. Calculated by adding the 5 penalty related statistics from the original dataset.|                                                             
+| `total_penalties` | The total penalties the player had in the season. Calculated by adding the 5 penalty related statistics from the original dataset.                                                                                            |
 | `HPI`             | Handball performance index, complex formulaic calculation equivalent to how well the player performed in the season. Players with HPIs in the 70s are considered good, while players in the 60s are considered not as strong. |
 
 : [handball.csv](handball.csv){target="_blank"}
 
 ## Questions
 
-1.  Find and interpret a 98% confidence interval for the mean HPI
-    of a player with 30 total_penalties. 
+1.  Find and interpret a 98% confidence interval for the mean HPI of a
+    player with 30 total_penalties.
 
-2.  Find and interpret a 98% prediction interval for the HPI of a
-    player with 30 total_penalties. 
+2.  Find and interpret a 98% prediction interval for the HPI of a player
+    with 30 total_penalties.
 
 3.  Perform an ANOVA test to assess the overall fit of `HPI` =
     `total_offense` + `total_penalties`. Provide an interpretation of
-    the results. 
-    
-4.	 Find the correlation of total_penalties and total_offense. 
+    the results.
+
+4.  Find the correlation of total_penalties and total_offense.
 
 5.  Test the significance of the correlation between the `total_offense`
     and the `total_penalties` of a player. Provide an interpretation of
@@ -67,4 +84,5 @@ Rules](https://olympics.com/en/news/handball-game-rules-regulations-how-to-play)
 [Handball
 Positions](https://www.theukrules.co.uk/rules/sport/handball/player-positions/#google_vignette){target="_blank"}
 
-[Handball Performance Index (HPI)](https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/){target="_blank"}
+[Handball Performance Index
+(HPI)](https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/){target="_blank"}

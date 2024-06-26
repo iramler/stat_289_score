@@ -765,7 +765,7 @@ all23_20 <- full_join(all23_22, all21_20)
 badminton <- full_join(all23_20, all19_18)
 
 # Last minute cleaning
-badminton <- badminton |> relocate(Rank) |> mutate(Rank = as.integer(Rank))
+badminton <- badminton |> relocate(Player1, Player2, Opponent1, Opponent2, Rank, Year, Gender, Category) |> mutate(Rank = as.integer(Rank))
 ```
 
 # Write csv file

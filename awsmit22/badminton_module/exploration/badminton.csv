@@ -1,751 +1,751 @@
-"","Rank","Player1","Opponent1","Gender","Category","Matches","Wins","Losses","Points For","Points Against","Difference","Year","Player2","Opponent2"
-"1",1,"Se Young AN","TAI Tzu Ying","Women","Singles",7,6,1,328,271,57,2023,NA,NA
-"2",2,"HAN Yue","ZHANG Yiman","Women","Singles",6,4,2,294,281,13,2023,NA,NA
-"3",3,"CHEN Yufei","Se Young AN","Women","Singles",6,2,4,288,288,0,2023,NA,NA
-"4",3,"Se Young AN","CHEN Yufei","Women","Singles",6,4,2,288,288,0,2023,NA,NA
-"5",5,"CHEN Yufei","Carolina MARIN","Women","Singles",6,4,2,264,238,26,2023,NA,NA
-"6",6,"Carolina MARIN","TAI Tzu Ying","Women","Singles",5,3,2,255,221,34,2023,NA,NA
-"7",7,"Se Young AN","HE Bingjiao","Women","Singles",5,5,0,240,183,57,2023,NA,NA
-"8",8,"Se Young AN","WANG Zhiyi","Women","Singles",5,4,1,223,215,8,2023,NA,NA
-"9",9,"Kirsty GILMOUR","Yvonne LI","Women","Singles",5,3,2,222,198,24,2023,NA,NA
-"10",10,"Gregoria Mariska TUNJUNG","PUSARLA V. Sindhu","Women","Singles",5,2,3,221,203,18,2023,NA,NA
-"11",11,"Se Young AN","Akane YAMAGUCHI","Women","Singles",5,3,2,217,204,13,2023,NA,NA
-"12",12,"Line Højmark KJAERSFELDT","Yvonne LI","Women","Singles",4,4,0,204,155,49,2023,NA,NA
-"13",13,"CHEN Yufei","HAN Yue","Women","Singles",4,4,0,202,147,55,2023,NA,NA
-"14",14,"Akane YAMAGUCHI","Gregoria Mariska TUNJUNG","Women","Singles",4,3,1,199,171,28,2023,NA,NA
-"15",14,"HAN Yue","YEO Jia Min","Women","Singles",4,4,0,199,152,47,2023,NA,NA
-"16",16,"CHEN Yufei","HE Bingjiao","Women","Singles",4,4,0,192,152,40,2023,NA,NA
-"17",17,"Akane YAMAGUCHI","CHEN Yufei","Women","Singles",4,3,1,188,176,12,2023,NA,NA
-"18",18,"WANG Zhiyi","ZHANG Yiman","Women","Singles",4,2,2,186,167,19,2023,NA,NA
-"19",19,"CHEN Yufei","WANG Zhiyi","Women","Singles",4,4,0,182,152,30,2023,NA,NA
-"20",20,"TAI Tzu Ying","Supanida KATETHONG","Women","Singles",4,4,0,178,141,37,2023,NA,NA
-"21",21,"TAI Tzu Ying","ZHANG Yiman","Women","Singles",4,3,1,174,125,49,2023,NA,NA
-"22",22,"WANG Zhiyi","Saena KAWAKAMI","Women","Singles",4,4,0,170,109,61,2023,NA,NA
-"23",23,"Ratchanok INTANON","Wen Chi HSU","Women","Singles",4,4,0,168,117,51,2023,NA,NA
-"24",24,"Busanan ONGBAMRUNGPHAN","Aya OHORI","Women","Singles",4,3,1,166,152,14,2023,NA,NA
-"25",25,"Gregoria Mariska TUNJUNG","KIM Ga Eun","Women","Singles",3,3,0,162,142,20,2023,NA,NA
-"26",1,"BAEK Ha Na","Nami MATSUYAMA","Women","Doubles",7,6,1,352,329,23,2023,"LEE So Hee","Chiharu SHIDA"
-"27",2,"Nami MATSUYAMA","Benyapa AIMSAARD","Women","Doubles",5,4,1,238,199,39,2023,"Chiharu SHIDA","Nuntakarn AIMSAARD"
-"28",3,"CHEN Qingchen","Nami MATSUYAMA","Women","Doubles",5,4,1,204,165,39,2023,"JIA Yifan","Chiharu SHIDA"
-"29",4,"CHEN Qingchen","KIM So Yeong","Women","Doubles",4,2,2,195,171,24,2023,"JIA Yifan","KONG Hee Yong"
-"30",5,"Nami MATSUYAMA","Yuki FUKUSHIMA","Women","Doubles",4,4,0,193,150,43,2023,"Chiharu SHIDA","Sayaka HIROTA"
-"31",6,"Jongkolphan KITITHARAKUL","Rin IWANAGA","Women","Doubles",4,3,1,191,160,31,2023,"Rawinda PRAJONGJAI","Kie NAKANISHI"
-"32",6,"LI Yijing","HSU Ya Ching","Women","Doubles",3,2,1,191,168,23,2023,"LUO Xumin","LIN Wan Ching"
-"33",8,"Yuki FUKUSHIMA","LI Wenmei","Women","Doubles",5,2,3,185,155,30,2023,"Sayaka HIROTA","LIU Xuanxuan"
-"34",10,"BAEK Ha Na","Apriyani RAHAYU","Women","Doubles",4,3,1,184,157,27,2023,"LEE So Hee","Siti Fadia Silva RAMADHANTI"
-"35",10,"Maiken FRUERGAARD","Chloe BIRCH","Women","Doubles",4,4,0,184,137,47,2023,"Sara THYGESEN","Lauren SMITH"
-"36",10,"Mayu MATSUMOTO","HSU Ya Ching","Women","Doubles",4,4,0,184,119,65,2023,"Wakana NAGAHARA","LIN Wan Ching"
-"37",12,"KIM So Yeong","LI Wenmei","Women","Doubles",3,2,1,178,170,8,2023,"KONG Hee Yong","LIU Xuanxuan"
-"38",13,"Rena MIYAURA","LIU Sheng Shu","Women","Doubles",3,2,1,172,167,5,2023,"Ayako SAKURAMOTO","TAN Ning"
-"39",14,"KIM So Yeong","Benyapa AIMSAARD","Women","Doubles",4,4,0,170,110,60,2023,"KONG Hee Yong","Nuntakarn AIMSAARD"
-"40",15,"Febriana Dwipuji KUSUMA","Lanny Tria MAYASARI","Women","Doubles",4,3,1,169,150,19,2023,"Amalia Cahaya PRATIWI","Ribka SUGIARTO"
-"41",16,"LIU Sheng Shu","Maiken FRUERGAARD","Women","Doubles",4,4,0,168,120,48,2023,"TAN Ning","Sara THYGESEN"
-"42",17,"LIU Sheng Shu","Mayu MATSUMOTO","Women","Doubles",4,3,1,164,146,18,2023,"TAN Ning","Wakana NAGAHARA"
-"43",17,"LEE Yu Lim","Febriana Dwipuji KUSUMA","Women","Doubles",3,3,0,164,140,24,2023,"SHIN Seung Chan","Amalia Cahaya PRATIWI"
-"44",19,"Yuki FUKUSHIMA","Apriyani RAHAYU","Women","Doubles",4,2,2,163,150,13,2023,"Sayaka HIROTA","Siti Fadia Silva RAMADHANTI"
-"45",20,"CHEN Qingchen","BAEK Ha Na","Women","Doubles",4,3,1,156,130,26,2023,"JIA Yifan","LEE So Hee"
-"46",21,"Rin IWANAGA","LEE Chia Hsin","Women","Doubles",3,3,0,153,129,24,2023,"Kie NAKANISHI","TENG Chun Hsun"
-"47",22,"TAN Pearly Koong Le","Mayu MATSUMOTO","Women","Doubles",3,2,1,152,140,12,2023,"Muralitharan THINAAH","Wakana NAGAHARA"
-"48",23,"Mayu MATSUMOTO","Benyapa AIMSAARD","Women","Doubles",3,2,1,151,127,24,2023,"Wakana NAGAHARA","Nuntakarn AIMSAARD"
-"49",24,"KIM So Yeong","Mayu MATSUMOTO","Women","Doubles",3,2,1,150,135,15,2023,"KONG Hee Yong","Wakana NAGAHARA"
-"50",24,"Nami MATSUYAMA","LIU Sheng Shu","Women","Doubles",3,2,1,150,134,16,2023,"Chiharu SHIDA","TAN Ning"
-"51",1,"Kodai NARAOKA","SHI Yuqi","Men","Singles",6,4,2,301,287,14,2023,NA,NA
-"52",2,"Kodai NARAOKA","Anders ANTONSEN","Men","Singles",6,4,2,266,262,4,2023,NA,NA
-"53",3,"SHI Yuqi","LU Guangzu","Men","Singles",5,4,1,230,208,22,2023,NA,NA
-"54",4,"Viktor AXELSEN","Christo POPOV","Men","Singles",4,4,0,200,146,54,2023,NA,NA
-"55",5,"Anders ANTONSEN","WENG Hongyang","Men","Singles",4,4,0,197,174,23,2023,NA,NA
-"56",6,"Anthony Sinisuka GINTING","LI Shifeng","Men","Singles",4,3,1,187,170,17,2023,NA,NA
-"57",7,"LIN Chun-Yi","Toma Junior POPOV","Men","Singles",4,2,2,185,183,2,2023,NA,NA
-"58",8,"Viktor AXELSEN","Jonatan CHRISTIE","Men","Singles",4,4,0,183,122,61,2023,NA,NA
-"59",9,"WENG Hongyang","LEE Zii Jia","Men","Singles",4,3,1,182,173,9,2023,NA,NA
-"60",10,"Viktor AXELSEN","SHI Yuqi","Men","Singles",4,3,1,181,148,33,2023,NA,NA
-"61",10,"LOH Kean Yew","Kodai NARAOKA","Men","Singles",3,3,0,181,135,46,2023,NA,NA
-"62",12,"Kodai NARAOKA","PRANNOY H. S.","Men","Singles",4,3,1,179,146,33,2023,NA,NA
-"63",13,"LI Shifeng","LEE Zii Jia","Men","Singles",3,2,1,175,156,19,2023,NA,NA
-"64",15,"Kenta NISHIMOTO","Jonatan CHRISTIE","Men","Singles",4,2,2,174,160,14,2023,NA,NA
-"65",15,"WENG Hongyang","KIDAMBI Srikanth","Men","Singles",3,2,1,174,147,27,2023,NA,NA
-"66",15,"PRANNOY H. S.","LEE Cheuk Yiu","Men","Singles",3,2,1,174,173,1,2023,NA,NA
-"67",17,"Mads CHRISTOPHERSEN","Alex LANIER","Men","Singles",3,1,2,171,171,0,2023,NA,NA
-"68",17,"Alex LANIER","Mads CHRISTOPHERSEN","Men","Singles",3,2,1,171,171,0,2023,NA,NA
-"69",19,"Anders ANTONSEN","Toma Junior POPOV","Men","Singles",3,3,0,169,151,18,2023,NA,NA
-"70",20,"LEE Zii Jia","Tze Yong NG","Men","Singles",3,3,0,168,147,21,2023,NA,NA
-"71",21,"LOH Kean Yew","Christo POPOV","Men","Singles",4,2,2,166,158,8,2023,NA,NA
-"72",23,"Kenta NISHIMOTO","LEE Zii Jia","Men","Singles",4,2,2,165,165,0,2023,NA,NA
-"73",23,"LEE Zii Jia","Kenta NISHIMOTO","Men","Singles",4,2,2,165,165,0,2023,NA,NA
-"74",23,"Kunlavut VITIDSARN","WANG Tzu Wei","Men","Singles",3,3,0,165,132,33,2023,NA,NA
-"75",23,"LEE Zii Jia","Kodai NARAOKA","Men","Singles",3,1,2,165,157,8,2023,NA,NA
-"76",1,"Min Hyuk KANG","Fajar ALFIAN","Men","Doubles",6,3,3,302,302,0,2023,"SEO Seung Jae","Muhammad Rian ARDIANTO"
-"77",1,"Fajar ALFIAN","Min Hyuk KANG","Men","Doubles",6,3,3,302,302,0,2023,"Muhammad Rian ARDIANTO","SEO Seung Jae"
-"78",3,"LIANG Weikeng","Aaron CHIA","Men","Doubles",5,4,1,249,227,22,2023,"WANG Chang","SOH Wooi Yik"
-"79",4,"Pramudya Kusumawardana RIYANTO","Ayato ENDO","Men","Doubles",4,4,0,229,194,35,2023,"Yeremia Erich Yoche YACOB","Yuta TAKEI"
-"80",5,"Min Hyuk KANG","Takuro HOKI","Men","Doubles",5,4,1,216,195,21,2023,"SEO Seung Jae","Yugo KOBAYASHI"
-"81",6,"Satwiksairaj RANKIREDDY","LIANG Weikeng","Men","Doubles",4,1,3,213,202,11,2023,"Chirag SHETTY","WANG Chang"
-"82",7,"Min Hyuk KANG","Mohammad AHSAN","Men","Doubles",4,3,1,210,186,24,2023,"SEO Seung Jae","Hendra SETIAWAN"
-"83",8,"Min Hyuk KANG","LEE Yang","Men","Doubles",4,3,1,206,183,23,2023,"SEO Seung Jae","WANG Chi-Lin"
-"84",9,"LIU Yuchen","Ben LANE","Men","Doubles",4,4,0,205,184,21,2023,"OU Xuanyi","Sean VENDY"
-"85",10,"Mohammad AHSAN","Pramudya Kusumawardana RIYANTO","Men","Doubles",4,3,1,200,182,18,2023,"Hendra SETIAWAN","Yeremia Erich Yoche YACOB"
-"86",11,"Kim ASTRUP","Mark LAMSFUSS","Men","Doubles",3,2,1,178,161,17,2023,"Anders Skaarup RASMUSSEN","Marvin SEIDEL"
-"87",12,"LEE Yang","ONG Yew Sin","Men","Doubles",3,2,1,172,166,6,2023,"WANG Chi-Lin","TEO Ee Yi"
-"88",13,"Fajar ALFIAN","Muhammad Shohibul FIKRI","Men","Doubles",4,3,1,170,157,13,2023,"Muhammad Rian ARDIANTO","Bagas MAULANA"
-"89",15,"Min Hyuk KANG","LIU Yuchen","Men","Doubles",4,4,0,168,123,45,2023,"SEO Seung Jae","OU Xuanyi"
-"90",15,"Kim ASTRUP","Keiichiro MATSUI","Men","Doubles",4,4,0,168,109,59,2023,"Anders Skaarup RASMUSSEN","Yoshinori TAKEUCHI"
-"91",15,"Akira KOGA","Aaron CHIA","Men","Doubles",4,3,1,168,161,7,2023,"Taichi SAITO","SOH Wooi Yik"
-"92",15,"Aaron CHIA","Muhammad Shohibul FIKRI","Men","Doubles",4,4,0,168,115,53,2023,"SOH Wooi Yik","Bagas MAULANA"
-"93",18,"LIANG Weikeng","Mohammad AHSAN","Men","Doubles",3,2,1,167,159,8,2023,"WANG Chang","Hendra SETIAWAN"
-"94",19,"LIU Yuchen","Akira KOGA","Men","Doubles",3,2,1,164,151,13,2023,"OU Xuanyi","Taichi SAITO"
-"95",20,"LIANG Weikeng","Pramudya Kusumawardana RIYANTO","Men","Doubles",3,2,1,159,138,21,2023,"WANG Chang","Yeremia Erich Yoche YACOB"
-"96",21,"Muhammad Shohibul FIKRI","Satwiksairaj RANKIREDDY","Men","Doubles",3,2,1,158,152,6,2023,"Bagas MAULANA","Chirag SHETTY"
-"97",22,"Satwiksairaj RANKIREDDY","Leo Rolly CARNANDO","Men","Doubles",3,3,0,156,125,31,2023,"Chirag SHETTY","Daniel MARTHIN"
-"98",22,"Kim ASTRUP","Leo Rolly CARNANDO","Men","Doubles",3,2,1,156,133,23,2023,"Anders Skaarup RASMUSSEN","Daniel MARTHIN"
-"99",24,"Leo Rolly CARNANDO","Aaron CHIA","Men","Doubles",4,3,1,155,150,5,2023,"Daniel MARTHIN","SOH Wooi Yik"
-"100",25,"LEE Jhe-Huei","Keiichiro MATSUI","Men","Doubles",3,2,1,153,132,21,2023,"YANG Po-Hsuan","Yoshinori TAKEUCHI"
-"101",1,"ZHENG Siwei","SEO Seung Jae","Mixed","Doubles",8,6,2,401,324,77,2023,"HUANG Yaqiong","CHAE YuJung"
-"102",2,"Yuta WATANABE","TANG Chun Man","Mixed","Doubles",6,5,1,278,243,35,2023,"Arisa HIGASHINO","TSE Ying Suet"
-"103",3,"TANG Chun Man","Rehan Naufal KUSHARJANTO","Mixed","Doubles",5,5,0,265,196,69,2023,"TSE Ying Suet","Lisa Ayu KUSUMAWATI"
-"104",4,"FENG Yanzhe","Dechapol PUAVARANUKROH","Mixed","Doubles",5,3,2,253,248,5,2023,"HUANG Dongping","Sapsiree TAERATTANACHAI"
-"105",5,"Dechapol PUAVARANUKROH","SEO Seung Jae","Mixed","Doubles",5,3,2,238,231,7,2023,"Sapsiree TAERATTANACHAI","CHAE YuJung"
-"106",6,"ZHENG Siwei","FENG Yanzhe","Mixed","Doubles",5,4,1,232,182,50,2023,"HUANG Yaqiong","HUANG Dongping"
-"107",7,"TANG Chun Man","GOH Soon Huat","Mixed","Doubles",5,5,0,231,172,59,2023,"TSE Ying Suet","LAI Shevon Jemie"
-"108",7,"SEO Seung Jae","JIANG Zhenbang","Mixed","Doubles",5,4,1,231,202,29,2023,"CHAE YuJung","WEI Yaxin"
-"109",9,"FENG Yanzhe","Yuta WATANABE","Mixed","Doubles",4,3,1,227,208,19,2023,"HUANG Dongping","Arisa HIGASHINO"
-"110",10,"FENG Yanzhe","Hiroki MIDORIKAWA","Mixed","Doubles",5,5,0,226,160,66,2023,"HUANG Dongping","Natsu SAITO"
-"111",10,"FENG Yanzhe","JIANG Zhenbang","Mixed","Doubles",5,5,0,226,172,54,2023,"HUANG Dongping","WEI Yaxin"
-"112",12,"Dechapol PUAVARANUKROH","Mathias CHRISTIANSEN","Mixed","Doubles",5,3,2,210,178,32,2023,"Sapsiree TAERATTANACHAI","Alexandra BØJE"
-"113",13,"Yuta WATANABE","LEE Chun Hei Reginald","Mixed","Doubles",4,4,0,205,150,55,2023,"Arisa HIGASHINO","NG Tsz Yau"
-"114",14,"KIM Won Ho","Kyohei YAMASHITA","Mixed","Doubles",4,3,1,204,189,15,2023,"JEONG Na Eun","Naru SHINOYA"
-"115",15,"JIANG Zhenbang","Praveen JORDAN","Mixed","Doubles",4,3,1,197,167,30,2023,"WEI Yaxin","Melati Daeva OKTAVIANTI"
-"116",16,"ZHENG Siwei","KIM Won Ho","Mixed","Doubles",4,2,2,188,165,23,2023,"HUANG Yaqiong","JEONG Na Eun"
-"117",17,"Mathias CHRISTIANSEN","YANG Po-Hsuan","Mixed","Doubles",3,3,0,185,150,35,2023,"Alexandra BØJE","HU Ling Fang"
-"118",18,"Dechapol PUAVARANUKROH","CHEN Tang Jie","Mixed","Doubles",4,3,1,175,150,25,2023,"Sapsiree TAERATTANACHAI","TOH Ee Wei"
-"119",19,"ZHENG Siwei","Yuta WATANABE","Mixed","Doubles",4,2,2,172,157,15,2023,"HUANG Yaqiong","Arisa HIGASHINO"
-"120",19,"Yuta WATANABE","YE Hong Wei","Mixed","Doubles",4,2,2,172,169,3,2023,"Arisa HIGASHINO","LEE Chia Hsin"
-"121",21,"ZHENG Siwei","Dejan FERDINANSYAH","Mixed","Doubles",4,4,0,168,106,62,2023,"HUANG Yaqiong","Gloria Emanuelle WIDJAJA"
-"122",22,"Hiroki NISHI","Ruttanapak OUPTHONG","Mixed","Doubles",3,2,1,167,150,17,2023,"Akari SATO","Kwanchanok SUDJAIPRAPARAT"
-"123",23,"TANG Chun Man","KIM Won Ho","Mixed","Doubles",3,2,1,165,158,7,2023,"TSE Ying Suet","JEONG Na Eun"
-"124",24,"LEE Chun Hei Reginald","YE Hong Wei","Mixed","Doubles",3,2,1,163,150,13,2023,"NG Tsz Yau","LEE Chia Hsin"
-"125",24,"HEE Yong Kai Terry","DHRUV KAPILA","Mixed","Doubles",3,2,1,163,149,14,2023,"TAN Wei Han","Tanisha CRASTO"
-"126",1,"CHEN Yufei","TAI Tzu Ying","Women","Singles",5,3,2,267,252,15,2022,NA,NA
-"127",2,"Akane YAMAGUCHI","WANG Zhiyi","Women","Singles",5,3,2,262,247,15,2022,NA,NA
-"128",3,"TAI Tzu Ying","Ratchanok INTANON","Women","Singles",5,4,1,247,209,38,2022,NA,NA
-"129",4,"Akane YAMAGUCHI","CHEN Yufei","Women","Singles",5,4,1,233,201,32,2022,NA,NA
-"130",5,"Akane YAMAGUCHI","Se Young AN","Women","Singles",5,4,1,225,176,49,2022,NA,NA
-"131",6,"CHEN Yufei","ZHANG Yiman","Women","Singles",5,5,0,221,164,57,2022,NA,NA
-"132",6,"Se Young AN","HAN Yue","Women","Singles",4,3,1,221,202,19,2022,NA,NA
-"133",8,"CHEN Yufei","Ratchanok INTANON","Women","Singles",4,3,1,211,183,28,2022,NA,NA
-"134",9,"Se Young AN","Gregoria Mariska TUNJUNG","Women","Singles",4,4,0,192,133,59,2022,NA,NA
-"135",10,"HE Bingjiao","CHEN Yufei","Women","Singles",5,3,2,190,176,14,2022,NA,NA
-"136",11,"Gregoria Mariska TUNJUNG","Akane YAMAGUCHI","Women","Singles",4,2,2,184,179,5,2022,NA,NA
-"137",12,"Nozomi OKUHARA","Wen Chi HSU","Women","Singles",3,3,0,179,146,33,2022,NA,NA
-"138",13,"TAI Tzu Ying","Busanan ONGBAMRUNGPHAN","Women","Singles",4,4,0,170,131,39,2022,NA,NA
-"139",14,"HE Bingjiao","TAI Tzu Ying","Women","Singles",4,2,2,165,161,4,2022,NA,NA
-"140",15,"Supanida KATETHONG","PUSARLA V. Sindhu","Women","Singles",3,1,2,163,155,8,2022,NA,NA
-"141",16,"Yvonne LI","Julie Dawall JAKOBSEN","Women","Singles",3,2,1,155,136,19,2022,NA,NA
-"142",16,"HE Bingjiao","Busanan ONGBAMRUNGPHAN","Women","Singles",3,3,0,155,120,35,2022,NA,NA
-"143",18,"Ratchanok INTANON","HAN Yue","Women","Singles",3,3,0,153,141,12,2022,NA,NA
-"144",19,"PUSARLA V. Sindhu","HE Bingjiao","Women","Singles",3,2,1,146,140,6,2022,NA,NA
-"145",19,"CHEN Yufei","Michelle LI","Women","Singles",3,3,0,146,110,36,2022,NA,NA
-"146",22,"PUSARLA V. Sindhu","Lauren LAM","Women","Singles",3,3,0,145,116,29,2022,NA,NA
-"147",22,"Carolina MARIN","ZHANG Yiman","Women","Singles",3,2,1,145,130,15,2022,NA,NA
-"148",22,"Ratchanok INTANON","Kirsty GILMOUR","Women","Singles",3,3,0,145,107,38,2022,NA,NA
-"149",24,"HE Bingjiao","Akane YAMAGUCHI","Women","Singles",3,2,1,144,139,5,2022,NA,NA
-"150",25,"CHEN Yufei","Pornpawee CHOCHUWONG","Women","Singles",3,3,0,143,116,27,2022,NA,NA
-"151",1,"Benyapa AIMSAARD","JEONG Na Eun","Women","Doubles",6,4,2,250,230,20,2022,"Nuntakarn AIMSAARD","KIM Hye Jeong"
-"152",2,"CHEN Qingchen","Jongkolphan KITITHARAKUL","Women","Doubles",5,4,1,219,175,44,2022,"JIA Yifan","Rawinda PRAJONGJAI"
-"153",3,"DU Yue","Jongkolphan KITITHARAKUL","Women","Doubles",4,3,1,208,185,23,2022,"LI Wenmei","Rawinda PRAJONGJAI"
-"154",4,"Nami MATSUYAMA","JEONG Na Eun","Women","Doubles",5,3,2,205,174,31,2022,"Chiharu SHIDA","KIM Hye Jeong"
-"155",5,"CHEN Qingchen","Apriyani RAHAYU","Women","Doubles",4,3,1,200,174,26,2022,"JIA Yifan","Siti Fadia Silva RAMADHANTI"
-"156",6,"TAN Pearly Koong Le","Apriyani RAHAYU","Women","Doubles",4,2,2,195,190,5,2022,"Muralitharan THINAAH","Siti Fadia Silva RAMADHANTI"
-"157",7,"Apriyani RAHAYU","ZHANG Shuxian","Women","Doubles",4,3,1,187,186,1,2022,"Siti Fadia Silva RAMADHANTI","ZHENG Yu"
-"158",8,"ZHANG Shuxian","Jongkolphan KITITHARAKUL","Women","Doubles",4,2,2,178,163,15,2022,"ZHENG Yu","Rawinda PRAJONGJAI"
-"159",9,"TAN Pearly Koong Le","Yuki FUKUSHIMA","Women","Doubles",4,2,2,174,165,9,2022,"Muralitharan THINAAH","Sayaka HIROTA"
-"160",10,"Jongkolphan KITITHARAKUL","Treesa JOLLY","Women","Doubles",4,4,0,173,137,36,2022,"Rawinda PRAJONGJAI","GAYATRI GOPICHAND PULLELA"
-"161",11,"KIM So Yeong","Rachel HONDERICH","Women","Doubles",3,3,0,164,124,40,2022,"KONG Hee Yong","Kristen TSAI"
-"162",12,"LEE So Hee","ZHANG Shuxian","Women","Doubles",3,1,2,153,147,6,2022,"SHIN Seung Chan","ZHENG Yu"
-"163",13,"Jongkolphan KITITHARAKUL","Benyapa AIMSAARD","Women","Doubles",3,2,1,150,140,10,2022,"Rawinda PRAJONGJAI","Nuntakarn AIMSAARD"
-"164",14,"CHEN Qingchen","TAN Pearly Koong Le","Women","Doubles",3,3,0,146,114,32,2022,"JIA Yifan","Muralitharan THINAAH"
-"165",15,"ZHANG Shuxian","Febriana Dwipuji KUSUMA","Women","Doubles",3,3,0,144,103,41,2022,"ZHENG Yu","Amalia Cahaya PRATIWI"
-"166",15,"CHEN Qingchen","ZHANG Shuxian","Women","Doubles",3,3,0,144,120,24,2022,"JIA Yifan","ZHENG Yu"
-"167",17,"CHEN Qingchen","Nami MATSUYAMA","Women","Doubles",3,2,1,135,116,19,2022,"JIA Yifan","Chiharu SHIDA"
-"168",18,"Nami MATSUYAMA","TAN Pearly Koong Le","Women","Doubles",3,2,1,133,123,10,2022,"Chiharu SHIDA","Muralitharan THINAAH"
-"169",19,"ZHANG Shuxian","Gabriela STOEVA","Women","Doubles",3,2,1,132,116,16,2022,"ZHENG Yu","Stefani STOEVA"
-"170",20,"CHEN Qingchen","Vivian HOO","Women","Doubles",3,3,0,129,103,26,2022,"JIA Yifan","LIM Chiew Sien"
-"171",21,"Benyapa AIMSAARD","Vivian HOO","Women","Doubles",3,3,0,126,72,54,2022,"Nuntakarn AIMSAARD","LIM Chiew Sien"
-"172",22,"Rena MIYAURA","Rui HIROKAMI","Women","Doubles",3,2,1,123,84,39,2022,"Ayako SAKURAMOTO","Yuna KATO"
-"173",23,"JEONG Na Eun","Supissara PAEWSAMPRAN","Women","Doubles",2,2,0,122,88,34,2022,"KIM Hye Jeong","Puttita SUPAJIRAKUL"
-"174",23,"CHEN Qingchen","BAEK Ha Na","Women","Doubles",2,1,1,122,111,11,2022,"JIA Yifan","LEE Yu Lim"
-"175",25,"DU Yue","ZHANG Shuxian","Women","Doubles",3,2,1,120,105,15,2022,"LI Wenmei","ZHENG Yu"
-"176",1,"Viktor AXELSEN","Anthony Sinisuka GINTING","Men","Singles",6,6,0,289,183,106,2022,NA,NA
-"177",2,"CHOU Tien Chen","LEE Cheuk Yiu","Men","Singles",5,3,2,272,263,9,2022,NA,NA
-"178",3,"Lakshya SEN","PRANNOY H. S.","Men","Singles",5,3,2,213,203,10,2022,NA,NA
-"179",4,"LEE Zii Jia","Shesar Hiren RHUSTAVITO","Men","Singles",4,2,2,192,184,8,2022,NA,NA
-"180",5,"Jonatan CHRISTIE","KIDAMBI Srikanth","Men","Singles",4,2,2,170,162,8,2022,NA,NA
-"181",5,"PRANNOY H. S.","LIEW Daren","Men","Singles",3,2,1,170,163,7,2022,NA,NA
-"182",7,"PRANNOY H. S.","CHOU Tien Chen","Men","Singles",3,2,1,157,139,18,2022,NA,NA
-"183",8,"Anthony Sinisuka GINTING","LOH Kean Yew","Men","Singles",4,3,1,155,133,22,2022,NA,NA
-"184",9,"CHEAM June Wei","LEONG Jun Hao","Men","Singles",3,1,2,154,139,15,2022,NA,NA
-"185",10,"CHOU Tien Chen","Jonatan CHRISTIE","Men","Singles",3,2,1,150,131,19,2022,NA,NA
-"186",11,"Viktor AXELSEN","Kodai NARAOKA","Men","Singles",4,3,1,147,100,47,2022,NA,NA
-"187",12,"KIDAMBI Srikanth","Brice LEVERDEZ","Men","Singles",3,2,1,146,129,17,2022,NA,NA
-"188",13,"LEE Zii Jia","Mark CALJOUW","Men","Singles",3,3,0,145,98,47,2022,NA,NA
-"189",14,"Jonatan CHRISTIE","Kodai NARAOKA","Men","Singles",3,1,2,144,128,16,2022,NA,NA
-"190",15,"Anthony Sinisuka GINTING","Sitthikom THAMMASIN","Men","Singles",3,3,0,143,110,33,2022,NA,NA
-"191",15,"Viktor AXELSEN","LU Guangzu","Men","Singles",3,3,0,143,90,53,2022,NA,NA
-"192",17,"PRANNOY H. S.","NG Ka Long Angus","Men","Singles",4,3,1,142,131,11,2022,NA,NA
-"193",18,"Viktor AXELSEN","Lakshya SEN","Men","Singles",3,2,1,138,106,32,2022,NA,NA
-"194",19,"ZHAO Junpeng","PRANNOY H. S.","Men","Singles",3,2,1,136,119,17,2022,NA,NA
-"195",20,"Kunlavut VITIDSARN","Jonatan CHRISTIE","Men","Singles",3,1,2,135,121,14,2022,NA,NA
-"196",20,"Kenta NISHIMOTO","Jonatan CHRISTIE","Men","Singles",3,2,1,135,127,8,2022,NA,NA
-"197",22,"Lakshya SEN","Anthony Sinisuka GINTING","Men","Singles",3,3,0,134,98,36,2022,NA,NA
-"198",22,"Kodai NARAOKA","Shesar Hiren RHUSTAVITO","Men","Singles",3,2,1,134,113,21,2022,NA,NA
-"199",24,"LU Guangzu","LI Shifeng","Men","Singles",3,3,0,132,99,33,2022,NA,NA
-"200",25,"Viktor AXELSEN","CHOU Tien Chen","Men","Singles",3,3,0,126,82,44,2022,NA,NA
-"201",1,"Fajar ALFIAN","ONG Yew Sin","Men","Doubles",5,4,1,237,202,35,2022,"Muhammad Rian ARDIANTO","TEO Ee Yi"
-"202",2,"Fajar ALFIAN","LIU Yuchen","Men","Doubles",4,2,2,198,188,10,2022,"Muhammad Rian ARDIANTO","OU Xuanyi"
-"203",3,"Kim ASTRUP","Takuro HOKI","Men","Doubles",3,2,1,185,181,4,2022,"Anders Skaarup RASMUSSEN","Yugo KOBAYASHI"
-"204",4,"CHOI SolGyu","Kim ASTRUP","Men","Doubles",3,3,0,170,167,3,2022,"KIM Won Ho","Anders Skaarup RASMUSSEN"
-"205",5,"Fajar ALFIAN","GOH Sze Fei","Men","Doubles",4,4,0,169,130,39,2022,"Muhammad Rian ARDIANTO","Nur IZZUDDIN"
-"206",6,"Mohammad AHSAN","M.R. ARJUN","Men","Doubles",4,4,0,159,134,25,2022,"Hendra SETIAWAN","DHRUV KAPILA"
-"207",6,"Fajar ALFIAN","Aaron CHIA","Men","Doubles",3,3,0,159,127,32,2022,"Muhammad Rian ARDIANTO","SOH Wooi Yik"
-"208",8,"Aaron CHIA","Satwiksairaj RANKIREDDY","Men","Doubles",3,3,0,158,142,16,2022,"SOH Wooi Yik","Chirag SHETTY"
-"209",9,"Min Hyuk KANG","Mohammad AHSAN","Men","Doubles",3,2,1,154,148,6,2022,"SEO Seung Jae","Hendra SETIAWAN"
-"210",10,"LIU Yuchen","Mohammad AHSAN","Men","Doubles",3,3,0,148,120,28,2022,"OU Xuanyi","Hendra SETIAWAN"
-"211",11,"LIU Yuchen","CHOI SolGyu","Men","Doubles",3,3,0,146,130,16,2022,"OU Xuanyi","KIM Won Ho"
-"212",12,"LU Ching Yao","Ben LANE","Men","Doubles",3,3,0,143,105,38,2022,"YANG Po Han","Sean VENDY"
-"213",12,"Mohammad AHSAN","REN Xiangyu","Men","Doubles",3,2,1,143,142,1,2022,"Hendra SETIAWAN","TAN Qiang"
-"214",14,"CHOI SolGyu","ONG Yew Sin","Men","Doubles",3,2,1,139,131,8,2022,"KIM Won Ho","TEO Ee Yi"
-"215",15,"Mohammad AHSAN","Muhammad Shohibul FIKRI","Men","Doubles",3,2,1,134,129,5,2022,"Hendra SETIAWAN","Bagas MAULANA"
-"216",16,"Kim ASTRUP","LU Ching Yao","Men","Doubles",3,2,1,133,105,28,2022,"Anders Skaarup RASMUSSEN","YANG Po Han"
-"217",17,"Aaron CHIA","Mohammad AHSAN","Men","Doubles",3,2,1,131,129,2,2022,"SOH Wooi Yik","Hendra SETIAWAN"
-"218",18,"Fajar ALFIAN","M.R. ARJUN","Men","Doubles",3,3,0,129,101,28,2022,"Muhammad Rian ARDIANTO","DHRUV KAPILA"
-"219",19,"Fajar ALFIAN","Akira KOGA","Men","Doubles",3,3,0,128,105,23,2022,"Muhammad Rian ARDIANTO","Taichi SAITO"
-"220",20,"LIU Yuchen","Christo POPOV","Men","Doubles",2,2,0,122,108,14,2022,"OU Xuanyi","Toma Junior POPOV"
-"221",21,"Muhammad Shohibul FIKRI","GOH Sze Fei","Men","Doubles",2,2,0,121,113,8,2022,"Bagas MAULANA","Nur IZZUDDIN"
-"222",22,"Fajar ALFIAN","HEE Yong Kai Terry","Men","Doubles",2,2,0,119,98,21,2022,"Muhammad Rian ARDIANTO","LOH Kean Hean"
-"223",23,"LIU Yuchen","ONG Yew Sin","Men","Doubles",3,2,1,118,112,6,2022,"OU Xuanyi","TEO Ee Yi"
-"224",24,"Ruben JILLE","Christo POPOV","Men","Doubles",2,2,0,117,110,7,2022,"Ties VAN DER LECQ","Toma Junior POPOV"
-"225",24,"Takuro HOKI","Muhammad Shohibul FIKRI","Men","Doubles",2,1,1,117,112,5,2022,"Yugo KOBAYASHI","Bagas MAULANA"
-"226",1,"Dechapol PUAVARANUKROH","WANG Yilyu","Mixed","Doubles",5,5,0,249,204,45,2022,"Sapsiree TAERATTANACHAI","HUANG Dongping"
-"227",2,"ZHENG Siwei","Yuta WATANABE","Mixed","Doubles",4,3,1,205,165,40,2022,"HUANG Yaqiong","Arisa HIGASHINO"
-"228",3,"ZHENG Siwei","WANG Yilyu","Mixed","Doubles",4,3,1,179,147,32,2022,"HUANG Yaqiong","HUANG Dongping"
-"229",4,"ZHENG Siwei","Thom GICQUEL","Mixed","Doubles",4,4,0,174,120,54,2022,"HUANG Yaqiong","Delphine DELRUE"
-"230",5,"GOH Soon Huat","TAN Kian Meng","Mixed","Doubles",3,3,0,170,159,11,2022,"LAI Shevon Jemie","LAI Pei Jing"
-"231",6,"Thom GICQUEL","Jones Ralfy JANSEN","Mixed","Doubles",3,3,0,164,137,27,2022,"Delphine DELRUE","Linda EFLER"
-"232",7,"ZHENG Siwei","Mathias CHRISTIANSEN","Mixed","Doubles",3,3,0,163,131,32,2022,"HUANG Yaqiong","Alexandra BØJE"
-"233",8,"ZHENG Siwei","Dechapol PUAVARANUKROH","Mixed","Doubles",3,3,0,162,131,31,2022,"HUANG Yaqiong","Sapsiree TAERATTANACHAI"
-"234",9,"Rehan Naufal KUSHARJANTO","Thom GICQUEL","Mixed","Doubles",3,3,0,161,132,29,2022,"Lisa Ayu KUSUMAWATI","Delphine DELRUE"
-"235",10,"Yuta WATANABE","GOH Soon Huat","Mixed","Doubles",4,3,1,158,128,30,2022,"Arisa HIGASHINO","LAI Shevon Jemie"
-"236",11,"ZHENG Siwei","Supak JOMKOH","Mixed","Doubles",3,3,0,145,98,47,2022,"HUANG Yaqiong","Supissara PAEWSAMPRAN"
-"237",12,"Supak JOMKOH","Zachariah Josiahno SUMANTI","Mixed","Doubles",3,2,1,144,133,11,2022,"Supissara PAEWSAMPRAN","Hediana JULIMARBELA"
-"238",13,"Marcus ELLIS","Rinov RIVALDY","Mixed","Doubles",3,3,0,142,125,17,2022,"Lauren SMITH","Pitha Haningtyas MENTARI"
-"239",14,"Mathias CHRISTIANSEN","TAN Kian Meng","Mixed","Doubles",3,1,2,132,129,3,2022,"Alexandra BØJE","LAI Pei Jing"
-"240",15,"Mark LAMSFUSS","Rehan Naufal KUSHARJANTO","Mixed","Doubles",3,2,1,131,125,6,2022,"Isabel HERTTRICH","Lisa Ayu KUSUMAWATI"
-"241",15,"Dechapol PUAVARANUKROH","Supak JOMKOH","Mixed","Doubles",3,3,0,131,97,34,2022,"Sapsiree TAERATTANACHAI","Supissara PAEWSAMPRAN"
-"242",17,"Mathias CHRISTIANSEN","HEE Yong Kai Terry","Mixed","Doubles",3,3,0,127,99,28,2022,"Alexandra BØJE","TAN Wei Han"
-"243",18,"WANG Yilyu","Rinov RIVALDY","Mixed","Doubles",3,3,0,126,85,41,2022,"HUANG Dongping","Pitha Haningtyas MENTARI"
-"244",18,"ZHENG Siwei","TAN Kian Meng","Mixed","Doubles",3,3,0,126,73,53,2022,"HUANG Yaqiong","LAI Pei Jing"
-"245",20,"Rinov RIVALDY","Jones Ralfy JANSEN","Mixed","Doubles",2,2,0,121,100,21,2022,"Pitha Haningtyas MENTARI","Linda EFLER"
-"246",20,"Thom GICQUEL","Mark LAMSFUSS","Mixed","Doubles",2,1,1,121,113,8,2022,"Delphine DELRUE","Isabel HERTTRICH"
-"247",23,"Dechapol PUAVARANUKROH","GOH Soon Huat","Mixed","Doubles",2,1,1,118,108,10,2022,"Sapsiree TAERATTANACHAI","LAI Shevon Jemie"
-"248",23,"ZHENG Siwei","YANG Po-Hsuan","Mixed","Doubles",2,2,0,118,102,16,2022,"HUANG Yaqiong","HU Ling Fang"
-"249",23,"Yuta WATANABE","Mathias CHRISTIANSEN","Mixed","Doubles",2,1,1,118,113,5,2022,"Arisa HIGASHINO","Alexandra BØJE"
-"250",25,"Yuki KANEKO","Robin TABELING","Mixed","Doubles",2,2,0,114,105,9,2022,"Misaki MATSUTOMO","Selena PIEK"
-"251",1,"Akane YAMAGUCHI","Se Young AN","Women","Singles",6,4,2,281,274,7,2021,NA,NA
-"252",2,"Akane YAMAGUCHI","Pornpawee CHOCHUWONG","Women","Singles",4,3,1,210,207,3,2021,NA,NA
-"253",3,"Mia BLICHFELDT","Yvonne LI","Women","Singles",4,3,1,187,181,6,2021,NA,NA
-"254",4,"Akane YAMAGUCHI","PUSARLA V. Sindhu","Women","Singles",4,1,3,186,180,6,2021,NA,NA
-"255",5,"PUSARLA V. Sindhu","Busanan ONGBAMRUNGPHAN","Women","Singles",4,4,0,182,147,35,2021,NA,NA
-"256",6,"TAI Tzu Ying","Ratchanok INTANON","Women","Singles",3,3,0,177,157,20,2021,NA,NA
-"257",7,"Se Young AN","Pornpawee CHOCHUWONG","Women","Singles",4,4,0,172,132,40,2021,NA,NA
-"258",8,"Pornpawee CHOCHUWONG","PUSARLA V. Sindhu","Women","Singles",4,2,2,168,157,11,2021,NA,NA
-"259",9,"Neslihan YIGIT","Yvonne LI","Women","Singles",3,2,1,159,150,9,2021,NA,NA
-"260",10,"Carolina MARIN","Pornpawee CHOCHUWONG","Women","Singles",3,3,0,146,102,44,2021,NA,NA
-"261",11,"TAI Tzu Ying","PUSARLA V. Sindhu","Women","Singles",3,3,0,145,110,35,2021,NA,NA
-"262",12,"PUSARLA V. Sindhu","Mia BLICHFELDT","Women","Singles",3,2,1,143,121,22,2021,NA,NA
-"263",13,"Ratchanok INTANON","PUSARLA V. Sindhu","Women","Singles",3,3,0,141,97,44,2021,NA,NA
-"264",14,"Akane YAMAGUCHI","KIM Ga Eun","Women","Singles",3,3,0,140,127,13,2021,NA,NA
-"265",14,"Carolina MARIN","Se Young AN","Women","Singles",3,2,1,140,124,16,2021,NA,NA
-"266",16,"Carolina MARIN","TAI Tzu Ying","Women","Singles",3,2,1,132,117,15,2021,NA,NA
-"267",17,"Pornpawee CHOCHUWONG","Line CHRISTOPHERSEN","Women","Singles",3,3,0,129,90,39,2021,NA,NA
-"268",19,"PUSARLA V. Sindhu","Neslihan YIGIT","Women","Singles",3,3,0,126,80,46,2021,NA,NA
-"269",19,"PUSARLA V. Sindhu","Line CHRISTOPHERSEN","Women","Singles",3,3,0,126,74,52,2021,NA,NA
-"270",19,"Se Young AN","Evgeniya KOSETSKAYA","Women","Singles",3,3,0,126,73,53,2021,NA,NA
-"271",19,"Se Young AN","Phittayaporn CHAIWAN","Women","Singles",3,3,0,126,73,53,2021,NA,NA
-"272",22,"Pornpawee CHOCHUWONG","Gregoria Mariska TUNJUNG","Women","Singles",2,2,0,110,91,19,2021,NA,NA
-"273",23,"Akane YAMAGUCHI","Line Højmark KJAERSFELDT","Women","Singles",2,2,0,105,76,29,2021,NA,NA
-"274",24,"Akane YAMAGUCHI","YEO Jia Min","Women","Singles",2,2,0,103,75,28,2021,NA,NA
-"275",24,"Evgeniya KOSETSKAYA","PAI Yu Po","Women","Singles",2,2,0,103,80,23,2021,NA,NA
-"276",1,"KIM So Yeong","Jongkolphan KITITHARAKUL","Women","Doubles",6,5,1,302,254,48,2021,"KONG Hee Yong","Rawinda PRAJONGJAI"
-"277",2,"LEE So Hee","KIM So Yeong","Women","Doubles",6,4,2,268,267,1,2021,"SHIN Seung Chan","KONG Hee Yong"
-"278",3,"Jongkolphan KITITHARAKUL","Ashwini PONNAPPA","Women","Doubles",5,5,0,212,142,70,2021,"Rawinda PRAJONGJAI","REDDY N. Sikki"
-"279",4,"Greysia POLII","TAN Pearly Koong Le","Women","Doubles",4,4,0,203,163,40,2021,"Apriyani RAHAYU","Muralitharan THINAAH"
-"280",5,"Greysia POLII","LEE So Hee","Women","Doubles",4,3,1,197,186,11,2021,"Apriyani RAHAYU","SHIN Seung Chan"
-"281",6,"KIM So Yeong","Linda EFLER","Women","Doubles",4,4,0,187,107,80,2021,"KONG Hee Yong","Isabel HERTTRICH"
-"282",7,"Greysia POLII","Jongkolphan KITITHARAKUL","Women","Doubles",4,4,0,185,143,42,2021,"Apriyani RAHAYU","Rawinda PRAJONGJAI"
-"283",8,"Puttita SUPAJIRAKUL","Siti Fadia Silva RAMADHANTI","Women","Doubles",4,2,2,171,167,4,2021,"Sapsiree TAERATTANACHAI","Ribka SUGIARTO"
-"284",9,"Jongkolphan KITITHARAKUL","Gabriela STOEVA","Women","Doubles",4,2,2,163,156,7,2021,"Rawinda PRAJONGJAI","Stefani STOEVA"
-"285",10,"Greysia POLII","Puttita SUPAJIRAKUL","Women","Doubles",3,2,1,151,132,19,2021,"Apriyani RAHAYU","Sapsiree TAERATTANACHAI"
-"286",11,"Nami MATSUYAMA","Puttita SUPAJIRAKUL","Women","Doubles",3,3,0,148,122,26,2021,"Chiharu SHIDA","Sapsiree TAERATTANACHAI"
-"287",12,"Nami MATSUYAMA","TAN Pearly Koong Le","Women","Doubles",3,3,0,146,112,34,2021,"Chiharu SHIDA","Muralitharan THINAAH"
-"288",13,"Nami MATSUYAMA","Chloe BIRCH","Women","Doubles",4,3,1,145,107,38,2021,"Chiharu SHIDA","Lauren SMITH"
-"289",14,"Jongkolphan KITITHARAKUL","Benyapa AIMSAARD","Women","Doubles",3,3,0,140,110,30,2021,"Rawinda PRAJONGJAI","Nuntakarn AIMSAARD"
-"290",16,"Gabriela STOEVA","Chloe BIRCH","Women","Doubles",3,3,0,126,75,51,2021,"Stefani STOEVA","Lauren SMITH"
-"291",16,"LEE So Hee","Vivian HOO","Women","Doubles",3,3,0,126,85,41,2021,"SHIN Seung Chan","YAP Cheng Wen"
-"292",16,"Ashwini PONNAPPA","Gabriela STOEVA","Women","Doubles",3,1,2,126,120,6,2021,"REDDY N. Sikki","Stefani STOEVA"
-"293",18,"LEE So Hee","Nita Violina MARWAH","Women","Doubles",2,2,0,112,107,5,2021,"SHIN Seung Chan","Putri SYAIKAH"
-"294",19,"Anastasiia AKCHURINA","Emilie LEFEL","Women","Doubles",2,2,0,109,95,14,2021,"Olga MOROZOVA","Anne TRAN"
-"295",20,"Chloe BIRCH","Linda EFLER","Women","Doubles",2,2,0,104,74,30,2021,"Lauren SMITH","Isabel HERTTRICH"
-"296",21,"CHEN Qingchen","KIM So Yeong","Women","Doubles",2,2,0,103,77,26,2021,"JIA Yifan","KONG Hee Yong"
-"297",21,"Chisato HOSHI","Chloe BIRCH","Women","Doubles",2,2,0,103,91,12,2021,"Aoi MATSUDA","Lauren SMITH"
-"298",23,"LEE So Hee","Maiken FRUERGAARD","Women","Doubles",2,1,1,102,93,9,2021,"SHIN Seung Chan","Sara THYGESEN"
-"299",24,"Jongkolphan KITITHARAKUL","Julie FINNE-IPSEN","Women","Doubles",2,2,0,101,84,17,2021,"Rawinda PRAJONGJAI","Mai SURROW"
-"300",25,"Alexandra BØJE","Vivian HOO","Women","Doubles",2,1,1,100,89,11,2021,"Mette POULSEN","LIM Chiew Sien"
-"301",1,"Kento MOMOTA","LEE Zii Jia","Men","Singles",4,2,2,175,167,8,2021,NA,NA
-"302",2,"PRANNOY H. S.","LIEW Daren","Men","Singles",4,3,1,162,125,37,2021,NA,NA
-"303",3,"Anders ANTONSEN","WANG Tzu Wei","Men","Singles",3,2,1,146,145,1,2021,NA,NA
-"304",4,"Viktor AXELSEN","LEE Zii Jia","Men","Singles",3,2,1,144,128,16,2021,NA,NA
-"305",5,"WANG Tzu Wei","NG Ka Long Angus","Men","Singles",3,2,1,140,106,34,2021,NA,NA
-"306",6,"Viktor AXELSEN","Anthony Sinisuka GINTING","Men","Singles",3,3,0,139,102,37,2021,NA,NA
-"307",7,"Anders ANTONSEN","Sameer VERMA","Men","Singles",3,2,1,137,126,11,2021,NA,NA
-"308",8,"LOH Kean Yew","Viktor AXELSEN","Men","Singles",3,1,2,136,129,7,2021,NA,NA
-"309",11,"Viktor AXELSEN","KIDAMBI Srikanth","Men","Singles",3,3,0,126,89,37,2021,NA,NA
-"310",11,"Viktor AXELSEN","Kunlavut VITIDSARN","Men","Singles",3,3,0,126,66,60,2021,NA,NA
-"311",11,"Anthony Sinisuka GINTING","LEE Zii Jia","Men","Singles",3,2,1,126,120,6,2021,NA,NA
-"312",11,"Viktor AXELSEN","Lakshya SEN","Men","Singles",3,3,0,126,75,51,2021,NA,NA
-"313",11,"Viktor AXELSEN","CHOU Tien Chen","Men","Singles",3,3,0,126,83,43,2021,NA,NA
-"314",14,"NG Ka Long Angus","CHOU Tien Chen","Men","Singles",2,1,1,117,108,9,2021,NA,NA
-"315",15,"Kunlavut VITIDSARN","LEE Zii Jia","Men","Singles",3,2,1,115,106,9,2021,NA,NA
-"316",16,"Kenta NISHIMOTO","CHOU Tien Chen","Men","Singles",2,1,1,114,108,6,2021,NA,NA
-"317",17,"Rasmus GEMKE","Ajay JAYARAM","Men","Singles",2,1,1,113,110,3,2021,NA,NA
-"318",18,"Viktor AXELSEN","Anders ANTONSEN","Men","Singles",3,1,2,112,92,20,2021,NA,NA
-"319",18,"KIDAMBI Srikanth","NG Ka Long Angus","Men","Singles",2,1,1,112,105,7,2021,NA,NA
-"320",21,"Anders ANTONSEN","Hans-Kristian Solberg VITTINGHUS","Men","Singles",3,2,1,111,106,5,2021,NA,NA
-"321",21,"Vladimir MALKOV","Toma Junior POPOV","Men","Singles",2,1,1,111,104,7,2021,NA,NA
-"322",21,"Kunlavut VITIDSARN","Toma Junior POPOV","Men","Singles",2,1,1,111,90,21,2021,NA,NA
-"323",21,"Jonatan CHRISTIE","LOH Kean Yew","Men","Singles",2,2,0,111,106,5,2021,NA,NA
-"324",24,"Kento MOMOTA","KIDAMBI Srikanth","Men","Singles",2,2,0,106,89,17,2021,NA,NA
-"325",25,"Hans-Kristian Solberg VITTINGHUS","Kanta TSUNEYAMA","Men","Singles",2,2,0,105,103,2,2021,NA,NA
-"326",1,"Kim ASTRUP","Mark LAMSFUSS","Men","Doubles",5,2,3,216,211,5,2021,"Anders Skaarup RASMUSSEN","Marvin SEIDEL"
-"327",2,"Takuro HOKI","Aaron CHIA","Men","Doubles",4,3,1,202,168,34,2021,"Yugo KOBAYASHI","SOH Wooi Yik"
-"328",3,"ONG Yew Sin","Satwiksairaj RANKIREDDY","Men","Doubles",4,2,2,195,187,8,2021,"TEO Ee Yi","Chirag SHETTY"
-"329",4,"Kim ASTRUP","Satwiksairaj RANKIREDDY","Men","Doubles",4,3,1,191,161,30,2021,"Anders Skaarup RASMUSSEN","Chirag SHETTY"
-"330",5,"Kim ASTRUP","Christo POPOV","Men","Doubles",4,4,0,188,130,58,2021,"Anders Skaarup RASMUSSEN","Toma Junior POPOV"
-"331",6,"Mohammad AHSAN","CHOI SolGyu","Men","Doubles",4,2,2,175,169,6,2021,"Hendra SETIAWAN","SEO Seung Jae"
-"332",7,"Marcus Fernaldi GIDEON","LEE Yang","Men","Doubles",3,2,1,162,156,6,2021,"Kevin Sanjaya SUKAMULJO","WANG Chi-Lin"
-"333",8,"Takuro HOKI","Kim ASTRUP","Men","Doubles",3,3,0,159,134,25,2021,"Yugo KOBAYASHI","Anders Skaarup RASMUSSEN"
-"334",8,"Marcus Fernaldi GIDEON","ONG Yew Sin","Men","Doubles",3,3,0,159,133,26,2021,"Kevin Sanjaya SUKAMULJO","TEO Ee Yi"
-"335",10,"Mohammad AHSAN","Aaron CHIA","Men","Doubles",3,2,1,154,143,11,2021,"Hendra SETIAWAN","SOH Wooi Yik"
-"336",11,"Marcus Fernaldi GIDEON","Takuro HOKI","Men","Doubles",3,1,2,147,146,1,2021,"Kevin Sanjaya SUKAMULJO","Yugo KOBAYASHI"
-"337",12,"LEE Yang","Mohammad AHSAN","Men","Doubles",3,3,0,143,112,31,2021,"WANG Chi-Lin","Hendra SETIAWAN"
-"338",13,"LEE Yang","ONG Yew Sin","Men","Doubles",3,2,1,142,130,12,2021,"WANG Chi-Lin","TEO Ee Yi"
-"339",14,"Takuro HOKI","ONG Yew Sin","Men","Doubles",3,3,0,138,105,33,2021,"Yugo KOBAYASHI","TEO Ee Yi"
-"340",15,"Aaron CHIA","Marcus Fernaldi GIDEON","Men","Doubles",3,2,1,137,116,21,2021,"SOH Wooi Yik","Kevin Sanjaya SUKAMULJO"
-"341",16,"LEE Yang","Ben LANE","Men","Doubles",3,3,0,127,100,27,2021,"WANG Chi-Lin","Sean VENDY"
-"342",17,"ONG Yew Sin","GOH Sze Fei","Men","Doubles",2,2,0,125,113,12,2021,"TEO Ee Yi","Nur IZZUDDIN"
-"343",18,"ONG Yew Sin","Joel EIPE","Men","Doubles",3,3,0,123,92,31,2021,"TEO Ee Yi","Rasmus KJÆR"
-"344",18,"Kim ASTRUP","GOH Sze Fei","Men","Doubles",2,2,0,123,98,25,2021,"Anders Skaarup RASMUSSEN","Nur IZZUDDIN"
-"345",21,"Takuro HOKI","Akira KOGA","Men","Doubles",3,2,1,112,111,1,2021,"Yugo KOBAYASHI","Taichi SAITO"
-"346",21,"Marcus Fernaldi GIDEON","Kim ASTRUP","Men","Doubles",2,2,0,112,94,18,2021,"Kevin Sanjaya SUKAMULJO","Anders Skaarup RASMUSSEN"
-"347",21,"Takuro HOKI","Mohammad AHSAN","Men","Doubles",2,2,0,112,105,7,2021,"Yugo KOBAYASHI","Hendra SETIAWAN"
-"348",23,"Satwiksairaj RANKIREDDY","LEE Jhe-Huei","Men","Doubles",2,2,0,108,93,15,2021,"Chirag SHETTY","YANG Po-Hsuan"
-"349",24,"ONG Yew Sin","Phillip CHEW","Men","Doubles",2,2,0,105,66,39,2021,"TEO Ee Yi","Ryan CHEW"
-"350",25,"Kim ASTRUP","Vladimir IVANOV","Men","Doubles",2,2,0,104,78,26,2021,"Anders Skaarup RASMUSSEN","Ivan SOZONOV"
-"351",1,"Dechapol PUAVARANUKROH","Praveen JORDAN","Mixed","Doubles",5,5,0,274,226,48,2021,"Sapsiree TAERATTANACHAI","Melati Daeva OKTAVIANTI"
-"352",2,"Dechapol PUAVARANUKROH","Yuta WATANABE","Mixed","Doubles",6,3,3,242,224,18,2021,"Sapsiree TAERATTANACHAI","Arisa HIGASHINO"
-"353",3,"Yuta WATANABE","TAN Kian Meng","Mixed","Doubles",5,5,0,241,184,57,2021,"Arisa HIGASHINO","LAI Pei Jing"
-"354",4,"Yuta WATANABE","Mathias CHRISTIANSEN","Mixed","Doubles",5,5,0,230,163,67,2021,"Arisa HIGASHINO","Alexandra BØJE"
-"355",5,"Yuta WATANABE","TANG Chun Man","Mixed","Doubles",4,3,1,204,172,32,2021,"Arisa HIGASHINO","TSE Ying Suet"
-"356",6,"Dechapol PUAVARANUKROH","GOH Soon Huat","Mixed","Doubles",4,4,0,188,135,53,2021,"Sapsiree TAERATTANACHAI","LAI Shevon Jemie"
-"357",7,"Dechapol PUAVARANUKROH","SEO Seung Jae","Mixed","Doubles",4,3,1,187,183,4,2021,"Sapsiree TAERATTANACHAI","CHAE YuJung"
-"358",8,"Dechapol PUAVARANUKROH","KO Sung Hyun","Mixed","Doubles",3,3,0,176,146,30,2021,"Sapsiree TAERATTANACHAI","EOM Hye Won"
-"359",9,"Mathias CHRISTIANSEN","Marcus ELLIS","Mixed","Doubles",4,3,1,175,167,8,2021,"Alexandra BØJE","Lauren SMITH"
-"360",10,"Dechapol PUAVARANUKROH","TANG Chun Man","Mixed","Doubles",3,3,0,161,116,45,2021,"Sapsiree TAERATTANACHAI","TSE Ying Suet"
-"361",11,"Dechapol PUAVARANUKROH","CHEN Tang Jie","Mixed","Doubles",3,3,0,144,121,23,2021,"Sapsiree TAERATTANACHAI","PECK Yen Wei"
-"362",11,"Dechapol PUAVARANUKROH","HOO Pang Ron","Mixed","Doubles",3,3,0,144,107,37,2021,"Sapsiree TAERATTANACHAI","CHEAH Yee See"
-"363",13,"TANG Chun Man","Mark LAMSFUSS","Mixed","Doubles",4,2,2,143,123,20,2021,"TSE Ying Suet","Isabel HERTTRICH"
-"364",14,"Thom GICQUEL","Mikkel MIKKELSEN","Mixed","Doubles",3,3,0,140,111,29,2021,"Delphine DELRUE","Rikke SØBY"
-"365",15,"Thom GICQUEL","Rodion ALIMOV","Mixed","Doubles",3,1,2,132,130,2,2021,"Delphine DELRUE","Alina DAVLETOVA"
-"366",16,"Niclas NOHR","LEE Jhe-Huei","Mixed","Doubles",2,1,1,131,122,9,2021,"Amalie MAGELUND","HSU Ya Ching"
-"367",17,"Yuta WATANABE","HOO Pang Ron","Mixed","Doubles",3,3,0,126,89,37,2021,"Arisa HIGASHINO","CHEAH Yee See"
-"368",17,"Dechapol PUAVARANUKROH","Robin TABELING","Mixed","Doubles",3,3,0,126,96,30,2021,"Sapsiree TAERATTANACHAI","Selena PIEK"
-"369",19,"Mathias CHRISTIANSEN","Praveen JORDAN","Mixed","Doubles",3,1,2,124,123,1,2021,"Alexandra BØJE","Melati Daeva OKTAVIANTI"
-"370",20,"WANG Yilyu","Yuta WATANABE","Mixed","Doubles",2,1,1,118,110,8,2021,"HUANG Dongping","Arisa HIGASHINO"
-"371",21,"CHAN Peng Soon","Mathias CHRISTIANSEN","Mixed","Doubles",2,1,1,116,110,6,2021,"GOH Liu Ying","Alexandra BØJE"
-"372",22,"Dechapol PUAVARANUKROH","Marcus ELLIS","Mixed","Doubles",3,2,1,115,96,19,2021,"Sapsiree TAERATTANACHAI","Lauren SMITH"
-"373",23,"Satwiksairaj RANKIREDDY","Hafiz FAIZAL","Mixed","Doubles",2,2,0,111,84,27,2021,"Ashwini PONNAPPA","Gloria Emanuelle WIDJAJA"
-"374",24,"Rodion ALIMOV","Robin TABELING","Mixed","Doubles",2,2,0,106,91,15,2021,"Alina DAVLETOVA","Selena PIEK"
-"375",24,"Supak JOMKOH","TAN Kian Meng","Mixed","Doubles",2,2,0,106,90,16,2021,"Supissara PAEWSAMPRAN","LAI Pei Jing"
-"376",1,"Lianne TAN","Sabrina JAQUET","Women","Singles",3,3,0,150,150,0,2020,NA,NA
-"377",1,"Sabrina JAQUET","Lianne TAN","Women","Singles",3,0,3,150,150,0,2020,NA,NA
-"378",3,"Carolina MARIN","Akane YAMAGUCHI","Women","Singles",3,2,1,147,111,36,2020,NA,NA
-"379",4,"Akane YAMAGUCHI","Gregoria Mariska TUNJUNG","Women","Singles",3,3,0,145,119,26,2020,NA,NA
-"380",5,"Akane YAMAGUCHI","Se Young AN","Women","Singles",2,2,0,106,96,10,2020,NA,NA
-"381",5,"Busanan ONGBAMRUNGPHAN","Pornpawee CHOCHUWONG","Women","Singles",2,1,1,106,105,1,2020,NA,NA
-"382",7,"Kirsty GILMOUR","Yvonne LI","Women","Singles",2,2,0,103,82,21,2020,NA,NA
-"383",8,"SUNG Ji Hyun","Pornpawee CHOCHUWONG","Women","Singles",2,1,1,102,93,9,2020,NA,NA
-"384",9,"Ruselli HARTAWAN","PAI Yu Po","Women","Singles",2,2,0,99,91,8,2020,NA,NA
-"385",10,"Gregoria Mariska TUNJUNG","Busanan ONGBAMRUNGPHAN","Women","Singles",2,2,0,98,70,28,2020,NA,NA
-"386",10,"PUSARLA V. Sindhu","Aya OHORI","Women","Singles",2,2,0,98,72,26,2020,NA,NA
-"387",13,"Yvonne LI","Kristin KUUBA","Women","Singles",2,2,0,97,74,23,2020,NA,NA
-"388",13,"Akane YAMAGUCHI","Soniia CHEAH","Women","Singles",2,1,1,97,90,7,2020,NA,NA
-"389",13,"Carolina MARIN","Pornpawee CHOCHUWONG","Women","Singles",2,1,1,97,73,24,2020,NA,NA
-"390",13,"HE Bingjiao","KIM Ga Eun","Women","Singles",2,2,0,97,80,17,2020,NA,NA
-"391",16,"Ratchanok INTANON","WANG Zhiyi","Women","Singles",2,1,1,96,95,1,2020,NA,NA
-"392",17,"CHEN Yufei","Line Højmark KJAERSFELDT","Women","Singles",2,1,1,94,88,6,2020,NA,NA
-"393",18,"Ratchanok INTANON","Aya OHORI","Women","Singles",2,1,1,91,80,11,2020,NA,NA
-"394",20,"Se Young AN","Kirsty GILMOUR","Women","Singles",2,2,0,84,57,27,2020,NA,NA
-"395",20,"Neslihan YIGIT","Airi MIKKELA","Women","Singles",2,2,0,84,42,42,2020,NA,NA
-"396",20,"Carolina MARIN","Natalia PERMINOVA","Women","Singles",2,2,0,84,41,43,2020,NA,NA
-"397",20,"Nozomi OKUHARA","Michelle LI","Women","Singles",2,2,0,84,41,43,2020,NA,NA
-"398",23,"Carolina MARIN","Nozomi OKUHARA","Women","Singles",2,1,1,78,70,8,2020,NA,NA
-"399",24,"Carolina MARIN","Kirsty GILMOUR","Women","Singles",2,1,1,76,70,6,2020,NA,NA
-"400",24,"CHEN Yufei","TAI Tzu Ying","Women","Singles",2,1,1,76,69,7,2020,NA,NA
-"401",1,"CHEN Qingchen","Nami MATSUYAMA","Women","Doubles",3,1,2,123,121,2,2020,"JIA Yifan","Chiharu SHIDA"
-"402",2,"Vivian HOO","CHOW Mei Kuan","Women","Doubles",2,1,1,115,110,5,2020,"YAP Cheng Wen","LEE Meng Yean"
-"403",3,"HSU Ya Ching","Alexandra BØJE","Women","Doubles",2,2,0,105,94,11,2020,"HU Ling Fang","Mette POULSEN"
-"404",4,"Yuki FUKUSHIMA","LI Wenmei","Women","Doubles",2,1,1,102,95,7,2020,"Sayaka HIROTA","ZHENG Yu"
-"405",5,"LI Wenmei","KIM So Yeong","Women","Doubles",2,1,1,97,86,11,2020,"ZHENG Yu","KONG Hee Yong"
-"406",6,"LEE So Hee","CHANG Ye Na","Women","Doubles",2,1,1,96,93,3,2020,"SHIN Seung Chan","KIM Hye Rin"
-"407",7,"KIM So Yeong","HSU Ya Ching","Women","Doubles",2,2,0,86,64,22,2020,"KONG Hee Yong","HU Ling Fang"
-"408",9,"Gabriela STOEVA","Alexandra BØJE","Women","Doubles",2,2,0,84,44,40,2020,"Stefani STOEVA","Mette POULSEN"
-"409",9,"CHEN Qingchen","Gabriela STOEVA","Women","Doubles",2,2,0,84,49,35,2020,"JIA Yifan","Stefani STOEVA"
-"410",9,"Siti Fadia Silva RAMADHANTI","Pooja DANDU","Women","Doubles",2,2,0,84,47,37,2020,"Ribka SUGIARTO","SANJANA SANTOSH"
-"411",9,"DU Yue","CHOW Mei Kuan","Women","Doubles",2,2,0,84,57,27,2020,"LI Yinhui","LEE Meng Yean"
-"412",12,"CHANG Ye Na","Greysia POLII","Women","Doubles",2,1,1,80,74,6,2020,"KIM Hye Rin","Apriyani RAHAYU"
-"413",13,"Puttita SUPAJIRAKUL","DU Yue","Women","Doubles",2,1,1,74,71,3,2020,"Sapsiree TAERATTANACHAI","LI Yinhui"
-"414",14,"LEE So Hee","BAEK Ha Na","Women","Doubles",1,1,0,71,64,7,2020,"SHIN Seung Chan","JUNG Kyung Eun"
-"415",15,"LEE So Hee","Ekaterina BOLOTOVA","Women","Doubles",1,1,0,67,61,6,2020,"SHIN Seung Chan","Alina DAVLETOVA"
-"416",15,"Misaki MATSUTOMO","LEE So Hee","Women","Doubles",1,1,0,67,52,15,2020,"Ayaka TAKAHASHI","SHIN Seung Chan"
-"417",18,"Maiken FRUERGAARD","Clara NISTAD","Women","Doubles",1,1,0,64,56,8,2020,"Sara THYGESEN","Moa SJOO"
-"418",18,"Alexandra BØJE","Linda EFLER","Women","Doubles",1,1,0,64,59,5,2020,"Mette POULSEN","Isabel HERTTRICH"
-"419",18,"Greysia POLII","LIU Xuanxuan","Women","Doubles",1,1,0,64,56,8,2020,"Apriyani RAHAYU","XIA Yuting"
-"420",18,"Greysia POLII","BAEK Ha Na","Women","Doubles",1,1,0,64,60,4,2020,"Apriyani RAHAYU","JUNG Kyung Eun"
-"421",22,"KIM So Yeong","Chayanit CHALADCHALAM","Women","Doubles",1,1,0,63,55,8,2020,"KONG Hee Yong","Phataimas MUENWONG"
-"422",22,"Martina REPISKA","Liana LENCEVICA","Women","Doubles",1,1,0,63,60,3,2020,"Katarina VARGOVA","Jekaterina ROMANOVA"
-"423",22,"CHANG Ye Na","Vivian HOO","Women","Doubles",1,1,0,63,54,9,2020,"KIM Hye Rin","YAP Cheng Wen"
-"424",24,"Greysia POLII","HSU Ya Ching","Women","Doubles",1,1,0,62,52,10,2020,"Apriyani RAHAYU","HU Ling Fang"
-"425",24,"Greysia POLII","Chloe BIRCH","Women","Doubles",1,1,0,62,48,14,2020,"Apriyani RAHAYU","Lauren SMITH"
-"426",1,"Shesar Hiren RHUSTAVITO","KIDAMBI Srikanth","Men","Singles",2,2,0,114,93,21,2020,NA,NA
-"427",2,"Kenta NISHIMOTO","CHEAM June Wei","Men","Singles",2,1,1,111,97,14,2020,NA,NA
-"428",3,"Hans-Kristian Solberg VITTINGHUS","Lakshya SEN","Men","Singles",2,2,0,110,98,12,2020,NA,NA
-"429",4,"SHI Yuqi","NG Ka Long Angus","Men","Singles",2,1,1,106,99,7,2020,NA,NA
-"430",5,"LIEW Daren","PRANNOY H. S.","Men","Singles",2,2,0,104,91,13,2020,NA,NA
-"431",5,"CHOU Tien Chen","KIDAMBI Srikanth","Men","Singles",2,2,0,104,73,31,2020,NA,NA
-"432",7,"Vladimir MALKOV","Nhat NGUYEN","Men","Singles",2,2,0,102,92,10,2020,NA,NA
-"433",7,"Anders ANTONSEN","Rasmus GEMKE","Men","Singles",2,2,0,102,75,27,2020,NA,NA
-"434",9,"Kanta TSUNEYAMA","CHOU Tien Chen","Men","Singles",2,1,1,100,95,5,2020,NA,NA
-"435",10,"LEE Zii Jia","HEO Kwang Hee","Men","Singles",2,1,1,98,80,18,2020,NA,NA
-"436",10,"HUANG Yuxiang","Jan O JORGENSEN","Men","Singles",2,2,0,98,92,6,2020,NA,NA
-"437",12,"WANG Tzu Wei","Kenta NISHIMOTO","Men","Singles",2,1,1,97,88,9,2020,NA,NA
-"438",12,"SUN Feixiang","Brice LEVERDEZ","Men","Singles",2,1,1,97,84,13,2020,NA,NA
-"439",14,"Rasmus GEMKE","Max WEISSKIRCHEN","Men","Singles",2,1,1,96,88,8,2020,NA,NA
-"440",15,"Toma Junior POPOV","Thomas ROUXEL","Men","Singles",2,1,1,93,84,9,2020,NA,NA
-"441",16,"NG Ka Long Angus","Kenta NISHIMOTO","Men","Singles",2,1,1,91,88,3,2020,NA,NA
-"442",17,"LEE Zii Jia","Sameer VERMA","Men","Singles",2,2,0,85,70,15,2020,NA,NA
-"443",17,"Anders ANTONSEN","SON Wan Ho","Men","Singles",2,2,0,85,61,24,2020,NA,NA
-"444",19,"Anthony Sinisuka GINTING","HUANG Yuxiang","Men","Singles",2,1,1,78,68,10,2020,NA,NA
-"445",20,"Rasmus GEMKE","Kenta NISHIMOTO","Men","Singles",2,1,1,75,73,2,2020,NA,NA
-"446",21,"Jonathan DOLAN","Martin BUNDGAARD","Men","Singles",1,1,0,67,63,4,2020,NA,NA
-"447",22,"Anthony Sinisuka GINTING","HEO Kwang Hee","Men","Singles",1,1,0,64,59,5,2020,NA,NA
-"448",24,"Brice LEVERDEZ","Jonathan DOLAN","Men","Singles",1,1,0,63,54,9,2020,NA,NA
-"449",24,"LIN Yu Hsien","Sergey SIRANT","Men","Singles",1,1,0,63,55,8,2020,NA,NA
-"450",24,"Giovanni TOTI","Luka BAN","Men","Singles",1,1,0,63,55,8,2020,NA,NA
-"451",1,"Marcus Fernaldi GIDEON","Aaron CHIA","Men","Doubles",4,4,0,169,136,33,2020,"Kevin Sanjaya SUKAMULJO","SOH Wooi Yik"
-"452",2,"Akira KOGA","HUANG Kaixiang","Men","Doubles",2,1,1,119,109,10,2020,"Taichi SAITO","LIU Cheng"
-"453",3,"LEE Yang","Mohammad AHSAN","Men","Doubles",2,0,2,114,113,1,2020,"WANG Chi-Lin","Hendra SETIAWAN"
-"454",4,"Vladimir IVANOV","Marcus ELLIS","Men","Doubles",2,1,1,110,109,1,2020,"Ivan SOZONOV","Chris LANGRIDGE"
-"455",5,"Jeppe BAY","Ruben JILLE","Men","Doubles",2,2,0,105,97,8,2020,"Lasse MØLHEDE","Ties VAN DER LECQ"
-"456",6,"Kim ASTRUP","KIM Gi Jung","Men","Doubles",2,2,0,99,81,18,2020,"Anders Skaarup RASMUSSEN","LEE Yong Dae"
-"457",9,"GOH V Shem","LIAO Min Chun","Men","Doubles",2,2,0,84,66,18,2020,"TAN Wee Kiong","SU Ching Heng"
-"458",9,"Kim ASTRUP","Jelle MAAS","Men","Doubles",2,2,0,84,56,28,2020,"Anders Skaarup RASMUSSEN","Robin TABELING"
-"459",9,"LEE Yang","Vladimir IVANOV","Men","Doubles",2,2,0,84,61,23,2020,"WANG Chi-Lin","Ivan SOZONOV"
-"460",9,"KIM Gi Jung","LI Junhui","Men","Doubles",2,2,0,84,61,23,2020,"LEE Yong Dae","LIU Yuchen"
-"461",9,"ONG Yew Sin","HAN Chengkai","Men","Doubles",2,2,0,84,66,18,2020,"TEO Ee Yi","ZHOU Haodong"
-"462",9,"Fajar ALFIAN","Mathias BOE","Men","Doubles",2,2,0,84,67,17,2020,"Muhammad Rian ARDIANTO","Mads CONRAD-PETERSEN"
-"463",13,"Mathias BOE","LEE Jhe-Huei","Men","Doubles",2,1,1,82,77,5,2020,"Mads CONRAD-PETERSEN","YANG Po-Hsuan"
-"464",14,"Akira KOGA","LIAO Min Chun","Men","Doubles",1,1,0,68,57,11,2020,"Taichi SAITO","SU Ching Heng"
-"465",15,"Sturla Flaten JORGENSEN","Oskari LARKIMO","Men","Doubles",1,1,0,67,59,8,2020,"Carl Christian MORK","Joakim OLDORFF"
-"466",16,"Ruben JILLE","Eloi ADAM","Men","Doubles",1,1,0,66,59,7,2020,"Ties VAN DER LECQ","Julien MAIO"
-"467",16,"Marcus Fernaldi GIDEON","Marcus ELLIS","Men","Doubles",1,1,0,66,57,9,2020,"Kevin Sanjaya SUKAMULJO","Chris LANGRIDGE"
-"468",18,"Rowan SCHEURKOGEL","Serdar KOCA","Men","Doubles",1,1,0,65,58,7,2020,"Jona VAN NIEUWKERKE","Serhat SALIM"
-"469",18,"LI Junhui","Mohammad AHSAN","Men","Doubles",1,1,0,65,63,2,2020,"LIU Yuchen","Hendra SETIAWAN"
-"470",21,"Leo Rolly CARNANDO","Maneepong JONGJIT","Men","Doubles",1,1,0,64,59,5,2020,"Daniel MARTHIN","Krit TANTIANANKUL"
-"471",21,"Jones Ralfy JANSEN","Muhammad Shohibul FIKRI","Men","Doubles",1,1,0,64,60,4,2020,"Peter KAESBAUER","Bagas MAULANA"
-"472",21,"Takuro HOKI","CHOI SolGyu","Men","Doubles",1,1,0,64,62,2,2020,"Yugo KOBAYASHI","SEO Seung Jae"
-"473",24,"Zach RUSS","Rasmus ESPERSEN","Men","Doubles",1,1,0,63,57,6,2020,"Steven STALLWOOD","Emil HYBEL"
-"474",24,"ONG Yew Sin","OU Xuanyi","Men","Doubles",1,1,0,63,61,2,2020,"TEO Ee Yi","ZHANG Nan"
-"475",24,"Gianmarco BAILETTI","Ariel SHAINSKI","Men","Doubles",1,1,0,63,52,11,2020,"David SALUTT","Misha ZILBERMAN"
-"476",1,"Robin TABELING","Mathias CHRISTIANSEN","Mixed","Doubles",3,2,1,131,121,10,2020,"Selena PIEK","Alexandra BØJE"
-"477",2,"Mathias CHRISTIANSEN","Mark LAMSFUSS","Mixed","Doubles",2,1,1,112,108,4,2020,"Alexandra BØJE","Isabel HERTTRICH"
-"478",3,"Mathias CHRISTIANSEN","Niclas NOHR","Mixed","Doubles",2,2,0,107,85,22,2020,"Alexandra BØJE","Amalie MAGELUND"
-"479",4,"KO Sung Hyun","YANG Po-Hsuan","Mixed","Doubles",2,2,0,104,78,26,2020,"EOM Hye Won","HU Ling Fang"
-"480",5,"ZHENG Siwei","Pranaav Jerry CHOPRA","Mixed","Doubles",2,2,0,95,71,24,2020,"HUANG Yaqiong","REDDY N. Sikki"
-"481",6,"WANG Yilyu","Ricky KARANDASUWARDI","Mixed","Doubles",2,2,0,88,60,28,2020,"HUANG Dongping","Pia Zebadiah BERNADET"
-"482",7,"Dechapol PUAVARANUKROH","LEE Jhe-Huei","Mixed","Doubles",2,2,0,85,55,30,2020,"Sapsiree TAERATTANACHAI","HSU Ya Ching"
-"483",9,"Marcus ELLIS","Rodion ALIMOV","Mixed","Doubles",2,2,0,84,53,31,2020,"Lauren SMITH","Alina DAVLETOVA"
-"484",9,"ZHENG Siwei","Hafiz FAIZAL","Mixed","Doubles",2,2,0,84,52,32,2020,"HUANG Yaqiong","Gloria Emanuelle WIDJAJA"
-"485",9,"ZHENG Siwei","WANG Yilyu","Mixed","Doubles",2,2,0,84,49,35,2020,"HUANG Yaqiong","HUANG Dongping"
-"486",11,"Kyohei YAMASHITA","Mathias CHRISTIANSEN","Mixed","Doubles",1,1,0,72,59,13,2020,"Naru SHINOYA","Alexandra BØJE"
-"487",12,"Marcus ELLIS","Gregory MAIRS","Mixed","Doubles",1,1,0,69,54,15,2020,"Lauren SMITH","Victoria WILLIAMS"
-"488",13,"Mathias BAY-SMIDT","Vladimir IVANOV","Mixed","Doubles",1,1,0,68,59,9,2020,"Rikke SØBY","Ekaterina BOLOTOVA"
-"489",14,"Marcus ELLIS","TANG Chun Man","Mixed","Doubles",1,1,0,67,57,10,2020,"Lauren SMITH","TSE Ying Suet"
-"490",15,"CHOI SolGyu","WANG Chi-Lin","Mixed","Doubles",1,1,0,65,47,18,2020,"SHIN Seung Chan","CHENG Chi Ya"
-"491",16,"Marcus ELLIS","GOH Soon Huat","Mixed","Doubles",1,1,0,64,62,2,2020,"Lauren SMITH","LAI Shevon Jemie"
-"492",16,"Gregory MAIRS","Eloi ADAM","Mixed","Doubles",1,1,0,64,61,3,2020,"Victoria WILLIAMS","Margot LAMBERT"
-"493",20,"Philip BIRKER","Alexander DUNN","Mixed","Doubles",1,1,0,63,63,0,2020,"Katharina HOCHMEIR","Ciara TORRANCE"
-"494",20,"Niclas NOHR","Adam HALL","Mixed","Doubles",1,1,0,63,53,10,2020,"Amalie MAGELUND","Julie MACPHERSON"
-"495",20,"Hafiz FAIZAL","TAN Kian Meng","Mixed","Doubles",1,1,0,63,59,4,2020,"Gloria Emanuelle WIDJAJA","LAI Pei Jing"
-"496",20,"Praveen JORDAN","Marcus ELLIS","Mixed","Doubles",1,1,0,63,49,14,2020,"Melati Daeva OKTAVIANTI","Lauren SMITH"
-"497",20,"Alexander DUNN","Philip BIRKER","Mixed","Doubles",1,0,1,63,63,0,2020,"Ciara TORRANCE","Katharina HOCHMEIR"
-"498",24,"Adnan MAULANA","FENG Yanzhe","Mixed","Doubles",1,1,0,62,54,8,2020,"Mychelle Crhystine BANDASO","ZHANG Shuxian"
-"499",24,"Thom GICQUEL","Mathias THYRRI","Mixed","Doubles",1,1,0,62,51,11,2020,"Delphine DELRUE","Mai SURROW"
-"500",24,"Chris ADCOCK","Takuro HOKI","Mixed","Doubles",1,1,0,62,57,5,2020,"Gabrielle ADCOCK","Wakana NAGAHARA"
-"501",1,"CHEN Yufei","Sayaka TAKAHASHI","Women","Singles",5,5,0,242,163,79,2019,NA,NA
-"502",2,"CHEN Yufei","Akane YAMAGUCHI","Women","Singles",5,3,2,227,204,23,2019,NA,NA
-"503",3,"TAI Tzu Ying","Nozomi OKUHARA","Women","Singles",5,3,2,223,206,17,2019,NA,NA
-"504",4,"Ratchanok INTANON","TAI Tzu Ying","Women","Singles",5,2,3,222,210,12,2019,NA,NA
-"505",5,"TAI Tzu Ying","Busanan ONGBAMRUNGPHAN","Women","Singles",5,5,0,210,139,71,2019,NA,NA
-"506",5,"TAI Tzu Ying","CHEN Yufei","Women","Singles",5,3,2,210,208,2,2019,NA,NA
-"507",7,"Ratchanok INTANON","CHEN Xiaoxin","Women","Singles",5,4,1,207,172,35,2019,NA,NA
-"508",8,"Nozomi OKUHARA","Ratchanok INTANON","Women","Singles",5,3,2,203,196,7,2019,NA,NA
-"509",9,"Ratchanok INTANON","Gregoria Mariska TUNJUNG","Women","Singles",4,4,0,201,166,35,2019,NA,NA
-"510",10,"Busanan ONGBAMRUNGPHAN","CAI Yanyan","Women","Singles",4,4,0,200,158,42,2019,NA,NA
-"511",11,"CHEN Yufei","Ratchanok INTANON","Women","Singles",4,4,0,196,163,33,2019,NA,NA
-"512",12,"Akane YAMAGUCHI","HE Bingjiao","Women","Singles",4,4,0,191,140,51,2019,NA,NA
-"513",13,"Ratchanok INTANON","Nitchaon JINDAPOL","Women","Singles",4,4,0,186,132,54,2019,NA,NA
-"514",14,"Akane YAMAGUCHI","TAI Tzu Ying","Women","Singles",4,1,3,181,178,3,2019,NA,NA
-"515",15,"Akane YAMAGUCHI","Pornpawee CHOCHUWONG","Women","Singles",4,2,2,176,171,5,2019,NA,NA
-"516",16,"HE Bingjiao","Nitchaon JINDAPOL","Women","Singles",4,3,1,175,154,21,2019,NA,NA
-"517",17,"TAI Tzu Ying","Gregoria Mariska TUNJUNG","Women","Singles",4,4,0,172,141,31,2019,NA,NA
-"518",18,"CHEN Yufei","SUNG Ji Hyun","Women","Singles",4,4,0,168,127,41,2019,NA,NA
-"519",19,"Ruselli HARTAWAN","CHIANG Ying Li","Women","Singles",3,3,0,167,139,28,2019,NA,NA
-"520",20,"Nozomi OKUHARA","HE Bingjiao","Women","Singles",4,3,1,165,132,33,2019,NA,NA
-"521",21,"LI Xuerui","Sayaka TAKAHASHI","Women","Singles",4,3,1,163,148,15,2019,NA,NA
-"522",21,"CHEN Yufei","Michelle LI","Women","Singles",3,3,0,163,133,30,2019,NA,NA
-"523",23,"HE Bingjiao","Fitriani FITRIANI","Women","Singles",3,3,0,162,122,40,2019,NA,NA
-"524",23,"Nozomi OKUHARA","Busanan ONGBAMRUNGPHAN","Women","Singles",3,3,0,162,117,45,2019,NA,NA
-"525",25,"Akane YAMAGUCHI","LI Xuerui","Women","Singles",3,2,1,157,134,23,2019,NA,NA
-"526",1,"Yuki FUKUSHIMA","CHEN Qingchen","Women","Doubles",7,5,2,322,262,60,2019,"Sayaka HIROTA","JIA Yifan"
-"527",2,"KIM So Yeong","Mayu MATSUMOTO","Women","Doubles",6,4,2,280,268,12,2019,"KONG Hee Yong","Wakana NAGAHARA"
-"528",3,"CHEN Qingchen","Mayu MATSUMOTO","Women","Doubles",5,4,1,249,220,29,2019,"JIA Yifan","Wakana NAGAHARA"
-"529",4,"Yuki FUKUSHIMA","DU Yue","Women","Doubles",5,4,1,239,196,43,2019,"Sayaka HIROTA","LI Yinhui"
-"530",5,"Mayu MATSUMOTO","Yuki FUKUSHIMA","Women","Doubles",5,4,1,235,218,17,2019,"Wakana NAGAHARA","Sayaka HIROTA"
-"531",6,"LEE So Hee","Jongkolphan KITITHARAKUL","Women","Doubles",5,5,0,231,162,69,2019,"SHIN Seung Chan","Rawinda PRAJONGJAI"
-"532",7,"KIM So Yeong","CHEN Qingchen","Women","Doubles",5,3,2,230,221,9,2019,"KONG Hee Yong","JIA Yifan"
-"533",8,"Misaki MATSUTOMO","KIM So Yeong","Women","Doubles",5,4,1,220,180,40,2019,"Ayaka TAKAHASHI","KONG Hee Yong"
-"534",9,"Jongkolphan KITITHARAKUL","CHOW Mei Kuan","Women","Doubles",4,3,1,218,193,25,2019,"Rawinda PRAJONGJAI","LEE Meng Yean"
-"535",10,"Yuki FUKUSHIMA","Ekaterina BOLOTOVA","Women","Doubles",5,5,0,210,101,109,2019,"Sayaka HIROTA","Alina DAVLETOVA"
-"536",11,"Mayu MATSUMOTO","LI Wenmei","Women","Doubles",4,4,0,209,185,24,2019,"Wakana NAGAHARA","ZHENG Yu"
-"537",12,"CHANG Ye Na","Yuki FUKUSHIMA","Women","Doubles",4,2,2,206,196,10,2019,"JUNG Kyung Eun","Sayaka HIROTA"
-"538",13,"LI Wenmei","LEE So Hee","Women","Doubles",4,2,2,205,199,6,2019,"ZHENG Yu","SHIN Seung Chan"
-"539",13,"LEE So Hee","Mayu MATSUMOTO","Women","Doubles",4,3,1,205,181,24,2019,"SHIN Seung Chan","Wakana NAGAHARA"
-"540",15,"CHEN Qingchen","Greysia POLII","Women","Doubles",4,3,1,201,183,18,2019,"JIA Yifan","Apriyani RAHAYU"
-"541",16,"KIM So Yeong","LI Wenmei","Women","Doubles",4,3,1,194,182,12,2019,"KONG Hee Yong","ZHENG Yu"
-"542",17,"Misaki MATSUTOMO","Puttita SUPAJIRAKUL","Women","Doubles",4,3,1,187,159,28,2019,"Ayaka TAKAHASHI","Sapsiree TAERATTANACHAI"
-"543",18,"Misaki MATSUTOMO","DU Yue","Women","Doubles",4,2,2,185,174,11,2019,"Ayaka TAKAHASHI","LI Yinhui"
-"544",19,"Mayu MATSUMOTO","LIU Xuanxuan","Women","Doubles",4,4,0,184,142,42,2019,"Wakana NAGAHARA","XIA Yuting"
-"545",19,"CHEN Qingchen","DU Yue","Women","Doubles",4,4,0,184,139,45,2019,"JIA Yifan","LI Yinhui"
-"546",21,"Yuki FUKUSHIMA","Ayako SAKURAMOTO","Women","Doubles",4,4,0,180,130,50,2019,"Sayaka HIROTA","Yukiko TAKAHATA"
-"547",22,"Misaki MATSUTOMO","Greysia POLII","Women","Doubles",3,2,1,178,172,6,2019,"Ayaka TAKAHASHI","Apriyani RAHAYU"
-"548",23,"Greysia POLII","Ayako SAKURAMOTO","Women","Doubles",4,3,1,175,156,19,2019,"Apriyani RAHAYU","Yukiko TAKAHATA"
-"549",23,"LEE So Hee","KIM So Yeong","Women","Doubles",3,2,1,175,163,12,2019,"SHIN Seung Chan","KONG Hee Yong"
-"550",25,"Yuki FUKUSHIMA","LEE So Hee","Women","Doubles",4,3,1,170,152,18,2019,"Sayaka HIROTA","SHIN Seung Chan"
-"551",1,"Kento MOMOTA","Anthony Sinisuka GINTING","Men","Singles",7,6,1,347,309,38,2019,NA,NA
-"552",2,"CHOU Tien Chen","Kenta NISHIMOTO","Men","Singles",5,4,1,261,229,32,2019,NA,NA
-"553",3,"Jonatan CHRISTIE","Anders ANTONSEN","Men","Singles",6,4,2,248,231,17,2019,NA,NA
-"554",4,"Jonatan CHRISTIE","Jan O JORGENSEN","Men","Singles",5,5,0,230,163,67,2019,NA,NA
-"555",5,"Viktor AXELSEN","CHEN Long","Men","Singles",5,2,3,224,209,15,2019,NA,NA
-"556",6,"Kento MOMOTA","Hans-Kristian Solberg VITTINGHUS","Men","Singles",4,4,0,211,176,35,2019,NA,NA
-"557",7,"NG Ka Long Angus","Anthony Sinisuka GINTING","Men","Singles",4,3,1,209,198,11,2019,NA,NA
-"558",8,"Kanta TSUNEYAMA","Sitthikom THAMMASIN","Men","Singles",4,3,1,204,175,29,2019,NA,NA
-"559",9,"Kento MOMOTA","Viktor AXELSEN","Men","Singles",4,4,0,195,154,41,2019,NA,NA
-"560",10,"Anthony Sinisuka GINTING","CHEN Long","Men","Singles",5,3,2,194,165,29,2019,NA,NA
-"561",11,"Viktor AXELSEN","Kanta TSUNEYAMA","Men","Singles",4,3,1,188,151,37,2019,NA,NA
-"562",11,"Kento MOMOTA","SAI PRANEETH B.","Men","Singles",4,4,0,188,126,62,2019,NA,NA
-"563",13,"Kento MOMOTA","WANG Tzu Wei","Men","Singles",4,4,0,183,133,50,2019,NA,NA
-"564",14,"Kantaphon WANGCHAROEN","HUANG Yuxiang","Men","Singles",4,3,1,181,158,23,2019,NA,NA
-"565",15,"LEE Zii Jia","CHEN Long","Men","Singles",3,1,2,175,170,5,2019,NA,NA
-"566",16,"CHOU Tien Chen","Kantaphon WANGCHAROEN","Men","Singles",3,2,1,172,167,5,2019,NA,NA
-"567",17,"Tommy SUGIARTO","LU Guangzu","Men","Singles",4,1,3,169,165,4,2019,NA,NA
-"568",17,"Anthony Sinisuka GINTING","CHOU Tien Chen","Men","Singles",3,2,1,169,162,7,2019,NA,NA
-"569",19,"Viktor AXELSEN","Jonatan CHRISTIE","Men","Singles",3,1,2,164,156,8,2019,NA,NA
-"570",20,"CHOU Tien Chen","LIN Dan","Men","Singles",3,2,1,163,131,32,2019,NA,NA
-"571",22,"Kento MOMOTA","LEE Zii Jia","Men","Singles",4,4,0,158,100,58,2019,NA,NA
-"572",22,"Sourabh VERMA","SUN Feixiang","Men","Singles",3,3,0,158,123,35,2019,NA,NA
-"573",22,"Anthony Sinisuka GINTING","Kenta NISHIMOTO","Men","Singles",3,2,1,158,136,22,2019,NA,NA
-"574",24,"CHOU Tien Chen","Jonatan CHRISTIE","Men","Singles",3,2,1,157,133,24,2019,NA,NA
-"575",25,"Kento MOMOTA","Anders ANTONSEN","Men","Singles",3,2,1,156,119,37,2019,NA,NA
-"576",1,"Mohammad AHSAN","LEE Yang","Men","Doubles",6,4,2,295,271,24,2019,"Hendra SETIAWAN","WANG Chi-Lin"
-"577",2,"Takeshi KAMURA","Takuro HOKI","Men","Doubles",6,4,2,287,272,15,2019,"Keigo SONODA","Yugo KOBAYASHI"
-"578",3,"Takeshi KAMURA","CHOI SolGyu","Men","Doubles",6,4,2,286,247,39,2019,"Keigo SONODA","SEO Seung Jae"
-"579",4,"Hiroyuki ENDO","Marcus Fernaldi GIDEON","Men","Doubles",5,5,0,275,213,62,2019,"Yuta WATANABE","Kevin Sanjaya SUKAMULJO"
-"580",5,"Hiroyuki ENDO","LI Junhui","Men","Doubles",6,3,3,253,251,2,2019,"Yuta WATANABE","LIU Yuchen"
-"581",6,"LI Junhui","LU Ching Yao","Men","Doubles",5,4,1,247,232,15,2019,"LIU Yuchen","YANG Po Han"
-"582",7,"Mohammad AHSAN","Hiroyuki ENDO","Men","Doubles",5,5,0,243,207,36,2019,"Hendra SETIAWAN","Yuta WATANABE"
-"583",8,"Marcus Fernaldi GIDEON","Fajar ALFIAN","Men","Doubles",5,3,2,241,215,26,2019,"Kevin Sanjaya SUKAMULJO","Muhammad Rian ARDIANTO"
-"584",9,"Mohammad AHSAN","LI Junhui","Men","Doubles",5,4,1,236,192,44,2019,"Hendra SETIAWAN","LIU Yuchen"
-"585",10,"Marcus Fernaldi GIDEON","Takeshi KAMURA","Men","Doubles",5,4,1,233,199,34,2019,"Kevin Sanjaya SUKAMULJO","Keigo SONODA"
-"586",11,"Marcus Fernaldi GIDEON","Mohammad AHSAN","Men","Doubles",5,5,0,229,183,46,2019,"Kevin Sanjaya SUKAMULJO","Hendra SETIAWAN"
-"587",11,"LI Junhui","Aaron CHIA","Men","Doubles",4,4,0,229,191,38,2019,"LIU Yuchen","SOH Wooi Yik"
-"588",13,"Mohammad AHSAN","Aaron CHIA","Men","Doubles",6,4,2,213,187,26,2019,"Hendra SETIAWAN","SOH Wooi Yik"
-"589",14,"Takeshi KAMURA","HE Jiting","Men","Doubles",4,4,0,207,159,48,2019,"Keigo SONODA","TAN Qiang"
-"590",15,"Takeshi KAMURA","GOH V Shem","Men","Doubles",4,4,0,206,176,30,2019,"Keigo SONODA","TAN Wee Kiong"
-"591",16,"LEE Yang","CHOI SolGyu","Men","Doubles",4,1,3,204,201,3,2019,"WANG Chi-Lin","SEO Seung Jae"
-"592",17,"Mohammad AHSAN","GOH V Shem","Men","Doubles",4,3,1,203,183,20,2019,"Hendra SETIAWAN","TAN Wee Kiong"
-"593",18,"Hiroyuki ENDO","ONG Yew Sin","Men","Doubles",4,4,0,202,159,43,2019,"Yuta WATANABE","TEO Ee Yi"
-"594",19,"Mohammad AHSAN","Takeshi KAMURA","Men","Doubles",4,3,1,197,181,16,2019,"Hendra SETIAWAN","Keigo SONODA"
-"595",20,"Aaron CHIA","Kim ASTRUP","Men","Doubles",4,3,1,187,156,31,2019,"SOH Wooi Yik","Anders Skaarup RASMUSSEN"
-"596",21,"GOH V Shem","ONG Yew Sin","Men","Doubles",4,4,0,184,142,42,2019,"TAN Wee Kiong","TEO Ee Yi"
-"597",21,"Mohammad AHSAN","Mark LAMSFUSS","Men","Doubles",4,4,0,184,148,36,2019,"Hendra SETIAWAN","Marvin SEIDEL"
-"598",23,"Mathias BOE","HAN Chengkai","Men","Doubles",4,3,1,176,154,22,2019,"Mads CONRAD-PETERSEN","ZHOU Haodong"
-"599",24,"Marcus Fernaldi GIDEON","GOH V Shem","Men","Doubles",4,4,0,172,132,40,2019,"Kevin Sanjaya SUKAMULJO","TAN Wee Kiong"
-"600",25,"LEE Yang","Vladimir IVANOV","Men","Doubles",3,3,0,169,150,19,2019,"WANG Chi-Lin","Ivan SOZONOV"
-"601",1,"ZHENG Siwei","Praveen JORDAN","Mixed","Doubles",7,5,2,349,313,36,2019,"HUANG Yaqiong","Melati Daeva OKTAVIANTI"
-"602",2,"ZHENG Siwei","Yuta WATANABE","Mixed","Doubles",6,5,1,276,244,32,2019,"HUANG Yaqiong","Arisa HIGASHINO"
-"603",3,"WANG Yilyu","Dechapol PUAVARANUKROH","Mixed","Doubles",6,5,1,265,213,52,2019,"HUANG Dongping","Sapsiree TAERATTANACHAI"
-"604",4,"WANG Yilyu","CHAN Peng Soon","Mixed","Doubles",5,5,0,254,195,59,2019,"HUANG Dongping","GOH Liu Ying"
-"605",5,"Praveen JORDAN","Hafiz FAIZAL","Mixed","Doubles",5,4,1,218,196,22,2019,"Melati Daeva OKTAVIANTI","Gloria Emanuelle WIDJAJA"
-"606",6,"Rinov RIVALDY","TAN Kian Meng","Mixed","Doubles",4,2,2,211,200,11,2019,"Pitha Haningtyas MENTARI","LAI Pei Jing"
-"607",7,"ZHENG Siwei","WANG Yilyu","Mixed","Doubles",5,4,1,208,185,23,2019,"HUANG Yaqiong","HUANG Dongping"
-"608",8,"ZHENG Siwei","TAN Kian Meng","Mixed","Doubles",4,4,0,202,152,50,2019,"HUANG Yaqiong","LAI Pei Jing"
-"609",9,"Praveen JORDAN","Dechapol PUAVARANUKROH","Mixed","Doubles",4,3,1,195,161,34,2019,"Melati Daeva OKTAVIANTI","Sapsiree TAERATTANACHAI"
-"610",10,"ZHENG Siwei","Dechapol PUAVARANUKROH","Mixed","Doubles",5,3,2,194,155,39,2019,"HUANG Yaqiong","Sapsiree TAERATTANACHAI"
-"611",11,"Yuta WATANABE","SEO Seung Jae","Mixed","Doubles",5,3,2,186,169,17,2019,"Arisa HIGASHINO","CHAE YuJung"
-"612",12,"WANG Yilyu","Praveen JORDAN","Mixed","Doubles",4,3,1,184,140,44,2019,"HUANG Dongping","Melati Daeva OKTAVIANTI"
-"613",13,"CHAN Peng Soon","Tontowi AHMAD","Mixed","Doubles",3,1,2,173,167,6,2019,"GOH Liu Ying","Winny Oktavina KANDOW"
-"614",14,"WANG Yilyu","HE Jiting","Mixed","Doubles",4,3,1,171,144,27,2019,"HUANG Dongping","DU Yue"
-"615",15,"ZHENG Siwei","SEO Seung Jae","Mixed","Doubles",4,4,0,170,111,59,2019,"HUANG Yaqiong","CHAE YuJung"
-"616",16,"Dechapol PUAVARANUKROH","Mark LAMSFUSS","Mixed","Doubles",3,3,0,165,121,44,2019,"Sapsiree TAERATTANACHAI","Isabel HERTTRICH"
-"617",17,"Marcus ELLIS","Mark LAMSFUSS","Mixed","Doubles",4,3,1,163,145,18,2019,"Lauren SMITH","Isabel HERTTRICH"
-"618",18,"ZHENG Siwei","Hafiz FAIZAL","Mixed","Doubles",3,2,1,161,140,21,2019,"HUANG Yaqiong","Gloria Emanuelle WIDJAJA"
-"619",19,"Rodion ALIMOV","Thom GICQUEL","Mixed","Doubles",3,3,0,160,122,38,2019,"Alina DAVLETOVA","Delphine DELRUE"
-"620",20,"Dechapol PUAVARANUKROH","LU Kai","Mixed","Doubles",3,2,1,157,141,16,2019,"Sapsiree TAERATTANACHAI","CHEN Lu"
-"621",20,"WANG Yilyu","SEO Seung Jae","Mixed","Doubles",3,3,0,157,131,26,2019,"HUANG Dongping","CHAE YuJung"
-"622",22,"Yuta WATANABE","Praveen JORDAN","Mixed","Doubles",3,2,1,153,138,15,2019,"Arisa HIGASHINO","Melati Daeva OKTAVIANTI"
-"623",23,"GOH Soon Huat","Marcus ELLIS","Mixed","Doubles",3,3,0,150,134,16,2019,"LAI Shevon Jemie","Lauren SMITH"
-"624",24,"Hafiz FAIZAL","Tontowi AHMAD","Mixed","Doubles",3,2,1,149,131,18,2019,"Gloria Emanuelle WIDJAJA","Winny Oktavina KANDOW"
-"625",24,"Praveen JORDAN","Yuki KANEKO","Mixed","Doubles",3,1,2,149,143,6,2019,"Melati Daeva OKTAVIANTI","Misaki MATSUTOMO"
-"626",1,"CHEN Yufei","Akane YAMAGUCHI","Women","Singles",8,4,4,383,357,26,2018,NA,NA
-"627",2,"TAI Tzu Ying","CHEN Yufei","Women","Singles",6,6,0,324,259,65,2018,NA,NA
-"628",3,"PUSARLA V. Sindhu","Akane YAMAGUCHI","Women","Singles",6,5,1,289,255,34,2018,NA,NA
-"629",4,"TAI Tzu Ying","HE Bingjiao","Women","Singles",6,5,1,282,211,71,2018,NA,NA
-"630",5,"CHEN Yufei","Ratchanok INTANON","Women","Singles",5,3,2,275,262,13,2018,NA,NA
-"631",6,"TAI Tzu Ying","Saina NEHWAL","Women","Singles",6,6,0,272,200,72,2018,NA,NA
-"632",7,"CHEN Yufei","SUNG Ji Hyun","Women","Singles",5,5,0,251,191,60,2018,NA,NA
-"633",8,"Nozomi OKUHARA","Saina NEHWAL","Women","Singles",4,2,2,224,219,5,2018,NA,NA
-"634",9,"CHEN Yufei","Nitchaon JINDAPOL","Women","Singles",4,4,0,220,180,40,2018,NA,NA
-"635",10,"Nozomi OKUHARA","HE Bingjiao","Women","Singles",4,4,0,206,147,59,2018,NA,NA
-"636",11,"PUSARLA V. Sindhu","Beiwen ZHANG","Women","Singles",4,2,2,199,161,38,2018,NA,NA
-"637",12,"Nozomi OKUHARA","Pornpawee CHOCHUWONG","Women","Singles",4,3,1,191,156,35,2018,NA,NA
-"638",13,"CAI Yanyan","GAO Fangjie","Women","Singles",4,2,2,190,182,8,2018,NA,NA
-"639",14,"Akane YAMAGUCHI","Nozomi OKUHARA","Women","Singles",4,2,2,186,185,1,2018,NA,NA
-"640",14,"TAI Tzu Ying","Soniia CHEAH","Women","Singles",4,4,0,186,135,51,2018,NA,NA
-"641",16,"Nozomi OKUHARA","CHEUNG Ngan Yi","Women","Singles",4,4,0,182,133,49,2018,NA,NA
-"642",16,"Akane YAMAGUCHI","HE Bingjiao","Women","Singles",4,3,1,182,166,16,2018,NA,NA
-"643",18,"Saina NEHWAL","Akane YAMAGUCHI","Women","Singles",4,1,3,180,178,2,2018,NA,NA
-"644",19,"Akane YAMAGUCHI","Beiwen ZHANG","Women","Singles",4,2,2,179,148,31,2018,NA,NA
-"645",19,"PUSARLA V. Sindhu","Nozomi OKUHARA","Women","Singles",4,3,1,179,172,7,2018,NA,NA
-"646",21,"Mia BLICHFELDT","Evgeniya KOSETSKAYA","Women","Singles",3,2,1,171,160,11,2018,NA,NA
-"647",21,"KISONA Selvaduray","Ruselli HARTAWAN","Women","Singles",3,2,1,171,163,8,2018,NA,NA
-"648",24,"Ratchanok INTANON","Fitriani FITRIANI","Women","Singles",4,4,0,168,98,70,2018,NA,NA
-"649",24,"TAI Tzu Ying","Akane YAMAGUCHI","Women","Singles",4,2,2,168,160,8,2018,NA,NA
-"650",24,"PUSARLA V. Sindhu","Nitchaon JINDAPOL","Women","Singles",3,3,0,168,151,17,2018,NA,NA
-"651",1,"Misaki MATSUTOMO","Greysia POLII","Women","Doubles",7,6,1,307,276,31,2018,"Ayaka TAKAHASHI","Apriyani RAHAYU"
-"652",2,"Nami MATSUYAMA","Ayako SAKURAMOTO","Women","Doubles",5,1,4,247,246,1,2018,"Chiharu SHIDA","Yukiko TAKAHATA"
-"653",3,"Yuki FUKUSHIMA","Greysia POLII","Women","Doubles",5,5,0,231,161,70,2018,"Sayaka HIROTA","Apriyani RAHAYU"
-"654",4,"Misaki MATSUTOMO","Mayu MATSUMOTO","Women","Doubles",5,3,2,213,202,11,2018,"Ayaka TAKAHASHI","Wakana NAGAHARA"
-"655",4,"Yuki FUKUSHIMA","Mayu MATSUMOTO","Women","Doubles",4,2,2,213,200,13,2018,"Sayaka HIROTA","Wakana NAGAHARA"
-"656",6,"LEE So Hee","Gabriela STOEVA","Women","Doubles",5,3,2,207,191,16,2018,"SHIN Seung Chan","Stefani STOEVA"
-"657",7,"Yuki FUKUSHIMA","Della Destiara HARIS","Women","Doubles",4,4,0,195,155,40,2018,"Sayaka HIROTA","Rizki Amelia PRADIPTA"
-"658",8,"Misaki MATSUTOMO","Della Destiara HARIS","Women","Doubles",4,4,0,187,114,73,2018,"Ayaka TAKAHASHI","Rizki Amelia PRADIPTA"
-"659",9,"CHEN Qingchen","Jongkolphan KITITHARAKUL","Women","Doubles",4,4,0,186,149,37,2018,"JIA Yifan","Rawinda PRAJONGJAI"
-"660",10,"Jongkolphan KITITHARAKUL","Maiken FRUERGAARD","Women","Doubles",4,3,1,182,150,32,2018,"Rawinda PRAJONGJAI","Sara THYGESEN"
-"661",11,"Misaki MATSUTOMO","DU Yue","Women","Doubles",4,3,1,174,140,34,2018,"Ayaka TAKAHASHI","LI Yinhui"
-"662",12,"Yuki FUKUSHIMA","Jongkolphan KITITHARAKUL","Women","Doubles",4,3,1,172,141,31,2018,"Sayaka HIROTA","Rawinda PRAJONGJAI"
-"663",14,"Gabriela STOEVA","Emilie LEFEL","Women","Doubles",4,4,0,168,96,72,2018,"Stefani STOEVA","Anne TRAN"
-"664",14,"Mayu MATSUMOTO","Gabriela STOEVA","Women","Doubles",4,4,0,168,109,59,2018,"Wakana NAGAHARA","Stefani STOEVA"
-"665",14,"CHEN Qingchen","CHANG Ye Na","Women","Doubles",3,3,0,168,167,1,2018,"JIA Yifan","JUNG Kyung Eun"
-"666",16,"Yuki FUKUSHIMA","CHEN Qingchen","Women","Doubles",4,2,2,159,155,4,2018,"Sayaka HIROTA","JIA Yifan"
-"667",17,"Greysia POLII","LEE So Hee","Women","Doubles",3,2,1,157,143,14,2018,"Apriyani RAHAYU","SHIN Seung Chan"
-"668",18,"Misaki MATSUTOMO","Yuki FUKUSHIMA","Women","Doubles",3,1,2,153,147,6,2018,"Ayaka TAKAHASHI","Sayaka HIROTA"
-"669",19,"CHEN Qingchen","DU Yue","Women","Doubles",4,2,2,148,143,5,2018,"JIA Yifan","LI Yinhui"
-"670",19,"CHANG Ye Na","Yuki FUKUSHIMA","Women","Doubles",3,2,1,148,131,17,2018,"JUNG Kyung Eun","Sayaka HIROTA"
-"671",21,"Yuki FUKUSHIMA","Anggia Shitta AWANDA","Women","Doubles",3,3,0,146,128,18,2018,"Sayaka HIROTA","Ni Ketut Mahadewi ISTARANI"
-"672",22,"DU Yue","Mayu MATSUMOTO","Women","Doubles",3,2,1,145,131,14,2018,"LI Yinhui","Wakana NAGAHARA"
-"673",23,"Misaki MATSUTOMO","Ashwini PONNAPPA","Women","Doubles",3,3,0,144,102,42,2018,"Ayaka TAKAHASHI","REDDY N. Sikki"
-"674",24,"LEE So Hee","Mayu MATSUMOTO","Women","Doubles",3,2,1,143,127,16,2018,"SHIN Seung Chan","Wakana NAGAHARA"
-"675",24,"Misaki MATSUTOMO","CHEN Qingchen","Women","Doubles",3,2,1,143,122,21,2018,"Ayaka TAKAHASHI","JIA Yifan"
-"676",1,"SON Wan Ho","Kenta NISHIMOTO","Men","Singles",7,5,2,335,320,15,2018,NA,NA
-"677",2,"Kento MOMOTA","CHOU Tien Chen","Men","Singles",6,5,1,302,259,43,2018,NA,NA
-"678",3,"Kento MOMOTA","Anthony Sinisuka GINTING","Men","Singles",6,4,2,291,274,17,2018,NA,NA
-"679",4,"CHOU Tien Chen","Anthony Sinisuka GINTING","Men","Singles",5,3,2,263,249,14,2018,NA,NA
-"680",5,"Anthony Sinisuka GINTING","CHEN Long","Men","Singles",5,4,1,239,212,27,2018,NA,NA
-"681",6,"SHI Yuqi","NG Ka Long Angus","Men","Singles",5,4,1,224,162,62,2018,NA,NA
-"682",7,"Kento MOMOTA","KIDAMBI Srikanth","Men","Singles",5,5,0,222,159,63,2018,NA,NA
-"683",8,"SHI Yuqi","Anthony Sinisuka GINTING","Men","Singles",4,4,0,218,194,24,2018,NA,NA
-"684",9,"CHOU Tien Chen","SHI Yuqi","Men","Singles",5,2,3,206,195,11,2018,NA,NA
-"685",10,"Kento MOMOTA","SON Wan Ho","Men","Singles",5,4,1,203,159,44,2018,NA,NA
-"686",11,"CHOU Tien Chen","NG Ka Long Angus","Men","Singles",4,3,1,201,186,15,2018,NA,NA
-"687",12,"Jonatan CHRISTIE","Kenta NISHIMOTO","Men","Singles",4,3,1,191,178,13,2018,NA,NA
-"688",13,"Khosit PHETPRADAB","LEE Dong Keun","Men","Singles",4,2,2,188,164,24,2018,NA,NA
-"689",14,"Jan O JORGENSEN","Riichi TAKESHITA","Men","Singles",3,2,1,182,170,12,2018,NA,NA
-"690",14,"CHOU Tien Chen","LEE Dong Keun","Men","Singles",3,2,1,182,150,32,2018,NA,NA
-"691",16,"KIDAMBI Srikanth","WONG Wing Ki Vincent","Men","Singles",5,4,1,173,133,40,2018,NA,NA
-"692",16,"SHI Yuqi","Jonatan CHRISTIE","Men","Singles",3,1,2,173,167,6,2018,NA,NA
-"693",18,"Kento MOMOTA","CHEN Long","Men","Singles",4,3,1,171,154,17,2018,NA,NA
-"694",19,"CHOU Tien Chen","Rasmus GEMKE","Men","Singles",4,3,1,170,152,18,2018,NA,NA
-"695",20,"Kento MOMOTA","SHI Yuqi","Men","Singles",4,3,1,161,141,20,2018,NA,NA
-"696",21,"Sameer VERMA","Lucas CORVEE","Men","Singles",3,2,1,159,140,19,2018,NA,NA
-"697",21,"Kento MOMOTA","Anders ANTONSEN","Men","Singles",3,3,0,159,121,38,2018,NA,NA
-"698",23,"Sitthikom THAMMASIN","Firman Abdul KHOLIK","Men","Singles",3,3,0,156,134,22,2018,NA,NA
-"699",23,"LEE Hyun Il","Anders ANTONSEN","Men","Singles",3,2,1,156,144,12,2018,NA,NA
-"700",25,"Tommy SUGIARTO","Kantaphon WANGCHAROEN","Men","Singles",3,3,0,155,127,28,2018,NA,NA
-"701",1,"LIU Cheng","GOH V Shem","Men","Doubles",5,2,3,289,278,11,2018,"ZHANG Nan","TAN Wee Kiong"
-"702",2,"Takeshi KAMURA","Fajar ALFIAN","Men","Doubles",5,2,3,230,230,0,2018,"Keigo SONODA","Muhammad Rian ARDIANTO"
-"703",2,"Fajar ALFIAN","Takeshi KAMURA","Men","Doubles",5,3,2,230,230,0,2018,"Muhammad Rian ARDIANTO","Keigo SONODA"
-"704",4,"Marcus Fernaldi GIDEON","Mohammad AHSAN","Men","Doubles",4,4,0,207,158,49,2018,"Kevin Sanjaya SUKAMULJO","Hendra SETIAWAN"
-"705",5,"LIU Cheng","LEE Jhe-Huei","Men","Doubles",4,3,1,199,178,21,2018,"ZHANG Nan","LEE Yang"
-"706",6,"Marcus Fernaldi GIDEON","HE Jiting","Men","Doubles",4,3,1,194,190,4,2018,"Kevin Sanjaya SUKAMULJO","TAN Qiang"
-"707",7,"Hiroyuki ENDO","LIAO Min Chun","Men","Doubles",4,1,3,193,183,10,2018,"Yuta WATANABE","SU Ching Heng"
-"708",8,"LI Junhui","Kim ASTRUP","Men","Doubles",4,3,1,189,182,7,2018,"LIU Yuchen","Anders Skaarup RASMUSSEN"
-"709",9,"Kim ASTRUP","HAN Chengkai","Men","Doubles",4,4,0,185,153,32,2018,"Anders Skaarup RASMUSSEN","ZHOU Haodong"
-"710",10,"Marcus Fernaldi GIDEON","LI Junhui","Men","Doubles",4,3,1,177,151,26,2018,"Kevin Sanjaya SUKAMULJO","LIU Yuchen"
-"711",11,"Marcus Fernaldi GIDEON","HAN Chengkai","Men","Doubles",4,1,3,176,158,18,2018,"Kevin Sanjaya SUKAMULJO","ZHOU Haodong"
-"712",12,"CHEN Hung Ling","HE Jiting","Men","Doubles",4,2,2,171,165,6,2018,"WANG Chi-Lin","TAN Qiang"
-"713",14,"Marcus Fernaldi GIDEON","Takeshi KAMURA","Men","Doubles",4,3,1,163,128,35,2018,"Kevin Sanjaya SUKAMULJO","Keigo SONODA"
-"714",14,"LI Junhui","CHEN Hung Ling","Men","Doubles",3,3,0,163,120,43,2018,"LIU Yuchen","WANG Chi-Lin"
-"715",14,"OU Xuanyi","Min Hyuk KANG","Men","Doubles",3,2,1,163,149,14,2018,"REN Xiangyu","KIM Won Ho"
-"716",14,"HE Jiting","Takuro HOKI","Men","Doubles",3,3,0,163,145,18,2018,"TAN Qiang","Yugo KOBAYASHI"
-"717",17,"Mohammad AHSAN","LEE Jhe-Huei","Men","Doubles",3,2,1,159,145,14,2018,"Hendra SETIAWAN","LEE Yang"
-"718",17,"LI Junhui","LU Ching Yao","Men","Doubles",3,3,0,159,136,23,2018,"LIU Yuchen","YANG Po Han"
-"719",19,"LI Junhui","Fajar ALFIAN","Men","Doubles",3,2,1,151,143,8,2018,"LIU Yuchen","Muhammad Rian ARDIANTO"
-"720",20,"Marcus Fernaldi GIDEON","Satwiksairaj RANKIREDDY","Men","Doubles",3,3,0,150,117,33,2018,"Kevin Sanjaya SUKAMULJO","Chirag SHETTY"
-"721",21,"Marcus Fernaldi GIDEON","Kim ASTRUP","Men","Doubles",3,3,0,147,119,28,2018,"Kevin Sanjaya SUKAMULJO","Anders Skaarup RASMUSSEN"
-"722",21,"Mathias BOE","Satwiksairaj RANKIREDDY","Men","Doubles",3,2,1,147,145,2,2018,"Carsten MOGENSEN","Chirag SHETTY"
-"723",23,"Marcus Fernaldi GIDEON","CHEN Hung Ling","Men","Doubles",3,3,0,146,106,40,2018,"Kevin Sanjaya SUKAMULJO","WANG Chi-Lin"
-"724",24,"Fajar ALFIAN","ONG Yew Sin","Men","Doubles",3,2,1,142,125,17,2018,"Muhammad Rian ARDIANTO","TEO Ee Yi"
-"725",24,"Takeshi KAMURA","CHEN Hung Ling","Men","Doubles",3,3,0,142,114,28,2018,"Keigo SONODA","WANG Chi-Lin"
-"726",1,"WANG Yilyu","Yuta WATANABE","Mixed","Doubles",8,7,1,376,297,79,2018,"HUANG Dongping","Arisa HIGASHINO"
-"727",2,"ZHENG Siwei","WANG Yilyu","Mixed","Doubles",7,6,1,339,294,45,2018,"HUANG Yaqiong","HUANG Dongping"
-"728",3,"ZHENG Siwei","Dechapol PUAVARANUKROH","Mixed","Doubles",5,5,0,265,199,66,2018,"HUANG Yaqiong","Sapsiree TAERATTANACHAI"
-"729",4,"Dechapol PUAVARANUKROH","GOH Soon Huat","Mixed","Doubles",5,3,2,232,208,24,2018,"Sapsiree TAERATTANACHAI","LAI Shevon Jemie"
-"730",5,"ZHENG Siwei","TANG Chun Man","Mixed","Doubles",5,4,1,227,163,64,2018,"HUANG Yaqiong","TSE Ying Suet"
-"731",6,"Marcus ELLIS","Marvin SEIDEL","Mixed","Doubles",5,5,0,213,145,68,2018,"Lauren SMITH","Linda EFLER"
-"732",7,"Praveen JORDAN","Chris ADCOCK","Mixed","Doubles",4,2,2,199,177,22,2018,"Melati Daeva OKTAVIANTI","Gabrielle ADCOCK"
-"733",7,"ZHENG Siwei","Yuta WATANABE","Mixed","Doubles",4,3,1,199,152,47,2018,"HUANG Yaqiong","Arisa HIGASHINO"
-"734",9,"Praveen JORDAN","CHAN Peng Soon","Mixed","Doubles",4,3,1,196,182,14,2018,"Melati Daeva OKTAVIANTI","GOH Liu Ying"
-"735",10,"WANG Yilyu","Dechapol PUAVARANUKROH","Mixed","Doubles",4,2,2,181,178,3,2018,"HUANG Dongping","Sapsiree TAERATTANACHAI"
-"736",11,"Yuta WATANABE","TANG Chun Man","Mixed","Doubles",3,3,0,177,163,14,2018,"Arisa HIGASHINO","TSE Ying Suet"
-"737",12,"Dechapol PUAVARANUKROH","Chris ADCOCK","Mixed","Doubles",3,3,0,174,157,17,2018,"Sapsiree TAERATTANACHAI","Gabrielle ADCOCK"
-"738",13,"ZHENG Siwei","Tontowi AHMAD","Mixed","Doubles",4,3,1,169,147,22,2018,"HUANG Yaqiong","Liliyana NATSIR"
-"739",14,"SEO Seung Jae","CHAN Peng Soon","Mixed","Doubles",3,2,1,164,141,23,2018,"CHAE YuJung","GOH Liu Ying"
-"740",14,"ZHENG Siwei","Niclas NOHR","Mixed","Doubles",3,3,0,164,140,24,2018,"HUANG Yaqiong","Sara THYGESEN"
-"741",16,"Dechapol PUAVARANUKROH","CHANG Tak Ching","Mixed","Doubles",3,3,0,162,119,43,2018,"Sapsiree TAERATTANACHAI","NG Wing Yung"
-"742",17,"WANG Yilyu","Praveen JORDAN","Mixed","Doubles",3,3,0,158,126,32,2018,"HUANG Dongping","Melati Daeva OKTAVIANTI"
-"743",17,"Yuta WATANABE","Hafiz FAIZAL","Mixed","Doubles",3,2,1,158,149,9,2018,"Arisa HIGASHINO","Gloria Emanuelle WIDJAJA"
-"744",19,"Mark LAMSFUSS","LU Kai","Mixed","Doubles",4,2,2,156,149,7,2018,"Isabel HERTTRICH","CHEN Lu"
-"745",20,"SEO Seung Jae","Dechapol PUAVARANUKROH","Mixed","Doubles",3,2,1,153,133,20,2018,"CHAE YuJung","Sapsiree TAERATTANACHAI"
-"746",21,"Mark LAMSFUSS","Jacco ARENDS","Mixed","Doubles",4,3,1,145,112,33,2018,"Isabel HERTTRICH","Selena PIEK"
-"747",21,"ZHENG Siwei","ZHANG Nan","Mixed","Doubles",3,3,0,145,91,54,2018,"HUANG Yaqiong","LI Yinhui"
-"748",23,"ZHENG Siwei","Chris ADCOCK","Mixed","Doubles",3,3,0,143,100,43,2018,"HUANG Yaqiong","Gabrielle ADCOCK"
-"749",24,"ZHANG Nan","Yuta WATANABE","Mixed","Doubles",3,2,1,136,122,14,2018,"LI Yinhui","Arisa HIGASHINO"
-"750",25,"ZHENG Siwei","CHAN Peng Soon","Mixed","Doubles",3,2,1,135,128,7,2018,"HUANG Yaqiong","GOH Liu Ying"
+"","Player1","Player2","Opponent1","Opponent2","Rank","Year","Gender","Category","Matches","Wins","Losses","Points For","Points Against","Difference"
+"1","Se Young AN",NA,"TAI Tzu Ying",NA,1,2023,"Women","Singles",7,6,1,328,271,57
+"2","HAN Yue",NA,"ZHANG Yiman",NA,2,2023,"Women","Singles",6,4,2,294,281,13
+"3","CHEN Yufei",NA,"Se Young AN",NA,3,2023,"Women","Singles",6,2,4,288,288,0
+"4","Se Young AN",NA,"CHEN Yufei",NA,3,2023,"Women","Singles",6,4,2,288,288,0
+"5","CHEN Yufei",NA,"Carolina MARIN",NA,5,2023,"Women","Singles",6,4,2,264,238,26
+"6","Carolina MARIN",NA,"TAI Tzu Ying",NA,6,2023,"Women","Singles",5,3,2,255,221,34
+"7","Se Young AN",NA,"HE Bingjiao",NA,7,2023,"Women","Singles",5,5,0,240,183,57
+"8","Se Young AN",NA,"WANG Zhiyi",NA,8,2023,"Women","Singles",5,4,1,223,215,8
+"9","Kirsty GILMOUR",NA,"Yvonne LI",NA,9,2023,"Women","Singles",5,3,2,222,198,24
+"10","Gregoria Mariska TUNJUNG",NA,"PUSARLA V. Sindhu",NA,10,2023,"Women","Singles",5,2,3,221,203,18
+"11","Se Young AN",NA,"Akane YAMAGUCHI",NA,11,2023,"Women","Singles",5,3,2,217,204,13
+"12","Line Højmark KJAERSFELDT",NA,"Yvonne LI",NA,12,2023,"Women","Singles",4,4,0,204,155,49
+"13","CHEN Yufei",NA,"HAN Yue",NA,13,2023,"Women","Singles",4,4,0,202,147,55
+"14","Akane YAMAGUCHI",NA,"Gregoria Mariska TUNJUNG",NA,14,2023,"Women","Singles",4,3,1,199,171,28
+"15","HAN Yue",NA,"YEO Jia Min",NA,14,2023,"Women","Singles",4,4,0,199,152,47
+"16","CHEN Yufei",NA,"HE Bingjiao",NA,16,2023,"Women","Singles",4,4,0,192,152,40
+"17","Akane YAMAGUCHI",NA,"CHEN Yufei",NA,17,2023,"Women","Singles",4,3,1,188,176,12
+"18","WANG Zhiyi",NA,"ZHANG Yiman",NA,18,2023,"Women","Singles",4,2,2,186,167,19
+"19","CHEN Yufei",NA,"WANG Zhiyi",NA,19,2023,"Women","Singles",4,4,0,182,152,30
+"20","TAI Tzu Ying",NA,"Supanida KATETHONG",NA,20,2023,"Women","Singles",4,4,0,178,141,37
+"21","TAI Tzu Ying",NA,"ZHANG Yiman",NA,21,2023,"Women","Singles",4,3,1,174,125,49
+"22","WANG Zhiyi",NA,"Saena KAWAKAMI",NA,22,2023,"Women","Singles",4,4,0,170,109,61
+"23","Ratchanok INTANON",NA,"Wen Chi HSU",NA,23,2023,"Women","Singles",4,4,0,168,117,51
+"24","Busanan ONGBAMRUNGPHAN",NA,"Aya OHORI",NA,24,2023,"Women","Singles",4,3,1,166,152,14
+"25","Gregoria Mariska TUNJUNG",NA,"KIM Ga Eun",NA,25,2023,"Women","Singles",3,3,0,162,142,20
+"26","BAEK Ha Na","LEE So Hee","Nami MATSUYAMA","Chiharu SHIDA",1,2023,"Women","Doubles",7,6,1,352,329,23
+"27","Nami MATSUYAMA","Chiharu SHIDA","Benyapa AIMSAARD","Nuntakarn AIMSAARD",2,2023,"Women","Doubles",5,4,1,238,199,39
+"28","CHEN Qingchen","JIA Yifan","Nami MATSUYAMA","Chiharu SHIDA",3,2023,"Women","Doubles",5,4,1,204,165,39
+"29","CHEN Qingchen","JIA Yifan","KIM So Yeong","KONG Hee Yong",4,2023,"Women","Doubles",4,2,2,195,171,24
+"30","Nami MATSUYAMA","Chiharu SHIDA","Yuki FUKUSHIMA","Sayaka HIROTA",5,2023,"Women","Doubles",4,4,0,193,150,43
+"31","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI","Rin IWANAGA","Kie NAKANISHI",6,2023,"Women","Doubles",4,3,1,191,160,31
+"32","LI Yijing","LUO Xumin","HSU Ya Ching","LIN Wan Ching",6,2023,"Women","Doubles",3,2,1,191,168,23
+"33","Yuki FUKUSHIMA","Sayaka HIROTA","LI Wenmei","LIU Xuanxuan",8,2023,"Women","Doubles",5,2,3,185,155,30
+"34","BAEK Ha Na","LEE So Hee","Apriyani RAHAYU","Siti Fadia Silva RAMADHANTI",10,2023,"Women","Doubles",4,3,1,184,157,27
+"35","Maiken FRUERGAARD","Sara THYGESEN","Chloe BIRCH","Lauren SMITH",10,2023,"Women","Doubles",4,4,0,184,137,47
+"36","Mayu MATSUMOTO","Wakana NAGAHARA","HSU Ya Ching","LIN Wan Ching",10,2023,"Women","Doubles",4,4,0,184,119,65
+"37","KIM So Yeong","KONG Hee Yong","LI Wenmei","LIU Xuanxuan",12,2023,"Women","Doubles",3,2,1,178,170,8
+"38","Rena MIYAURA","Ayako SAKURAMOTO","LIU Sheng Shu","TAN Ning",13,2023,"Women","Doubles",3,2,1,172,167,5
+"39","KIM So Yeong","KONG Hee Yong","Benyapa AIMSAARD","Nuntakarn AIMSAARD",14,2023,"Women","Doubles",4,4,0,170,110,60
+"40","Febriana Dwipuji KUSUMA","Amalia Cahaya PRATIWI","Lanny Tria MAYASARI","Ribka SUGIARTO",15,2023,"Women","Doubles",4,3,1,169,150,19
+"41","LIU Sheng Shu","TAN Ning","Maiken FRUERGAARD","Sara THYGESEN",16,2023,"Women","Doubles",4,4,0,168,120,48
+"42","LIU Sheng Shu","TAN Ning","Mayu MATSUMOTO","Wakana NAGAHARA",17,2023,"Women","Doubles",4,3,1,164,146,18
+"43","LEE Yu Lim","SHIN Seung Chan","Febriana Dwipuji KUSUMA","Amalia Cahaya PRATIWI",17,2023,"Women","Doubles",3,3,0,164,140,24
+"44","Yuki FUKUSHIMA","Sayaka HIROTA","Apriyani RAHAYU","Siti Fadia Silva RAMADHANTI",19,2023,"Women","Doubles",4,2,2,163,150,13
+"45","CHEN Qingchen","JIA Yifan","BAEK Ha Na","LEE So Hee",20,2023,"Women","Doubles",4,3,1,156,130,26
+"46","Rin IWANAGA","Kie NAKANISHI","LEE Chia Hsin","TENG Chun Hsun",21,2023,"Women","Doubles",3,3,0,153,129,24
+"47","TAN Pearly Koong Le","Muralitharan THINAAH","Mayu MATSUMOTO","Wakana NAGAHARA",22,2023,"Women","Doubles",3,2,1,152,140,12
+"48","Mayu MATSUMOTO","Wakana NAGAHARA","Benyapa AIMSAARD","Nuntakarn AIMSAARD",23,2023,"Women","Doubles",3,2,1,151,127,24
+"49","KIM So Yeong","KONG Hee Yong","Mayu MATSUMOTO","Wakana NAGAHARA",24,2023,"Women","Doubles",3,2,1,150,135,15
+"50","Nami MATSUYAMA","Chiharu SHIDA","LIU Sheng Shu","TAN Ning",24,2023,"Women","Doubles",3,2,1,150,134,16
+"51","Kodai NARAOKA",NA,"SHI Yuqi",NA,1,2023,"Men","Singles",6,4,2,301,287,14
+"52","Kodai NARAOKA",NA,"Anders ANTONSEN",NA,2,2023,"Men","Singles",6,4,2,266,262,4
+"53","SHI Yuqi",NA,"LU Guangzu",NA,3,2023,"Men","Singles",5,4,1,230,208,22
+"54","Viktor AXELSEN",NA,"Christo POPOV",NA,4,2023,"Men","Singles",4,4,0,200,146,54
+"55","Anders ANTONSEN",NA,"WENG Hongyang",NA,5,2023,"Men","Singles",4,4,0,197,174,23
+"56","Anthony Sinisuka GINTING",NA,"LI Shifeng",NA,6,2023,"Men","Singles",4,3,1,187,170,17
+"57","LIN Chun-Yi",NA,"Toma Junior POPOV",NA,7,2023,"Men","Singles",4,2,2,185,183,2
+"58","Viktor AXELSEN",NA,"Jonatan CHRISTIE",NA,8,2023,"Men","Singles",4,4,0,183,122,61
+"59","WENG Hongyang",NA,"LEE Zii Jia",NA,9,2023,"Men","Singles",4,3,1,182,173,9
+"60","Viktor AXELSEN",NA,"SHI Yuqi",NA,10,2023,"Men","Singles",4,3,1,181,148,33
+"61","LOH Kean Yew",NA,"Kodai NARAOKA",NA,10,2023,"Men","Singles",3,3,0,181,135,46
+"62","Kodai NARAOKA",NA,"PRANNOY H. S.",NA,12,2023,"Men","Singles",4,3,1,179,146,33
+"63","LI Shifeng",NA,"LEE Zii Jia",NA,13,2023,"Men","Singles",3,2,1,175,156,19
+"64","Kenta NISHIMOTO",NA,"Jonatan CHRISTIE",NA,15,2023,"Men","Singles",4,2,2,174,160,14
+"65","WENG Hongyang",NA,"KIDAMBI Srikanth",NA,15,2023,"Men","Singles",3,2,1,174,147,27
+"66","PRANNOY H. S.",NA,"LEE Cheuk Yiu",NA,15,2023,"Men","Singles",3,2,1,174,173,1
+"67","Mads CHRISTOPHERSEN",NA,"Alex LANIER",NA,17,2023,"Men","Singles",3,1,2,171,171,0
+"68","Alex LANIER",NA,"Mads CHRISTOPHERSEN",NA,17,2023,"Men","Singles",3,2,1,171,171,0
+"69","Anders ANTONSEN",NA,"Toma Junior POPOV",NA,19,2023,"Men","Singles",3,3,0,169,151,18
+"70","LEE Zii Jia",NA,"Tze Yong NG",NA,20,2023,"Men","Singles",3,3,0,168,147,21
+"71","LOH Kean Yew",NA,"Christo POPOV",NA,21,2023,"Men","Singles",4,2,2,166,158,8
+"72","Kenta NISHIMOTO",NA,"LEE Zii Jia",NA,23,2023,"Men","Singles",4,2,2,165,165,0
+"73","LEE Zii Jia",NA,"Kenta NISHIMOTO",NA,23,2023,"Men","Singles",4,2,2,165,165,0
+"74","Kunlavut VITIDSARN",NA,"WANG Tzu Wei",NA,23,2023,"Men","Singles",3,3,0,165,132,33
+"75","LEE Zii Jia",NA,"Kodai NARAOKA",NA,23,2023,"Men","Singles",3,1,2,165,157,8
+"76","Min Hyuk KANG","SEO Seung Jae","Fajar ALFIAN","Muhammad Rian ARDIANTO",1,2023,"Men","Doubles",6,3,3,302,302,0
+"77","Fajar ALFIAN","Muhammad Rian ARDIANTO","Min Hyuk KANG","SEO Seung Jae",1,2023,"Men","Doubles",6,3,3,302,302,0
+"78","LIANG Weikeng","WANG Chang","Aaron CHIA","SOH Wooi Yik",3,2023,"Men","Doubles",5,4,1,249,227,22
+"79","Pramudya Kusumawardana RIYANTO","Yeremia Erich Yoche YACOB","Ayato ENDO","Yuta TAKEI",4,2023,"Men","Doubles",4,4,0,229,194,35
+"80","Min Hyuk KANG","SEO Seung Jae","Takuro HOKI","Yugo KOBAYASHI",5,2023,"Men","Doubles",5,4,1,216,195,21
+"81","Satwiksairaj RANKIREDDY","Chirag SHETTY","LIANG Weikeng","WANG Chang",6,2023,"Men","Doubles",4,1,3,213,202,11
+"82","Min Hyuk KANG","SEO Seung Jae","Mohammad AHSAN","Hendra SETIAWAN",7,2023,"Men","Doubles",4,3,1,210,186,24
+"83","Min Hyuk KANG","SEO Seung Jae","LEE Yang","WANG Chi-Lin",8,2023,"Men","Doubles",4,3,1,206,183,23
+"84","LIU Yuchen","OU Xuanyi","Ben LANE","Sean VENDY",9,2023,"Men","Doubles",4,4,0,205,184,21
+"85","Mohammad AHSAN","Hendra SETIAWAN","Pramudya Kusumawardana RIYANTO","Yeremia Erich Yoche YACOB",10,2023,"Men","Doubles",4,3,1,200,182,18
+"86","Kim ASTRUP","Anders Skaarup RASMUSSEN","Mark LAMSFUSS","Marvin SEIDEL",11,2023,"Men","Doubles",3,2,1,178,161,17
+"87","LEE Yang","WANG Chi-Lin","ONG Yew Sin","TEO Ee Yi",12,2023,"Men","Doubles",3,2,1,172,166,6
+"88","Fajar ALFIAN","Muhammad Rian ARDIANTO","Muhammad Shohibul FIKRI","Bagas MAULANA",13,2023,"Men","Doubles",4,3,1,170,157,13
+"89","Min Hyuk KANG","SEO Seung Jae","LIU Yuchen","OU Xuanyi",15,2023,"Men","Doubles",4,4,0,168,123,45
+"90","Kim ASTRUP","Anders Skaarup RASMUSSEN","Keiichiro MATSUI","Yoshinori TAKEUCHI",15,2023,"Men","Doubles",4,4,0,168,109,59
+"91","Akira KOGA","Taichi SAITO","Aaron CHIA","SOH Wooi Yik",15,2023,"Men","Doubles",4,3,1,168,161,7
+"92","Aaron CHIA","SOH Wooi Yik","Muhammad Shohibul FIKRI","Bagas MAULANA",15,2023,"Men","Doubles",4,4,0,168,115,53
+"93","LIANG Weikeng","WANG Chang","Mohammad AHSAN","Hendra SETIAWAN",18,2023,"Men","Doubles",3,2,1,167,159,8
+"94","LIU Yuchen","OU Xuanyi","Akira KOGA","Taichi SAITO",19,2023,"Men","Doubles",3,2,1,164,151,13
+"95","LIANG Weikeng","WANG Chang","Pramudya Kusumawardana RIYANTO","Yeremia Erich Yoche YACOB",20,2023,"Men","Doubles",3,2,1,159,138,21
+"96","Muhammad Shohibul FIKRI","Bagas MAULANA","Satwiksairaj RANKIREDDY","Chirag SHETTY",21,2023,"Men","Doubles",3,2,1,158,152,6
+"97","Satwiksairaj RANKIREDDY","Chirag SHETTY","Leo Rolly CARNANDO","Daniel MARTHIN",22,2023,"Men","Doubles",3,3,0,156,125,31
+"98","Kim ASTRUP","Anders Skaarup RASMUSSEN","Leo Rolly CARNANDO","Daniel MARTHIN",22,2023,"Men","Doubles",3,2,1,156,133,23
+"99","Leo Rolly CARNANDO","Daniel MARTHIN","Aaron CHIA","SOH Wooi Yik",24,2023,"Men","Doubles",4,3,1,155,150,5
+"100","LEE Jhe-Huei","YANG Po-Hsuan","Keiichiro MATSUI","Yoshinori TAKEUCHI",25,2023,"Men","Doubles",3,2,1,153,132,21
+"101","ZHENG Siwei","HUANG Yaqiong","SEO Seung Jae","CHAE YuJung",1,2023,"Mixed","Doubles",8,6,2,401,324,77
+"102","Yuta WATANABE","Arisa HIGASHINO","TANG Chun Man","TSE Ying Suet",2,2023,"Mixed","Doubles",6,5,1,278,243,35
+"103","TANG Chun Man","TSE Ying Suet","Rehan Naufal KUSHARJANTO","Lisa Ayu KUSUMAWATI",3,2023,"Mixed","Doubles",5,5,0,265,196,69
+"104","FENG Yanzhe","HUANG Dongping","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI",4,2023,"Mixed","Doubles",5,3,2,253,248,5
+"105","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","SEO Seung Jae","CHAE YuJung",5,2023,"Mixed","Doubles",5,3,2,238,231,7
+"106","ZHENG Siwei","HUANG Yaqiong","FENG Yanzhe","HUANG Dongping",6,2023,"Mixed","Doubles",5,4,1,232,182,50
+"107","TANG Chun Man","TSE Ying Suet","GOH Soon Huat","LAI Shevon Jemie",7,2023,"Mixed","Doubles",5,5,0,231,172,59
+"108","SEO Seung Jae","CHAE YuJung","JIANG Zhenbang","WEI Yaxin",7,2023,"Mixed","Doubles",5,4,1,231,202,29
+"109","FENG Yanzhe","HUANG Dongping","Yuta WATANABE","Arisa HIGASHINO",9,2023,"Mixed","Doubles",4,3,1,227,208,19
+"110","FENG Yanzhe","HUANG Dongping","Hiroki MIDORIKAWA","Natsu SAITO",10,2023,"Mixed","Doubles",5,5,0,226,160,66
+"111","FENG Yanzhe","HUANG Dongping","JIANG Zhenbang","WEI Yaxin",10,2023,"Mixed","Doubles",5,5,0,226,172,54
+"112","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","Mathias CHRISTIANSEN","Alexandra BØJE",12,2023,"Mixed","Doubles",5,3,2,210,178,32
+"113","Yuta WATANABE","Arisa HIGASHINO","LEE Chun Hei Reginald","NG Tsz Yau",13,2023,"Mixed","Doubles",4,4,0,205,150,55
+"114","KIM Won Ho","JEONG Na Eun","Kyohei YAMASHITA","Naru SHINOYA",14,2023,"Mixed","Doubles",4,3,1,204,189,15
+"115","JIANG Zhenbang","WEI Yaxin","Praveen JORDAN","Melati Daeva OKTAVIANTI",15,2023,"Mixed","Doubles",4,3,1,197,167,30
+"116","ZHENG Siwei","HUANG Yaqiong","KIM Won Ho","JEONG Na Eun",16,2023,"Mixed","Doubles",4,2,2,188,165,23
+"117","Mathias CHRISTIANSEN","Alexandra BØJE","YANG Po-Hsuan","HU Ling Fang",17,2023,"Mixed","Doubles",3,3,0,185,150,35
+"118","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","CHEN Tang Jie","TOH Ee Wei",18,2023,"Mixed","Doubles",4,3,1,175,150,25
+"119","ZHENG Siwei","HUANG Yaqiong","Yuta WATANABE","Arisa HIGASHINO",19,2023,"Mixed","Doubles",4,2,2,172,157,15
+"120","Yuta WATANABE","Arisa HIGASHINO","YE Hong Wei","LEE Chia Hsin",19,2023,"Mixed","Doubles",4,2,2,172,169,3
+"121","ZHENG Siwei","HUANG Yaqiong","Dejan FERDINANSYAH","Gloria Emanuelle WIDJAJA",21,2023,"Mixed","Doubles",4,4,0,168,106,62
+"122","Hiroki NISHI","Akari SATO","Ruttanapak OUPTHONG","Kwanchanok SUDJAIPRAPARAT",22,2023,"Mixed","Doubles",3,2,1,167,150,17
+"123","TANG Chun Man","TSE Ying Suet","KIM Won Ho","JEONG Na Eun",23,2023,"Mixed","Doubles",3,2,1,165,158,7
+"124","LEE Chun Hei Reginald","NG Tsz Yau","YE Hong Wei","LEE Chia Hsin",24,2023,"Mixed","Doubles",3,2,1,163,150,13
+"125","HEE Yong Kai Terry","TAN Wei Han","DHRUV KAPILA","Tanisha CRASTO",24,2023,"Mixed","Doubles",3,2,1,163,149,14
+"126","CHEN Yufei",NA,"TAI Tzu Ying",NA,1,2022,"Women","Singles",5,3,2,267,252,15
+"127","Akane YAMAGUCHI",NA,"WANG Zhiyi",NA,2,2022,"Women","Singles",5,3,2,262,247,15
+"128","TAI Tzu Ying",NA,"Ratchanok INTANON",NA,3,2022,"Women","Singles",5,4,1,247,209,38
+"129","Akane YAMAGUCHI",NA,"CHEN Yufei",NA,4,2022,"Women","Singles",5,4,1,233,201,32
+"130","Akane YAMAGUCHI",NA,"Se Young AN",NA,5,2022,"Women","Singles",5,4,1,225,176,49
+"131","CHEN Yufei",NA,"ZHANG Yiman",NA,6,2022,"Women","Singles",5,5,0,221,164,57
+"132","Se Young AN",NA,"HAN Yue",NA,6,2022,"Women","Singles",4,3,1,221,202,19
+"133","CHEN Yufei",NA,"Ratchanok INTANON",NA,8,2022,"Women","Singles",4,3,1,211,183,28
+"134","Se Young AN",NA,"Gregoria Mariska TUNJUNG",NA,9,2022,"Women","Singles",4,4,0,192,133,59
+"135","HE Bingjiao",NA,"CHEN Yufei",NA,10,2022,"Women","Singles",5,3,2,190,176,14
+"136","Gregoria Mariska TUNJUNG",NA,"Akane YAMAGUCHI",NA,11,2022,"Women","Singles",4,2,2,184,179,5
+"137","Nozomi OKUHARA",NA,"Wen Chi HSU",NA,12,2022,"Women","Singles",3,3,0,179,146,33
+"138","TAI Tzu Ying",NA,"Busanan ONGBAMRUNGPHAN",NA,13,2022,"Women","Singles",4,4,0,170,131,39
+"139","HE Bingjiao",NA,"TAI Tzu Ying",NA,14,2022,"Women","Singles",4,2,2,165,161,4
+"140","Supanida KATETHONG",NA,"PUSARLA V. Sindhu",NA,15,2022,"Women","Singles",3,1,2,163,155,8
+"141","Yvonne LI",NA,"Julie Dawall JAKOBSEN",NA,16,2022,"Women","Singles",3,2,1,155,136,19
+"142","HE Bingjiao",NA,"Busanan ONGBAMRUNGPHAN",NA,16,2022,"Women","Singles",3,3,0,155,120,35
+"143","Ratchanok INTANON",NA,"HAN Yue",NA,18,2022,"Women","Singles",3,3,0,153,141,12
+"144","PUSARLA V. Sindhu",NA,"HE Bingjiao",NA,19,2022,"Women","Singles",3,2,1,146,140,6
+"145","CHEN Yufei",NA,"Michelle LI",NA,19,2022,"Women","Singles",3,3,0,146,110,36
+"146","PUSARLA V. Sindhu",NA,"Lauren LAM",NA,22,2022,"Women","Singles",3,3,0,145,116,29
+"147","Carolina MARIN",NA,"ZHANG Yiman",NA,22,2022,"Women","Singles",3,2,1,145,130,15
+"148","Ratchanok INTANON",NA,"Kirsty GILMOUR",NA,22,2022,"Women","Singles",3,3,0,145,107,38
+"149","HE Bingjiao",NA,"Akane YAMAGUCHI",NA,24,2022,"Women","Singles",3,2,1,144,139,5
+"150","CHEN Yufei",NA,"Pornpawee CHOCHUWONG",NA,25,2022,"Women","Singles",3,3,0,143,116,27
+"151","Benyapa AIMSAARD","Nuntakarn AIMSAARD","JEONG Na Eun","KIM Hye Jeong",1,2022,"Women","Doubles",6,4,2,250,230,20
+"152","CHEN Qingchen","JIA Yifan","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI",2,2022,"Women","Doubles",5,4,1,219,175,44
+"153","DU Yue","LI Wenmei","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI",3,2022,"Women","Doubles",4,3,1,208,185,23
+"154","Nami MATSUYAMA","Chiharu SHIDA","JEONG Na Eun","KIM Hye Jeong",4,2022,"Women","Doubles",5,3,2,205,174,31
+"155","CHEN Qingchen","JIA Yifan","Apriyani RAHAYU","Siti Fadia Silva RAMADHANTI",5,2022,"Women","Doubles",4,3,1,200,174,26
+"156","TAN Pearly Koong Le","Muralitharan THINAAH","Apriyani RAHAYU","Siti Fadia Silva RAMADHANTI",6,2022,"Women","Doubles",4,2,2,195,190,5
+"157","Apriyani RAHAYU","Siti Fadia Silva RAMADHANTI","ZHANG Shuxian","ZHENG Yu",7,2022,"Women","Doubles",4,3,1,187,186,1
+"158","ZHANG Shuxian","ZHENG Yu","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI",8,2022,"Women","Doubles",4,2,2,178,163,15
+"159","TAN Pearly Koong Le","Muralitharan THINAAH","Yuki FUKUSHIMA","Sayaka HIROTA",9,2022,"Women","Doubles",4,2,2,174,165,9
+"160","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI","Treesa JOLLY","GAYATRI GOPICHAND PULLELA",10,2022,"Women","Doubles",4,4,0,173,137,36
+"161","KIM So Yeong","KONG Hee Yong","Rachel HONDERICH","Kristen TSAI",11,2022,"Women","Doubles",3,3,0,164,124,40
+"162","LEE So Hee","SHIN Seung Chan","ZHANG Shuxian","ZHENG Yu",12,2022,"Women","Doubles",3,1,2,153,147,6
+"163","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI","Benyapa AIMSAARD","Nuntakarn AIMSAARD",13,2022,"Women","Doubles",3,2,1,150,140,10
+"164","CHEN Qingchen","JIA Yifan","TAN Pearly Koong Le","Muralitharan THINAAH",14,2022,"Women","Doubles",3,3,0,146,114,32
+"165","ZHANG Shuxian","ZHENG Yu","Febriana Dwipuji KUSUMA","Amalia Cahaya PRATIWI",15,2022,"Women","Doubles",3,3,0,144,103,41
+"166","CHEN Qingchen","JIA Yifan","ZHANG Shuxian","ZHENG Yu",15,2022,"Women","Doubles",3,3,0,144,120,24
+"167","CHEN Qingchen","JIA Yifan","Nami MATSUYAMA","Chiharu SHIDA",17,2022,"Women","Doubles",3,2,1,135,116,19
+"168","Nami MATSUYAMA","Chiharu SHIDA","TAN Pearly Koong Le","Muralitharan THINAAH",18,2022,"Women","Doubles",3,2,1,133,123,10
+"169","ZHANG Shuxian","ZHENG Yu","Gabriela STOEVA","Stefani STOEVA",19,2022,"Women","Doubles",3,2,1,132,116,16
+"170","CHEN Qingchen","JIA Yifan","Vivian HOO","LIM Chiew Sien",20,2022,"Women","Doubles",3,3,0,129,103,26
+"171","Benyapa AIMSAARD","Nuntakarn AIMSAARD","Vivian HOO","LIM Chiew Sien",21,2022,"Women","Doubles",3,3,0,126,72,54
+"172","Rena MIYAURA","Ayako SAKURAMOTO","Rui HIROKAMI","Yuna KATO",22,2022,"Women","Doubles",3,2,1,123,84,39
+"173","JEONG Na Eun","KIM Hye Jeong","Supissara PAEWSAMPRAN","Puttita SUPAJIRAKUL",23,2022,"Women","Doubles",2,2,0,122,88,34
+"174","CHEN Qingchen","JIA Yifan","BAEK Ha Na","LEE Yu Lim",23,2022,"Women","Doubles",2,1,1,122,111,11
+"175","DU Yue","LI Wenmei","ZHANG Shuxian","ZHENG Yu",25,2022,"Women","Doubles",3,2,1,120,105,15
+"176","Viktor AXELSEN",NA,"Anthony Sinisuka GINTING",NA,1,2022,"Men","Singles",6,6,0,289,183,106
+"177","CHOU Tien Chen",NA,"LEE Cheuk Yiu",NA,2,2022,"Men","Singles",5,3,2,272,263,9
+"178","Lakshya SEN",NA,"PRANNOY H. S.",NA,3,2022,"Men","Singles",5,3,2,213,203,10
+"179","LEE Zii Jia",NA,"Shesar Hiren RHUSTAVITO",NA,4,2022,"Men","Singles",4,2,2,192,184,8
+"180","Jonatan CHRISTIE",NA,"KIDAMBI Srikanth",NA,5,2022,"Men","Singles",4,2,2,170,162,8
+"181","PRANNOY H. S.",NA,"LIEW Daren",NA,5,2022,"Men","Singles",3,2,1,170,163,7
+"182","PRANNOY H. S.",NA,"CHOU Tien Chen",NA,7,2022,"Men","Singles",3,2,1,157,139,18
+"183","Anthony Sinisuka GINTING",NA,"LOH Kean Yew",NA,8,2022,"Men","Singles",4,3,1,155,133,22
+"184","CHEAM June Wei",NA,"LEONG Jun Hao",NA,9,2022,"Men","Singles",3,1,2,154,139,15
+"185","CHOU Tien Chen",NA,"Jonatan CHRISTIE",NA,10,2022,"Men","Singles",3,2,1,150,131,19
+"186","Viktor AXELSEN",NA,"Kodai NARAOKA",NA,11,2022,"Men","Singles",4,3,1,147,100,47
+"187","KIDAMBI Srikanth",NA,"Brice LEVERDEZ",NA,12,2022,"Men","Singles",3,2,1,146,129,17
+"188","LEE Zii Jia",NA,"Mark CALJOUW",NA,13,2022,"Men","Singles",3,3,0,145,98,47
+"189","Jonatan CHRISTIE",NA,"Kodai NARAOKA",NA,14,2022,"Men","Singles",3,1,2,144,128,16
+"190","Anthony Sinisuka GINTING",NA,"Sitthikom THAMMASIN",NA,15,2022,"Men","Singles",3,3,0,143,110,33
+"191","Viktor AXELSEN",NA,"LU Guangzu",NA,15,2022,"Men","Singles",3,3,0,143,90,53
+"192","PRANNOY H. S.",NA,"NG Ka Long Angus",NA,17,2022,"Men","Singles",4,3,1,142,131,11
+"193","Viktor AXELSEN",NA,"Lakshya SEN",NA,18,2022,"Men","Singles",3,2,1,138,106,32
+"194","ZHAO Junpeng",NA,"PRANNOY H. S.",NA,19,2022,"Men","Singles",3,2,1,136,119,17
+"195","Kunlavut VITIDSARN",NA,"Jonatan CHRISTIE",NA,20,2022,"Men","Singles",3,1,2,135,121,14
+"196","Kenta NISHIMOTO",NA,"Jonatan CHRISTIE",NA,20,2022,"Men","Singles",3,2,1,135,127,8
+"197","Lakshya SEN",NA,"Anthony Sinisuka GINTING",NA,22,2022,"Men","Singles",3,3,0,134,98,36
+"198","Kodai NARAOKA",NA,"Shesar Hiren RHUSTAVITO",NA,22,2022,"Men","Singles",3,2,1,134,113,21
+"199","LU Guangzu",NA,"LI Shifeng",NA,24,2022,"Men","Singles",3,3,0,132,99,33
+"200","Viktor AXELSEN",NA,"CHOU Tien Chen",NA,25,2022,"Men","Singles",3,3,0,126,82,44
+"201","Fajar ALFIAN","Muhammad Rian ARDIANTO","ONG Yew Sin","TEO Ee Yi",1,2022,"Men","Doubles",5,4,1,237,202,35
+"202","Fajar ALFIAN","Muhammad Rian ARDIANTO","LIU Yuchen","OU Xuanyi",2,2022,"Men","Doubles",4,2,2,198,188,10
+"203","Kim ASTRUP","Anders Skaarup RASMUSSEN","Takuro HOKI","Yugo KOBAYASHI",3,2022,"Men","Doubles",3,2,1,185,181,4
+"204","CHOI SolGyu","KIM Won Ho","Kim ASTRUP","Anders Skaarup RASMUSSEN",4,2022,"Men","Doubles",3,3,0,170,167,3
+"205","Fajar ALFIAN","Muhammad Rian ARDIANTO","GOH Sze Fei","Nur IZZUDDIN",5,2022,"Men","Doubles",4,4,0,169,130,39
+"206","Mohammad AHSAN","Hendra SETIAWAN","M.R. ARJUN","DHRUV KAPILA",6,2022,"Men","Doubles",4,4,0,159,134,25
+"207","Fajar ALFIAN","Muhammad Rian ARDIANTO","Aaron CHIA","SOH Wooi Yik",6,2022,"Men","Doubles",3,3,0,159,127,32
+"208","Aaron CHIA","SOH Wooi Yik","Satwiksairaj RANKIREDDY","Chirag SHETTY",8,2022,"Men","Doubles",3,3,0,158,142,16
+"209","Min Hyuk KANG","SEO Seung Jae","Mohammad AHSAN","Hendra SETIAWAN",9,2022,"Men","Doubles",3,2,1,154,148,6
+"210","LIU Yuchen","OU Xuanyi","Mohammad AHSAN","Hendra SETIAWAN",10,2022,"Men","Doubles",3,3,0,148,120,28
+"211","LIU Yuchen","OU Xuanyi","CHOI SolGyu","KIM Won Ho",11,2022,"Men","Doubles",3,3,0,146,130,16
+"212","LU Ching Yao","YANG Po Han","Ben LANE","Sean VENDY",12,2022,"Men","Doubles",3,3,0,143,105,38
+"213","Mohammad AHSAN","Hendra SETIAWAN","REN Xiangyu","TAN Qiang",12,2022,"Men","Doubles",3,2,1,143,142,1
+"214","CHOI SolGyu","KIM Won Ho","ONG Yew Sin","TEO Ee Yi",14,2022,"Men","Doubles",3,2,1,139,131,8
+"215","Mohammad AHSAN","Hendra SETIAWAN","Muhammad Shohibul FIKRI","Bagas MAULANA",15,2022,"Men","Doubles",3,2,1,134,129,5
+"216","Kim ASTRUP","Anders Skaarup RASMUSSEN","LU Ching Yao","YANG Po Han",16,2022,"Men","Doubles",3,2,1,133,105,28
+"217","Aaron CHIA","SOH Wooi Yik","Mohammad AHSAN","Hendra SETIAWAN",17,2022,"Men","Doubles",3,2,1,131,129,2
+"218","Fajar ALFIAN","Muhammad Rian ARDIANTO","M.R. ARJUN","DHRUV KAPILA",18,2022,"Men","Doubles",3,3,0,129,101,28
+"219","Fajar ALFIAN","Muhammad Rian ARDIANTO","Akira KOGA","Taichi SAITO",19,2022,"Men","Doubles",3,3,0,128,105,23
+"220","LIU Yuchen","OU Xuanyi","Christo POPOV","Toma Junior POPOV",20,2022,"Men","Doubles",2,2,0,122,108,14
+"221","Muhammad Shohibul FIKRI","Bagas MAULANA","GOH Sze Fei","Nur IZZUDDIN",21,2022,"Men","Doubles",2,2,0,121,113,8
+"222","Fajar ALFIAN","Muhammad Rian ARDIANTO","HEE Yong Kai Terry","LOH Kean Hean",22,2022,"Men","Doubles",2,2,0,119,98,21
+"223","LIU Yuchen","OU Xuanyi","ONG Yew Sin","TEO Ee Yi",23,2022,"Men","Doubles",3,2,1,118,112,6
+"224","Ruben JILLE","Ties VAN DER LECQ","Christo POPOV","Toma Junior POPOV",24,2022,"Men","Doubles",2,2,0,117,110,7
+"225","Takuro HOKI","Yugo KOBAYASHI","Muhammad Shohibul FIKRI","Bagas MAULANA",24,2022,"Men","Doubles",2,1,1,117,112,5
+"226","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","WANG Yilyu","HUANG Dongping",1,2022,"Mixed","Doubles",5,5,0,249,204,45
+"227","ZHENG Siwei","HUANG Yaqiong","Yuta WATANABE","Arisa HIGASHINO",2,2022,"Mixed","Doubles",4,3,1,205,165,40
+"228","ZHENG Siwei","HUANG Yaqiong","WANG Yilyu","HUANG Dongping",3,2022,"Mixed","Doubles",4,3,1,179,147,32
+"229","ZHENG Siwei","HUANG Yaqiong","Thom GICQUEL","Delphine DELRUE",4,2022,"Mixed","Doubles",4,4,0,174,120,54
+"230","GOH Soon Huat","LAI Shevon Jemie","TAN Kian Meng","LAI Pei Jing",5,2022,"Mixed","Doubles",3,3,0,170,159,11
+"231","Thom GICQUEL","Delphine DELRUE","Jones Ralfy JANSEN","Linda EFLER",6,2022,"Mixed","Doubles",3,3,0,164,137,27
+"232","ZHENG Siwei","HUANG Yaqiong","Mathias CHRISTIANSEN","Alexandra BØJE",7,2022,"Mixed","Doubles",3,3,0,163,131,32
+"233","ZHENG Siwei","HUANG Yaqiong","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI",8,2022,"Mixed","Doubles",3,3,0,162,131,31
+"234","Rehan Naufal KUSHARJANTO","Lisa Ayu KUSUMAWATI","Thom GICQUEL","Delphine DELRUE",9,2022,"Mixed","Doubles",3,3,0,161,132,29
+"235","Yuta WATANABE","Arisa HIGASHINO","GOH Soon Huat","LAI Shevon Jemie",10,2022,"Mixed","Doubles",4,3,1,158,128,30
+"236","ZHENG Siwei","HUANG Yaqiong","Supak JOMKOH","Supissara PAEWSAMPRAN",11,2022,"Mixed","Doubles",3,3,0,145,98,47
+"237","Supak JOMKOH","Supissara PAEWSAMPRAN","Zachariah Josiahno SUMANTI","Hediana JULIMARBELA",12,2022,"Mixed","Doubles",3,2,1,144,133,11
+"238","Marcus ELLIS","Lauren SMITH","Rinov RIVALDY","Pitha Haningtyas MENTARI",13,2022,"Mixed","Doubles",3,3,0,142,125,17
+"239","Mathias CHRISTIANSEN","Alexandra BØJE","TAN Kian Meng","LAI Pei Jing",14,2022,"Mixed","Doubles",3,1,2,132,129,3
+"240","Mark LAMSFUSS","Isabel HERTTRICH","Rehan Naufal KUSHARJANTO","Lisa Ayu KUSUMAWATI",15,2022,"Mixed","Doubles",3,2,1,131,125,6
+"241","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","Supak JOMKOH","Supissara PAEWSAMPRAN",15,2022,"Mixed","Doubles",3,3,0,131,97,34
+"242","Mathias CHRISTIANSEN","Alexandra BØJE","HEE Yong Kai Terry","TAN Wei Han",17,2022,"Mixed","Doubles",3,3,0,127,99,28
+"243","WANG Yilyu","HUANG Dongping","Rinov RIVALDY","Pitha Haningtyas MENTARI",18,2022,"Mixed","Doubles",3,3,0,126,85,41
+"244","ZHENG Siwei","HUANG Yaqiong","TAN Kian Meng","LAI Pei Jing",18,2022,"Mixed","Doubles",3,3,0,126,73,53
+"245","Rinov RIVALDY","Pitha Haningtyas MENTARI","Jones Ralfy JANSEN","Linda EFLER",20,2022,"Mixed","Doubles",2,2,0,121,100,21
+"246","Thom GICQUEL","Delphine DELRUE","Mark LAMSFUSS","Isabel HERTTRICH",20,2022,"Mixed","Doubles",2,1,1,121,113,8
+"247","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","GOH Soon Huat","LAI Shevon Jemie",23,2022,"Mixed","Doubles",2,1,1,118,108,10
+"248","ZHENG Siwei","HUANG Yaqiong","YANG Po-Hsuan","HU Ling Fang",23,2022,"Mixed","Doubles",2,2,0,118,102,16
+"249","Yuta WATANABE","Arisa HIGASHINO","Mathias CHRISTIANSEN","Alexandra BØJE",23,2022,"Mixed","Doubles",2,1,1,118,113,5
+"250","Yuki KANEKO","Misaki MATSUTOMO","Robin TABELING","Selena PIEK",25,2022,"Mixed","Doubles",2,2,0,114,105,9
+"251","Akane YAMAGUCHI",NA,"Se Young AN",NA,1,2021,"Women","Singles",6,4,2,281,274,7
+"252","Akane YAMAGUCHI",NA,"Pornpawee CHOCHUWONG",NA,2,2021,"Women","Singles",4,3,1,210,207,3
+"253","Mia BLICHFELDT",NA,"Yvonne LI",NA,3,2021,"Women","Singles",4,3,1,187,181,6
+"254","Akane YAMAGUCHI",NA,"PUSARLA V. Sindhu",NA,4,2021,"Women","Singles",4,1,3,186,180,6
+"255","PUSARLA V. Sindhu",NA,"Busanan ONGBAMRUNGPHAN",NA,5,2021,"Women","Singles",4,4,0,182,147,35
+"256","TAI Tzu Ying",NA,"Ratchanok INTANON",NA,6,2021,"Women","Singles",3,3,0,177,157,20
+"257","Se Young AN",NA,"Pornpawee CHOCHUWONG",NA,7,2021,"Women","Singles",4,4,0,172,132,40
+"258","Pornpawee CHOCHUWONG",NA,"PUSARLA V. Sindhu",NA,8,2021,"Women","Singles",4,2,2,168,157,11
+"259","Neslihan YIGIT",NA,"Yvonne LI",NA,9,2021,"Women","Singles",3,2,1,159,150,9
+"260","Carolina MARIN",NA,"Pornpawee CHOCHUWONG",NA,10,2021,"Women","Singles",3,3,0,146,102,44
+"261","TAI Tzu Ying",NA,"PUSARLA V. Sindhu",NA,11,2021,"Women","Singles",3,3,0,145,110,35
+"262","PUSARLA V. Sindhu",NA,"Mia BLICHFELDT",NA,12,2021,"Women","Singles",3,2,1,143,121,22
+"263","Ratchanok INTANON",NA,"PUSARLA V. Sindhu",NA,13,2021,"Women","Singles",3,3,0,141,97,44
+"264","Akane YAMAGUCHI",NA,"KIM Ga Eun",NA,14,2021,"Women","Singles",3,3,0,140,127,13
+"265","Carolina MARIN",NA,"Se Young AN",NA,14,2021,"Women","Singles",3,2,1,140,124,16
+"266","Carolina MARIN",NA,"TAI Tzu Ying",NA,16,2021,"Women","Singles",3,2,1,132,117,15
+"267","Pornpawee CHOCHUWONG",NA,"Line CHRISTOPHERSEN",NA,17,2021,"Women","Singles",3,3,0,129,90,39
+"268","PUSARLA V. Sindhu",NA,"Neslihan YIGIT",NA,19,2021,"Women","Singles",3,3,0,126,80,46
+"269","PUSARLA V. Sindhu",NA,"Line CHRISTOPHERSEN",NA,19,2021,"Women","Singles",3,3,0,126,74,52
+"270","Se Young AN",NA,"Evgeniya KOSETSKAYA",NA,19,2021,"Women","Singles",3,3,0,126,73,53
+"271","Se Young AN",NA,"Phittayaporn CHAIWAN",NA,19,2021,"Women","Singles",3,3,0,126,73,53
+"272","Pornpawee CHOCHUWONG",NA,"Gregoria Mariska TUNJUNG",NA,22,2021,"Women","Singles",2,2,0,110,91,19
+"273","Akane YAMAGUCHI",NA,"Line Højmark KJAERSFELDT",NA,23,2021,"Women","Singles",2,2,0,105,76,29
+"274","Akane YAMAGUCHI",NA,"YEO Jia Min",NA,24,2021,"Women","Singles",2,2,0,103,75,28
+"275","Evgeniya KOSETSKAYA",NA,"PAI Yu Po",NA,24,2021,"Women","Singles",2,2,0,103,80,23
+"276","KIM So Yeong","KONG Hee Yong","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI",1,2021,"Women","Doubles",6,5,1,302,254,48
+"277","LEE So Hee","SHIN Seung Chan","KIM So Yeong","KONG Hee Yong",2,2021,"Women","Doubles",6,4,2,268,267,1
+"278","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI","Ashwini PONNAPPA","REDDY N. Sikki",3,2021,"Women","Doubles",5,5,0,212,142,70
+"279","Greysia POLII","Apriyani RAHAYU","TAN Pearly Koong Le","Muralitharan THINAAH",4,2021,"Women","Doubles",4,4,0,203,163,40
+"280","Greysia POLII","Apriyani RAHAYU","LEE So Hee","SHIN Seung Chan",5,2021,"Women","Doubles",4,3,1,197,186,11
+"281","KIM So Yeong","KONG Hee Yong","Linda EFLER","Isabel HERTTRICH",6,2021,"Women","Doubles",4,4,0,187,107,80
+"282","Greysia POLII","Apriyani RAHAYU","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI",7,2021,"Women","Doubles",4,4,0,185,143,42
+"283","Puttita SUPAJIRAKUL","Sapsiree TAERATTANACHAI","Siti Fadia Silva RAMADHANTI","Ribka SUGIARTO",8,2021,"Women","Doubles",4,2,2,171,167,4
+"284","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI","Gabriela STOEVA","Stefani STOEVA",9,2021,"Women","Doubles",4,2,2,163,156,7
+"285","Greysia POLII","Apriyani RAHAYU","Puttita SUPAJIRAKUL","Sapsiree TAERATTANACHAI",10,2021,"Women","Doubles",3,2,1,151,132,19
+"286","Nami MATSUYAMA","Chiharu SHIDA","Puttita SUPAJIRAKUL","Sapsiree TAERATTANACHAI",11,2021,"Women","Doubles",3,3,0,148,122,26
+"287","Nami MATSUYAMA","Chiharu SHIDA","TAN Pearly Koong Le","Muralitharan THINAAH",12,2021,"Women","Doubles",3,3,0,146,112,34
+"288","Nami MATSUYAMA","Chiharu SHIDA","Chloe BIRCH","Lauren SMITH",13,2021,"Women","Doubles",4,3,1,145,107,38
+"289","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI","Benyapa AIMSAARD","Nuntakarn AIMSAARD",14,2021,"Women","Doubles",3,3,0,140,110,30
+"290","Gabriela STOEVA","Stefani STOEVA","Chloe BIRCH","Lauren SMITH",16,2021,"Women","Doubles",3,3,0,126,75,51
+"291","LEE So Hee","SHIN Seung Chan","Vivian HOO","YAP Cheng Wen",16,2021,"Women","Doubles",3,3,0,126,85,41
+"292","Ashwini PONNAPPA","REDDY N. Sikki","Gabriela STOEVA","Stefani STOEVA",16,2021,"Women","Doubles",3,1,2,126,120,6
+"293","LEE So Hee","SHIN Seung Chan","Nita Violina MARWAH","Putri SYAIKAH",18,2021,"Women","Doubles",2,2,0,112,107,5
+"294","Anastasiia AKCHURINA","Olga MOROZOVA","Emilie LEFEL","Anne TRAN",19,2021,"Women","Doubles",2,2,0,109,95,14
+"295","Chloe BIRCH","Lauren SMITH","Linda EFLER","Isabel HERTTRICH",20,2021,"Women","Doubles",2,2,0,104,74,30
+"296","CHEN Qingchen","JIA Yifan","KIM So Yeong","KONG Hee Yong",21,2021,"Women","Doubles",2,2,0,103,77,26
+"297","Chisato HOSHI","Aoi MATSUDA","Chloe BIRCH","Lauren SMITH",21,2021,"Women","Doubles",2,2,0,103,91,12
+"298","LEE So Hee","SHIN Seung Chan","Maiken FRUERGAARD","Sara THYGESEN",23,2021,"Women","Doubles",2,1,1,102,93,9
+"299","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI","Julie FINNE-IPSEN","Mai SURROW",24,2021,"Women","Doubles",2,2,0,101,84,17
+"300","Alexandra BØJE","Mette POULSEN","Vivian HOO","LIM Chiew Sien",25,2021,"Women","Doubles",2,1,1,100,89,11
+"301","Kento MOMOTA",NA,"LEE Zii Jia",NA,1,2021,"Men","Singles",4,2,2,175,167,8
+"302","PRANNOY H. S.",NA,"LIEW Daren",NA,2,2021,"Men","Singles",4,3,1,162,125,37
+"303","Anders ANTONSEN",NA,"WANG Tzu Wei",NA,3,2021,"Men","Singles",3,2,1,146,145,1
+"304","Viktor AXELSEN",NA,"LEE Zii Jia",NA,4,2021,"Men","Singles",3,2,1,144,128,16
+"305","WANG Tzu Wei",NA,"NG Ka Long Angus",NA,5,2021,"Men","Singles",3,2,1,140,106,34
+"306","Viktor AXELSEN",NA,"Anthony Sinisuka GINTING",NA,6,2021,"Men","Singles",3,3,0,139,102,37
+"307","Anders ANTONSEN",NA,"Sameer VERMA",NA,7,2021,"Men","Singles",3,2,1,137,126,11
+"308","LOH Kean Yew",NA,"Viktor AXELSEN",NA,8,2021,"Men","Singles",3,1,2,136,129,7
+"309","Viktor AXELSEN",NA,"KIDAMBI Srikanth",NA,11,2021,"Men","Singles",3,3,0,126,89,37
+"310","Viktor AXELSEN",NA,"Kunlavut VITIDSARN",NA,11,2021,"Men","Singles",3,3,0,126,66,60
+"311","Anthony Sinisuka GINTING",NA,"LEE Zii Jia",NA,11,2021,"Men","Singles",3,2,1,126,120,6
+"312","Viktor AXELSEN",NA,"Lakshya SEN",NA,11,2021,"Men","Singles",3,3,0,126,75,51
+"313","Viktor AXELSEN",NA,"CHOU Tien Chen",NA,11,2021,"Men","Singles",3,3,0,126,83,43
+"314","NG Ka Long Angus",NA,"CHOU Tien Chen",NA,14,2021,"Men","Singles",2,1,1,117,108,9
+"315","Kunlavut VITIDSARN",NA,"LEE Zii Jia",NA,15,2021,"Men","Singles",3,2,1,115,106,9
+"316","Kenta NISHIMOTO",NA,"CHOU Tien Chen",NA,16,2021,"Men","Singles",2,1,1,114,108,6
+"317","Rasmus GEMKE",NA,"Ajay JAYARAM",NA,17,2021,"Men","Singles",2,1,1,113,110,3
+"318","Viktor AXELSEN",NA,"Anders ANTONSEN",NA,18,2021,"Men","Singles",3,1,2,112,92,20
+"319","KIDAMBI Srikanth",NA,"NG Ka Long Angus",NA,18,2021,"Men","Singles",2,1,1,112,105,7
+"320","Anders ANTONSEN",NA,"Hans-Kristian Solberg VITTINGHUS",NA,21,2021,"Men","Singles",3,2,1,111,106,5
+"321","Vladimir MALKOV",NA,"Toma Junior POPOV",NA,21,2021,"Men","Singles",2,1,1,111,104,7
+"322","Kunlavut VITIDSARN",NA,"Toma Junior POPOV",NA,21,2021,"Men","Singles",2,1,1,111,90,21
+"323","Jonatan CHRISTIE",NA,"LOH Kean Yew",NA,21,2021,"Men","Singles",2,2,0,111,106,5
+"324","Kento MOMOTA",NA,"KIDAMBI Srikanth",NA,24,2021,"Men","Singles",2,2,0,106,89,17
+"325","Hans-Kristian Solberg VITTINGHUS",NA,"Kanta TSUNEYAMA",NA,25,2021,"Men","Singles",2,2,0,105,103,2
+"326","Kim ASTRUP","Anders Skaarup RASMUSSEN","Mark LAMSFUSS","Marvin SEIDEL",1,2021,"Men","Doubles",5,2,3,216,211,5
+"327","Takuro HOKI","Yugo KOBAYASHI","Aaron CHIA","SOH Wooi Yik",2,2021,"Men","Doubles",4,3,1,202,168,34
+"328","ONG Yew Sin","TEO Ee Yi","Satwiksairaj RANKIREDDY","Chirag SHETTY",3,2021,"Men","Doubles",4,2,2,195,187,8
+"329","Kim ASTRUP","Anders Skaarup RASMUSSEN","Satwiksairaj RANKIREDDY","Chirag SHETTY",4,2021,"Men","Doubles",4,3,1,191,161,30
+"330","Kim ASTRUP","Anders Skaarup RASMUSSEN","Christo POPOV","Toma Junior POPOV",5,2021,"Men","Doubles",4,4,0,188,130,58
+"331","Mohammad AHSAN","Hendra SETIAWAN","CHOI SolGyu","SEO Seung Jae",6,2021,"Men","Doubles",4,2,2,175,169,6
+"332","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","LEE Yang","WANG Chi-Lin",7,2021,"Men","Doubles",3,2,1,162,156,6
+"333","Takuro HOKI","Yugo KOBAYASHI","Kim ASTRUP","Anders Skaarup RASMUSSEN",8,2021,"Men","Doubles",3,3,0,159,134,25
+"334","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","ONG Yew Sin","TEO Ee Yi",8,2021,"Men","Doubles",3,3,0,159,133,26
+"335","Mohammad AHSAN","Hendra SETIAWAN","Aaron CHIA","SOH Wooi Yik",10,2021,"Men","Doubles",3,2,1,154,143,11
+"336","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","Takuro HOKI","Yugo KOBAYASHI",11,2021,"Men","Doubles",3,1,2,147,146,1
+"337","LEE Yang","WANG Chi-Lin","Mohammad AHSAN","Hendra SETIAWAN",12,2021,"Men","Doubles",3,3,0,143,112,31
+"338","LEE Yang","WANG Chi-Lin","ONG Yew Sin","TEO Ee Yi",13,2021,"Men","Doubles",3,2,1,142,130,12
+"339","Takuro HOKI","Yugo KOBAYASHI","ONG Yew Sin","TEO Ee Yi",14,2021,"Men","Doubles",3,3,0,138,105,33
+"340","Aaron CHIA","SOH Wooi Yik","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO",15,2021,"Men","Doubles",3,2,1,137,116,21
+"341","LEE Yang","WANG Chi-Lin","Ben LANE","Sean VENDY",16,2021,"Men","Doubles",3,3,0,127,100,27
+"342","ONG Yew Sin","TEO Ee Yi","GOH Sze Fei","Nur IZZUDDIN",17,2021,"Men","Doubles",2,2,0,125,113,12
+"343","ONG Yew Sin","TEO Ee Yi","Joel EIPE","Rasmus KJÆR",18,2021,"Men","Doubles",3,3,0,123,92,31
+"344","Kim ASTRUP","Anders Skaarup RASMUSSEN","GOH Sze Fei","Nur IZZUDDIN",18,2021,"Men","Doubles",2,2,0,123,98,25
+"345","Takuro HOKI","Yugo KOBAYASHI","Akira KOGA","Taichi SAITO",21,2021,"Men","Doubles",3,2,1,112,111,1
+"346","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","Kim ASTRUP","Anders Skaarup RASMUSSEN",21,2021,"Men","Doubles",2,2,0,112,94,18
+"347","Takuro HOKI","Yugo KOBAYASHI","Mohammad AHSAN","Hendra SETIAWAN",21,2021,"Men","Doubles",2,2,0,112,105,7
+"348","Satwiksairaj RANKIREDDY","Chirag SHETTY","LEE Jhe-Huei","YANG Po-Hsuan",23,2021,"Men","Doubles",2,2,0,108,93,15
+"349","ONG Yew Sin","TEO Ee Yi","Phillip CHEW","Ryan CHEW",24,2021,"Men","Doubles",2,2,0,105,66,39
+"350","Kim ASTRUP","Anders Skaarup RASMUSSEN","Vladimir IVANOV","Ivan SOZONOV",25,2021,"Men","Doubles",2,2,0,104,78,26
+"351","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","Praveen JORDAN","Melati Daeva OKTAVIANTI",1,2021,"Mixed","Doubles",5,5,0,274,226,48
+"352","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","Yuta WATANABE","Arisa HIGASHINO",2,2021,"Mixed","Doubles",6,3,3,242,224,18
+"353","Yuta WATANABE","Arisa HIGASHINO","TAN Kian Meng","LAI Pei Jing",3,2021,"Mixed","Doubles",5,5,0,241,184,57
+"354","Yuta WATANABE","Arisa HIGASHINO","Mathias CHRISTIANSEN","Alexandra BØJE",4,2021,"Mixed","Doubles",5,5,0,230,163,67
+"355","Yuta WATANABE","Arisa HIGASHINO","TANG Chun Man","TSE Ying Suet",5,2021,"Mixed","Doubles",4,3,1,204,172,32
+"356","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","GOH Soon Huat","LAI Shevon Jemie",6,2021,"Mixed","Doubles",4,4,0,188,135,53
+"357","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","SEO Seung Jae","CHAE YuJung",7,2021,"Mixed","Doubles",4,3,1,187,183,4
+"358","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","KO Sung Hyun","EOM Hye Won",8,2021,"Mixed","Doubles",3,3,0,176,146,30
+"359","Mathias CHRISTIANSEN","Alexandra BØJE","Marcus ELLIS","Lauren SMITH",9,2021,"Mixed","Doubles",4,3,1,175,167,8
+"360","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","TANG Chun Man","TSE Ying Suet",10,2021,"Mixed","Doubles",3,3,0,161,116,45
+"361","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","CHEN Tang Jie","PECK Yen Wei",11,2021,"Mixed","Doubles",3,3,0,144,121,23
+"362","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","HOO Pang Ron","CHEAH Yee See",11,2021,"Mixed","Doubles",3,3,0,144,107,37
+"363","TANG Chun Man","TSE Ying Suet","Mark LAMSFUSS","Isabel HERTTRICH",13,2021,"Mixed","Doubles",4,2,2,143,123,20
+"364","Thom GICQUEL","Delphine DELRUE","Mikkel MIKKELSEN","Rikke SØBY",14,2021,"Mixed","Doubles",3,3,0,140,111,29
+"365","Thom GICQUEL","Delphine DELRUE","Rodion ALIMOV","Alina DAVLETOVA",15,2021,"Mixed","Doubles",3,1,2,132,130,2
+"366","Niclas NOHR","Amalie MAGELUND","LEE Jhe-Huei","HSU Ya Ching",16,2021,"Mixed","Doubles",2,1,1,131,122,9
+"367","Yuta WATANABE","Arisa HIGASHINO","HOO Pang Ron","CHEAH Yee See",17,2021,"Mixed","Doubles",3,3,0,126,89,37
+"368","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","Robin TABELING","Selena PIEK",17,2021,"Mixed","Doubles",3,3,0,126,96,30
+"369","Mathias CHRISTIANSEN","Alexandra BØJE","Praveen JORDAN","Melati Daeva OKTAVIANTI",19,2021,"Mixed","Doubles",3,1,2,124,123,1
+"370","WANG Yilyu","HUANG Dongping","Yuta WATANABE","Arisa HIGASHINO",20,2021,"Mixed","Doubles",2,1,1,118,110,8
+"371","CHAN Peng Soon","GOH Liu Ying","Mathias CHRISTIANSEN","Alexandra BØJE",21,2021,"Mixed","Doubles",2,1,1,116,110,6
+"372","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","Marcus ELLIS","Lauren SMITH",22,2021,"Mixed","Doubles",3,2,1,115,96,19
+"373","Satwiksairaj RANKIREDDY","Ashwini PONNAPPA","Hafiz FAIZAL","Gloria Emanuelle WIDJAJA",23,2021,"Mixed","Doubles",2,2,0,111,84,27
+"374","Rodion ALIMOV","Alina DAVLETOVA","Robin TABELING","Selena PIEK",24,2021,"Mixed","Doubles",2,2,0,106,91,15
+"375","Supak JOMKOH","Supissara PAEWSAMPRAN","TAN Kian Meng","LAI Pei Jing",24,2021,"Mixed","Doubles",2,2,0,106,90,16
+"376","Lianne TAN",NA,"Sabrina JAQUET",NA,1,2020,"Women","Singles",3,3,0,150,150,0
+"377","Sabrina JAQUET",NA,"Lianne TAN",NA,1,2020,"Women","Singles",3,0,3,150,150,0
+"378","Carolina MARIN",NA,"Akane YAMAGUCHI",NA,3,2020,"Women","Singles",3,2,1,147,111,36
+"379","Akane YAMAGUCHI",NA,"Gregoria Mariska TUNJUNG",NA,4,2020,"Women","Singles",3,3,0,145,119,26
+"380","Akane YAMAGUCHI",NA,"Se Young AN",NA,5,2020,"Women","Singles",2,2,0,106,96,10
+"381","Busanan ONGBAMRUNGPHAN",NA,"Pornpawee CHOCHUWONG",NA,5,2020,"Women","Singles",2,1,1,106,105,1
+"382","Kirsty GILMOUR",NA,"Yvonne LI",NA,7,2020,"Women","Singles",2,2,0,103,82,21
+"383","SUNG Ji Hyun",NA,"Pornpawee CHOCHUWONG",NA,8,2020,"Women","Singles",2,1,1,102,93,9
+"384","Ruselli HARTAWAN",NA,"PAI Yu Po",NA,9,2020,"Women","Singles",2,2,0,99,91,8
+"385","Gregoria Mariska TUNJUNG",NA,"Busanan ONGBAMRUNGPHAN",NA,10,2020,"Women","Singles",2,2,0,98,70,28
+"386","PUSARLA V. Sindhu",NA,"Aya OHORI",NA,10,2020,"Women","Singles",2,2,0,98,72,26
+"387","Yvonne LI",NA,"Kristin KUUBA",NA,13,2020,"Women","Singles",2,2,0,97,74,23
+"388","Akane YAMAGUCHI",NA,"Soniia CHEAH",NA,13,2020,"Women","Singles",2,1,1,97,90,7
+"389","Carolina MARIN",NA,"Pornpawee CHOCHUWONG",NA,13,2020,"Women","Singles",2,1,1,97,73,24
+"390","HE Bingjiao",NA,"KIM Ga Eun",NA,13,2020,"Women","Singles",2,2,0,97,80,17
+"391","Ratchanok INTANON",NA,"WANG Zhiyi",NA,16,2020,"Women","Singles",2,1,1,96,95,1
+"392","CHEN Yufei",NA,"Line Højmark KJAERSFELDT",NA,17,2020,"Women","Singles",2,1,1,94,88,6
+"393","Ratchanok INTANON",NA,"Aya OHORI",NA,18,2020,"Women","Singles",2,1,1,91,80,11
+"394","Se Young AN",NA,"Kirsty GILMOUR",NA,20,2020,"Women","Singles",2,2,0,84,57,27
+"395","Neslihan YIGIT",NA,"Airi MIKKELA",NA,20,2020,"Women","Singles",2,2,0,84,42,42
+"396","Carolina MARIN",NA,"Natalia PERMINOVA",NA,20,2020,"Women","Singles",2,2,0,84,41,43
+"397","Nozomi OKUHARA",NA,"Michelle LI",NA,20,2020,"Women","Singles",2,2,0,84,41,43
+"398","Carolina MARIN",NA,"Nozomi OKUHARA",NA,23,2020,"Women","Singles",2,1,1,78,70,8
+"399","Carolina MARIN",NA,"Kirsty GILMOUR",NA,24,2020,"Women","Singles",2,1,1,76,70,6
+"400","CHEN Yufei",NA,"TAI Tzu Ying",NA,24,2020,"Women","Singles",2,1,1,76,69,7
+"401","CHEN Qingchen","JIA Yifan","Nami MATSUYAMA","Chiharu SHIDA",1,2020,"Women","Doubles",3,1,2,123,121,2
+"402","Vivian HOO","YAP Cheng Wen","CHOW Mei Kuan","LEE Meng Yean",2,2020,"Women","Doubles",2,1,1,115,110,5
+"403","HSU Ya Ching","HU Ling Fang","Alexandra BØJE","Mette POULSEN",3,2020,"Women","Doubles",2,2,0,105,94,11
+"404","Yuki FUKUSHIMA","Sayaka HIROTA","LI Wenmei","ZHENG Yu",4,2020,"Women","Doubles",2,1,1,102,95,7
+"405","LI Wenmei","ZHENG Yu","KIM So Yeong","KONG Hee Yong",5,2020,"Women","Doubles",2,1,1,97,86,11
+"406","LEE So Hee","SHIN Seung Chan","CHANG Ye Na","KIM Hye Rin",6,2020,"Women","Doubles",2,1,1,96,93,3
+"407","KIM So Yeong","KONG Hee Yong","HSU Ya Ching","HU Ling Fang",7,2020,"Women","Doubles",2,2,0,86,64,22
+"408","Gabriela STOEVA","Stefani STOEVA","Alexandra BØJE","Mette POULSEN",9,2020,"Women","Doubles",2,2,0,84,44,40
+"409","CHEN Qingchen","JIA Yifan","Gabriela STOEVA","Stefani STOEVA",9,2020,"Women","Doubles",2,2,0,84,49,35
+"410","Siti Fadia Silva RAMADHANTI","Ribka SUGIARTO","Pooja DANDU","SANJANA SANTOSH",9,2020,"Women","Doubles",2,2,0,84,47,37
+"411","DU Yue","LI Yinhui","CHOW Mei Kuan","LEE Meng Yean",9,2020,"Women","Doubles",2,2,0,84,57,27
+"412","CHANG Ye Na","KIM Hye Rin","Greysia POLII","Apriyani RAHAYU",12,2020,"Women","Doubles",2,1,1,80,74,6
+"413","Puttita SUPAJIRAKUL","Sapsiree TAERATTANACHAI","DU Yue","LI Yinhui",13,2020,"Women","Doubles",2,1,1,74,71,3
+"414","LEE So Hee","SHIN Seung Chan","BAEK Ha Na","JUNG Kyung Eun",14,2020,"Women","Doubles",1,1,0,71,64,7
+"415","LEE So Hee","SHIN Seung Chan","Ekaterina BOLOTOVA","Alina DAVLETOVA",15,2020,"Women","Doubles",1,1,0,67,61,6
+"416","Misaki MATSUTOMO","Ayaka TAKAHASHI","LEE So Hee","SHIN Seung Chan",15,2020,"Women","Doubles",1,1,0,67,52,15
+"417","Maiken FRUERGAARD","Sara THYGESEN","Clara NISTAD","Moa SJOO",18,2020,"Women","Doubles",1,1,0,64,56,8
+"418","Alexandra BØJE","Mette POULSEN","Linda EFLER","Isabel HERTTRICH",18,2020,"Women","Doubles",1,1,0,64,59,5
+"419","Greysia POLII","Apriyani RAHAYU","LIU Xuanxuan","XIA Yuting",18,2020,"Women","Doubles",1,1,0,64,56,8
+"420","Greysia POLII","Apriyani RAHAYU","BAEK Ha Na","JUNG Kyung Eun",18,2020,"Women","Doubles",1,1,0,64,60,4
+"421","KIM So Yeong","KONG Hee Yong","Chayanit CHALADCHALAM","Phataimas MUENWONG",22,2020,"Women","Doubles",1,1,0,63,55,8
+"422","Martina REPISKA","Katarina VARGOVA","Liana LENCEVICA","Jekaterina ROMANOVA",22,2020,"Women","Doubles",1,1,0,63,60,3
+"423","CHANG Ye Na","KIM Hye Rin","Vivian HOO","YAP Cheng Wen",22,2020,"Women","Doubles",1,1,0,63,54,9
+"424","Greysia POLII","Apriyani RAHAYU","HSU Ya Ching","HU Ling Fang",24,2020,"Women","Doubles",1,1,0,62,52,10
+"425","Greysia POLII","Apriyani RAHAYU","Chloe BIRCH","Lauren SMITH",24,2020,"Women","Doubles",1,1,0,62,48,14
+"426","Shesar Hiren RHUSTAVITO",NA,"KIDAMBI Srikanth",NA,1,2020,"Men","Singles",2,2,0,114,93,21
+"427","Kenta NISHIMOTO",NA,"CHEAM June Wei",NA,2,2020,"Men","Singles",2,1,1,111,97,14
+"428","Hans-Kristian Solberg VITTINGHUS",NA,"Lakshya SEN",NA,3,2020,"Men","Singles",2,2,0,110,98,12
+"429","SHI Yuqi",NA,"NG Ka Long Angus",NA,4,2020,"Men","Singles",2,1,1,106,99,7
+"430","LIEW Daren",NA,"PRANNOY H. S.",NA,5,2020,"Men","Singles",2,2,0,104,91,13
+"431","CHOU Tien Chen",NA,"KIDAMBI Srikanth",NA,5,2020,"Men","Singles",2,2,0,104,73,31
+"432","Vladimir MALKOV",NA,"Nhat NGUYEN",NA,7,2020,"Men","Singles",2,2,0,102,92,10
+"433","Anders ANTONSEN",NA,"Rasmus GEMKE",NA,7,2020,"Men","Singles",2,2,0,102,75,27
+"434","Kanta TSUNEYAMA",NA,"CHOU Tien Chen",NA,9,2020,"Men","Singles",2,1,1,100,95,5
+"435","LEE Zii Jia",NA,"HEO Kwang Hee",NA,10,2020,"Men","Singles",2,1,1,98,80,18
+"436","HUANG Yuxiang",NA,"Jan O JORGENSEN",NA,10,2020,"Men","Singles",2,2,0,98,92,6
+"437","WANG Tzu Wei",NA,"Kenta NISHIMOTO",NA,12,2020,"Men","Singles",2,1,1,97,88,9
+"438","SUN Feixiang",NA,"Brice LEVERDEZ",NA,12,2020,"Men","Singles",2,1,1,97,84,13
+"439","Rasmus GEMKE",NA,"Max WEISSKIRCHEN",NA,14,2020,"Men","Singles",2,1,1,96,88,8
+"440","Toma Junior POPOV",NA,"Thomas ROUXEL",NA,15,2020,"Men","Singles",2,1,1,93,84,9
+"441","NG Ka Long Angus",NA,"Kenta NISHIMOTO",NA,16,2020,"Men","Singles",2,1,1,91,88,3
+"442","LEE Zii Jia",NA,"Sameer VERMA",NA,17,2020,"Men","Singles",2,2,0,85,70,15
+"443","Anders ANTONSEN",NA,"SON Wan Ho",NA,17,2020,"Men","Singles",2,2,0,85,61,24
+"444","Anthony Sinisuka GINTING",NA,"HUANG Yuxiang",NA,19,2020,"Men","Singles",2,1,1,78,68,10
+"445","Rasmus GEMKE",NA,"Kenta NISHIMOTO",NA,20,2020,"Men","Singles",2,1,1,75,73,2
+"446","Jonathan DOLAN",NA,"Martin BUNDGAARD",NA,21,2020,"Men","Singles",1,1,0,67,63,4
+"447","Anthony Sinisuka GINTING",NA,"HEO Kwang Hee",NA,22,2020,"Men","Singles",1,1,0,64,59,5
+"448","Brice LEVERDEZ",NA,"Jonathan DOLAN",NA,24,2020,"Men","Singles",1,1,0,63,54,9
+"449","LIN Yu Hsien",NA,"Sergey SIRANT",NA,24,2020,"Men","Singles",1,1,0,63,55,8
+"450","Giovanni TOTI",NA,"Luka BAN",NA,24,2020,"Men","Singles",1,1,0,63,55,8
+"451","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","Aaron CHIA","SOH Wooi Yik",1,2020,"Men","Doubles",4,4,0,169,136,33
+"452","Akira KOGA","Taichi SAITO","HUANG Kaixiang","LIU Cheng",2,2020,"Men","Doubles",2,1,1,119,109,10
+"453","LEE Yang","WANG Chi-Lin","Mohammad AHSAN","Hendra SETIAWAN",3,2020,"Men","Doubles",2,0,2,114,113,1
+"454","Vladimir IVANOV","Ivan SOZONOV","Marcus ELLIS","Chris LANGRIDGE",4,2020,"Men","Doubles",2,1,1,110,109,1
+"455","Jeppe BAY","Lasse MØLHEDE","Ruben JILLE","Ties VAN DER LECQ",5,2020,"Men","Doubles",2,2,0,105,97,8
+"456","Kim ASTRUP","Anders Skaarup RASMUSSEN","KIM Gi Jung","LEE Yong Dae",6,2020,"Men","Doubles",2,2,0,99,81,18
+"457","GOH V Shem","TAN Wee Kiong","LIAO Min Chun","SU Ching Heng",9,2020,"Men","Doubles",2,2,0,84,66,18
+"458","Kim ASTRUP","Anders Skaarup RASMUSSEN","Jelle MAAS","Robin TABELING",9,2020,"Men","Doubles",2,2,0,84,56,28
+"459","LEE Yang","WANG Chi-Lin","Vladimir IVANOV","Ivan SOZONOV",9,2020,"Men","Doubles",2,2,0,84,61,23
+"460","KIM Gi Jung","LEE Yong Dae","LI Junhui","LIU Yuchen",9,2020,"Men","Doubles",2,2,0,84,61,23
+"461","ONG Yew Sin","TEO Ee Yi","HAN Chengkai","ZHOU Haodong",9,2020,"Men","Doubles",2,2,0,84,66,18
+"462","Fajar ALFIAN","Muhammad Rian ARDIANTO","Mathias BOE","Mads CONRAD-PETERSEN",9,2020,"Men","Doubles",2,2,0,84,67,17
+"463","Mathias BOE","Mads CONRAD-PETERSEN","LEE Jhe-Huei","YANG Po-Hsuan",13,2020,"Men","Doubles",2,1,1,82,77,5
+"464","Akira KOGA","Taichi SAITO","LIAO Min Chun","SU Ching Heng",14,2020,"Men","Doubles",1,1,0,68,57,11
+"465","Sturla Flaten JORGENSEN","Carl Christian MORK","Oskari LARKIMO","Joakim OLDORFF",15,2020,"Men","Doubles",1,1,0,67,59,8
+"466","Ruben JILLE","Ties VAN DER LECQ","Eloi ADAM","Julien MAIO",16,2020,"Men","Doubles",1,1,0,66,59,7
+"467","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","Marcus ELLIS","Chris LANGRIDGE",16,2020,"Men","Doubles",1,1,0,66,57,9
+"468","Rowan SCHEURKOGEL","Jona VAN NIEUWKERKE","Serdar KOCA","Serhat SALIM",18,2020,"Men","Doubles",1,1,0,65,58,7
+"469","LI Junhui","LIU Yuchen","Mohammad AHSAN","Hendra SETIAWAN",18,2020,"Men","Doubles",1,1,0,65,63,2
+"470","Leo Rolly CARNANDO","Daniel MARTHIN","Maneepong JONGJIT","Krit TANTIANANKUL",21,2020,"Men","Doubles",1,1,0,64,59,5
+"471","Jones Ralfy JANSEN","Peter KAESBAUER","Muhammad Shohibul FIKRI","Bagas MAULANA",21,2020,"Men","Doubles",1,1,0,64,60,4
+"472","Takuro HOKI","Yugo KOBAYASHI","CHOI SolGyu","SEO Seung Jae",21,2020,"Men","Doubles",1,1,0,64,62,2
+"473","Zach RUSS","Steven STALLWOOD","Rasmus ESPERSEN","Emil HYBEL",24,2020,"Men","Doubles",1,1,0,63,57,6
+"474","ONG Yew Sin","TEO Ee Yi","OU Xuanyi","ZHANG Nan",24,2020,"Men","Doubles",1,1,0,63,61,2
+"475","Gianmarco BAILETTI","David SALUTT","Ariel SHAINSKI","Misha ZILBERMAN",24,2020,"Men","Doubles",1,1,0,63,52,11
+"476","Robin TABELING","Selena PIEK","Mathias CHRISTIANSEN","Alexandra BØJE",1,2020,"Mixed","Doubles",3,2,1,131,121,10
+"477","Mathias CHRISTIANSEN","Alexandra BØJE","Mark LAMSFUSS","Isabel HERTTRICH",2,2020,"Mixed","Doubles",2,1,1,112,108,4
+"478","Mathias CHRISTIANSEN","Alexandra BØJE","Niclas NOHR","Amalie MAGELUND",3,2020,"Mixed","Doubles",2,2,0,107,85,22
+"479","KO Sung Hyun","EOM Hye Won","YANG Po-Hsuan","HU Ling Fang",4,2020,"Mixed","Doubles",2,2,0,104,78,26
+"480","ZHENG Siwei","HUANG Yaqiong","Pranaav Jerry CHOPRA","REDDY N. Sikki",5,2020,"Mixed","Doubles",2,2,0,95,71,24
+"481","WANG Yilyu","HUANG Dongping","Ricky KARANDASUWARDI","Pia Zebadiah BERNADET",6,2020,"Mixed","Doubles",2,2,0,88,60,28
+"482","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","LEE Jhe-Huei","HSU Ya Ching",7,2020,"Mixed","Doubles",2,2,0,85,55,30
+"483","Marcus ELLIS","Lauren SMITH","Rodion ALIMOV","Alina DAVLETOVA",9,2020,"Mixed","Doubles",2,2,0,84,53,31
+"484","ZHENG Siwei","HUANG Yaqiong","Hafiz FAIZAL","Gloria Emanuelle WIDJAJA",9,2020,"Mixed","Doubles",2,2,0,84,52,32
+"485","ZHENG Siwei","HUANG Yaqiong","WANG Yilyu","HUANG Dongping",9,2020,"Mixed","Doubles",2,2,0,84,49,35
+"486","Kyohei YAMASHITA","Naru SHINOYA","Mathias CHRISTIANSEN","Alexandra BØJE",11,2020,"Mixed","Doubles",1,1,0,72,59,13
+"487","Marcus ELLIS","Lauren SMITH","Gregory MAIRS","Victoria WILLIAMS",12,2020,"Mixed","Doubles",1,1,0,69,54,15
+"488","Mathias BAY-SMIDT","Rikke SØBY","Vladimir IVANOV","Ekaterina BOLOTOVA",13,2020,"Mixed","Doubles",1,1,0,68,59,9
+"489","Marcus ELLIS","Lauren SMITH","TANG Chun Man","TSE Ying Suet",14,2020,"Mixed","Doubles",1,1,0,67,57,10
+"490","CHOI SolGyu","SHIN Seung Chan","WANG Chi-Lin","CHENG Chi Ya",15,2020,"Mixed","Doubles",1,1,0,65,47,18
+"491","Marcus ELLIS","Lauren SMITH","GOH Soon Huat","LAI Shevon Jemie",16,2020,"Mixed","Doubles",1,1,0,64,62,2
+"492","Gregory MAIRS","Victoria WILLIAMS","Eloi ADAM","Margot LAMBERT",16,2020,"Mixed","Doubles",1,1,0,64,61,3
+"493","Philip BIRKER","Katharina HOCHMEIR","Alexander DUNN","Ciara TORRANCE",20,2020,"Mixed","Doubles",1,1,0,63,63,0
+"494","Niclas NOHR","Amalie MAGELUND","Adam HALL","Julie MACPHERSON",20,2020,"Mixed","Doubles",1,1,0,63,53,10
+"495","Hafiz FAIZAL","Gloria Emanuelle WIDJAJA","TAN Kian Meng","LAI Pei Jing",20,2020,"Mixed","Doubles",1,1,0,63,59,4
+"496","Praveen JORDAN","Melati Daeva OKTAVIANTI","Marcus ELLIS","Lauren SMITH",20,2020,"Mixed","Doubles",1,1,0,63,49,14
+"497","Alexander DUNN","Ciara TORRANCE","Philip BIRKER","Katharina HOCHMEIR",20,2020,"Mixed","Doubles",1,0,1,63,63,0
+"498","Adnan MAULANA","Mychelle Crhystine BANDASO","FENG Yanzhe","ZHANG Shuxian",24,2020,"Mixed","Doubles",1,1,0,62,54,8
+"499","Thom GICQUEL","Delphine DELRUE","Mathias THYRRI","Mai SURROW",24,2020,"Mixed","Doubles",1,1,0,62,51,11
+"500","Chris ADCOCK","Gabrielle ADCOCK","Takuro HOKI","Wakana NAGAHARA",24,2020,"Mixed","Doubles",1,1,0,62,57,5
+"501","CHEN Yufei",NA,"Sayaka TAKAHASHI",NA,1,2019,"Women","Singles",5,5,0,242,163,79
+"502","CHEN Yufei",NA,"Akane YAMAGUCHI",NA,2,2019,"Women","Singles",5,3,2,227,204,23
+"503","TAI Tzu Ying",NA,"Nozomi OKUHARA",NA,3,2019,"Women","Singles",5,3,2,223,206,17
+"504","Ratchanok INTANON",NA,"TAI Tzu Ying",NA,4,2019,"Women","Singles",5,2,3,222,210,12
+"505","TAI Tzu Ying",NA,"Busanan ONGBAMRUNGPHAN",NA,5,2019,"Women","Singles",5,5,0,210,139,71
+"506","TAI Tzu Ying",NA,"CHEN Yufei",NA,5,2019,"Women","Singles",5,3,2,210,208,2
+"507","Ratchanok INTANON",NA,"CHEN Xiaoxin",NA,7,2019,"Women","Singles",5,4,1,207,172,35
+"508","Nozomi OKUHARA",NA,"Ratchanok INTANON",NA,8,2019,"Women","Singles",5,3,2,203,196,7
+"509","Ratchanok INTANON",NA,"Gregoria Mariska TUNJUNG",NA,9,2019,"Women","Singles",4,4,0,201,166,35
+"510","Busanan ONGBAMRUNGPHAN",NA,"CAI Yanyan",NA,10,2019,"Women","Singles",4,4,0,200,158,42
+"511","CHEN Yufei",NA,"Ratchanok INTANON",NA,11,2019,"Women","Singles",4,4,0,196,163,33
+"512","Akane YAMAGUCHI",NA,"HE Bingjiao",NA,12,2019,"Women","Singles",4,4,0,191,140,51
+"513","Ratchanok INTANON",NA,"Nitchaon JINDAPOL",NA,13,2019,"Women","Singles",4,4,0,186,132,54
+"514","Akane YAMAGUCHI",NA,"TAI Tzu Ying",NA,14,2019,"Women","Singles",4,1,3,181,178,3
+"515","Akane YAMAGUCHI",NA,"Pornpawee CHOCHUWONG",NA,15,2019,"Women","Singles",4,2,2,176,171,5
+"516","HE Bingjiao",NA,"Nitchaon JINDAPOL",NA,16,2019,"Women","Singles",4,3,1,175,154,21
+"517","TAI Tzu Ying",NA,"Gregoria Mariska TUNJUNG",NA,17,2019,"Women","Singles",4,4,0,172,141,31
+"518","CHEN Yufei",NA,"SUNG Ji Hyun",NA,18,2019,"Women","Singles",4,4,0,168,127,41
+"519","Ruselli HARTAWAN",NA,"CHIANG Ying Li",NA,19,2019,"Women","Singles",3,3,0,167,139,28
+"520","Nozomi OKUHARA",NA,"HE Bingjiao",NA,20,2019,"Women","Singles",4,3,1,165,132,33
+"521","LI Xuerui",NA,"Sayaka TAKAHASHI",NA,21,2019,"Women","Singles",4,3,1,163,148,15
+"522","CHEN Yufei",NA,"Michelle LI",NA,21,2019,"Women","Singles",3,3,0,163,133,30
+"523","HE Bingjiao",NA,"Fitriani FITRIANI",NA,23,2019,"Women","Singles",3,3,0,162,122,40
+"524","Nozomi OKUHARA",NA,"Busanan ONGBAMRUNGPHAN",NA,23,2019,"Women","Singles",3,3,0,162,117,45
+"525","Akane YAMAGUCHI",NA,"LI Xuerui",NA,25,2019,"Women","Singles",3,2,1,157,134,23
+"526","Yuki FUKUSHIMA","Sayaka HIROTA","CHEN Qingchen","JIA Yifan",1,2019,"Women","Doubles",7,5,2,322,262,60
+"527","KIM So Yeong","KONG Hee Yong","Mayu MATSUMOTO","Wakana NAGAHARA",2,2019,"Women","Doubles",6,4,2,280,268,12
+"528","CHEN Qingchen","JIA Yifan","Mayu MATSUMOTO","Wakana NAGAHARA",3,2019,"Women","Doubles",5,4,1,249,220,29
+"529","Yuki FUKUSHIMA","Sayaka HIROTA","DU Yue","LI Yinhui",4,2019,"Women","Doubles",5,4,1,239,196,43
+"530","Mayu MATSUMOTO","Wakana NAGAHARA","Yuki FUKUSHIMA","Sayaka HIROTA",5,2019,"Women","Doubles",5,4,1,235,218,17
+"531","LEE So Hee","SHIN Seung Chan","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI",6,2019,"Women","Doubles",5,5,0,231,162,69
+"532","KIM So Yeong","KONG Hee Yong","CHEN Qingchen","JIA Yifan",7,2019,"Women","Doubles",5,3,2,230,221,9
+"533","Misaki MATSUTOMO","Ayaka TAKAHASHI","KIM So Yeong","KONG Hee Yong",8,2019,"Women","Doubles",5,4,1,220,180,40
+"534","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI","CHOW Mei Kuan","LEE Meng Yean",9,2019,"Women","Doubles",4,3,1,218,193,25
+"535","Yuki FUKUSHIMA","Sayaka HIROTA","Ekaterina BOLOTOVA","Alina DAVLETOVA",10,2019,"Women","Doubles",5,5,0,210,101,109
+"536","Mayu MATSUMOTO","Wakana NAGAHARA","LI Wenmei","ZHENG Yu",11,2019,"Women","Doubles",4,4,0,209,185,24
+"537","CHANG Ye Na","JUNG Kyung Eun","Yuki FUKUSHIMA","Sayaka HIROTA",12,2019,"Women","Doubles",4,2,2,206,196,10
+"538","LI Wenmei","ZHENG Yu","LEE So Hee","SHIN Seung Chan",13,2019,"Women","Doubles",4,2,2,205,199,6
+"539","LEE So Hee","SHIN Seung Chan","Mayu MATSUMOTO","Wakana NAGAHARA",13,2019,"Women","Doubles",4,3,1,205,181,24
+"540","CHEN Qingchen","JIA Yifan","Greysia POLII","Apriyani RAHAYU",15,2019,"Women","Doubles",4,3,1,201,183,18
+"541","KIM So Yeong","KONG Hee Yong","LI Wenmei","ZHENG Yu",16,2019,"Women","Doubles",4,3,1,194,182,12
+"542","Misaki MATSUTOMO","Ayaka TAKAHASHI","Puttita SUPAJIRAKUL","Sapsiree TAERATTANACHAI",17,2019,"Women","Doubles",4,3,1,187,159,28
+"543","Misaki MATSUTOMO","Ayaka TAKAHASHI","DU Yue","LI Yinhui",18,2019,"Women","Doubles",4,2,2,185,174,11
+"544","Mayu MATSUMOTO","Wakana NAGAHARA","LIU Xuanxuan","XIA Yuting",19,2019,"Women","Doubles",4,4,0,184,142,42
+"545","CHEN Qingchen","JIA Yifan","DU Yue","LI Yinhui",19,2019,"Women","Doubles",4,4,0,184,139,45
+"546","Yuki FUKUSHIMA","Sayaka HIROTA","Ayako SAKURAMOTO","Yukiko TAKAHATA",21,2019,"Women","Doubles",4,4,0,180,130,50
+"547","Misaki MATSUTOMO","Ayaka TAKAHASHI","Greysia POLII","Apriyani RAHAYU",22,2019,"Women","Doubles",3,2,1,178,172,6
+"548","Greysia POLII","Apriyani RAHAYU","Ayako SAKURAMOTO","Yukiko TAKAHATA",23,2019,"Women","Doubles",4,3,1,175,156,19
+"549","LEE So Hee","SHIN Seung Chan","KIM So Yeong","KONG Hee Yong",23,2019,"Women","Doubles",3,2,1,175,163,12
+"550","Yuki FUKUSHIMA","Sayaka HIROTA","LEE So Hee","SHIN Seung Chan",25,2019,"Women","Doubles",4,3,1,170,152,18
+"551","Kento MOMOTA",NA,"Anthony Sinisuka GINTING",NA,1,2019,"Men","Singles",7,6,1,347,309,38
+"552","CHOU Tien Chen",NA,"Kenta NISHIMOTO",NA,2,2019,"Men","Singles",5,4,1,261,229,32
+"553","Jonatan CHRISTIE",NA,"Anders ANTONSEN",NA,3,2019,"Men","Singles",6,4,2,248,231,17
+"554","Jonatan CHRISTIE",NA,"Jan O JORGENSEN",NA,4,2019,"Men","Singles",5,5,0,230,163,67
+"555","Viktor AXELSEN",NA,"CHEN Long",NA,5,2019,"Men","Singles",5,2,3,224,209,15
+"556","Kento MOMOTA",NA,"Hans-Kristian Solberg VITTINGHUS",NA,6,2019,"Men","Singles",4,4,0,211,176,35
+"557","NG Ka Long Angus",NA,"Anthony Sinisuka GINTING",NA,7,2019,"Men","Singles",4,3,1,209,198,11
+"558","Kanta TSUNEYAMA",NA,"Sitthikom THAMMASIN",NA,8,2019,"Men","Singles",4,3,1,204,175,29
+"559","Kento MOMOTA",NA,"Viktor AXELSEN",NA,9,2019,"Men","Singles",4,4,0,195,154,41
+"560","Anthony Sinisuka GINTING",NA,"CHEN Long",NA,10,2019,"Men","Singles",5,3,2,194,165,29
+"561","Viktor AXELSEN",NA,"Kanta TSUNEYAMA",NA,11,2019,"Men","Singles",4,3,1,188,151,37
+"562","Kento MOMOTA",NA,"SAI PRANEETH B.",NA,11,2019,"Men","Singles",4,4,0,188,126,62
+"563","Kento MOMOTA",NA,"WANG Tzu Wei",NA,13,2019,"Men","Singles",4,4,0,183,133,50
+"564","Kantaphon WANGCHAROEN",NA,"HUANG Yuxiang",NA,14,2019,"Men","Singles",4,3,1,181,158,23
+"565","LEE Zii Jia",NA,"CHEN Long",NA,15,2019,"Men","Singles",3,1,2,175,170,5
+"566","CHOU Tien Chen",NA,"Kantaphon WANGCHAROEN",NA,16,2019,"Men","Singles",3,2,1,172,167,5
+"567","Tommy SUGIARTO",NA,"LU Guangzu",NA,17,2019,"Men","Singles",4,1,3,169,165,4
+"568","Anthony Sinisuka GINTING",NA,"CHOU Tien Chen",NA,17,2019,"Men","Singles",3,2,1,169,162,7
+"569","Viktor AXELSEN",NA,"Jonatan CHRISTIE",NA,19,2019,"Men","Singles",3,1,2,164,156,8
+"570","CHOU Tien Chen",NA,"LIN Dan",NA,20,2019,"Men","Singles",3,2,1,163,131,32
+"571","Kento MOMOTA",NA,"LEE Zii Jia",NA,22,2019,"Men","Singles",4,4,0,158,100,58
+"572","Sourabh VERMA",NA,"SUN Feixiang",NA,22,2019,"Men","Singles",3,3,0,158,123,35
+"573","Anthony Sinisuka GINTING",NA,"Kenta NISHIMOTO",NA,22,2019,"Men","Singles",3,2,1,158,136,22
+"574","CHOU Tien Chen",NA,"Jonatan CHRISTIE",NA,24,2019,"Men","Singles",3,2,1,157,133,24
+"575","Kento MOMOTA",NA,"Anders ANTONSEN",NA,25,2019,"Men","Singles",3,2,1,156,119,37
+"576","Mohammad AHSAN","Hendra SETIAWAN","LEE Yang","WANG Chi-Lin",1,2019,"Men","Doubles",6,4,2,295,271,24
+"577","Takeshi KAMURA","Keigo SONODA","Takuro HOKI","Yugo KOBAYASHI",2,2019,"Men","Doubles",6,4,2,287,272,15
+"578","Takeshi KAMURA","Keigo SONODA","CHOI SolGyu","SEO Seung Jae",3,2019,"Men","Doubles",6,4,2,286,247,39
+"579","Hiroyuki ENDO","Yuta WATANABE","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO",4,2019,"Men","Doubles",5,5,0,275,213,62
+"580","Hiroyuki ENDO","Yuta WATANABE","LI Junhui","LIU Yuchen",5,2019,"Men","Doubles",6,3,3,253,251,2
+"581","LI Junhui","LIU Yuchen","LU Ching Yao","YANG Po Han",6,2019,"Men","Doubles",5,4,1,247,232,15
+"582","Mohammad AHSAN","Hendra SETIAWAN","Hiroyuki ENDO","Yuta WATANABE",7,2019,"Men","Doubles",5,5,0,243,207,36
+"583","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","Fajar ALFIAN","Muhammad Rian ARDIANTO",8,2019,"Men","Doubles",5,3,2,241,215,26
+"584","Mohammad AHSAN","Hendra SETIAWAN","LI Junhui","LIU Yuchen",9,2019,"Men","Doubles",5,4,1,236,192,44
+"585","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","Takeshi KAMURA","Keigo SONODA",10,2019,"Men","Doubles",5,4,1,233,199,34
+"586","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","Mohammad AHSAN","Hendra SETIAWAN",11,2019,"Men","Doubles",5,5,0,229,183,46
+"587","LI Junhui","LIU Yuchen","Aaron CHIA","SOH Wooi Yik",11,2019,"Men","Doubles",4,4,0,229,191,38
+"588","Mohammad AHSAN","Hendra SETIAWAN","Aaron CHIA","SOH Wooi Yik",13,2019,"Men","Doubles",6,4,2,213,187,26
+"589","Takeshi KAMURA","Keigo SONODA","HE Jiting","TAN Qiang",14,2019,"Men","Doubles",4,4,0,207,159,48
+"590","Takeshi KAMURA","Keigo SONODA","GOH V Shem","TAN Wee Kiong",15,2019,"Men","Doubles",4,4,0,206,176,30
+"591","LEE Yang","WANG Chi-Lin","CHOI SolGyu","SEO Seung Jae",16,2019,"Men","Doubles",4,1,3,204,201,3
+"592","Mohammad AHSAN","Hendra SETIAWAN","GOH V Shem","TAN Wee Kiong",17,2019,"Men","Doubles",4,3,1,203,183,20
+"593","Hiroyuki ENDO","Yuta WATANABE","ONG Yew Sin","TEO Ee Yi",18,2019,"Men","Doubles",4,4,0,202,159,43
+"594","Mohammad AHSAN","Hendra SETIAWAN","Takeshi KAMURA","Keigo SONODA",19,2019,"Men","Doubles",4,3,1,197,181,16
+"595","Aaron CHIA","SOH Wooi Yik","Kim ASTRUP","Anders Skaarup RASMUSSEN",20,2019,"Men","Doubles",4,3,1,187,156,31
+"596","GOH V Shem","TAN Wee Kiong","ONG Yew Sin","TEO Ee Yi",21,2019,"Men","Doubles",4,4,0,184,142,42
+"597","Mohammad AHSAN","Hendra SETIAWAN","Mark LAMSFUSS","Marvin SEIDEL",21,2019,"Men","Doubles",4,4,0,184,148,36
+"598","Mathias BOE","Mads CONRAD-PETERSEN","HAN Chengkai","ZHOU Haodong",23,2019,"Men","Doubles",4,3,1,176,154,22
+"599","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","GOH V Shem","TAN Wee Kiong",24,2019,"Men","Doubles",4,4,0,172,132,40
+"600","LEE Yang","WANG Chi-Lin","Vladimir IVANOV","Ivan SOZONOV",25,2019,"Men","Doubles",3,3,0,169,150,19
+"601","ZHENG Siwei","HUANG Yaqiong","Praveen JORDAN","Melati Daeva OKTAVIANTI",1,2019,"Mixed","Doubles",7,5,2,349,313,36
+"602","ZHENG Siwei","HUANG Yaqiong","Yuta WATANABE","Arisa HIGASHINO",2,2019,"Mixed","Doubles",6,5,1,276,244,32
+"603","WANG Yilyu","HUANG Dongping","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI",3,2019,"Mixed","Doubles",6,5,1,265,213,52
+"604","WANG Yilyu","HUANG Dongping","CHAN Peng Soon","GOH Liu Ying",4,2019,"Mixed","Doubles",5,5,0,254,195,59
+"605","Praveen JORDAN","Melati Daeva OKTAVIANTI","Hafiz FAIZAL","Gloria Emanuelle WIDJAJA",5,2019,"Mixed","Doubles",5,4,1,218,196,22
+"606","Rinov RIVALDY","Pitha Haningtyas MENTARI","TAN Kian Meng","LAI Pei Jing",6,2019,"Mixed","Doubles",4,2,2,211,200,11
+"607","ZHENG Siwei","HUANG Yaqiong","WANG Yilyu","HUANG Dongping",7,2019,"Mixed","Doubles",5,4,1,208,185,23
+"608","ZHENG Siwei","HUANG Yaqiong","TAN Kian Meng","LAI Pei Jing",8,2019,"Mixed","Doubles",4,4,0,202,152,50
+"609","Praveen JORDAN","Melati Daeva OKTAVIANTI","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI",9,2019,"Mixed","Doubles",4,3,1,195,161,34
+"610","ZHENG Siwei","HUANG Yaqiong","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI",10,2019,"Mixed","Doubles",5,3,2,194,155,39
+"611","Yuta WATANABE","Arisa HIGASHINO","SEO Seung Jae","CHAE YuJung",11,2019,"Mixed","Doubles",5,3,2,186,169,17
+"612","WANG Yilyu","HUANG Dongping","Praveen JORDAN","Melati Daeva OKTAVIANTI",12,2019,"Mixed","Doubles",4,3,1,184,140,44
+"613","CHAN Peng Soon","GOH Liu Ying","Tontowi AHMAD","Winny Oktavina KANDOW",13,2019,"Mixed","Doubles",3,1,2,173,167,6
+"614","WANG Yilyu","HUANG Dongping","HE Jiting","DU Yue",14,2019,"Mixed","Doubles",4,3,1,171,144,27
+"615","ZHENG Siwei","HUANG Yaqiong","SEO Seung Jae","CHAE YuJung",15,2019,"Mixed","Doubles",4,4,0,170,111,59
+"616","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","Mark LAMSFUSS","Isabel HERTTRICH",16,2019,"Mixed","Doubles",3,3,0,165,121,44
+"617","Marcus ELLIS","Lauren SMITH","Mark LAMSFUSS","Isabel HERTTRICH",17,2019,"Mixed","Doubles",4,3,1,163,145,18
+"618","ZHENG Siwei","HUANG Yaqiong","Hafiz FAIZAL","Gloria Emanuelle WIDJAJA",18,2019,"Mixed","Doubles",3,2,1,161,140,21
+"619","Rodion ALIMOV","Alina DAVLETOVA","Thom GICQUEL","Delphine DELRUE",19,2019,"Mixed","Doubles",3,3,0,160,122,38
+"620","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","LU Kai","CHEN Lu",20,2019,"Mixed","Doubles",3,2,1,157,141,16
+"621","WANG Yilyu","HUANG Dongping","SEO Seung Jae","CHAE YuJung",20,2019,"Mixed","Doubles",3,3,0,157,131,26
+"622","Yuta WATANABE","Arisa HIGASHINO","Praveen JORDAN","Melati Daeva OKTAVIANTI",22,2019,"Mixed","Doubles",3,2,1,153,138,15
+"623","GOH Soon Huat","LAI Shevon Jemie","Marcus ELLIS","Lauren SMITH",23,2019,"Mixed","Doubles",3,3,0,150,134,16
+"624","Hafiz FAIZAL","Gloria Emanuelle WIDJAJA","Tontowi AHMAD","Winny Oktavina KANDOW",24,2019,"Mixed","Doubles",3,2,1,149,131,18
+"625","Praveen JORDAN","Melati Daeva OKTAVIANTI","Yuki KANEKO","Misaki MATSUTOMO",24,2019,"Mixed","Doubles",3,1,2,149,143,6
+"626","CHEN Yufei",NA,"Akane YAMAGUCHI",NA,1,2018,"Women","Singles",8,4,4,383,357,26
+"627","TAI Tzu Ying",NA,"CHEN Yufei",NA,2,2018,"Women","Singles",6,6,0,324,259,65
+"628","PUSARLA V. Sindhu",NA,"Akane YAMAGUCHI",NA,3,2018,"Women","Singles",6,5,1,289,255,34
+"629","TAI Tzu Ying",NA,"HE Bingjiao",NA,4,2018,"Women","Singles",6,5,1,282,211,71
+"630","CHEN Yufei",NA,"Ratchanok INTANON",NA,5,2018,"Women","Singles",5,3,2,275,262,13
+"631","TAI Tzu Ying",NA,"Saina NEHWAL",NA,6,2018,"Women","Singles",6,6,0,272,200,72
+"632","CHEN Yufei",NA,"SUNG Ji Hyun",NA,7,2018,"Women","Singles",5,5,0,251,191,60
+"633","Nozomi OKUHARA",NA,"Saina NEHWAL",NA,8,2018,"Women","Singles",4,2,2,224,219,5
+"634","CHEN Yufei",NA,"Nitchaon JINDAPOL",NA,9,2018,"Women","Singles",4,4,0,220,180,40
+"635","Nozomi OKUHARA",NA,"HE Bingjiao",NA,10,2018,"Women","Singles",4,4,0,206,147,59
+"636","PUSARLA V. Sindhu",NA,"Beiwen ZHANG",NA,11,2018,"Women","Singles",4,2,2,199,161,38
+"637","Nozomi OKUHARA",NA,"Pornpawee CHOCHUWONG",NA,12,2018,"Women","Singles",4,3,1,191,156,35
+"638","CAI Yanyan",NA,"GAO Fangjie",NA,13,2018,"Women","Singles",4,2,2,190,182,8
+"639","Akane YAMAGUCHI",NA,"Nozomi OKUHARA",NA,14,2018,"Women","Singles",4,2,2,186,185,1
+"640","TAI Tzu Ying",NA,"Soniia CHEAH",NA,14,2018,"Women","Singles",4,4,0,186,135,51
+"641","Nozomi OKUHARA",NA,"CHEUNG Ngan Yi",NA,16,2018,"Women","Singles",4,4,0,182,133,49
+"642","Akane YAMAGUCHI",NA,"HE Bingjiao",NA,16,2018,"Women","Singles",4,3,1,182,166,16
+"643","Saina NEHWAL",NA,"Akane YAMAGUCHI",NA,18,2018,"Women","Singles",4,1,3,180,178,2
+"644","Akane YAMAGUCHI",NA,"Beiwen ZHANG",NA,19,2018,"Women","Singles",4,2,2,179,148,31
+"645","PUSARLA V. Sindhu",NA,"Nozomi OKUHARA",NA,19,2018,"Women","Singles",4,3,1,179,172,7
+"646","Mia BLICHFELDT",NA,"Evgeniya KOSETSKAYA",NA,21,2018,"Women","Singles",3,2,1,171,160,11
+"647","KISONA Selvaduray",NA,"Ruselli HARTAWAN",NA,21,2018,"Women","Singles",3,2,1,171,163,8
+"648","Ratchanok INTANON",NA,"Fitriani FITRIANI",NA,24,2018,"Women","Singles",4,4,0,168,98,70
+"649","TAI Tzu Ying",NA,"Akane YAMAGUCHI",NA,24,2018,"Women","Singles",4,2,2,168,160,8
+"650","PUSARLA V. Sindhu",NA,"Nitchaon JINDAPOL",NA,24,2018,"Women","Singles",3,3,0,168,151,17
+"651","Misaki MATSUTOMO","Ayaka TAKAHASHI","Greysia POLII","Apriyani RAHAYU",1,2018,"Women","Doubles",7,6,1,307,276,31
+"652","Nami MATSUYAMA","Chiharu SHIDA","Ayako SAKURAMOTO","Yukiko TAKAHATA",2,2018,"Women","Doubles",5,1,4,247,246,1
+"653","Yuki FUKUSHIMA","Sayaka HIROTA","Greysia POLII","Apriyani RAHAYU",3,2018,"Women","Doubles",5,5,0,231,161,70
+"654","Misaki MATSUTOMO","Ayaka TAKAHASHI","Mayu MATSUMOTO","Wakana NAGAHARA",4,2018,"Women","Doubles",5,3,2,213,202,11
+"655","Yuki FUKUSHIMA","Sayaka HIROTA","Mayu MATSUMOTO","Wakana NAGAHARA",4,2018,"Women","Doubles",4,2,2,213,200,13
+"656","LEE So Hee","SHIN Seung Chan","Gabriela STOEVA","Stefani STOEVA",6,2018,"Women","Doubles",5,3,2,207,191,16
+"657","Yuki FUKUSHIMA","Sayaka HIROTA","Della Destiara HARIS","Rizki Amelia PRADIPTA",7,2018,"Women","Doubles",4,4,0,195,155,40
+"658","Misaki MATSUTOMO","Ayaka TAKAHASHI","Della Destiara HARIS","Rizki Amelia PRADIPTA",8,2018,"Women","Doubles",4,4,0,187,114,73
+"659","CHEN Qingchen","JIA Yifan","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI",9,2018,"Women","Doubles",4,4,0,186,149,37
+"660","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI","Maiken FRUERGAARD","Sara THYGESEN",10,2018,"Women","Doubles",4,3,1,182,150,32
+"661","Misaki MATSUTOMO","Ayaka TAKAHASHI","DU Yue","LI Yinhui",11,2018,"Women","Doubles",4,3,1,174,140,34
+"662","Yuki FUKUSHIMA","Sayaka HIROTA","Jongkolphan KITITHARAKUL","Rawinda PRAJONGJAI",12,2018,"Women","Doubles",4,3,1,172,141,31
+"663","Gabriela STOEVA","Stefani STOEVA","Emilie LEFEL","Anne TRAN",14,2018,"Women","Doubles",4,4,0,168,96,72
+"664","Mayu MATSUMOTO","Wakana NAGAHARA","Gabriela STOEVA","Stefani STOEVA",14,2018,"Women","Doubles",4,4,0,168,109,59
+"665","CHEN Qingchen","JIA Yifan","CHANG Ye Na","JUNG Kyung Eun",14,2018,"Women","Doubles",3,3,0,168,167,1
+"666","Yuki FUKUSHIMA","Sayaka HIROTA","CHEN Qingchen","JIA Yifan",16,2018,"Women","Doubles",4,2,2,159,155,4
+"667","Greysia POLII","Apriyani RAHAYU","LEE So Hee","SHIN Seung Chan",17,2018,"Women","Doubles",3,2,1,157,143,14
+"668","Misaki MATSUTOMO","Ayaka TAKAHASHI","Yuki FUKUSHIMA","Sayaka HIROTA",18,2018,"Women","Doubles",3,1,2,153,147,6
+"669","CHEN Qingchen","JIA Yifan","DU Yue","LI Yinhui",19,2018,"Women","Doubles",4,2,2,148,143,5
+"670","CHANG Ye Na","JUNG Kyung Eun","Yuki FUKUSHIMA","Sayaka HIROTA",19,2018,"Women","Doubles",3,2,1,148,131,17
+"671","Yuki FUKUSHIMA","Sayaka HIROTA","Anggia Shitta AWANDA","Ni Ketut Mahadewi ISTARANI",21,2018,"Women","Doubles",3,3,0,146,128,18
+"672","DU Yue","LI Yinhui","Mayu MATSUMOTO","Wakana NAGAHARA",22,2018,"Women","Doubles",3,2,1,145,131,14
+"673","Misaki MATSUTOMO","Ayaka TAKAHASHI","Ashwini PONNAPPA","REDDY N. Sikki",23,2018,"Women","Doubles",3,3,0,144,102,42
+"674","LEE So Hee","SHIN Seung Chan","Mayu MATSUMOTO","Wakana NAGAHARA",24,2018,"Women","Doubles",3,2,1,143,127,16
+"675","Misaki MATSUTOMO","Ayaka TAKAHASHI","CHEN Qingchen","JIA Yifan",24,2018,"Women","Doubles",3,2,1,143,122,21
+"676","SON Wan Ho",NA,"Kenta NISHIMOTO",NA,1,2018,"Men","Singles",7,5,2,335,320,15
+"677","Kento MOMOTA",NA,"CHOU Tien Chen",NA,2,2018,"Men","Singles",6,5,1,302,259,43
+"678","Kento MOMOTA",NA,"Anthony Sinisuka GINTING",NA,3,2018,"Men","Singles",6,4,2,291,274,17
+"679","CHOU Tien Chen",NA,"Anthony Sinisuka GINTING",NA,4,2018,"Men","Singles",5,3,2,263,249,14
+"680","Anthony Sinisuka GINTING",NA,"CHEN Long",NA,5,2018,"Men","Singles",5,4,1,239,212,27
+"681","SHI Yuqi",NA,"NG Ka Long Angus",NA,6,2018,"Men","Singles",5,4,1,224,162,62
+"682","Kento MOMOTA",NA,"KIDAMBI Srikanth",NA,7,2018,"Men","Singles",5,5,0,222,159,63
+"683","SHI Yuqi",NA,"Anthony Sinisuka GINTING",NA,8,2018,"Men","Singles",4,4,0,218,194,24
+"684","CHOU Tien Chen",NA,"SHI Yuqi",NA,9,2018,"Men","Singles",5,2,3,206,195,11
+"685","Kento MOMOTA",NA,"SON Wan Ho",NA,10,2018,"Men","Singles",5,4,1,203,159,44
+"686","CHOU Tien Chen",NA,"NG Ka Long Angus",NA,11,2018,"Men","Singles",4,3,1,201,186,15
+"687","Jonatan CHRISTIE",NA,"Kenta NISHIMOTO",NA,12,2018,"Men","Singles",4,3,1,191,178,13
+"688","Khosit PHETPRADAB",NA,"LEE Dong Keun",NA,13,2018,"Men","Singles",4,2,2,188,164,24
+"689","Jan O JORGENSEN",NA,"Riichi TAKESHITA",NA,14,2018,"Men","Singles",3,2,1,182,170,12
+"690","CHOU Tien Chen",NA,"LEE Dong Keun",NA,14,2018,"Men","Singles",3,2,1,182,150,32
+"691","KIDAMBI Srikanth",NA,"WONG Wing Ki Vincent",NA,16,2018,"Men","Singles",5,4,1,173,133,40
+"692","SHI Yuqi",NA,"Jonatan CHRISTIE",NA,16,2018,"Men","Singles",3,1,2,173,167,6
+"693","Kento MOMOTA",NA,"CHEN Long",NA,18,2018,"Men","Singles",4,3,1,171,154,17
+"694","CHOU Tien Chen",NA,"Rasmus GEMKE",NA,19,2018,"Men","Singles",4,3,1,170,152,18
+"695","Kento MOMOTA",NA,"SHI Yuqi",NA,20,2018,"Men","Singles",4,3,1,161,141,20
+"696","Sameer VERMA",NA,"Lucas CORVEE",NA,21,2018,"Men","Singles",3,2,1,159,140,19
+"697","Kento MOMOTA",NA,"Anders ANTONSEN",NA,21,2018,"Men","Singles",3,3,0,159,121,38
+"698","Sitthikom THAMMASIN",NA,"Firman Abdul KHOLIK",NA,23,2018,"Men","Singles",3,3,0,156,134,22
+"699","LEE Hyun Il",NA,"Anders ANTONSEN",NA,23,2018,"Men","Singles",3,2,1,156,144,12
+"700","Tommy SUGIARTO",NA,"Kantaphon WANGCHAROEN",NA,25,2018,"Men","Singles",3,3,0,155,127,28
+"701","LIU Cheng","ZHANG Nan","GOH V Shem","TAN Wee Kiong",1,2018,"Men","Doubles",5,2,3,289,278,11
+"702","Takeshi KAMURA","Keigo SONODA","Fajar ALFIAN","Muhammad Rian ARDIANTO",2,2018,"Men","Doubles",5,2,3,230,230,0
+"703","Fajar ALFIAN","Muhammad Rian ARDIANTO","Takeshi KAMURA","Keigo SONODA",2,2018,"Men","Doubles",5,3,2,230,230,0
+"704","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","Mohammad AHSAN","Hendra SETIAWAN",4,2018,"Men","Doubles",4,4,0,207,158,49
+"705","LIU Cheng","ZHANG Nan","LEE Jhe-Huei","LEE Yang",5,2018,"Men","Doubles",4,3,1,199,178,21
+"706","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","HE Jiting","TAN Qiang",6,2018,"Men","Doubles",4,3,1,194,190,4
+"707","Hiroyuki ENDO","Yuta WATANABE","LIAO Min Chun","SU Ching Heng",7,2018,"Men","Doubles",4,1,3,193,183,10
+"708","LI Junhui","LIU Yuchen","Kim ASTRUP","Anders Skaarup RASMUSSEN",8,2018,"Men","Doubles",4,3,1,189,182,7
+"709","Kim ASTRUP","Anders Skaarup RASMUSSEN","HAN Chengkai","ZHOU Haodong",9,2018,"Men","Doubles",4,4,0,185,153,32
+"710","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","LI Junhui","LIU Yuchen",10,2018,"Men","Doubles",4,3,1,177,151,26
+"711","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","HAN Chengkai","ZHOU Haodong",11,2018,"Men","Doubles",4,1,3,176,158,18
+"712","CHEN Hung Ling","WANG Chi-Lin","HE Jiting","TAN Qiang",12,2018,"Men","Doubles",4,2,2,171,165,6
+"713","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","Takeshi KAMURA","Keigo SONODA",14,2018,"Men","Doubles",4,3,1,163,128,35
+"714","LI Junhui","LIU Yuchen","CHEN Hung Ling","WANG Chi-Lin",14,2018,"Men","Doubles",3,3,0,163,120,43
+"715","OU Xuanyi","REN Xiangyu","Min Hyuk KANG","KIM Won Ho",14,2018,"Men","Doubles",3,2,1,163,149,14
+"716","HE Jiting","TAN Qiang","Takuro HOKI","Yugo KOBAYASHI",14,2018,"Men","Doubles",3,3,0,163,145,18
+"717","Mohammad AHSAN","Hendra SETIAWAN","LEE Jhe-Huei","LEE Yang",17,2018,"Men","Doubles",3,2,1,159,145,14
+"718","LI Junhui","LIU Yuchen","LU Ching Yao","YANG Po Han",17,2018,"Men","Doubles",3,3,0,159,136,23
+"719","LI Junhui","LIU Yuchen","Fajar ALFIAN","Muhammad Rian ARDIANTO",19,2018,"Men","Doubles",3,2,1,151,143,8
+"720","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","Satwiksairaj RANKIREDDY","Chirag SHETTY",20,2018,"Men","Doubles",3,3,0,150,117,33
+"721","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","Kim ASTRUP","Anders Skaarup RASMUSSEN",21,2018,"Men","Doubles",3,3,0,147,119,28
+"722","Mathias BOE","Carsten MOGENSEN","Satwiksairaj RANKIREDDY","Chirag SHETTY",21,2018,"Men","Doubles",3,2,1,147,145,2
+"723","Marcus Fernaldi GIDEON","Kevin Sanjaya SUKAMULJO","CHEN Hung Ling","WANG Chi-Lin",23,2018,"Men","Doubles",3,3,0,146,106,40
+"724","Fajar ALFIAN","Muhammad Rian ARDIANTO","ONG Yew Sin","TEO Ee Yi",24,2018,"Men","Doubles",3,2,1,142,125,17
+"725","Takeshi KAMURA","Keigo SONODA","CHEN Hung Ling","WANG Chi-Lin",24,2018,"Men","Doubles",3,3,0,142,114,28
+"726","WANG Yilyu","HUANG Dongping","Yuta WATANABE","Arisa HIGASHINO",1,2018,"Mixed","Doubles",8,7,1,376,297,79
+"727","ZHENG Siwei","HUANG Yaqiong","WANG Yilyu","HUANG Dongping",2,2018,"Mixed","Doubles",7,6,1,339,294,45
+"728","ZHENG Siwei","HUANG Yaqiong","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI",3,2018,"Mixed","Doubles",5,5,0,265,199,66
+"729","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","GOH Soon Huat","LAI Shevon Jemie",4,2018,"Mixed","Doubles",5,3,2,232,208,24
+"730","ZHENG Siwei","HUANG Yaqiong","TANG Chun Man","TSE Ying Suet",5,2018,"Mixed","Doubles",5,4,1,227,163,64
+"731","Marcus ELLIS","Lauren SMITH","Marvin SEIDEL","Linda EFLER",6,2018,"Mixed","Doubles",5,5,0,213,145,68
+"732","Praveen JORDAN","Melati Daeva OKTAVIANTI","Chris ADCOCK","Gabrielle ADCOCK",7,2018,"Mixed","Doubles",4,2,2,199,177,22
+"733","ZHENG Siwei","HUANG Yaqiong","Yuta WATANABE","Arisa HIGASHINO",7,2018,"Mixed","Doubles",4,3,1,199,152,47
+"734","Praveen JORDAN","Melati Daeva OKTAVIANTI","CHAN Peng Soon","GOH Liu Ying",9,2018,"Mixed","Doubles",4,3,1,196,182,14
+"735","WANG Yilyu","HUANG Dongping","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI",10,2018,"Mixed","Doubles",4,2,2,181,178,3
+"736","Yuta WATANABE","Arisa HIGASHINO","TANG Chun Man","TSE Ying Suet",11,2018,"Mixed","Doubles",3,3,0,177,163,14
+"737","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","Chris ADCOCK","Gabrielle ADCOCK",12,2018,"Mixed","Doubles",3,3,0,174,157,17
+"738","ZHENG Siwei","HUANG Yaqiong","Tontowi AHMAD","Liliyana NATSIR",13,2018,"Mixed","Doubles",4,3,1,169,147,22
+"739","SEO Seung Jae","CHAE YuJung","CHAN Peng Soon","GOH Liu Ying",14,2018,"Mixed","Doubles",3,2,1,164,141,23
+"740","ZHENG Siwei","HUANG Yaqiong","Niclas NOHR","Sara THYGESEN",14,2018,"Mixed","Doubles",3,3,0,164,140,24
+"741","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI","CHANG Tak Ching","NG Wing Yung",16,2018,"Mixed","Doubles",3,3,0,162,119,43
+"742","WANG Yilyu","HUANG Dongping","Praveen JORDAN","Melati Daeva OKTAVIANTI",17,2018,"Mixed","Doubles",3,3,0,158,126,32
+"743","Yuta WATANABE","Arisa HIGASHINO","Hafiz FAIZAL","Gloria Emanuelle WIDJAJA",17,2018,"Mixed","Doubles",3,2,1,158,149,9
+"744","Mark LAMSFUSS","Isabel HERTTRICH","LU Kai","CHEN Lu",19,2018,"Mixed","Doubles",4,2,2,156,149,7
+"745","SEO Seung Jae","CHAE YuJung","Dechapol PUAVARANUKROH","Sapsiree TAERATTANACHAI",20,2018,"Mixed","Doubles",3,2,1,153,133,20
+"746","Mark LAMSFUSS","Isabel HERTTRICH","Jacco ARENDS","Selena PIEK",21,2018,"Mixed","Doubles",4,3,1,145,112,33
+"747","ZHENG Siwei","HUANG Yaqiong","ZHANG Nan","LI Yinhui",21,2018,"Mixed","Doubles",3,3,0,145,91,54
+"748","ZHENG Siwei","HUANG Yaqiong","Chris ADCOCK","Gabrielle ADCOCK",23,2018,"Mixed","Doubles",3,3,0,143,100,43
+"749","ZHANG Nan","LI Yinhui","Yuta WATANABE","Arisa HIGASHINO",24,2018,"Mixed","Doubles",3,2,1,136,122,14
+"750","ZHENG Siwei","HUANG Yaqiong","CHAN Peng Soon","GOH Liu Ying",25,2018,"Mixed","Doubles",3,2,1,135,128,7
