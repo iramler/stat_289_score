@@ -1,0 +1,13 @@
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+ncaa_gymnastics_data <- read.csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/gymnastics_module/Exploration/ncaa_gymnastics.csv")
+```
+
+```{r}
+ncaa_gymnastics_data %>% ggplot()
+```
+

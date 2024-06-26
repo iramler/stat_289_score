@@ -1,0 +1,338 @@
+```{r}
+library(tidyverse)
+install.packages("rvest")
+library(rvest)
+library(data.table)
+```
+
+```{r}
+#2024 
+url <- "https://en.wikipedia.org/wiki/2024_NCAA_women%27s_gymnastics_tournament#"
+
+webpage <- read_html(url)
+
+table <- webpage %>%
+  html_nodes("table.wikitable") %>%
+  html_table(fill = TRUE)
+
+df2024 <- table[[20]]
+
+names(df2024) <- c("Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")
+
+df2024 <- df2024 %>%
+  filter(Team == "LSU" | Team == "California" | Team =="Utah" | Team == "Florida") %>%
+  mutate(
+    Rank = seq(1, n(), by=1),
+    Year = 2024
+  )
+
+df2024 <- df2024[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")]
+
+```
+
+```{r}
+#2023 
+
+url1 <- "https://www.sportingnews.com/us/other-sports/news/ncaa-gymnastics-results-scores-winners-2023-championship-finals/i3azoelxx5azmksggozx5tjf"
+
+webpage <- read_html(url1)
+
+table_data <- webpage %>%
+  html_nodes("table") %>%  # Select all table nodes
+  .[[1]] %>%  # Select the first table (or adjust the index as necessary)
+  html_table(fill = TRUE)
+
+# Convert the list to a data frame
+
+df2023 <- table_data
+
+df2023 <- df2023 %>%  mutate(
+    Rank = seq(1, n(), by=1),
+    Year = 2023
+  ) %>%
+  rename(
+    Bar = Bars
+  )
+
+df2023 <- df2023[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")]
+
+```
+
+```{r}
+#2022 
+url2 <- "https://en.wikipedia.org/wiki/2022_NCAA_women%27s_gymnastics_tournament"
+
+webpage <- read_html(url2)
+
+table <- webpage %>%
+  html_nodes("table.wikitable") %>%
+  html_table(fill = TRUE)
+
+df2022 <- table[[19]]
+
+names(df2022) <- c("Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")
+
+df2022 <- df2022 %>%
+  filter(Team == "Oklahoma" | Team == "Auburn" | Team =="Utah" | Team == "Florida") %>%
+  mutate(
+    Rank = seq(1, n(), by=1),
+    Year = 2022
+  )
+
+df2022 <- df2022[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")]
+
+```
+
+```{r}
+#2021
+
+url3 <- "https://en.wikipedia.org/wiki/2021_NCAA_women%27s_gymnastics_tournament"
+webpage <- read_html(url3)
+
+table <- webpage %>%
+  html_nodes("table.wikitable") %>%
+  html_table(fill = TRUE)
+
+df2021 <- table[[3]]
+
+names(df2021) <- c("Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")
+
+df2021 <- df2021 %>%
+  filter(Team == "Oklahoma" | Team == "Michigan" | Team =="Utah" | Team == "Florida") %>%
+  mutate(
+    Rank = seq(1, n(), by=1),
+    Year = 2021
+  )
+
+df2021 <- df2021[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")]
+
+```
+
+```{r}
+#2019
+url4 <- "https://en.wikipedia.org/wiki/2019_NCAA_women%27s_gymnastics_tournament"
+
+webpage <- read_html(url4)
+
+table <- webpage %>%
+  html_nodes("table.wikitable") %>%
+  html_table(fill = TRUE)
+
+df2019 <- table[[3]]
+
+df2019 <- df2019 %>%
+  rename(
+    Bar = `Uneven bars`,
+    Beam = `Balance beam`,
+    Total = Totals
+  ) %>%
+  mutate(
+    Rank = seq(1, n(), by=1),
+    Year = 2019
+  )
+
+df2019 <- df2019[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")]
+
+```
+
+```{r}
+#2018
+
+url5 <- "https://en.wikipedia.org/wiki/2018_NCAA_women%27s_gymnastics_tournament"
+
+webpage <- read_html(url5)
+
+table <- webpage %>%
+  html_nodes("table.wikitable") %>%
+  html_table(fill = TRUE)
+
+df2018 <- table[[1]]
+
+names(df2018) <- c("Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")
+
+df2018 <- df2018 %>%
+  filter(Team == "UCLA" | Team == "Oklahoma" | Team =="Florida" | Team == "LSU" | Team == "Nebraska" | Team == "Utah") %>%
+  mutate(
+    Rank = seq(1, n(), by=1),
+    Year = 2018
+  ) %>% filter(Rank <=4)
+
+
+df2018 <- df2018[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")]
+
+```
+
+
+```{r}
+# 2017 
+df2017 <- data.table(Rank = numeric(), Team = character(), Vault = numeric(), Bar = numeric(), Beam = numeric(), Floor = numeric(), Total = numeric(), Year = numeric())
+df2017 <- rbind(df2017, data.table(Rank = 1,
+                                   Team = "Oklahoma",
+                                   Vault = 49.4875,
+                                   Bar = 49.5875,
+                                   Beam = 49.7000,
+                                   Floor = 49.6125,
+                                   Total = 198.3875,
+                                   Year = 2017))
+df2017 <- rbind(df2017, data.table(Rank = 2,
+                                   Team = "LSU",
+                                   Vault = 49.3,
+                                   Bar = 49.3875,
+                                   Beam = 49.7250,
+                                   Floor = 49.3250,
+                                   Total = 197.7375,
+                                   Year = 2017))
+df2017 <- rbind(df2017, data.table(Rank = 3,
+                                   Team = "Florida",
+                                   Vault = 49.3625,
+                                   Bar = 49.5375,
+                                   Beam = 49.3000,
+                                   Floor = 49.5,
+                                   Total = 197.7,
+                                   Year = 2017))
+df2017 <- rbind(df2017, data.table(Rank = 4,
+                                   Team = "UCLA",
+                                   Vault = 49.0,
+                                   Bar = 49.4375,
+                                   Beam = 49.4875,
+                                   Floor = 49.3375,
+                                   Total = 197.2625,
+                                   Year = 2017))
+
+df2017 <- df2017[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")]
+
+```
+
+```{r}
+#2016
+
+df2016 <- data.table(Rank = numeric(), Team = character(), Vault = numeric(), Bar = numeric(), Beam = numeric(), Floor = numeric(), Total = numeric(), Year = numeric())
+df2016 <- rbind(df2016, data.table(Rank = 1,
+                                   Team = "Oklahoma",
+                                   Vault = 49.2250,
+                                   Bar = 49.4500,
+                                   Beam = 49.4250,
+                                   Floor = 49.5750,
+                                   Total = 197.6750,
+                                   Year = 2016))
+df2016 <- rbind(df2016, data.table(Rank = 2,
+                                   Team = "LSU",
+                                   Vault = 49.5250,
+                                   Bar = 49.1250,
+                                   Beam = 49.3375,
+                                   Floor = 49.4625,
+                                   Total = 197.4500,
+                                   Year = 2016))
+df2016 <- rbind(df2016, data.table(Rank = 3,
+                                   Team = "Alabama",
+                                   Vault = 49.3250,
+                                   Bar = 49.2875,
+                                   Beam = 49.4500,
+                                   Floor = 49.3750,
+                                   Total = 197.4375,
+                                   Year = 2016))
+df2016 <- rbind(df2016, data.table(Rank = 4,
+                                   Team = "Florida",
+                                   Vault = 49.3250,
+                                   Bar = 49.4500,
+                                   Beam = 49.2125,
+                                   Floor = 49.3625,
+                                   Total = 197.3500,
+                                   Year = 2016))
+
+df2016 <- df2016[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")]
+
+```
+
+```{r}
+#2015
+
+df2015 <- data.table(Rank = numeric(), Team = character(), Vault = numeric(), Bar = numeric(), Beam = numeric(), Floor = numeric(), Total = numeric(), Year = numeric())
+df2015 <- rbind(df2015, data.table(Rank = 1,
+                                   Team = "Florida",
+                                   Vault = 49.450,
+                                   Bar = 49.450,
+                                   Beam = 49.300,
+                                   Floor = 49.650,
+                                   Total = 197.850,
+                                   Year = 2015))
+df2015 <- rbind(df2015, data.table(Rank = 2,
+                                   Team = "Utah",
+                                   Vault = 49.550,
+                                   Bar = 49.575,
+                                   Beam = 49.250,
+                                   Floor = 49.425,
+                                   Total = 197.800,
+                                   Year = 2015))
+df2015 <- rbind(df2015, data.table(Rank = 3,
+                                   Team = "Oklahoma",
+                                   Vault = 49.475,
+                                   Bar = 49.300,
+                                   Beam = 49.575,
+                                   Floor = 49.175,
+                                   Total = 197.525,
+                                   Year = 2015))
+df2015 <- rbind(df2015, data.table(Rank = 4,
+                                   Team = "Alabama",
+                                   Vault = 49.425,
+                                   Bar = 49.275,
+                                   Beam = 49.200,
+                                   Floor = 49.375,
+                                   Total = 197.275,
+                                   Year = 2015))
+
+df2015 <- df2015[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")]
+
+```
+
+```{r}
+#2014
+
+df2014 <- data.table(Rank = numeric(), Team = character(), Vault = numeric(), Bar = numeric(), Beam = numeric(), Floor = numeric(), Total = numeric(), Year = numeric())
+df2014 <- rbind(df2014, data.table(Rank = 1,
+                                   Team = "Oklahoma",
+                                   Vault = 49.325,
+                                   Bar = 49.250,
+                                   Beam = 49.350,
+                                   Floor = 49.575,
+                                   Total = 197.500,
+                                   Year = 2014))
+df2014 <- rbind(df2014, data.table(Rank = 1,
+                                   Team = "Florida",
+                                   Vault = 49.375,
+                                   Bar = 49.550,
+                                   Beam = 49.300,
+                                   Floor = 49.425,
+                                   Total = 197.650,
+                                   Year = 2014))
+df2014 <- rbind(df2014, data.table(Rank = 3,
+                                   Team = "Alabama",
+                                   Vault = 49.350,
+                                   Bar = 49.375,
+                                   Beam = 49.350,
+                                   Floor = 49.575,
+                                   Total = 197.650,
+                                   Year = 2014))
+df2014 <- rbind(df2014, data.table(Rank = 4,
+                                   Team = "LSU",
+                                   Vault = 49.350,
+                                   Bar = 49.225,
+                                   Beam = 49.175,
+                                   Floor = 49.350,
+                                   Total = 197.100,
+                                   Year = 2014))
+
+df2014 <- df2014[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "Total")]
+
+```
+
+```{r}
+ncaa_gymnastics_data <- bind_rows(df2014,df2015,df2016,df2017,df2018,df2019,df2021,df2022,df2023,df2024)
+
+```
+
+```{r}
+
+write_csv(ncaa_gymnastics_data, file = "/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/gymnastics_module/Exploration/ncaa_gymnastics.csv")
+```
+
