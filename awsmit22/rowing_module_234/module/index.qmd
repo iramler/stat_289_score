@@ -91,12 +91,12 @@ Download data:
 
 ### Materials
 
-We provide editable MS Word handouts along with their solutions.
+We provide editable qmd files along with their solutions.
 
 [Worksheet](rowing_dataprep_worksheet.qmd)
 
 [Worksheet Answers](rowing_dataprep_worksheet_ANSWERS.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-This dataprep worksheet helps students familiarize themselves with the use of basic Dplyr tools to structure data in a way that is easier to analyze. In doing so, it enables to students to draw conclusions about different patterns in rowing as an Olympic sport when it comes to medalling. 
+This dataprep worksheet helps students familiarize themselves with the use of basic dplyr tools to structure data in a way that is easier to analyze. In doing so, it enables to students to draw conclusions about different patterns in rowing as an Olympic sport when it comes to medaling. 
 :::
