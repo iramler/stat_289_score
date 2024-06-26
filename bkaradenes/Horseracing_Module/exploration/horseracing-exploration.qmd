@@ -4,6 +4,14 @@ author: "Brendan Karadenes"
 format: html
 ---
 
+```{r}
+library(tidyverse)
+library(here)
+horseracing <- read.csv(here("bkaradenes/Horseracing_Module/exploration/triple-crown.csv"))
+```
+
+
+
 # Impact of Poor Track Conditions on low odds horse winning
 
 ```{r}
@@ -49,9 +57,42 @@ ggplot(data = first, mapping = aes(x = track_condition, y = Odds)) +
   geom_boxplot()
 ```
 
+```{r}
+ggplot(data = horceracing, mapping = aes(x = track_condition, y = final_place)) +
+  geom_boxplot() +
+  theme_minimal()
+```
+
+```{r}
+
+horseracing <- horceracing %>%
+  mutate(top_3 = ifelse(final_place <= 3, 1, 0))
 
 
+model <- glm(top_3 ~ Odds + high_temp + low_temp + precipitation_24hrs, data = horseracing, family = binomial)
 
 
+summary(model)
 
+```
+
+```{r}
+favorites <- horseracing %>%
+  filter(Odds<=10)
+```
+
+```{r}
+underdogs <- horseracing %>%
+  filter(Odds>=20)
+```
+
+```{r}
+moda = glm(top_3 ~ Odds + track_condition, data = favorites)
+summary(moda)
+```
+
+```{r}
+modb = glm(top_3~ Odds + track_condition, data = underdogs)
+summary(modb)
+```
 

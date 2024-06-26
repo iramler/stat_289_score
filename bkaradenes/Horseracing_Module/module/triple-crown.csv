@@ -1,0 +1,628 @@
+"final_place","PP","Horse","Jockey","Trainer","Odds","Win","Place","Show","year","race","high_temp","low_temp","precipitation_24hrs","weather","track_condition","attendance"
+1,"10","Giacomo","Mike Smith","John Shirreffs",51,102.6,45.8,19.8,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+2,"18","Closing Argument","Cornelio Velasquez","Kiaran McLaughlin",72,0,70,24.8,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+3,"12","Afleet Alex","J Rose","Tim Ritchey",5.5,0,0,4.6,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+4,"17","Don't Get Mad","T C Baze","Ronald Ellis",30,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+5,"20","Buzzards Bay","Mark Guidry","Jeff Mullins",47,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+6,"14","Wilko","Corey Nakatani","Craig Dollase",22,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+7,"16","Bellamy Road","J J Castellano","Nick Zito",3.5,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+8,"2","Andromeda's Hero","Rafael Bejarano","Nick Zito",58,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+9,"7","Flower Alley","Jorge Chavez","Todd Pletcher",42,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+10,"11","High Fly","J.D. Bailey","Nick Zito",8,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+11,"9","Greeley's Galaxy","Kent Desormeaux","Warren Stute",22,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+12,"5","Coin Silver","P A Valenzuela","Todd Pletcher",39,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+13,"8","Greater Good","J. McKee","Robert Holthus",59,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+14,"4","Noble Causeway","Gary Stevens","Nick Zito",13,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+15,"3","Sun King","Edgar Prado","Nick Zito",16,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+16,"13","Spanish Chestnut","Joe Bravo","Patrick Biancone",72,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+17,"1","Sort it out","Brice Blanc","Bob Baffert",63,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+18,"19","Going Wild","J Valdivia","D. Wayne Lukas",60,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+19,"15","Bandini","J R Velazquez","Todd Pletcher",8,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+20,"6","High Limit","Ramon Dominguez","Robert Frankel",23,0,0,0,2005,"Kentucky Derby",80,48,0,"Cloudy","Fast",156435
+1,"8","Barbaro","Edgar Prado","Michael Matz",7,14.2,8,6,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+2,"13","Bluegrass Cat","Ramon Dominguez","Todd Pletcher",31,0,28.4,15.4,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+3,"2","Steppenwolfer","Robby Albarado","Danny Peitz",31,0,0,7.8,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+4,"*1","Jazil","Fernando Jara","Kiaran McLaughlin",31,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+5,"*18","Brother Derek","Alex Solis","Dan Hendricks",4,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+6,"6","Showing Up","Cornelio Velasquez","Barclay Tagg",21,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+7,"11","Sweetnorthernsaint","Kent Desormeaux","Michael Trombetta",11,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+8,"14","Deputy Glitters","Jose Lezcano","Tom Albertrani",51,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+9,"5","Point Determined","Rafael Bejarano","Bob Baffert",13,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+10,"15","Seaside Retreat","Patrick Husbands","Mark Casse",51,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+11,"19","Storm Treasure","David Flores","Steve Asmussen",51,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+12,"17","Lawyer Ron","John McKee","Robert Holthus",5,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+13,"16","Cause to Believe","Russell Baze","Jerry Hollendorfer",51,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+14,"20","Flashy Bull","Mike Smith","Kiaran McLaughlin",51,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+15,"12","Private Vow","Shaun Bridgmohan","Steve Asmussen",51,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+16,"4","Sinister Minister","Victor Espinoza","Bob Baffert",13,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+17,"7","Bob and John","Garrett Gomez","Bob Baffert",13,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+18,"10","A.P. Warrior","Corey Nakatani","John Shirreffs",16,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+19,"9","Sharp Humor","Mark Guidry","Dale Romans",21,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+20,"3","Keyed Entry","Pat Valenzuela","Todd Pletcher",31,0,0,0,2006,"Kentucky Derby",68,52,0,"Clear","Fast",157536
+1,"7","Street Sense","Calvin Borel","Carl Nafzger",5,11.8,6.4,4.6,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+2,"8","Hard Spun","Mario Pino","Larry Jones",16,0,9.8,7,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+3,"2","Curlin","Robby Albarado","Steve Asmussen",4.5,0,0,5.6,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+4,"5","Imawildandcrazyguy","Juan Leyva","William Kaplan",51,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+5,"1","Sedgefield","Julien Leparoux","Darrin Miller",51,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+6,"16","Circular Quay","John Velasquez","Todd Pletcher",9,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+7,"15","Tiago","Mike Smith","John Shirreffs",16,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+8,"18","Any Given Sunday","Garrett Gomez","Todd Pletcher",13,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+9,"13","Sam P.","Ramon Dominguez","Todd Pletcher",21,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+10,"12","Nobiz Like Shobiz","Cornelio Velasquez","Barclay Tagg",9,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+11,"19","Dominican","Rafael Bejarano","Darrin Miller",21,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+12,"3","Zanjero","Shaun Bridgmohan","Steve Asmussen",31,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+13,"20","Great Hunter","Corey Nakatani","Doug O'Neill",16,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+14,"9","Liquidity","David Flores","Doug O'Neill",31,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+15,"11","Bwana Bull","Javier Castellano","Jerry Hollendorfer",51,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+16,"4","Storm in May","Kent Desormeaux","William Kaplan",31,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+17,"10","Teuflesberg","Stewart Elliot","Jamie Sanders",31,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+18,"14","Scat Daddy","Edgar Prado","Todd Pletcher",11,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+19,"17","Stormello","Kent Desormeaux","William Currin",31,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+20,"6","Cowtown Cat","Fernando Jara","Todd Pletcher",21,0,0,0,2007,"Kentucky Derby",78,62,0.98,"Cloudy","Fast",156635
+1,"20","Big Brown","Kent Desormeaux","Richard Dutrow, Jr.",4.5,6.8,5,4.8,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+2,"5","Eight Belles","Gabriel Saez","Larry Jones",9,0,10.6,6.4,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+3,"16","Denis of Cork","Calvin Borel","David Carroll",28,0,0,11.6,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+4,"4","Tale of Ekati","Eibar Coa","Barclay Tagg",46,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+5,"5","Recapturetheglory","E. T. Baird","Louie J. Roussel III",48,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+6,"6","Colonel John","Corey Nakatani","Eoin Harty",5,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+7,"7","Anak Nakal","Rafael Bejarano","Nick Zito",58,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+8,"8","Pyro","Shaun Bridgmohan","Steve Asmussen",6,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+9,"9","Cowboy Cal","John Velazquez","Todd Pletcher",43,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+10,"10","Z Fortune","Robby Albarado","Steve Asmussen",18,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+11,"11","Smooth Air","Manoel Cruz","Bennie Stutts Jr.",41,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+12,"12","Visionaire","Jose Lezcano","Michael Matz",23,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+13,"13","Court Vision","Garrett Gomez","Bill Mott",15,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+14,"14","Z Humor","Rene Douglas","Bill Mott",68,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+15,"15","Cool Coal Man","Julien Leparoux","Nick Zito",37,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+16,"16","Bob Black Jack","Richard Migliore","James Kasparoff",27,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+17,"17","Gayego","Mike Smith","Paulo Lobo",22,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+18,"18","Big Truck","Elbar Coa","Barclay Tagg",21,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+19,"19","Adriano","Edgar Prado","Graham Motion",25,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+20,"20","Monba","Ramon Dominguez","Todd Pletcher",31,0,0,0,2008,"Kentucky Derby",75,50,0.69,"Clear","Fast",157770
+1,"8","Mine that Bird","Calvin Borel","Bennie Wooley Jr.",51,103.2,54,25.8,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+2,"16","Pioneerof theNile","Garrett Gomez","Bob Baffert",5,0,8.4,6.4,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+3,"2","Musket Man","Eibar Coa","Derek Ryan",21,0,0,12,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+4,"7","Papa Clem","Rafael Bejarano","Gary Stute",21,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+5,"11","Chocolate Candy","Mike Smith","Jerry Hollendorfer",21,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+6,"17","Summer Bird","Chris Rosier","Tim Ice",51,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+7,"9","Join in the Dance","Chris DeCarlo","Todd Pletcher",51,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+8,"10","Regal Ransom","Alan Garcia","Saeed bin Suroor",31,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+9,"1","West Side Bernie","Stewart Elliot","Kelly Breen",31,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+10,"12","General Quarters","Julien Leparoux","Thomas R. McCarthy",21,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+11,"15","Dunkirk","Edgar Prado","Todd Pletcher",5,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+12,"5","Hold Me Back","Kent Desormeaux","Bill Mott",16,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+13,"4","Advice","Rene Douglas","Todd Pletcher",31,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+14,"19","Desert Party","Ramon Dominguez","Saeed bin Suroor",16,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+15,"3","Mr. Hot Stuff","John Velazquez","Eoin Harty",31,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+16,"14","Atomic Rain","Joe Bravo","Kelly Breen",51,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+17,"18","Nowhere to Hide","Shaun Bridgmohan","Nick Zito",51,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+18,"6","Friesan Fire","Gabriel Saez","Larry Jones",6,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+19,"20","Flying Private","Robby Albarado","D. Wayne Lukas",51,0,0,0,2009,"Kentucky Derby",62,51,0.07,"Cloudy","Sloppy",153563
+1,"4","Super Saver","Calvin Borel","Todd Pletcher",9,18,8.8,6.6,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+2,"2","Ice Box","Jose Lezcano","Nick Zito",12,0,11.2,8,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+3,"10","Paddy O'Prado","Kent Desormeaux","Dale Romans",13,0,0,7.4,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+4,"9","Make Music for Me","Joel Rosario","Alexis Barba",31,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+5,"3","Noble's Promise","Willie Martinez","Kenny McPeek",25,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+6,"1","Lookin At Lucky","Garrett Gomez","Bob Baffert",7,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+7,"17","Dublin","Terry Thompson","D. Wayne Lukas",21,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+8,"6","Statley Victor","Alan Garcia","Mike Maker",21,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+9,"14","Mission Impazible","Rajiv Maragh","Todd Pletcher",17,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+10,"11","Devil May Care","John Velazquez","Todd Pletcher",11,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+11,"7","American Lion","David Flores","Eoin Harty",24,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+12,"13","Jackson Bend","Mike Smith","Nick Zito",24,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+13,"15","Discreetly Mine","Javier Castellano","Todd Pletcher",32,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+14,"8","Dean's Kitten","Robby Albarado","Michael Maker",26,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+15,"12","Conveyance","Martin Garcia","Bob Baffert",28,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+16,"19","Homeboykris","Ramon Dominguez","Richard Dutrow, Jr.",28,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+17,"20","Sidney's Candy","Joe Talamo","John Sadler",10,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+18,"5","Line of David","Rafael Bejarano","John Sadler",20,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+19,"16","Awesome Act","Julien Leparoux","Jeremy Noseda",12,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+20,"18","Backtalk","Miguel Mena","Tom Amoss",24,0,0,0,2010,"Kentucky Derby",75,63,1.32,"Cloudy","Sloppy",155804
+1,"16","Animal Kingdom","John Velazquez","Graham Motion",21,43.8,19.6,13,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+2,"19","Nehro","Cory Nakatani","Steve Asmussen",10,0,8.8,6.4,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+3,"13","Mucho Macho Man","Rajiv Maragh","Kathy Ritvo",10,0,0,7,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+4,"14","Shackleford","Jesus Castanon","Dale Romans",24,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+5,"11","Master of Hounds","Garret Gomez","Aidan O'Brien",17,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+6,"12","Santiva","Shaun Bridgmohan","Eddie Kenneally",34,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+7,"2","Brilliant Speed","Joel Roasario","Tom Albertrani",28,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+8,"8","Dialed In","Julien Leparoux","Nick Zito",6,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+9,"7","Pants on Fire","Rosie Napravnik","Kelly Breen",8,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+10,"3","Twice the Appeal","Calvin Borel","J. Bonde",12,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+11,"17","Soldat","Alan Garcia","Kiaran McLaughlin",15,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+12,"4","Stay Thirsty","Ramon Dominguez","Todd Pletcher",17,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+13,"9","Derby Kitten","Jose Castellano","Ken Ramsey",36,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+14,"5","Decisive Moment","Kirwin Clark","Juan Arias",39,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+15,"1","Archarcharch","John Court","Jinks Fires",14,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+16,"15","Midnight Interlude","Victor Espinoza","Bob Baffert",10,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+17,"10","Twinspired","Mike Smith","Mike Maker",32,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+18,"20","Watch Me Go","Rafael Bejarano","Kathleen O'Connell",33,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+19,"6","Comma to the Top","Pat Valenzuela","Peter Miller",35,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+20,"18","Uncle Mo","John Velazquez","Todd Pletcher",NA,0,0,0,2011,"Kentucky Derby",72,51,0,"Clear","Fast",164858
+1,"19","I'll Have Another","Mario Gutierrez","Doug O'Neill",16,32.6,19.8,9.6,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+2,"6","Bodemeister","Mike Smith","Bob Baffert",5,0,6.2,5.6,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+3,"5","Dullahan","Kent Desormeaux","Dale Romans",13,0,0,7.2,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+4,"13","Went The Day Well","John Velazquez","H. Graham Motion",31,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+5,"8","Creative Cause","Joel Rosario","Mike Harrington",13,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+6,"20","Liaison","Martin Garcia","Bob Baffert",57,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+7,"4","Union Rags","Julien Leparoux","Michael Matz",6,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+8,"7","Rousing Sermon","Jose Lezcano","Jerry Hollendorfer",41,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+9,"14","Hansen","Ramon Dominguez","Mike Maker",14,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+10,"10","Daddy Nose Best","Garrett Gomez","Steve Asmussen",15,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+11,"2","Optimizer","Jon Court","D. Wayne Lukas",43,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+12,"11","Alpha","Alan Garcia","Kiaran McLaughlin",20,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+13,"16","El Padrino","Rafael Bejarano","Todd Pletcher",8.25,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+14,"17","Done Talking","Sheldon Russell","Hamilton Smith",40,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+15,"18","Sabercat","Corey Nakatani","Steve Asmussen",38,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+16,"15","Gemologist","Javier Castellano","Todd Pletcher",9,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+17,"9","Trinniberg","Willie Martinez","Bisnath Parboo",45,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+18,"12","Prospective","Luis Contreras","Mark Casse",58,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+19,"3","Take Charge Indy","Calvin Borel","Patrick Byrne",13,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+20,"1","Daddy Long Legs","Colm O'Donoghue","Aidan O'Brien",27,0,0,0,2012,"Kentucky Derby",83,65,1.46,"Cloudy","Fast",165307
+1,"16","Orb","Joel Rosario","Shug McGaughey",7,12.8,7.4,5.4,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+2,"4","Golden Soul","Robby Albarado","Dallas Stewart",51,0,38.6,19.4,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+3,"3","Revolutionary","Calvin Borel","Todd Pletcher",7,0,0,5.4,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+4,"5","Normandy Invasion","Javier Castellano","Chad Brown",9,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+5,"6","Mylute","Rosie Napravnik","Tom Amoss",15,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+6,"2","Oxbow","Gary Stevens","D. Wayne Lukas",24,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+7,"11","Lines of Battle","Ryan Moore","Aidan O'Brien",33,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+8,"17","Will Take Charge","Jon Court","D. Wayne Lukas",35,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+9,"15","Charming Kitten","Edgar Pradio","Todd Pletcher",32,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+10,"7","Giant Finish","Jose Espinoza","Tony Dutrow",37,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+11,"9","Overanalyze","Rafael Bejarano","Todd Pletcher",16,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+12,"10","Palace Malice","Mike Smith","Todd Pletcher",23,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+13,"19","Java's War","Julien Leparoux","Kenny McPeek",27,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+14,"14","Verrazano","John Velazquez","Todd Pletcher",9,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+15,"12","Itsmyluckyday","Elvis Trujillo","Eddie Plesa Jr.",9,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+16,"18","Frac Daddy","Victor Lebron","Kenny McPeek",24,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+17,"8","Goldencents","Kevin Krigger","Doug O'Neill",8,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+18,"20","Vyjack","Garrett Gomez","Rudy Rodriguez",26,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+19,"13","Falling Sky","Luis Saez","John Terranova II",38,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+20,"1","Black Onyx","Joe Bravo","Kelly Breen",NA,0,0,0,2013,"Kentucky Derby",64,53,0.87,"Rainy","Sloppy",151616
+1,"5","California Chrome","Victor Espinoza"," Art Sherman",3.5,7,5.6,4.2,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+2,"17","Commanding Curve","Shaun Bridgmohan"," Dallas Stewart",38,0,31.8,15.4,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+3,"4","Danza","Joe Bravo"," Todd Pletcher",9,0,0,6,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+4,"20","Wicked Strong","Rajiv Maragh"," Steve Asmussen",7,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+5,"6","Samraat","Jose Ortiz"," Rick Violette Jr.",17,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+6,"12","Dance With Fate","Corey Nakatani"," Peter Eurton",17,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+7,"19","Ride On Curlin","Calvin Borel"," William G. Gowan",18,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+8,"14","Medal Count","Robby Albarado"," Dale Romans",27,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+9,"13","Chitu","Martin Garcia"," Bob Baffert",26,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+10,"7","We Miss Artie","Javier Castellano"," Todd Pletcher",28,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+11,"8","General A Rod","Joel Rosario"," Mike Maker",31,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+12,"16","Intense Holiday","John Velazquez"," Todd Pletcher",15,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+13,"18","Candy Boy","Gary Stevens"," John Sadler",10,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+14,"3","Uncle Sigh","Irad Ortiz Jr."," Gary Contessa",31,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+15,"15","Tapiture","Ricardo Santana Jr.	 ","Steve Asmussen",36,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+16,"2","Harry's Holiday","Corey Lanerie"," Mike Maker",45,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+17,"9","Vinceremos","Joe Rocco Jr."," Todd Pletcher",50,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+18,"10","Wildcat Red","Luis Saez"," Jose Garoffalo",19,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+19,"1","Vicar's In Trouble","Rosie Napravnik"," Mike Maker",21,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+20,"11","Hoppertunity","Mike Smith"," Bob Baffert",NA,0,0,0,2014,"Kentucky Derby",73,45,0,"Clear","Fast",164906
+1,"18","American Pharoah","Victor Espinoza","Bob Baffert",3.5,7.8,5.8,4.2,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+2,"10","Firing Line","Gary Stevens","Simon Callaghan",11,0,8.4,5.4,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+3,"8","Dortmund","Martin Garcia","Bob Baffert",5,0,0,4.2,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+4,"15","Frosted","Joel Rosario","Kiaran McLaughlin",11,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+5,"5","Danzig Moon","Julien Leparoux","Mark Casse",24,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+6,"3","Materiality","Javier Castellano","Todd Pletcher",NA,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+7,"14","Keen Ice","Kent Desormeaux","Dale Romans",47,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+8,"6","Mubtaahij","Christophe Soumillon","Mike de Kock",15,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+9,"13","Itsaknockout","Luis Saez","Todd Pletcher",32,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+10,"2","Carpe Diem","John Velazquez","Todd Pletcher",9,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+11,"21","Frammento","Corey Nakatani","Nick Zito",71,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+12,"9","Bolo","Rafael Bejarano","Carla Gaines",31,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+13,"17","Mr. Z","Ramon Vazquez","D Wayne Lukas",38,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+14,"1","Ocho Ocho Ocho","Elvis Trujillo","Jim Cassidy",27,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+15,"20","Far Right","Mike Smith","Ron Moquett",40,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+16,"16","War Story","Joe Talamo","Tom Amoss",46,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+17,"4","Tencendur","Manny Franco","George Weaver",53,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+18,"19","Upstart","Jose Ortiz","Rick Violette, Jr.",17,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+19,"11","Stanford","Florent Geroux","Todd Pletcher",NA,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+20,"12","International Star","Miguel Mena","Mike Maker",NA,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+21,"7","El Kabeir","Calvin Borel","John Terranova, III",NA,0,0,0,2015,"Kentucky Derby",79,52,0,"Clear","Fast",170513
+1,"13","Nyquist","Mario Gutierrez","Doug F. O'Neill",3,6.6,4.8,3.6,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+2,"11","Exaggerator","Kent J. Desormeaux","J. Keith Desormeaux",6,0,5.4,4.2,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+3,"5","Gun Runner","Florent Geroux","Steven M. Asmussen",11,0,0,6,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+4,"14","Mohaymen","Junior Alvarado","Kiaran P. McLaughlin",13,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+5,"2","Suddenbreakingnews","Luis S. Quinonez","Donnie K. Von Hemel",25,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+6,"9","Destin","Javier Castellano","Todd Pletcher",21,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+7,"19","Brody's Cause","Luis Saez","Dale L. Romans",25,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+8,"4","Mo Tom","Corey J. Lanerie","Thomas M. Amoss",26,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+9,"8","Lani","Yutaka Take","Mikio Matsunaga",30,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+10,"17","Mor Spirit","Gary L. Stevens","Bob Baffert",13,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+11,"6","My Man Sam","Julien R. Leparoux","Chad C. Brown",20,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+12,"12","Tom's Ready","Brian Joseph Hernandez, Jr.","Dallas Stewart",49,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+13,"3","Creator","Ricardo Santana, Jr.","Steven M. Asmussen",17,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+14,"15","Outwork","John R. Velazquez","Todd Pletcher",27,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+15,"20","Danzing Candy","Mike Smith","Clifford W. Sise, Jr.",27,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+16,"1","Trojan Nation","Aaron T. Gryder","Patrick Gallagher",42,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+17,"7","Oscar Nominated","Robby Albarado","Michael J. Maker",42,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+18,"18","Majesto","Javier Castellano","Gustavo Delgado",57,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+19,"10","Whitmore","Victor Espinoza","Ron Moquett",31,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+20,"16","Shagaf","Irad Ortiz, Jr.","Chad Brown",56,0,0,0,2016,"Kentucky Derby",85,59,0.28,"Clear","Fast",167227
+1,"5","Always Dreaming","John R. Velazquez","Todd A. Pletcher",5.5,11.4,7.2,5.8,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+2,"1","Lookin At Lee","Corey J. Lanerie","Steven M. Asmussen",34,0,26.6,15.2,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+3,"11","Battle of Midway","Flavien Prat","Jerry Hollendorfer",41,0,0,20.8,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+4,"14","Classic Empire","Julien R. Leparoux","Mark E. Casse",7,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+5,"19","Practical Joke","Joel Rosario","Chad C. Brown",28,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+6,"16","Tapwrit","Jose L. Ortiz","Todd A. Pletcher",28,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+7,"10","Gunnevera","Javier Castellano","Antonio Sano",11,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+8,"15","McCraken","Brian Hernandez, Jr.","Ian R. Wilkes",7,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+9,"18","Gormley","Victor Espinoza","John A. Shirreffs",23,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+10,"17","Irish War Cry","Rajiv Maragh","H. Graham Motion",6,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+11,"8","Hence","Florent Geroux","Steven M. Asmussen",16,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+12,"4","Untrapped","Ricardo Santana, Jr.","Steven M. Asmussen",59,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+13,"7","Girvin","Mike E. Smith","Joe Sharp",23,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+14,"20","Patch","Tyler Gaffalione","Todd A. Pletcher",15,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+15,"13","J Boys Echo","Robby Albarado","Dale L. Romans",48,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+16,"12","Sonneteer","Kent J. Desormeaux","J. Keith Desormeaux",40,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+17,"3","Fast and Accurate","Channing Hill","Michael J. Maker",42,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+18,"9","Irap","Mario Gutierrez","Doug F. O'Neill",42,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+19,"6","State of Honor","Mark E. Casse","Jose Lezcano",55,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+20,"2","Thunder Snow (IRE)","Christophe Soumillon","Saeed bin Suroor",17,0,0,0,2017,"Kentucky Derby",62,42,0.12,"Clear","Muddy",158070
+1,"7","Justify","Bob Baffert","Mike Smith",3.5,7.8,6,4.4,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+2,"6","Good Magic","Chad Brown","Jose Ortiz",10,0,9.2,6.6,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+3,"5","Audible","Todd Pletcher","Javier Castellano",8,0,0,5.8,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+4,"15","Instilled Regard","Jerry Hollendorfer","Drayden Van Dyke",86,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+5,"10","My Boy Jack","Keith Desormeaux","Kent Desormeaux",7,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+6,"13","Bravazo","D. Wayne Lukas","Luis Contreras",67,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+7,"9","Hofburg","William Mott","Irad Ortiz Jr.",28,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+8,"8","Lone Sailor","Thomas Amoss","James Graham",25,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+9,"18","Vino Rosso","Todd Pletcher","John Velazquez",15,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+10,"17","Solomini","Bob Baffert","Flabvien Prat",38,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+11,"1","Firenze Fire","Jason Servis","Paco Lopez",60,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+12,"11","Bolt d'Oro","Mike Ruis","Victor Ezpinoza",9,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+13,"4","Flameaway","Mark Casse","Jose Lezcano",38,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+14,"12","Enticed","Kiaran McLaughlin","Junior Alvarado",51,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+15,"3","Promises Fulfilled","Dale Romans","Corey Lanerie",50,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+16,"2","Free Drop Billy","Dale Romans","Robby Albarado",46,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+17,"19","Noble Indy","Todd Pletcher","Florent Goreoux",31,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+18,"20","Combatant","Steve Asmussen","Ricardo Santana Jr.",71,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+19,"16","Magnum Moon","Todd Pletcher","Luis Saez",14,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+20,"14","Mendelssohn","Aidan O'Brien","Ryan Moore",7,0,0,0,2018,"Kentucky Derby",70,61,3.15,"Showery","Sloppy",157813
+1,"20","Country House","William I. Mott","Flavien Prat",66,132.4,56.6,24.6,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+2,"13","Code of Honor","Claude R. McGaughey III","John Velazquez",16,0,15.2,9.8,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+3,"8","Tacitus","William I. Mott","Jose Ortiz",11,0,0,5.6,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+4,"5","Improbable","Bob Baffert","Irad Ortiz Jr.",7,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+5,"16","Game Winner","Bob Baffert","Joel Rosario",6,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+6,"15","Master Fencer (JPN)","Tsunoda K","Julien Leparoux",51,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+7,"1","War of Will","Mark E. Casse","Tyler Gaffalione",21,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+8,"9","Plus Que Parfait","Brendan P. Walsh","Ricardo Santana Jr.",31,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+9,"14","Win Win Win","Michael J. Trombetta","Julian Pimentel",16,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+10,"10","Cutting Humor","Todd A. Pletcher","Corey J Lanerie",31,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+11,"3","By My Standards","W. Bret Calhoun","Gabriel Saez",21,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+12,"6","Vekoma","George Weaver","Javier Castellano",21,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+13,"21","Bodepress","Gustavo Delgado","Chris Landeros",21,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+14,"2","Tax","Danny Gargan","Junior Alvarado",21,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+15,"17","Roadster","Bob Baffert","Florent Geroux",7,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+16,"18","Long Range Toddy","Steven M. Asmussen","Jon Court",31,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+17,"7","Maximum Security","Jason Servis","Luis Saez",11,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+18,"19","Spinoff","Todd Pletcher","Manny Franco",31,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+19,"4","Gray Magician","Peter Miller","Drayden Van Dyke",51,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+20,"11","Haikal","Kiaran P. McLaughlin","Rajiv Maragh",NA,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+21,"12","Omaha Beach","Richard E. Mandella","Mike Smith",NA,0,0,0,2019,"Kentucky Derby",71,58,0.34,"Showery","Sloppy",150729
+1,"1","Afleet Alex","Jeremy Rose","Tim Ritchey",2.2,4.3,3.6,3,2005,"Belmont Stakes",78.1,64,0,"Cloudy","Fast",62274
+2,"2","Andromeda's Hero","Rafael Bejarano","Nicholas Zito",13,0,8.2,5.8,2005,"Belmont Stakes",78.1,64,0,"Cloudy","Fast",62274
+3,"3","Nolan's Cat","N. Arroyo Jr.","Dale L. Romans",51,0,0,7.2,2005,"Belmont Stakes",78.1,64,0,"Cloudy","Fast",62274
+4,"4","Indy Storm","Edgar Prado","Nicholas Zito",21,0,0,0,2005,"Belmont Stakes",78.1,64,0,"Cloudy","Fast",62274
+5,"5","A.P. Arrow","Jerry Bailey","D. Wayne Lukas",51,0,0,0,2005,"Belmont Stakes",78.1,64,0,"Cloudy","Fast",62274
+6,"6","Chekhov","Gary Stevens","Patrick Biancone",31,0,0,0,2005,"Belmont Stakes",78.1,64,0,"Cloudy","Fast",62274
+7,"7","Giacomo","Mike Smith","John Shirreffs",4.5,0,0,0,2005,"Belmont Stakes",78.1,64,0,"Cloudy","Fast",62274
+8,"8","Southern Africa","Jon Court","Michael Puhich",19,0,0,0,2005,"Belmont Stakes",78.1,64,0,"Cloudy","Fast",62274
+9,"9","Watchmon","TBA","Patrick Reynolds",76,0,0,0,2005,"Belmont Stakes",78.1,64,0,"Cloudy","Fast",62274
+10,"10","Reverberate","Jose Santos","Sal Russo",13,0,0,0,2005,"Belmont Stakes",78.1,64,0,"Cloudy","Fast",62274
+11,"11","Pinpoint","John Velazquez","Nicholas Zito",21,0,0,0,2005,"Belmont Stakes",78.1,64,0,"Cloudy","Fast",62274
+1,"1","Jazil","Fernando Jara","Kiaran McLaughlin",7,14.4,6.7,4.7,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+2,"2","Bluegrass Cat","John Velazquez","Todd Pletcher",6,0,6.4,4.7,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+3,"3","Sunriver","Rafael Bejarano","Todd Pletcher",7,0,0,6.1,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+4,"4","Steppenwolfer","Robby Albarado","Daniel Peitz",6,0,0,0,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+5,"5","Oh So Awesome","Mike Smith","James A. Jerkens",13,0,0,0,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+6,"6","Hemingway's Key","Jeremy Rose","Nick Zito",16,0,0,0,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+7,"7","Platinum Couple","Jose Espinoza","Joseph Lostritto",39,0,0,0,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+8,"8","Bob and John","Garrett Gomez","Bob Baffert",5.5,0,0,0,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+9,"9","Sacred Light","Victor Espinoza","David Hofmans",21,0,0,0,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+10,"10","High Finance","Eibar Coa","Richard Violette Jr.",11,0,0,0,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+11,"11","Deputy Glitters","Edgar Prado","Tom Albertrani",13,0,0,0,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+12,"12","Double Galore","Mike Luzzi","Myung Kwon Cho",16,0,0,0,2006,"Belmont Stakes",75.9,57,0,"Clear","Fast",61168
+1,"7","Rags to Riches","John Velazquez","Todd Pletcher",4,10.6,44.4,3.2,2007,"Belmont Stakes",81,62.1,0,"Clear","Fast",46870
+2,"3","Curlin","Robby Albarado","Steve Asmussen",2.2,0,3,2.3,2007,"Belmont Stakes",81,62.1,0,"Clear","Fast",46870
+3,"2","Tiago","Mike Smith","John Shirreffs",11,0,0,3.7,2007,"Belmont Stakes",81,62.1,0,"Clear","Fast",46870
+4,"6","Hard Spun","Garrett Gomez","J. Larry Jones",3.5,0,0,0,2007,"Belmont Stakes",81,62.1,0,"Clear","Fast",46870
+5,"4","C P West","Edgar Prado","Nick Zito",13,0,0,0,2007,"Belmont Stakes",81,62.1,0,"Clear","Fast",46870
+6,"1","Imawildandcrazyguy","Mark Guidry","BillÂ Kaplan",21,0,0,0,2007,"Belmont Stakes",81,62.1,0,"Clear","Fast",46870
+7,"5","Slewâs Tizzy","Rafael Bejarano","Greg Fox",21,0,0,0,2007,"Belmont Stakes",81,62.1,0,"Clear","Fast",46870
+1,"6","Da' Tara","Alan Garcia","Nick Zito",40,79,28,14.8,2008,"Belmont Stakes",82.9,57.9,0,"Clear","Fast",94476
+2,"4","Denis of Cork","Robby Albarado","David M. Carroll",7,0,5.4,4.1,2008,"Belmont Stakes",82.9,57.9,0,"Clear","Fast",94476
+3,"8 (*DH)","Anak Nakal","Julien Leparoux","Nick Zito",35,0,0,7.6,2008,"Belmont Stakes",82.9,57.9,0,"Clear","Fast",94476
+4,"9 (*DH)","Ready's Echo","John Velazquez","Todd Pletcher",31,0,0,6.2,2008,"Belmont Stakes",82.9,57.9,0,"Clear","Fast",94476
+5,"3","Macho Again","Garrett Gomez","Dallas Stewart",18,0,0,0,2008,"Belmont Stakes",82.9,57.9,0,"Clear","Fast",94476
+6,"7","Tale of Ekati","Eibar Coa","Barclay Tagg",15,0,0,0,2008,"Belmont Stakes",82.9,57.9,0,"Clear","Fast",94476
+7,"2","Guadalcanal","Javier Castellano","Frederick J.Â Seitz",23,0,0,0,2008,"Belmont Stakes",82.9,57.9,0,"Clear","Fast",94476
+8,"10","Icabad Crane","Jeremy Rose","H. Graham Motion",16,0,0,0,2008,"Belmont Stakes",82.9,57.9,0,"Clear","Fast",94476
+9,"1","Big Brown","Kent Desormeaux","Rick Dutrow Jr.",1.25,0,0,0,2008,"Belmont Stakes",82.9,57.9,0,"Clear","Fast",94476
+1,"4","Summer Bird","Ken Desormeaux","Tim Ice",13,25.4,9.3,4.7,2009,"Belmont Stakes",72,57,0,"Clear","Fast",52186
+2,"2","Dunkirk","John Velazquez","Todd Pletcher",5.5,0,5.4,3.6,2009,"Belmont Stakes",72,57,0,"Clear","Fast",52186
+3,"7","Mine That Bird","Calvin Borel","Chip Woolley Jr.",3,0,0,2.6,2009,"Belmont Stakes",72,57,0,"Clear","Fast",52186
+4,"6","Charitable Man","Alan Garcia","Kiaran McLaughlin",5.5,0,0,0,2009,"Belmont Stakes",72,57,0,"Clear","Fast",52186
+5,"5","Luv Gov","Miguel Mena","D. Wayne Lukas",23,0,0,0,2009,"Belmont Stakes",72,57,0,"Clear","Fast",52186
+6,"8","Flying Private","Julian Leparoux","D. Wayne Lukas",18,0,0,0,2009,"Belmont Stakes",72,57,0,"Clear","Fast",52186
+7,"10","Brave Victory","Rajiv Maragh","Nick Zito",29,0,0,0,2009,"Belmont Stakes",72,57,0,"Clear","Fast",52186
+8,"3","Mr. Hot Stuff","Edgar Prado","Eoin Harty",24,0,0,0,2009,"Belmont Stakes",72,57,0,"Clear","Fast",52186
+9,"1","Chocolate Candy","Garrett Gomez","Jerry Hollendorfer",11,0,0,0,2009,"Belmont Stakes",72,57,0,"Clear","Fast",52186
+10,"9","Miner's Escape","Jose Lezcano","Nick Zito",23,0,0,0,2009,"Belmont Stakes",72,57,0,"Clear","Fast",52186
+1,"1","Drosselmeyer","Mike Smith","William Mott",14,28,11.6,7.7,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+2,"2","Fly Down","John Velazquez","Nick Zito",6,0,6.8,5.1,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+3,"3","First Dude","Ramon Dominguez","Dale Romans",6,0,0,4.9,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+4,"4","Game On Dude","Martin Garcia","Bob Baffert",18,0,0,0,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+5,"5","Stay Put","Jamie Theriot","Steve Margolis",27,0,0,0,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+6,"6","Interactif","Javier Castellano","Todd Pletcher",20,0,0,0,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+7,"7","Stately Victor","Alan Garcia","Michael Maker",15,0,0,0,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+8,"8","Ice Box","Jose Lezcano","Nick Zito",2.8,0,0,0,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+9,"9","Make Music for Me","Joel Rosario","Alexis Barba",13,0,0,0,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+10,"10","Dave in Dixie","Calvin Borel","John Sadler",15,0,0,0,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+11,"11","Spangled Star","Garrett Gomez","Richard Dutrow Jr.",24,0,0,0,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+12,"12","Uptowncharlybrown","Rajiv Maragh","Linda White",11,0,0,0,2010,"Belmont Stakes",90,70,0,"Clear","Fast",45243
+1,"3","Ruler On Ice","Jose Valdivia Jr.","Kelly Breen",25,51.5,26,13.6,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+2,"2","Stay Thirsty","Javier Castellano","Todd Pletcher",17,0,19.4,10.8,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+3,"5","Brilliant Speed","Joel Rosario","Tom Albertrani",11,0,0,7.9,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+4,"6","Nehro","Corey Nakatani","Steve Asmussen",5.5,0,0,0,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+5,"12","Shackleford","Jesus Castanon","Dale Romans",8,0,0,0,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+6,"9","Animal Kingdom","John Velazquez","Graham Motion",3.5,0,0,0,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+7,"10","Mucho Macho Man","Ramon Dominguez","Kathy Ritvo",8,0,0,0,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+8,"4","Santiva","Shaun Bridgmohan","Eddie Kenneally",14,0,0,0,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+9,"7","Monzon","Jose Lezcano","Ignacio Correas IV",27,0,0,0,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+10,"1","Master of Hounds","Garrett Gomez","Aidan O'Brien",6,0,0,0,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+11,"8","Prime Cut","Edgar Prado","Neil Howard",21,0,0,0,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+12,"11","Isn't He Perfect","Rajiv Maragh","Doodnauth Shivmangal",29,0,0,0,2011,"Belmont Stakes",75.9,62.6,0.2,"Cloudy","Sloppy",47562
+1,"3","Union Rags","John Velazquez","Mike Matz",4,7.5,4.2,3.4,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+2,"9","Paynter","Mike Smith","Bob Baffert",5,0,5.1,3.9,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+3,"4","Atigun","Julian Leparoux","Ken McPeek",22,0,0,10.6,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+4,"1","Street Life","Jose Lezcano","Chad Brown",11,0,0,0,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+5,"7","Five Sixteen","Rosie Napravnik","Dominick Schettino",20,0,0,0,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+6,"2","Unstoppable U","Junior Alvarado","Ken McPeek",13,0,0,0,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+7,"5","Dullahan","Javier Castellano","Dale Romans",3.5,0,0,0,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+8,"12","My Adonis","Ramon Dominguez","Kelly Green",21,0,0,0,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+9,"6","Ravelo's Boy","Alex Solis","M. Azpurua Azpurua",13,0,0,0,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+10,"10","Optimizer","Cory Nakatani","D. Wayne Lukas",36,0,0,0,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+11,"*8","Guyana Star Dweej","Kent Desormeaux","Doodnauth Shivmangal",24,0,0,0,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+12,"**11","I'll Have Another","Mario Gutierrez","Doug O'Neill",1.8,0,0,0,2012,"Belmont Stakes",80.1,59,0,"Cloudy","Fast",85811
+1,"12","Palace Malice","Mike Smith","Todd Pletcher",16,29.6,11.2,6.7,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+2,"7","Oxbow","Gary Stevens","D. Wayne Lukas",10,0,9.9,6.1,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+3,"5","Orb","Joel Rosario","Shug McGaughey",NA,0,0,3.9,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+4,"6","Incognito","Irad Ortiz Jr.","Kiaran McLaughlin",11,0,0,0,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+5,"9","Revolutionary","Calvin Borel","Todd Pletcher",6,0,0,0,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+6,"13","Unlimited Budget","Javier Castellano","Todd A. Pletcher",14,0,0,0,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+7,"3","Overanalyze","Rafael Bejarano","Todd Pletcher",11,0,0,0,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+8,"11","Vyjack","Julien Leparoux","Rudy Rodriguez",29,0,0,0,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+9,"14","Golden Soul","Robby Albarado","Dallas Stewart",12,0,0,0,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+10,"10","Will Take Charge","Jon Court","D. Wayne Lukas",22,0,0,0,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+11,"4","Giant Finish","Jose Espinoza","Tony Dutrow",32,0,0,0,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+12,"8","Midnight Taboo","Garrett Gomez","Todd Pletcher",29,0,0,0,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+13,"2","Freedom Child","Luis Saez","Thomas Albertrani",10,0,0,0,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+14,"1","Frac Daddy","Alan Garcia","Kenneth McPeek",30,0,0,0,2013,"Belmont Stakes",75.9,57,4.11,"Clear","Fast",55779
+1,"11","Tonalist","Joel Rosario","Christophe Clement",10,20.4,9.6,7,2014,"Belmont Stakes",80.1,61,0,"Clear","Fast",102199
+2,"8","Commissioner","Javier Castellano","Todd Pletcher",28,0,23.2,13.2,2014,"Belmont Stakes",80.1,61,0,"Clear","Fast",102199
+3,"1","Medal Count","Robby Albarado","Dale L. Romans",27,0,0,13.2,2014,"Belmont Stakes",80.1,61,0,"Clear","Fast",102199
+4,"DH - 9","Wicked Strong","Rajiv Maragh","Jimmy Jerkens",6,0,0,0,2014,"Belmont Stakes",80.1,61,0,"Clear","Fast",102199
+5,"DH - 2","California Chrome","Victor Espinoza","Art Sherman",1.8,0,0,0,2014,"Belmont Stakes",80.1,61,0,"Clear","Fast",102199
+6,"7","Samraat","Jose Ortiz","Rick Violette",20,0,0,0,2014,"Belmont Stakes",80.1,61,0,"Clear","Fast",102199
+7,"10","General a Rod","Rosie Napravnik","Mike Maker",37,0,0,0,2014,"Belmont Stakes",80.1,61,0,"Clear","Fast",102199
+8,"3","Matterhorn","Joe Bravo","Todd Pletcher",39,0,0,0,2014,"Belmont Stakes",80.1,61,0,"Clear","Fast",102199
+9,"4","Commanding Curve","Shaun Bridgmohan","Dallas Stewart",9,0,0,0,2014,"Belmont Stakes",80.1,61,0,"Clear","Fast",102199
+10,"6","Matuszak","Mike Smith","Bill Mott",32,0,0,0,2014,"Belmont Stakes",80.1,61,0,"Clear","Fast",102199
+11,"5","Ride On Curlin","John Velazquez","Billy Gowan",8,0,0,0,2014,"Belmont Stakes",80.1,61,0,"Clear","Fast",102199
+1,"5","American Pharoah","Victor Espinoza","Bob Baffert",1.6,3.5,2.8,2.5,2015,"Belmont Stakes",79,57,0.2,"Clear","Fast",90000
+2,"6","Frosted","Joel Rosario","Kiaran McLaughlin",6,0,3.5,2.9,2015,"Belmont Stakes",79,57,0.2,"Clear","Fast",90000
+3,"7","Keen Ice ","Kent Desormeaux","Dale Romans",21,0,0,4.6,2015,"Belmont Stakes",79,57,0.2,"Clear","Fast",90000
+4,"1","Mubtaahij ","Irad Ortiz, Jr.","Mike De Kock",11,0,0,0,2015,"Belmont Stakes",79,57,0.2,"Clear","Fast",90000
+5,"4","Frammento","Mike Smith","Nick Zito",31,0,0,0,2015,"Belmont Stakes",79,57,0.2,"Clear","Fast",90000
+6,"3","Madefromlucky ","Javier Castellano","Todd Pletcher",13,0,0,0,2015,"Belmont Stakes",79,57,0.2,"Clear","Fast",90000
+7,"2","Tale Of Verve ","Gary Stevens","Dallas Stewart",16,0,0,0,2015,"Belmont Stakes",79,57,0.2,"Clear","Fast",90000
+8,"8","Materiality ","John Velazquez","Todd Pletcher",7,0,0,0,2015,"Belmont Stakes",79,57,0.2,"Clear","Fast",90000
+1,"13","Creator","Irad Ortiz Jr.","Steve Asmussen",16,34.8,14.6,9.4,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+2,"2","Destin","Javier Castellano","Todd Pletcher",11,0,9.4,6.2,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+3,"10","Lani","Yutaka Take","Mikio Matsunaga",12,0,0,6.6,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+4,"1","Governor Malibu","Joel Rosario","Christophe Clement",21,0,0,0,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+5,"12","Brodys Cause","Luis Saez","Dale Romans",22,0,0,0,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+6,"3","Cherry Wine","Corey J. Lanerie","Dale Romans",10,0,0,0,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+7,"11","Exaggerator","Kent Desormeaux","Keith Desormeaux",2.2,0,0,0,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+8,"8","Forever dOro","Jose Ortiz","Dallas Stewart",61,0,0,0,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+9,"6","Gettysburg","Paco Lopez","Steve Asmussen",51,0,0,0,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+10,"7","Seeking the Soul","Florent Geroux","Dallas Stewart",51,0,0,0,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+11,"5","Stradivari","John Velazquez","Todd Pletcher",8,0,0,0,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+12,"4","Suddenbreakingnews","Mike Smith","Donnie Von Hemel",6,0,0,0,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+13,"9","Trojan Nation","Aaron Gryder","Patrick Gallagher",61,0,0,0,2016,"Belmont Stakes",82,57.9,0,"Clear","Fast",60114
+1,"2","Tapwrit","Jose L. Ortiz","Todd Pletcher",7,12.6,6.5,5,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+2,"7","Irish War Cry","Rajiv Maragh","H. Graham Motion",4.5,0,4.7,3.9,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+3,"12","Patch","John R. Velazquez","Todd A. Pletcher",13,0,0,6.5,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+4,"3","Gormley","Victor Espinoza","John A. Shirreffs",9,0,0,0,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+5,"8","Senior Investment","Channing Hill","Kenneth G. McPeek",13,0,0,0,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+6,"1","Twisted Tom","Javier Castellano","Chad C. Brown",21,0,0,0,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+7,"6","Lookin At Lee","Irad Ortiz Jr.","Steven M. Asmussen",6,0,0,0,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+8,"9","Meantime","Mike Smith","Brian A. Lynch",16,0,0,0,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+9,"4","J Boys Echo","Robby Albarado","Dale L. Romans",16,0,0,0,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+10,"10","Multiplier","Joel Rosario","Brendan P. Walsh",16,0,0,0,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+11,"5","Hollywood Handsome","Florent Geroux","Dallas Stewart",31,0,0,0,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+12,"11","Epicharis","Christophe Lemaire","Kiyoshi Hagiwara",NA,0,0,0,2017,"Belmont Stakes",84,51.1,0,"Clear","Fast",57729
+1,"1","Justify","Mike Smith","Bob Baffert",1.8,3.6,3.5,2.8,2018,"Belmont Stakes",79,57.9,0,"Clear","Fast",90327
+2,"6","Gronkowski","Jose Ortiz","Chad Brown",23,0,13.8,7,2018,"Belmont Stakes",79,57.9,0,"Clear","Fast",90327
+3,"4","Hofburg","Irad Ortiz Jr.","Bill Mott",6,0,0,3.7,2018,"Belmont Stakes",79,57.9,0,"Clear","Fast",90327
+4,"8","Vino Rosso","John Velazquez","Todd Pletcher",8,0,0,0,2018,"Belmont Stakes",79,57.9,0,"Clear","Fast",90327
+5,"7","Tenfold","Ricardo Santana Jr.","Steve Asmussen",11,0,0,0,2018,"Belmont Stakes",79,57.9,0,"Clear","Fast",90327
+6,"3","Bravazo","Luis Saez","D. Wayne Lukas",9,0,0,0,2018,"Belmont Stakes",79,57.9,0,"Clear","Fast",90327
+7,"2","Free Drop Billy","Robby Albarado","Dale Romans",31,0,0,0,2018,"Belmont Stakes",79,57.9,0,"Clear","Fast",90327
+8,"5","Restoring Hope","Florent Geroux","Bob Baffert",35,0,0,0,2018,"Belmont Stakes",79,57.9,0,"Clear","Fast",90327
+9,"10","Blended Citizen","Kyle Frey","Doug OâNeill",23,0,0,0,2018,"Belmont Stakes",79,57.9,0,"Clear","Fast",90327
+10,"9","Noble Indy","Javier Castellano","Todd Pletcher",24,0,0,0,2018,"Belmont Stakes",79,57.9,0,"Clear","Fast",90327
+1,"7","Sir Winston","Mark Casse","Joel Rosario",11,22.4,8.8,6.1,2019,"Belmont Stakes",78.1,60.1,0,"Clear","Fast",56217
+2,"10","Tacitus","Bill Mott","Jose Ortiz",2.8,0,3.9,3.2,2019,"Belmont Stakes",78.1,60.1,0,"Clear","Fast",56217
+3,"1","Joevia","Gregg Sacco","Jose Lezcano",22,0,0,8.7,2019,"Belmont Stakes",78.1,60.1,0,"Clear","Fast",56217
+4,"4","Tax","Danny Gargan","Irad Ortiz Jr.",13,0,0,0,2019,"Belmont Stakes",78.1,60.1,0,"Clear","Fast",56217
+5,"3","Master Fencer","Koichi Tsunoda","Julien Leparoux",14,0,0,0,2019,"Belmont Stakes",78.1,60.1,0,"Clear","Fast",56217
+6,"6","Spinoff","Todd Pletcher","Javier Castellano",11,0,0,0,2019,"Belmont Stakes",78.1,60.1,0,"Clear","Fast",56217
+7,"2","Everfast","Dale Romans","Luis Saez",18,0,0,0,2019,"Belmont Stakes",78.1,60.1,0,"Clear","Fast",56217
+8,"8","Intrepid Heart","Todd Pletcher","John Velazquez",8,0,0,0,2019,"Belmont Stakes",78.1,60.1,0,"Clear","Fast",56217
+9,"9","War of Will","Mark Casse","Tyler Gaffalione",4.5,0,0,0,2019,"Belmont Stakes",78.1,60.1,0,"Clear","Fast",56217
+10,"5","Bourbon War","Mark Hennig","Mike Smith",11,0,0,0,2019,"Belmont Stakes",78.1,60.1,0,"Clear","Fast",56217
+1,"12","Afleet Alex","Jeremy Rose","Timothy F. Ritchey",2,8.6,5,3.2,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+2,"5","Scrappy T","Ramon Dominguez","Robert Bailes",13,0,11.2,5.8,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+3,"13","Giacomo","Mike Smith","John Shirreffs",21,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+4,"10","Sun King","Rafael Bejarano","Nick Zito",18,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+5,"11","High Limit","Edgar Prado","Robert Frankel",17,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+6,"3","Noble Causeway","Gary L. Stevens","Nick Zito",16,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+7,"4","Greeley's Galaxy","David Flores","Warren Stute",6,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+8,"1","Malibu Moonshine","Steve Hamilton","King T.Â Leatherbury",16,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+9,"7","Closing Argument","Cornelio Velasquez","Kiaran McLaughlin",21,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+10,"2","High Fly","Jerry D. Bailey","Nick Zito",12,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+11,"6","Hal's Image","Jose Santos","Barry R. Rose",16,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+12,"9","Wilko","Corey Kakatani","D. Wayne Lukas",14,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+13,"5","Galloping Grocer","Joe Bravo","Dominick Schettino",28,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+14,"14","Going Wild","Robby Albarado","D. Wayne Lukas",27,0,0,0,2005,"Preakness",73,48.9,0,"Clear","Fast",125687
+1,"8","Bernardini","Javier Castellano","Tom Albertrani",13,27.8,9.4,5.8,2006,"Preakness",68,55.4,0,"Clear","Fast",128643
+2,"7","Sweetnorthernsaint","Kent Desormeaux","Michael Trombetta",8,0,7.8,5,2006,"Preakness",68,55.4,0,"Clear","Fast",128643
+3,"3","Hemingway's Key","Jeremy Rose","Nick Zito",31,0,0,8,2006,"Preakness",68,55.4,0,"Clear","Fast",128643
+4,"5","Brother Derek","Alex Solis","Dan Hendricks",4,0,0,0,2006,"Preakness",68,55.4,0,"Clear","Fast",128643
+5,"4","Greeley's Legacy","Richard Migliore","George Weaver",21,0,0,0,2006,"Preakness",68,55.4,0,"Clear","Fast",128643
+6,"2","Platinum Couple","Jose Espinoza","Joseph Lostritto",51,0,0,0,2006,"Preakness",68,55.4,0,"Clear","Fast",128643
+7,"1","Like Now","Garrett Gomez","Kiaran McLaughlin",13,0,0,0,2006,"Preakness",68,55.4,0,"Clear","Fast",128643
+8,"9","Diabolical","Ramon Dominguez","Steve Klesaris",31,0,0,0,2006,"Preakness",68,55.4,0,"Clear","Fast",128643
+9,"6","Barbaro","Edgar Prado","Michael Matz",1.6,0,0,0,2006,"Preakness",68,55.4,0,"Clear","Fast",128643
+1,"4","Curlin","Robby Albarado","Steve Asmussen",4.5,8.8,3.8,2.8,2007,"Preakness",75.9,54,0,"Cloudy","Fast",132221
+2,"8","Street Sense","Calvin Borel","Carl Nafzger",2.4,0,3,2.4,2007,"Preakness",75.9,54,0,"Cloudy","Fast",132221
+3,"7","Hard Spun","Mario G. Pino","J. LarryÂ Jones",3.5,0,0,3,2007,"Preakness",75.9,54,0,"Cloudy","Fast",132221
+4,"9","CP West","Edgar Prado","Nick Zito",21,0,0,0,2007,"Preakness",75.9,54,0,"Cloudy","Fast",132221
+5,"3","Circular Quay","John R. Velazquez","Todd Pletcher",9,0,0,0,2007,"Preakness",75.9,54,0,"Cloudy","Fast",132221
+6,"5","King of the Roxy","Garrett Gomez","Todd Pletcher",13,0,0,0,2007,"Preakness",75.9,54,0,"Cloudy","Fast",132221
+7,"1","Mint Slewlep","Alan Garcia","Larry Jones",31,0,0,0,2007,"Preakness",75.9,54,0,"Cloudy","Fast",132221
+8,"2","Xchanger","Ramon Dominguez","Carl Nafzger",16,0,0,0,2007,"Preakness",75.9,54,0,"Cloudy","Fast",132221
+9,"6","Flying First Class","Mark Guidry","D. Wayne Lukas",21,0,0,0,2007,"Preakness",75.9,54,0,"Cloudy","Fast",132221
+1,"7","Big Brown","Kent Desormeaux","Richard Dutrow Jr.",1.5,2.4,2.6,2.4,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+2,"1","Macho Again","Julien Leparoux","Dallas Stewart",21,0,17.2,10.4,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+3,"3","Icabad Crane","Jeremy Rose","H. Graham Motion",31,0,0,5.6,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+4,"6","Racecar Rhapsody","Robby Albarado","Kenneth McPeek",31,0,0,0,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+5,"9","Stevil","John R. Velazquez","Nick Zito",31,0,0,0,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+6,"8","Kentucky Bear","Jamie Theriot","Reade Blake",16,0,0,0,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+7,"13","Hey Byrn","Charles C. Lopez","Edward Plesa, Jr.",21,0,0,0,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+8,"11","Giant Moon","Ramon A. Dominguez","Richard E.Â Schosberg",31,0,0,0,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+9,"2","Tres Borrachos","Tyler Baze","C. BeauÂ Greely",31,0,0,0,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+10,"4","Yankee Bravo","Alex Solis","Patrick Gallagher",16,0,0,0,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+11,"12","Gayego","Mike Smith","Paulo Lobo",9,0,0,0,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+12,"10","Riley Tucker","Edgar Prado","William I. Mott",31,0,0,0,2008,"Preakness",75,48.9,0.17,"Clear","Fast",121876
+1,"13","Rachel Alexandra","Calvin Borel","Steve Asmussen",2.8,5.6,4.6,3.6,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+2,"2","Mine That Bird","Mike Smith","Bennie ""Chip"" Woolley Jr.",5.5,0,6.6,4.8,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+3,"3","Musket Man","Eibar Coa","Derek Ryan",11,0,0,5,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+4,"10","Flying Private","Alan Garcia","D. Wayne Lucas",51,0,0,0,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+5,"1","Big Drama","John Velazquez","David Fawkes",11,0,0,0,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+6,"7","Papa Clem","Rafael Bejarano","Gary Stute",9,0,0,0,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+7,"6","Terrain","Jeremy Rose","Albert Stall Jr.",31,0,0,0,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+8,"4","Luv Gov","Jamie Theriot","D. Wayne Lukas",51,0,0,0,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+9,"8","General Quarters","Julian Leparoux","Tom McCarthy",21,0,0,0,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+10,"5","Friesan Fire","Gabriel Saez","Larry Jones",11,0,0,0,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+11,"9","Pioneerof the Nile","Garrett Gomez","Bob Baffert",6,0,0,0,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+12,"12","Tone It Down","Kent Desormeaux","William Komlo",51,0,0,0,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+13,"11","Take the Points","Edgar Prado","Todd Pletcher",31,0,0,0,2009,"Preakness",75.7,66.7,0,"Showery","Fast",77850
+1,"7","Lookin At Lucky","Martin Garcia","Bob Baffert",3,6.8,4.6,3.8,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+2,"11","First Dude","Ramon Dominguez","Dale Romans",24,0,16.6,9.2,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+3,"6","Jackson Bend","Mike Smith","Nick Zito",12,0,0,6.6,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+4,"5","Yawanna Twist","Edgar Prado","Richard Dutrow Jr.",17,0,0,0,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+5,"12","Dublin","Garrett Gomez","D. Wayne Lukas",10,0,0,0,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+6,"10","Paddy O'Prado","Kent Desormeaux","Dale Romans",8,0,0,0,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+7,"9","Caracortado","Paul Atkinson","Michael Machowsky",19,0,0,0,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+8,"8","Super Saver","Calvin Borel","Todd Pletcher",3,0,0,0,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+9,"2","Schoolyard Dreams","Eibar Coa","Derek Ryan",16,0,0,0,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+10,"1","Aikenite","Javier Castellano","Todd Pletcher",31,0,0,0,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+11,"3","Pleasant Prince","Julien Leparoux","Wesley Ward",24,0,0,0,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+12,"4","Northern Giant","Terry Thompson","D. Wayne Lukas",31,0,0,0,2010,"Preakness",76.1,66.7,0,"Clear","Fast",96760
+1,"5","Shackleford","Jesus Castanon","Dale Romans",13,27.2,10.2,6.8,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+2,"11","Animal Kingdom","John R.Â Velazquez","H. Graham Motion",3,0,4.2,3.6,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+3,"1","Astrology","Mike Smith","Steve Asmussen",16,0,0,8,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+4,"10","Dialed In","Julien Leparoux","Nick Zito",5.5,0,0,0,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+5,"8","Dance City","Ramon Dominguez","Todd Pletcher",13,0,0,0,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+6,"9","Mucho Macho Man","Rajiv Maragh","Kathy Ritvo",7,0,0,0,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+7,"3","King Congie","Robby Albarado","Thomas Albertrani",21,0,0,0,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+8,"14","Mr. Commons","Victor Espinoza","John Shirreffs",21,0,0,0,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+9,"12","Isn't He Perfect","Edgar Prado","Doodnauth Shivmangal",31,0,0,0,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+10,"13","Concealed Identity","Sheldon Russell","Edmond Gaudet",31,0,0,0,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+11,"2","Norman Asbjornson","Julian Pimentel","Chris Grove",31,0,0,0,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+12,"6","Sway Away","Garrett Gomez","Jeff Bonde",16,0,0,0,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+13,"7","Midnight Interlude","Martin Garcia","Bob Baffert",16,0,0,0,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+14,"4","Flashpoint","Cornelio Velasquez","Wesley Ward",21,0,0,0,2011,"Preakness",73.9,59,0.08,"Clear","Fast",118356
+1,"9","I'll Have Another","Mario Gutierrez","Doug O'Neill",4,8.4,3.8,2.8,2012,"Preakness",84,60.1,0,"Clear","Fast",121309
+2,"7","Bodemeister","Mike Smith","Bob Baffert",2.8,0,3.2,2.8,2012,"Preakness",84,60.1,0,"Clear","Fast",121309
+3,"6","Creative Cause","Joel Rosario","Mike Harrington",7,0,0,3.6,2012,"Preakness",84,60.1,0,"Clear","Fast",121309
+4,"4","Zetterholm","John Alvarado","Richard Dutrow, Jr.",21,0,0,0,2012,"Preakness",84,60.1,0,"Clear","Fast",121309
+5,"2","Teeth of the Dog","Joe Bravo","Michael Matz",16,0,0,0,2012,"Preakness",84,60.1,0,"Clear","Fast",121309
+6,"10","Optimizer","Jon Court","D. Wayne Lukas",24,0,0,0,2012,"Preakness",84,60.1,0,"Clear","Fast",121309
+7,"11","Cozzetti","Dale Romans","Jose Lezcano",28,0,0,0,2012,"Preakness",84,60.1,0,"Clear","Fast",121309
+8,"1","Tiger Walk","Ramon Dominguez","Ignacio Correas, IV",24,0,0,0,2012,"Preakness",84,60.1,0,"Clear","Fast",121309
+9,"8","Daddy Nose Best","Juan Leparoux","Steve Asmussen",12,0,0,0,2012,"Preakness",84,60.1,0,"Clear","Fast",121309
+10,"5","Went The Day Well","John Velazquez","Graham Motion",7,0,0,0,2012,"Preakness",84,60.1,0,"Clear","Fast",121309
+11,"3","Pretension","Javier Santiago","Chris Grove",34,0,0,0,2012,"Preakness",84,60.1,0,"Clear","Fast",121309
+1,"6","Oxbow","Gary Stevens","D. Wayne Lukas",16,32.8,12,6.8,2013,"Preakness",78.1,64,0,"Clear","Fast",117203
+2,"9","Itsmyluckyday","John Velazquez","Eddie Plesa Jr.",11,0,7.8,5,2013,"Preakness",78.1,64,0,"Clear","Fast",117203
+3,"5","Mylute","Rosie Napravnik","Tom Amoss",6,0,0,5.2,2013,"Preakness",78.1,64,0,"Clear","Fast",117203
+4,"1","Orb","Joel Rosario","Shug McGaughey",1.6,0,0,0,2013,"Preakness",78.1,64,0,"Clear","Fast",117203
+5,"2","Goldencents","Kevin Krigger","Doug OâNeill",9,0,0,0,2013,"Preakness",78.1,64,0,"Clear","Fast",117203
+6,"4","Departing","Brian Hernandez, Jr.","Albert M. Stall, Jr.",7,0,0,0,2013,"Preakness",78.1,64,0,"Clear","Fast",117203
+7,"7","Will Take Charge","Mike Smith","D. Wayne Lukas",13,0,0,0,2013,"Preakness",78.1,64,0,"Clear","Fast",117203
+8,"8","Govenor Charlie","Martin Garcia","Bob Baffert",13,0,0,0,2013,"Preakness",78.1,64,0,"Clear","Fast",117203
+9,"3","Titletown Five","Julien Leparoux","D. Wayne Lukas",31,0,0,0,2013,"Preakness",78.1,64,0,"Clear","Fast",117203
+1,"3","California Chrome","Victor Espinoza","Art Sherman",1.6,3,3,2.4,2014,"Preakness",68,54,0.38,"Cloudy","Fast",123469
+2,"10","Ride On Curlin","Joel Rosario	","William Gowan",11,0,5.6,3.8,2014,"Preakness",68,54,0.38,"Cloudy","Fast",123469
+3,"8","Social Inclusion","Luis Contreras","Manny Azpurua	",6,0,0,3.4,2014,"Preakness",68,54,0.38,"Cloudy","Fast",123469
+4,"2","General a Rod","Javier Castellano","Mike Maker",16,0,0,0,2014,"Preakness",68,54,0.38,"Cloudy","Fast",123469
+5,"4","Ring Weekend","Alan Garcia","Graham Motion",21,0,0,0,2014,"Preakness",68,54,0.38,"Cloudy","Fast",123469
+6,"9","Pablo Del Monte","Jeffrey Sanchez","Wesley Ward",21,0,0,0,2014,"Preakness",68,54,0.38,"Cloudy","Fast",123469
+7,"1","Dynamic Impact","Miguel Mena","Mark Casse",13,0,0,0,2014,"Preakness",68,54,0.38,"Cloudy","Fast",123469
+8,"7","Kid Cruz","Julian Pimentel","Linda Rice",21,0,0,0,2014,"Preakness",68,54,0.38,"Cloudy","Fast",123469
+9,"5","Bayern	","Rosie Napravnik","Bob Baffert",11,0,0,0,2014,"Preakness",68,54,0.38,"Cloudy","Fast",123469
+10,"6","Ria Antonia (F)","Calvin Borel","Tom Amoss",31,0,0,0,2014,"Preakness",68,54,0.38,"Cloudy","Fast",123469
+1,"1","American Pharoah","Victor Espinoza","Bob Baffert",1.8,3.8,3.4,2.8,2015,"Preakness",82.9,63,0,"Rainy","Sloppy",131680
+2,"5","Tale of Verve","Joel Rosario","Dallas Stewart",26,0,19,8.8,2015,"Preakness",82.9,63,0,"Rainy","Sloppy",131680
+3,"7","Divining Rod","Javier Castellano","Arnaud Delacour",13,0,0,5.2,2015,"Preakness",82.9,63,0,"Rainy","Sloppy",131680
+4,"2","Dortmund","Martin Garcia","Bob Baffert",5,0,0,0,2015,"Preakness",82.9,63,0,"Rainy","Sloppy",131680
+5,"3","Mr. Z","Corey Nakatani","D. Wayne Lukas",17,0,0,0,2015,"Preakness",82.9,63,0,"Rainy","Sloppy",131680
+6,"4","Danzig Moon","Julien Leparoux","Mark Casse",14,0,0,0,2015,"Preakness",82.9,63,0,"Rainy","Sloppy",131680
+7,"8","Firing Lane","Gary Stevens","Simon Callaghan",4,0,0,0,2015,"Preakness",82.9,63,0,"Rainy","Sloppy",131680
+8,"6","Bodhisattva","Trevor McCarthy","Jose Corrales",26,0,0,0,2015,"Preakness",82.9,63,0,"Rainy","Sloppy",131680
+1,"5","Exaggerator","Kent Desormeaux","J. Keith Desormeaux",3.5,7.2,3.2,2.4,2016,"Preakness",70,55,0.03,"Rainy","Sloppy",135256
+2,"1","Cherry Wine","Corey Lanerie","Dale Romans",18,0,9.8,4.2,2016,"Preakness",70,55,0.03,"Rainy","Sloppy",135256
+3,"3","Nyquist","Mario Gutierrez","Doug O'Neill",1.8,0,0,2.2,2016,"Preakness",70,55,0.03,"Rainy","Sloppy",135256
+4,"11","Stradivari","John Velazquez","Todd Pletcher",9,0,0,0,2016,"Preakness",70,55,0.03,"Rainy","Sloppy",135256
+5,"6","Lani","Yutaka Take","Mikio Matsunaga",31,0,0,0,2016,"Preakness",70,55,0.03,"Rainy","Sloppy",135256
+6,"8","Laoban","Florent Geroux","Eric Guillot",68,0,0,0,2016,"Preakness",70,55,0.03,"Rainy","Sloppy",135256
+7,"2","Uncle Lino","Fernando Perez","Gary Sherlock",36,0,0,0,2016,"Preakness",70,55,0.03,"Rainy","Sloppy",135256
+8,"10","Fellowship","Jose Lezcano","Mark E. Casse",59,0,0,0,2016,"Preakness",70,55,0.03,"Rainy","Sloppy",135256
+9,"4","Awesome Speed","Jevian Toledo","Alan E. Goldberg",53,0,0,0,2016,"Preakness",70,55,0.03,"Rainy","Sloppy",135256
+10,"7","Collected","Javier Castellano","Bob Baffert",15,0,0,0,2016,"Preakness",70,55,0.03,"Rainy","Sloppy",135256
+11,"9","Abiding Star","J.D. Acosta","Ned Allar",41,0,0,0,2016,"Preakness",70,55,0.03,"Rainy","Sloppy",135256
+1,"2","Cloud Computing","Javier Castellano","Chad Brown",14,28.8,8.6,6,2017,"Preakness",77,66,0.43,"Cloudy","Fast",140327
+2,"5","Classic Empire","Julien Leparoux","Mark Casse",3,0,4.4,4,2017,"Preakness",77,66,0.43,"Cloudy","Fast",140327
+3,"8","Senior Investment","Channing Hill","Ken McPeek",26,0,0,10.2,2017,"Preakness",77,66,0.43,"Cloudy","Fast",140327
+4,"9","Lookin at Lee","Corey Lanerie","Steve Asmussen",10,0,0,0,2017,"Preakness",77,66,0.43,"Cloudy","Fast",140327
+5,"6","Gunnevera","Mike Smith","Antonio Sano",11,0,0,0,2017,"Preakness",77,66,0.43,"Cloudy","Fast",140327
+6,"1","Multiplier","Joel Rosario","Brendan Walsh",20,0,0,0,2017,"Preakness",77,66,0.43,"Cloudy","Fast",140327
+7,"10","Conquest Mo Money","Jorge Carreno","Miguel Hernandez",11,0,0,0,2017,"Preakness",77,66,0.43,"Cloudy","Fast",140327
+8,"4","Always Dreaming","John Velazquez","Todd Pletcher",2.4,0,0,0,2017,"Preakness",77,66,0.43,"Cloudy","Fast",140327
+9,"3","Hence","Florent Geroux","Steve Asmussen",22,0,0,0,2017,"Preakness",77,66,0.43,"Cloudy","Fast",140327
+10,"7","Term of Art","Jose Ortiz","Doug O'Neill",46,0,0,0,2017,"Preakness",77,66,0.43,"Cloudy","Fast",140327
+1,"7","Justify","Mike Smith","Bob Baffert",1.5,2.8,2.8,2.6,2018,"Preakness",64,52,0.95,"Foggy","Sloppy",134487
+2,"8","Bravazo","Luis Contreras","D. Wayne Lukas",21,0,7.6,6.8,2018,"Preakness",64,52,0.95,"Foggy","Sloppy",134487
+3,"6","Tenfold","Ricardo Santana Jr.","Steve Asmussen",21,0,0,6.8,2018,"Preakness",64,52,0.95,"Foggy","Sloppy",134487
+4,"5","Good Magic","Jose Ortiz","Chad Brown",4,0,0,0,2018,"Preakness",64,52,0.95,"Foggy","Sloppy",134487
+5,"2","Lone Sailor","Irad Ortiz Jr.","Thomas Amoss",16,0,0,0,2018,"Preakness",64,52,0.95,"Foggy","Sloppy",134487
+6,"3","Sporting Chance","Luis Contreras","D. Wayne Lukas",31,0,0,0,2018,"Preakness",64,52,0.95,"Foggy","Sloppy",134487
+7,"4","Diamond King","Javier Castellano","John Servis",31,0,0,0,2018,"Preakness",64,52,0.95,"Foggy","Sloppy",134487
+8,"1","Quip","Florent Geroux","Rodolphe Brisset",13,0,0,0,2018,"Preakness",64,52,0.95,"Foggy","Sloppy",134487
+1,"1","War of Will","Mark Casse","Tyler Gaffalione",7,14.2,7.4,5.4,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+2,"10","Everfast","Dale Romans","Joel Rosario",26,0,32,14.4,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+3,"5","Owendale","Brad Cox","Florent Geroux",9,0,0,6,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+4,"3","Warriorâs Charge","Brad Cox","Javier Castellano",14,0,0,0,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+5,"11","Laughing Fox","Steve Asmussen","Ricardo Santana Jr.",21,0,0,0,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+6,"4","Improbable","Bob Baffert","Mike Smith",3.5,0,0,0,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+7,"13","Win Win Win","Michael Trombetta","Julian Pimentel",14,0,0,0,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+8,"2","Bourbon War","Mark Hennig","Irad Ortiz Jr.",13,0,0,0,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+9,"8","Signalman","Kenny McPeek","Brian Hernandez Jr.",22,0,0,0,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+10,"12","Anothertwistafate","Blaine Wright","Jose Ortiz",15,0,0,0,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+11,"7","Alwaysmining","Kelly Rubley","Daniel Centeno",8,0,0,0,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+12,"6","Market King","D. Wayne Lukas","Jon Court",31,0,0,0,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256
+13,"9","Bodexpress","Gustavo Delgado","John Velazquez",20,0,0,0,2019,"Preakness",78.1,70,0,"Cloudy","Fast",131256

@@ -1,0 +1,104 @@
+---
+title: "Triple Crown Worksheet"
+author: "Brendan Karadenes"
+format: html
+---
+
+                          Logistic Regression in Horseracing
+The Triple Crown is an annual series of three horseraces, including the Belmont Stakes, Kentucky Derby, and Preakness Stakes. Each race began in different years, but all were inaugurated by 1875. The winners of all three races are given the prestigious Triple Crown Trophy, which only 17 racers have. The Triple Crown is a popular spectator sport with tens of thousands of fans in attendance at each race and millions more watching around the world.
+We will be investigating results from all three races from 2005 to 2019 – which contains 627 horses that competed during this period. The `final_place` variable is what place the horse finished in that race. The `odds` variable is the pre-race betting odds that a horse has of winning (lower odds mean higher chance of winning). The `track_condition` variable has three categories describing the track surface: fast, sloppy, and muddy. 
+
+Our goal is to try to predict the placement of the horses based on the betting odds and track conditions in a logistic regression model. 
+
+To begin, let's use what we know about simple linear regression and predict whether a horse placed in the top 3 based on betting odds.
+
+```{r}
+# first load in any necessary packages and data
+library(tidyverse)
+# library(here)
+# horseracing <- read.csv(here("bkaradenes/Horseracing_Module/module/triple-crown.csv"))
+```
+
+1. Talk to a neighbor and brainstorm some ideas on the appropriateness of the model below.
+
+```{r}
+# creating a top 3 variable
+
+horseracing <- horseracing %>%
+  mutate(top_3 = ifelse(final_place <= 3, 1, 0))
+
+# graphing the model
+
+ggplot(data = horseracing , aes(x = Odds, y = top_3) ) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = F)+
+  geom_smooth(se = F, color = "red")+
+  theme_minimal()
+```
+
+Sample Answer: The model makes it difficult to see the impact odds has on winning the race. However, a win seems most likely with the lowest betting odds, but quickly goes down in the middle then goes back up at the end. It's interesting that some of the higher odds predict more wins than the odds in the middle.
+
+2.Use R to fit a model using betting odds to predict a top 3 finish. Write out the model below.
+
+```{r}
+mod1 = glm( top_3 ~ Odds , data = horseracing)
+summary(mod1)
+```
+
+Sample Answer: log(p/(1-p)) = 0.372 - 0.007*Odds
+
+3. Use the fitted model to "predict" for a betting odds equal to 10 and 30. What do these predicted values represent in the context of the question?
+
+```{r}
+newx = data.frame(Odds = c(10,30))
+predict.glm(mod1,newx,type="response")
+```
+
+Sample Answer: The predicted values represent the probability of a top 3 finish given specific betting odds. Betting odds of 10 predicts a 30.08% probability of winning the race and betting odds of 30 predicts a 15.94% probability of winning a race.
+
+4. Now plot your model that uses betting odds to predict the probability of placing top 3 in a race.
+
+```{r}
+ggplot(data = horseracing, aes(x = Odds, y = top_3) ) + 
+  geom_jitter(width = 0, height = 0.015) +
+  geom_smooth(method="glm", 
+              method.args=list(family="binomial"), 
+              se=FALSE) +
+  theme_minimal()
+```
+
+5.Give one reason why you think poor track conditions (muddy and sloppy) would or would not level the playing field for horses with higher betting odds. Explain.
+
+Sample “would” Answer: Poor conditions could level the playing field because it adds an uncontrollable factor to the race that the betting odds may not be expecting. So, it creates a level of uncertainty that the horse favored to win may not perform as well under bad racing conditions.
+
+Sample “would not” Answer: Since the poor conditions affect both horses you should still expect the horse with the lower betting odds to win because there’s no evidence to assume that the underdog horse is going to respond to the conditions better than the favorite.
+
+6. Now use R to fit a model that uses both betting odds and track conditions to predict the probability of placing top 3 in a race. Write out the model below.
+
+```{r}
+mod2 = glm(top_3 ~ Odds + track_condition, data = horseracing)
+summary(mod2)
+```
+
+Sample Answer: log(p/(1-p)) = 0.373 - 0.007(Odds) - 0.03(track_conditionMuddy) - 0.005(track_conditionSloppy)
+
+7. Compare the two models using BIC and determine which one is a better fit for predicting a top three finish.
+
+```{r}
+# install.packages("flexmix")
+library(flexmix)
+BIC(mod1)
+BIC(mod2)
+```
+
+Sample Answer: The first module with only 1 predictor(betting odds) is a better fit for predicting the probability of finishing in the top three because it has a lower BIC. This is perhaps due to the second model being penalized for using another predictor.
+
+
+
+
+
+
+
+
+
+
