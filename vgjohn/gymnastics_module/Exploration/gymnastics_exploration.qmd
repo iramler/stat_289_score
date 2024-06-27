@@ -8,6 +8,9 @@ ncaa_gymnastics_data <- read.csv("/Users/vivianjohnson/Desktop/stat_289_score_ne
 ```
 
 ```{r}
-ncaa_gymnastics_data %>% ggplot()
+ncaa_gymnastics_data %>%
+  ggplot(mapping = aes(x = Total)) +
+  geom_histogram()
 ```
+
 
