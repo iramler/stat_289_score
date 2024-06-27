@@ -1,0 +1,101 @@
+---
+title: "Triple Crown Horseracing - Logistic Regression"
+author: 
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation: 
+      - id: slu
+        name: St. Lawrence University
+  - name: Brendan Karadenes
+    affiliation:
+      - ref: slu
+date: June 27, 2024
+description: Describing probability of top three finishes in Triple Crown horseracing.
+categories:
+  - Logistic Regression
+
+---
+
+### Introduction
+
+For this activity, you will be exploring logistic regression models to determine the probability of a top three finish in the [Triple Crown](https://www.kentuckyderby.com/triple-crown/){target="_blank"}. 
+
+In particular, you will examine how variables such as betting odds and track conditions can predict outcomes. 
+
+Investigating these models is useful for several reasons. Firstly, exploring these trends can help to deepen our understanding on how accurate betting odds are. Secondly, analyzing the impact of track conditions can help inform bettors about how the outcome of the race might change, depending on the condition. It can identify which combination of variables provide the best chance at a top 3 finish. Further analysis can inform bettors on what factors they should take into account when gambling on horseracing and help analysts correctly set the odds.
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This activity would be suitable for an in-class example.
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of the activity, you will be able to:
+
+1.  Create logistic regression models by hand and using R.
+2.  Compare and contrast models to see which is the best fit.
+3.  Plot models using R.
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+For this activity, students will require basic knowledge of simple linear and logistic regression and how to interpret models. 
+:::
+
+::: {.callout-note collapse="true" title="Technology Requiremens" appearance="minimal"}
+The provided worksheets will require access to R or similar software. 
+
+Since the data are provided, instructors are encouraged to modify the worksheets to have students construct visualizations and models using whichever software they choose.
+:::
+
+### Data
+
+The data set contains 627 rows and 17 columns. Each row represents a horse that competed in one of the races during the period from 2005 to 2019.
+
+Download Data: 
+
+Available on the [SCORE Data Repository](https://data.scorenetwork.org/): [triple-crown.csv](https://github.com/SCOREnetworkorg/sports-data-repository/raw/main/data/triple-crown.csv)
+
+<details>
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable       | Description                                                              |
+|-----------------|-------------------------------------------------------|
+| final_place      | the place the horse came in                                                 |
+| PP  | pole position                        |
+| Horse   | name of the horse                          |
+| Jockey | first and last name of the jockey |
+| Trainer           | first and last name of the horse's trainer                                                           |
+| Odds         | betting odds of winning pre-race                                                         |
+| Win           | winning bet payout (in dollars)                                       |
+| Place     | payout of a place bet (in dollars)                                                    |
+| Show     | payout of a show bet (in dollars)                                             |
+| year    | year of the race             |
+| race    | name of the race        |
+| high_temp      | high temperature on day of the race (Fahrenheit)                                                  |
+| low_temp  | low temperature on day of the race (Fahrenheit)                                            |
+| precipitation_24hrs | amount of total rainfall on day of the race (inches)                                                    |
+| weather | description of weather on race day                                                    |
+| track_condition | description of condition of the track surface on race day |
+| attendance | total number of spectators at the race |
+
+**Data Source**
+
+[Kaggle](https://www.kaggle.com/datasets/jmolitoris/triple-crown-of-horse-races-2005-2019/data){target="_blank}
+
+</details>
+
+### Materials
+
+We provide an editable quarto document along with its solutions. 
+
+[Class Handout](triple-crown-worksheet.qmd)
+
+[Class Handout - with solutions](triple-crown-worksheet-key.qmd)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+In conclusion, the Triple Crown logistic regression worksheet provides valuable learning opportunities for students in several key areas. It allows them to understand all of the different factors that effect a racehorse and to discover the best ways to predict a top three finish. The calculation of logistic models by hand and using R gives the students multiple ways to conduct analysis. Also, the students are given tools to compare these models and give insights into the many factors that influence a bettors decision. Overall, this worksheet allows students to critically analyze the results of the Triple Crown races from 2005 to 2019 and shed light onto the many factors that racers fight through to compete at the highest level.
+:::
+
+
+
+
+
