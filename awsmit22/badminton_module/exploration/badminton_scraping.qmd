@@ -763,12 +763,19 @@ all19_18 <- full_join(all2019, all2018)
 all23_20 <- full_join(all23_22, all21_20)
 
 badminton <- full_join(all23_20, all19_18)
+```
 
-# Last minute cleaning
+# Last minute cleaning with full dataset
+
+```{r}
 badminton <- badminton |> relocate(Player1, Player2, Opponent1, Opponent2, Rank, Year, Gender, Category) |> mutate(Rank = as.integer(Rank))
 ```
 
-# Write csv file
+```{r}
+badminton <- badminton |> mutate(win_pct = Wins/Matches, total_pts = `Points For` + `Points Against`, shot_pct = `Points For`/total_pts)
+```
+
+# Write the csv
 
 ```{r}
 write.csv(badminton, "badminton.csv")

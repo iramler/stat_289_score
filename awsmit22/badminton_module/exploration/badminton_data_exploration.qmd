@@ -179,4 +179,9 @@ mod_6 <- lm(`Points For` ~ Matches, data = badminton_df)
 mod_6 |> tidy()
 ```
 
+# playing around with the data arrangement
+
+```{r}
+badminton_df 
+```
 

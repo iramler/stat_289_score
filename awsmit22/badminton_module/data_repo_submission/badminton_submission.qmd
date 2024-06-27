@@ -38,51 +38,37 @@ some insight on patterns in badminton. **COME BACK TO AFTER QUESTIONS ARE DONE**
 
 ## Data
 
-The data set has 750 cases with 14 variables. Each case is a combination of players and opponents that has occured over the course of the World Tour. The data set has 5 years worth of data from 2018-2023. There are men's, women's, and mixed doubles along with men's and women's singles. 
+The data set has 750 cases with 17 variables. Each case is a combination of players and opponents that has occured over the course of the World Tour. The data set has 5 years worth of data from 2018-2023. There are men's, women's, and mixed doubles along with men's and women's singles. 
 
-| Variable          | Description                                                                                                                                                                                                                   |
+| Variable | Description |
 |----------------------|-------------------------------------------------|
-| `Player1`            | The player who the stats in the case are based on. |
-| `Player2`            | The second player who the stats in the case are based on, value is `NA` if the `Category` is `Singles`.|
-| `Opponent1`        | The position of the player. There are 7 positions in handball: goalkeeper, fullbacks (left and right), center backcourt, wingers (left and right), and pivot.                                                                 |
-| `P`               | The number of games the player was in that season.                                                                                                                                                                            |
-| `total_offense`   | The total offensive plays made by the player in the season. Calculated by adding the 6 offensive focused statistics from the original dataset.                                                                                |
-| `total_penalties` | The total penalties the player had in the season. Calculated by adding the 5 penalty related statistics from the original dataset.                                                                                            |
-| `HPI`             | Handball performance index, complex formulaic calculation equivalent to how well the player performed in the season. Players with HPIs in the 70s are considered good, while players in the 60s are considered not as strong. |
-
-: [handball.csv](handball.csv){target="_blank"}
+| `Player1` | The player who the stats in the case are based on. |
+| `Player2` | The teammate of `Player1`, value is `NA` if the case is `Singles`.|
+| `Opponent1` | The opponent facing `Player1` and `Player2` if the case is `Doubles`. |
+| `Opponent2` | The teammate of `Opponent1` if the case is `Doubles`. |
+| `Rank` | The case's rank in its `Category`, `Gender`, and `Year` based on `Points For`. |
+| `Year` | The year the case is from. |
+| `Gender` | The gender of the players in the case, either `Women`, `Men`, or `Mixed`. |
+| `Category` | The case's category, `Singles` or `Doubles`. |
+| `Matches` | The number of matches the combination in the case played. |
+| `Wins` | The number of wins for `Player1` (and `Player2` if it is `Doubles`) in the case.|
+| `Losses` | The number of losses for `Player1` (and `Player2` if it is `Doubles`) in the case. |
+| `Points For` | The number of points scored by `Player1` (and `Player2` if it is `Doubles`) in the case. |
+| `Points Against` | The number of points allowed by `Player1` (and `Player2` if it is `Doubles`) in the case. |
+| `Difference` | The difference in `Points For` and `Points Against` in the case. |
+| `win_pct` | The win percentage (`Wins`/`Matches`) for `Player1` (and `Player2` if it is `Doubles`) in the case. |
+| `total_pts` | The total points hit in teh case by both players and opponents. |
+| `shot_pct` | The shot percentage (`Points For`/`total_pts`) for `Player1` (and `Player2` if it is `Doubles`) in the case. |
+: [badminton.csv](badminton.csv){target="_blank"}
 
 ## Questions
 
-1.  Find and interpret a 98% confidence interval for the mean HPI of a
-    player with 30 total_penalties.
-
-2.  Find and interpret a 98% prediction interval for the HPI of a player
-    with 30 total_penalties.
-
-3.  Perform an ANOVA test to assess the overall fit of `HPI` =
-    `total_offense` + `total_penalties`. Provide an interpretation of
-    the results.
-
-4.  Find the correlation of total_penalties and total_offense.
-
-5.  Test the significance of the correlation between the `total_offense`
-    and the `total_penalties` of a player. Provide an interpretation of
-    the results.
-
-6.  Could it be concluded that having more penalties increases the skill
-    and success of a player in the form of HPI?
+1.  **COME BACK TO AFTER QUESTIONS ARE DONE**
 
 ## References
 
-[Kaggle Original
-Dataset](https://www.kaggle.com/datasets/nemanjagojkovic/handball-bundesliga-stats-202223){target="_blank"}
+[Original Dataset](https://www.badmintonstatistics.net/Reports?reportname=MostPointsH2H&category=%&year=-1&level=worldtour&country=%){target="_blank"}
 
-[Olympic Handball
-Rules](https://olympics.com/en/news/handball-game-rules-regulations-how-to-play){target="_blank"}
+[Olympic Badminton Rules](https://olympics.com/en/news/badminton-guide-how-to-play-rules-olympic-history){target="_blank"}
 
-[Handball
-Positions](https://www.theukrules.co.uk/rules/sport/handball/player-positions/#google_vignette){target="_blank"}
-
-[Handball Performance Index
-(HPI)](https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/){target="_blank"}
+[BWF Tour Website](https://bwfworldtour.bwfbadminton.com/){target="_blank"}
