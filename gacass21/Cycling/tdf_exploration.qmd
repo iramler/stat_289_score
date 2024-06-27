@@ -1,0 +1,44 @@
+---
+title: "Cycling Exploration"
+author: "Gavin Cassidy"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+library(rvest)
+```
+
+```{r}
+tdf_stages <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/tdf_stages.csv")
+
+tdf_winners <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/tdf_winners.csv")
+
+stage_data <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/stage_data.csv")
+```
+
+
+```{r}
+tdf_stages |> summary()
+tdf_winners |> summary()
+stage_data |> group_by(edition, stage_results_id) |> summarise(finishers = n()) |> arrange(desc(finishers))
+```
+
+
+```{r}
+
+
+
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-1"
+
+
+
+tdf <- "https://www.procyclingstats.com/race/tour-de-france/1987/prologue"
+tdf_tab <- read_html(tdf) |> html_nodes("table")
+tdf_0 <- tdf_tab[[1]] |> html_table()
+tdf_0
+```
+
+
+
