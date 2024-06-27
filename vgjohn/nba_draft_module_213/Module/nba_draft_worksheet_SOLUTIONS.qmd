@@ -1,6 +1,5 @@
 ---
 title: "Examining Analysis of Variance Using the NBA Draft"
-author: " " 
 ---
 
 In this activity, we are going to be using data from the NBA draft to explore Analysis of Variance (ANOVA).
@@ -13,37 +12,28 @@ Each year, the National Basketball Association (NBA) holds a draft, where prospe
 
 In order to be eligible for the draft, a player must be at least 19 years old and out of high school for at least one year. Prior to 2006, this rule was not in effect, and players could be drafted during/right out of high school.
 
-The draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field.
+Each year, the draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field. It's important to note that there weren't always 30 players selected in each round, the number made its way up to 30 as more teams were added into the NBA. 
 
 #### Playing Basketball
 
-The goal in basketball is to score as many points as possible by throwing the ball through the other team's hoop. The two netted baskets, positioned on opposite ends of a rectangular court, are normally 10 feet high, and have a backboard behind them.
+The goal in basketball is to score as many points as possible by throwing the ball through the other team's hoop.
 
-In the middle of the court, there is a half-court line that divides the two sides. On both sides, surrounding the hoops, there is an arch called the three-point line. Within the three-point line stands the free-throw line, where a player would shoot from should there be a foul called.
-
-During play, each team has five players on the court. The game starts with the referee tossing the ball in the air in between a player from each team, while each player tries to swat the ball to a member of their team (called a jump ball).
+In the middle of the court there is a half-court line that divides the two sides. On both sides, surrounding the hoops, there is an arch called the three-point line. Within the three-point line stands the free-throw line, where a player would shoot from should there be a foul called.
 
 **Scoring**
 
-Players can shoot towards the hoop from any point on the court. A different number of points is rewarded based on where the player is standing when they release the ball. The three shots are explained below.
+Players can shoot towards the hoop from any point on the court. A different number of points is awarded based on where the player is standing when they release the ball. The three shots are explained below.
 
 -   Field Goal: Worth 2 points, scored by shooting within the three point line
 -   Three Pointer: Worth 3 points, scored by shooting outside the three point line.
 -   Free Throw: Worth one point, taken from the free throw line after a foul.
 
-Players move the ball up and down the court by dribbling, passing the ball to teammates, or shooting the ball. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.
+A rebound is when a player from the team that is on defense obtains the ball after the other team takes a shot attempt at the hoop. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.
+
+For this activity, you will be using data from the data set `nba_draft.csv`. The data set includes data from players that were selected in the NBA drafts between the years 1990-2021. Each row represents a different player and statistics from their respective careers in the NBA, some of which are still ongoing. Some key variables include `mins_per_game` the avergae number of minutes played per game in a player's career, `round_picked`, which shows what round the player was selected in, and `pick_in_round` which shows what number pick a player was in the round in which they were selected. 
 
 ## Part 2 - Loading and Cleaning the Data 
 
-**1.  Place to load the necessary packages into your R Environment**
-
-```{r echo=TRUE}
-library(dplyr)
-library(readr)
-library(forcats)
-library(ggplot2)
-students could also load the entire tidyverse
-```
 
 **2.  Load in the data file `nba_draft`. Store it in an object called `nba_draft`**
 
