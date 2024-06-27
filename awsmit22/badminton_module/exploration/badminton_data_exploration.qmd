@@ -20,207 +20,105 @@ badminton_df <- badminton_df |> select(!...1)
 badminton_df
 ```
 
+# I prefer both of the below datasets I just can't choose which to use
+
+```{r}
+summed <- badminton_df |> group_by(Player1, Year, Category, Gender) |> summarise(Rank = mean(Rank), Matches = sum(Matches), Wins = sum(Wins), Losses = sum(Losses), pts_for = sum(`Points For`), pts_agst = sum(`Points Against`), win_pct = Wins/Matches, shot_pct = pts_for/(pts_for + pts_agst)) |> mutate(Rank = as.integer(Rank)) |> rename(Player = Player1)
+```
+
+```{r}
+sum <- badminton_df |> group_by(Player1) |> summarise(Rank = mean(Rank), Matches = sum(Matches), Wins = sum(Wins), Losses = sum(Losses), pts_for = sum(`Points For`), pts_agst = sum(`Points Against`), win_pct = Wins/Matches, shot_pct = pts_for/(pts_for + pts_agst)) |> mutate(Rank = as.integer(Rank)) |> rename(Player = Player1)
+```
+
+```{r}
+best <- badminton_df |> group_by(Player1, Category) |> summarise(Rank = mean(Rank), Matches = sum(Matches), Wins = sum(Wins), Losses = sum(Losses), pts_for = sum(`Points For`), pts_agst = sum(`Points Against`), win_pct = Wins/Matches, shot_pct = pts_for/(pts_for + pts_agst)) |> mutate(Rank = as.integer(Rank)) |> rename(Player = Player1)
+```
+
+
 # Graphical Explorations
 
 ```{r}
-ggplot(data = badminton_df, aes(x = Category, y = `Points For`)) + geom_boxplot() + facet_wrap(~Gender)
+ggplot(data = summed, aes(x = Gender, y = pts_for)) + geom_boxplot() + facet_wrap(~Category)
 ```
 
 ```{r}
-mens_singles <- badminton_df |> filter(Category == "Singles" & Gender == "Men") 
-
-mens_singles_sum <- mens_singles |> group_by(Year) |> summarise(`Points For` = mean(`Points For`))
-ggplot(data = mens_singles_sum, aes(x = Year, y = `Points For`)) + geom_line() 
+ggplot(data = sum, aes(x = pts_for)) + geom_histogram(bins = 15, colour = "black", fill = "lightblue")  + theme_minimal()
 ```
 
 ```{r}
-badminton_sum <- badminton_df |> group_by(Year, Gender, Category) |> summarise(mean_pts_for = mean(`Points For`)) |> filter(Year != 2020)
-
-ggplot(data = badminton_sum, aes(x = Year, y = mean_pts_for, colour = Gender)) + geom_line() + facet_wrap(~Category)
+ggplot(data = sum, aes(x = Wins)) + geom_histogram(bins = 15, colour = "black", fill = "lightblue")  + theme_minimal()
 ```
 
 ```{r}
-ggplot(data = badminton_df, aes(x = `Points For`, y = `Points Against`, colour = Gender)) + geom_point(alpha = 0.5) + facet_wrap(~Category) + geom_smooth(method = "lm")
+ggplot(data = sum, aes(x = win_pct)) + geom_histogram(bins = 15, colour = "black", fill = "lightblue")  + theme_minimal()
 ```
 
 ```{r}
-ggplot(data = badminton_df, aes(x = Wins, y = `Points Against`)) + geom_point()
+ggplot(data = sum, aes(x = shot_pct)) + geom_histogram(bins = 15, colour = "black", fill = "lightblue")  + theme_minimal()
 ```
 
 ```{r}
-ggplot(data = badminton_df, aes(x = `Points For`)) + geom_histogram(bins = 15, colour = "black", fill = "lightblue") + facet_wrap(~Year) + theme_minimal()
+ggplot(data = summed, aes(x = Category, y = pts_for)) + geom_boxplot()
 ```
 
 ```{r}
-ggplot(data = badminton_df, aes(x = `Points For`, y = Difference))+ geom_point() + geom_smooth(method = "lm")
+plot <- summed |> filter(win_pct < 1 & win_pct > 0)
+ggplot(data = plot, aes(x = Category, y = win_pct)) + geom_boxplot()
 ```
 
-```{r}
-ggplot(data = badminton_df, aes(x = `Points For`, y = `Points Against`))+ geom_point() + geom_smooth(method = "lm")
-```
+# Tests
+
+*t.test for difference in means*
 
 ```{r}
-ggplot(data = badminton_df, aes(x = Category, y = `Points For`)) + geom_boxplot()
-```
-
-# Grouping
-
-```{r}
-badminton_df |> filter(Category == "Doubles") |> group_by(Player1, Player2) |> summarise()
-```
-
-```{r}
-badminton_df |> filter(Category == "Doubles") |> group_by(Player1, Player2, Opponent1, Opponent2) |> summarise()
-```
-
-```{r}
-badminton_df |> filter(Category == "Singles") |> group_by(Player1, Opponent1) |> summarise(n_matches = sum(Matches))
-```
-
-```{r}
-badminton_df |> filter(Category == "Doubles") |> group_by(Player1, Player2, Opponent2, Opponent1) |> summarise(n_matches = sum(Matches))
-```
-
-```{r}
-badminton_df |> filter(Category == "Doubles") |> group_by(Player1, Player2) |> summarise(n_matches = sum(Matches))
-```
-
-```{r}
-badminton_df |> filter(Category == "Doubles") |> group_by(Opponent1, Opponent2) |> summarise(n_matches = sum(Matches))
-```
-
-```{r}
-badminton_df |> group_by(Category) |> summarise(n = n())
-```
-
-```{r}
-badminton_df |> group_by(Gender) |> summarise(n = n())
-```
-
-```{r}
-badminton_df |> group_by(Year) |> summarise(n = n())
-```
-
-```{r}
-badminton_df |> group_by(Player1, Opponent1) |> summarise(n = n())
-```
-
-```{r}
-badminton_df |> group_by(Player1) |> summarise(mean_rank = mean(Rank))
-```
-
-```{r}
-badminton_df |> group_by(Player1) |> summarise(n_wins = sum(Wins))
-```
-
-```{r}
-badminton_df |> filter(Category == "Doubles") |> group_by(Player1, Player2) |> summarise(n_matches = n())
-
-badminton_df |> filter(Category == "Doubles")
-```
-
-```{r}
-badminton_df |> filter(Player1 == "Se Young AN" | Opponent1 == "Se Young AN") |> group_by(Player1, Player2) |> summarise()
-```
-
-# Trying something weird with reorganizing the data
-
-```{r}
-names <- badminton_df |> pivot_longer(c("Player1", "Opponent1", "Player2", "Opponent2"), names_to = "Position", values_to = "Name") |> filter(!is.na(Name))
-```
-
-```{r}
-badminton_df |> filter(Matches > 1) |> arrange(desc(Matches)) |> tail()
+t.test(win_pct ~ Category, data = summed)
 ```
 
 # Modelling attempts
 
 ```{r}
-singles <- badminton_df |> filter(Category == "Singles")
-mod <- lm(`Points For`~ Gender + Category + Matches + `Points Against` + Rank + Player1 + Opponent1 + Wins + Losses + Difference, data = singles)
+full_summed_mod <- lm(pts_for ~ Gender + Category + win_pct + pts_agst + Rank, data = summed)
 
-mod |> tidy()
-```
-
-
-*t.test for difference in means*
-
-```{r}
-t.test(`Points For` ~ Category, data = badminton_df)
+full_summed_mod |> tidy()
 ```
 
 ```{r}
-mod_1 <- lm(`Points For` ~ Year, data = badminton_df)
+full_sum_mod <- lm(pts_for ~  win_pct + pts_agst + Rank, data = sum)
+
+full_sum_mod |> tidy()
+```
+
+```{r}
+mod_1 <- lm(pts_for ~ Year, data = summed)
 mod_1 |> tidy()
 ```
 
 ```{r}
-mod_2 <- lm(`Points For` ~ `Points Against`, data = badminton_df)
+mod_2 <- lm(pts_for ~ pts_agst, data = summed)
 mod_2 |> tidy()
 ```
 
 ```{r}
-mod_3 <- lm(`Points For` ~ Category, data = badminton_df)
+mod_3 <- lm(pts_for ~ Category, data = summed)
 mod_3 |> tidy()
 ```
 
 ```{r}
-mod_4 <- lm(`Points For` ~ Gender, data = badminton_df)
+mod_4 <- lm(pts_for ~ Gender, data = summed)
 mod_4 |> tidy()
 ```
 
 ```{r}
-mod_5 <- lm(`Points For` ~ Rank, data = badminton_df)
+mod_5 <- lm(pts_for ~ Rank, data = sum)
 mod_5 |> tidy()
 ```
 
 ```{r}
-mod_6 <- lm(`Points For` ~ Matches, data = badminton_df)
+mod_6 <- lm(pts_for ~ Matches, data = summed)
 mod_6 |> tidy()
 ```
 
-# playing around with the data arrangement
 
-```{r}
-# this proves the problem I thought existed with the data where there are dupclicates are just in order
-badminton_df |> filter(Player1 == "Se Young AN" & Opponent1 == "CHEN Yufei" | Opponent1 == "Se Young AN" & Player1 == "CHEN Yufei")
-```
-
-```{r}
-singles <- badminton_df |> filter(Category == "Singles")
-
-singles |> mutate(same = if_else(Player1 == Opponent1, true = TRUE, false = FALSE)) |> filter(same == TRUE)
-```
-
-
-```{r}
-badminton_df |> filter(Player1 == "BAEK Ha Na" | Opponent1 == "BAEK Ha Na")
-```
-
-```{r}
-# based on this it seems like the same issue is not applicable to doubles
-badminton_df |> filter((Player1 == "BAEK Ha Na" & Opponent1 == "Nami MATSUYAMA" & Opponent2 == "Chiharu SHIDA") | (Opponent1 == "BAEK Ha Na" & Opponent2 == "LEE So Hee" & Player1 == "Nami MATSUYAMA" & Player2 == "Chiharu SHIDA"))
-```
-
-
-```{r}
-pairs <- badminton_df |> mutate(pair = if_else(Player1 == Opponent1, true = "same", false = "different")) 
-```
-
-# I prefer both of the below datasets I just can't choose which to use
-
-```{r}
-summed <- badminton_df |> group_by(Player1, Year, Category, Gender) |> summarise(Rank = mean(Rank), Matches = sum(Matches), Wins = sum(Wins), Losses = sum(Losses), pts_for = sum(`Points For`), pts_agst = sum(`Points Against`), win_pct = Wins/Matches, shot_pct = pts_for/(pts_for + pts_agst)) |> mutate(Rank = as.integer(Rank))
-```
-
-```{r}
-sum <- badminton_df |> group_by(Player1) |> summarise(Rank = mean(Rank), Matches = sum(Matches), Wins = sum(Wins), Losses = sum(Losses), pts_for = sum(`Points For`), pts_agst = sum(`Points Against`), win_pct = Wins/Matches, shot_pct = pts_for/(pts_for + pts_agst)) |> mutate(Rank = as.integer(Rank))
-```
-
-
-```{r}
-summed |> group_by(Category) |> summarise(n = n())
-```
 
 
 

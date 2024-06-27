@@ -762,22 +762,26 @@ all19_18 <- full_join(all2019, all2018)
 
 all23_20 <- full_join(all23_22, all21_20)
 
-badminton <- full_join(all23_20, all19_18)
+badminton_full <- full_join(all23_20, all19_18)
 ```
 
-# Last minute cleaning with full dataset
+# Cleaning the full dataset
 
 ```{r}
-badminton <- badminton |> relocate(Player1, Player2, Opponent1, Opponent2, Rank, Year, Gender, Category) |> mutate(Rank = as.integer(Rank))
+badminton <- badminton_full |> relocate(Player1, Player2, Opponent1, Opponent2, Rank, Year, Gender, Category) |> mutate(Rank = as.integer(Rank))
 ```
 
 ```{r}
 badminton <- badminton |> mutate(win_pct = Wins/Matches, total_pts = `Points For` + `Points Against`, shot_pct = `Points For`/total_pts)
 ```
 
+```{r}
+badminton_df <- badminton |> group_by(Player1, Category) |> summarise(Matches = sum(Matches), Wins = sum(Wins), Losses = sum(Losses), pts_for = sum(`Points For`), pts_agst = sum(`Points Against`), win_pct = Wins/Matches, shot_pct = pts_for/(pts_for + pts_agst)) |> rename(Player = Player1)
+```
+
 # Write the csv
 
 ```{r}
-write.csv(badminton, "badminton.csv")
+write.csv(badminton_df, "badminton.csv")
 ```
 

@@ -30,35 +30,27 @@ a tournament series with opens hosted in different countries around the
 world. The tour has been running since 2018 and even took place in 2020
 despite the covid-19 pandemic. Statistics have been compiled from each
 World Tour, a notable statistic being the `Points H2H` which looks at
-the `Points For` a player or pair and the `Points Against` them.
+the points for (`pts_for`) a player and the points against (`pts_agst`) them.
 
-The `Points For` variable in this [badminton
+The `pts_for` variable in this [badminton
 dataset](badminton.csv){target="_blank"} (badminton.csv) could provide
 some insight on patterns in badminton. **COME BACK TO AFTER QUESTIONS ARE DONE**
 
 ## Data
 
-The data set has 750 cases with 17 variables. Each case is a combination of players and opponents that has occured over the course of the World Tour. The data set has 5 years worth of data from 2018-2023. There are men's, women's, and mixed doubles along with men's and women's singles. 
+The data set has 185 rows with 9 variables. Each row is a player who participated in the World Tour. The data set has 5 years worth of data from 2018-2023, the players' statistics are cumulative over the 5 years.
 
 | Variable | Description |
 |----------------------|-------------------------------------------------|
-| `Player1` | The player who the stats in the case are based on. |
-| `Player2` | The teammate of `Player1`, value is `NA` if the case is `Singles`.|
-| `Opponent1` | The opponent facing `Player1` and `Player2` if the case is `Doubles`. |
-| `Opponent2` | The teammate of `Opponent1` if the case is `Doubles`. |
-| `Rank` | The case's rank in its `Category`, `Gender`, and `Year` based on `Points For`. |
-| `Year` | The year the case is from. |
-| `Gender` | The gender of the players in the case, either `Women`, `Men`, or `Mixed`. |
-| `Category` | The case's category, `Singles` or `Doubles`. |
-| `Matches` | The number of matches the combination in the case played. |
-| `Wins` | The number of wins for `Player1` (and `Player2` if it is `Doubles`) in the case.|
-| `Losses` | The number of losses for `Player1` (and `Player2` if it is `Doubles`) in the case. |
-| `Points For` | The number of points scored by `Player1` (and `Player2` if it is `Doubles`) in the case. |
-| `Points Against` | The number of points allowed by `Player1` (and `Player2` if it is `Doubles`) in the case. |
-| `Difference` | The difference in `Points For` and `Points Against` in the case. |
-| `win_pct` | The win percentage (`Wins`/`Matches`) for `Player1` (and `Player2` if it is `Doubles`) in the case. |
-| `total_pts` | The total points hit in teh case by both players and opponents. |
-| `shot_pct` | The shot percentage (`Points For`/`total_pts`) for `Player1` (and `Player2` if it is `Doubles`) in the case. |
+| `Player` | The name of the player competing. |
+| `Category` | The category of competition the player competed in, either `Singles` or `Doubles`. |
+| `Matches` | The total number of matches the player played in between 2018-2023 in the World Tour. |
+| `Wins` | The total number of wins the player had between 2018-2023 in the World Tour. |
+| `Losses` | The total number of losses the player had between 2018-2023 in the World Tour. |
+| `pts_for` | The total number of points scored by the player between 2018-2023 in the World Tour. |
+| `pts_agst` | The total number of points allowed by the player between 2018-2023 in the World Tour. |
+| `win_pct` | The cumulative win percentage (`Wins`/`Matches`) for the player between 2018-2023 in the World Tour. |
+| `shot_pct` | The cumulative shot percentage (`Points For`/`total_pts`) for for the player between 2018-2023 in the World Tour. |
 : [badminton.csv](badminton.csv){target="_blank"}
 
 ## Questions
