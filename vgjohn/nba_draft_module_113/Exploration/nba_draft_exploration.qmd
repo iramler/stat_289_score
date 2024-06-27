@@ -4,7 +4,7 @@ exploration for nba draft module
 
 ```{r}
 library(tidyverse)
-nba_draft <- read_csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/nba_draft_module/Exploration/nba_draft.csv")
+nba_draft <- read_csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/nba_draft_module_113/Exploration/nba_draft.csv")
 ```
 anova? difference in means ? 
 writing out null and alt hypotheses 
@@ -286,13 +286,17 @@ equal variance looks good
 something with both the rounds and the pick categories ?? 
 
 ```{r}
-nba_round1s %>% group_by(pick_category) %>%
+summary_table <- nba_round1s %>% group_by(pick_category) %>%
   summarize(
     `Sample Size` = n(),
     Mean = mean(mins_per_game),
     `Standard Deviation` = sd(mins_per_game)
   )
 
-
+summary_table <- summary_table %>%
+  mutate(
+    Mean = round(Mean, 3),
+    `Standard Deviation` = round(`Standard Deviation`, 3)
+  )
 ```
 

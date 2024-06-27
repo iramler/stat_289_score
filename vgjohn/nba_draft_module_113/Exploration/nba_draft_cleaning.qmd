@@ -26,7 +26,7 @@ nba_draft <- nba_draft %>%
 #keeping cols where years != 0 
 nba_draft <- nba_draft %>% filter(!is.na(Yrs))
 
-nba_draft<- nba_draft %>% select(-playerurl, -BPM, -VORP, -DraftYear, -Rk, -`...1`)
+nba_draft<- nba_draft %>% select(-playerurl, -BPM, -VORP, -DraftYear, -Rk, -WS, -`WS/48`, -`...1`)
 
 nba_draft<- nba_draft %>%
   rename(
@@ -40,8 +40,6 @@ nba_draft<- nba_draft %>%
     fg_percent = `FG%`,
     three_pt_percent = `3P%`,
     ft_percent = `FT%`,
-    win_shares = WS,
-    win_shares_per_48 = `WS/48`,
     mins_per_game = MPG,
     pts_per_game = PPG,
     rebounds_per_game = RPG,
@@ -61,6 +59,6 @@ nba_draft <- nba_draft %>%
 
 ```{r}
 write_csv(nba_draft,
-          file = "/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/nba_draft_module/nba_draft.csv")
+          file = "/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/nba_draft_module_113/nba_draft.csv")
 ```
 

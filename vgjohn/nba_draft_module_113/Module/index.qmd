@@ -30,27 +30,23 @@ Each year, the National Basketball Association (NBA) holds a [draft](https://www
 
 In order to be eligible for the draft, a player must be at least 19 years old and out of high school for at least one year. Prior to 2006, this rule was not in effect, and players could be drafted during/right out of high school.
 
-The draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field.
+The draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field. It's important to note that there weren't always 30 players selected in each round, the number made its way up to 30 as more teams were added into the NBA. 
 
 #### Playing Basketball
 
-The goal in basketball is to score as many points as possible by throwing the ball through the other team's hoop. The two netted baskets, positioned on opposite ends of a rectangular court, are normally 10 feet high, and have a backboard behind them.
+The goal in basketball is to score as many points as possible by throwing the ball through the other team's hoop.
 
 In the middle of [the court](https://en.wikipedia.org/wiki/Basketball_court){target="_blank"} there is a half-court line that divides the two sides. On both sides, surrounding the hoops, there is an arch called the three-point line. Within the three-point line stands the free-throw line, where a player would shoot from should there be a foul called.
 
-During play, each team has five players on the court. The game starts with the referee tossing the ball in the air in between a player from each team, while each player tries to swat the ball to a member of their team (called a jump ball).
-
 **Scoring**
 
-Players can shoot towards the hoop from any point on the court. A different number of points is rewarded based on where the player is standing when they release the ball. The three shots are explained below.
+Players can shoot towards the hoop from any point on the court. A different number of points is awarded based on where the player is standing when they release the ball. The three shots are explained below.
 
 -   Field Goal: Worth 2 points, scored by shooting within the three point line
 -   Three Pointer: Worth 3 points, scored by shooting outside the three point line.
 -   Free Throw: Worth one point, taken from the free throw line after a foul.
 
-Players move the ball up and down the court by dribbling[^1], passing the ball to teammates, or shooting the ball. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.
-
-[^1]: to bounce the ball continuously while running or walking up and down the court
+A rebound is when a player from the team that is on defense obtains the ball after the other team takes a shot attempt at the hoop. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.
 
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
@@ -99,8 +95,6 @@ The `nba_draft` data set includes data from players that were selected in the NB
 | fg_percent        | The percent of field goal shots made by the player in the NBA                                                        |
 | three_pt_percent  | The percent of three-point shots made by the player in the NBA                                                       |
 | ft_percent        | The percent of free throws made by the player in the NBA                                                             |
-| win_shares        | Win shares in the NBA                                                                                                |
-| win_shares_per_48 | Win shares in the NBA per 48 minutes                                                                                 |
 | draft_year        | Year the player was drafted                                                                                          |
 | mins_per_game     | Average number of minutes played per game for career in the NBA                                                      |
 | pts_per_game      | Average number of points scored per game for career in the NBA                                                       |
