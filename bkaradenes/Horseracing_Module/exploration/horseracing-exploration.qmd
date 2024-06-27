@@ -92,7 +92,7 @@ summary(moda)
 ```
 
 ```{r}
-modb = glm(top_3~ Odds + track_condition, data = underdogs)
+modb = glm(top_3 ~ Odds + track_condition, data = underdogs)
 summary(modb)
 ```
 

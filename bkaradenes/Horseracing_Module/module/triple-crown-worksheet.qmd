@@ -15,7 +15,7 @@ To begin, let's use what we know about simple linear regression and predict the 
 ```{r}
 # first load in any necessary packages and data
 library(tidyverse)
-horseracing <- read.csv(triple-crown.csv")
+horseracing <- read.csv("triple-crown.csv")
 ```
 
 1. Talk to a neighbor and brainstorm some ideas on the appropriateness of the model below.
@@ -35,30 +35,31 @@ ggplot(data = horseracing , aes(x = Odds, y = top_3) ) +
   theme_minimal()
 ```
 
-Sample Answer: The model makes it difficult to see the impact odds has on winning the race. However, a win seems most likely with the lowest betting odds, but quickly goes down in the middle then goes back up at the end. It's interesting that some of the higher odds predict more wins than the odds in the middle.
+
 
 2.Use R to fit a model using betting odds to predict a top 3 finish. Write out the model below.
 
 ```{r}
-mod1 = glm( top_3 ~ Odds , data = horseracing)
-summary(mod1)
+# fill in the blanks
+mod1 = glm()
+summary()
 ```
 
-Sample Answer: log(p/(1-p)) = 0.372 - 0.007*Odds
+
 
 3. Use the fitted model to "predict" for a betting odds equal to 10 and 30. What do these predicted values represent in the context of the question?
 
 ```{r}
-newx = data.frame(Odds = c(10,30))
+newx = data.frame(Odds = c( , )) # fill in blanks
 predict.glm(mod1,newx,type="response")
 ```
 
-Sample Answer: The predicted values represent the probability of a top 3 finish given specific betting odds. Betting odds of 10 predicts a 30.08% probability of winning the race and betting odds of 30 predicts a 15.94% probability of winning a race.
+
 
 4. Now plot your model that uses betting odds to predict the probability of placing top 3 in a race.
 
 ```{r}
-ggplot(data = horseracing, aes(x = Odds, y = top_3) ) + 
+ggplot( , aes( , ) ) +  # fill in blanks
   geom_jitter(width = 0, height = 0.015) +
   geom_smooth(method="glm", 
               method.args=list(family="binomial"), 
@@ -66,31 +67,26 @@ ggplot(data = horseracing, aes(x = Odds, y = top_3) ) +
   theme_minimal()
 ```
 
-5.Give one reason why you think poor track conditions (muddy and sloppy) would or would not level the playing field for horses with higher betting odds. Explain.
+5. Give one reason why you think poor track conditions (muddy and sloppy) would or would not level the playing field for horses with higher betting odds. Explain.
 
-Sample “would” Answer: Poor conditions could level the playing field because it adds an uncontrollable factor to the race that the betting odds may not be expecting. So, it creates a level of uncertainty that the horse favored to win may not perform as well under bad racing conditions.
 
-Sample “would not” Answer: Since the poor conditions affect both horses you should still expect the horse with the lower betting odds to win because there’s no evidence to assume that the underdog horse is going to respond to the conditions better than the favorite.
 
 6. Now use R to fit a model that uses both betting odds and track conditions to predict the probability of placing top 3 in a race. Write out the model below.
 
 ```{r}
-mod2 = glm(top_3 ~ Odds + track_condition, data = horseracing)
-summary(mod2)
+# your code here
+
 ```
 
-Sample Answer: log(p/(1-p)) = 0.373 - 0.007(Odds) - 0.03(track_conditionMuddy) - 0.005(track_conditionSloppy)
+
 
 7. Compare the two models using BIC and determine which one is a better fit for predicting a top three finish.
 
 ```{r}
 # install.packages("flexmix")
 library(flexmix)
-BIC(mod1)
-BIC(mod2)
+# use the `BIC()` function
 ```
-
-Sample Answer: The first module with only 1 predictor(betting odds) is a better fit for predicting the probability of finishing in the top three because it has a lower BIC. This is perhaps due to the second model being penalized for using another predictor.
 
 8. Examine the two models below representing the favorites (odds 10 or less) in the Triple Crown races and the underdogs (odds 20 or more). Examine the coefficients on the muddy and sloppy predictor variables and compare them to each other. Does this suggest that poor conditions might "level the playing field" between low and high odds horses? What further testing could we do to solve this? Explain.
 
@@ -113,11 +109,5 @@ summary(moda)
 modb = glm(top_3 ~ Odds + track_condition, data = underdogs)
 summary(modb)
 ```
-
-Sample Answer: The models suggest that poor conditions lower the probability of coming in the top 3 for "favorite" horses more than they do for "underdog" horses because the coefficients on the muddy and sloppy conditions are more negative. One method to settle this would be conducting a hypothesis test to test if the difference between racing in fast versus muddy conditions between low and high odds horses is significant enough to suggest that the playing field is leveled. 
-
-
-
-
 
 
