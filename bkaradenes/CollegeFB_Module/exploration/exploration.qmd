@@ -1,0 +1,27 @@
+---
+title: "exploration"
+author: "Brendan Karadenes"
+format: html
+---
+
+```{r}
+# Then can install using the devtools package from either of the following:
+devtools::install_github(repo = "saiemgilani/cfbscrapR")
+# or the following (these are the exact same packages):
+devtools::install_github(repo = "meysubb/cfbscrapR")
+
+```
+
+```{r}
+library(cfbscrapR)
+cfbscrapR::cfb_recruiting_team(2003)
+```
+
+```{r}
+# You can install using the pacman package using the following code:
+if (!requireNamespace('pacman', quietly = TRUE)){
+  install.packages('pacman')
+}
+pacman::p_load_current_gh("sportsdataverse/cfbfastR", dependencies = TRUE, update = TRUE)
+```
+

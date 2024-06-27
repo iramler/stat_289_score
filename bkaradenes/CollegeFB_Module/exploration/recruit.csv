@@ -1,0 +1,584 @@
+﻿Id,AthleteId,RecruitType,Year,Ranking,Name,School,CommittedTo,Position,Height,Weight,Stars,Rating,City,StateProvince,Country,HometownInfo Latitude,HometownInfo Longitude,HometownInfo FipsCode
+35197,4035851,HighSchool,2016,13,Demetris Robertson,Savannah Christian Prep,California,WR,71.75,175,5,0.9905,Savannah,GA,USA,32.0809263,-81.0911768,13051
+35217,4035692,HighSchool,2016,30,Tyler Vaughns,Bishop Amat,USC,WR,73.5,177,4,0.9816,La Puente,CA,USA,34.01979,-117.9503677,6037
+35216,4034964,HighSchool,2016,34,Tyrie Cleveland,Westfield,Florida,WR,74.5,189,4,0.981,Houston,TX,USA,29.7589382,-95.3676974,48201
+35221,4047646,HighSchool,2016,36,A.J. Brown,Starkville,Ole Miss,WR,73,220,4,0.9803,Starkville,MS,USA,33.4503998,-88.8183872,28105
+35219,4039050,HighSchool,2016,37,Devin Duvernay,Sachse,Texas,WR,71,195,4,0.9803,Sachse,TX,USA,32.9762327,-96.5952703,48113
+35227,4035493,HighSchool,2016,45,Nate Craig-Myers,Tampa Catholic,Auburn,WR,74,205,4,0.9767,Tampa,FL,USA,27.9477595,-82.458444,12057
+35236,4047839,HighSchool,2016,53,N'Keal Harry,Chandler,Arizona State,WR,76,210,4,0.9732,Chandler,AZ,USA,33.3062223,-111.8413317,4013
+35252,4035687,HighSchool,2016,59,Michael Pittman Jr.,Oaks Christian,USC,WR,76,209,4,0.9688,Thousand Oaks,CA,USA,34.17142715,-118.9105877,6111
+35259,4040623,HighSchool,2016,72,Austin Mack,Bishop Luers,Ohio State,WR,74,205,4,0.9649,Fort Wayne,IN,USA,41.0799898,-85.1386015,18003
+35255,4035499,HighSchool,2016,75,Kyle Davis,Archer,Auburn,WR,73.5,218,4,0.9641,Lawrenceville,GA,USA,33.9562149,-83.9879625,13135
+35265,,HighSchool,2016,83,Sam Bruce,St. Thomas Aquinas,Miami,WR,68,180,4,0.9584,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011
+35283,4040628,HighSchool,2016,96,Binjimen Victor,Coconut Creek,Ohio State,WR,76,180,4,0.9546,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011
+35286,4035818,HighSchool,2016,101,Theo Howard,Westlake,UCLA,WR,73,175,4,0.9533,Thousand Oaks,CA,USA,34.17142715,-118.9105877,6111
+35288,,HighSchool,2016,103,Tren'Davian Dickson,Navasota,Houston,WR,71,163,4,0.9521,Navasota,TX,USA,30.3874135,-96.0875066,48185
+35291,4036509,HighSchool,2016,107,Donnie Corley,Martin Luther King,Michigan State,WR,74.5,185,4,0.9504,Wyandotte,MI,USA,42.2006617,-83.1510164,26163
+35296,4047650,HighSchool,2016,109,D.K. Metcalf,Oxford,Ole Miss,WR,75.75,205,4,0.9485,Oxford,MS,USA,34.3664127,-89.5187664,28071
+35295,4035628,HighSchool,2016,112,Keith Gavin,Wakulla,Florida State,WR,75,219,4,0.9457,Crawfordville,FL,USA,30.1760358,-84.3751778,12129
+35294,4046686,HighSchool,2016,113,Javon McKinley,Centennial,Notre Dame,WR,73.75,194,4,0.9464,Corona,CA,USA,33.8752945,-117.5664449,6065
+35303,4046519,HighSchool,2016,117,Kekoa Crawford,Santa Margarita Catholic,Michigan,WR,73,186,4,0.9455,Rancho Santa Margarita,CA,USA,33.6408845,-117.6029341,6059
+35305,4035500,HighSchool,2016,123,Eli Stove,Niceville,Auburn,WR,73,178,4,0.9431,Niceville,FL,USA,30.5168639,-86.482172,12091
+35306,4035426,HighSchool,2016,125,Stephen Sullivan,Donaldsonville,LSU,WR,77,230,4,0.9427,Donaldsonville,LA,USA,30.1010324,-90.9928774,22005
+35310,4034950,HighSchool,2016,126,Freddie Swain,North Marion,Florida,WR,73,188,4,0.9423,Citra,FL,USA,29.4119166,-82.1098156,12083
+35312,4035221,HighSchool,2016,127,Quartney Davis,Langham Creek,Texas A&M,WR,74.5,181,4,0.9422,Houston,TX,USA,29.7589382,-95.3676974,48201
+35307,4035435,HighSchool,2016,128,Drake Davis,IMG Academy,LSU,WR,76,215,4,0.9419,Bradenton,FL,USA,27.4989278,-82.5748194,12081
+35317,4035020,HighSchool,2016,137,Charlie Woerner,Rabun County,Georgia,WR,77,230,4,0.9386,Tiger,GA,USA,34.8470372,-83.4329399,13241
+35324,4035702,HighSchool,2016,142,Trevon Sidney,Bishop Amat,USC,WR,71,157,4,0.936,La Puente,CA,USA,34.01979,-117.9503677,6037
+35332,4037469,HighSchool,2016,146,Ahmmon Richards,Wellington,Miami,WR,73.5,171,4,0.9342,West Palm Beach,FL,USA,26.715364,-80.0532942,12099
+35334,4035689,HighSchool,2016,156,Josh Imatorbhebhe,North Gwinnett,USC,WR,74,205,4,0.9314,Suwanee,GA,USA,34.0514898,-84.0712997,13135
+35329,4035465,HighSchool,2016,157,Cornell Powell,J.H. Rose,Clemson,WR,74,200,4,0.9314,Greenville,NC,USA,35.612661,-77.3663538,37147
+35347,,HighSchool,2016,163,Joshua Hammond,Hallandale,Florida,WR,72.5,180,4,0.9294,Hallandale,FL,USA,25.9856006,-80.13999671,12011
+35340,4360739,HighSchool,2016,168,Simi Fehoko,Brighton,Stanford,WR,75.5,182,4,0.9285,Salt Lake City,UT,USA,40.7596198,-111.8867975,49035
+35353,4046692,HighSchool,2016,170,Chase Claypool,Abbotsford,Notre Dame,WR,77,205,4,0.9258,Abbotsford,BC,CAN,,,
+35345,4038938,HighSchool,2016,171,Dillon Mitchell,White Station,Oregon,WR,72.5,191,4,0.928,Memphis,TN,USA,35.1490215,-90.0516285,47157
+35365,4047648,HighSchool,2016,176,Tre Nixon,Viera,Ole Miss,WR,73,170,4,0.9256,Melbourne,FL,USA,28.0836269,-80.6081089,12009
+35380,4046719,HighSchool,2016,177,Justin Layne,Benedictine,Michigan State,WR,75,180,4,0.9252,Cleveland,OH,USA,41.5051613,-81.6934446,39035
+35371,4035427,HighSchool,2016,183,Dee Anderson,DeSoto,LSU,WR,77,205,4,0.9242,DeSoto,TX,USA,32.6061241,-96.86561265,48113
+67215,4035254,HighSchool,2016,193,Klyde Chriss,Warren Easton,Texas A&M,WR,72,170,4,0.9228,New Orleans,LA,USA,29.9499323,-90.0701156,22071
+35375,4035464,HighSchool,2016,195,Diondre Overton,Page,Clemson,WR,77,200,4,0.9227,Greensboro,NC,USA,36.0726355,-79.7919754,37081
+35364,,HighSchool,2016,197,Darian Owens,Clovis West,,WR,72,190,4,0.9225,Fresno,CA,USA,36.7295295,-119.7088613,6019
+35385,4039043,HighSchool,2016,198,Collin Johnson,Valley Christian,Texas,WR,78,200,4,0.9225,San Jose,CA,USA,37.3361905,-121.8905833,6085
+35382,4035254,HighSchool,2016,199,Clyde Chriss,Warren Easton,Texas A&M,WR,72,170,4,0.9191,New Orleans,LA,USA,29.9499323,-90.0701156,22071
+35409,4038818,HighSchool,2016,215,Bryan Edwards,Conway,South Carolina,WR,75,208,4,0.9169,Conway,SC,USA,33.8360035,-79.0478143,45051
+35394,4035466,HighSchool,2016,221,T.J. Chase,Plant City,Clemson,WR,74,167,4,0.9158,Plant City,FL,USA,28.01806015,-82.11848199,12057
+35405,4046715,HighSchool,2016,227,Trishton Jackson,West Bloomfield,Michigan State,WR,75,190,4,0.9134,West Bloomfield,MI,USA,42.5679,-83.3733,36069
+35419,4037639,HighSchool,2016,229,Mykel Jones,Patterson,Oklahoma,WR,72,180,4,0.9131,Patterson,LA,USA,29.6933,-91.3021,6099
+35414,4033416,HighSchool,2016,240,Cameron Chambers,Timber Creek,Michigan State,WR,73.5,204,4,0.9103,Sicklerville,NJ,USA,39.7173375,-74.9693329,34007
+36335,4035015,HighSchool,2016,246,Riley Ridley,Deerfield Beach,Georgia,WR,73.5,198,4,0.9089,Deerfield Beach,FL,USA,26.318342,-80.0996306,12011
+35436,4059524,HighSchool,2016,255,Dionte Mullins,Gulliver Prep,Miami,WR,70.5,179,4,0.9076,Miami,FL,USA,25.7742658,-80.1936589,12086
+35453,-1042722,HighSchool,2016,256,Steven Smothers,Franklin,West Virginia,WR,70,152,4,0.9074,Reisterstown,MD,USA,39.4695489,-76.8294213,24005
+35441,,HighSchool,2016,258,Desmond Fitzpatrick,Waterford Mott,Louisville,WR,74,189,4,0.9048,Waterford,MI,USA,42.6907,-83.4066,6099
+35454,4036214,HighSchool,2016,259,Tino Ellis,DeMatha Catholic,Maryland,WR,73,185,4,0.9071,Hyattsville,MD,USA,38.9529442,-76.9408647,24033
+35440,4035816,HighSchool,2016,270,Dymond Lee,Chaminade,UCLA,WR,74,174,4,0.9056,West Hills,CA,USA,34.2032325,-118.645476,6037
+35461,4039301,HighSchool,2016,271,Courtney Lark,Bellaire,Houston,WR,73,175,4,0.9055,Bellaire,TX,USA,29.7057858,-95.4588299,48201
+67219,4036026,HighSchool,2016,273,Dez Fitzpatrick,Waterford Mott,Louisville,WR,74,189,4,0.9048,Waterford,MI,USA,42.6907,-83.4066,6099
+35471,4258179,HighSchool,2016,283,Brad Hawkins,Camden,Michigan,WR,73,202,4,0.9029,Camden,NJ,USA,39.9448402,-75.1198911,34007
+35480,4044113,HighSchool,2016,292,Darnell Salomon,Miami Central,South Florida,WR,75,210,4,0.9005,Hollywood,FL,USA,26.0112014,-80.1494901,12011
+35488,4038532,HighSchool,2016,303,Isaiah Graham,Bastrop,TCU,WR,73,185,4,0.8966,Bastrop,LA,USA,32.7761446,-91.9082967,48021
+35517,-1038214,HighSchool,2016,321,Audie Omotosho,Plano East,UCLA,WR,74,189,4,0.8933,Plano,TX,USA,33.0136764,-96.6925096,48085
+35502,4043158,HighSchool,2016,329,T.J. Vasher,Rider,Texas Tech,WR,77,180,4,0.8919,Wichita Falls,TX,USA,33.9137085,-98.4933873,48485
+35521,4040723,HighSchool,2016,344,T.J. Simmons,Clay-Chalkville,Alabama,WR,74,180,3,0.8887,Pinson,AL,USA,33.706205,-86.67007896,1073
+35532,,HighSchool,2016,353,Steffon McKnight,Mira Mesa,,WR,73,160,3,0.8863,San Diego,CA,USA,32.7174209,-117.1627714,6073
+35556,4044148,HighSchool,2016,360,Dredrick Snelson,Charles W Flanagan,UCF,WR,72,198,3,0.8849,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011
+35550,,HighSchool,2016,367,D.J. Turner,DeMatha Catholic,Maryland,WR,69,175,3,0.8829,Hyattsville,MD,USA,38.9529442,-76.9408647,24033
+67221,4036211,HighSchool,2016,374,DJ Turner,DeMatha Catholic,Maryland,WR,69,175,3,0.8829,Hyattsville,MD,USA,38.9529442,-76.9408647,24033
+35579,4046531,HighSchool,2016,378,Eddie McDoom,West Orange,Michigan,WR,71,170,3,0.8825,Winter Garden,FL,USA,28.5656649,-81.5856742,12095
+67222,,HighSchool,2016,379,Keyshawn Pie Young,Miami Senior,USC,WR,71,175,3,0.8825,Miami,FL,USA,25.7742658,-80.1936589,12086
+35554,4035018,HighSchool,2016,381,Tyler Simmons,McEachern,Georgia,WR,71,194,3,0.8822,Powder Springs,GA,USA,33.8595492,-84.683824,13067
+35555,4039055,HighSchool,2016,382,Reggie Hemphill-Mapps,Manvel,Texas,WR,73,172,3,0.8822,Manvel,TX,USA,29.4664706,-95.355714,48039
+35593,4035390,HighSchool,2016,383,Jared Atkinson,Horn,Baylor,WR,75,199,3,0.882,Mesquite,TX,USA,32.7666103,-96.599472,48113
+35586,4035690,HighSchool,2016,403,Keyshawn Young,Miami Senior,USC,WR,71,175,3,0.8789,Miami,FL,USA,25.7742658,-80.1936589,12086
+35626,4035403,HighSchool,2016,408,Denzel Mims,Daingerfield,Baylor,WR,76,180,3,0.8792,Daingerfield,TX,USA,33.0318031,-94.7219895,48343
+35582,,HighSchool,2016,409,Camron Williams,Skyline,TCU,WR,75,210,3,0.8791,Dallas,TX,USA,32.7762719,-96.7968559,48113
+35617,4037626,HighSchool,2016,413,Divine Deablo,Mount Tabor,Virginia Tech,WR,75,180,3,0.8785,Winston Salem,NC,USA,36.0998131,-80.2440518,37067
+35591,4038836,HighSchool,2016,415,Kiel Pollard,Colquitt County,South Carolina,WR,73,200,3,0.8782,Moultrie,GA,USA,31.179998,-83.7887928,13071
+35592,4038813,HighSchool,2016,416,Randrecous Davis,Mays,South Carolina,WR,70.5,169,3,0.878,Atlanta,GA,USA,33.7490987,-84.3901849,13121
+35601,4035848,HighSchool,2016,423,Jordan Duncan,Oak Grove,California,WR,74,190,3,0.8776,Hattiesburg,MS,USA,31.3271189,-89.2903392,28035
+35614,-1029398,HighSchool,2016,436,Ruben Flowers,Lima Senior,Pittsburgh,WR,76,180,3,0.8761,Lima,OH,USA,40.7399785,-84.105006,39003
+35650,4036676,HighSchool,2016,448,Darion Anderson,Houston County,Georgia Southern,WR,73,170,3,0.8751,Warner Robins,GA,USA,32.6200973,-83.606568,13153
+35632,4037511,HighSchool,2016,457,Myles Dorn,Zebulon B. Vance,North Carolina,WR,74,195,3,0.8736,Charlotte,NC,USA,35.2272,-80.843083,37119
+35633,4037514,HighSchool,2016,458,Rontavius Groves,Pearl Cohn,North Carolina,WR,71,175,3,0.8734,Nashville,TN,USA,36.1622296,-86.7743531,47037
+35635,4035255,HighSchool,2016,460,Kendrick Rogers,Frankston,Texas A&M,WR,77,194,3,0.8731,Frankston,TX,USA,32.0526614,-95.5063456,48001
+35636,4035693,HighSchool,2016,461,Velus Jones Jr.,Saraland,USC,WR,71,180,3,0.8727,Saraland,AL,USA,30.820742,-88.0705556,1097
+35638,4036001,HighSchool,2016,463,Chris Taylor-Yamanoha,Rancho Cotate,Louisville,WR,74,185,3,0.8727,Rohnert Park,CA,USA,38.3396367,-122.7010984,6097
+35639,,HighSchool,2016,464,Grant Holloway,Grassfield,,WR,74,190,3,0.8727,Chesapeake,VA,USA,36.7183708,-76.2466798,51550
+35640,4034963,HighSchool,2016,465,Rick Wells,Raines,Florida,WR,72,185,3,0.8727,Jacksonville,FL,USA,30.3321838,-81.655651,12031
+35673,4362737,HighSchool,2016,493,Daniel Crowell,Meridian,,WR,73,197,3,0.8696,Meridian,MS,USA,32.3643098,-88.703656,28075
+35687,-1034191,HighSchool,2016,506,Brandon Johnson,American Heritage,Tennessee,WR,75,175,3,0.8691,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011
+35697,4052003,HighSchool,2016,516,Larry Collins,Lower Richland,Coastal Carolina,WR,75,195,3,0.8681,Hopkins,SC,USA,33.9043212,-80.8770342,45079
+35713,4035583,HighSchool,2016,532,Jordan Jones,Smackover,Arkansas,WR,73,175,3,0.8666,Smackover,AR,USA,33.3648455,-92.7248822,5139
+35719,-1027437,HighSchool,2016,538,Zach Farrar,Southlake Carroll,Oklahoma,WR,76,205,3,0.8662,Southlake,TX,USA,32.9412363,-97.1341783,48439
+35729,4036163,HighSchool,2016,548,Kelvin Harmon,Palmyra,NC State,WR,75,190,3,0.8655,Palmyra,NJ,USA,40.0070565,-75.0282271,34005
+35736,3892750,HighSchool,2016,553,Isaiah Johnson,Dwyer,Washington State,WR,75,212,3,0.8646,Palm Beach Gardens,FL,USA,26.8418256,-80.13590695,12099
+67227,,HighSchool,2016,556,Isaiah Johnson-Mack,Dwyer,Washington State,WR,75,212,3,0.8646,Palm Beach Gardens,FL,USA,26.8418256,-80.13590695,12099
+35742,4037625,HighSchool,2016,562,Eric Kumah,Forest Park,Virginia Tech,WR,75,205,3,0.8641,Woodbridge,VA,USA,38.6581723,-77.2497049,51153
+35761,,HighSchool,2016,578,Da'Monte Coxie,East St. John,Memphis,WR,75,175,3,0.8624,Reserve,LA,USA,30.0538131,-90.5517534,20013
+35760,4039599,HighSchool,2016,580,Devaughn Cooper,Narbonne,Arizona,WR,70.5,171,3,0.8624,Harbor City,CA,USA,33.7972822,-118.3004717,6037
+67228,,HighSchool,2016,581,Damonte Coxie,East St. John,Memphis,WR,75,175,3,0.8624,Reserve,LA,USA,30.0538131,-90.5517534,20013
+35767,4046527,HighSchool,2016,588,Nate Johnson,Independence,Michigan,WR,71,175,3,0.8616,Thompson's Station,TN,USA,35.802011,-86.9113908,47187
+35778,4039032,HighSchool,2016,599,Kevin Stepherson,First Coast,Notre Dame,WR,72,180,3,0.8615,Jacksonville,FL,USA,30.3321838,-81.655651,12031
+35781,,HighSchool,2016,602,RJ Hubert,Moapa Valley,Utah,WR,71,178,3,0.8614,Overton,NV,USA,36.5407344,-114.4429886,32003
+35785,4037601,HighSchool,2016,606,Phil Patterson,Bayside,Virginia Tech,WR,74,180,3,0.861,Virginia Beach,VA,USA,36.8529841,-75.9774183,51810
+35788,4037647,HighSchool,2016,609,Parnell Motley,Woodson H.D.,Oklahoma,WR,73,180,3,0.8609,Washington,DC,USA,38.8949855,-77.0365708,11001
+35796,4035502,HighSchool,2016,616,Marquis McClain,Crestview,Auburn,WR,74,209,3,0.8605,Crestview,FL,USA,30.7621326,-86.5705084,12091
+35816,4040874,HighSchool,2016,636,Johnny Huntley,South Plantation,Colorado,WR,75,207,3,0.8593,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011
+35827,4039244,HighSchool,2016,646,Marcus Simms,Sherwood,West Virginia,WR,72,175,3,0.8585,Sandy Spring,MD,USA,39.1495517,-77.0269221,24031
+35829,,HighSchool,2016,648,Corey Henderson,Evangel Christian Academy,Tennessee,WR,73,173,3,0.8585,Shreveport,LA,USA,32.5221828,-93.7651944,22017
+35835,-1002204,HighSchool,2016,654,Kofi Boateng,Lamar,Arkansas,WR,73,177,3,0.8584,Arlington,TX,USA,32.701939,-97.10562379,48439
+35849,,HighSchool,2016,666,Joseph Reed,Randolph Henry,Virginia,WR,74,205,3,0.8575,Charlotte Court House,VA,USA,37.0565362,-78.638334,51037
+67231,4037591,HighSchool,2016,668,Joe Reed,Randolph Henry,Virginia,WR,74,205,3,0.8575,Charlotte Court House,VA,USA,37.0565362,-78.638334,51037
+35864,4036144,HighSchool,2016,683,Emmanuel Rugamba,Naperville Central,Iowa,WR,73,175,3,0.8568,Naperville,IL,USA,41.7728699,-88.1479278,17043
+35866,4044454,HighSchool,2016,685,Donald Stewart,Paramus Catholic,Stanford,WR,75.5,190,3,0.8568,West Orange,NJ,USA,40.7987113,-74.2390353,34013
+35870,4037624,HighSchool,2016,689,Samuel Denmark,Hanahan,Virginia Tech,WR,72,175,3,0.8565,Charleston,SC,USA,32.7876012,-79.9402728,45019
+35875,4036025,HighSchool,2016,694,Keion Wakefield,Louisville Male,Louisville,WR,69,170,3,0.8563,Louisville,KY,USA,38.2542376,-85.759407,21111
+35877,,HighSchool,2016,696,Andre James,Laney,,WR,70,164,3,0.8563,Augusta,GA,USA,33.4709714,-81.9748429,13245
+35883,4039307,HighSchool,2016,702,Marquez Stevenson,Northwood,Houston,WR,71,163,3,0.8559,Shreveport,LA,USA,32.5221828,-93.7651944,22017
+35888,4035793,HighSchool,2016,707,Quintez Cephus,Stratford Academy,Wisconsin,WR,74,180,3,0.8557,Macon,GA,USA,32.8406946,-83.6324022,13021
+35890,-1034294,HighSchool,2016,710,Latrell Williams,Columbia,Tennessee,WR,71,171,3,0.8555,Lake City,FL,USA,30.1896756,-82.6392899,12023
+35896,4037582,HighSchool,2016,716,Hasise Dubois,De Paul Catholic,Virginia,WR,76,200,3,0.855,Wayne,NJ,USA,40.9491723,-74.2376802,34031
+35907,,HighSchool,2016,727,Freddie Pinder,Miami Southridge,Florida International,WR,77,195,3,0.8544,Miami,FL,USA,25.7742658,-80.1936589,12086
+35925,,HighSchool,2016,745,Harry Ballard,McCluer North,Missouri,WR,74,180,3,0.8536,Florissant,MO,USA,38.7919683,-90.3227803,29189
+35941,4361394,HighSchool,2016,761,Jeremy Smith,Fort Bend Marshall,Arizona State,WR,74,179,3,0.8529,Missouri City,TX,USA,29.6185669,-95.5377215,48157
+35943,-1040971,HighSchool,2016,763,Cole Blackman,Glen Allen,Virginia,WR,74,190,3,0.8529,Glen Allen,VA,USA,37.6659781,-77.506374,51087
+35949,4036418,HighSchool,2016,769,Corey Sutton,Mallard Creek,Kansas State,WR,74,197,3,0.8529,Cornelius,NC,USA,35.4817982,-80.8589501,37119
+35950,4035656,HighSchool,2016,770,Ben Skowronek,Homestead,Northwestern,WR,75,195,3,0.8528,Fort Wayne,IN,USA,41.0799898,-85.1386015,18003
+35958,-1034717,HighSchool,2016,778,Davion Curtis,Temple,Texas,WR,71,180,3,0.8524,Temple,TX,USA,31.098207,-97.3427847,48027
+35965,4034844,HighSchool,2016,785,Derrion Grim,Ronald E. McNair,Nebraska,WR,71.5,193,3,0.8521,Stockton,CA,USA,37.9577016,-121.2907796,6077
+35968,4038807,HighSchool,2016,788,Korey Banks,Sandy Creek,South Carolina,WR,72,170,3,0.8519,Tyrone,GA,USA,33.4713249,-84.5972005,13113
+35978,4039936,HighSchool,2016,798,Tray Eafford,Lee County,,WR,72,195,3,0.8516,Leesburg,GA,USA,31.7324556,-84.1711966,13177
+35983,4035872,HighSchool,2016,803,Drew Kobayashi,St Louis School,California,WR,74,180,3,0.8513,Honolulu,HI,USA,21.304547,-157.8556764,15003
+35992,4052236,HighSchool,2016,812,Adrian Hardy,Dekaney,Oklahoma,WR,74,185,3,0.8509,Houston,TX,USA,29.7589382,-95.3676974,48201
+36005,4040660,HighSchool,2016,825,Jacob Robertson,Woodward Academy,Tulane,WR,74,175,3,0.8503,Atlanta,GA,USA,33.7490987,-84.3901849,13121
+36008,,HighSchool,2016,828,Matthew Laris,Eastside Catholic,California,WR,76,210,3,0.8503,Bellevue,WA,USA,47.6144219,-122.1923372,53033
+36011,4035556,HighSchool,2016,831,Jalen Martin,Chandler Park Academy,Iowa State,WR,75,200,3,0.8499,Harper Woods,MI,USA,42.4333367,-82.9238847,26163
+36026,-1005025,HighSchool,2016,846,Julian Carter,Saguaro,Boise State,WR,75,190,3,0.8496,Scottsdale,AZ,USA,33.4942189,-111.9260184,4013
+36028,4048099,HighSchool,2016,848,Samson Nacua,Timpview,Utah,WR,74,175,3,0.8493,Provo,UT,USA,40.2338438,-111.6585337,49049
+36033,4039295,HighSchool,2016,853,Keith Corbin,West Brook,Houston,WR,74,175,3,0.8492,Beaumont,TX,USA,30.0860459,-94.1018461,48245
+36037,,HighSchool,2016,854,Jair Anderson,Northview,Georgia Tech,WR,73,185,3,0.8489,Suwanee,GA,USA,34.0514898,-84.0712997,13135
+67240,,HighSchool,2016,857,Jair Hawkins-Anderson,Northview,Georgia Tech,WR,73,185,3,0.8489,Suwanee,GA,USA,34.0514898,-84.0712997,13135
+36051,,HighSchool,2016,871,J.C. Flowers,Trinity Christian Academy,,WR,74,175,3,0.8484,Jacksonville,FL,USA,30.3321838,-81.655651,12031
+36053,4035347,HighSchool,2016,873,Kobay White,Bishop McDevitt,Boston College,WR,71,185,3,0.8482,Harrisburg,PA,USA,40.2663107,-76.8861122,42043
+36069,4035680,HighSchool,2016,889,Demari Simpkins,Hallandale,Utah,WR,72,176,3,0.8472,Hollywood,FL,USA,26.0112014,-80.1494901,12011
+36074,4034774,HighSchool,2016,894,Drew Hmielewski,Marshall,Minnesota,WR,74,195,3,0.847,Marshall,MN,USA,44.4469635,-95.7886581,27083
+36088,4036168,HighSchool,2016,908,C.J. Riley,North Broward Prep,NC State,WR,76,180,3,0.8465,Pompano Beach,FL,USA,26.2378597,-80.1247667,12011
+36097,,HighSchool,2016,917,Jaquan Blackwell,Citrus Hill,San José State,WR,72,183,3,0.8462,Perris,CA,USA,33.7825194,-117.2286478,6065
+36106,4044121,HighSchool,2016,926,Isaiah Wright,Kingswood-Oxford School,Temple,WR,74,207,3,0.8458,West Hartford,CT,USA,41.7629122,-72.75664456,9003
+36112,4038814,HighSchool,2016,932,Chavis Dawkins,Byrnes,South Carolina,WR,75,195,3,0.8457,Duncan,SC,USA,34.9378962,-82.1451096,45083
+36134,4042807,HighSchool,2016,954,Trevon Bradford,Oregon City Senior,Oregon State,WR,71,180,3,0.8447,Oregon City,OR,USA,45.3573429,-122.6067583,41005
+36142,4035651,HighSchool,2016,962,Ramaud Chiaokhiao-Bowman,Breck School,Northwestern,WR,74.5,191,3,0.8443,Minneapolis,MN,USA,44.9772995,-93.2654692,27053
+36150,4039549,HighSchool,2016,970,Brandon Benson,La Vega,SMU,WR,75,180,3,0.844,Waco,TX,USA,31.549333,-97.1466695,48309
+36156,4055165,HighSchool,2016,976,Renard Bell,Cathedral,Washington State,WR,70,165,3,0.8437,Los Angeles,CA,USA,34.0536909,-118.2427666,6037
+36157,4037487,HighSchool,2016,977,Malick Mbodj,Arabia Mountain,Cincinnati,WR,76,188,3,0.8435,Lithonia,GA,USA,33.7123305,-84.1051939,13089
+36176,-1042273,HighSchool,2016,996,Grant Porter,Upland,Washington State,WR,74,180,3,0.8428,Upland,CA,USA,34.09751,-117.6483876,6071
+36179,,HighSchool,2016,999,Tyson Penn,Bellevue,Oregon State,WR,76,195,3,0.8426,Bellevue,WA,USA,47.6144219,-122.1923372,53033
+36178,4037367,HighSchool,2016,1002,Tyshawn Brown,Mays,Middle Tennessee,WR,72,180,3,0.8425,Atlanta,GA,USA,33.7490987,-84.3901849,13121
+36186,,HighSchool,2016,1007,Herb McGee,Riverside Academy,South Alabama,WR,74,175,3,0.8422,Reserve,LA,USA,30.0538131,-90.5517534,20013
+36190,4038242,HighSchool,2016,1011,Kalakaua Timoteo,Mililani,Hawai'i,WR,74,195,3,0.8422,Mililani,HI,USA,21.4508308,-158.0095783,15003
+36191,4037560,HighSchool,2016,1012,Xavier Lane,Carver,Western Kentucky,WR,76,195,3,0.8422,Montgomery,AL,USA,32.3669656,-86.3006485,1101
+36193,,HighSchool,2016,1014,Trey Fullwood,Sickles,,WR,73,190,3,0.8422,Tampa,FL,USA,27.9477595,-82.458444,12057
+36219,,HighSchool,2016,1040,Steve Dolphus,Westside,Georgia Tech,WR,77,200,3,0.841,Macon,GA,USA,32.8406946,-83.6324022,13021
+36229,4035277,HighSchool,2016,1050,Kalija Lipscomb,Jesuit,Vanderbilt,WR,72,185,3,0.8407,New Orleans,LA,USA,29.9499323,-90.0701156,22071
+36243,4035282,HighSchool,2016,1064,Donaven Tennyson,Benedictine,Vanderbilt,WR,70,170,3,0.8403,Richmond,VA,USA,37.5385087,-77.43428,51760
+36246,4036155,HighSchool,2016,1067,Devonte Young,North Point,Iowa,WR,73,185,3,0.8401,Brandywine,MD,USA,38.6967833,-76.8477485,24033
+38445,,HighSchool,2016,1078,Maysoe Wiley,Valwood School,,WR,76,205,3,0.8399,Adel,GA,USA,31.1371358,-83.4234936,13075
+36256,,HighSchool,2016,1082,Abu Daramy,Choate Rosemary Hall,Yale,WR,70,170,3,0.8399,Westerville,OH,USA,40.126139,-82.9295287,39049
+36257,4243387,HighSchool,2016,1083,Coye Fairman,Atascocita,Memphis,WR,75,194,3,0.8399,Humble,TX,USA,29.9988312,-95.2621553,48201
+36279,4259259,HighSchool,2016,1105,Ronald Patterson,Raines,,WR,74,178,3,0.8388,Jacksonville,FL,USA,30.3321838,-81.655651,12031
+36280,4039019,HighSchool,2016,1106,Jordan Chin,Chaminade,Washington,WR,72,170,3,0.8388,West Hills,CA,USA,34.2032325,-118.645476,6037
+36285,4035776,HighSchool,2016,1111,Kendric Pryor,Homewood-Flossmoor,Wisconsin,WR,73,175,3,0.8384,Flossmoor,IL,USA,41.5428123,-87.6847684,17031
+36288,4035387,HighSchool,2016,1114,Reggie Todd,Blount,Mississippi State,WR,77,192,3,0.8383,Mobile,AL,USA,30.6943566,-88.0430541,1097
+36300,4047836,HighSchool,2016,1126,Frank Darby,Lincoln,Arizona State,WR,72,184,3,0.8377,Jersey City,NJ,USA,40.7281575,-74.0776417,34017
+36303,4046599,HighSchool,2016,1129,D.J. Render,North Cobb,Kansas State,WR,71,170,3,0.8376,Kennesaw,GA,USA,34.0234337,-84.6154897,13067
+36308,4054085,HighSchool,2016,1134,Dezmon Patmon,Henry,Washington State,WR,75,192,3,0.8375,San Diego,CA,USA,32.7174209,-117.1627714,6073
+36313,,HighSchool,2016,1139,Parker Davis,Windermere Prep,,WR,71.5,167,3,0.8375,Windermere,FL,USA,28.4944695,-81.5345547,12095
+36317,4032593,HighSchool,2016,1143,Marquis Lawson,Crenshaw,,WR,68,166,3,0.8372,Los Angeles,CA,USA,34.0536909,-118.2427666,6037
+36318,4036771,HighSchool,2016,1144,Trevion Armstrong,Trinity Episcopal School,Nevada,WR,76,215,3,0.8371,Chesterfield,VA,USA,37.3770935,-77.5058196,51041
+36328,4035386,HighSchool,2016,1154,Osirus Mitchell,Booker,Mississippi State,WR,77,200,3,0.8366,Sarasota,FL,USA,27.3364347,-82.5306527,12115
+36345,,HighSchool,2016,1170,Roddrick Bryant,Christian Brothers College,,WR,74,185,3,0.8356,Saint Louis,MO,USA,38.6264178,-90.1998378,29510
+36347,,HighSchool,2016,1172,Aidan Howard,Gateway,Virginia,WR,76,184,3,0.8355,Monroeville,PA,USA,40.4211798,-79.7881025,42003
+36353,,HighSchool,2016,1178,Kolton Huber,St. Peters Prep,Pennsylvania,WR,74,195,3,0.8355,Jersey City,NJ,USA,40.7281575,-74.0776417,34017
+36356,,HighSchool,2016,1181,Emmanuel Jones,Asheboro,East Carolina,WR,72,180,3,0.8355,Asheboro,NC,USA,35.7079146,-79.8136446,37151
+36358,,HighSchool,2016,1183,Kalebb Perry,Mt. Pleasant Senior,Western Michigan,WR,74,180,3,0.8353,Mount Pleasant,MI,USA,43.597646,-84.7668495,26073
+36367,4048245,HighSchool,2016,1192,Bubba Ogbebor,Heritage,Boise State,WR,72,191,3,0.835,Frisco,TX,USA,33.1506744,-96.8236116,48085
+36372,4038514,HighSchool,2016,1197,Tahj Deans,Southern Nash,East Carolina,WR,74,185,3,0.8348,Bailey,NC,USA,35.7809129,-78.118429,37127
+36375,,HighSchool,2016,1200,Adarrus Wilson,Morningside,San José State,WR,75,200,3,0.8348,Inglewood,CA,USA,33.9562003,-118.353132,6037
+36409,,HighSchool,2016,1237,Jeremiah Lorick,Oak Hills,,WR,69.5,150,3,0.8333,Hesperia,CA,USA,34.4263886,-117.3008784,6071
+67250,,HighSchool,2016,1242,Christian Bruce,Wilson,,WR,74,165,3,0.8333,Florence,SC,USA,34.1984435,-79.7671658,45041
+67257,,HighSchool,2016,1249,Chris Paz,San Joaquin Memorial,,WR,75,205,3,0.8333,Fresno,CA,USA,36.7295295,-119.7088613,6019
+67259,,HighSchool,2016,1251,J.J. Wills,Clovis,Idaho,WR,72,174,3,0.8333,Clovis,CA,USA,36.8252277,-119.7029194,6019
+67264,,HighSchool,2016,1256,Kerry Buckle,John Curtis,,WR,73,165,3,0.8333,New Orleans,LA,USA,29.9499323,-90.0701156,22071
+36413,,HighSchool,2016,1267,J'Shon Foster,Ferriday,,WR,77,210,3,0.8333,Ferriday,LA,USA,31.6301664,-91.5545649,22029
+67276,,HighSchool,2016,1271,Jacob Brown,Intelli-school - Paradise Valley,South Dakota State,WR,72,171,3,0.8333,Phoenix,AZ,USA,33.4484367,-112.0741417,4013
+67277,,HighSchool,2016,1272,Marlon Eugene,Royal Palm Beach,Southeast Missouri State,WR,72,190,3,0.8333,West Palm Beach,FL,USA,26.715364,-80.0532942,12099
+67278,,HighSchool,2016,1273,Darreon Lockett,Pomona,,WR,68,169,3,0.8333,Pomona,CA,USA,34.0553813,-117.7517496,6037
+67287,,HighSchool,2016,1282,Darryl Turner,DeMatha Catholic,Maryland,WR,69,192,3,0.8333,Hyattsville,MD,USA,38.9529442,-76.9408647,24033
+36415,4037517,HighSchool,2016,1285,Roscoe Johnson,Union County,North Carolina,WR,74,180,3,0.8332,Union,SC,USA,34.7151939,-81.6237462,45087
+36417,,HighSchool,2016,1287,Josiah Westbrook,Squalicum,Washington State,WR,73,178,3,0.8331,Bellingham,WA,USA,48.7544012,-122.4788361,53073
+36439,,HighSchool,2016,1309,Brandolin Perdue,Daphne,,WR,69,160,3,0.8321,Daphne,AL,USA,30.6035255,-87.9036047,1003
+36440,4035712,HighSchool,2016,1310,Terrance Landers Jr.,Dunbar,Purdue,WR,76,170,3,0.8321,Dayton,OH,USA,39.7589478,-84.1916069,39113
+36442,4039260,HighSchool,2016,1312,Bailey Edwards,Chelsea,Central Michigan,WR,73.5,177,3,0.8321,Pinckney,MI,USA,42.4567013,-83.9463359,26093
+36451,4039388,HighSchool,2016,1321,Anselem Umeh,St. John Bosco,,WR,70,177,3,0.8319,Bellflower,CA,USA,33.8825705,-118.1167679,6037
+36452,,HighSchool,2016,1322,Javonte Ferguson,Oakleaf,Purdue,WR,67,157,3,0.8318,Orange Park,FL,USA,30.1654707,-81.7016346,12019
+38175,4051453,HighSchool,2016,1329,Parker Orgeron,Mandeville,McNeese,WR,71,172,3,0.8316,Mandeville,LA,USA,30.3582305,-90.0657477,22103
+36469,4037428,HighSchool,2016,1340,Noah Ellison,Timber Creek,Old Dominion,WR,74,195,3,0.8314,Sicklerville,NJ,USA,39.7173375,-74.9693329,34007
+36476,4045291,HighSchool,2016,1347,Taysir Mack,Grand Street,Indiana,WR,75,175,3,0.8311,Brooklyn,NY,USA,40.6501038,-73.9495823,36047
+36478,4039000,HighSchool,2016,1349,Aaron Fuller,Lovejoy,Washington,WR,71,175,3,0.8311,Allen,TX,USA,33.1031744,-96.6705503,48085
+36479,,HighSchool,2016,1350,Donell Dunn,Cy Springs,Abilene Christian,WR,71.5,192,3,0.831,Cypress,TX,USA,29.9691116,-95.6971686,48201
+36480,4044095,HighSchool,2016,1351,Quayvon Skanes,Phillips Academy,Connecticut,WR,70,170,3,0.8309,Chicago,IL,USA,41.8755616,-87.6244212,17031
+36503,,HighSchool,2016,1374,Daquan Smith,McComb,,WR,68,170,3,0.8299,Mccomb,MS,USA,31.2437872,-90.4531536,28113
+36506,,HighSchool,2016,1377,Deshon Cowling,Pike County,,WR,72,176,3,0.8299,Brundidge,AL,USA,31.7201615,-85.8160567,1109
+36516,-1036116,HighSchool,2016,1388,Obi Anunike,Olentangy,Toledo,WR,75,195,3,0.8297,Lewis Center,OH,USA,40.1983958,-83.0101843,39041
+36523,,HighSchool,2016,1396,Dae'lun Darien,Dunbar,Penn State,WR,76,205,3,0.829,Baltimore,MD,USA,39.2908816,-76.610759,24510
+36531,4039360,HighSchool,2016,1404,John Williams,Destrehan,Memphis,WR,69,165,3,0.8288,Destrehan,LA,USA,29.960933,-90.37054071,22089
+36532,4037366,HighSchool,2016,1405,Ty Lee,Colquitt County,Middle Tennessee,WR,68,160,3,0.8288,Moultrie,GA,USA,31.179998,-83.7887928,13071
+36534,4037378,HighSchool,2016,1407,Reginald Henderson,Clewiston,Middle Tennessee,WR,76,198,3,0.8287,Clewiston,FL,USA,26.7542312,-80.9336753,12051
+36551,4056041,HighSchool,2016,1424,Andre Collins,Mater Dei,UNLV,WR,77,195,3,0.828,Santa Ana,CA,USA,33.7494951,-117.8732213,6059
+36557,-1013891,HighSchool,2016,1430,Phil Benker,Sandalwood,Indiana,WR,74,190,3,0.8279,Jacksonville,FL,USA,30.3321838,-81.655651,12031
+36571,,HighSchool,2016,1445,Elijah J Robinson,Montclair,UMass,WR,74,170,3,0.8266,Montclair,NJ,USA,40.8164458,-74.2210643,34013
+36572,4035288,HighSchool,2016,1446,Jackson Winrow,Shawnee,Vanderbilt,WR,74,180,3,0.8266,Shawnee,OK,USA,35.3272928,-96.9253004,40125
+36597,3131184,HighSchool,2016,1472,Tim Jackson,Allderdice,,WR,73,162,3,0.8254,Pittsburgh,PA,USA,40.4416941,-79.9900861,42003
+36602,4039500,HighSchool,2016,1477,Neru N'Shaka,Hallandale,Toledo,WR,70,180,3,0.8252,Hallandale,FL,USA,25.9856006,-80.13999671,12011
+36619,-1031352,HighSchool,2016,1494,Cameron Smith,Eleanor Roosevelt,San José State,WR,73,175,3,0.8247,Corona,CA,USA,33.8752945,-117.5664449,6065
+36622,-1041686,HighSchool,2016,1497,Jeremiah Brown,Southwest Guilford,Wake Forest,WR,74,173,3,0.8246,High Point,NC,USA,35.9556924,-80.0053176,37081
+36623,4040882,HighSchool,2016,1498,Derrion Rakestraw,Sequoyah,Colorado,WR,74,175,3,0.8244,Canton,GA,USA,34.2367621,-84.4907621,13057
+36627,-1020023,HighSchool,2016,1502,Stori Emerson,Ben Davis,Miami (OH),WR,74,190,3,0.8242,Indianapolis,IN,USA,39.7683331,-86.1583502,18097
+36647,-1000479,HighSchool,2016,1522,Bryce Dixon,Green Hope,NC State,WR,75,210,3,0.8236,Cary,NC,USA,35.7883046,-78.7811964,37183
+36655,4261629,HighSchool,2016,1530,Tim Wilson,Plano East,San Diego State,WR,76,190,3,0.8232,Plano,TX,USA,33.0136764,-96.6925096,48085
+36657,4029577,HighSchool,2016,1532,Khris Vaughn,Redlands East Valley,UC Davis,WR,73,190,3,0.8231,Redlands,CA,USA,34.055735,-117.1888961,6071
+36671,,HighSchool,2016,1547,Stephen Houston,Oxnard,,WR,75,200,3,0.8225,Oxnard,CA,USA,34.1976308,-119.1803818,6111
+36691,,HighSchool,2016,1561,Jaylin Clark-McNatte,Coral Gables Senior,,WR,75,195,3,0.8222,Miami,FL,USA,25.7742658,-80.1936589,12086
+36689,4570497,HighSchool,2016,1564,Jarrin Pierce,Bishop Alemany,Northern Colorado,WR,70,171,3,0.8222,Mission Hills,CA,USA,34.687584,-120.4390175,6083
+36690,4029558,HighSchool,2016,1565,Jared Harrell,St. John Bosco,UC Davis,WR,74,190,3,0.8222,Bellflower,CA,USA,33.8825705,-118.1167679,6037
+36688,,HighSchool,2016,1567,Jordan Riordan,Loyola,,WR,70,174,3,0.8222,Los Angeles,CA,USA,34.0536909,-118.2427666,6037
+36711,-1029692,HighSchool,2016,1587,Benaiah Franklin,Wheeler,Purdue,WR,73,205,3,0.8215,Marietta,GA,USA,33.9528472,-84.5496148,13067
+36712,4043161,HighSchool,2016,1588,Antoine Wesley,Steele,Texas Tech,WR,76,180,3,0.8215,Cibolo,TX,USA,29.5707831,-98.2330927,48187
+36715,,HighSchool,2016,1590,Kalen Riles,James Rickards,,WR,73,166,3,0.8215,Tallahassee,FL,USA,30.4380832,-84.2809332,12073
+36717,4036926,HighSchool,2016,1592,Kjetil Cline,IMG Academy,Army,WR,72,193,3,0.8214,Bradenton,FL,USA,27.4989278,-82.5748194,12081
+36733,4044520,HighSchool,2016,1609,Brennon Dingle,Archbishop Spalding,UMass,WR,70,170,3,0.8211,Baltimore,MD,USA,39.2908816,-76.610759,24510
+36750,4044534,HighSchool,2016,1625,Sadiq Palmer,Red Bank Reg,UMass,WR,75,185,3,0.82,Little Silver,NJ,USA,40.3367769,-74.0470837,34025
+36753,,HighSchool,2016,1628,Jailyn Ingram,Morgan County,,WR,77.5,210,3,0.8199,Madison,GA,USA,33.5956814,-83.467944,13211
+36759,,HighSchool,2016,1635,Conner O'Donnell,CFA Academy,,WR,72,160,3,0.8196,Huntersville,NC,USA,35.410845,-80.8429094,37119
+36768,-1043104,HighSchool,2016,1644,Chris Cotto,Hallandale,Western Kentucky,WR,71,180,3,0.819,Hallandale,FL,USA,25.9856006,-80.13999671,12011
+36773,4039660,HighSchool,2016,1649,Josh Stewart,Cedar Hill,Tulsa,WR,74,180,3,0.8187,Cedar Hill,TX,USA,32.5888072,-96.9553675,48113
+36778,,HighSchool,2016,1654,Karon Randolph,East St. Louis,,WR,76,190,3,0.8187,East Saint Louis,IL,USA,38.6244952,-90.1509429,17163
+36780,4046565,HighSchool,2016,1656,Isaiah Harris,All Saints Episcopal,Kansas State,WR,68.5,165,3,0.8184,Fort Worth,TX,USA,32.753177,-97.3327459,48439
+36781,,HighSchool,2016,1657,Michael Jackson,Columbia,Georgia Southern,WR,70,169,3,0.8183,Lake City,FL,USA,30.1896756,-82.6392899,12023
+36788,4039089,HighSchool,2016,1664,Cameron Odom,Bedford,Ohio,WR,73,172,3,0.818,Bedford,OH,USA,41.39311,-81.536509,39035
+36795,-1020025,HighSchool,2016,1672,DeAndre Huff,Newton,Miami (OH),WR,72,185,3,0.8177,Covington,GA,USA,33.5967815,-83.8601827,13217
+36798,,HighSchool,2016,1678,Quandarius Weaver,Central,,WR,76,190,3,0.8173,Phenix City,AL,USA,32.4709761,-85.0007653,1113
+36807,4035896,HighSchool,2016,1685,Evan Fairs,Foster,Kansas,WR,74,180,3,0.8167,Richmond,TX,USA,29.5821811,-95.7607832,48157
+36827,,HighSchool,2016,1707,Kolby Easley,Northview,,WR,73,172,3,0.8154,Dothan,AL,USA,31.2237434,-85.3933906,1069
+36837,4043019,HighSchool,2016,1717,Hunter Broersma,Mona Shores,Western Michigan,WR,73,190,3,0.815,Muskegon,MI,USA,43.2341813,-86.2483921,26121
+36844,4036354,HighSchool,2016,1724,Anthony Hawkins,Bowie,Colorado State,WR,70,180,3,0.8147,Arlington,TX,USA,32.701939,-97.10562379,48439
+36845,,HighSchool,2016,1725,Jay Griffin,Huntsville,New Mexico,WR,70,170,3,0.8147,Huntsville,TX,USA,30.7235263,-95.5507771,48471
+36848,4038464,HighSchool,2016,1728,Obi Obialo,Coppell,,WR,75,200,3,0.8147,Coppell,TX,USA,32.9552598,-97.0155703,48113
+36850,,HighSchool,2016,1730,Anthony Gaiter IV,Westminster Christian School,Florida International,WR,70,160,3,0.8147,Miami,FL,USA,25.7742658,-80.1936589,12086
+36855,,HighSchool,2016,1735,David Beasley,Pine Bluff,Louisiana Tech,WR,74.5,180,3,0.8142,Pine Bluff,AR,USA,34.2157064,-92.0140402,5069
+36863,4051750,HighSchool,2016,1743,Kyle Anthony,Miramar,,WR,75,180,3,0.8134,Hollywood,FL,USA,26.0112014,-80.1494901,12011
+36872,,HighSchool,2016,1752,Montray Smith,Miami Carol City,,WR,75,185,3,0.8132,Opa Locka,FL,USA,25.89673385,-80.25949641,12086
+36877,4037480,HighSchool,2016,1757,Thomas Geddis,Blanche Ely,Cincinnati,WR,74,160,3,0.8132,Pompano Beach,FL,USA,26.2378597,-80.1247667,12011
+36882,4038721,HighSchool,2016,1762,Mohamed Jabbie,South Brunswick,Rutgers,WR,71,165,3,0.813,Monmouth Junction,NJ,USA,40.3789957,-74.5465436,34023
+36886,,HighSchool,2016,1766,Jassiem Wills,Clovis,Idaho,WR,71.5,183,3,0.8128,Clovis,CA,USA,36.8252277,-119.7029194,6019
+36887,-1035764,HighSchool,2016,1767,Douglas Coleman,Zachary,Texas Tech,WR,73,175,3,0.8127,Zachary,LA,USA,30.6485191,-91.1564961,22033
+36902,4043027,HighSchool,2016,1784,Brad Tanner,Romeo,Western Michigan,WR,74,185,3,0.812,Romeo,MI,USA,42.802808,-83.0129874,26099
+36908,-1039639,HighSchool,2016,1790,Jesse Ebozue,Bowie,UT San Antonio,WR,74,193,3,0.8116,Arlington,TX,USA,32.701939,-97.10562379,48439
+38370,,HighSchool,2016,1794,Joseph Richard,C.P.A.,Chattanooga,WR,74,185,3,0.8115,Nashville,TN,USA,36.1622296,-86.7743531,47037
+36917,4033822,HighSchool,2016,1800,Dominic Thieman,St. Thomas Aquinas,Illinois,WR,75,184,3,0.8114,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011
+36922,4051271,HighSchool,2016,1805,Vincent Heard,Narbonne,Northern Colorado,WR,71,160,3,0.8113,Harbor City,CA,USA,33.7972822,-118.3004717,6037
+36935,4044104,HighSchool,2016,1818,DeVontres Dukes,Wharton,South Florida,WR,76,203,3,0.8113,Tampa,FL,USA,27.9477595,-82.458444,12057
+36943,4037492,HighSchool,2016,1826,Jerron Rollins,Columbus,Cincinnati,WR,74,175,3,0.8111,Miami,FL,USA,25.7742658,-80.1936589,12086
+36957,,HighSchool,2016,1835,James Jackson,Dillard,,WR,75,184,3,0.8111,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011
+38490,4362034,HighSchool,2016,1840,Justin Garrett,Richard Gahr,,WR,71,160,3,0.8111,Cerritos,CA,USA,33.8644291,-118.0539323,6037
+36955,,HighSchool,2016,1843,Isaiah Owens,Cane Ridge,,WR,74,175,3,0.8111,Antioch,TN,USA,36.0806394,-83.7799037,47093
+36973,4578902,HighSchool,2016,1861,Jordan Brown,Stillwater,Tulsa,WR,73,198,3,0.8106,Stillwater,OK,USA,36.1156306,-97.0585717,40119
+36975,4039198,HighSchool,2016,1863,Nolan Givan,Berkley,Ball State,WR,76,220,3,0.8106,Berkley,MI,USA,42.5030909,-83.1835389,19015
+36977,-1006997,HighSchool,2016,1865,Tyrin Summers,Clewiston,Cincinnati,WR,69,160,3,0.8104,Clewiston,FL,USA,26.7542312,-80.9336753,12051
+36988,,HighSchool,2016,1877,Devin Judd,Good Counsel,Harvard,WR,72,160,3,0.8099,Olney,MD,USA,39.1532123,-77.0668408,24031
+36990,,HighSchool,2016,1879,Jai Creamer,Rome,Samford,WR,75,220,3,0.8099,Rome,GA,USA,34.257038,-85.1646726,13115
+37065,,HighSchool,2016,1882,Calvin Jackson,Coral Springs Charter,Toledo,WR,69,160,3,0.806,Pompano Beach,FL,USA,26.2378597,-80.1247667,12011
+36996,,HighSchool,2016,1885,Gene Coleman,Bergen Catholic,Rhode Island,WR,72,187,3,0.8096,Oradell,NJ,USA,40.9543943,-74.0308504,34003
+37001,4043606,HighSchool,2016,1890,Willie Johnson,South Fort Myers,Marshall,WR,72,170,3,0.8092,Fort Myers,FL,USA,26.640628,-81.8723084,12071
+37011,4361896,HighSchool,2016,1900,Diondre Champaigne,Fort Dorchester,South Carolina,WR,75,180,3,0.8083,North Charleston,SC,USA,32.9131295,-80.0629982,45019
+37022,4036838,HighSchool,2016,1911,Isiah Macklin,Green Valley,San Diego State,WR,77,195,3,0.808,Henderson,NV,USA,36.0301134,-114.9826194,32003
+37028,4039092,HighSchool,2016,1917,Tyler Tupa,Brecksville-Broadview Heights,Ohio,WR,73,185,3,0.808,Broadview Heights,OH,USA,41.3139426,-81.6851271,39035
+37037,4039468,HighSchool,2016,1926,Andrew Parchment,Cypress Bay,Northern Illinois,WR,75,180,3,0.8076,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011
+37038,4037564,HighSchool,2016,1927,Jahcour Pearson,Charles W Flanagan,Western Kentucky,WR,68,170,3,0.8075,Pompano Beach,FL,USA,26.2378597,-80.1247667,12011
+37039,4039365,HighSchool,2016,1928,Jahod Booker,Park Crossing,Memphis,WR,70,185,3,0.8075,Montgomery,AL,USA,32.3669656,-86.3006485,1101
+37050,,HighSchool,2016,1939,Braylon Royal,Mansfield Timberview,,WR,71,165,3,0.8068,Arlington,TX,USA,32.701939,-97.10562379,48439
+67300,,HighSchool,2016,1954,Calvin Jackson Jr.,Coral Springs Charter,Toledo,WR,69,160,3,0.806,Pompano Beach,FL,USA,26.2378597,-80.1247667,12011
+37070,4044143,HighSchool,2016,1959,Randle Jones,Miami Beach Senior,Temple,WR,70.5,160,3,0.8058,Miami Beach,FL,USA,25.7929198,-80.1353006,12086
+37071,4035099,HighSchool,2016,1960,Dimetrios Mason,Grayson,Missouri,WR,72,170,3,0.8058,Loganville,GA,USA,33.8389977,-83.9007382,13297
+37081,,HighSchool,2016,1970,Jacquez Williams,Liberty County,Wake Forest,WR,74,197,3,0.8049,Hinesville,GA,USA,31.8477298,-81.5960354,13179
+37094,,HighSchool,2016,1984,Malik Talley,Scottsboro Sch,,WR,75,180,3,0.8039,Scottsboro,AL,USA,34.6731323,-86.0338765,1071
+37104,4042816,HighSchool,2016,1994,Kee Whetzel,Countryside,Oregon State,WR,,186,3,0.8036,Clearwater,FL,USA,27.9658533,-82.8001026,12103
+37123,-1007013,HighSchool,2016,2014,Marcel Paul,Cass Technical,Cincinnati,WR,73,170,3,0.8026,Detroit,MI,USA,42.3315509,-83.0466403,26163
+37128,4052208,HighSchool,2016,2019,Mekhi Stevenson,Helix,UNLV,WR,72,180,3,0.8025,La Mesa,CA,USA,32.7678288,-117.0230839,6073
+37146,,HighSchool,2016,2037,C.J. Windham,McEachern,Middle Tennessee,WR,74,190,3,0.8015,Powder Springs,GA,USA,33.8595492,-84.683824,13067
+37147,4030926,HighSchool,2016,2038,Isaiah Weston,St. Michael-albertville Senior,Northern Iowa,WR,76,190,3,0.8015,Albertville,MN,USA,45.2363165,-93.6581301,27171
+37150,-1044085,HighSchool,2016,2041,Parker Dumas,Mount Si,Wyoming,WR,76,200,3,0.8014,Snoqualmie,WA,USA,47.5289527,-121.8270932,53033
+67303,,HighSchool,2016,2044,Curtis Hollis,Mansfield Summit,,WR,77,180,3,0.8014,Arlington,TX,USA,32.701939,-97.10562379,48439
+37163,,HighSchool,2016,2055,Bryston Cummings,Horn,,WR,75,193,3,0.8005,Mesquite,TX,USA,32.7666103,-96.599472,48113
+37166,,HighSchool,2016,2058,CJ Harris,Redlands East Valley,UNLV,WR,73,186,3,0.8005,Redlands,CA,USA,34.055735,-117.1888961,6071
+38400,,HighSchool,2016,2064,Jeshua Hodges,MacArthur,,WR,74,163,3,0.8004,Irving,TX,USA,32.8295183,-96.9442177,48113
+37174,,HighSchool,2016,2067,Reed Klubnik,Westlake,Yale,WR,75,170,3,0.8004,Austin,TX,USA,30.2711286,-97.7436995,48453
+37190,,HighSchool,2016,2084,DeShawn Lookout,Westmoore,,WR,74.5,183,3,0.7999,Oklahoma City,OK,USA,35.4729886,-97.5170536,40109
+37195,4035315,HighSchool,2016,2089,Christian McStravick,Strake Jesuit,Boston College,WR,76,200,3,0.7998,Houston,TX,USA,29.7589382,-95.3676974,48201
+37200,-1025087,HighSchool,2016,2094,Daeshawn Stephens,Hillside,NC State,WR,74,190,3,0.7996,Durham,NC,USA,35.996653,-78.9018053,37063
+37211,4051572,HighSchool,2016,2106,Christian Booker,De La Salle,Nicholls,WR,75.5,191,3,0.7991,New Orleans,LA,USA,29.9499323,-90.0701156,22071
+37258,4239968,HighSchool,2016,2152,Geraud Sanders,Bishop Dunne,Air Force,WR,75,185,2,0.7965,Dallas,TX,USA,32.7762719,-96.7968559,48113
+37259,,HighSchool,2016,2153,Demetrius White,Dillard,,WR,74,190,2,0.7965,Fort Lauderdale,FL,USA,26.1223084,-80.1433786,12011
+37349,,HighSchool,2016,2166,Terrance Watkins,Athens,Southern Mississippi,WR,73,170,2,0.7924,Athens,AL,USA,34.8283825,-86.91713375,1083
+37351,-1010562,HighSchool,2016,2168,Stantley Thomas,North Port,Florida International,WR,72.5,168,2,0.7924,North Port,FL,USA,27.044224,-82.2359254,12115
+38426,,HighSchool,2016,2178,Thomas Nolley,South Hills,Stephen F. Austin,WR,75,195,2,0.7954,Fort Worth,TX,USA,32.753177,-97.3327459,48439
+37282,,HighSchool,2016,2179,Darrell Baldwin Jr.,West Brook,,WR,73,180,2,0.7954,Beaumont,TX,USA,30.0860459,-94.1018461,48245
+37286,4037122,HighSchool,2016,2185,Carl Jones,St. Edward,Syracuse,WR,74,175,2,0.7952,Lakewood,OH,USA,41.4819932,-81.7981908,39035
+37291,4044144,HighSchool,2016,2190,Kenny Yeboah,Parkland,Temple,WR,77,210,2,0.7949,Allentown,PA,USA,40.6022059,-75.4712794,42077
+37298,4039072,HighSchool,2016,2197,Rico Bussey,Lawton,North Texas,WR,73,163,2,0.7944,Lawton,OK,USA,34.6086854,-98.3903305,40031
+37308,4037235,HighSchool,2016,2207,Greg Dortch,Highland Springs,Wake Forest,WR,68,150,2,0.7937,Highland Springs,VA,USA,37.5460121,-77.3278441,51087
+37309,4040779,HighSchool,2016,2208,John Mitchell,Lawton Chiles,Florida Atlantic,WR,74.5,180,2,0.7934,Tallahassee,FL,USA,30.4380832,-84.2809332,12073
+37311,,HighSchool,2016,2210,Trevor Laurent,Armwood,Bethune-Cookman,WR,68,170,2,0.7932,Seffner,FL,USA,27.998541,-82.274884,12057
+37320,4259215,HighSchool,2016,2219,Keoni-Kordell Makekau,Iolani School,Navy,WR,71,170,2,0.7932,Honolulu,HI,USA,21.304547,-157.8556764,15003
+37321,4037438,HighSchool,2016,2220,Scott McCluney,Gaffney,Old Dominion,WR,73,185,2,0.7932,Gaffney,SC,USA,35.0717945,-81.6498195,45021
+37324,,HighSchool,2016,2223,Hartman Rector,Logan,Utah State,WR,73,190,2,0.7931,Logan,UT,USA,41.7313447,-111.8348631,49005
+37329,-1030299,HighSchool,2016,2228,Ahmed Bah,Grand Street,Rutgers,WR,76,191,2,0.7931,Brooklyn,NY,USA,40.6501038,-73.9495823,36047
+37336,-1030710,HighSchool,2016,2236,Joshua Shelmire,Lutheran South Academy,SMU,WR,74,185,2,0.7924,Houston,TX,USA,29.7589382,-95.3676974,48201
+67309,4050373,HighSchool,2016,2249,Quez Watkins,Athens,Southern Mississippi,WR,73,170,2,0.7924,Athens,AL,USA,34.8283825,-86.91713375,1083
+67310,4046353,HighSchool,2016,2251,Stantley Thomas-Oliver,North Port,Florida International,WR,72,168,2,0.7924,North Port,FL,USA,27.044224,-82.2359254,12115
+37353,-1007636,HighSchool,2016,2253,Jay King,Hillsboro,Coastal Carolina,WR,74,185,2,0.7924,Nashville,TN,USA,36.1622296,-86.7743531,47037
+37363,4044079,HighSchool,2016,2263,Tyler Coyle,Windsor,Connecticut,WR,74,195,2,0.7917,Windsor,CT,USA,41.8525984,-72.6437022,9003
+37365,-1004378,HighSchool,2016,2265,Damon Hazelton,St. Frances Academy,Ball State,WR,76,195,2,0.7917,Towson,MD,USA,39.4018552,-76.602388,24005
+37369,4037311,HighSchool,2016,2269,Jalen Camp,South Forsyth,Georgia Tech,WR,74,210,2,0.7912,Cumming,GA,USA,34.2073196,-84.1401926,13117
+37377,,HighSchool,2016,2277,Xavier Price,Judge Memorial Catholic,Air Force,WR,75,195,2,0.7905,Salt Lake City,UT,USA,40.7596198,-111.8867975,49035
+37381,4032600,HighSchool,2016,2281,Robert Hayes Jr.,Salmen,Incarnate Word,WR,74,190,2,0.7903,Slidell,LA,USA,30.2751945,-89.7811745,22103
+67311,,HighSchool,2016,2282,JoJo Ward,Midway,,WR,69,160,2,0.7903,Waco,TX,USA,31.549333,-97.1466695,48309
+37384,,HighSchool,2016,2286,Brandon Taylor,Clear Brook,,WR,67,145,2,0.7903,Friendswood,TX,USA,29.5293998,-95.2010447,48167
+37385,,HighSchool,2016,2287,Nathan Stewart,Bryan Adams,Sam Houston State,WR,73,170,2,0.7903,Dallas,TX,USA,32.7762719,-96.7968559,48113
+37395,548083,HighSchool,2016,2299,Darius Anderson,Houston County,,WR,72,168,2,0.7898,Warner Robins,GA,USA,32.6200973,-83.606568,13153
+37404,,HighSchool,2016,2311,Braxton Westfield,Christ Church Episcopal School,James Madison,WR,76,195,2,0.7898,Greenville,SC,USA,34.851354,-82.3984882,45045
+37407,,HighSchool,2016,2314,Elijah Nelson,Phoebus,Hampton,WR,74,200,2,0.7898,Hampton,VA,USA,37.0520315,-76.2856365,51650
+37411,,HighSchool,2016,2318,Raylon Richardson,Miller Grove,UAB,WR,76,180,2,0.7898,Lithonia,GA,USA,33.7123305,-84.1051939,13089
+37414,4243717,HighSchool,2016,2323,Kerrick Jones,Whitehaven,Navy,WR,73,160,2,0.7898,Memphis,TN,USA,35.1490215,-90.0516285,47157
+37419,-1001196,HighSchool,2016,2328,Crisjohn Roscoe,Duncan U. Fletcher,Appalachian State,WR,74,200,2,0.7893,Neptune Beach,FL,USA,30.311908,-81.3964734,12031
+37422,,HighSchool,2016,2332,Mark Mims,Lancaster,,WR,70,180,2,0.7891,Lancaster,TX,USA,32.5920798,-96.7561083,48113
+37429,,HighSchool,2016,2339,Antonio Hadden,Fort Pierce Central,Florida Atlantic,WR,74,200,2,0.7891,Fort Pierce,FL,USA,27.4467056,-80.3256056,12111
+37447,-1043437,HighSchool,2016,2357,Rodney Graves,Cody,Western Michigan,WR,74,185,2,0.7891,Detroit,MI,USA,42.3315509,-83.0466403,26163
+37451,4036448,HighSchool,2016,2361,Jalen Virgil,Mountain View,Appalachian State,WR,74,205,2,0.7891,Lawrenceville,GA,USA,33.9562149,-83.9879625,13135
+37455,4038568,HighSchool,2016,2365,Kenyon Taylor,Southern Guilford,East Carolina,WR,74,185,2,0.7889,Greensboro,NC,USA,36.0726355,-79.7919754,37081
+37472,,HighSchool,2016,2379,Tyriq Gilmore,Redondo,,WR,72,205,2,0.7889,Redondo Beach,CA,USA,33.8455911,-118.3886766,6037
+37482,,HighSchool,2016,2381,Donald Hayes,Dorsey,,WR,70.5,164,2,0.7889,Los Angeles,CA,USA,34.0536909,-118.2427666,6037
+37465,,HighSchool,2016,2391,Joseph Jones,Upland,,WR,72.5,174,2,0.7889,Upland,CA,USA,34.09751,-117.6483876,6071
+37462,4033389,HighSchool,2016,2396,Isaiah Diego-Williams,J Serra Catholic,Southern Utah,WR,69,160,2,0.7889,San Juan Capistrano,CA,USA,33.5016932,-117.6625509,6059
+37473,,HighSchool,2016,2400,J.P. Shohfi,San Marino,Yale,WR,72,185,2,0.7889,San Marino,CA,USA,34.1215947,-118.1057394,6037
+37506,,HighSchool,2016,2407,Jarel Rowe,Carrollton,,WR,77,175,2,0.7889,Carrollton,GA,USA,33.5801103,-85.0766113,13045
+37508,,HighSchool,2016,2411,Johnathan Boyd,Parkview,,WR,74,200,2,0.7889,Lilburn,GA,USA,33.8901036,-84.1429719,13135
+37500,4032738,HighSchool,2016,2416,Kwadir Brown,De Paul Catholic,Rhode Island,WR,70,173,2,0.7889,Wayne,NJ,USA,40.9491723,-74.2376802,34031
+37512,,HighSchool,2016,2418,Gage Upshaw,Baylor School,Air Force,WR,73,222,2,0.7889,Chattanooga,TN,USA,35.0457219,-85.3094883,47065
+37518,,HighSchool,2016,2421,Ricci Nuckles,North Gwinnett,,WR,70,165,2,0.7889,Duluth,GA,USA,34.0028569,-84.1441046,13135
+37503,,HighSchool,2016,2426,Devontae Seay,Westover,,WR,71,163,2,0.7889,Albany,GA,USA,31.5782062,-84.1556809,13095
+37501,4035762,HighSchool,2016,2428,Marquis Zimmerman,Kathleen,,WR,68,148,2,0.7889,Lakeland,FL,USA,28.0394654,-81.9498042,12105
+37513,,HighSchool,2016,2433,Noah Matthews,Dwyer,,WR,68,75,2,0.7889,Palm Beach Gardens,FL,USA,26.8418256,-80.13590695,12099
+37524,4046351,HighSchool,2016,2439,Darrius Scott,Booker T. Washington,Florida International,WR,70,175,2,0.7886,Miami,FL,USA,25.7742658,-80.1936589,12086
+37550,4040655,HighSchool,2016,2464,Darnell Mooney,Gaston Sch,Tulane,WR,73,170,2,0.7882,Gadsden,AL,USA,34.010929,-85.9989596,1055
+37551,,HighSchool,2016,2465,Rashaun O'Neal,Withrow,Bowling Green,WR,71,175,2,0.7882,Cincinnati,OH,USA,39.1014537,-84.5124602,39061
+37556,4036536,HighSchool,2016,2470,Jawan Nobles,Campbell,Georgia State,WR,75,170,2,0.7878,Smyrna,GA,USA,33.883887,-84.5147454,13067
+37558,-1025810,HighSchool,2016,2472,Jordan Robinson,Norland,Northern Illinois,WR,75,175,2,0.7877,Miami,FL,USA,25.7742658,-80.1936589,12086
+37560,,HighSchool,2016,2474,Khalil Lacy,Richardson,Stephen F. Austin,WR,72,155,2,0.7871,Richardson,TX,USA,32.9481789,-96.7297206,48113
+37562,,HighSchool,2016,2476,A.J. Morris,Pearl Cohn,,WR,74,205,2,0.7864,Nashville,TN,USA,36.1622296,-86.7743531,47037
+37602,4042119,HighSchool,2016,2516,Richie Grant,Choctawhatchee Senior,UCF,WR,72,172,2,0.7857,Fort Walton Beach,FL,USA,30.4057552,-86.618842,12091
+37603,,HighSchool,2016,2517,Raymond Flanders,Booker T. Washington,Marshall,WR,70,170,2,0.7857,Miami,FL,USA,25.7742658,-80.1936589,12086
+37609,,HighSchool,2016,2522,Tyler Kirtz,Brownsburg,Ball State,WR,75,190,2,0.7854,Brownsburg,IN,USA,39.8433769,-86.3977736,18063
+37610,,HighSchool,2016,2525,Zecharius Nash-Kelly,Round Rock,,WR,73,180,2,0.7853,Round Rock,TX,USA,30.508235,-97.6788934,48491
+37616,-1032984,HighSchool,2016,2533,Paxton Segina,Vandegrift,Stanford,WR,76,201,2,0.785,Austin,TX,USA,30.2711286,-97.7436995,48453
+37622,4038715,HighSchool,2016,2539,Dacoven Bailey,Pilot Point,Rutgers,WR,72,190,2,0.785,Pilot Point,TX,USA,33.396503,-96.9605608,48121
+37623,,HighSchool,2016,2540,MJ McGriff,Vero Beach,Illinois,WR,68,175,2,0.785,Vero Beach,FL,USA,27.6387163,-80.3975399,12061
+37632,,HighSchool,2016,2549,K.J. Hancock,North Gwinnett,Miami (OH),WR,74,195,2,0.7843,Suwanee,GA,USA,34.0514898,-84.0712997,13135
+37636,,HighSchool,2016,2554,Tyler Addison,Destrehan,Dartmouth,WR,73,185,2,0.7842,Destrehan,LA,USA,29.960933,-90.37054071,22089
+38452,,HighSchool,2016,2555,Brailon Mouton,Dawson,,WR,74,170,2,0.7842,Pearland,TX,USA,29.5639758,-95.2864299,48039
+37644,-1002186,HighSchool,2016,2562,Tobias Enlow,North Little Rock,Arkansas,WR,73,188,2,0.7832,North Little Rock,AR,USA,34.769536,-92.2670941,5119
+37646,,HighSchool,2016,2565,Joe Hampton,Little Rock Christian Academy,Central Arkansas,WR,73,185,2,0.7832,Little Rock,AR,USA,34.7464809,-92.2895948,5119
+37659,,HighSchool,2016,2579,Marquis Bates,Edna,Sam Houston State,WR,76,205,2,0.7824,Edna,TX,USA,28.9772626,-96.6462526,48239
+37662,,HighSchool,2016,2582,Hunter Hagdorn,Manvel,Dartmouth,WR,72,175,2,0.7824,Manvel,TX,USA,29.4664706,-95.355714,48039
+37774,4040791,HighSchool,2016,2591,Drew Dan,Checotah,New Mexico State,WR,73,180,2,0.7783,Checotah,OK,USA,35.4700993,-95.5230356,40091
+37681,4038996,HighSchool,2016,2601,Tyler Fleetwood,Parkview,Miami (OH),WR,73,192,2,0.7824,Lilburn,GA,USA,33.8901036,-84.1429719,13135
+37684,4038966,HighSchool,2016,2604,Jack Sorenson,Adlai Stevenson,Miami (OH),WR,73,185,2,0.7817,Lincolnshire,IL,USA,42.1900249,-87.9084039,17097
+37685,4043636,HighSchool,2016,2605,Brandon Rodgers,Vigor,Marshall,WR,69,170,2,0.7817,Mobile,AL,USA,30.6943566,-88.0430541,1097
+37703,4044081,HighSchool,2016,2623,Keyion Dixon,Glastonbury,Connecticut,WR,74,180,2,0.7813,Glastonbury,CT,USA,41.7123218,-72.608146,9003
+37716,,HighSchool,2016,2640,Price Perdue,C.P.A.,,WR,75,175,2,0.7798,Nashville,TN,USA,36.1622296,-86.7743531,47037
+37720,-1003080,HighSchool,2016,2645,Kevin Waites,Manor,Army,WR,72,175,2,0.7798,Manor,TX,USA,30.3407629,-97.5569456,48453
+37723,,HighSchool,2016,2649,Navon Prince,Woodrow Wilson,,WR,71,160,2,0.7798,Washington,DC,USA,38.8949855,-77.0365708,11001
+37728,,HighSchool,2016,2653,Wayne Perry,Pinkston,,WR,74,180,2,0.7792,Dallas,TX,USA,32.7762719,-96.7968559,48113
+37731,,HighSchool,2016,2657,Daijon Landry,Sophie B. Wright,,WR,71,183,2,0.7792,New Orleans,LA,USA,29.9499323,-90.0701156,22071
+37744,4050966,HighSchool,2016,2671,Aaron Denson,Richland,Missouri State,WR,70.5,180,2,0.779,North Richland Hills,TX,USA,32.8342952,-97.2289029,48439
+37749,4240010,HighSchool,2016,2676,Jayson Hopper,Lexington,,WR,73,200,2,0.779,Lexington,SC,USA,33.98390015,-81.22601083,45063
+37751,4036475,HighSchool,2016,2678,Brandon Bowling,McKinney Boyd,Arkansas State,WR,69,164,2,0.779,Mckinney,TX,USA,33.1976496,-96.6154471,48085
+37759,-1012279,HighSchool,2016,2686,Eric Elder,Stephenson,Georgia State,WR,73,180,2,0.779,Stone Mountain,GA,USA,33.8080924,-84.1706273,13089
+37766,-1036492,HighSchool,2016,2692,Jabir Frye,Escambia,Troy,WR,65.5,153,2,0.779,Pensacola,FL,USA,30.421309,-87.2169149,12033
+37769,,HighSchool,2016,2695,Sean Engel,Chaska,North Dakota State,WR,77,198,2,0.7783,Chaska,MN,USA,44.7894072,-93.6021791,27019
+67318,,HighSchool,2016,2700,Desmond Dan,Checotah,New Mexico State,WR,73,180,2,0.7783,Checotah,OK,USA,35.4700993,-95.5230356,40091
+37776,-1039260,HighSchool,2016,2702,Brannon Bullitt,Chapin,UTEP,WR,73,195,2,0.7783,El Paso,TX,USA,31.7754152,-106.4646348,48141
+37782,4039159,HighSchool,2016,2708,Aaron Cephus,Dekaney,Rice,WR,76,185,2,0.7783,Houston,TX,USA,29.7589382,-95.3676974,48201
+37787,-1012044,HighSchool,2016,2713,Tanner Hall,Lambert,Georgia Southern,WR,74,185,2,0.7783,Suwanee,GA,USA,34.0514898,-84.0712997,13135
+37798,4039911,HighSchool,2016,2724,Adarius Wesley,Jefferson Davis,Troy,WR,74,189,2,0.7783,Montgomery,AL,USA,32.3669656,-86.3006485,1101
+37805,,HighSchool,2016,2731,Malik Bramley,R Nelson Snider,,WR,74,170,2,0.7782,Fort Wayne,IN,USA,41.0799898,-85.1386015,18003
+37810,,HighSchool,2016,2736,Onyx Brown,Robertsdale,,WR,75,205,2,0.7782,Robertsdale,AL,USA,30.5538048,-87.7119324,1003
+37828,4051394,HighSchool,2016,2756,Ricky Henrilus,Lincoln,,WR,70,170,2,0.7778,Tallahassee,FL,USA,30.4380832,-84.2809332,12073
+37822,4029790,HighSchool,2016,2774,Jaylan Foster,Byrnes,Gardner-Webb,WR,72,190,2,0.7778,Duncan,SC,USA,34.9378962,-82.1451096,45083
+37835,,HighSchool,2016,2777,Dock Luckie,Gainesville,Florida A&M,WR,73,170,2,0.7778,Gainesville,FL,USA,29.6519684,-82.3249846,12001
+37859,,HighSchool,2016,2785,Kyree Calli,Bishop McDevitt,Bowling Green,WR,75,200,2,0.7767,Harrisburg,PA,USA,40.2663107,-76.8861122,42043
+37864,,HighSchool,2016,2790,Tee'Ondre Harvey,Mumford,Central Michigan,WR,73,172,2,0.7757,Detroit,MI,USA,42.3315509,-83.0466403,26163
+37869,4245241,HighSchool,2016,2795,Richie Rodriguez,Eastwood,UTEP,WR,69.5,160,2,0.7757,El Paso,TX,USA,31.7754152,-106.4646348,48141
+37879,-1023693,HighSchool,2016,2805,David Harvey,New Caney,Nevada,WR,72.5,193,2,0.775,New Caney,TX,USA,30.155216,-95.2113221,48339
+37885,3916373,HighSchool,2016,2811,Cameron Johnson,Keller,,WR,73,185,2,0.775,Keller,TX,USA,32.9299655,-97.2271249,48439
+37894,,HighSchool,2016,2820,Josh Wilkes,South Pointe,Eastern Michigan,WR,74,170,2,0.775,Rock Hill,SC,USA,34.9248667,-81.0250784,45091
+37895,,HighSchool,2016,2821,Darece Roberson,Mona Shores,Western Michigan,WR,69,160,2,0.775,Muskegon,MI,USA,43.2341813,-86.2483921,26121
+37903,4038926,HighSchool,2016,2829,Miles Daniel,Oak Park,Kent State,WR,69,165,2,0.775,Oak Park,MI,USA,42.4595317,-83.1821445,17031
+37921,4039154,HighSchool,2016,2847,Jordan Myers,Dickinson,Rice,WR,72.5,199,2,0.7743,Dickinson,TX,USA,29.4607876,-95.0513173,48167
+37927,,HighSchool,2016,2855,Jarnel Harris,Haynesville,,WR,72,173,2,0.7742,Haynesville,LA,USA,32.9620847,-93.1401647,22027
+37939,-1004386,HighSchool,2016,2868,Wyatt Plate,Lumen Christi,Ball State,WR,70,170,2,0.7731,Jackson,MI,USA,42.2465036,-84.4016963,28049
+37942,4049294,HighSchool,2016,2871,Antonio Nunn,Jefferson,Buffalo,WR,72,188,2,0.7731,Tampa,FL,USA,27.9477595,-82.458444,12057
+38057,-1019052,HighSchool,2016,2874,Sharif Saleem,Euclid,UMass,WR,79,250,2,0.7681,Cleveland,OH,USA,41.5051613,-81.6934446,39035
+37948,4038930,HighSchool,2016,2877,Kavious' Price,Manatee,Kent State,WR,65,155,2,0.7731,Bradenton,FL,USA,27.4989278,-82.5748194,12081
+37959,4040754,HighSchool,2016,2888,Calif Gossett,Pensacola,Louisiana,WR,77,185,2,0.7731,Pensacola,FL,USA,30.421309,-87.2169149,12033
+37972,4043605,HighSchool,2016,2901,Chris Jackson,Florida A&M University Developmental Research Scho,Marshall,WR,72,165,2,0.7723,Tallahassee,FL,USA,30.4380832,-84.2809332,12073
+37985,4038976,HighSchool,2016,2913,Kobe Burse,Mona Shores,Miami (OH),WR,72,196,2,0.7716,Muskegon,MI,USA,43.2341813,-86.2483921,26121
+38000,4048929,HighSchool,2016,2928,Brandon Luckett,Palmetto,Idaho,WR,71,177,2,0.7716,Bradenton,FL,USA,27.4989278,-82.5748194,12081
+38015,,HighSchool,2016,2942,Blais Herman,St Andrew's Episcopal School,,WR,74.5,203,2,0.7703,Austin,TX,USA,30.2711286,-97.7436995,48453
+38522,,HighSchool,2016,2944,Matthew Martin,Westside,Charleston Southern,WR,73,180,2,0.7698,Anderson,SC,USA,34.5068601,-82.6506264,45007
+38021,,HighSchool,2016,2951,Cortez Ervin,Seneca Valley,Old Dominion,WR,75,205,2,0.7698,Germantown,MD,USA,39.1731621,-77.2716502,24031
+38028,4241065,HighSchool,2016,2960,Michael Johnson,Lone Star,,WR,71,165,2,0.7692,Frisco,TX,USA,33.1506744,-96.8236116,48085
+38482,4035761,HighSchool,2016,2962,Jared Wyatt,Wylie East,Bowling Green,WR,74.5,185,2,0.7692,Wylie,TX,USA,33.0151201,-96.5388789,48085
+38033,-1036504,HighSchool,2016,2967,Jai Nunn-Liddell,Pebblebrook,Troy,WR,75,185,2,0.769,Mableton,GA,USA,33.8188333,-84.5822632,13067
+38067,4038920,HighSchool,2016,3002,Trey Harrell,Metairie Park Country Day School,Kent State,WR,71.5,182,2,0.7681,Metairie,LA,USA,30.001852,-90.17671492,22051
+38068,,HighSchool,2016,3003,Lamar Handy,Oak Ridge,,WR,69,170,2,0.7681,Conroe,TX,USA,30.3118769,-95.4560512,48339
+38074,,HighSchool,2016,3009,Domonick Holley,Akron Comm Sch East,Akron,WR,74,175,2,0.7681,Akron,AL,USA,32.8765165,-87.7425105,1065
+38077,4259381,HighSchool,2016,3013,Cole McGowan,Magnolia,,WR,71,170,2,0.7676,Magnolia,TX,USA,30.2093794,-95.7507815,48339
+38081,4046369,HighSchool,2016,3017,Ulice Gillard,Lake Nona,Florida International,WR,72,190,2,0.7676,Orlando,FL,USA,28.5421109,-81.3790304,12095
+38086,4038230,HighSchool,2016,3022,Davine Tullis,Ballard,Hawai'i,WR,74,195,2,0.7675,Seattle,WA,USA,47.6038321,-122.3300624,53033
+38089,4039321,HighSchool,2016,3025,Kevin McGill,Westlake,Eastern Michigan,WR,72.5,175,2,0.7675,Waldorf,MD,USA,38.6263882,-76.9106581,24017
+38092,,HighSchool,2016,3028,Infinite Tucker,Huntington,,WR,77,198,2,0.7675,Huntington,NY,USA,40.868154,-73.425676,36103
+38117,,HighSchool,2016,3034,Garrett White,Edison,Yale,WR,75,210,2,0.7667,Fresno,CA,USA,36.7295295,-119.7088613,6019
+38118,,HighSchool,2016,3041,Corey Simmons,Stratford Comprehensive,Austin Peay,WR,69,160,2,0.7667,Nashville,TN,USA,36.1622296,-86.7743531,47037
+38100,,HighSchool,2016,3052,Johnny McDonald,Alpharetta,,WR,67,145,2,0.7667,Alpharetta,GA,USA,34.0709576,-84.2747329,13121
+38535,,HighSchool,2016,3056,Justin Davis,Bishop Kearney,,WR,69,175,2,0.7667,Rochester,NY,USA,43.157285,-77.615214,36055
+38116,,HighSchool,2016,3059,Buck Watkins,Edgewater,Florida Tech,WR,72,160,2,0.7667,Orlando,FL,USA,28.5421109,-81.3790304,12095
+38532,4027846,HighSchool,2016,3068,Samuel Akem,Broken Arrow,Montana,WR,74.5,184,2,0.7667,Broken Arrow,OK,USA,36.0525993,-95.7908195,40143
+38137,,HighSchool,2016,3080,Marqel McCoy,Concord,UC Davis,WR,75,198,2,0.7667,Concord,CA,USA,37.9768525,-122.0335624,6013
+38132,4028751,HighSchool,2016,3081,Nick Carlton,Alpharetta,Army,WR,75,210,2,0.7667,Alpharetta,GA,USA,34.0709576,-84.2747329,13121
+38134,,HighSchool,2016,3088,Jacquez Payton,Georgiana Sch,Jacksonville State,WR,72,160,2,0.7667,Georgiana,AL,USA,31.6371028,-86.7419175,1013
+38145,,HighSchool,2016,3094,Dareon Nash,Charter Oak,Montana,WR,72,175,2,0.7667,Covina,CA,USA,34.1024,-117.854865,6037
+67322,,HighSchool,2016,3099,Kaleb Pitts,Hamilton,,WR,75,175,2,0.7667,Chandler,AZ,USA,33.3062223,-111.8413317,4013
+67328,,HighSchool,2016,3106,Devon Arbis-Jackson,Eastside Catholic,,WR,72,195,2,0.7667,Bellevue,WA,USA,47.6144219,-122.1923372,53033
+67332,,HighSchool,2016,3110,Jairus Woodson,Valley Christian,Northern Arizona,WR,70,140,2,0.7667,Dublin,CA,USA,37.7021521,-121.9357918,6001
+67334,,HighSchool,2016,3112,Jamarcus Ezell,Demopolis,,WR,72,180,2,0.7667,Demopolis,AL,USA,32.5178284,-87.8368201,1091
+67341,,HighSchool,2016,3120,Kyle Urbon,Gig Harbor,Eastern Washington,WR,,,2,0.7667,Gig Harbor,WA,USA,47.3259697,-122.5878659,53053
+67342,,HighSchool,2016,3121,Malik Webb,Skyline,Texas Southern,WR,73,175,2,0.7667,Dallas,TX,USA,32.7762719,-96.7968559,48113
+67343,,HighSchool,2016,3122,Darby Baldwin,West Brook,,WR,73,173,2,0.7667,Beaumont,TX,USA,30.0860459,-94.1018461,48245
+67347,,HighSchool,2016,3126,T'Qele Holmes,West Ashley,Coastal Carolina,WR,72,175,2,0.7667,Charleston,SC,USA,32.7876012,-79.9402728,45019
+67348,,HighSchool,2016,3127,Devan Quesada,John Swett,,WR,75,190,2,0.7667,Crockett,CA,USA,38.036666,-122.2053113,6013
+67351,,HighSchool,2016,3130,Tyrell Washington,Vero Beach,Bethune-Cookman,WR,74,209,2,0.7667,Vero Beach,FL,USA,27.6387163,-80.3975399,12061
+67355,-1028176,HighSchool,2016,3134,Cortez Chase-Ervin,Seneca Valley,Old Dominion,WR,,,2,0.7667,Germantown,MD,USA,39.1731621,-77.2716502,24031
+38317,4039080,HighSchool,2016,3134,Khairi Muhammad,DeSoto,North Texas,WR,69,171,2,0.7581,DeSoto,TX,USA,32.6061241,-96.86561265,48113
+67360,,HighSchool,2016,3139,Trevor Begue,St. Thomas More,McNeese,WR,71,175,2,0.7667,Lafayette,LA,USA,30.2240897,-92.0198427,22055
+67363,,HighSchool,2016,3142,Sean Bowden,Eleanor Roosevelt,,WR,74,185,2,0.7667,Corona,CA,USA,33.8752945,-117.5664449,6065
+67374,,HighSchool,2016,3153,Noah Boone,Landstown,Hampton,WR,75,184,2,0.7667,Virginia Beach,VA,USA,36.8529841,-75.9774183,51810
+67382,,HighSchool,2016,3161,Marcus Cawthorne,Battle Ground Academy,,WR,73,175,2,0.7667,Franklin,TN,USA,35.925193,-86.8689365,47187
+67393,,HighSchool,2016,3173,Kevin Mendelsberg,Santaluces Community,,WR,69,160,2,0.7667,Lake Worth,FL,USA,26.615891,-80.0691435,12099
+67414,,HighSchool,2016,3196,Jerald Campbell,Lemoore,,WR,71,160,2,0.7667,Lemoore,CA,USA,36.3006495,-119.7827122,6031
+67434,,HighSchool,2016,3217,Dakarai Allen,Largo,South Dakota,WR,72,170,2,0.7667,Largo,FL,USA,27.9094665,-82.7873244,12103
+67440,,HighSchool,2016,3224,Jason Pirtle,Locust Grove,,WR,73,191,2,0.7667,Locust Grove,OK,USA,36.2000936,-95.1677401,40097
+67444,,HighSchool,2016,3228,Jamarius Leatherwood,Sipsey Valley,,WR,72,175,2,0.7667,Buhl,AL,USA,33.2570623,-87.7527902,1125
+67445,,HighSchool,2016,3229,Zack Smith,Whitmer,Grand Valley State,WR,75,180,2,0.7667,Toledo,OH,USA,41.6786754,-83.5127283,39095
+67446,,HighSchool,2016,3230,Elijah McLeod,Bethel,,WR,74,200,2,0.7667,Spanaway,WA,USA,47.0979462,-122.4243422,53053
+67454,,HighSchool,2016,3239,Anthony Battaglia,Pine-Richland,Army,WR,73,195,2,0.7667,Gibsonia,PA,USA,40.6300671,-79.9695004,42003
+67458,,HighSchool,2016,3243,Riley Krenz,Lake Stevens,,WR,71,185,2,0.7667,Lake Stevens,WA,USA,48.0197794,-122.0660914,53061
+67465,,HighSchool,2016,3251,Terrell Vassell,DePaul Catholic,,WR,72,165,2,0.7667,Wayne,NJ,USA,40.9491723,-74.2376802,34031
+67469,,HighSchool,2016,3255,Dwight Blakey,Cass Technical,,WR,69,170,2,0.7667,Detroit,MI,USA,42.3315509,-83.0466403,26163
+38439,,HighSchool,2016,3256,Joseph Ward,Midway,,WR,69,160,2,0.7379,Waco,TX,USA,31.549333,-97.1466695,48309
+38155,,HighSchool,2016,3260,Xavier James,Verrado,Eastern Washington,WR,73,175,2,0.7667,B M Goldwater A F Range,AZ,USA,,,
+67475,,HighSchool,2016,3262,Tristan Beard,Curtis Senior,Idaho State,WR,74,190,2,0.7667,Tacoma,WA,USA,47.2495798,-122.4398746,53053
+67488,,HighSchool,2016,3277,R.D. Ford,Buckhorn,,WR,74,181,2,0.7667,New Market,AL,USA,34.895672,-86.41498978,1089
+67492,,HighSchool,2016,3281,Anthony Conwell,Shades Valley,,WR,69,165,2,0.7667,Birmingham,AL,USA,33.5206824,-86.8024326,1073
+67493,,HighSchool,2016,3282,Cameron Mackey,North Marion,Florida A&M,WR,70,179,2,0.7667,Citra,FL,USA,29.4119166,-82.1098156,12083
+67504,,HighSchool,2016,3293,Terek Zimmerman,Timberline,,WR,74,185,2,0.7667,Boise,ID,USA,43.6166163,-116.200886,16001
+67515,,HighSchool,2016,3306,Marcus Gay,Arabia Mountain,Savannah State,WR,75,193,2,0.7667,Lithonia,GA,USA,33.7123305,-84.1051939,13089
+67522,,HighSchool,2016,3313,Marcel Myers,Bishop Alemany,Northern Arizona,WR,74,185,2,0.7667,Mission Hills,CA,USA,34.687584,-120.4390175,6083
+67523,,HighSchool,2016,3314,Kyle Harrell,Calera,Army,WR,73,205,2,0.7667,Calera,AL,USA,33.1117845,-86.7167147,1117
+67524,,HighSchool,2016,3315,Brandon Wadley,Adams,Grand Valley State,WR,72,175,2,0.7667,South Bend,IN,USA,41.6833813,-86.2500066,18141
+67536,,HighSchool,2016,3328,Ammon Johnson,Cherokee Trail,,WR,75,185,2,0.7667,Aurora,CO,USA,39.729432,-104.8319196,8005
+67538,,HighSchool,2016,3330,Mata’ava Ta’ase,Mountain View,,WR,75,200,2,0.7667,Mesa,AZ,USA,33.4151117,-111.8314773,4013
+67542,,HighSchool,2016,3334,Josh Fink,Coppell,,WR,71,175,2,0.7667,Coppell,TX,USA,32.9552598,-97.0155703,48113
+67543,,HighSchool,2016,3335,Austin Guy,Natchitoches Central,Northwestern State,WR,75,211,2,0.7667,Natchitoches,LA,USA,31.7606732,-93.0860209,22069
+38166,,HighSchool,2016,3338,Elijah Fineran,Bethlehem Catholic,Stony Brook,WR,76,198,2,0.7667,Bethlehem,PA,USA,40.6178915,-75.3786521,42095
+67566,,HighSchool,2016,3359,Jeb Palka,Saline,,WR,71,170,2,0.7667,Saline,MI,USA,42.1667072,-83.7816075,26161
+67577,,HighSchool,2016,3370,Ben Waters,Valor Christian,Air Force,WR,73,200,2,0.7667,Littleton,CO,USA,39.613321,-105.0166498,8005
+67592,,HighSchool,2016,3385,Nate Shubert,Kamiak,Idaho State,WR,75,205,2,0.7667,Mukilteo,WA,USA,47.9474034,-122.3036992,53061
+67597,,HighSchool,2016,3390,Josh Wainwright,Bowie,Columbia,WR,71,168,2,0.7667,Austin,TX,USA,30.2711286,-97.7436995,48453
+67604,,HighSchool,2016,3397,Dee White,Harrison Central,,WR,71,200,2,0.7667,Gulfport,MS,USA,30.3674198,-89.0928155,28047
+67609,,HighSchool,2016,3402,Tim Pless,Heritage,Northern Colorado,WR,73,173,2,0.7667,Littleton,CO,USA,39.613321,-105.0166498,8005
+67616,,HighSchool,2016,3409,Tyson Morris,Fayetteville,,WR,74,193,2,0.7667,Fayetteville,AR,USA,36.0625843,-94.1574328,5143
+38153,4030557,HighSchool,2016,3420,Domenic Cozier,Milton Academy,Holy Cross,WR,68,161,2,0.7667,Milton,MA,USA,42.2501425,-71.065573,25021
+67627,-1018381,HighSchool,2016,3421,Deyton Jackson,Liberty,Marshall,WR,71,174,2,0.7667,Peoria,AZ,USA,33.5806115,-112.2372942,4013
+67629,,HighSchool,2016,3423,Jake Welsheimer,Shadow Mountain,,WR,70,170,2,0.7667,Phoenix,AZ,USA,33.4484367,-112.0741417,4013
+67638,,HighSchool,2016,3432,Mike Hardy,LaGrange,,WR,75,185,2,0.7667,Lagrange,GA,USA,33.039291,-85.0313269,13285
+67647,,HighSchool,2016,3441,Keonte Taylor,James Logan,,WR,72,158,2,0.7667,Union City,CA,USA,37.5963232,-122.0816297,6001
+67649,,HighSchool,2016,3443,Samori Toure,Westview,Montana,WR,72,172,2,0.7667,Portland,OR,USA,45.5202471,-122.6741949,41051
+67661,,HighSchool,2016,3455,Kirk Augustus,Ardrey Kell,,WR,69,165,2,0.7667,Charlotte,NC,USA,35.2272,-80.843083,37119
+67663,,HighSchool,2016,3457,Mark Wilson,Renaissance,Grand Valley State,WR,73,179,2,0.7667,Detroit,MI,USA,42.3315509,-83.0466403,26163
+67666,,HighSchool,2016,3460,Reginald Payne,J. M. Tate Senior,,WR,75,190,2,0.7667,Cantonment,FL,USA,30.605427,-87.344442,12033
+67678,,HighSchool,2016,3473,Cordell Pimienta,Armwood,,WR,71,168,2,0.7667,Seffner,FL,USA,27.998541,-82.274884,12057
+67679,,HighSchool,2016,3474,Lionell McConnell,Winton Woods,Liberty,WR,70,177,2,0.7667,Cincinnati,OH,USA,39.1014537,-84.5124602,39061
+67685,,HighSchool,2016,3480,Kyle Olson-Urbon,Gig Harbor,,WR,71,190,2,0.7667,Gig Harbor,WA,USA,47.3259697,-122.5878659,53053
+67688,,HighSchool,2016,3483,Tevon Wright,Champagnat Catholic - Hialeah,South Dakota,WR,74,175,2,0.7667,Hialeah,FL,USA,25.8575963,-80.2781057,12086
+67691,,HighSchool,2016,3486,Henry Payoute,North Miami,,WR,73,180,2,0.7667,Miami,FL,USA,25.7742658,-80.1936589,12086
+67695,,HighSchool,2016,3490,Jalen Harrison,St Anne's-belfield School,Syracuse,WR,76,205,2,0.7667,Charlottesville,VA,USA,38.029306,-78.4766781,51540
+67697,,HighSchool,2016,3492,Chanse Pullen,Houston,Navy,WR,74,190,2,0.7667,Germantown,TN,USA,35.0867577,-89.8100858,47157
+67699,,HighSchool,2016,3494,Jonathan Jeffries,Davidson Day,East Carolina,WR,73,170,2,0.7667,Concord,NC,USA,35.4093772,-80.5797416,37025
+67700,,HighSchool,2016,3495,Colby Cooper,Wake Forest,,WR,69,165,2,0.7667,Raleigh,NC,USA,35.7803977,-78.6390989,37183
+67702,,HighSchool,2016,3497,Tavian Patrick,Desert Ridge,,WR,70,170,2,0.7667,Mesa,AZ,USA,33.4151117,-111.8314773,4013
+67703,,HighSchool,2016,3498,Easton  Trakel,Tumwater,,WR,70,175,2,0.7667,Olympia,WA,USA,47.0451022,-122.8950075,53067
+38162,-1003059,HighSchool,2016,3505,Trey Neville,Lafayette,Army,WR,76,225,2,0.7667,Williamsburg,VA,USA,37.2708788,-76.7074042,51830
+67714,,HighSchool,2016,3510,Tavaris Scott,Spartanburg,,WR,73,212,2,0.7667,Spartanburg,SC,USA,34.9498007,-81.9320157,45083
+67717,,HighSchool,2016,3513,Julian Hess,Centennial,Eastern Illinois,WR,74,160,2,0.7667,Champaign,IL,USA,40.1164205,-88.2433829,17019
+67742,,HighSchool,2016,3538,Mike Robb,H.h. Dow,,WR,78,210,2,0.7667,Midland,MI,USA,43.6155825,-84.2472117,26111
+67745,,HighSchool,2016,3541,Brandon Monroe,Junipero Serra,,WR,72,166,2,0.7667,San Mateo,CA,USA,37.5439684,-122.3066789,6081
+67753,,HighSchool,2016,3550,Kylen Pettis,Hinsdale South,,WR,74,165,2,0.7667,Darien,IL,USA,41.7508713,-87.9739593,17043
+67754,,HighSchool,2016,3551,Jordan Williams,Roger Bacon,,WR,72,180,2,0.7667,Cincinnati,OH,USA,39.1014537,-84.5124602,39061
+67760,,HighSchool,2016,3557,Jalen Rima,Prairie,Northern Iowa,WR,74,175,2,0.7667,Cedar Rapids,IA,USA,41.9758872,-91.6704053,19113
+67767,,HighSchool,2016,3564,Cedric Byrd,Narbonne,,WR,69,145,2,0.7667,Harbor City,CA,USA,33.7972822,-118.3004717,6037
+67770,,HighSchool,2016,3568,Elijah Galbreath,South East,,WR,70,160,2,0.7667,South Gate,CA,USA,37.4333295,-122.1512119,6085
+67774,,HighSchool,2016,3572,Dorian Lindsey,Greer,Wofford,WR,72,180,2,0.7667,Greer,SC,USA,34.9381361,-82.2272119,45045
+67778,,HighSchool,2016,3577,Kareem Adeniyi,Mansfield,,WR,77,201,2,0.7667,Mansfield,TX,USA,32.5631924,-97.1416768,48439
+67785,,HighSchool,2016,3584,Christian Johnson,Jefferson,Towson,WR,75,190,2,0.7667,Shenandoah Junction,WV,USA,39.3587115,-77.8430506,54037
+67791,,HighSchool,2016,3590,John Stratton,Daviess County,,WR,76,185,2,0.7667,Owensboro,KY,USA,37.7742152,-87.1133304,21059
+67811,,HighSchool,2016,3610,Devin Fleming,St. John Bosco,,WR,71,160,2,0.7667,Bellflower,CA,USA,33.8825705,-118.1167679,6037
+38176,4032706,HighSchool,2016,3616,Alex Gregory,Nacogdoches,Stephen F. Austin,WR,71,175,2,0.7649,Nacogdoches,TX,USA,31.6035129,-94.6554874,48347
+38187,-1003081,HighSchool,2016,3627,Max Weisman,Notre Dame,Army,WR,73,188,2,0.7649,Sherman Oaks,CA,USA,34.1508718,-118.4489865,6037
+38194,,HighSchool,2016,3634,Shane Hudson,Crosby,Lamar,WR,73,160,2,0.7642,Crosby,TX,USA,29.9118885,-95.0621941,48201
+38200,4056056,HighSchool,2016,3640,Elijah Trosclair,Sacramento,UNLV,WR,74,180,2,0.7642,Sacramento,CA,USA,38.5815719,-121.4943996,6067
+38210,4036582,HighSchool,2016,3650,Brandius Batiste,Welsh,Louisiana Monroe,WR,73,170,2,0.7642,Welsh,LA,USA,30.2360403,-92.8226453,22053
+38214,4038931,HighSchool,2016,3654,Mike Carrigan,Lincoln,Kent State,WR,70,160,2,0.7642,Tallahassee,FL,USA,30.4380832,-84.2809332,12073
+38231,4036529,HighSchool,2016,3672,Jonathan Ifedi,Zebulon B. Vance,Georgia State,WR,73,195,2,0.7631,Charlotte,NC,USA,35.2272,-80.843083,37119
+38242,4039086,HighSchool,2016,3683,Tyler Wilson,James Martin,North Texas,WR,70,170,2,0.7631,Arlington,TX,USA,32.701939,-97.10562379,48439
+38243,,HighSchool,2016,3684,Antwan Wright,Shelby,Marshall,WR,72,170,2,0.7631,Shelby,NC,USA,35.2919489,-81.5402112,37045
+38262,-1039641,HighSchool,2016,3702,Jack Giblin,Port Neches-Groves,UT San Antonio,WR,75,210,2,0.7609,Port Neches,TX,USA,29.9913244,-93.9585067,48245
+38263,,HighSchool,2016,3703,Bryan Long Jr,Hillgrove,Ohio,WR,68,165,2,0.7609,Powder Springs,GA,USA,33.8595492,-84.683824,13067
+38274,,HighSchool,2016,3714,Jalante Smith,Charles Henderson Sch,,WR,69,175,2,0.7598,Troy,AL,USA,31.8087678,-85.969951,1109
+38278,,HighSchool,2016,3718,Kevin Robinson,Shelton,,WR,73,190,2,0.7598,Shelton,CT,USA,41.3164856,-73.0931641,9001
+38283,,HighSchool,2016,3723,Garrett Collins,Greenwood,Air Force,WR,69,156,2,0.7598,Greenwood,AR,USA,35.2156489,-94.2557663,5131
+38284,4040650,HighSchool,2016,3724,Chris Johnson,Scotlandville Magnet,Tulane,WR,74,185,2,0.7597,Baton Rouge,LA,USA,30.4459596,-91.18738,22033
+38289,,HighSchool,2016,3729,Dontaze Costly,St. James,,WR,73,175,2,0.7592,Saint James,LA,USA,29.9828,-90.8309,36103
+38291,4032157,HighSchool,2016,3731,Thomas Gordon,Mallard Creek,Furman,WR,71,165,2,0.759,Charlotte,NC,USA,35.2272,-80.843083,37119
+38302,4261085,HighSchool,2016,3742,Adam Farah,Forest Hills Northern,Air Force,WR,71,170,2,0.7581,Grand Rapids,MI,USA,42.9632405,-85.6678639,26081
+38308,4240051,HighSchool,2016,3748,Marcus Williams,Cleveland,New Mexico,WR,76,215,2,0.7581,Rio Rancho,NM,USA,35.269381,-106.632819,35043
+38309,-1039286,HighSchool,2016,3749,Eric Foster,Americas,UTEP,WR,72,175,2,0.7581,El Paso,TX,USA,31.7754152,-106.4646348,48141
+38315,4036522,HighSchool,2016,3755,Bryson Duckworth,Charles Drew,Georgia State,WR,77,210,2,0.7581,Riverdale,GA,USA,33.5726113,-84.4132594,13063
+38323,,HighSchool,2016,3763,RJ Merriweather,Tift County,Georgia Southern,WR,72,180,2,0.7581,Tifton,GA,USA,31.4522765,-83.5096866,13277
+38329,4040524,HighSchool,2016,3769,Thurman Morbley,Liberty-Eylau,Texas State,WR,71,166,2,0.7575,Texarkana,TX,USA,33.44628645,-94.07638067,48037
+38336,,HighSchool,2016,3776,Xavier Suggs,Parish Episcopal School,,WR,69,170,2,0.7575,Dallas,TX,USA,32.7762719,-96.7968559,48113
+38339,,HighSchool,2016,3779,Elbre Gaiter,Westminster Christian School,Florida International,WR,68,168,2,0.7556,Miami,FL,USA,25.7742658,-80.1936589,12086
+38345,,HighSchool,2016,3784,B.J. Brown,Grant Union,,WR,75,185,2,0.7542,Sacramento,CA,USA,38.5815719,-121.4943996,6067
+38348,4037397,HighSchool,2016,3789,Chance Kennedy,South Mecklenburg,North Carolina Central,WR,68,170,2,0.7531,Charlotte,NC,USA,35.2272,-80.843083,37119
+38356,-1044094,HighSchool,2016,3797,Sam Maughan,Oregon City Senior,Wyoming,WR,76,210,2,0.7531,Oregon City,OR,USA,45.3573429,-122.6067583,41005
+38376,4032692,HighSchool,2016,3814,Sylvaughn Turner,East Limestone,Murray State,WR,73,170,2,0.7497,Athens,AL,USA,34.8283825,-86.91713375,1083
+38380,4035893,HighSchool,2016,3822,Keegan Brewer,Lake Dallas,Kansas,WR,69,163,2,0.7497,Lake Dallas,TX,USA,33.1192875,-97.0255641,48121
+38513,4043996,HighSchool,2016,3827,Chase Cokley,Westlake,Abilene Christian,WR,72,170,2,0.7481,Austin,TX,USA,30.2711286,-97.7436995,48453
+38397,,HighSchool,2016,3842,Karon Keyes,Glenbard East,Northern Illinois,WR,67,145,2,0.7481,Lombard,IL,USA,41.8864687,-88.0201536,17043
+38403,,HighSchool,2016,3844,Coutrell Plair,Brentwood Academy,Samford,WR,72,170,2,0.7442,Brentwood,TN,USA,36.0325687,-86.7825235,47187
+38409,4047518,HighSchool,2016,3850,Kevin Kassis,Oak Ridge,Montana State,WR,71,170,2,0.7442,El Dorado Hills,CA,USA,38.6561185,-121.0743265,6017
+38410,4034610,HighSchool,2016,3851,Robert Adams,Trinity Presbyterian School,Samford,WR,75,190,2,0.7442,Montgomery,AL,USA,32.3669656,-86.3006485,1101
+38419,4039481,HighSchool,2016,3859,Ryan Gibbons,Maine South,Northern Illinois,WR,71,175,2,0.7431,Park Ridge,IL,USA,42.0112329,-87.8406031,17031
+38458,,HighSchool,2016,3879,Yassar El-Amin,Douglas County,Samford,WR,70,157,2,0.7331,Douglasville,GA,USA,33.7514966,-84.7477136,13097
+38459,,HighSchool,2016,3880,Bailey Rogers,Wren,Furman,WR,70,160,2,0.7331,Piedmont,SC,USA,34.7105655,-82.45761136,45007
+38496,,HighSchool,2016,3898,Jake Geier,Andover Senior,North Dakota,WR,74,200,2,0.7197,Andover,MN,USA,45.2332985,-93.2913405,27003
+38616,,HighSchool,2016,3913,Dorian Miles,Brookwood,Kennesaw State,WR,73,197,1,0.6997,Snellville,GA,USA,33.857328,-84.0199108,13135
+38548,-1043788,HighSchool,2016,3917,Jack Popp,Homestead,Wisconsin,WR,75,175,1,0.6997,Thiensville,WI,USA,43.2375067,-87.9787001,55089
+38560,4047529,HighSchool,2016,3932,Travis Toivonen,Red Wing Senior,North Dakota,WR,75,200,1,0.6997,Red Wing,MN,USA,44.5624676,-92.5338013,27049
+38568,4034600,HighSchool,2016,3943,Brandon Thomas,Jean Ribault,Tennessee Tech,WR,72,195,1,0.6997,Jacksonville,FL,USA,30.3321838,-81.655651,12031
+38579,3933397,HighSchool,2016,3955,Cody Williams,Pearland,Stephen F. Austin,WR,75,210,1,0.6997,Pearland,TX,USA,29.5639758,-95.2864299,48039
+38587,,HighSchool,2016,3963,Jailen Edwards,Greene County,Kennesaw State,WR,72,175,1,0.6997,Greensboro,GA,USA,33.5756831,-83.1823789,13133
+38592,,HighSchool,2016,3969,Rob Lake,Vanguard,Mercer,WR,71,175,1,0.6997,Ocala,FL,USA,29.1871986,-82.1400923,12083
+38599,4029857,HighSchool,2016,3976,Ezra Naylor,North Atlanta,Kennesaw State,WR,76,190,1,0.6997,Atlanta,GA,USA,33.7490987,-84.3901849,13121
+38600,4043950,HighSchool,2016,3977,Kelby Brock,Maryville,Mercer,WR,73,190,1,0.6997,Maryville,TN,USA,35.7564719,-83.9704593,47009
+38601,4034608,HighSchool,2016,3978,Koi Freeman,Leeds,Samford,WR,73,174,1,0.6997,Leeds,AL,USA,33.506102,-86.61711816,1073
+38602,4029846,HighSchool,2016,3979,Bryson Armstrong,Kell,Kennesaw State,WR,71,195,1,0.6997,Marietta,GA,USA,33.9528472,-84.5496148,13067
