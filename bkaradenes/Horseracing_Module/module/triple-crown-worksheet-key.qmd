@@ -15,7 +15,7 @@ To begin, let's use what we know about simple linear regression and predict the 
 ```{r}
 # first load in any necessary packages and data
 library(tidyverse)
-horseracing <- read.csv(triple-crown.csv")
+horseracing <- read.csv("triple-crown.csv")
 ```
 
 1. Talk to a neighbor and brainstorm some ideas on the appropriateness of the model below.
