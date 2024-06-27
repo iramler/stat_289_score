@@ -9,7 +9,7 @@
 <meta name="author" content="Vivian Johnson">
 <meta name="author" content="Ivan Ramler">
 <meta name="dcterms.date" content="2024-06-24">
-<meta name="description" content="Critically exploring self reported strength ratios.">
+<meta name="description" content="Preparing a dataset to complete ANOVA and an analysis of results.">
 
 <title>Exploring ANOVA Through the NBA Draft</title>
 <style>
@@ -59,7 +59,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Critically exploring self reported strength ratios.
+    Preparing a dataset to complete ANOVA and an analysis of results.
   </div>
 </div>
 
@@ -112,21 +112,20 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="the-nba-draft">The NBA Draft</h4>
 <p>Each year, the National Basketball Association (NBA) holds a <a href="https://www.bbc.co.uk/newsround/65997816" target="_blank">draft</a>, where prospective basketball players are able to be chosen to join one of the 30 professional teams across the United States and Canada.</p>
 <p>In order to be eligible for the draft, a player must be at least 19 years old and out of high school for at least one year. Prior to 2006, this rule was not in effect, and players could be drafted during/right out of high school.</p>
-<p>The draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field.</p>
+<p>Each year, the draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field. It’s important to note that there weren’t always 30 players selected in each round, the number made its way up to 30 as more teams were added into the NBA.</p>
 </section>
 <section id="playing-basketball" class="level4">
 <h4 class="anchored" data-anchor-id="playing-basketball">Playing Basketball</h4>
-<p>The goal in basketball is to score as many points as possible by throwing the ball through the other team’s hoop. The two netted baskets, positioned on opposite ends of a rectangular court, are normally 10 feet high, and have a backboard behind them.</p>
+<p>The goal in basketball is to score as many points as possible by throwing the ball through the other team’s hoop.</p>
 <p>In the middle of <a href="https://en.wikipedia.org/wiki/Basketball_court" target="_blank">the court</a> there is a half-court line that divides the two sides. On both sides, surrounding the hoops, there is an arch called the three-point line. Within the three-point line stands the free-throw line, where a player would shoot from should there be a foul called.</p>
-<p>During play, each team has five players on the court. The game starts with the referee tossing the ball in the air in between a player from each team, while each player tries to swat the ball to a member of their team (called a jump ball).</p>
 <p><strong>Scoring</strong></p>
-<p>Players can shoot towards the hoop from any point on the court. A different number of points is rewarded based on where the player is standing when they release the ball. The three shots are explained below.</p>
+<p>Players can shoot towards the hoop from any point on the court. A different number of points is awarded based on where the player is standing when they release the ball. The three shots are explained below.</p>
 <ul>
 <li>Field Goal: Worth 2 points, scored by shooting within the three point line</li>
 <li>Three Pointer: Worth 3 points, scored by shooting outside the three point line.</li>
 <li>Free Throw: Worth one point, taken from the free throw line after a foul.</li>
 </ul>
-<p>Players move the ball up and down the court by dribbling<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, passing the ball to teammates, or shooting the ball. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.</p>
+<p>A rebound is when a player from the team that is on defense obtains the ball after the other team takes a shot attempt at the hoop. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Learning Objectives">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -254,14 +253,6 @@ Technology Requirements
 <td>The percent of free throws made by the player in the NBA</td>
 </tr>
 <tr class="even">
-<td>win_shares</td>
-<td>Win shares in the NBA</td>
-</tr>
-<tr class="odd">
-<td>win_shares_per_48</td>
-<td>Win shares in the NBA per 48 minutes</td>
-</tr>
-<tr class="even">
 <td>draft_year</td>
 <td>Year the player was drafted</td>
 </tr>
@@ -320,13 +311,7 @@ Conclusion
 </section>
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>to bounce the ball continuously while running or walking up and down the court<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main>
+</main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
