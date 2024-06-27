@@ -15,29 +15,135 @@ tdf_stages <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gaca
 
 tdf_winners <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/tdf_winners.csv")
 
-stage_data <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/stage_data.csv")
 ```
 
 
 ```{r}
 tdf_stages |> summary()
 tdf_winners |> summary()
-stage_data |> group_by(edition, stage_results_id) |> summarise(finishers = n()) |> arrange(desc(finishers))
 ```
+
+
+
+
 
 
 ```{r}
 
 
 
-"https://www.procyclingstats.com/race/tour-de-france/2019/stage-1"
+stage <- 1
+
+tdf_2019_url <- map("https://www.procyclingstats.com/race/tour-de-france/2019/stage-", stage)
 
 
 
-tdf <- "https://www.procyclingstats.com/race/tour-de-france/1987/prologue"
-tdf_tab <- read_html(tdf) |> html_nodes("table")
-tdf_0 <- tdf_tab[[1]] |> html_table()
-tdf_0
+tdf_tab <- read_html(tdf_url) |> html_nodes("table")
+tdf_2019_1 <- tdf_tab[[1]] |> html_table()
+
+tdf_2019_1
+
+
+
+```
+
+
+
+```{r}
+
+tdf_url_vec <- c("https://www.procyclingstats.com/race/tour-de-france/2019/stage-1",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-2",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-3",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-4",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-5",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-6",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-7",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-8",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-9",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-10",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-11",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-12",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-13",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-14",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-15",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-16",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-17",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-18",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-19",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-20",
+"https://www.procyclingstats.com/race/tour-de-france/2019/stage-21")
+
+```
+
+
+
+```{r}
+tdf_2019("https://www.procyclingstats.com/race/tour-de-france/2019/gc")
+
+
+tdf_2019 <- function(tdf_url) {
+  tdf_tab <- read_html(tdf_url) |> html_nodes("table")
+  tdf_2019 <- tdf_tab[[1]] |> html_table()
+  
+  return(tdf_2019)
+}
+
+tdf_2019_stage <- map(tdf_url_vec, tdf_2019)
+tdf_2019_stage
+
+```
+
+
+
+```{r}
+
+tdf_past_10 <- c("https://www.procyclingstats.com/race/tour-de-france/2013/gc",
+                 "https://www.procyclingstats.com/race/tour-de-france/2014/gc",
+                 "https://www.procyclingstats.com/race/tour-de-france/2015/gc",
+                 "https://www.procyclingstats.com/race/tour-de-france/2016/gc",
+                 "https://www.procyclingstats.com/race/tour-de-france/2017/gc",
+                 "https://www.procyclingstats.com/race/tour-de-france/2018/gc",
+                 "https://www.procyclingstats.com/race/tour-de-france/2019/gc",
+                 "https://www.procyclingstats.com/race/tour-de-france/2020/gc",
+                 "https://www.procyclingstats.com/race/tour-de-france/2021/gc",
+                 "https://www.procyclingstats.com/race/tour-de-france/2022/gc",
+                 "https://www.procyclingstats.com/race/tour-de-france/2023/gc")
+
+```
+
+
+
+```{r}
+tdf_2020("https://www.procyclingstats.com/race/tour-de-france/2020/gc")
+
+
+tdf_gc <- function(tdf_gc_url){
+    tab_tdf <- read_html(tdf_gc_url) |> html_nodes("table")
+  tdf_gc_final <- tab_tdf[[1]] |> html_table() |>
+    select(-12)
+  return(tdf_gc_final)
+}
+
+
+gc_10 <- map(tdf_past_10, tdf_gc)
+gc_10 |> bind_rows()
+tdf_2013 <- gc_10[[1]]
+tdf_2014 <- gc_10[[2]]
+tdf_2015 <- gc_10[[3]]
+tdf_2016 <- gc_10[[4]]
+tdf_2017 <- gc_10[[5]]
+tdf_2018 <- gc_10[[6]]
+tdf_2019 <- gc_10[[7]]
+tdf_2020 <- gc_10[[8]]
+tdf_2021 <- gc_10[[9]]
+tdf_2022 <- gc_10[[10]]
+tdf_2023 <- gc_10[[11]]
+```
+
+
+
+```{r}
+tdf_2013 |> arrange(GC)
 ```
 
 
