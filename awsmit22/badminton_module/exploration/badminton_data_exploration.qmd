@@ -182,6 +182,47 @@ mod_6 |> tidy()
 # playing around with the data arrangement
 
 ```{r}
-badminton_df 
+# this proves the problem I thought existed with the data where there are dupclicates are just in order
+badminton_df |> filter(Player1 == "Se Young AN" & Opponent1 == "CHEN Yufei" | Opponent1 == "Se Young AN" & Player1 == "CHEN Yufei")
 ```
+
+```{r}
+singles <- badminton_df |> filter(Category == "Singles")
+
+singles |> mutate(same = if_else(Player1 == Opponent1, true = TRUE, false = FALSE)) |> filter(same == TRUE)
+```
+
+
+```{r}
+badminton_df |> filter(Player1 == "BAEK Ha Na" | Opponent1 == "BAEK Ha Na")
+```
+
+```{r}
+# based on this it seems like the same issue is not applicable to doubles
+badminton_df |> filter((Player1 == "BAEK Ha Na" & Opponent1 == "Nami MATSUYAMA" & Opponent2 == "Chiharu SHIDA") | (Opponent1 == "BAEK Ha Na" & Opponent2 == "LEE So Hee" & Player1 == "Nami MATSUYAMA" & Player2 == "Chiharu SHIDA"))
+```
+
+
+```{r}
+pairs <- badminton_df |> mutate(pair = if_else(Player1 == Opponent1, true = "same", false = "different")) 
+```
+
+# I prefer both of the below datasets I just can't choose which to use
+
+```{r}
+summed <- badminton_df |> group_by(Player1, Year, Category, Gender) |> summarise(Rank = mean(Rank), Matches = sum(Matches), Wins = sum(Wins), Losses = sum(Losses), pts_for = sum(`Points For`), pts_agst = sum(`Points Against`), win_pct = Wins/Matches, shot_pct = pts_for/(pts_for + pts_agst)) |> mutate(Rank = as.integer(Rank))
+```
+
+```{r}
+sum <- badminton_df |> group_by(Player1) |> summarise(Rank = mean(Rank), Matches = sum(Matches), Wins = sum(Wins), Losses = sum(Losses), pts_for = sum(`Points For`), pts_agst = sum(`Points Against`), win_pct = Wins/Matches, shot_pct = pts_for/(pts_for + pts_agst)) |> mutate(Rank = as.integer(Rank))
+```
+
+
+```{r}
+summed |> group_by(Category) |> summarise(n = n())
+```
+
+
+
+
 
