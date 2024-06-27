@@ -4,9 +4,7 @@ author: "Brendan Karadenes"
 date: 06/25/2024
 description: The data set looks at the 2005-2019 Triple Crown results.
 categories:
-  - Hypothesis Tests
-  - Interpretations
-  - Regression Models
+  - Logistic Regression
 ---
 
 ## Motivation
@@ -43,11 +41,11 @@ Data file
 
 ## Questions
 
--   Conduct a hypothesis test that tests whether or not running with poor conditions levels the playing field between high and low betting odds horses.
-
 -   Interpret linear regression coefficients to determine how betting odds affect the probability of winning.
 
 -   Create a linear regression model that predicts the odds of winning based off of betting odds and track condition.
+
+-   Use comparative statistics to determine which model is the best fit.
 
 ## References
 
