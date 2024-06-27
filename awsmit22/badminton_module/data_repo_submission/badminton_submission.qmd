@@ -2,7 +2,7 @@
 title: 2018-2023 Badminton World Tour Points Head To Head 
 author: Abigail Smith
 date: June 26, 2024
-description: Analyzing points head to head for all genders in singles and doubles in the Badminton World Tour from 2018-2023. 
+description: Analyzing points head to head in singles and doubles in the Badminton World Tour from 2018-2023. 
 categories:
   - 
   
@@ -23,9 +23,7 @@ when the birdie hits the ground in the opposing side's court.
 
 While often considered a recreational sport, it is also played at the
 professional and
-[Olympic](https://olympics.com/en/news/badminton-guide-how-to-play-rules-olympic-history){target="_blank"}
-level. The [BWF Badminton World
-Tour](https://en.wikipedia.org/wiki/BWF_World_Tour){target="_blank"} is
+[Olympic](https://olympics.com/en/news/badminton-guide-how-to-play-rules-olympic-history){target="_blank"} level. The [BWF Badminton World Tour](https://en.wikipedia.org/wiki/BWF_World_Tour){target="_blank"} is
 a tournament series with opens hosted in different countries around the
 world. The tour has been running since 2018 and even took place in 2020
 despite the covid-19 pandemic. Statistics have been compiled from each

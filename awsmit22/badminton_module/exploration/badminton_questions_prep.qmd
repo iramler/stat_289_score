@@ -1,0 +1,145 @@
+---
+title: "badminton_questions_prep"
+format: html
+---
+
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+# Data
+
+```{r}
+badminton_df <- read_csv("~/Desktop/git/stat_289_score/awsmit22/badminton_module/exploration/badminton.csv")
+
+badminton_df <- badminton_df |> select(!...1)
+```
+
+# Question 1
+
+Create a histogram of `Wins` and describe the distribution.
+
+```{r}
+hist(badminton_df$Wins)
+```
+
+*Right skewed, values clustered at the lower end of the x-axis.*
+
+# Question 2
+
+Obtain the summary statistics of `Wins` and fill them in below. 
+
+```{r}
+mean(badminton_df$Wins)
+sd(badminton_df$Wins)
+min(badminton_df$Wins)
+max(badminton_df$Wins)
+median(badminton_df$Wins)
+```
+
+*Mean: 10.76*
+*Standard deviation: 15.84*
+*Minimum: 0*
+*Maximum: 107*
+*Median: 4*
+
+# Question 3
+
+Create a side by side box plot of Wins for each Category. Describe the distribution.
+
+```{r}
+boxplot(Wins~Category, badminton_df)
+```
+
+*The range for Doubles appears bigger than that for Singles, both seem to have a lot of outliers.*
+
+# Question 4
+
+Perform a t.test to determine if there is a significant difference in the mean number of wins for doubles vs. singles. 
+
+```{r}
+t.test(Wins~Category, data = badminton_df)
+```
+
+*Null hypothesis: The mean wins for doubles = mean wins for singles*
+
+*Alternative hypothesis: The mean wins for doubles != mean wins for singles*
+
+*t-value: 0.17*
+
+*p-value: 0.87*
+
+*Conclusion: Do Not Reject Null Hypothesis*
+
+*0.87 > 0.05*
+
+*We do not have significant evidence that the mean wins for doubles is higher than the mean wins for Singles.* 
+
+# Question 5
+
+Fit a simple linear model of `pts_for` predicting `Wins`.
+
+```{r}
+lm(Wins~ pts_for, data = badminton_df)
+```
+
+*Wins = -0.6 + 0.017pts_for*
+
+# Question 6
+
+Interpret the slope of the model you just fit.
+
+*For every additional point a player scores, their wins increase by 0.017.*
+
+# Question 7
+
+If a player has 216 points calculate their predicted wins. 
+
+```{r}
+-0.6 + (0.017*216)
+```
+
+*They would have about 3 wins.*
+
+# Question 8
+
+Assess the overall fit of the model. 
+
+```{r}
+mod <- lm(Wins~pts_for, data = badminton_df)
+summary(mod)
+```
+
+*Null hypothesis: The slope = 0*
+
+*Alternative hypothesis: The slope != 0*
+
+*t-value: 124.73*
+
+*p-value: <2e-16*
+
+*Conclusion: Reject Null Hypothesis*
+
+*<2e-16 < 0.05*
+
+*We have significant evidence of a positive slope when using pts_for to predict Wins.* 
+
+# Question 9
+
+Find the 90% of the slope of the model.
+
+```{r}
+mod <- lm(Wins~pts_for, data = badminton_df)
+confint(mod, level=0.90)
+```
+
+*Lower: 0.01679255, Upper: 0.01724367*
+
+*We are 90% confident that the slope of the model of pts_for predicting Wins is between 0.0168 and 
+
+
+
+
