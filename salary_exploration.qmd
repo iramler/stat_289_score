@@ -11,28 +11,140 @@ library(tidyverse)
 ```{r}
 stats <- read_csv(here::here("esselt21/nba_salary_module/exploration/stats.csv"))
 
-statsnew <- read_csv(here::here("esselt21/nba_salary_module/exploration/statsnew.csv"))
+salaries <- read_csv(here::here("esselt21/nba_salary_module/exploration/salaries.csv"))
+```
+
+# data cleaning and combining
+```{r}
+stats <-
+  stats |>
+  mutate(Player = as_factor(Player),
+         Season = as_factor(Season))
+
+salaries <-
+  salaries |>
+  mutate(Player = as_factor(Player),
+         Season = as_factor(Season))
+```
+
+```{r}
+salaries <-
+  salaries |>
+  mutate(salary = parse_number(salary),
+         inflationAdjSalary = parse_number(inflationAdjSalary))
 ```
 
 ```{r}
 stats <-
   stats |>
-  filter(Season < 2022)
+  group_by(Player, Season) |>
+  arrange(desc(G)) |>
+  slice(1)
 ```
 
 ```{r}
-players <-
-  stats |>
-  filter(Player %in% names & Tm == "TOT")
+final <-
+  left_join(stats,
+            salaries,
+            by = c("Player", "Season"))
+
+final <-
+  final |>
+  distinct()
 ```
 
 ```{r}
-stats <-
-  stats |>
-  filter(Player %in% names & Tm != "TOT")
+# final <-
+#   final |>
+#   mutate(inflationAdjSalary = inflationAdjSalary)
+
+final <-
+  final |>
+  mutate(logInflationAdjSalary = log(inflationAdjSalary))
 ```
 
 ```{r}
-write_csv(stats, here::here("esselt21/nba_salary_module/exploration/statsnew.csv"))
+final |>
+  ggplot(aes(x = MP)) +
+  geom_histogram(fill = "lightblue",
+                 color = "black")
 ```
 
+```{r}
+final <-
+  final |>
+  filter(MP > 1500)
+```
+
+```{r}
+final |>
+  ggplot(aes(x = logInflationAdjSalary)) +
+  geom_histogram(fill = "lightblue",
+                 color = "black")
+```
+
+```{r}
+# adding PER
+final <-
+  final |>
+  mutate(
+    PER = (
+      (FG * 85.910) +
+        (STL * 53.897) +
+        (`3P` * 51.757) +
+        (FT * 46.845) +
+        (BLK * 39.190) +
+        (ORB * 39.190) +
+        (AST * 34.677) +
+        (DRB * 14.707) -
+        (PF * 17.174) -
+        ((FTA - FT) * 20.091) -
+        ((FGA - FG) * 39.190) -
+        (TOV * 53.897)
+    ) * (1 / MP)
+  )
+```
+
+```{r}
+final |>
+  ggplot(aes(x = PER)) +
+  geom_histogram(fill = 'lightblue',
+                 color = 'black')
+```
+
+```{r}
+final <-
+  final |>
+  mutate(PER_Salary_ratio = PER / sqrt(inflationAdjSalary / 1000))
+```
+
+```{r}
+final <-
+  final |>
+  na.omit()
+```
+
+```{r}
+final |>
+  ggplot(aes(x = sqrt(inflationAdjSalary / 100000))) +
+  geom_histogram(fill = 'lightblue',
+                 color = 'black')
+```
+
+```{r}
+library(plotly)
+plot <-
+  final |>
+  ggplot(aes(x = PER,
+             y = InflationAdjSalary,
+             label = Player)) +
+  geom_point() 
+
+plotly::ggplotly(plot)
+```
+
+```{r}
+write_csv(final, here::here("esselt21/nba_salary_module/exploration/final.csv"))
+```
+
+look at season
