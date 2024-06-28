@@ -4,6 +4,8 @@ author: "eric seltzer"
 format: html
 ---
 
+Data Link: https://www.kaggle.com/datasets/loganlauton/nba-players-and-team-data?select=NBA+Salaries%281990-2023%29.csv
+
 ```{r}
 library(tidyverse)
 ```
@@ -54,13 +56,9 @@ final <-
 ```
 
 ```{r}
-# final <-
-#   final |>
-#   mutate(inflationAdjSalary = inflationAdjSalary)
-
 final <-
   final |>
-  mutate(logInflationAdjSalary = log(inflationAdjSalary))
+  mutate(sqrtInflationAdjSalary = sqrt(inflationAdjSalary / 10000))
 ```
 
 ```{r}
@@ -78,7 +76,7 @@ final <-
 
 ```{r}
 final |>
-  ggplot(aes(x = logInflationAdjSalary)) +
+  ggplot(aes(x = sqrtInflationAdjSalary)) +
   geom_histogram(fill = "lightblue",
                  color = "black")
 ```
@@ -115,7 +113,7 @@ final |>
 ```{r}
 final <-
   final |>
-  mutate(PER_Salary_ratio = PER / sqrt(inflationAdjSalary / 1000))
+  mutate(PER_Salary_ratio = PER / sqrtInflationAdjSalary)
 ```
 
 ```{r}
@@ -126,7 +124,7 @@ final <-
 
 ```{r}
 final |>
-  ggplot(aes(x = sqrt(inflationAdjSalary / 100000))) +
+  ggplot(aes(x = sqrtInflationAdjSalary)) +
   geom_histogram(fill = 'lightblue',
                  color = 'black')
 ```
@@ -135,10 +133,41 @@ final |>
 library(plotly)
 plot <-
   final |>
-  ggplot(aes(x = PER,
-             y = InflationAdjSalary,
+  ggplot(aes(x = sqrtInflationAdjSalary,
+             y = PER,
              label = Player)) +
-  geom_point() 
+  geom_point() +
+  geom_abline(slope = 1,
+              intercept = 0)
+
+plotly::ggplotly(plot)
+```
+
+```{r}
+final <-
+  final |>
+  mutate(logInflationAdjustedSalary = log(inflationAdjSalary / 1000) * 2)
+```
+
+```{r}
+final <-
+  final |>
+  mutate(ESPR = PER / logInflationAdjustedSalary)
+```
+
+```{r}
+mean(final$PER_Salary_ratio)
+```
+
+```{r}
+plot <-
+  season |>
+  ggplot(aes(x = logInflationAdjustedSalary * 2,
+             y = PER,
+             label = Player)) +
+  geom_point() +
+  geom_abline(slope = 1,
+              intercept = 0)
 
 plotly::ggplotly(plot)
 ```
@@ -147,4 +176,9 @@ plotly::ggplotly(plot)
 write_csv(final, here::here("esselt21/nba_salary_module/exploration/final.csv"))
 ```
 
-look at season
+```{r}
+# most recent season
+season <-
+  final |>
+  filter(Season == 2021)
+```
