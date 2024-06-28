@@ -132,9 +132,142 @@ ggplot(data = new_swimmers, mapping = aes(x = Stroke, y = Results)) +
 ```
 
 ```{r}
+# Graph displaying changes in time
+time_graph <- swimming_graph %>%
+  mutate(time_period = case_when(
+    Year >= 1924 & Year < 1976 ~ "early",
+    Year >= 1976 & Year <= 2020 ~ "recent"
+  ))
+```
+
+```{r}
+ggplot(data = time_graph, mapping = aes(x = time_period, y = Results)) +
+  geom_boxplot() +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  labs(x = "Olympic Years", y = "Time (seconds)", title = "Change in 100m Swim Times in Olympics")
+```
+
+```{r}
+# displaying old vs new and strokes on 1 graph
+ggplot(data = time_graph, mapping = aes(x = Stroke, y = Results, color = time_period)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(y = "Time (Seconds)", title = "Comparing Times Between Different Styles and Olympic Years") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+time_graph %>%
+  filter(time_period == "recent") %>%
+  summarize(sd(Results))
+```
+
+```{r}
+swimming_graph %>%
+  summarize(sd(Results))
+```
+
+```{r}
+swimming_graph %>%
+  filter(Stroke == "Freestyle") %>%
+  summarize(n())
+```
+
+```{r}
+swimming %>%
+  filter(Stroke == "Freestyle") %>%
+  summarize(mean(Results))
+53.41
+```
+
+```{r}
+swimming %>%
+  filter(Stroke == "Butterfly") %>%
+  summarize(mean(Results))
+55.03
+```
+
+```{r}
+55.03 - 53.41
+```
+
+```{r}
+swimming %>%
+  filter(Stroke == "Freestyle",
+         time_period == "recent") %>%
+  summarize(n())
 
 ```
 
+```{r}
+swimming %>%
+  filter(Stroke == "Freestyle",
+         time_period == "early") %>%
+  summarize(n())
+  
+```
 
+```{r}
+swim_years <- swimming %>%
+  filter(Stroke == "Freestyle") 
+```
+
+```{r}
+ggplot(data = swim_years, mapping = aes(x = time_period, y = Results)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(x = "Olympic Years", y = "Time (seconds)", title = "Change in 100m Freestyle Times in Olympics") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+random_sample <- swim_years[sample(nrow(swim_years), size = 150, replace = FALSE), ]
+```
+
+```{r}
+random_sample %>%
+  filter(time_period == "recent") %>%
+  summarize(sd(Results))
+
+```
+
+```{r}
+random_sample %>%
+  filter(time_period == "early") %>%
+  summarize(sd(Results))
+```
+
+```{r}
+ci <- swimming %>%
+  filter(Stroke %in% c("Butterfly", "Freestyle"))
+```
+
+```{r}
+random_sample_ci <- ci[sample(nrow(ci), size = 250, replace = FALSE), ]
+```
+
+```{r}
+random_sample_ci %>%
+  filter(Stroke == "Freestyle") %>%
+  summarize(sd(Results))
+```
+
+```{r}
+library(tidyverse)
+library(here)
+swimming_data <- read.csv(here("bkaradenes/Swim_Module/data_repo/olympic_swimming.csv"))
+```
+
+```{r}
+swimming %>%
+  filter(Distance..in.meters. == "100m",
+         Rank < 4,
+         Relay. == 0)
+```
+
+```{r}
+
+```
 
 

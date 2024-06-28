@@ -1,0 +1,36 @@
+---
+title: "scraping_attempt"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+# Data
+
+Data can be scraped from [this link](https://www.worldskate.org/skateboarding/ranking-paris-2024.html){target="_blank"}. 
+
+# Scraping attempt
+
+```{r}
+## provide the URL and name it something (in this case, url).
+url <- "https://olympics.com/en/olympic-games/tokyo-2020/results/skateboarding/men-s-park"
+
+
+## read_html() convert the html code from the URL into something R can read
+tab <- read_html(url) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r}
+test <- tab[[1]] |> html_table()
+test
+```
+
+
+
+
+
+
