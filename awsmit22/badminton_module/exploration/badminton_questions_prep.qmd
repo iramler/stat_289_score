@@ -48,6 +48,26 @@ median(badminton_df$Wins)
 
 # Question 3
 
+Calculate the range for Wins and for pts_for. 
+
+```{r}
+# Wins 
+107-0 #107
+
+# pts_for
+max(badminton_df$pts_for)
+min(badminton_df$pts_for)
+6042-62 #5980
+```
+
+# Question 4
+
+The ranges for Wins and pts_for are both quite large. What do you think is a possible reason for this flaw in the data?
+
+*Some players have played for longer than others, for example, there could be a player who only played in the 2023 World Tour whereas there could also be a player who's played in all the World Tours since 2018.*
+
+# Question 5
+
 Create a side by side box plot of Wins for each Category. Describe the distribution.
 
 ```{r}
@@ -56,7 +76,7 @@ boxplot(Wins~Category, badminton_df)
 
 *The range for Doubles appears bigger than that for Singles, both seem to have a lot of outliers.*
 
-# Question 4
+# Question 6
 
 Perform a t.test to determine if there is a significant difference in the mean number of wins for doubles vs. singles. 
 
@@ -78,7 +98,7 @@ t.test(Wins~Category, data = badminton_df)
 
 *We do not have significant evidence that the mean wins for doubles is higher than the mean wins for Singles.* 
 
-# Question 5
+# Question 7
 
 Fit a simple linear model of `pts_for` predicting `Wins`.
 
@@ -88,13 +108,13 @@ lm(Wins~ pts_for, data = badminton_df)
 
 *Wins = -0.6 + 0.017pts_for*
 
-# Question 6
+# Question 8
 
 Interpret the slope of the model you just fit.
 
 *For every additional point a player scores, their wins increase by 0.017.*
 
-# Question 7
+# Question 9
 
 If a player has 216 points calculate their predicted wins. 
 
@@ -104,7 +124,7 @@ If a player has 216 points calculate their predicted wins.
 
 *They would have about 3 wins.*
 
-# Question 8
+# Question 10
 
 Assess the overall fit of the model. 
 
@@ -127,7 +147,7 @@ summary(mod)
 
 *We have significant evidence of a positive slope when using pts_for to predict Wins.* 
 
-# Question 9
+# Question 11
 
 Find the 90% of the slope of the model.
 
@@ -138,7 +158,13 @@ confint(mod, level=0.90)
 
 *Lower: 0.01679255, Upper: 0.01724367*
 
-*We are 90% confident that the slope of the model of pts_for predicting Wins is between 0.0168 and 
+*We are 90% confident that the slope of the model of pts_for predicting Wins is between 0.0168 and 0.0172*
+
+# Question 12
+
+Do you think that pts_for is really the most effective predictor of Wins? Why or why not? What could be a better predictor?
+
+*pts_for is an obvious predictor of Wins as the more points a player has, the more wins they will have typically. However, this could make it ineffectvie as a predictor of Wins as they are so closely related to one another. A better predictor could be shot_pct or pts_agst.*
 
 
 

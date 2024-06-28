@@ -4,7 +4,12 @@ author: Abigail Smith
 date: June 26, 2024
 description: Analyzing points head to head in singles and doubles in the Badminton World Tour from 2018-2023. 
 categories:
-  - 
+  -  Histograms
+  -  Summary Statistics
+  -  Side-By-Side Boxplots
+  -  T.Test for Difference in Means
+  -  Linear Regression Analysis
+  -  Confidence Intervals
   
 editor: 
   markdown: 
@@ -30,9 +35,7 @@ despite the covid-19 pandemic. Statistics have been compiled from each
 World Tour, a notable statistic being the `Points H2H` which looks at
 the points for (`pts_for`) a player and the points against (`pts_agst`) them.
 
-The `pts_for` variable in this [badminton
-dataset](badminton.csv){target="_blank"} (badminton.csv) could provide
-some insight on patterns in badminton. **COME BACK TO AFTER QUESTIONS ARE DONE**
+Through statistical analysis, patterns can be identified in this [badminton dataset](badminton.csv){target="_blank"}(badminton.csv). Investigating the distribution of the `Wins` variable will highlight any patterns and what factors might impact winning in badminton at the World Tour Level. 
 
 ## Data
 
@@ -53,7 +56,29 @@ The data set has 185 rows with 9 variables. Each row is a player who participate
 
 ## Questions
 
-1.  **COME BACK TO AFTER QUESTIONS ARE DONE**
+1.    Create a histogram of `Wins` and describe the distribution.
+
+2.    Obtain the summary statistics of `Wins` and fill them in below. 
+
+3.    Calculate the range for `Wins` and for `pts_for`. 
+
+4.    The ranges for `Wins` and `pts_for` are both quite large. What do you think is a possible         reason for this flaw in the data?
+
+5.    Create a side by side box plot of `Wins` for each `Category`. Describe the distribution.
+
+6.    Perform a t.test to determine if there is a significant difference in the mean number of         `Wins` for `Doubles` vs. `Singles`. 
+
+7.    Fit a simple linear model of `pts_for` predicting `Wins`.
+
+8.    Interpret the slope of the model you just fit.
+
+9.    If a player has 216 points calculate their predicted `Wins`. 
+
+10.   Assess the overall fit of the model. 
+
+11.   Find the 90% of the slope of the model.
+
+12.   Do you think that `pts_for` is really the most effective predictor of `Wins`? Why or why          not? What could be a better predictor?
 
 ## References
 
