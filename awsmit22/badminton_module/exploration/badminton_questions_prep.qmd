@@ -149,7 +149,7 @@ summary(mod)
 
 # Question 11
 
-Find the 90% of the slope of the model.
+Find the 90% confidence interval of the slope of the model.
 
 ```{r}
 mod <- lm(Wins~pts_for, data = badminton_df)

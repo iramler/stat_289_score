@@ -2,7 +2,7 @@
 title: 2018-2023 Badminton World Tour Points Head To Head 
 author: Abigail Smith
 date: June 26, 2024
-description: Analyzing points head to head in singles and doubles in the Badminton World Tour from 2018-2023. 
+description: Analyzing wins and points head to head in singles and doubles in the Badminton World Tour from 2018-2023. 
 categories:
   -  Histograms
   -  Summary Statistics
@@ -51,7 +51,7 @@ The data set has 185 rows with 9 variables. Each row is a player who participate
 | `pts_for` | The total number of points scored by the player between 2018-2023 in the World Tour. |
 | `pts_agst` | The total number of points allowed by the player between 2018-2023 in the World Tour. |
 | `win_pct` | The cumulative win percentage (`Wins`/`Matches`) for the player between 2018-2023 in the World Tour. |
-| `shot_pct` | The cumulative shot percentage (`Points For`/`total_pts`) for for the player between 2018-2023 in the World Tour. |
+| `shot_pct` | The cumulative shot percentage (`pts_for`/(`pts_for` + `pts_agst`)) for the player between 2018-2023 in the World Tour. |
 : [badminton.csv](badminton.csv){target="_blank"}
 
 ## Questions
@@ -76,7 +76,7 @@ The data set has 185 rows with 9 variables. Each row is a player who participate
 
 10.   Assess the overall fit of the model. 
 
-11.   Find the 90% of the slope of the model.
+11.   Find the 90% confidence interval of the slope of the model.
 
 12.   Do you think that `pts_for` is really the most effective predictor of `Wins`? Why or why          not? What could be a better predictor?
 
