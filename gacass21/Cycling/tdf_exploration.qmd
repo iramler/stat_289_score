@@ -20,7 +20,18 @@ tdf_winners <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gac
 
 ```{r}
 tdf_stages |> summary()
+tdf_stages <- tdf_stages |> mutate(Stage = as.numeric(Stage), Date = as.Date(Date))
+```
+
+```{r}
+tdf_stages |> group_by(Type) |> summarise(avg_distance = mean(Distance))
+```
+
+
+
+```{r}
 tdf_winners |> summary()
+tdf_winners |> 
 ```
 
 
@@ -115,12 +126,20 @@ stage18_2019 <- tdf_2019_stage[[18]] |> select(-12) |> mutate(stage = 18, Rnk = 
 stage19_2019 <- tdf_2019_stage[[19]] |> select(-12) |> mutate(stage = 19, Rnk = as.integer(Rnk))
 stage20_2019 <- tdf_2019_stage[[20]] |> select(-12) |> mutate(stage = 20)
 stage21_2019 <- tdf_2019_stage[[21]] |> select(-12) |> mutate(stage = 21)
+```
 
 
+```{r}
 stage_results_2019 <- stage1_2019 |> bind_rows(stage3_2019, stage4_2019, stage5_2019, stage6_2019, stage7_2019, stage8_2019, stage9_2019, stage10_2019, stage11_2019, stage12_2019, stage13_2019, stage14_2019, stage15_2019, stage16_2019, stage17_2019, stage18_2019, stage19_2019, stage20_2019, stage21_2019)
 
-
+stage_results_2019 <- stage_results_2019 |> mutate(year = 2019)
 ```
+
+
+```{r}
+stage_results_2019 |> group_by(stage) |> summarise(finishers = n())
+```
+
 
 
 ## Overall GC from 2013-2023 for TDF
@@ -194,9 +213,30 @@ c(2014, 2015, 2017, 2018, 2019, 2020, 2023)
 
 tdf_gc <- tdf_2013 |> bind_rows(tdf_2014, tdf_2015, tdf_2016, tdf_2017, tdf_2018, tdf_2019, tdf_2020, tdf_2021, tdf_2022, tdf_2023)
 
-tdf_gc <- tdf_gc |> select(-5)
+tdf_gc <- tdf_gc
 
 ```
+
+```{r}
+ggplot(data = tdf_gc, aes(x = Specialty, y = GC)) +
+  geom_jitter(aes(group = Specialty, color = Specialty))
+```
+
+```{r}
+ggplot(data = tdf_gc, aes(x = Specialty, y = Rnk)) +
+  geom_jitter(aes(group = Specialty, color = Specialty))
+```
+
+```{r}
+ggplot()
+```
+
+
+
+
+
+
+
 
 ## 2020 Tour de France Stages
 ```{r}
@@ -261,13 +301,18 @@ stage21_2020 <- tdf_2020_stage[[21]] |> select(-12) |> mutate(stage = 21)
 ```{r}
 stage_results_2020 <- stage1_2020 |> bind_rows(stage2_2020, stage3_2020, stage4_2020, stage5_2020, stage6_2020, stage7_2020, stage8_2020, stage9_2020, stage10_2020, stage11_2020, stage12_2020, stage13_2020, stage14_2020, stage15_2020, stage16_2020, stage17_2020, stage18_2020, stage19_2020, stage20_2020, stage21_2020,)
 
-stage_results_2020 |> group_by(Team) |> filter(Rnk == 1) |> summarise(wins = n())
+stage_results_2020 <- stage_results_2020 |> mutate(year = 2020)
 ```
 
 ```{r}
+stage_results_2020 |> group_by(Team) |> filter(Rnk == 1) |> summarise(wins = n())
+
 stage_results_2020 |> group_by(Specialty) |> filter(Rnk == 1) |> summarise(wins = n())
 
 stage_results_2020 |> group_by(Rider) |> slice(1)
+
+stage_results_2020 |> group_by(stage) |> summarise(finishers = n()) |> slice(3:21)
+
 ```
 
 
@@ -333,11 +378,179 @@ stage21_2021 <- tdf_2021_stage[[21]] |> select(-12) |> mutate(stage = 21, Rnk = 
 ```{r}
 stage_results_2021 <- stage1_2021 |> bind_rows(stage2_2021, stage3_2021, stage4_2021, stage5_2021, stage6_2021, stage7_2021, stage8_2021, stage9_2021, stage10_2021, stage11_2021, stage12_2021, stage13_2021, stage14_2021, stage15_2021, stage16_2021, stage17_2021, stage18_2021, stage19_2021, stage20_2021, stage21_2021)
 
+stage_results_2021 <- stage_results_2021 |> mutate(year = 2021)
+```
+
+
+```{r}
 stage_results_2021 |> group_by(Team) |> filter(Rnk == 1) |> summarise(wins = n())
 
 stage_results_2021 |> filter(stage == 1)
 
-stage_results_2021 |> group
+stage_results_2021 |> group_by(Specialty) |> filter(stage == 1) |> summarise(riders = n())
+
+stage_results_2021 |> group_by(stage) |> summarise(finishers = n()) |> slice(3:21)
 ```
+
+
+
+## 2022 Tour de France
+```{r}
+tdf22_url_vec <- c("https://www.procyclingstats.com/race/tour-de-france/2022/stage-1",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-2",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-3",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-4",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-5",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-6",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-7",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-8",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-9",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-10",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-11",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-12",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-13",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-14",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-15",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-16",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-17",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-18",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-19",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-20",
+"https://www.procyclingstats.com/race/tour-de-france/2022/stage-21")
+
+```
+
+```{r}
+tdf_2022_stage <- map(tdf22_url_vec, tdf_2019)
+tdf_2022_stage
+
+c(21, 20, 19, 18, 17, 16, 15, 13, 11, 10, 9, 8, 6, 5)
+```
+
+```{r}
+
+stage1_2022 <- tdf_2022_stage[[1]] |> select(-12) |> mutate(stage = 1)
+stage2_2022 <- tdf_2022_stage[[2]] |> select(-12) |> mutate(stage = 2)
+stage3_2022 <- tdf_2022_stage[[3]] |> select(-12) |> mutate(stage = 3)
+stage4_2022 <- tdf_2022_stage[[4]] |> select(-12) |> mutate(stage = 4)
+stage5_2022 <- tdf_2022_stage[[5]] |> select(-12) |> mutate(stage = 5, Rnk = as.integer(Rnk))
+stage6_2022 <- tdf_2022_stage[[6]] |> select(-12) |> mutate(stage = 6, Rnk = as.integer(Rnk))
+stage7_2022 <- tdf_2022_stage[[7]] |> select(-12) |> mutate(stage = 7)
+stage8_2022 <- tdf_2022_stage[[8]] |> select(-12) |> mutate(stage = 8, Rnk = as.integer(Rnk))
+stage9_2022 <- tdf_2022_stage[[9]] |> select(-12) |> mutate(stage = 9, Rnk = as.integer(Rnk))
+stage10_2022 <- tdf_2022_stage[[10]] |> select(-12) |> mutate(stage = 10, Rnk = as.integer(Rnk))
+stage11_2022 <- tdf_2022_stage[[11]] |> select(-12) |> mutate(stage = 11, Rnk = as.integer(Rnk))
+stage12_2022 <- tdf_2022_stage[[12]] |> select(-12) |> mutate(stage = 12)
+stage13_2022 <- tdf_2022_stage[[13]] |> select(-12) |> mutate(stage = 13, Rnk = as.integer(Rnk))
+stage14_2022 <- tdf_2022_stage[[14]] |> select(-12) |> mutate(stage = 14)
+stage15_2022 <- tdf_2022_stage[[15]] |> select(-12) |> mutate(stage = 15, Rnk = as.integer(Rnk))
+stage16_2022 <- tdf_2022_stage[[16]] |> select(-12) |> mutate(stage = 16, Rnk = as.integer(Rnk))
+stage17_2022 <- tdf_2022_stage[[17]] |> select(-12) |> mutate(stage = 17, Rnk = as.integer(Rnk))
+stage18_2022 <- tdf_2022_stage[[18]] |> select(-12) |> mutate(stage = 18, Rnk = as.integer(Rnk))
+stage19_2022 <- tdf_2022_stage[[19]] |> select(-12) |> mutate(stage = 19, Rnk = as.integer(Rnk))
+stage20_2022 <- tdf_2022_stage[[20]] |> select(-12) |> mutate(stage = 20, Rnk = as.integer(Rnk))
+stage21_2022 <- tdf_2022_stage[[21]] |> select(-12) |> mutate(stage = 21, Rnk = as.integer(Rnk))
+```
+
+```{r}
+stage_results_2022 <- stage1_2022 |> bind_rows(stage2_2022, stage3_2022, stage4_2022, stage5_2022, stage6_2022, stage7_2022, stage8_2022, stage9_2022, stage10_2022, stage11_2022, stage12_2022, stage13_2022, stage14_2022, stage15_2022, stage16_2022, stage17_2022, stage18_2022, stage19_2022, stage20_2022, stage21_2022)
+
+stage_results_2022 <- stage_results_2022 |> mutate(year = 2022)
+```
+
+```{r}
+stage_results_2022 |> group_by(stage) |> summarise(finishers = n()) |> slice(3:21)
+```
+
+
+
+## 2023 Tour de France
+
+
+
+```{r}
+tdf23_url_vec <- c("https://www.procyclingstats.com/race/tour-de-france/2023/stage-1",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-2",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-3",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-4",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-5",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-6",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-7",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-8",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-9",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-10",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-11",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-12",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-13",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-14",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-15",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-16",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-17",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-18",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-19",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-20",
+"https://www.procyclingstats.com/race/tour-de-france/2023/stage-21")
+
+```
+
+```{r}
+tdf_2023_stage <- map(tdf23_url_vec, tdf_2019)
+tdf_2023_stage
+```
+
+```{r}
+
+stage1_2023 <- tdf_2023_stage[[1]] |> select(-12) |> mutate(stage = 1, Rnk = as.integer(Rnk))
+stage2_2023 <- tdf_2023_stage[[2]] |> select(-12) |> mutate(stage = 2, Rnk = as.integer(Rnk))
+stage3_2023 <- tdf_2023_stage[[3]] |> select(-12) |> mutate(stage = 3)
+stage4_2023 <- tdf_2023_stage[[4]] |> select(-12) |> mutate(stage = 4)
+stage5_2023 <- tdf_2023_stage[[5]] |> select(-12) |> mutate(stage = 5, Rnk = as.integer(Rnk))
+stage6_2023 <- tdf_2023_stage[[6]] |> select(-12) |> mutate(stage = 6)
+stage7_2023 <- tdf_2023_stage[[7]] |> select(-12) |> mutate(stage = 7)
+stage8_2023 <- tdf_2023_stage[[8]] |> select(-12) |> mutate(stage = 8, Rnk = as.integer(Rnk))
+stage9_2023 <- tdf_2023_stage[[9]] |> select(-12) |> mutate(stage = 9, Rnk = as.integer(Rnk))
+stage10_2023 <- tdf_2023_stage[[10]] |> select(-12) |> mutate(stage = 10)
+stage11_2023 <- tdf_2023_stage[[11]] |> select(-12) |> mutate(stage = 11)
+stage12_2023 <- tdf_2023_stage[[12]] |> select(-12) |> mutate(stage = 12, Rnk = as.integer(Rnk))
+stage13_2023 <- tdf_2023_stage[[13]] |> select(-12) |> mutate(stage = 13, Rnk = as.integer(Rnk))
+stage14_2023 <- tdf_2023_stage[[14]] |> select(-12) |> mutate(stage = 14, Rnk = as.integer(Rnk))
+stage15_2023 <- tdf_2023_stage[[15]] |> select(-12) |> mutate(stage = 15, Rnk = as.integer(Rnk))
+stage16_2023 <- tdf_2023_stage[[16]] |> select(-12) |> mutate(stage = 16, Rnk = as.integer(Rnk))
+stage17_2023 <- tdf_2023_stage[[17]] |> select(-12) |> mutate(stage = 17, Rnk = as.integer(Rnk))
+stage18_2023 <- tdf_2023_stage[[18]] |> select(-12) |> mutate(stage = 18, Rnk = as.integer(Rnk))
+stage19_2023 <- tdf_2023_stage[[19]] |> select(-12) |> mutate(stage = 19)
+stage20_2023 <- tdf_2023_stage[[20]] |> select(-12) |> mutate(stage = 20, Rnk = as.integer(Rnk))
+stage21_2023 <- tdf_2023_stage[[21]] |> select(-12) |> mutate(stage = 21)
+```
+
+```{r}
+stage_results_2023 <- stage1_2023 |> bind_rows(stage2_2023, stage3_2023, stage4_2023, stage5_2023, stage6_2023, stage7_2023, stage8_2023, stage9_2023, stage10_2023, stage11_2023, stage12_2023, stage13_2023, stage14_2023, stage15_2023, stage16_2023, stage17_2023, stage18_2023, stage19_2023, stage20_2023, stage21_2023)
+
+stage_results_2023 <- stage_results_2023 |> mutate(year = 2023)
+```
+
+
+## 5 Years of Stage Results
+
+```{r}
+stage_results <- stage_results_2023 |> bind_rows(stage_results_2022, stage_results_2021, stage_results_2020, stage_results_2019)
+stage_results <- stage_results |> select(-5)
+```
+
+```{r}
+stage_results |> group_by(Rider) |> summarise(average_place = mean(GC), n()) |> arrange(average_place)
+
+stage_results |> group_by(Rider) |> slice(1)
+
+stage_results |> group_by(Team) |> filter(Rnk == 1) |> summarise(wins = n()) |> arrange(desc(wins))
+```
+
+```{r}
+winners <- stage_results |> filter(Rnk == 1)
+
+ggplot(data = winners, aes(x = Specialty)) +
+  geom_bar(aes(fill = Specialty)) 
+```
+
 
 
