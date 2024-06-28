@@ -5,23 +5,57 @@ format: html
 ---
 
 ```{r}
-# Then can install using the devtools package from either of the following:
-devtools::install_github(repo = "saiemgilani/cfbscrapR")
-# or the following (these are the exact same packages):
-devtools::install_github(repo = "meysubb/cfbscrapR")
+Sys.setenv(CFBD_API_KEY = "+R2YMcbKerOTZ/CwnOquxCPVYE8kZ+Z//G4gRA6zIxYst5iZBvFxtI50dKiP7uCq")
+```
 
+
+```{r}
+library(tidyverse)
+library(here)
+library(readxl)
+```
+
+```{r}
+receivers <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recievers.xlsx"))
+recruits <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit.xlsx"))
+```
+
+```{r}
+recruits <- recruits %>%
+  rename(Player = Name)
+```
+
+```{r}
+full_data <- inner_join(x = recruits, y = receivers, by = "Player")
+```
+
+```{r}
+install.packages("remotes")
+install.packages("cfbfastR")
+remotes::install_github("saiemgilani/cfbscrapR")
 ```
 
 ```{r}
 library(cfbscrapR)
-cfbscrapR::cfb_recruiting_team(2003)
+cfb_recruiting_position(start_year = 2023, end_year = 2000)
 ```
 
 ```{r}
-# You can install using the pacman package using the following code:
-if (!requireNamespace('pacman', quietly = TRUE)){
-  install.packages('pacman')
-}
-pacman::p_load_current_gh("sportsdataverse/cfbfastR", dependencies = TRUE, update = TRUE)
+recruits_17 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_17.xlsx"))
 ```
+
+```{r}
+recruits_17 <- recruits_17 %>%
+  rename(Player = Name)
+```
+
+```{r}
+full_data2 <- inner_join(x = recruits_17, y = receivers, by = "Player")
+```
+
+```{r}
+recruits_17 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_17.xlsx"))
+```
+
+
 
