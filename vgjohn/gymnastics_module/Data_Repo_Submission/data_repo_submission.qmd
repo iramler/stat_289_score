@@ -1,0 +1,34 @@
+---
+title: "Exploring Logistic Regression Through Cricket"
+author: "Vivian Johnson" 
+date: "July 1, 2024" 
+
+categories:
+  - 
+---
+
+## Motivation
+
+
+## Data
+
+The `ncaa_gymnastics.csv` data set includes data from the womens' NCAA Gymnastics Championships from the years 2008-2024 (excluding 2020 as no championship was held due to the COVID-19 pandemic). Each row contains details from a specific university's performance at that year's tournament championship. 
+
+| Variable      | Description                                     |
+|---------------|-------------------------------------------------|
+| Year          | Year of NCAA women's gymnastics championship    |
+| Rank          | Final results of the championship               |
+| Team          | University participating                        |
+| Vault         | Combined team score on vault                    |
+| Bar           | Combined team score on bars                     |
+| Beam          | Combined team score on balance beam             |
+| Floor         | Combined team score on floor routine            |
+| Total         | Combined team score for all events              |
+
+
+: [ncaa_gymnastics.csv](stat_289_score/vgjohn/gymnastics_module/Data_Repo_Submission/ncaa_gymnastics.csv)
+
+## Questions
+
+
+## References

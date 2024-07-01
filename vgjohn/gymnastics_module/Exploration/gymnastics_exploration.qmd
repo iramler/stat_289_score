@@ -12,5 +12,46 @@ ncaa_gymnastics_data %>%
   ggplot(mapping = aes(x = Total)) +
   geom_histogram()
 ```
+```{r}
+avg_by_year <- 
+  ncaa_gymnastics_data %>%
+  group_by(Year) %>%
+  summarise(
+    meanVault = mean(Vault),
+    meanBar = mean(Bar),
+    meanBeam = mean(Beam),
+    meanFloor = mean(Floor),
+    meanTotal = mean(Total)
+    )
 
+avg_by_year
+```
+```{r}
+# line graph 
+ggplot(
+  data = avg_by_year,
+  mapping = aes(x = Year,
+                y = meanTotal)
+) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks = avg_by_year$Year)
+
+# smooth 
+ggplot(
+  data = avg_by_year,
+  mapping = aes(x = Year,
+                y = meanTotal)
+) +
+  geom_point() +
+  geom_smooth() +
+  scale_x_continuous(breaks = avg_by_year$Year)
+```
+confidence intervals and random samples 
+proportion? difference in proportions? 
+
+```{r}
+ncaa_gymnastics_data %>% group_by(Team) %>% count(Rank)
+
+```
 

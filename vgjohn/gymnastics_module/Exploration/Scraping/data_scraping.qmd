@@ -606,7 +606,7 @@ df2008 <- df2008[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "To
 
 
 ```{r}
-ncaa_gymnastics_data <- bind_rows(df2008,df2009,df2010,df2012,df2013,df2014,df2015,df2016,df2017,df2018,df2019,df2021,df2022,df2023,df2024)
+ncaa_gymnastics_data <- bind_rows(df2008,df2009,df2010,df2011, df2012,df2013,df2014,df2015,df2016,df2017,df2018,df2019,df2021,df2022,df2023,df2024)
 
 ```
 
