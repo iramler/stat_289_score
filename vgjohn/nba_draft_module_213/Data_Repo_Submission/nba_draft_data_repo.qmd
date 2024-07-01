@@ -1,7 +1,7 @@
 ---
 title: "Exploring ANOVA Through the NBA Draft"
 author: "Vivian Johnson" 
-date: "June 17, 2024" 
+date: "July 1, 2024" 
 
 categories:
   - One-Way ANOVA

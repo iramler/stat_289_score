@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
 
 <title>Examining Analysis of Variance Using the NBA Draft</title>
 <style>
@@ -116,12 +115,6 @@ window.Quarto = {
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p> </p>
-          </div>
-  </div>
     
   
     
@@ -139,105 +132,102 @@ window.Quarto = {
 <h4 class="anchored" data-anchor-id="the-nba-draft">The NBA Draft</h4>
 <p>Each year, the National Basketball Association (NBA) holds a draft, where prospective basketball players are able to be chosen to join one of the 30 professional teams across the United States and Canada.</p>
 <p>In order to be eligible for the draft, a player must be at least 19 years old and out of high school for at least one year. Prior to 2006, this rule was not in effect, and players could be drafted during/right out of high school.</p>
-<p>The draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field.</p>
+<p>Each year, the draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field. It’s important to note that there weren’t always 30 players selected in each round, the number made its way up to 30 as more teams were added into the NBA.</p>
 </section>
 <section id="playing-basketball" class="level4">
 <h4 class="anchored" data-anchor-id="playing-basketball">Playing Basketball</h4>
-<p>The goal in basketball is to score as many points as possible by throwing the ball through the other team’s hoop. The two netted baskets, positioned on opposite ends of a rectangular court, are normally 10 feet high, and have a backboard behind them.</p>
-<p>In the middle of the court, there is a half-court line that divides the two sides. On both sides, surrounding the hoops, there is an arch called the three-point line. Within the three-point line stands the free-throw line, where a player would shoot from should there be a foul called.</p>
-<p>During play, each team has five players on the court. The game starts with the referee tossing the ball in the air in between a player from each team, while each player tries to swat the ball to a member of their team (called a jump ball).</p>
+<p>The goal in basketball is to score as many points as possible by throwing the ball through the other team’s hoop.</p>
+<p>In the middle of the court there is a half-court line that divides the two sides. On both sides, surrounding the hoops, there is an arch called the three-point line. Within the three-point line stands the free-throw line, where a player would shoot from should there be a foul called.</p>
 <p><strong>Scoring</strong></p>
-<p>Players can shoot towards the hoop from any point on the court. A different number of points is rewarded based on where the player is standing when they release the ball. The three shots are explained below.</p>
+<p>Players can shoot towards the hoop from any point on the court. A different number of points is awarded based on where the player is standing when they release the ball. The three shots are explained below.</p>
 <ul>
 <li>Field Goal: Worth 2 points, scored by shooting within the three point line</li>
 <li>Three Pointer: Worth 3 points, scored by shooting outside the three point line.</li>
 <li>Free Throw: Worth one point, taken from the free throw line after a foul.</li>
 </ul>
-<p>Players move the ball up and down the court by dribbling, passing the ball to teammates, or shooting the ball. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.</p>
+<p>A rebound is when a player from the team that is on defense obtains the ball after the other team takes a shot attempt at the hoop. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.</p>
+<p>For this activity, you will be using data from the data set <code>nba_draft.csv</code>. The data set includes data from players that were selected in the NBA drafts between the years 1990-2021. Each row represents a different player and statistics from their respective careers in the NBA, some of which are still ongoing. Some key variables include <code>mins_per_game</code> the average number of minutes played per game in a player’s career, <code>round_picked</code>, which shows what round the player was selected in, and <code>pick_in_round</code> which shows what number pick a player was in the round in which they were selected.</p>
 </section>
 </section>
 <section id="part-2---loading-and-cleaning-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="part-2---loading-and-cleaning-the-data">Part 2 - Loading and Cleaning the Data</h2>
-<p><strong>1. Place to load the necessary packages into your R Environment</strong></p>
+<p><strong>2. Load in the data file <code>nba_draft.csv</code>.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library(dplyr)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># library(readr)</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># library(forcats)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ggplot2)</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># students could also load the entire tidyverse </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure the dataset is downloaded and is saved to the student's computer. </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># nba_draft &lt;- read_csv( "/the path to the file")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>2. Load in the data file <code>nba_draft</code>. Store it in an object called <code>nba_draft</code></strong></p>
+<p><strong>3. Right now, we only want to look at players that were selected in the first round of the draft. This information is found in the <code>round_picked</code> variable. Write the code that selects only those players who were chosen in the first round. Store it in an object called <code>nba_round1s</code>.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure the dataset is downloaded and is saved to the student's computer. </span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># nba_draft &lt;- read_csv( "/the path to the file")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>3. Right now, we only want to look at players that were selected in the first round of the draft. Write the correct code that selects only those who were chosen in the first round. Store it in an object called <code>nba_round1s</code>.</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nba_round1s &lt;- nba_draft %&gt;% filter(round_picked == 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#nba_round1s &lt;- nba_draft %&gt;% filter(round_picked == 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>4. In order to being our ANOVA exploration, we need to look at different groups within the round one selections. Since we have the order in which the players were selected (stored in the <code>pick_in_round</code> variable), we can make an additional categorical variable to keep track of where in the draft the player was selected. Make a new variable, called <code>pick_category</code>, which follows the following conditions: </strong></p>
 <ul>
 <li><code>pick_category</code> = “1-10” if the player was selected in picks 1-10,</li>
-<li><code>pick_category</code> = “10-20” if the player was selected in picks 10-20,</li>
-<li><code>pick_category</code> = “20-30” if the player was selected in picks 20-30</li>
+<li><code>pick_category</code> = “11-20” if the player was selected in picks 11-20,</li>
+<li><code>pick_category</code> = “21-30” if the player was selected in picks 21-30</li>
 </ul>
-<p>Note that the first number is exclusive and the second number is inclusive, except for number 1, which should be included in the first group.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nba_round1s &lt;- nba_round1s %&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     pick_category = case_when(</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#       pick_in_round &gt;= 1 &amp; pick_in_round &lt;= 10 ~ "1-10",</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       pick_in_round &gt; 10 &amp; pick_in_round &lt;= 20 ~ "10-20",</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       pick_in_round &gt; 20 &amp; pick_in_round &lt;= 30 ~ "20-30"</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nba_round1s &lt;- nba_round1s %&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   mutate(</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#     pick_category = case_when(</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#       pick_in_round &gt;= 1 &amp; pick_in_round &lt;= 10 ~ "1-10",</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#       pick_in_round &gt; 10 &amp; pick_in_round &lt;= 20 ~ "11-20",</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#       pick_in_round &gt; 20 &amp; pick_in_round &lt;= 30 ~ "21-30"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#     )</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#   )</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>5. Make the <code>pick_category</code> variable a factor with three levels.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nba_round1s$pick_category &lt;- factor(nba_round1s$pick_category,</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#                                   levels = c("1-10", "10-20", "20-30"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nba_round1s$pick_category &lt;- factor(nba_round1s$pick_category,</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#                                   levels = c("1-10", "11-20", "21-30"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="part-3---anova" class="level2">
 <h2 class="anchored" data-anchor-id="part-3---anova">Part 3 - ANOVA</h2>
-<p><strong>1. Create a box plot that compares the average minutes played per game based on a player’s selection in the first round of the NBA draft. Make sure to include a title, color coded legend, and axis labels.</strong></p>
+<p><strong>1. Create a box plot that compares the average minutes played per game (<code>mins_per_game</code>) based on a player’s selection in the first round of the NBA draft (<code>pick_category</code>). Try to include a title, color coded legend, and axis labels.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(nba_round1s,</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#        mapping = aes(x = mins_per_game,</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                      y = pick_category,</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#                      fill = pick_category)) +</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_boxplot() +</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   labs(title = "Boxplot of MPG based on Round 1 NBA draft picks",</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#        x = "Minutes Per Game",</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#        y= "Category in Draft",</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#        fill = "Pick in NBA Draft") +</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   theme_minimal()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(nba_round1s,</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#        mapping = aes(x = mins_per_game,</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                      y = pick_category,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#                      fill = pick_category)) +</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_boxplot() +</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   labs(title = "Boxplot of MPG based on Round 1 NBA draft picks",</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#        x = "Minutes Per Game",</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#        y= "Category in Draft",</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#        fill = "Pick in NBA Draft") +</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   theme_minimal()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>2. Below is the code to create a density plot comparing the average minutes played per game based on a player’s selection in the first round of the NBA draft. Based on this density plot and the box plots you created above, do you feel as though ANOVA is appropriate? What conclusions can you draw upon first glance of the two data visualizations? Are there any concerns? </strong></p>
+<p><strong>2. Below is a density plot and its corresponding code comparing the average minutes played per game based on a player’s selection in the first round of the NBA draft. Based on this density plot and the box plots you created above, do you feel as though ANOVA is appropriate? What conclusions can you draw upon first glance of the two data visualizations? Are there any concerns? </strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/nba_draft_module_213/Exploration/DensityPlot.jpg" class="img-fluid figure-img"></p>
+<figcaption>Density Plot</figcaption>
+</figure>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># means = nba_round1s %&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(pick_category) %&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarize(</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     mean_value = mean(mins_per_game))</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(nba_round1s,</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#        mapping = aes(x = mins_per_game,</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#                      fill = pick_category)) +</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_density(alpha = 0.4) +</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_vline(data = means,</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#              mapping = aes(xintercept = mean_value, color = pick_category),</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#              linetype = "dashed",</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#              size = 1,</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#              show.legend = FALSE) +</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#   labs(title = "Distribution of MPG based on Round 1 NBA draft picks",</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#        x = "Minutes Per Game",</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">#        y = "Density",</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">#        fill = "Pick in draft in NBA") +</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">#   theme_minimal()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># means = nba_round1s %&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   group_by(pick_category) %&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   summarize(</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#     mean_value = mean(mins_per_game))</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(nba_round1s,</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#        mapping = aes(x = mins_per_game,</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#                      fill = pick_category)) +</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_density(alpha = 0.4) +</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_vline(data = means,</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#              mapping = aes(xintercept = mean_value, color = pick_category),</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#              linetype = "dashed",</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#              size = 1,</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#              show.legend = FALSE) +</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">#   labs(title = "Distribution of MPG based on Round 1 NBA draft picks",</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#        x = "Minutes Per Game",</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#        y = "Density",</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#        fill = "Pick in draft in NBA") +</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#   theme_minimal()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The box plots show that the variance between the three groups seems to be relatively similar, which is necessary for an ANOVA test. There are limited extreme outliers which is good when looking at the distribution and variance. The distribution of the 10-20 and 20-30 groups seem to follow a relatively normal shape and have means somewhat close together. The 1-10 group is skewed slightly to the right which could be slightly concerning. A one-way ANOVA does seem appropriate, the conditions seem met and there could be a significant difference among the groups.</p>
-<p><strong>3. Now that we’ve determined ANOVA is most likely appropriate, write and interpret in context the null and alternative hypotheses we’ll be using for the ANOVA test. </strong></p>
+<p><strong>3. Assuming an ANOVA test is most likely appropriate for our data, write and interpret in context the null and alternative hypotheses we’ll be using to determine if the average number of minutes played per game (<code>mins_per_game</code>) is different based on the position in which the player is picked in the first round (<code>pick_in_round</code>).</strong></p>
 <ul>
 <li><p><span class="math inline">\(H_0: \mu_1 = \mu_2 = \mu_3\)</span></p>
 <p>(where <span class="math inline">\(\mu_x\)</span> is the population mean for that group)</p>
@@ -249,35 +239,31 @@ window.Quarto = {
 <li>For at least one group, the mean number of minutes played in the NBA is not equal. (There is at least one group of draft picks that played a different mean number of minutes in the NBA.)</li>
 </ul></li>
 </ul>
-<p><strong>4. Run an ANOVA test in R and store it in an object called <code>mpg_aov</code>. Print the summary table</strong></p>
+<p><strong>4. Run an ANOVA test in R and print the summary table</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mpg_aov &lt;- aov(mins_per_game ~ pick_category,</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#                  data = nba_round1s)</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(mpg_aov)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mpg_aov &lt;- aov(mins_per_game ~ pick_category,</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#                  data = nba_round1s)</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(mpg_aov)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>5. Using the ANOVA table, interpret the sum of squares for the groups. What does it imply about the data?</strong></p>
+<p><strong>5. Is there sufficient evidence that there is a difference in the mean amount of minutes played per game based on the group that player was selected in the first round of the draft?</strong></p>
 <ul>
-<li>SSG = 13839 This number represents the total variability between the three groups and measures how far apart the mean minutes per game played between the players that were picked 1-10, 10-20, and 20-30. Since it is large, it suggests that there is a relatively large difference between the averages of the three groups.</li>
+<li>We can conclude that there is convincing evidence to reject the null hypothesis that the mean number of minutes played per game is the same regardless of when a player was selected in the first round of the draft. The p-value given in the ANOVA table is <span class="math inline">\(2*10^{-16}\)</span> meaning there is strong evidence to reject the null hypothesis.</li>
 </ul>
-<p><strong>6. Can we conclude there is a difference in the mean amount of minutes played per game based on when a player was selected in the draft?</strong></p>
-<ul>
-<li>We can conclude that there is sufficient evidence to reject the null hypothesis that the mean number of minutes played per game is the same regardless of when a player was selected in the first round of the draft. The p-value given in the ANOVA table is <span class="math inline">\(2*10^{-16}\)</span> meaning there is strong evidence to reject the null hypothesis.</li>
-</ul>
-<p><strong>7. Between which groups are we <em>most likely</em> to see a significant difference. Between which groups are we <em>least likely</em> to see a significant difference in minutes played. Provide evidence.</strong></p>
+<p><strong>6. Between which groups are we <em>most likely</em> to see a significant difference. Between which groups are we <em>least likely</em> to see a significant difference in minutes played. Provide evidence.</strong></p>
 <ul>
 <li>From looking at the means in the density plot and box plot, we are most likely to find a difference between those selected 1-10 and those selected 20-30 because there is the largest difference in mean number of minutes played. We are least likely to find a difference between those selected 10-20 and 20-30 because the difference in mean is the smallest.</li>
 </ul>
-<p><strong>8. In the 2011 draft, Kyrie Irving was selected 1st in the first round by the Cleveland Cavaliers, and Klay Thompson was selected 11th by the Golden State Warriors. Is there a significant difference between the number of minutes we would expect them to play? If so, what is the difference? Provide evidence as well as a specific number.</strong></p>
+<p><strong>7. Is there evidence that there is a difference in average minutes played per game between someone drafted in picks 1-10 compared to someone drafted in picks 11-20? If so, what is the difference? Provide evidence as well as a specific number.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># TukeyHSD(mpg_aov)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#TukeyHSD(mpg_aov)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>From the output, we can see that there is a significant difference between the number of minutes played by Kyrie Irving (who was chosen 1-10), and Klay Thompson (who was chosen 10-20). We know this because the p-value of that specific comparison is significant (0.0000). From the output, the difference between number of minutes played between those who were selected 1-10 and 10-20 is 7.035, with those who were selected 1-10 playing on average 7.035 more minutes. So we would expect Kyrie Irving to be that much more.</li>
+<li>From the output, we can see that with convincing evidence, there is a significant difference between the number of minutes played by those selected 1-10 and those who were selected 11-20. We know this because the p-value of that specific comparison is significant (0.0000), meaning that there is a difference for those specific groups. From the output, the difference between number of minutes played between those who were selected 1-10 and 11-20 is 7.035, with those who were selected 1-10 playing on average 7.035 more minutes.</li>
 </ul>
-<p><strong>9. Were your predictions in question 7 correct? Are there any comparisons that don’t have a significant difference?</strong></p>
+<p><strong>8. Were your predictions in question 6 correct? Are there any comparisons that don’t have a significant difference?</strong></p>
 <ul>
-<li>The predictions from questions seven were correct. The difference in minutes played between those picked 1-10 and 20-30 was the largest (8.98), and the difference in minutes played between those picked 10-20 and 20-30 is the smallest (1.95). All of the differences are significant, with p-values below 0.05.</li>
+<li>The predictions from question six were correct. The difference in minutes played between those picked 1-10 and 21-30 was the largest (8.98), and the difference in minutes played between those picked 11-20 and 21-30 is the smallest (1.95). All of the differences are significant, with p-values below 0.05.</li>
 </ul>
 </section>
 
