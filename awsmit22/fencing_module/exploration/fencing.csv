@@ -1,0 +1,121 @@
+Rank,Name,V,M,V / M,TS,TR,Ind,Status,Club1,Club2,Division,Place,Class.,Earned,Tied
+1,JOYCE Michaela,6,6,1,30,10,20,Advanced,University Of Notre Dame NCAA,Elite Fencing Academy (VA),Indiana,33,A22,None,FALSE
+2,LIU Charlene (Kai),6,6,1,29,10,19,Advanced,Shoreline Fencers Club,Medeo Fencing Club,Metropolitan NYC,9,A22,None,FALSE
+3,OXENREIDER Tierna A.,6,6,1,30,13,17,Advanced,Columbia University NCAA,None,Metropolitan NYC,34,A23,None,FALSE
+4,ZIGALO Elizabeth,6,6,1,27,10,17,Advanced,New York Fencing Academy,None,Metropolitan NYC,5,A23,None,FALSE
+5,NGUYEN Tallulah,6,6,1,30,15,15,Advanced,Swords Fencing Studio,None,Southern California,10,A23,None,FALSE
+6,BASSA Francesca A.,6,6,1,29,14,15,Advanced,Alliance Fencing Academy,LA International Fencing,Gulf Coast,6,A23,None,FALSE
+7,KETKAR Ketki,6,6,1,27,13,14,Advanced,Cornell University NCAA,Kaizen Academy LLC,Western Washington,3,A23,None,TRUE
+8,GAJJALA Sharika R.,5,5,1,25,11,14,Advanced,Medeo Fencing Club,None,New Jersey,7,A23,None,FALSE
+9,CEBULA Anne,6,6,1,30,18,12,Advanced,New York Athletic Club,New York Fencing Academy,Metropolitan NYC,11,A23,None,FALSE
+10,GRADY Miriam A.,5,5,1,23,11,12,Advanced,Escrime Du Lac,University Of Notre Dame NCAA,Indiana,12,A22,None,FALSE
+11,TOBY Natalia R.,5,5,1,25,14,11,Advanced,New York Athletic Club,None,New Jersey,13,B22,B23,FALSE
+12,HURLEY Kelley A.,5,5,1,22,11,11,Advanced,New York Athletic Club,Alliance Fencing Academy,South Texas,35,A22,None,FALSE
+13,ZHANG Victoria R.,5,5,1,22,14,8,Advanced,Alliance Fencing Academy,None,Gulf Coast,36,A23,None,FALSE
+14,HOLMES Katharine (Kat) W.,5,6,0.83,29,13,16,Advanced,New York Athletic Club,DC Fencers Club,Capitol,2,A23,None,FALSE
+15,WASHINGTON Isis,5,6,0.83,29,15,14,Advanced,Peter Westbrook Foundation,Top Fencing Club,Metropolitan NYC,17,A22,None,FALSE
+16,BEI Karen,5,6,0.83,28,14,14,Advanced,None,None,San Diego,18,A22,None,FALSE
+17,HUSISIAN Hadley N.,5,6,0.83,29,16,13,Advanced,Fencers Club Inc.,Elite Fencing Academy (VA),Virginia,1,A23,None,FALSE
+18,GUZZI VINCENTI Margherita A.,5,6,0.83,29,17,12,Advanced,Ataba Fencing Club,None,Wisconsin,8,A22,A23,FALSE
+19,PIRKOWSKI Amanda L.,5,6,0.83,25,14,11,Advanced,University Of Notre Dame NCAA,None,Central Florida,19,A22,None,FALSE
+20,NIXON Catherine (Kasia) D.,5,6,0.83,28,18,10,Advanced,Peter Westbrook Foundation,Fencers Club Inc.,Southern California,14,A22,None,FALSE
+21,JAKEL Sophia N.,4,5,0.8,24,13,11,Advanced,DC Fencers Club,None,Capitol,37,A22,None,FALSE
+22,LIN Jessica Y.,4,5,0.8,24,14,10,Advanced,Medeo Fencing Club,Princeton University NCAA,New Jersey,20,A22,None,FALSE
+23,GU Sarah,4,5,0.8,23,13,10,Advanced,Medeo Fencing Club,None,New Jersey,21,A23,None,FALSE
+24,FALLON Kyle R.,4,5,0.8,19,9,10,Advanced,Fencing Academy Of Westchester,None,Connecticut,22,A23,None,FALSE
+25,ZUHARS Renee A.,4,5,0.8,18,14,4,Advanced,University Of California San Diego NCAA,None,San Diego,23,A22,None,FALSE
+26,WANG Elizabeth,4,5,0.8,19,17,2,Advanced,Alliance Fencing Academy,None,Gulf Coast,38,A22,None,FALSE
+NA,SHELIN Chelsea,4,6,0.67,26,17,9,Advanced,Las Vegas Fencing Academy,None,Nevada,39,B22,None,FALSE
+NA,LEE REGINA,4,6,0.67,26,17,9,Advanced,Swords Fencing Studio,None,Southern California,24,A23,None,TRUE
+NA,RAUSCH Ariana (Ari) M.,4,6,0.67,26,17,9,Advanced,Princeton University NCAA,Alliance Fencing Academy,Gulf Coast,24,A21,None,TRUE
+30,SENYUVA Su,4,6,0.67,27,19,8,Advanced,Alliance Fencing Academy,None,Gulf Coast,65,C22,None,FALSE
+31,KIM Zoe L.,4,6,0.67,27,21,6,Advanced,Swords Fencing Studio,None,Southern California,66,A23,None,FALSE
+32,LEE Sumin,4,6,0.67,26,20,6,Advanced,Battle Born Fencing Club,None,Nevada,40,A23,None,FALSE
+33,KORFONTA Jolie,4,6,0.67,25,19,6,Advanced,Elite Fencing Academy (VA),None,Virginia,26,A22,None,FALSE
+34,KHAMIS Yasmine A.,4,6,0.67,24,18,6,Advanced,Alliance Fencing Academy,None,Gulf Coast,41,A23,None,FALSE
+35,LEE Olivia,4,6,0.67,26,21,5,Advanced,Swords Fencing Studio,None,Southern California,15,A23,None,FALSE
+36,LUO Ashley,4,6,0.67,25,20,5,Advanced,Olympia Fencing Center,None,New England,42,A23,None,FALSE
+37,TOLSMA Chloe (CJ),4,6,0.67,27,23,4,Advanced,Alliance Fencing Academy,None,Gulf Coast,27,A23,None,FALSE
+38,SEBASTIAN Felicity A.,4,6,0.67,24,20,4,Advanced,Alliance Fencing Academy,None,Gulf Coast,43,A22,None,FALSE
+39,REID Anousheh,4,6,0.67,23,19,4,Advanced,Medeo Fencing Club,None,New Jersey,28,A22,None,FALSE
+40,PHUKAN Indra,4,6,0.67,25,22,3,Advanced,Swords Fencing Studio,None,Southern California,67,B23,None,FALSE
+41,TYLER Syd,4,6,0.67,19,16,3,Advanced,Windy City Fencing-Chicago,None,Illinois,44,A22,None,FALSE
+42,CHISHOLM Phoebe C.,4,6,0.67,17,14,3,Advanced,Olympia Fencing Center,None,New England,68,A23,None,FALSE
+43,PEHLIVANI Zara,4,6,0.67,23,22,1,Advanced,Battle Born Fencing Club,None,Nevada,45,A22,None,FALSE
+44,KETKAR Mallika,4,6,0.67,19,18,1,Advanced,Cornell University NCAA,Kaizen Academy LLC,Western Washington,29,A21,None,FALSE
+45,SPRINGER Sierra,4,6,0.67,21,21,0,Advanced,Olympia Fencing Center,None,New England,69,A22,None,FALSE
+46,LAN Alice S.,4,6,0.67,21,23,-2,Advanced,Academy Of Fencing Masters (AFM),None,Central California,46,B22,None,FALSE
+47,WATRALL Christina,3,5,0.6,20,14,6,Advanced,New York Athletic Club,Fencers Club Inc.,New Jersey,47,A23,None,FALSE
+48,MACHULSKY Leehi,3,5,0.6,19,13,6,Advanced,Academy Of Fencing Masters (AFM),None,Central California,48,A23,None,FALSE
+49,PAPADAKIS Lily,3,5,0.6,20,17,3,Advanced,Penta Olympic Fencing Club,None,Virginia,49,B23,None,FALSE
+50,DOROSHKEVICH Victoriia,3,5,0.6,19,16,3,Advanced,Fencing Center Of Chicago,None,Illinois,70,A22,None,FALSE
+51,LEUNG Natalie,3,5,0.6,16,14,2,Advanced,Swords Fencing Studio,None,Southern California,71,A19,None,FALSE
+52,YU Nicole J.,3,5,0.6,18,18,0,Advanced,Marx Fencing Academy,None,New England,30,A23,None,FALSE
+53,WANG Karen,3,6,0.5,27,21,6,Advanced,Northwestern University NCAA,Alliance Fencing Academy,Gulf Coast,3,A22,A23,TRUE
+54,LIU Christina A.,3,6,0.5,24,20,4,Advanced,Alliance Fencing Academy,None,Gulf Coast,50,A23,None,FALSE
+55,LEANG Priscilla Y.,3,6,0.5,21,17,4,Advanced,Academy Of Fencing Masters (AFM),None,Central California,72,A22,None,FALSE
+56,CHU Audrey,3,6,0.5,21,19,2,Advanced,Academy Of Fencing Masters (AFM),Columbia University NCAA,Central California,51,A22,None,FALSE
+57,ELSTON Sophia,3,6,0.5,22,21,1,Advanced,Plymouth/Ann Arbor Fencing Academy,None,Michigan,73,B23,None,FALSE
+58,LEE Natasha,3,6,0.5,24,25,-1,Advanced,Las Vegas Fencing Academy,TeamK Fencing,Nevada,52,B23,None,FALSE
+59,BUSH emma,3,6,0.5,18,20,-2,Advanced,San Diego Fencing Center,None,San Diego,74,B22,None,FALSE
+60,NIXON Caroline (Karolina) L.,3,6,0.5,21,24,-3,Advanced,Columbia University NCAA,Fencers Club Inc.,Southern California,53,A20,None,FALSE
+NA,REMEZA Alissa,3,6,0.5,20,24,-4,Advanced,Fencing Academy Of Westchester,None,Westchester-Rockland,75,B23,None,FALSE
+NA,ZHU Serene M.,3,6,0.5,20,24,-4,Advanced,ASER International Fencing Academy,None,Virginia,54,B23,None,FALSE
+63,KIM Jayna,3,6,0.5,16,21,-5,Advanced,Battle Born Fencing Club,None,Nevada,76,B22,None,FALSE
+64,ANDERSON Claire,3,6,0.5,20,26,-6,Advanced,Denver Fencing Center,None,Colorado,77,B22,None,FALSE
+65,WADE-CURRIE Ava S.,3,6,0.5,18,24,-6,Advanced,Olympia Fencing Center,None,New England,16,A23,None,FALSE
+66,MCCUTCHEN Lauren (Lulu),3,6,0.5,19,26,-7,Advanced,Alliance Fencing Academy,None,Gulf Coast,55,A22,None,FALSE
+67,YAMANAKA Mina,2,5,0.4,17,14,3,Advanced,New York Athletic Club,Long Island Fencing Center,Metropolitan NYC,31,A23,None,FALSE
+68,SMUK Daria A.,2,5,0.4,18,18,0,Advanced,Rhode Island Fencing Academy And Club,Brown University,New England,78,B23,None,FALSE
+69,AZMEH nour,2,5,0.4,17,17,0,Advanced,Olympia Fencing Center,None,New England,79,C23,None,FALSE
+70,GEBALA Natalie Brooke A.,2,5,0.4,19,20,-1,Advanced,Academy Of Fencing Masters (AFM),None,Central California,56,A22,None,FALSE
+71,PINNAMANENI Drithi,2,5,0.4,18,20,-2,Advanced,Penta Olympic Fencing Club,None,Virginia,80,B23,None,FALSE
+72,QI Jarynne Valerie,2,5,0.4,17,19,-2,Advanced,None,None,Metropolitan NYC,57,B23,None,FALSE
+73,SMOTRITSKY Mia,2,5,0.4,16,20,-4,Advanced,New York Fencing Academy,None,Metropolitan NYC,81,A23,None,FALSE
+74,SMUK Alexandra S.,2,5,0.4,13,18,-5,Advanced,Rhode Island Fencing Academy And Club,None,New England,58,B23,None,FALSE
+75,SWENSON Nikita G.,2,5,0.4,16,22,-6,Advanced,Ataba Fencing Club,None,Wisconsin,82,B23,None,FALSE
+76,BARG Daniella,2,6,0.33,24,23,1,Advanced,Alliance Fencing Academy,None,Gulf Coast,83,B22,None,FALSE
+77,LU Junyao,2,6,0.33,24,25,-1,Advanced,Wanglei International Fencing Club,None,New Jersey,84,A23,None,FALSE
+78,YANG Alisa,2,6,0.33,16,17,-1,Advanced,Guanyi Fencing Academy,None,Maryland,59,A23,None,FALSE
+79,CHEN Lefu,2,6,0.33,22,24,-2,Advanced,Allegro Fencing Center,None,New Jersey,60,A23,None,FALSE
+80,PRIHODKO Nina,2,6,0.33,20,22,-2,Advanced,Vivo Fencing Club,None,New England,85,B23,None,FALSE
+81,DESAI Meera P.,2,6,0.33,20,24,-4,Advanced,Elite Fencing Academy (VA),Elite Fencing Academy (GA),Virginia,86,B22,None,FALSE
+82,WITTER Catherine A.,2,6,0.33,12,16,-4,Advanced,Fencing Sports Academy Inc.,None,Virginia,87,B23,None,FALSE
+83,KUKVA Taisiya,2,6,0.33,20,25,-5,Advanced,Las Vegas Fencing Academy,None,Nevada,88,C23,None,FALSE
+84,MEHROTRA Anya,2,6,0.33,18,23,-5,Advanced,Alliance Fencing Academy,None,North Texas,61,A23,None,FALSE
+85,WU Amelia,2,6,0.33,19,25,-6,Advanced,University Of California San Diego NCAA,None,Mountain Valley,89,A22,None,FALSE
+86,GUJJA Misha,2,6,0.33,18,24,-6,Advanced,New York Fencing Academy,None,Long Island,90,B22,None,FALSE
+87,MAO Amy,2,6,0.33,13,19,-6,Advanced,Medeo Fencing Club,None,New Jersey,62,A22,None,FALSE
+88,CAPELLUA Mariasole,2,6,0.33,21,28,-7,Advanced,Nashville Elite Fencing Club,None,Tennessee,91,B22,None,FALSE
+NA,CAFASSO Natalya,2,6,0.33,17,25,-8,Advanced,Olympia Fencing Center,None,New England,63,A23,None,FALSE
+NA,SHARMA Sanvi,2,6,0.33,17,25,-8,Advanced,Academy Of Fencing Masters (AFM),None,Central California,92,C22,None,FALSE
+91,LEE Scarlett,2,6,0.33,15,24,-9,Advanced,New York Fencing Academy,None,Long Island,93,B23,None,FALSE
+92,WITTE Vera,1,5,0.2,14,18,-4,Advanced,Arena Fencing Academy LLC,None,New Jersey,94,B23,None,FALSE
+NA,DOUGLAS Marketa F.,1,5,0.2,12,19,-7,Advanced,Rhode Island Fencing Academy And Club,None,New England,95,C22,None,TRUE
+NA,FENG ge,1,5,0.2,12,19,-7,Advanced,Olympia Fencing Center,None,New England,95,B23,None,TRUE
+95,YAO Melinda,1,5,0.2,13,22,-9,Advanced,Alliance Fencing Academy,None,Gulf Coast,97,A22,None,FALSE
+96,BARBARA Camille,1,5,0.2,9,22,-13,Advanced,Fortune Fencing,None,Southern California,98,C22,None,FALSE
+97,YAO Yilin,1,6,0.17,19,25,-6,Advanced,Swords Fencing Studio,None,Southern California,99,B23,None,FALSE
+NA,MUELLER Emma M.,1,6,0.17,19,26,-7,Advanced,Rhode Island Fencing Academy And Club,None,New England,32,B22,None,FALSE
+NA,YOU Emily,1,6,0.17,19,26,-7,Advanced,Guanyi Fencing Academy,None,Maryland,64,B22,None,FALSE
+100,LIN Elaine,1,6,0.17,19,28,-9,Eliminated,Long Island Fencing Center,None,Metropolitan NYC,100,B22,None,FALSE
+101,KUMAR Eva,1,6,0.17,18,27,-9,Eliminated,Medeo Fencing Club,None,New Jersey,101,C23,None,FALSE
+102,GUMAGAY Erika L.,1,6,0.17,18,28,-10,Eliminated,Penta Olympic Fencing Club,None,Virginia,102,A22,None,FALSE
+103,DAMRATOSKI Anna Z.,1,6,0.17,17,27,-10,Eliminated,Northwestern University NCAA,Medeo Fencing Club,New Jersey,103,B22,None,FALSE
+104,PADHYE Tanishka,1,6,0.17,16,26,-10,Eliminated,Alliance Fencing Academy,None,Gulf Coast,104,A23,None,FALSE
+105,STOECKEL Sofia I.,1,6,0.17,17,28,-11,Eliminated,Twin Cities Fencing Club,None,Minnesota,105,B22,None,FALSE
+106,CANNING Charlotte,1,6,0.17,11,22,-11,Eliminated,Rhode Island Fencing Academy And Club,None,New England,106,B23,None,FALSE
+107,LI Fei,1,6,0.17,17,29,-12,Eliminated,Cavalier Fencing Club,None,New England,107,B23,None,FALSE
+108,LIU Nicole,1,6,0.17,16,28,-12,Eliminated,DC Fencers Club,None,Virginia,108,B23,None,FALSE
+109,SONG Angela,1,6,0.17,14,26,-12,Eliminated,Cavalier Fencing Club,None,New England,109,A23,None,FALSE
+110,CARRIER Meredith,1,6,0.17,13,26,-13,Eliminated,Wasatch Fencing,Schoolhouse Fencing,Utah-Southern Idaho,110,C23,None,FALSE
+111,MUN Brianna K.,1,6,0.17,14,28,-14,Eliminated,Fortune Fencing,None,Orange Coast,111,B23,None,FALSE
+112,ALEXANDROV Katherine S.,0,5,0,12,21,-9,Eliminated,Windy City Fencing-Chicago,None,Illinois,112,B22,None,FALSE
+113,BECKMAN Ana,0,5,0,13,23,-10,Eliminated,Windy City Fencing-Chicago,None,Illinois,113,B23,None,FALSE
+114,LEE Olive,0,6,0,16,27,-11,Eliminated,Columbia University NCAA,None,Metropolitan NYC,114,B19,None,FALSE
+115,BOYS Nishta B.,0,6,0,17,30,-13,Eliminated,Alliance Fencing Academy,None,South Texas,115,B21,None,FALSE
+116,YOUNG VIVIAN,0,5,0,10,24,-14,Eliminated,None,None,South Texas,116,B23,None,FALSE
+117,KORKIN Alice,0,5,0,9,25,-16,Eliminated,Alliance Fencing Academy,None,Gulf Coast,117,B23,None,FALSE
+118,POTAPENKO Margarita D.,0,5,0,8,25,-17,Eliminated,Alliance Fencing Academy,None,Gulf Coast,118,B23,None,FALSE
+119,HUANG Lanlan,0,6,0,10,28,-18,Eliminated,Fortune Fencing,None,Orange Coast,119,C22,None,FALSE
+120,CHERNIS Zoe C.,0,6,0,9,29,-20,Eliminated,Alliance Fencing Academy,None,Gulf Coast,120,B22,None,FALSE

@@ -1,0 +1,61 @@
+---
+title: "fencing_cleaning"
+format: html
+---
+# Libraries
+
+Read in the libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+# Data
+
+The final results can be downloaded [here](https://www.fencingtimelive.com/events/results/9A1EB17646A9424FB16757E11144D06E){target="_blank"} and the pool results [here](https://www.fencingtimelive.com/pools/results/9A1EB17646A9424FB16757E11144D06E/6C7E4D25820C496DA65DC2247AA2FE00){target="_blank"}
+
+```{r}
+final_results <- read_csv("final_results.csv")
+pool_results <- read_csv("pool_results.csv")
+```
+
+# Cleaning
+
+```{r}
+pool_usa <- pool_results |> rename(Rank = Place) |> mutate(Rank = as.integer(Rank))
+```
+
+```{r}
+final_usa <- final_results |> mutate(Tied = if_else(str_detect(Place, "T"), true = TRUE, false = FALSE)) |> mutate(Place = str_remove_all(Place, "T")) |> mutate(Place = as.integer(Place)) |> mutate(Earned = if_else(is.na(Earned), true = "None", false = Earned))
+```
+
+# Joining
+
+Join and clean the two datasets
+
+```{r}
+full <- left_join(pool_usa, final_usa)
+```
+
+```{r}
+full_df <- full |> select(!c("Country", "License #"))
+```
+
+```{r}
+fulldf <- full_df |> separate(`Club(s)`, into = c("Club1", "Club2"), sep = " / ")
+```
+
+```{r}
+fencing_complete <- fulldf |> mutate(Club1 = if_else(is.na(Club1), true = "None", false = Club1)) |> mutate(Club2 = if_else(is.na(Club2), true = "None", false = Club2))
+```
+
+# Write csv
+
+```{r}
+write_csv(fencing_complete, "fencing.csv")
+```
+
+
+
+

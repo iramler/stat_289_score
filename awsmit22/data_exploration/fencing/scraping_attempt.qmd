@@ -13,7 +13,8 @@ library(rvest)
 Data can be scraped from [this link](https://www.fencingworldwide.com/en/2981-2022/pools/1/index){target="_blank"}. 
 
 # Scraping attempt
-seeding
+# seeding
+
 ```{r}
 ## provide the URL and name it something (in this case, url).
 url <- "https://www.fencingworldwide.com/en/2981-2022/pools/1/index"
@@ -28,7 +29,16 @@ tab <- read_html(url) |>
 test <- tab[[1]] |> html_table()
 test
 ```
-results
+
+cleaning 
+
+```{r}
+seeding_fie <- test |> mutate(Ind. = str_replace_all(Ind., ",", ".")) |> mutate(Ind. = as.double(Ind.)) |> select(!c(B, Q))
+```
+
+
+# results 
+[https://www.fencingworldwide.com/en/2981-2022/results/](https://www.fencingworldwide.com/en/2981-2022/results/){target="_blank"}
 ```{r}
 ## provide the URL and name it something (in this case, url).
 url1 <- "https://www.fencingworldwide.com/en/2981-2022/results/"
@@ -43,4 +53,24 @@ tab1 <- read_html(url1) |>
 test1 <- tab1[[1]] |> html_table()
 test1
 ```
+
+```{r}
+write_csv(test1, "test1.csv")
+```
+
+```{r}
+resultsfie <- read_csv("~/Desktop/git/stat_289_score/awsmit22/fencing_module/exploration/test1.csv")
+```
+
+
+```{r}
+results_fie <- resultsfie |> mutate(Tied = if_else(str_detect(Place, "T"), true = TRUE, false = FALSE)) |> mutate(Place = str_remove_all(Place, "T")) |> mutate(Place = as.integer(Place)) 
+```
+
+# joining
+
+```{r}
+left_join(seeding_fie, results_fie)
+```
+
 
