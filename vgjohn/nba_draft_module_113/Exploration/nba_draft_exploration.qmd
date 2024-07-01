@@ -184,8 +184,8 @@ nba_round1s <- nba_round1s %>%
   mutate(
     pick_category = case_when(
       pick_in_round >= 1 & pick_in_round <= 10 ~ "1-10",
-      pick_in_round > 10 & pick_in_round <= 20 ~ "10-20",
-      pick_in_round > 20 & pick_in_round <= 30 ~ "20-30"
+      pick_in_round > 10 & pick_in_round <= 20 ~ "11-20",
+      pick_in_round > 20 & pick_in_round <= 30 ~ "21-30"
     )
   )
 
@@ -194,7 +194,7 @@ nba_round1s <- nba_round1s %>%
 
 ```{r}
 nba_round1s$pick_category <- factor(nba_round1s$pick_category,
-                                  levels = c("1-10", "10-20", "20-30"))
+                                  levels = c("1-10", "11-20", "21-30"))
 
 means = nba_round1s %>%
   group_by(pick_category) %>%

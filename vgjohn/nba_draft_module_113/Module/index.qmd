@@ -5,11 +5,11 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
-  - name: Ivan Ramler
-    email: iramler@stlawu.edu
+  - name: Robin Lock
+    email: rlock@stlawu.edu
     affiliation:
       - ref: slu
-date: "June 24, 2024"
+date: "July 1, 2024"
 description: "Conducting an ANOVA test and analyzing the results"
 editor: 
   canonical: true
