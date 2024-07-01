@@ -1,0 +1,75 @@
+---
+title: Assigning a Valuation Metric to NBA Players Based on Their Salary
+author: Eric Seltzer
+date: July 1, 2024
+description: This data has NBA player season statistics from 1990 - 2022. This includes things like field goal percentages, points, assists, and turnovers. It also has their salary numbers for the season, including an inflation adjusted salary column in order to compare players from different time periods.
+categories:
+  - Multiple linear regression
+  - Assumptions
+  - Interpretations
+editor:
+  markdown: 
+    canonical: true
+---
+
+## Motivation
+
+This data set is provided by Logan Lauton on Kaggle. There is an extensive repository of NBA data. It includes Team Payrolls, Box Score Stats, Player Stats, and Salaries. It ranges from 1950-2023. Today, we will focus on the player stats and salaries data sets.
+
+## Data
+
+This data is made up of 111 rows and 8 columns. Each row represents a player on a given type of surface.
+
+| Variable              | Description                                                                |
+|-----------------------|----------------------------------------------------------------------------|
+| Season                | The season the data is from                                                |
+| Player                | The name of the NBA player                                                 |
+| Pos                   | The position of the NBA Player                                             |
+| Age                   | The age of the NBA player                                                  |
+| Tm                    | The team that the player plays for                                         |
+| G                     | The number of games played                                                 |
+| GS                    | The number of games started                                                |
+| MP                    | The number of minutes played                                               |
+| FG                    | The number of field goals made                                             |
+| FGA                   | The number of field goals attempted                                        |
+| FG%                   | The field goal percentage                                                  |
+| 3P                    | The number of 3 pointers made                                              |
+| 3PA                   | The number of 3 pointers attempted                                         |
+| 3P%                   | The 3 point percentage                                                     |
+| 2P                    | The number of 2 pointers made                                              |
+| 2PA                   | The number of 2 pointers attempted                                         |
+| 2P%                   | The 2 point percentage                                                     |
+| eFG%                  | The effective field goal percentage                                        |
+| FT                    | The number of free throws made                                             |
+| FTA                   | The number of free throws attempted                                        |
+| FT%                   | The free throw percentage                                                  |
+| ORB                   | The number of offensive rebounds                                           |
+| DRB                   | The number of defensive rebounds                                           |
+| TRB                   | The total number of rebounds                                               |
+| AST                   | The number of assists                                                      |
+| STL                   | The number of steals                                                       |
+| BLK                   | The number of blocks                                                       |
+| TOV                   | The number of turnovers                                                    |
+| PF                    | The number of fouls                                                        |
+| PTS                   | The number of points                                                       |
+| Salary                | The salary for the season                                                  |
+| InflationAdjSalary    | The salary for the season adjusted for inflation                           |
+| logInflationAdjSalary | The salary for the season adjusted for inflation with a log transformation |
+| PER                   | The player efficiency rating                                               |
+| ESPR                  | Eric's salary to PER ratio                                                 |
+
+: [nba.csv](../data/nba.csv)
+
+## Questions
+
+1.  Discuss which variables are important
+
+2.  Decide which variables should be included in interactions
+
+3.  Is the model good, assess its' effectiveness
+
+4.  Interpret the coefficients of the model
+
+## References
+
+Kaggle, *NBA Players & Team Data*. <https://www.kaggle.com/datasets/loganlauton/nba-players-and-team-data?select=NBA+Salaries%281990-2023%29.csv>.
