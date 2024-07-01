@@ -1,121 +1,145 @@
-Rank,Name,V,M,win_pct,TS,TR,Ind,Status,Club1,Club2,Region,Place,Class,Earned,Tied
-1,JOYCE Michaela,6,6,1,30,10,20,Advanced,University Of Notre Dame NCAA,Elite Fencing Academy (VA),Indiana,33,A22,None,FALSE
-2,LIU Charlene (Kai),6,6,1,29,10,19,Advanced,Shoreline Fencers Club,Medeo Fencing Club,Metropolitan NYC,9,A22,None,FALSE
-3,OXENREIDER Tierna A.,6,6,1,30,13,17,Advanced,Columbia University NCAA,None,Metropolitan NYC,34,A23,None,FALSE
-4,ZIGALO Elizabeth,6,6,1,27,10,17,Advanced,New York Fencing Academy,None,Metropolitan NYC,5,A23,None,FALSE
-5,NGUYEN Tallulah,6,6,1,30,15,15,Advanced,Swords Fencing Studio,None,Southern California,10,A23,None,FALSE
-6,BASSA Francesca A.,6,6,1,29,14,15,Advanced,Alliance Fencing Academy,LA International Fencing,Gulf Coast,6,A23,None,FALSE
-7,KETKAR Ketki,6,6,1,27,13,14,Advanced,Cornell University NCAA,Kaizen Academy LLC,Western Washington,3,A23,None,TRUE
-8,GAJJALA Sharika R.,5,5,1,25,11,14,Advanced,Medeo Fencing Club,None,New Jersey,7,A23,None,FALSE
-9,CEBULA Anne,6,6,1,30,18,12,Advanced,New York Athletic Club,New York Fencing Academy,Metropolitan NYC,11,A23,None,FALSE
-10,GRADY Miriam A.,5,5,1,23,11,12,Advanced,Escrime Du Lac,University Of Notre Dame NCAA,Indiana,12,A22,None,FALSE
-11,TOBY Natalia R.,5,5,1,25,14,11,Advanced,New York Athletic Club,None,New Jersey,13,B22,B23,FALSE
-12,HURLEY Kelley A.,5,5,1,22,11,11,Advanced,New York Athletic Club,Alliance Fencing Academy,South Texas,35,A22,None,FALSE
-13,ZHANG Victoria R.,5,5,1,22,14,8,Advanced,Alliance Fencing Academy,None,Gulf Coast,36,A23,None,FALSE
-14,HOLMES Katharine (Kat) W.,5,6,0.83,29,13,16,Advanced,New York Athletic Club,DC Fencers Club,Capitol,2,A23,None,FALSE
-15,WASHINGTON Isis,5,6,0.83,29,15,14,Advanced,Peter Westbrook Foundation,Top Fencing Club,Metropolitan NYC,17,A22,None,FALSE
-16,BEI Karen,5,6,0.83,28,14,14,Advanced,None,None,San Diego,18,A22,None,FALSE
-17,HUSISIAN Hadley N.,5,6,0.83,29,16,13,Advanced,Fencers Club Inc.,Elite Fencing Academy (VA),Virginia,1,A23,None,FALSE
-18,GUZZI VINCENTI Margherita A.,5,6,0.83,29,17,12,Advanced,Ataba Fencing Club,None,Wisconsin,8,A22,A23,FALSE
-19,PIRKOWSKI Amanda L.,5,6,0.83,25,14,11,Advanced,University Of Notre Dame NCAA,None,Central Florida,19,A22,None,FALSE
-20,NIXON Catherine (Kasia) D.,5,6,0.83,28,18,10,Advanced,Peter Westbrook Foundation,Fencers Club Inc.,Southern California,14,A22,None,FALSE
-21,JAKEL Sophia N.,4,5,0.8,24,13,11,Advanced,DC Fencers Club,None,Capitol,37,A22,None,FALSE
-22,LIN Jessica Y.,4,5,0.8,24,14,10,Advanced,Medeo Fencing Club,Princeton University NCAA,New Jersey,20,A22,None,FALSE
-23,GU Sarah,4,5,0.8,23,13,10,Advanced,Medeo Fencing Club,None,New Jersey,21,A23,None,FALSE
-24,FALLON Kyle R.,4,5,0.8,19,9,10,Advanced,Fencing Academy Of Westchester,None,Connecticut,22,A23,None,FALSE
-25,ZUHARS Renee A.,4,5,0.8,18,14,4,Advanced,University Of California San Diego NCAA,None,San Diego,23,A22,None,FALSE
-26,WANG Elizabeth,4,5,0.8,19,17,2,Advanced,Alliance Fencing Academy,None,Gulf Coast,38,A22,None,FALSE
-NA,SHELIN Chelsea,4,6,0.67,26,17,9,Advanced,Las Vegas Fencing Academy,None,Nevada,39,B22,None,FALSE
-NA,LEE REGINA,4,6,0.67,26,17,9,Advanced,Swords Fencing Studio,None,Southern California,24,A23,None,TRUE
-NA,RAUSCH Ariana (Ari) M.,4,6,0.67,26,17,9,Advanced,Princeton University NCAA,Alliance Fencing Academy,Gulf Coast,24,A21,None,TRUE
-30,SENYUVA Su,4,6,0.67,27,19,8,Advanced,Alliance Fencing Academy,None,Gulf Coast,65,C22,None,FALSE
-31,KIM Zoe L.,4,6,0.67,27,21,6,Advanced,Swords Fencing Studio,None,Southern California,66,A23,None,FALSE
-32,LEE Sumin,4,6,0.67,26,20,6,Advanced,Battle Born Fencing Club,None,Nevada,40,A23,None,FALSE
-33,KORFONTA Jolie,4,6,0.67,25,19,6,Advanced,Elite Fencing Academy (VA),None,Virginia,26,A22,None,FALSE
-34,KHAMIS Yasmine A.,4,6,0.67,24,18,6,Advanced,Alliance Fencing Academy,None,Gulf Coast,41,A23,None,FALSE
-35,LEE Olivia,4,6,0.67,26,21,5,Advanced,Swords Fencing Studio,None,Southern California,15,A23,None,FALSE
-36,LUO Ashley,4,6,0.67,25,20,5,Advanced,Olympia Fencing Center,None,New England,42,A23,None,FALSE
-37,TOLSMA Chloe (CJ),4,6,0.67,27,23,4,Advanced,Alliance Fencing Academy,None,Gulf Coast,27,A23,None,FALSE
-38,SEBASTIAN Felicity A.,4,6,0.67,24,20,4,Advanced,Alliance Fencing Academy,None,Gulf Coast,43,A22,None,FALSE
-39,REID Anousheh,4,6,0.67,23,19,4,Advanced,Medeo Fencing Club,None,New Jersey,28,A22,None,FALSE
-40,PHUKAN Indra,4,6,0.67,25,22,3,Advanced,Swords Fencing Studio,None,Southern California,67,B23,None,FALSE
-41,TYLER Syd,4,6,0.67,19,16,3,Advanced,Windy City Fencing-Chicago,None,Illinois,44,A22,None,FALSE
-42,CHISHOLM Phoebe C.,4,6,0.67,17,14,3,Advanced,Olympia Fencing Center,None,New England,68,A23,None,FALSE
-43,PEHLIVANI Zara,4,6,0.67,23,22,1,Advanced,Battle Born Fencing Club,None,Nevada,45,A22,None,FALSE
-44,KETKAR Mallika,4,6,0.67,19,18,1,Advanced,Cornell University NCAA,Kaizen Academy LLC,Western Washington,29,A21,None,FALSE
-45,SPRINGER Sierra,4,6,0.67,21,21,0,Advanced,Olympia Fencing Center,None,New England,69,A22,None,FALSE
-46,LAN Alice S.,4,6,0.67,21,23,-2,Advanced,Academy Of Fencing Masters (AFM),None,Central California,46,B22,None,FALSE
-47,WATRALL Christina,3,5,0.6,20,14,6,Advanced,New York Athletic Club,Fencers Club Inc.,New Jersey,47,A23,None,FALSE
-48,MACHULSKY Leehi,3,5,0.6,19,13,6,Advanced,Academy Of Fencing Masters (AFM),None,Central California,48,A23,None,FALSE
-49,PAPADAKIS Lily,3,5,0.6,20,17,3,Advanced,Penta Olympic Fencing Club,None,Virginia,49,B23,None,FALSE
-50,DOROSHKEVICH Victoriia,3,5,0.6,19,16,3,Advanced,Fencing Center Of Chicago,None,Illinois,70,A22,None,FALSE
-51,LEUNG Natalie,3,5,0.6,16,14,2,Advanced,Swords Fencing Studio,None,Southern California,71,A19,None,FALSE
-52,YU Nicole J.,3,5,0.6,18,18,0,Advanced,Marx Fencing Academy,None,New England,30,A23,None,FALSE
-53,WANG Karen,3,6,0.5,27,21,6,Advanced,Northwestern University NCAA,Alliance Fencing Academy,Gulf Coast,3,A22,A23,TRUE
-54,LIU Christina A.,3,6,0.5,24,20,4,Advanced,Alliance Fencing Academy,None,Gulf Coast,50,A23,None,FALSE
-55,LEANG Priscilla Y.,3,6,0.5,21,17,4,Advanced,Academy Of Fencing Masters (AFM),None,Central California,72,A22,None,FALSE
-56,CHU Audrey,3,6,0.5,21,19,2,Advanced,Academy Of Fencing Masters (AFM),Columbia University NCAA,Central California,51,A22,None,FALSE
-57,ELSTON Sophia,3,6,0.5,22,21,1,Advanced,Plymouth/Ann Arbor Fencing Academy,None,Michigan,73,B23,None,FALSE
-58,LEE Natasha,3,6,0.5,24,25,-1,Advanced,Las Vegas Fencing Academy,TeamK Fencing,Nevada,52,B23,None,FALSE
-59,BUSH emma,3,6,0.5,18,20,-2,Advanced,San Diego Fencing Center,None,San Diego,74,B22,None,FALSE
-60,NIXON Caroline (Karolina) L.,3,6,0.5,21,24,-3,Advanced,Columbia University NCAA,Fencers Club Inc.,Southern California,53,A20,None,FALSE
-NA,REMEZA Alissa,3,6,0.5,20,24,-4,Advanced,Fencing Academy Of Westchester,None,Westchester-Rockland,75,B23,None,FALSE
-NA,ZHU Serene M.,3,6,0.5,20,24,-4,Advanced,ASER International Fencing Academy,None,Virginia,54,B23,None,FALSE
-63,KIM Jayna,3,6,0.5,16,21,-5,Advanced,Battle Born Fencing Club,None,Nevada,76,B22,None,FALSE
-64,ANDERSON Claire,3,6,0.5,20,26,-6,Advanced,Denver Fencing Center,None,Colorado,77,B22,None,FALSE
-65,WADE-CURRIE Ava S.,3,6,0.5,18,24,-6,Advanced,Olympia Fencing Center,None,New England,16,A23,None,FALSE
-66,MCCUTCHEN Lauren (Lulu),3,6,0.5,19,26,-7,Advanced,Alliance Fencing Academy,None,Gulf Coast,55,A22,None,FALSE
-67,YAMANAKA Mina,2,5,0.4,17,14,3,Advanced,New York Athletic Club,Long Island Fencing Center,Metropolitan NYC,31,A23,None,FALSE
-68,SMUK Daria A.,2,5,0.4,18,18,0,Advanced,Rhode Island Fencing Academy And Club,Brown University,New England,78,B23,None,FALSE
-69,AZMEH nour,2,5,0.4,17,17,0,Advanced,Olympia Fencing Center,None,New England,79,C23,None,FALSE
-70,GEBALA Natalie Brooke A.,2,5,0.4,19,20,-1,Advanced,Academy Of Fencing Masters (AFM),None,Central California,56,A22,None,FALSE
-71,PINNAMANENI Drithi,2,5,0.4,18,20,-2,Advanced,Penta Olympic Fencing Club,None,Virginia,80,B23,None,FALSE
-72,QI Jarynne Valerie,2,5,0.4,17,19,-2,Advanced,None,None,Metropolitan NYC,57,B23,None,FALSE
-73,SMOTRITSKY Mia,2,5,0.4,16,20,-4,Advanced,New York Fencing Academy,None,Metropolitan NYC,81,A23,None,FALSE
-74,SMUK Alexandra S.,2,5,0.4,13,18,-5,Advanced,Rhode Island Fencing Academy And Club,None,New England,58,B23,None,FALSE
-75,SWENSON Nikita G.,2,5,0.4,16,22,-6,Advanced,Ataba Fencing Club,None,Wisconsin,82,B23,None,FALSE
-76,BARG Daniella,2,6,0.33,24,23,1,Advanced,Alliance Fencing Academy,None,Gulf Coast,83,B22,None,FALSE
-77,LU Junyao,2,6,0.33,24,25,-1,Advanced,Wanglei International Fencing Club,None,New Jersey,84,A23,None,FALSE
-78,YANG Alisa,2,6,0.33,16,17,-1,Advanced,Guanyi Fencing Academy,None,Maryland,59,A23,None,FALSE
-79,CHEN Lefu,2,6,0.33,22,24,-2,Advanced,Allegro Fencing Center,None,New Jersey,60,A23,None,FALSE
-80,PRIHODKO Nina,2,6,0.33,20,22,-2,Advanced,Vivo Fencing Club,None,New England,85,B23,None,FALSE
-81,DESAI Meera P.,2,6,0.33,20,24,-4,Advanced,Elite Fencing Academy (VA),Elite Fencing Academy (GA),Virginia,86,B22,None,FALSE
-82,WITTER Catherine A.,2,6,0.33,12,16,-4,Advanced,Fencing Sports Academy Inc.,None,Virginia,87,B23,None,FALSE
-83,KUKVA Taisiya,2,6,0.33,20,25,-5,Advanced,Las Vegas Fencing Academy,None,Nevada,88,C23,None,FALSE
-84,MEHROTRA Anya,2,6,0.33,18,23,-5,Advanced,Alliance Fencing Academy,None,North Texas,61,A23,None,FALSE
-85,WU Amelia,2,6,0.33,19,25,-6,Advanced,University Of California San Diego NCAA,None,Mountain Valley,89,A22,None,FALSE
-86,GUJJA Misha,2,6,0.33,18,24,-6,Advanced,New York Fencing Academy,None,Long Island,90,B22,None,FALSE
-87,MAO Amy,2,6,0.33,13,19,-6,Advanced,Medeo Fencing Club,None,New Jersey,62,A22,None,FALSE
-88,CAPELLUA Mariasole,2,6,0.33,21,28,-7,Advanced,Nashville Elite Fencing Club,None,Tennessee,91,B22,None,FALSE
-NA,CAFASSO Natalya,2,6,0.33,17,25,-8,Advanced,Olympia Fencing Center,None,New England,63,A23,None,FALSE
-NA,SHARMA Sanvi,2,6,0.33,17,25,-8,Advanced,Academy Of Fencing Masters (AFM),None,Central California,92,C22,None,FALSE
-91,LEE Scarlett,2,6,0.33,15,24,-9,Advanced,New York Fencing Academy,None,Long Island,93,B23,None,FALSE
-92,WITTE Vera,1,5,0.2,14,18,-4,Advanced,Arena Fencing Academy LLC,None,New Jersey,94,B23,None,FALSE
-NA,DOUGLAS Marketa F.,1,5,0.2,12,19,-7,Advanced,Rhode Island Fencing Academy And Club,None,New England,95,C22,None,TRUE
-NA,FENG ge,1,5,0.2,12,19,-7,Advanced,Olympia Fencing Center,None,New England,95,B23,None,TRUE
-95,YAO Melinda,1,5,0.2,13,22,-9,Advanced,Alliance Fencing Academy,None,Gulf Coast,97,A22,None,FALSE
-96,BARBARA Camille,1,5,0.2,9,22,-13,Advanced,Fortune Fencing,None,Southern California,98,C22,None,FALSE
-97,YAO Yilin,1,6,0.17,19,25,-6,Advanced,Swords Fencing Studio,None,Southern California,99,B23,None,FALSE
-NA,MUELLER Emma M.,1,6,0.17,19,26,-7,Advanced,Rhode Island Fencing Academy And Club,None,New England,32,B22,None,FALSE
-NA,YOU Emily,1,6,0.17,19,26,-7,Advanced,Guanyi Fencing Academy,None,Maryland,64,B22,None,FALSE
-100,LIN Elaine,1,6,0.17,19,28,-9,Eliminated,Long Island Fencing Center,None,Metropolitan NYC,100,B22,None,FALSE
-101,KUMAR Eva,1,6,0.17,18,27,-9,Eliminated,Medeo Fencing Club,None,New Jersey,101,C23,None,FALSE
-102,GUMAGAY Erika L.,1,6,0.17,18,28,-10,Eliminated,Penta Olympic Fencing Club,None,Virginia,102,A22,None,FALSE
-103,DAMRATOSKI Anna Z.,1,6,0.17,17,27,-10,Eliminated,Northwestern University NCAA,Medeo Fencing Club,New Jersey,103,B22,None,FALSE
-104,PADHYE Tanishka,1,6,0.17,16,26,-10,Eliminated,Alliance Fencing Academy,None,Gulf Coast,104,A23,None,FALSE
-105,STOECKEL Sofia I.,1,6,0.17,17,28,-11,Eliminated,Twin Cities Fencing Club,None,Minnesota,105,B22,None,FALSE
-106,CANNING Charlotte,1,6,0.17,11,22,-11,Eliminated,Rhode Island Fencing Academy And Club,None,New England,106,B23,None,FALSE
-107,LI Fei,1,6,0.17,17,29,-12,Eliminated,Cavalier Fencing Club,None,New England,107,B23,None,FALSE
-108,LIU Nicole,1,6,0.17,16,28,-12,Eliminated,DC Fencers Club,None,Virginia,108,B23,None,FALSE
-109,SONG Angela,1,6,0.17,14,26,-12,Eliminated,Cavalier Fencing Club,None,New England,109,A23,None,FALSE
-110,CARRIER Meredith,1,6,0.17,13,26,-13,Eliminated,Wasatch Fencing,Schoolhouse Fencing,Utah-Southern Idaho,110,C23,None,FALSE
-111,MUN Brianna K.,1,6,0.17,14,28,-14,Eliminated,Fortune Fencing,None,Orange Coast,111,B23,None,FALSE
-112,ALEXANDROV Katherine S.,0,5,0,12,21,-9,Eliminated,Windy City Fencing-Chicago,None,Illinois,112,B22,None,FALSE
-113,BECKMAN Ana,0,5,0,13,23,-10,Eliminated,Windy City Fencing-Chicago,None,Illinois,113,B23,None,FALSE
-114,LEE Olive,0,6,0,16,27,-11,Eliminated,Columbia University NCAA,None,Metropolitan NYC,114,B19,None,FALSE
-115,BOYS Nishta B.,0,6,0,17,30,-13,Eliminated,Alliance Fencing Academy,None,South Texas,115,B21,None,FALSE
-116,YOUNG VIVIAN,0,5,0,10,24,-14,Eliminated,None,None,South Texas,116,B23,None,FALSE
-117,KORKIN Alice,0,5,0,9,25,-16,Eliminated,Alliance Fencing Academy,None,Gulf Coast,117,B23,None,FALSE
-118,POTAPENKO Margarita D.,0,5,0,8,25,-17,Eliminated,Alliance Fencing Academy,None,Gulf Coast,118,B23,None,FALSE
-119,HUANG Lanlan,0,6,0,10,28,-18,Eliminated,Fortune Fencing,None,Orange Coast,119,C22,None,FALSE
-120,CHERNIS Zoe C.,0,6,0,9,29,-20,Eliminated,Alliance Fencing Academy,None,Gulf Coast,120,B22,None,FALSE
+Place,Tied,Name,School,Victories,Bouts,Pct,TS,TR,Ind,Gender,Weapon
+1,FALSE,Maggie Shealy,Brandeis,18,23,0.783,109,74,35,Women,Saber
+2,FALSE,Julia Cieslar,St. John's,14,23,0.609,92,75,17,Women,Saber
+3,TRUE,Ryan Jenkins,Princeton,18,23,0.783,102,62,40,Women,Saber
+3,TRUE,Vera Kong,Columbia/Barnard,16,23,0.696,98,67,31,Women,Saber
+5,FALSE,Atara Greenbaum,Notre Dame,14,23,0.609,93,79,14,Women,Saber
+6,FALSE,Tamar Gordon,Columbia/Barnard,14,23,0.609,92,78,14,Women,Saber
+7,FALSE,Alexandra Lee,Princeton,14,23,0.609,90,77,13,Women,Saber
+8,FALSE,Sydney Hirsch,Yale,14,23,0.609,91,83,8,Women,Saber
+9,FALSE,Jadeyn Williams,Notre Dame,13,23,0.565,92,77,15,Women,Saber
+10,FALSE,Sophia Kovacs,North Carolina,13,23,0.565,88,76,12,Women,Saber
+11,FALSE,Catinca Dumitru,St. John's,13,23,0.565,92,87,5,Women,Saber
+12,FALSE,Zoe Kim,Harvard,13,23,0.565,88,84,4,Women,Saber
+13,FALSE,Kunling Tong,Duke,12,23,0.522,92,84,8,Women,Saber
+14,FALSE,Joy Yun,Stanford,11,23,0.478,89,91,-2,Women,Saber
+15,FALSE,Lauren Johnson,Temple,11,23,0.478,86,91,-5,Women,Saber
+16,FALSE,Isabela Carvalho,Cornell,11,23,0.478,84,92,-8,Women,Saber
+17,FALSE,Aleksandra Strzalkowski,Penn State,10,23,0.435,79,87,-8,Women,Saber
+18,FALSE,Casey Chan,Stanford,10,23,0.435,77,92,-15,Women,Saber
+19,FALSE,Stella Berman,Cornell,8,23,0.348,73,95,-22,Women,Saber
+20,FALSE,Chloe Williams,Harvard,7,23,0.304,81,98,-17,Women,Saber
+21,FALSE,Levi Hoogendoorn,Northwestern,6,23,0.261,74,101,-27,Women,Saber
+22,FALSE,Megumi Oishi,Northwestern,6,23,0.261,74,106,-32,Women,Saber
+23,FALSE,Alexandra Tzou,Brown,6,23,0.261,61,96,-35,Women,Saber
+24,FALSE,Natalie Olsen,Duke,4,23,0.174,62,107,-45,Women,Saber
+1,FALSE,Luke Linder,Notre Dame,22,23,0.957,113,50,63,Men,Saber
+2,FALSE,Neil Lilov,Penn State,19,23,0.826,105,60,45,Men,Saber
+3,TRUE,Luca Fioretto,Ohio State,18,23,0.783,106,71,35,Men,Saber
+3,TRUE,Eyad Marouf,Wayne State,17,23,0.739,97,66,31,Men,Saber
+5,FALSE,Jordan Silberzweig,Yale,16,23,0.696,95,66,29,Men,Saber
+6,FALSE,Kamar Skeete,Penn State,14,23,0.609,89,74,15,Men,Saber
+7,FALSE,Alexandre Lacaze,Notre Dame,14,23,0.609,95,82,13,Men,Saber
+8,FALSE,Antonio Escueta,Brandeis,13,23,0.565,91,73,18,Men,Saber
+9,FALSE,Matthew Linsky,Harvard,13,23,0.565,88,81,7,Men,Saber
+10,FALSE,Matthew Limb,Princeton,12,23,0.522,80,79,1,Men,Saber
+11,FALSE,Ahmed Ferjani,St. John's,11,23,0.478,92,82,10,Men,Saber
+12,FALSE,Jackson McBride,Columbia,11,23,0.478,84,90,-6,Men,Saber
+13,FALSE,Flavio Vinci,Wagner,11,23,0.478,78,86,-8,Men,Saber
+14,FALSE,Andrew Johnson,Princeton,10,23,0.435,85,90,-5,Men,Saber
+15,FALSE,Gian Dhingra,Pennsylvania,10,23,0.435,81,94,-13,Men,Saber
+16,FALSE,Luca Berman,Boston College,10,23,0.435,75,92,-17,Men,Saber
+17,FALSE,Elden Wood,North Carolina,9,23,0.391,71,98,-27,Men,Saber
+18,FALSE,Kevin Zu,N.Y.U.,8,23,0.348,72,96,-24,Men,Saber
+19,FALSE,Arnav Raja,U.C. San Diego,8,23,0.348,67,99,-32,Men,Saber
+20,FALSE,Kevin Sohn,Harvard,7,23,0.304,76,97,-21,Men,Saber
+21,FALSE,Jerry Pan,N.Y.U.,7,23,0.304,70,97,-27,Men,Saber
+22,FALSE,Samir Travers,Duke,6,23,0.261,81,102,-21,Men,Saber
+23,FALSE,Hananiah So,U.C. San Diego,5,23,0.217,67,98,-31,Men,Saber
+24,FALSE,Jared Hammerstrom,Stanford,5,23,0.217,65,100,-35,Men,Saber
+1,FALSE,Jessica Guo,Harvard,20,23,0.87,107,45,62,Women,Foil
+2,FALSE,Lauren Scruggs,Harvard,17,23,0.739,104,63,41,Women,Foil
+3,TRUE,Dariia Myroniuk,Ohio State,17,23,0.739,96,59,37,Women,Foil
+3,TRUE,Rebeca Candescu,Notre Dame,15,23,0.652,92,61,31,Women,Foil
+5,FALSE,Evelyn Cheng,Columbia/Barnard,15,23,0.652,95,71,24,Women,Foil
+6,FALSE,Crystal Qian,Stanford,14,23,0.609,92,70,22,Women,Foil
+7,FALSE,Kristina Petrova,Yale,14,23,0.609,88,67,21,Women,Foil
+8,FALSE,Christina Ferrari,Duke,13,23,0.565,93,85,8,Women,Foil
+9,FALSE,Charlotte Koenig,Duke,13,23,0.565,89,86,3,Women,Foil
+10,FALSE,Samantha Catantan,Penn State,12,23,0.522,93,79,14,Women,Foil
+11,FALSE,Sabrina Cho,Pennsylvania,12,23,0.522,80,80,0,Women,Foil
+12,FALSE,Arianna Proietti,Penn State,11,23,0.478,87,85,2,Women,Foil
+13,FALSE,Josephina Conway,Notre Dame,11,23,0.478,74,75,-1,Women,Foil
+14,FALSE,Katina Proestakis Ortiz,Pennsylvania,11,23,0.478,82,92,-10,Women,Foil
+15,FALSE,Anna Novoseltseva,Temple,11,23,0.478,76,93,-17,Women,Foil
+16,FALSE,Helen Tan,Yale,11,23,0.478,70,88,-18,Women,Foil
+17,FALSE,Malwina Ko&lstrok;odziejczyk,St. John's,10,23,0.435,69,84,-15,Women,Foil
+18,FALSE,Ludovica Mancini,Wayne State,10,23,0.435,73,92,-19,Women,Foil
+19,FALSE,Arianna Cao,Stanford,9,23,0.391,64,86,-22,Women,Foil
+20,FALSE,Rachael Kim,Columbia/Barnard,8,23,0.348,77,91,-14,Women,Foil
+21,FALSE,Karina Vasile,Northwestern,8,23,0.348,71,95,-24,Women,Foil
+22,FALSE,Elizabeth He,Princeton,6,23,0.261,61,98,-37,Women,Foil
+23,FALSE,Anika Breker,Brown,6,23,0.261,50,97,-47,Women,Foil
+24,FALSE,Alina Lee,Ohio State,2,23,0.087,63,104,-41,Women,Foil
+1,FALSE,Bryce Louie,Pennsylvania,19,23,0.826,103,60,43,Men,Foil
+2,FALSE,Blake Broszus,Pennsylvania,16,23,0.696,105,71,34,Men,Foil
+3,TRUE,Sam Kumbla,Columbia,16,23,0.696,96,70,26,Men,Foil
+3,TRUE,Daniel Zhang,Harvard,16,23,0.696,92,75,17,Men,Foil
+5,FALSE,Zach Binder,Columbia,15,23,0.652,96,71,25,Men,Foil
+6,FALSE,Marcello Olivares,Notre Dame,14,23,0.609,96,75,21,Men,Foil
+7,FALSE,Edriss Ndiaye,Ohio State,14,23,0.609,94,76,18,Men,Foil
+8,FALSE,Ziyuan Chen,Notre Dame,14,23,0.609,90,75,15,Men,Foil
+9,FALSE,Jack Griffith,Air Force,14,23,0.609,94,85,9,Men,Foil
+10,FALSE,James Chen,Harvard,13,23,0.565,92,73,19,Men,Foil
+11,FALSE,Tit Nam Cheng,Penn State,12,23,0.522,91,85,6,Men,Foil
+12,FALSE,Henry Zhang,M.I.T.,11,23,0.478,78,92,-14,Men,Foil
+13,FALSE,Arwen Borowiak,Penn State,10,23,0.435,86,85,1,Men,Foil
+14,FALSE,Alan Zheng,Johns Hopkins,10,23,0.435,82,86,-4,Men,Foil
+15,FALSE,Ethan Um,Princeton,10,23,0.435,84,93,-9,Men,Foil
+16,FALSE,Justin Vogler,Ohio State,10,23,0.435,83,95,-12,Men,Foil
+17,FALSE,Adam Wong,N.Y.U.,10,23,0.435,82,96,-14,Men,Foil
+18,FALSE,Elijah Onik,Boston College,10,23,0.435,80,95,-15,Men,Foil
+19,FALSE,David Prilutsky,Princeton,9,23,0.391,81,90,-9,Men,Foil
+20,FALSE,Sanjay Kasi,Stanford,9,23,0.391,80,91,-11,Men,Foil
+21,FALSE,Farr Dickson,N.Y.U.,8,23,0.348,72,92,-20,Men,Foil
+22,FALSE,Andy Zhang,M.I.T.,7,23,0.304,65,98,-33,Men,Foil
+23,FALSE,Jaewon Jang,Air Force,5,23,0.217,55,104,-49,Men,Foil
+24,FALSE,Scott Lao,U.C. San Diego,4,23,0.174,62,106,-44,Men,Foil
+1,FALSE,Emily Vermeule,Harvard,16,23,0.696,104,75,29,Women,Epee
+2,FALSE,Tierna Oxenreider,Columbia/Barnard,16,23,0.696,82,57,25,Women,Epee
+3,TRUE,Ketki Ketkar,Cornell,17,23,0.739,94,80,14,Women,Epee
+3,TRUE,Nicole Feygin,St. John's,16,23,0.696,101,74,27,Women,Epee
+5,FALSE,Montserrat Viveros,Ohio State,15,23,0.652,80,53,27,Women,Epee
+6,FALSE,Isabella Chin,Harvard,14,23,0.609,87,72,15,Women,Epee
+7,FALSE,Ariana Rausch,Princeton,14,23,0.609,90,79,11,Women,Epee
+8,FALSE,Mina Yamanaka,Columbia/Barnard,12,23,0.522,91,86,5,Women,Epee
+9,FALSE,Jessica Lin,Princeton,12,23,0.522,90,86,4,Women,Epee
+10,FALSE,Grace Hu,Pennsylvania,12,23,0.522,82,81,1,Women,Epee
+11,FALSE,Kateryna Chorniy,Penn State,11,23,0.478,88,85,3,Women,Epee
+12,FALSE,Irene Yeu,Stanford,11,23,0.478,75,75,0,Women,Epee
+13,FALSE,Christina Watrall,Air Force,11,23,0.478,93,94,-1,Women,Epee
+14,FALSE,Jocelyn Ratzlaff,Air Force,11,23,0.478,77,86,-9,Women,Epee
+15,FALSE,Renee Zuhars,U.C. San Diego,10,23,0.435,86,91,-5,Women,Epee
+16,FALSE,Amanda Pirkowski,Notre Dame,10,23,0.435,80,85,-5,Women,Epee
+17,FALSE,Yeva Mazur,Ohio State,10,23,0.435,77,85,-8,Women,Epee
+18,FALSE,Michaela Joyce,Notre Dame,10,23,0.435,80,89,-9,Women,Epee
+19,FALSE,Amanda O'Donnell,Yale,10,23,0.435,83,93,-10,Women,Epee
+20,FALSE,Jaclyn Khrol,Penn State,10,23,0.435,85,97,-12,Women,Epee
+21,FALSE,Karen Wang,Northwestern,10,23,0.435,83,97,-14,Women,Epee
+22,FALSE,Rachel Kowalsky,Duke,8,23,0.348,69,97,-28,Women,Epee
+23,FALSE,Elisa Treglia,St. John's,7,23,0.304,75,100,-25,Women,Epee
+24,FALSE,Alexa Drovetsky,Yale,3,23,0.13,69,104,-35,Women,Epee
+1,FALSE,Tristan Szapary,Princeton,16,23,0.696,98,71,27,Men,Epee
+2,FALSE,Jonathan Hamilton-Meikle,Notre Dame,16,23,0.696,105,78,27,Men,Epee
+3,TRUE,Henry Lawson,Harvard,17,23,0.739,99,69,30,Men,Epee
+3,TRUE,Allen Marakov,Duke,17,23,0.739,107,80,27,Men,Epee
+5,FALSE,Justin Haddad,Columbia,16,23,0.696,95,77,18,Men,Epee
+6,FALSE,Mihir Kumashi,Harvard,16,23,0.696,97,80,17,Men,Epee
+7,FALSE,Paul Veltrup,Ohio State,15,23,0.652,97,81,16,Men,Epee
+8,FALSE,Paul Fortin,St. John's,15,23,0.652,91,78,13,Men,Epee
+9,FALSE,Rico Braun,U.I.W.,14,23,0.609,91,82,9,Men,Epee
+10,FALSE,Theodore Vinnitchouk,Yale,13,23,0.565,97,86,11,Men,Epee
+11,FALSE,Tingwei Xu,Penn State,12,23,0.522,84,78,6,Men,Epee
+12,FALSE,Joey Wu,Pennsylvania,11,23,0.478,89,91,-2,Men,Epee
+13,FALSE,Levi Hughes,Boston College,11,23,0.478,85,93,-8,Men,Epee
+14,FALSE,Alec Brooke,Princeton,10,23,0.435,81,83,-2,Men,Epee
+15,FALSE,Skyler Liverant,Columbia,10,23,0.435,88,93,-5,Men,Epee
+16,FALSE,Miles Weiss,Ohio State,10,23,0.435,83,92,-9,Men,Epee
+17,FALSE,Devin Tafoya,Penn State,9,23,0.391,82,88,-6,Men,Epee
+18,FALSE,Valentin Matveev,Notre Dame,8,23,0.348,85,94,-9,Men,Epee
+19,FALSE,Thomas Whelan,Yale,8,23,0.348,81,91,-10,Men,Epee
+20,FALSE,Daniil Mazur,St. John's,8,23,0.348,81,98,-17,Men,Epee
+21,FALSE,Wilson Zhu,M.I.T.,6,23,0.261,70,99,-29,Men,Epee
+22,FALSE,Jesse Ndjeka,Cleveland State,6,23,0.261,69,98,-29,Men,Epee
+23,FALSE,Jorge Gana,Johns Hopkins,6,23,0.261,63,94,-31,Men,Epee
+24,FALSE,Julian Spier,U.I.W.,6,23,0.261,61,105,-44,Men,Epee

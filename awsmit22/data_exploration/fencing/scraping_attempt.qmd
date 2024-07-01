@@ -73,4 +73,22 @@ results_fie <- resultsfie |> mutate(Tied = if_else(str_detect(Place, "T"), true 
 left_join(seeding_fie, results_fie)
 ```
 
+```{r}
+## provide the URL and name it something (in this case, url).
+url_1 <- "https://ncaa.escrimeresults.com/ncaa2024.html"
 
+
+## read_html() convert the html code from the URL into something R can read
+tab_1 <- read_html(url_1) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r}
+test_1 <- tab_1[[1]] |> html_table()
+test_1
+```
+
+```{r}
+test_2 <- tab_1[[2]] |> html_table()
+test_2
+```

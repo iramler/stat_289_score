@@ -17,4 +17,10 @@ fencing_df <- read_csv("~/Desktop/git/stat_289_score/awsmit22/fencing_module/exp
 fencing_df
 ```
 
-# 
+
+
+
+
+
+
+
