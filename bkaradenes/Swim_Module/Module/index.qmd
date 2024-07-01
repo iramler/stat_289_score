@@ -6,6 +6,9 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
+  - name: "Robin Lock"
+    affiliation:
+      - ref: slu
   - name: "Brendan Karadenes"
     affiliation:
       - ref: slu
@@ -20,7 +23,7 @@ categories:
 
 ## Introduction
 
-For this activity, you will be exploring the event times for male and female swimmers that competed in the 100m event from 1924 to 2020 in the [Olympics](https://olympics.com/en/paris-2024/sports/swimming){target="_blank"}.
+For this activity, you will be exploring the event times for female swimmers that competed in the 100m event from 1924 to 2020 in the [Olympics](https://olympics.com/en/paris-2024/sports/swimming){target="_blank"}.
 
 In particular, you will examine visualizations and conduct confidence intervals to explore the changes in finish times between different types of strokes and earlier vs. recent years.
 
@@ -50,7 +53,7 @@ Since the data are provided, instructors are encouraged to modify the worksheets
 
 ## Data
 
-The data set contains 606 rows and 10 columns. Each row represents a swimmer who competed in the 100m Olympic event during the period 1924 to 2020. The data includes top 8 finishers from men and woman racers, however due to lack of records some of the data is excluded.
+The data set contains 606 rows and 10 columns. Each row represents a swimmer who competed in the 100m Olympic event during the period 1924 to 2020. The data includes top 8 finishers from men and woman racers however, due to lack of records, some of the data is excluded.
 
 Download data:
 

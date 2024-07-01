@@ -267,7 +267,99 @@ swimming %>%
 ```
 
 ```{r}
+swim_men <- swimming_data %>%
+  filter(Gender == "Men",
+         Stroke == "Freestyle")
+```
 
+```{r}
+swim_woman <- swimming_data %>%
+  filter(Gender == "Women")
+```
+
+```{r}
+ggplot(data = swim_men, mapping = aes(x = Results)) +
+  geom_dotplot()
+```
+
+```{r}
+ggplot(data = swim_woman, mapping = aes(x = Results)) +
+  geom_dotplot()
+```
+
+```{r}
+swim_men %>%
+  group_by(Results) %>%
+  summary(mean())
+```
+
+
+```{r}
+swim_woman %>%
+  summary(mean())
+```
+
+```{r}
+ggplot(data = swimming_data, mapping = aes(x = Stroke, y = Results, color = Gender)) +
+  geom_boxplot()
+```
+
+```{r}
+ggplot(data = swim_woman, mapping = aes(x = Stroke, y = Results)) +
+  geom_boxplot() +
+  labs(y = "Time (s)", title = "Effects of Different Styles on 100m Race Times") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5)) 
+```
+
+```{r}
+# Graph displaying changes in time
+time_graph <- swim_woman %>%
+  mutate(time_period = case_when(
+    Year >= 1964 & Year < 1992 ~ "early",
+    Year >= 1992 & Year <= 2020 ~ "recent"
+  ))
+```
+
+```{r}
+# displaying old vs new and strokes on 1 graph
+ggplot(data = time_graph, mapping = aes(x = Stroke, y = Results, color = time_period)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(y = "Time (Seconds)", title = "Comparing Times Between Different Styles and Olympic Years") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+time_graph <- time_graph %>%
+  filter(Stroke == "Freestyle")
+```
+
+```{r}
+ggplot(data = time_graph, mapping = aes(x = time_period, y = Results)) +
+  geom_boxplot() +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  labs(x = "Olympic Years", y = "Time (seconds)", title = "Change in 100m Swim Times in Olympics")
+```
+
+```{r}
+time_graph %>%
+  filter(time_period == "recent") %>%
+  summarise(sd = sd(Results))
+time_graph %>%
+  filter(time_period == "early") %>%
+  summarise(sd = sd(Results))
+
+```
+
+```{r}
+time_graph %>%
+  filter(Stroke == "Freestyle") %>%
+  summarise(mean = mean(Results))
+time_graph %>%
+  group_by(Stroke) %>%
+  summarise(mean(Results))
 ```
 
 
