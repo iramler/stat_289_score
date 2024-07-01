@@ -47,7 +47,7 @@ fulldf <- full_df |> separate(`Club(s)`, into = c("Club1", "Club2"), sep = " / "
 ```
 
 ```{r}
-fencing_complete <- fulldf |> mutate(Club1 = if_else(is.na(Club1), true = "None", false = Club1)) |> mutate(Club2 = if_else(is.na(Club2), true = "None", false = Club2))
+fencing_complete <- fulldf |> mutate(Club1 = if_else(is.na(Club1), true = "None", false = Club1)) |> mutate(Club2 = if_else(is.na(Club2), true = "None", false = Club2)) |> rename(win_pct = `V / M`) |> rename(Class = Class.) |> rename(Region = Division)
 ```
 
 # Write csv

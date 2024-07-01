@@ -1,4 +1,4 @@
-Rank,Name,V,M,V / M,TS,TR,Ind,Status,Club1,Club2,Division,Place,Class.,Earned,Tied
+Rank,Name,V,M,win_pct,TS,TR,Ind,Status,Club1,Club2,Region,Place,Class,Earned,Tied
 1,JOYCE Michaela,6,6,1,30,10,20,Advanced,University Of Notre Dame NCAA,Elite Fencing Academy (VA),Indiana,33,A22,None,FALSE
 2,LIU Charlene (Kai),6,6,1,29,10,19,Advanced,Shoreline Fencers Club,Medeo Fencing Club,Metropolitan NYC,9,A22,None,FALSE
 3,OXENREIDER Tierna A.,6,6,1,30,13,17,Advanced,Columbia University NCAA,None,Metropolitan NYC,34,A23,None,FALSE

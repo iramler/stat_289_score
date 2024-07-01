@@ -1,0 +1,20 @@
+---
+title: "fencing_exploration"
+format: html
+---
+
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+# Data
+
+```{r}
+fencing_df <- read_csv("~/Desktop/git/stat_289_score/awsmit22/fencing_module/exploration/fencing.csv")
+fencing_df
+```
+
+# 
