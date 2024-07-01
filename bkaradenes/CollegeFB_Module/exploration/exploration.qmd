@@ -42,6 +42,9 @@ cfb_recruiting_position(start_year = 2023, end_year = 2000)
 
 ```{r}
 recruits_17 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_17.xlsx"))
+recruits_15 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_15.xlsx"))
+recruits_18 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_18.xlsx"))
+recruits_19 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_19.xlsx"))
 ```
 
 ```{r}
@@ -56,6 +59,29 @@ full_data2 <- inner_join(x = recruits_17, y = receivers, by = "Player")
 ```{r}
 recruits_17 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_17.xlsx"))
 ```
+
+```{r}
+recruits_15 <- recruits_15 %>%
+  mutate(`HometownInfo Latitude` = as.numeric(`HometownInfo Latitude`),
+         `HometownInfo FipsCode` = as.numeric(`HometownInfo FipsCode`))
+recruiting <- full_join(x = recruits_15, y = recruits)
+```
+
+```{r}
+recruiting <- full_join(x = recruiting, y = recruits_17)
+recruiting <- full_join(x = recruiting, y = recruits_18)
+recruiting <- full_join(x = recruiting, y = recruits_19)
+```
+
+```{r}
+recruiting <- recruiting %>%
+  rename(Player = Name)
+```
+
+```{r}
+recruiting_data <- inner_join(x = recruiting, y = receivers, by = "Player")
+```
+
 
 
 
