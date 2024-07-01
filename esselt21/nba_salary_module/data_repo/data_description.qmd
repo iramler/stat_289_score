@@ -18,7 +18,7 @@ This data set is provided by Logan Lauton on Kaggle. There is an extensive repos
 
 ## Data
 
-This data is made up of 111 rows and 8 columns. Each row represents a player on a given type of surface.
+This data is made up of 4974 rows and 37 columns. Each row represents a player for a given season.
 
 | Variable              | Description                                                                |
 |-----------------------|----------------------------------------------------------------------------|

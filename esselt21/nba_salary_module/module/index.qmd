@@ -68,28 +68,55 @@ Download non tidy data: [atp_2023_213](data/atp_2023_213.csv)
 
 <summary><b>Variable Descriptions</b></summary>
 
-| Variable                     | Description                                       |
-|------------------------------|---------------------------------------------------|
-| Player                       | The name of the player                            |
-| Surface                      | The type of court surface for this observation    |
-| Matches                      | The number of matches played on this surface      |
-| Elo Rank                     | The calculated Elo rank of the player             |
-| Win Percentage               | The win percentage of the player                  |
-| Double Fault Percentage      | The percentage of serves that are a double fault  |
-| Return Points Won Percentage | The percentage of points won while returning      |
-| Aces Per Double Fault        | The ratio of aces to double faults for the player |
+| Variable              | Description                                                                |
+|-----------------------|----------------------------------------------------------------------------|
+| Season                | The season the data is from                                                |
+| Player                | The name of the NBA player                                                 |
+| Pos                   | The position of the NBA Player                                             |
+| Age                   | The age of the NBA player                                                  |
+| Tm                    | The team that the player plays for                                         |
+| G                     | The number of games played                                                 |
+| GS                    | The number of games started                                                |
+| MP                    | The number of minutes played                                               |
+| FG                    | The number of field goals made                                             |
+| FGA                   | The number of field goals attempted                                        |
+| FG%                   | The field goal percentage                                                  |
+| 3P                    | The number of 3 pointers made                                              |
+| 3PA                   | The number of 3 pointers attempted                                         |
+| 3P%                   | The 3 point percentage                                                     |
+| 2P                    | The number of 2 pointers made                                              |
+| 2PA                   | The number of 2 pointers attempted                                         |
+| 2P%                   | The 2 point percentage                                                     |
+| eFG%                  | The effective field goal percentage                                        |
+| FT                    | The number of free throws made                                             |
+| FTA                   | The number of free throws attempted                                        |
+| FT%                   | The free throw percentage                                                  |
+| ORB                   | The number of offensive rebounds                                           |
+| DRB                   | The number of defensive rebounds                                           |
+| TRB                   | The total number of rebounds                                               |
+| AST                   | The number of assists                                                      |
+| STL                   | The number of steals                                                       |
+| BLK                   | The number of blocks                                                       |
+| TOV                   | The number of turnovers                                                    |
+| PF                    | The number of fouls                                                        |
+| PTS                   | The number of points                                                       |
+| Salary                | The salary for the season                                                  |
+| InflationAdjSalary    | The salary for the season adjusted for inflation                           |
+| logInflationAdjSalary | The salary for the season adjusted for inflation with a log transformation |
+| PER                   | The player efficiency rating                                               |
+| ESPR                  | Eric's salary to PER ratio                                                 |
 
 </details>
 
 #### Data Source
 
-[Wheelo Ratings](https://www.wheeloratings.com/tennis_wta_stats_last52.html){target="_blank"}
+[Kaggle](https://www.kaggle.com/datasets/loganlauton/nba-players-and-team-data?select=NBA+Salaries%281990-2023%29.csv){target="_blank"}
 
 ### Materials
 
-[Class Handout](tennis_handout213.docx)
+[Class Handout](nba_handout.docx)
 
-[Class Handout - Solutions](tennis_handout213_key.docx)
+[Class Handout - Solutions](nba_handout_key.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Forthcoming
