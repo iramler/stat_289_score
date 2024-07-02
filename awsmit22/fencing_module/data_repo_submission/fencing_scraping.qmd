@@ -34,7 +34,7 @@ w_saber
 
 ```{r}
 # Cleaning
-wsaber <- w_saber |> rename(Place = X1, Tied = X2, Name = X3, School = X4, `V/B` = X5, Pct = X6, TS = X7, TR = X8, Ind = X9) |> filter(Place != "Place") |> mutate(Place = as.integer(Place)) |> mutate(Tied = if_else(Tied == "T", true = TRUE, false = FALSE)) |> separate(`V/B`, into = c("Victories", "Bouts"), sep = "/") |> mutate(Victories = as.integer(Victories), Bouts = as.integer(Bouts), Pct = as.double(Pct), TS = as.integer(TS), TR = as.integer(TR), Ind = as.integer(Ind)) |> mutate(Gender = "Women", Weapon = "Saber")
+wsaber <- w_saber |> rename(Place = X1, Tied = X2, Name = X3, School = X4, `V/B` = X5, Pct = X6, TS = X7, TR = X8, Ind = X9) |> filter(Place != "Place") |> mutate(Place = as.integer(Place)) |> mutate(Tied = if_else(Tied == "T", true = TRUE, false = FALSE)) |> separate(`V/B`, into = c("Victories", "Bouts"), sep = "/") |> mutate(Victories = as.integer(Victories), Bouts = as.integer(Bouts), Pct = as.double(Pct), TS = as.integer(TS), TR = as.integer(TR), Ind = as.integer(Ind)) |> mutate(Gender = "Women", Weapon = "Sabre")
 ```
 
 # Women's Foil
@@ -73,7 +73,7 @@ m_saber
 
 ```{r}
 # Cleaning
-msaber <- m_saber |> rename(Place = X1, Tied = X2, Name = X3, School = X4, `V/B` = X5, Pct = X6, TS = X7, TR = X8, Ind = X9) |> filter(Place != "Place") |> mutate(Place = as.integer(Place)) |> mutate(Tied = if_else(Tied == "T", true = TRUE, false = FALSE)) |> separate(`V/B`, into = c("Victories", "Bouts"), sep = "/") |> mutate(Victories = as.integer(Victories), Bouts = as.integer(Bouts), Pct = as.double(Pct), TS = as.integer(TS), TR = as.integer(TR), Ind = as.integer(Ind)) |> mutate(Gender = "Men", Weapon = "Saber")
+msaber <- m_saber |> rename(Place = X1, Tied = X2, Name = X3, School = X4, `V/B` = X5, Pct = X6, TS = X7, TR = X8, Ind = X9) |> filter(Place != "Place") |> mutate(Place = as.integer(Place)) |> mutate(Tied = if_else(Tied == "T", true = TRUE, false = FALSE)) |> separate(`V/B`, into = c("Victories", "Bouts"), sep = "/") |> mutate(Victories = as.integer(Victories), Bouts = as.integer(Bouts), Pct = as.double(Pct), TS = as.integer(TS), TR = as.integer(TR), Ind = as.integer(Ind)) |> mutate(Gender = "Men", Weapon = "Sabre")
 ```
 
 # Men's foil
@@ -120,11 +120,17 @@ sab_foil <- full_join(saber, foil)
 fencing_full <- full_join(sab_foil, epee)
 ```
 
+# Cleaning
+
+```{r}
+ivies <- fencing_df |> mutate(School = str_replace_all(School, "Pennsylvania", "UPenn")) |> mutate(School = str_replace_all(School, "Columbia/Barnard", "Barnard"))  |> mutate(Ivy = case_when(School == "Brown" ~ "Ivy", School == "Barnard" ~ "Ivy", School == "Cornell" ~ "Ivy", School == "Columbia" ~ "Ivy", School == "Harvard" ~ "Ivy", School == "UPenn" ~ "Ivy", School == "Princeton" ~ "Ivy", School == "Yale" ~ "Ivy")) |> mutate(Ivy = if_else(is.na(Ivy), true = "Non-Ivy", false = "Ivy"))
+```
+
 # Write a csv file
 
 Create a csv file of the data set. 
 
 ```{r}
-write_csv(fencing_full, "fencing.csv")
+write_csv(ivies, "fencing.csv")
 ```
 
