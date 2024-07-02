@@ -4,8 +4,6 @@ author: "eric seltzer"
 format: html
 ---
 
-Data Link: https://www.kaggle.com/datasets/loganlauton/nba-players-and-team-data?select=NBA+Salaries%281990-2023%29.csv
-
 ```{r}
 library(tidyverse)
 ```
@@ -56,12 +54,6 @@ final <-
 ```
 
 ```{r}
-final <-
-  final |>
-  mutate(sqrtInflationAdjSalary = sqrt(inflationAdjSalary / 10000))
-```
-
-```{r}
 final |>
   ggplot(aes(x = MP)) +
   geom_histogram(fill = "lightblue",
@@ -72,13 +64,6 @@ final |>
 final <-
   final |>
   filter(MP > 1500)
-```
-
-```{r}
-final |>
-  ggplot(aes(x = sqrtInflationAdjSalary)) +
-  geom_histogram(fill = "lightblue",
-                 color = "black")
 ```
 
 ```{r}
@@ -113,46 +98,26 @@ final |>
 ```{r}
 final <-
   final |>
-  mutate(PER_Salary_ratio = PER / sqrtInflationAdjSalary)
-```
-
-```{r}
-final <-
-  final |>
   na.omit()
 ```
 
 ```{r}
+final <-
+  final |>
+  mutate(logInflationAdjustedSalary = log(inflationAdjSalary / 1000))
+```
+
+```{r}
+final <-
+  final |>
+  mutate(ESPR = PER / (logInflationAdjustedSalary * 2))
+```
+
+```{r}
 final |>
-  ggplot(aes(x = sqrtInflationAdjSalary)) +
+  ggplot(aes(x = logInflationAdjustedSalary)) +
   geom_histogram(fill = 'lightblue',
                  color = 'black')
-```
-
-```{r}
-library(plotly)
-plot <-
-  final |>
-  ggplot(aes(x = sqrtInflationAdjSalary,
-             y = PER,
-             label = Player)) +
-  geom_point() +
-  geom_abline(slope = 1,
-              intercept = 0)
-
-plotly::ggplotly(plot)
-```
-
-```{r}
-final <-
-  final |>
-  mutate(logInflationAdjustedSalary = log(inflationAdjSalary / 1000) * 2)
-```
-
-```{r}
-final <-
-  final |>
-  mutate(ESPR = PER / logInflationAdjustedSalary)
 ```
 
 ```{r}
@@ -160,20 +125,33 @@ mean(final$PER_Salary_ratio)
 ```
 
 ```{r}
-plot <-
-  season |>
+final |>
+  ggplot(aes(x = logInflationAdjustedSalary,
+             y = PER,
+             label = Player)) +
+  geom_point() +
+  geom_abline(slope = 1,
+              intercept = 0)
+```
+
+```{r}
+final |>
   ggplot(aes(x = logInflationAdjustedSalary * 2,
              y = PER,
              label = Player)) +
   geom_point() +
   geom_abline(slope = 1,
               intercept = 0)
-
-plotly::ggplotly(plot)
 ```
 
 ```{r}
-write_csv(final, here::here("esselt21/nba_salary_module/exploration/final.csv"))
+final <-
+  final |>
+  relocate(logInflationAdjustedSalary, .after = inflationAdjSalary)
+```
+
+```{r}
+write_csv(final, here::here("esselt21/nba_salary_module/exploration/nba_salary.csv"))
 ```
 
 ```{r}

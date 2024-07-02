@@ -58,7 +58,7 @@ This data is made up of 4974 rows and 37 columns. Each row represents a player f
 | PER                   | The player efficiency rating                                               |
 | ESPR                  | Eric's salary to PER ratio                                                 |
 
-: [nba.csv](../data/nba.csv)
+: [nba_salary.csv](../data/nba_salary.csv)
 
 ## Questions
 

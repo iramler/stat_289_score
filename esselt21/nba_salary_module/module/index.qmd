@@ -1,6 +1,6 @@
 ---
-title: "Investigating Surfaces Impact on Win Percentages in Professional Tennis"
-date: June 18, 2024
+title: "Assigning a Valuation Metric to NBA Players Based on Their Salary"
+date: July 2nd, 2024
 author:
   - name: Eric Seltzer
     affiliation:
@@ -25,14 +25,7 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-In the Association of Tennis Professionals (ATP) the rankings are typically based on set parameters. Throughout the year there are tournaments that are worth different numbers of points. There are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. You receive the most points in your [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) from winning a Grand Slam, and the least from winning an ATP 250 tournament. In Tennis, there are also three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Certain players perform better on certain surfaces. This data set contains information for each player on each surface. Throughout the year, there are two Grand Slams on a Hard court, one on Clay, and one on Grass.
-
-The data set we will be using is from [Wheelo Ratings](https://www.wheeloratings.com/tennis_atp_stats_last52.html). In this rating website, they have calculated an ELO rank for each player. This ranking considers not only what tournament you are playing in, but who you are playing. For instance, if 4th ranked Coco Gauff beats 1st ranked Iga Swiatek, it will be worth more to her ELO ranking than if she beat 14th ranked Emma Navarro in the same tournament.
-
-#### Additional Tennis Information
-In Tennis, there is the Association of Tennis Professionals (ATP) for men, and the Women's Tennis Association (WTA) for women. The ATP has 60 tournaments a year while the WTA has over 70. Both the ATP have the WTA have four grand slam tournaments. In the ATP, these Grand Slam tournaments are played in a best of 5 format instead of a best of 3 like every other tournament. In the WTA, every tournament is played in a best of 3 format, including the Grand Slam tournaments.
-
-In this worksheet, we will look at the data including this Elo ranking and look at the process behind creating a multiple linear regression model in order to predict a player's win percentage.
+The National Basketball Association (NBA) was founded in 1949 originally with around 11 teams. Since that time, it has expanded to 32 teams and is one of the biggest major sports leagues in the world. It also has some of the most sports data being collected out of any sport is there are many statistics to keep track of. Some of these statistics of the modern game are things like points, assists, shooting percentages, and turnovers. This means that there is lots of data to analyze from a long time period. In this worksheet, we will primarily be focusing on the time period from 1990-2023. This is where the statistics being recorded was shown to be in final form and therefore has the most consistency. 
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
@@ -60,9 +53,9 @@ Technology requirement: The activity handout will require nothing more than the 
 
 There is one data set for this exercise. The data is made up of 5194 rows and 20 columns and is provided by Jeff Sackman on GitHub. Each row represents a match played between two players.
 
-Download non tidy data: [atp_2023_213](data/atp_2023_213.csv)
+Download non tidy data: [nba_salary](data/nba_salary.csv)
 
-**Tennis**
+**NBA**
 
 <details>
 
