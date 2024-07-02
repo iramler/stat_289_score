@@ -123,7 +123,7 @@ fencing_full <- full_join(sab_foil, epee)
 # Cleaning
 
 ```{r}
-ivies <- fencing_df |> mutate(School = str_replace_all(School, "Pennsylvania", "UPenn")) |> mutate(School = str_replace_all(School, "Columbia/Barnard", "Barnard"))  |> mutate(Ivy = case_when(School == "Brown" ~ "Ivy", School == "Barnard" ~ "Ivy", School == "Cornell" ~ "Ivy", School == "Columbia" ~ "Ivy", School == "Harvard" ~ "Ivy", School == "UPenn" ~ "Ivy", School == "Princeton" ~ "Ivy", School == "Yale" ~ "Ivy")) |> mutate(Ivy = if_else(is.na(Ivy), true = "Non-Ivy", false = "Ivy"))
+ivies <- fencing_full |> mutate(School = str_replace_all(School, "Pennsylvania", "UPenn")) |> mutate(School = str_replace_all(School, "Columbia/Barnard", "Barnard"))  |> mutate(Ivy = case_when(School == "Brown" ~ "Ivy", School == "Barnard" ~ "Ivy", School == "Cornell" ~ "Ivy", School == "Columbia" ~ "Ivy", School == "Harvard" ~ "Ivy", School == "UPenn" ~ "Ivy", School == "Princeton" ~ "Ivy", School == "Yale" ~ "Ivy")) |> mutate(Ivy = if_else(is.na(Ivy), true = "Non-Ivy", false = "Ivy"))
 ```
 
 # Write a csv file

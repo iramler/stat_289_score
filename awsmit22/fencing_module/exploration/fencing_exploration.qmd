@@ -13,10 +13,90 @@ library(readr)
 # Data
 
 ```{r}
-fencing_df <- read_csv("~/Desktop/git/stat_289_score/awsmit22/fencing_module/exploration/fencing.csv")
+fencing_df <- read_csv("~/Desktop/git/score_new/awsmit22/fencing_module/exploration/fencing.csv")
 fencing_df
 ```
 
+# Grouping Exploration
+
+```{r}
+# Schools
+fencing_df |> group_by(School) |> summarise(n=n())
+```
+
+```{r}
+# Weapons
+fencing_df |> group_by(Weapon) |> summarise(n=n())
+```
+
+```{r}
+# Gender
+fencing_df |> group_by(Gender) |> summarise(n=n())
+```
+
+```{r}
+# Schools
+fencing_df |> group_by(School) |> summarise(avg_ind = mean(Ind))
+```
+
+```{r}
+# Ivies
+fencing_df |> group_by(Ivy) |> summarise(n=n())
+```
+
+```{r}
+# Ivies
+fencing_df |> group_by(Ivy) |> summarise(avg_ind = mean(Ind))
+```
+
+```{r}
+# Ivies
+fencing_df |> group_by(Ivy) |> summarise(avg_ind = mean(Pct))
+```
+
+```{r}
+# Schools
+fencing_df |> group_by(School) |> summarise(avg_ind = mean(Pct))
+```
+
+# Graphical Explorations
+
+```{r}
+ggplot(data = fencing_df, aes(x = Gender, y = Ind)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = fencing_df, aes(x = Weapon, y = Ind)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = fencing_df, aes(x = Ivy, y = Ind)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = fencing_df, aes(x = Gender, y = Pct)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = fencing_df, aes(x = Weapon, y = Pct)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = fencing_df, aes(x = Ivy, y = Pct)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = fencing_df, aes(x = TS, y = TR)) + geom_point()
+```
+
+```{r}
+ggplot(data = fencing_df, aes(x = Victories)) + geom_histogram(bins = 10, colour = "black", fill = "lightblue") + facet_grid( Gender ~ Weapon) + theme_minimal()
+```
+
+```{r}
+barplot <- fencing_df |> group_by(School) |> summarise(Victories = sum(Victories)) |> mutate(School = fct_reorder(School, Victories))
+ggplot(data = barplot, aes(x = School, y = Victories)) + geom_col() + coord_flip()
+```
 
 
 

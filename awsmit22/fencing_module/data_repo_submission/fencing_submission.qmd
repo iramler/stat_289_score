@@ -13,91 +13,52 @@ editor:
 
 ## Motivation
 
-[Fencing](https://en.wikipedia.org/wiki/Fencing){target="_blank"} is a
-semi-contact sport that is based on sword fighting and dates back to the
-1600s. There are three weapon types in fencing, epee, foil, and sabre.
-Fencing consists of bouts in which two fencers face-off against each
-other on a strip (14 x 1.5 meters). During bouts fencers attempt to hit
-each other with their weapon within the valid target area. Target areas
-vary for each weapon type. For epee, the entire body is a target area,
-for foil only the torso is a valid target area, and for sabre the target
-area is from the hips to the head. Bouts last 9 minutes total and are
-broken into three 3-minute phrases with a minute break in between. A
-bout is won by the first fencer to reach 15 touches, if the bout ends
-before either fencer has 15 touches, the fencer with the most touches is
+[Fencing](https://en.wikipedia.org/wiki/Fencing){target="_blank"} is a semi-contact sport that is based on sword fighting and dates back to the 1600s. There are three weapon types in fencing, epee, foil, and sabre. Fencing consists of bouts in which two fencers face-off against each other on a strip (14 x 1.5 meters). During bouts fencers attempt to hit each other with their weapon within the valid target area. Target areas vary for each weapon type. For epee, the entire body is a target area, for foil only the torso is a valid target area, and for sabre the target area is from the hips to the head. Bouts last 9 minutes total and are broken into three 3-minute phrases with a minute break in between. A bout is won by the first fencer to reach 15 touches, if the bout ends before either fencer has 15 touches, the fencer with the most touches is
 declared winner.
 
 At the [collegiate level](https://en.wikipedia.org/wiki/Collegiate_fencing){target="_blank"}
-the fencing season comes to a close with the [NCAA Fencing Championships](https://en.wikipedia.org/wiki/NCAA_Fencing_Championships){target="_blank"}
-which is hosted at a different school every year. The championship is
-non-divisional and consists of the top fencers from schools in each NCAA
-region (Northeast, Mid-Atlantic/South, Midwest, and West). Fencers
-qualify for nationals based on their performance at regionals. Schools
-are allowed up to 12 fencers total in the tournament, but are only
-allowed a maximum of two fencers in each weapon and gender. The final
-championship consists of a 24 fencer round-robin in which each fencer in
-the discipline faces each other in 5-touch bouts. Fencers are ranked based on descending indicator scores which is the difference in touches sent and touches received. The top 4 fencers from each discipline face each other off in a round of 15-touch semifinals and championship bouts. The fencer to win the championship places number 1 in the discipline. Each school is awarded a point for each victory from each of their fencers. Schools' points are added and ranked, and the school with the most points at the end of the tournament wins.
+the fencing season comes to a close with the [NCAA Fencing Championships](https://en.wikipedia.org/wiki/NCAA_Fencing_Championships){target="_blank"} which is hosted at a different school every year. The championship is non-divisional and consists of the top fencers from schools in each NCAA region (Northeast, Mid-Atlantic/South, Midwest, and West). Fencers qualify for nationals based on their performance at regionals. Schools are allowed up to 12 fencers total in the tournament, but are only allowed a maximum of two fencers in each weapon and gender. The final championship consists of a 24 fencer round-robin in which each fencer in the discipline faces each other in 5-touch bouts. Fencers are ranked based on descending indicator scores which is the difference in touches sent and touches received. The top 4 fencers from each discipline face each other off in a round of 15-touch semifinals and championship bouts. The fencer to win the championship places number 1 in the discipline. Each school is awarded a point for each victory from each of their fencers. Schools' points are added and ranked, and the school with the most points at the end of the tournament wins.
 
-This [fencing dataset](fencing.csv){target="_blank"}(fencing.csv)
-contains the final results for each individual fencer in the 2024 NCAA
-Fencing Championships hosted at Ohio State University. It has data for both men and women in all three weapon types. **FINISH WHEN I'M DONE QUESTIONS**
+This [fencing dataset](fencing.csv){target="_blank"}(fencing.csv) contains the final results for each individual fencer in the 2024 NCAA Fencing Championships hosted at Ohio State University. It has data for both men and women in all three weapon types. **FINISH WHEN I'M DONE QUESTIONS**
 
 ## Data
 
-The data set has 144 rows with 13 variables. Each row is a fencer who
-participated in the 2024 NCAA Fencing Championships. The statistics in each row are the fencers' totals from the tournament.
+The data set has 144 rows with 13 variables. Each row is a fencer who participated in the 2024 NCAA Fencing Championships. The statistics in each row are the fencers' totals from the tournament.
 
 | Variable   | Description                                                                                                             |
 |-----------------------|------------------------------------------------|
-| `Place`   | The place the fencer finished the tournament in based on                                                                                       |
-| `Category` | The category of competition the player competed in, either `Singles` or `Doubles`.                                      |
-| `Matches`  | The total number of matches the player played in between 2018-2023 in the World Tour.                                   |
-| `Wins`     | The total number of wins the player had between 2018-2023 in the World Tour.                                            |
-| `Losses`   | The total number of losses the player had between 2018-2023 in the World Tour.                                          |
-| `pts_for`  | The total number of points scored by the player between 2018-2023 in the World Tour.                                    |
-| `pts_agst` | The total number of points allowed by the player between 2018-2023 in the World Tour.                                   |
-| `win_pct`  | The cumulative win percentage (`Wins`/`Matches`) for the player between 2018-2023 in the World Tour.                    |
-| `shot_pct` | The cumulative shot percentage (`pts_for`/(`pts_for` + `pts_agst`)) for the player between 2018-2023 in the World Tour. |
-
-: [badminton.csv](badminton.csv){target="_blank"}
+| `Place` | The place the fencer finished the tournament in. |
+| `Tied` | If the fencer was tied for their place with someone else, `TRUE` or `FALSE`. |
+| `Name` | The fencer's name in `first name last name` order. |
+| `School` | The school the fencer is representing. |
+| `Victories`   | The total victories the fencer had in the tournament. |
+| `Bouts`  | The number of bouts the fencer was in in the tournament. |
+| `Pct` | The percentage of wins (`Victories`/`Bouts`) the fencer had in the tournament. |
+| `TS`  | The total touches sent by the fencer in the tournament, meaning touches they scored against opponents. |
+| `TR` | The total touches received by the fencer in the tournament, meaning touches scored against the fencer. |
+| `Ind` | The indicator score, calculated by `TS`-`TR`. |
+| `Gender` | The fencer's gender, `Women` or `Men`. |
+| `Ivy` | If the fencer's school is in the Ivy League, `Ivy` or `Non-Ivy`. |
+: [fencing.csv](fencing.csv){target="_blank"}
 
 ## Questions
 
-1.  Create a histogram of `Wins` and describe the distribution.
-
-2.  Obtain the summary statistics of `Wins` and fill them in below.
-
-3.  Calculate the range for `Wins` and for `pts_for`.
-
-4.  The ranges for `Wins` and `pts_for` are both quite large. What do
-    you think is a possible reason for this flaw in the data?
-
-5.  Create a side by side box plot of `Wins` for each `Category`.
-    Describe the distribution.
-
-6.  Perform a t.test to determine if there is a significant difference
-    in the mean number of `Wins` for `Doubles` vs. `Singles`.
-
-7.  Fit a simple linear model of `pts_for` predicting `Wins`.
-
-8.  Interpret the slope of the model you just fit.
-
-9.  If a player has 216 points calculate their predicted `Wins`.
-
-10. Assess the overall fit of the model.
-
-11. Find the 90% confidence interval of the slope of the model.
-
-12. Do you think that `pts_for` is really the most effective predictor
-    of `Wins`? Why or why not? What could be a better predictor?
+1.  **COME BACK TO WHEN QUESTIONS ARE DONE**
 
 ## References
 
-[Original
-Dataset](https://www.badmintonstatistics.net/Reports?reportname=MostPointsH2H&category=%&year=-1&level=worldtour&country=%){target="_blank"}
+[Website the Data was Scraped From](https://ncaa.escrimeresults.com/ncaa2024.html){target="_blank"}
 
-[Olympic Badminton
-Rules](https://olympics.com/en/news/badminton-guide-how-to-play-rules-olympic-history){target="_blank"}
+[Olympic Fencing Rules](https://www.nbcolympics.com/news/fencing-101-rules-and-scoring){target="_blank"}
 
-[BWF Tour
-Website](https://bwfworldtour.bwfbadminton.com/){target="_blank"}
+[NCAA Fencing Website](https://www.ncaa.com/sports/fencing){target="_blank"}
+
+[NCAA Fencing Championships Wikipedia](https://en.wikipedia.org/wiki/NCAA_Fencing_Championships){target="_blank"}
+
+[NCAA Fencing Wikipedia](https://en.wikipedia.org/wiki/Collegiate_fencing){target="_blank"}
+
+[Fencing Wikipedia](https://en.wikipedia.org/wiki/Fencing){target="_blank"}
+
+[Fencing](https://en.wikipedia.org/wiki/Fencing){target="_blank"}
+
+
