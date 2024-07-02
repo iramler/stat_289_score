@@ -31,7 +31,7 @@ tdf_stages |> group_by(Type) |> summarise(avg_distance = mean(Distance))
 
 ```{r}
 tdf_winners |> summary()
-tdf_winners |> 
+
 ```
 
 
@@ -40,22 +40,6 @@ tdf_winners |>
 
 
 ```{r}
-
-
-
-stage <- 1
-
-tdf_2019_url <- map("https://www.procyclingstats.com/race/tour-de-france/2019/stage-", stage)
-
-
-
-tdf_tab <- read_html(tdf_url) |> html_nodes("table")
-tdf_2019_1 <- tdf_tab[[1]] |> html_table()
-
-tdf_2019_1
-
-
-
 ```
 
 
@@ -173,7 +157,6 @@ tdf_gc <- function(tdf_gc_url){
 
 
 gc_10 <- map(tdf_past_10, tdf_gc)
-gc_10 |> bind_rows()
 tdf_2013 <- gc_10[[1]]
 tdf_2014 <- gc_10[[2]]
 tdf_2015 <- gc_10[[3]]
@@ -217,6 +200,61 @@ tdf_gc <- tdf_gc
 
 ```
 
+
+```{r}
+gc_timegap <- tdf_gc |> separate(col = Timelag, into = c("behind", "Gap"), sep = 1) |> 
+  separate(col = Gap, into = c("mins", "seconds"), sep = -2) |>
+  separate(col = mins, into = c("hrs_mins", "colon"), sep = -1) |>
+  separate(col = hrs_mins, into = c("hrs", "minutes"), sep = -2) |>
+  separate(col = hrs, into = c("hours", "colon"), sep = -1) |>
+  select(-3, -5) |>
+  mutate(hours = as.numeric(hours),
+         minutes = as.numeric(minutes),
+         seconds = as.numeric(seconds)) |>
+  mutate(hours = if_else(is.na(hours), 
+                         true = 0, 
+                         false = hours)) |>
+  mutate(tot_seconds = seconds + (60 * minutes) + (3600 * hours))
+  
+```
+
+```{r}
+specialty_gap <- gc_timegap |> filter(tot_seconds > 0) |> group_by(Specialty) |> summarise(avg_time = mean(tot_seconds, na.rm = TRUE),
+                                                                min_time = min(tot_seconds, na.rm = TRUE))
+
+ggplot(data = specialty_gap, aes(x = min_time, y = Specialty)) +
+  geom_col()
+```
+
+
+```{r}
+year_gap <- gc_timegap |> filter(tot_seconds > 0) |>
+  mutate(year = as.factor(year)) |> 
+  group_by(year) |> 
+  summarise(avg_time = mean(tot_seconds, na.rm = TRUE),
+                            min_time = min(tot_seconds)) |>
+  mutate(year = reorder(year, min_time))
+
+
+ggplot(data = year_gap, aes(x = min_time, y = year)) +
+  geom_col()
+```
+
+
+```{r}
+sprint_time <- gc_timegap |> filter(Specialty == "Sprint") |> mutate(year = as.factor(year)) |> group_by(year) |> summarise(min_time = min(tot_seconds, na.rm = TRUE)) |> mutate(year = reorder(year, min_time))
+
+ggplot(data = sprint_time, aes(x = min_time, y = year)) +
+  geom_col()
+
+```
+
+```{r}
+ggplot(data = gc_timegap, aes(x = Specialty, y = tot_seconds)) +
+  geom_jitter(aes(group = Specialty, color = Specialty))
+```
+
+
 ```{r}
 ggplot(data = tdf_gc, aes(x = Specialty, y = GC)) +
   geom_jitter(aes(group = Specialty, color = Specialty))
@@ -228,8 +266,15 @@ ggplot(data = tdf_gc, aes(x = Specialty, y = Rnk)) +
 ```
 
 ```{r}
-ggplot()
+top_time <- gc_timegap |> group_by(Specialty) |> arrange(tot_seconds) |> slice(1:100)
+
+ggplot(data = top_time, aes(x = Specialty, y = tot_seconds)) +
+  geom_boxplot()
 ```
+
+
+
+
 
 
 
@@ -552,5 +597,30 @@ ggplot(data = winners, aes(x = Specialty)) +
   geom_bar(aes(fill = Specialty)) 
 ```
 
+```{r}
+stage_results |> filter(!is.na(Avg)) |> group_by(stage, year) |> summarise(n())
+```
+
+```{r}
+time_stage_res <- stage_results |> separate(col = Timelag, into = c("behind", "Gap"), sep = 1) |> 
+  separate(col = Gap, into = c("mins", "seconds"), sep = -2) |>
+  separate(col = mins, into = c("hrs_mins", "colon"), sep = -1) |>
+  separate(col = hrs_mins, into = c("hrs", "minutes"), sep = -2) |>
+  separate(col = hrs, into = c("hours", "colon"), sep = -1) |>
+  select(-3, -5) |>
+  mutate(hours = as.numeric(hours),
+         minutes = as.numeric(minutes),
+         seconds = as.numeric(seconds)) |>
+  mutate(hours = if_else(is.na(hours), 
+                         true = 0, 
+                         false = hours)) |>
+  mutate(tot_seconds = seconds + (60 * minutes) + (3600 * hours))
+  
+```
+
+
+```{r}
+stage_results |> select(Time) |> slice(100:110)
+```
 
 
