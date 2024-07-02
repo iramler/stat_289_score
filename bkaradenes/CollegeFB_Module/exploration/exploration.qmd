@@ -4,10 +4,7 @@ author: "Brendan Karadenes"
 format: html
 ---
 
-```{r}
-Sys.setenv(CFBD_API_KEY = "+R2YMcbKerOTZ/CwnOquxCPVYE8kZ+Z//G4gRA6zIxYst5iZBvFxtI50dKiP7uCq")
-```
-
+# Aquiring Data 
 
 ```{r}
 library(tidyverse)
@@ -18,69 +15,76 @@ library(readxl)
 ```{r}
 receivers <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recievers.xlsx"))
 recruits <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit.xlsx"))
-```
-
-```{r}
-recruits <- recruits %>%
-  rename(Player = Name)
-```
-
-```{r}
-full_data <- inner_join(x = recruits, y = receivers, by = "Player")
-```
-
-```{r}
-install.packages("remotes")
-install.packages("cfbfastR")
-remotes::install_github("saiemgilani/cfbscrapR")
-```
-
-```{r}
-library(cfbscrapR)
-cfb_recruiting_position(start_year = 2023, end_year = 2000)
-```
-
-```{r}
 recruits_17 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_17.xlsx"))
 recruits_15 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_15.xlsx"))
 recruits_18 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_18.xlsx"))
 recruits_19 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_19.xlsx"))
+recruits_14 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_14.xlsx"))
+recruits_13 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_13.xlsx"))
 ```
 
 ```{r}
 recruits_17 <- recruits_17 %>%
   rename(Player = Name)
-```
-
-```{r}
-full_data2 <- inner_join(x = recruits_17, y = receivers, by = "Player")
-```
-
-```{r}
-recruits_17 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_17.xlsx"))
-```
-
-```{r}
+recruits <- recruits %>%
+  rename(Player = Name)
+recruits_13 <- recruits_13 %>%
+  rename(Player = Name)
+recruits_14 <- recruits_14 %>%
+  rename(Player = Name)
 recruits_15 <- recruits_15 %>%
-  mutate(`HometownInfo Latitude` = as.numeric(`HometownInfo Latitude`),
-         `HometownInfo FipsCode` = as.numeric(`HometownInfo FipsCode`))
-recruiting <- full_join(x = recruits_15, y = recruits)
+  rename(Player = Name)
+recruits_18 <- recruits_18 %>%
+  rename(Player = Name)
+recruits_19 <- recruits_19 %>%
+  rename(Player = Name)
 ```
 
 ```{r}
+ ## recruits_15 <- recruits_15 %>%
+ ##  mutate(`HometownInfo Latitude` = as.numeric(`HometownInfo Latitude`),
+  ##       `HometownInfo FipsCode` = as.numeric(`HometownInfo FipsCode`))
+```
+
+```{r}
+recruiting <- full_join(x = recruits_15, y = recruits)
 recruiting <- full_join(x = recruiting, y = recruits_17)
 recruiting <- full_join(x = recruiting, y = recruits_18)
 recruiting <- full_join(x = recruiting, y = recruits_19)
+recruiting <- full_join(x = recruiting, y = recruits_14)
+recruiting <- full_join(x = recruiting, y = recruits_13)
 ```
 
 ```{r}
-recruiting <- recruiting %>%
-  rename(Player = Name)
+receivers$Player <- gsub("[\\+\\*]", "", receivers$Player)
 ```
 
 ```{r}
 recruiting_data <- inner_join(x = recruiting, y = receivers, by = "Player")
 ```
+
+# Exploration
+
+```{r}
+library(usmap)
+recruiting_data2 <- recruiting_data %>%
+  rename(state = StateProvince)
+recruiting <- recruiting %>%
+  rename(state = State)
+plot_usmap(data = recruiting, values = "Rating", color = "red") + scale_fill_continuous(name = "", label = scales::comma, low = "white", high = "blue") +
+theme(legend.position = "right") +
+labs(title = "Recruiting Rating in each State")+
+theme(plot.title = element_text(hjust = .65))
+```
+
+```{r}
+plot_usmap(data = recruiting_data2, values = "Yds", color = "red") + scale_fill_continuous(name = "", label = scales::comma, low = "white", high = "blue") +
+theme(legend.position = "right") +
+labs(title = "Recruiting Rating in each State")+
+theme(plot.title = element_text(hjust = .65))
+```
+
+
 
 
 
