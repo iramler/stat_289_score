@@ -112,5 +112,12 @@ resid
 
 # Question 9
 
-**MAYBE DO CONFIDENCE INTERVALS**
+The model Victories = 11.5 + 0.16Ind has an r-squared value of 92%. Explain the significance of this value. 
+
+```{r}
+mod_9 <- lm(Victories ~ Ind, data = fencing_df)
+mod_9 |> summary()
+```
+
+*R-squared refers to the proportion of total variability in Y explained by X. In terms of this model, this means that 92% of variablity in victories is explained by the indicator variable. This means that the model does a good job predicting the number of victories.*
 

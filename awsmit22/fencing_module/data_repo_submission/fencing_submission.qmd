@@ -43,7 +43,61 @@ The data set has 144 rows with 13 variables. Each row is a fencer who participat
 
 ## Questions
 
-1.  **COME BACK TO WHEN QUESTIONS ARE DONE**
+1.    Which of these histograms of `Victories` for each `Weapon` and `Gender` combination looks normally       distributed?
+
+2.    The mean number of `Victories` for womens' foil is 11.5 and the standard deviation is 3.97. Can it       be concluded that the distribution of `Victories` for womens' foil is normal?
+
+3.    The 5 number summary of `Victories` for womens' foil is provided below. Calculate the IQR of             `Victories` for womens' foil.
+
+4.    Draw a boxplot of `Victories` for womens' foil. 
+
+5.    Describe the trend of this scatterplot of `Victories` and `Ind`.
+
+6.    The least squares line for `Victories` predicted by `Ind` is Victories = 11.5 + 0.16Ind. Interpret the slope of the line. 
+
+```{r}
+lm(Victories ~ Ind, data = fencing_df)
+```
+
+*For every unit increase in the indicator variable, a fencer's victories increase by 0.16.*
+
+# Question 7
+
+A fencer has an indicator score of 16, calculate their predicted `Victories`.
+
+```{r}
+victories <- 11.5 + (0.16*16)
+victories
+```
+
+*A fencer with an indicator score of 16 should have 14.06 or roughly 14 victories.*
+
+# Question 8
+
+The actual value of `Victories` for a fencer with an indicator score of 16 is 15, calculate the residual.
+
+```{r}
+fencing_df |> filter(Ind == 16)
+```
+
+```{r}
+# Answer
+resid <- 15-14
+resid
+```
+
+*1*
+
+# Question 9
+
+The model Victories = 11.5 + 0.16Ind has an r-squared value of 92%. Explain the significance of this value. 
+
+```{r}
+mod_9 <- lm(Victories ~ Ind, data = fencing_df)
+mod_9 |> summary()
+```
+
+*R-squared refers to the proportion of total variability in Y explained by X. In terms of this model, this means that 92% of variablity in victories is explained by the indicator variable. This means that the model does a good job predicting the number of victories.*
 
 ## References
 
