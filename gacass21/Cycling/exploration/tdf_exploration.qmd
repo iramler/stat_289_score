@@ -588,9 +588,16 @@ stage_results |> group_by(Rider) |> summarise(average_place = mean(GC), n()) |> 
 stage_results |> group_by(Rider) |> slice(1)
 
 stage_results |> group_by(Team) |> filter(Rnk == 1) |> summarise(wins = n()) |> arrange(desc(wins))
+
+stage_results |> filter(BIB == 1, Rnk == 1)
+
+stage_results |> filter(Specialty == "TT", Rnk == 1)
 ```
 
 ```{r}
+stage_results |> filter(Rnk == 1) |> group_by(Specialty) |>
+   summarise(n())
+
 winners <- stage_results |> filter(Rnk == 1)
 
 ggplot(data = winners, aes(x = Specialty)) +
@@ -620,7 +627,14 @@ time_stage_res <- stage_results |> separate(col = Timelag, into = c("behind", "G
 
 
 ```{r}
-stage_results |> select(Time) |> slice(100:110)
+gaps <- time_stage_res |> group_by(stage, year) |> 
+  filter(GC != 1) |> 
+  summarise(min_gap = min(tot_seconds)) |>
+  arrange(min_gap) |>
+  filter(min_gap > 0)
+  
+  
 ```
+
 
 
