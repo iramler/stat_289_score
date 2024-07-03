@@ -42,7 +42,7 @@ The `ncaa_gymnastics.csv` data set includes data from the women's NCAA Gymnastic
 | Total         | Combined team score for all events              |
 
 
-: [ncaa_gymnastics.csv](Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/gymnastics_module/Data_Repo_Submission/ncaa_gymnastics.csv)
+: [ncaa_gymnastics.csv](ncaa_gymnastics.csv){target="_blank"}
 
 ## Questions
 
