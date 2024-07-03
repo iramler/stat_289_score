@@ -1,0 +1,73 @@
+---
+title: "College Football Recruiting"
+author: "Brendan Karadenes"
+date: 07/03/2024
+description: The data looks at recruited collge football wide receivers and their production in the NFL.
+categories:
+  - data wrangling
+---
+
+## Motivation
+
+The data contains 3959 rows and 38 columns. Each row represents a football player who either was targeted for receptions in the NFL in 2023 and/or was recruited to play Division 1 football from the years 2013-2019.
+
+## Data
+
+| Variable               | Description                                                                                                                                                                           |
+|-------------------|-----------------------------------------------------|
+| Rk                     | rank based on number of receptions                                                                                                                                                    |
+| Player                 | first and last name of the player                                                                                                                                                     |
+| Tm                     | NFL team                                                                                                                                                                              |
+| Age                    | age in years of player                                                                                                                                                                |
+| Pos                    | player position either wide receiver (WR), tight end (TE), running back (RB), corner back (CB), fullback (FB), defensive tackle (DT), guard (G), linebacker (LB), or quarterback (QB) |
+| G                      | number of games played                                                                                                                                                                |
+| GS                     | number of games started                                                                                                                                                               |
+| Tgt                    | total times targeted for a pass                                                                                                                                                       |
+| Rec                    | total number of receptions                                                                                                                                                            |
+| Ctch%                  | percentage of passes caught                                                                                                                                                           |
+| Yds                    | total number of receiving yards                                                                                                                                                       |
+| Y/R                    | average number of yards per reception                                                                                                                                                 |
+| TD                     | number of receiving touchdowns                                                                                                                                                        |
+| 1D                     | number of first downs                                                                                                                                                                 |
+| Succ%                  | player gains 40% of yards to go on first down, 60% on second down, or 100% on third or fourth down                                                                                    |
+| Lng                    | longest reception in yards                                                                                                                                                            |
+| Y/Tgt                  | number of receiving yards per target                                                                                                                                                  |
+| R/G                    | number of receptions per game                                                                                                                                                         |
+| Y/G                    | number of yards per game                                                                                                                                                              |
+| Fmb                    | number of fumbles                                                                                                                                                                     |
+| Id                     | identification number of the player in the dataset                                                                                                                                    |
+| AthleteId              | unique id number for each recruit                                                                                                                                                     |
+| RecruitType            | type of school the player got recruited from (i.e. highschool)                                                                                                                        |
+| Year                   | player's highschool graduation year                                                                                                                                                   |
+| Ranking                | prospect ranking                                                                                                                                                                      |
+| School                 | name of school being recruited out of                                                                                                                                                 |
+| CommittedTo            | college player is committed to play at                                                                                                                                                |
+| Position               | position of the player (wide receiver)                                                                                                                                                |
+| Height                 | player's height in inches                                                                                                                                                             |
+| Weight                 | player's weight in pounds                                                                                                                                                             |
+| Stars                  | ranking based on chance in play in college or NFL from 0-5                                                                                                                            |
+| Rating                 | rating of prospect from 0 to 1                                                                                                                                                        |
+| City                   | home city of the prospect                                                                                                                                                             |
+| StateProvince          | home US state/Canadian province of the player (including Washington DC)                                                                                                               |
+| Country                | home country of the prospect (either US or Canada)                                                                                                                                    |
+| HometownInfo Latitude  | latitude of the player's hometown                                                                                                                                                     |
+| HometownInfo Longitude | longitude of the player's hometown                                                                                                                                                    |
+| HometownInfo FipsCode  | FIPS code of the player's hometown                                                                                                                                                    |
+
+Recruiting Data File
+
+:   [football_recruiting.csv](../data/football_recruiting.csv)
+
+## Questions
+
+-   Join the recruiting and receivers data sets so that only the players in both datasets remain.
+
+-   Split the recruiting data set into two based off of years.
+
+-   Clean variable names so there's no spaces or special characters
+
+## References
+
+Olympics
+
+<https://www.olympics.com>

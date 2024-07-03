@@ -1,0 +1,59 @@
+---
+title: "Data Prep"
+author: "Brendan Karadenes"
+format: html
+---
+
+```{r}
+# read in data and packages
+# data read in as "recruits" is from https://collegefootballdata.com/exporter/recruiting/players
+# filtering for specific years (2013-2019), WR position and clicking the export button
+# the "receivers" data is from here https://www.pro-football-reference.com/years/2023/receiving.htm
+# after clicking get as Excel Workbook
+library(tidyverse)
+library(readxl)
+receivers <- read_excel("recievers.xlsx")
+recruits <- read_excel("recruit.xlsx")
+recruits_17 <- read_excel("recruit_17.xlsx")
+recruits_15 <- read_excel("recruit_15.xlsx")
+recruits_18 <- read_excel("recruit_18.xlsx")
+recruits_19 <- read_excel("recruit_19.xlsx")
+recruits_14 <- read_excel("recruit_14.xlsx")
+recruits_13 <- read_excel("recruit_13.xlsx")
+```
+
+```{r}
+recruits_17 <- recruits_17 %>%
+  rename(Player = Name)
+recruits <- recruits %>%
+  rename(Player = Name)
+recruits_13 <- recruits_13 %>%
+  rename(Player = Name)
+recruits_14 <- recruits_14 %>%
+  rename(Player = Name)
+recruits_15 <- recruits_15 %>%
+  rename(Player = Name)
+recruits_18 <- recruits_18 %>%
+  rename(Player = Name)
+recruits_19 <- recruits_19 %>%
+  rename(Player = Name)
+```
+
+```{r}
+recruiting <- full_join(x = recruits_15, y = recruits)
+recruiting <- full_join(x = recruiting, y = recruits_17)
+recruiting <- full_join(x = recruiting, y = recruits_18)
+recruiting <- full_join(x = recruiting, y = recruits_19)
+recruiting <- full_join(x = recruiting, y = recruits_14)
+recruiting <- full_join(x = recruiting, y = recruits_13)
+```
+
+```{r}
+football_recruiting <- full_join(x = recruiting, y = receivers, by = "Player")
+write.csv(football_recruiting, "football_recruiting.csv", row.names = FALSE)
+```
+
+
+
+
+

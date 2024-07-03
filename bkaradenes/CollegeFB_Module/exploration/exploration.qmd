@@ -84,6 +84,21 @@ labs(title = "Recruiting Rating in each State")+
 theme(plot.title = element_text(hjust = .65))
 ```
 
+```{r}
+recruiting <- recruiting %>%
+  rename(state = StateProvince)
+plot_usmap(data = recruiting, values = "state", color = "red") +
+  scale_fill_continuous(name = "Rating", low = "white", high = "blue")+
+  theme(legend.position = "right") +
+  labs(title = "Recruiting Rating in each State") +
+  theme(plot.title = element_text(hjust = .65))
+```
+
+```{r}
+recruiting %>%
+  group_by(state) %>%
+  summarise(nAthletes = n())
+```
 
 
 
