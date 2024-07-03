@@ -1,0 +1,11 @@
+---
+title: "Football Worksheet"
+author: "Brendan Karadenes"
+format: html
+---
+
+## Introduction
+
+College football has the most widely followed recruiting cycle of any college sport. The top high school players are often being looked at years before they graduate. Wide receivers are responsible for catching passes from the quarterback and running down the field to gain the most yards as possible. They are an integral part of the offense. 
+
+We will be investigating recruiting data from 2013 to 2019 for highschool wide receivers. We are interested in cleaning the data and analyzing the impact some of them had in the NFL.
