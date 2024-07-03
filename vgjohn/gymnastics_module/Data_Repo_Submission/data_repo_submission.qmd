@@ -1,10 +1,11 @@
 ---
-title: "Randomization Samples and Women's College Gymnastics"
+title: "NCAA Women's Gymnastics Championship Team Event Scores"
 author: "Vivian Johnson" 
-date: "July 1, 2024" 
+date: "July 3, 2024" 
 
 categories:
-  - 
+  - Bootstrap Distribution
+  - Confidence Interval
 ---
 
 ## Motivation
@@ -45,7 +46,13 @@ The `ncaa_gymnastics.csv` data set includes data from the women's NCAA Gymnastic
 
 ## Questions
 
+1. Calculate the bootstrap statistic for the sample population
+
+2. Create and comment on a bootstrap distribution. 
+
+3. Create a confidence interval for the population statistic
+
 
 ## References
 
-The data are compiled from the NCA
+The data are compiled from the [USA Gymnastics Results Website](https://usagym.org/results/2024/){target="_blank"}, which holds data from the NCAA Women's Gymnastics Championship for the relevant years. 

@@ -55,3 +55,51 @@ ncaa_gymnastics_data %>% group_by(Team) %>% count(Rank)
 
 ```
 look at random sampling with the scores for different events , standard deviation 
+
+scatterplot of 
+```{r}
+ggplot(data = ncaa_gymnastics_data,
+       mapping = aes(x = Beam, y = Bar)) +
+  geom_point()
+```
+each event correlation matrix with the other events 
+```{r}
+cor(x = ncaa_gymnastics_data[, c(4:7)])
+```
+not very strong correlations between events
+
+regression analysis to see how much each event contributes to the total 
+```{r}
+reg_total <- lm(Total ~ Vault + Bar + Beam + Floor,
+                data = ncaa_gymnastics_data)
+
+summary(reg_total)
+```
+can see that bar and beam probably contribute more to the total score than floor and vault because the coefficients are higher
+
+interesting because bar and beam had the highest correlation between events. 
+
+bootstrap samples and confidence intervals for the mean scores on each event 
+
+```{r}
+# mean scores for each first place team 
+ncaa_gymnastics_data %>% group_by(Rank) %>%
+  summarise(
+    mean_Vault = mean(Vault),
+    sd_Vault = sd(Vault),
+    mean_Bar = mean(Bar),
+    sd_Bar = sd(Bar),
+    mean_Beam = mean(Beam),
+    sd_Beam = sd(Beam),
+    mean_Floor = mean(Floor),
+    sd_Floor = sd(Floor),
+    mean_Total = mean(Total),
+    sd_Total = sd(Total)
+  )
+```
+
+want to create a bootstrap samples for the mean using data from all the number one ranke teams 
+```{r}
+ncaa_gymnastics_data %>% filter(Rank == 1) %>% select(Total)
+```
+
