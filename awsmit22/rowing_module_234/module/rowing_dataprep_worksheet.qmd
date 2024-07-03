@@ -9,7 +9,7 @@ The Summer Olympic Games are an international athletics event held every four ye
 
 The original data set ([athlete_events.csv](athlete_events.csv){target="_blank"}) is not just about rowing but for every Olympic sport since 1896. It will be important to adjust the data so that the `Sport` variable is just rowing. Moreover, in the dataset medals are given to each athlete in the boat. In Olympic scoring however, the medals should be counted as one towards the entire boat. It is important to make sure this is the case when adjusting the `Medal` variable.
 
-In looking at the total medals and total points for each nation, it is interesting to see which nations dominate in Olympic rowing. Additionally, looking at the overall distribution of the medals for all countries provides insight on just how lob-sided medaling can be in rowing at the Olympic level. This effect could likely be attributed towards how much funding nations are placing towards their rowing teams. **The tasks in this worksheet are at an introductory data science level. The goal of these tasks is to tidy the data so that it can be used for the worksheets in the applied regression analysis version of this module.**
+In looking at the total medals and total points for each nation, it is interesting to see which nations dominate in Olympic rowing. Additionally, looking at the overall distribution of the medals for all countries provides insight on just how lob-sided medaling can be in rowing at the Olympic level. This effect could likely be attributed towards how much funding nations are placing towards their rowing teams.
 
 ## Load in the libraries and data
 
@@ -18,13 +18,13 @@ library(tidyverse)
 library(readr)
 ```
 
-Find the dataset on [this link](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download) and download it.
+Find the dataset on [this link](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download){target="_blank"} (https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results?resource=download)and download it.
 
 ```{r message=FALSE, warning=FALSE}
 athletes_df <- read_csv("athlete_events.csv")
 ```
 
-## Task 1
+### Task 1
 
 Adjust the data so that it contains rowing as the only `Sport` and remove any NA values for `Medal`, meaning the dataset will only have medaling countries.
 
@@ -32,7 +32,7 @@ Adjust the data so that it contains rowing as the only `Sport` and remove any NA
 
 ```
 
-## Task 2
+### Task 2
 
 Organize the data so that there is only one athlete representing each team in each event in each year.
 
@@ -40,9 +40,9 @@ Organize the data so that there is only one athlete representing each team in ea
 
 ```
 
-## Task 3
+### Task 3
 
-There is a lot of debate about how to best weigh the points for the different types of medals. Read [this page](https://www.topendsports.com/events/summer/medal-tally/rankings-weighted.htm){target="_blank"} for more information about different medal point scales.
+There is a lot of debate about how to best weigh the points for the different types of medals. Read [this page](https://www.topendsports.com/events/summer/medal-tally/rankings-weighted.htm){target="_blank"} (https://www.topendsports.com/events/summer/medal-tally/rankings-weighted.htm) for more information about different medal point scales.
 
 Create a variable for the total number of points each country won using any weighting scale you want. Create another variable for the total number of medals each country won.
 
@@ -50,6 +50,6 @@ Create a variable for the total number of points each country won using any weig
 
 ```
 
-## Task 4
+### Task 4
 
-Create a histogram of total_points for all countries. Describe the distribution of points.
+Create a histogram of points for all countries. Describe the distribution of points.

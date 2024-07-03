@@ -41,7 +41,17 @@ There is a lot of debate about how to best weigh the points for the different ty
 Create a variable for the total number of points each country won using any weighting scale you want. Create another variable for the total number of medals each country won.
 
 ```{r}
-country_medals <- country_event |> mutate(n_point= case_when(Medal == "Gold" ~ 3, Medal == "Silver" ~ 2, Medal == "Bronze" ~ 1), n_gold = case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 0, Medal == "Bronze" ~ 0), n_silver = case_when(Medal == "Gold" ~ 0, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 0), n_bronze = case_when(Medal == "Gold" ~ 0, Medal == "Silver" ~ 0, Medal == "Bronze" ~ 1)) |> group_by(NOC) |> summarise(total_medals = n(), total_points = sum(n_point), total_gold = sum(n_gold), total_silver = sum(n_silver), total_bronze = sum(n_bronze))
+country_medals <- country_event |> 
+  mutate(n_point= case_when(Medal == "Gold" ~ 3, Medal == "Silver" ~ 2, Medal == "Bronze" ~ 1), 
+         n_gold = case_when(Medal == "Gold" ~ 1, Medal == "Silver" ~ 0, Medal == "Bronze" ~ 0), 
+         n_silver = case_when(Medal == "Gold" ~ 0, Medal == "Silver" ~ 1, Medal == "Bronze" ~ 0), 
+         n_bronze = case_when(Medal == "Gold" ~ 0, Medal == "Silver" ~ 0, Medal == "Bronze" ~ 1)) |> 
+  group_by(NOC) |> 
+  summarise(medals = n(), 
+            points = sum(n_point), 
+            gold = sum(n_gold), 
+            silver = sum(n_silver), 
+            bronze = sum(n_bronze))
 ```
 
 ## Task 4
@@ -51,7 +61,7 @@ Create a histogram of total_points for all countries. Describe the distribution 
 *The data is right-skewed meaning that the values are clustered around the smaller values for points, so it is more common for nations to get fewer medals in Olympic rowing.*
 
 ```{r}
-medals_hist <- medals_df |> filter(points >= 5) |> arrange(desc(points)) 
+medals_hist <- country_medals |> filter(points >= 5) |> arrange(desc(points)) 
 
-ggplot(medals_df, aes(x = points)) + geom_histogram(fill = "lightblue", colour = "black", bins = 20) + theme_minimal() + labs(title = "Histogram of points for all countries in all events")
+ggplot(medals_hist, aes(x = points)) + geom_histogram(fill = "lightblue", colour = "black", bins = 20) + theme_minimal() + labs(title = "Histogram of points for all countries in all events")
 ```
