@@ -56,7 +56,7 @@ country_medals <- country_event |>
 
 ## Task 4
 
-Create a histogram of total_points for all countries. Describe the distribution of points.
+Create a histogram of points for all countries. Describe the distribution of points.
 
 *The data is right-skewed meaning that the values are clustered around the smaller values for points, so it is more common for nations to get fewer medals in Olympic rowing.*
 
