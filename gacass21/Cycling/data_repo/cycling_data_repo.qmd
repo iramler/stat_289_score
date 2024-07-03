@@ -1,0 +1,36 @@
+---
+title: Tour de France Stage and General Classifacation Results
+author: Gavin Cassidy
+date: July 3, 2024
+description: 
+categories:
+  - 
+---
+
+## Motivation
+
+The Tour de France is a cycling stage race that happening every summer around France and other neighboring countries. This race consists of 21 stages, covering all types of terrain and difficulty where riders battle to beat each other up and down mountains and through any inclement weather. Starting in 1903, the Tour is the premier race on the cycling circuit, with most riders considering just finishing all 21 stages to be an enormous accomplishment. The stages cover a variety of different terrains, with some stages climbing high into the Alps and the Pyrenees, and others covering flat ground around France. Cycling teams bring 8 riders each with the goal of either winning stages, Climbing or Sprint Jerseys, or the General Classification. Winning a Tour de France stage is a career moment for most cyclists, with so few opportunities each year for riders to win one. Some riders dominate certain types of stages, with certain sprinters or climbers winning multiple stages in a single edition. Mark Cavendish holds the record with 35 stage wins, all of them coming from a sprint. There are also points classifications for sprints and climbing that teams will attempt to win, with points coming at race finishes or at the tops of climbs.
+
+The General Classification is the pinnacle of the Tour de France. The General Classification(GC) is the overall competition of the Tour de France, with riders competing to see who can complete the 21 stages in the least cumulative time. The leader of the GC is indicated by wearing the yellow jersey, also know as the Maillot Jaune. Teams fight to win the yellow jersey on the first stage, and then hope that their rider can survive going up the mountains. GC teams will target certain stages where riders can gain time and focus on those. These include time trials, where cyclists ride a shorter course individually to see who can complete the course the fastest, or mountain stages where elevation and heat make conditions brutal for all riders. Time gaps in General Classification battles can be relatively small considering the Tour de France often covers more than 4000 km across France. The record for largest margin of victory was in the first tour where Maurice Garin won by a margin of almost 3 hours. These days the winner that emerges after three weeks is usually around 3-5 minutes ahead of their closest rivals, while the tour has been decided by as little as 8 seconds. 
+
+
+## Data
+
+This data has stage results from 2019-2023 for Tour de France. 
+
+
+
+[tdf_gc.csv](tdf_gc.csv)
+
+
+
+
+
+
+[tdf_stage_results.csv](tdf_stage_results.csv)
+
+## Questions
+
+
+
+## References
