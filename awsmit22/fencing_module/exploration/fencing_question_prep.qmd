@@ -57,23 +57,41 @@ iqr
 
 # Question 4
 
+This table shows the 5 fencers with the least `Victories` in women's foil. Identify any outliers using the IQR method. 
+
+```{r}
+wf |> arrange(Victories) |> head()
+```
+
+```{r}
+# Answer
+1.5 * 4.25
+9.75 - 6.375
+```
+
+2 < 3.375
+
+*Alina Lee is an outlier since her number of Victories is less than the lower quantile minus 1.5(IQR).*
+
+# Question 5
+
 Draw a boxplot of `Victories` for womens' foil. 
 
 ```{r}
 boxplot(wf$Victories)
 ```
 
-# Question 5
+# Question 6
 
-Describe the trend of this scatterplot of `Victories` and `Ind`.
+Describe the trend of this scatterplot of `Victories` and `Ind` for the entire dataset.
 
 ```{r}
-plot(Victories ~ Ind, data = fencing_df)
+ggplot(data = fencing_df, aes(x=Ind, y = Victories)) + geom_point(alpha = 0.5, colour = "blue") + theme_minimal() + labs(title = "Scatterplot of the Indicator Variable Against Victories") + theme(plot.title = element_text(size = 15, hjust = 0.5))
 ```
 
 *Victories increase with a higher indicator variable.*
 
-# Question 6
+# Question 7
 
 The least squares line for `Victories` predicted by `Ind` is Victories = 11.5 + 0.16Ind. Interpret the slope of the line. 
 
@@ -83,7 +101,7 @@ lm(Victories ~ Ind, data = fencing_df)
 
 *For every unit increase in the indicator variable, a fencer's victories increase by 0.16.*
 
-# Question 7
+# Question 8
 
 A fencer has an indicator score of 16, calculate their predicted `Victories`.
 
@@ -94,7 +112,7 @@ victories
 
 *A fencer with an indicator score of 16 should have 14.06 or roughly 14 victories.*
 
-# Question 8
+# Question 9
 
 The actual value of `Victories` for a fencer with an indicator score of 16 is 15, calculate the residual.
 
@@ -110,7 +128,7 @@ resid
 
 *1*
 
-# Question 9
+# Question 10
 
 The model Victories = 11.5 + 0.16Ind has an r-squared value of 92%. Explain the significance of this value. 
 
