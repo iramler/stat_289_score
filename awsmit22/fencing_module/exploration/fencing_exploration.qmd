@@ -8,6 +8,7 @@ format: html
 ```{r}
 library(tidyverse)
 library(readr)
+library(broom)
 ```
 
 # Data
@@ -98,9 +99,31 @@ barplot <- fencing_df |> group_by(School) |> summarise(Victories = sum(Victories
 ggplot(data = barplot, aes(x = School, y = Victories)) + geom_col() + coord_flip()
 ```
 
+# Modelling
 
+```{r}
+# Full mod
+full_mod <- lm(Place ~ Victories + Bouts + Pct + TS + TR + Ind + Gender + Weapon + Ivy, data = fencing_df)
+full_mod |> tidy()
+```
 
+```{r}
+# Indicator to predict place
+ind_mod <- lm(Place ~ Ind, data = fencing_df)
+ind_mod |> tidy()
+```
 
+```{r}
+# Indicator to predict pct
+pct_mod <- lm(Pct ~ Ind, data = fencing_df)
+pct_mod |> tidy()
+```
+
+```{r}
+# Bigger mod with categorical predictors
+bi_mod <- lm(Pct ~ Gender + Weapon + Ivy, data = fencing_df)
+bi_mod |> tidy()
+```
 
 
 
