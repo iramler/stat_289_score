@@ -36,15 +36,16 @@ For this activity, you will be using data from the data set `nba_draft.csv`. The
 
 **1.  Load in the data file `nba_draft.csv`.** 
 
-```{r echo=TRUE}
+```{r echo=TRUE quiet=TRUE}
 # make sure the dataset is downloaded and is saved to the student's computer. 
-# nba_draft <- read_csv( "/the path to the file")
+library(tidyverse)
+nba_draft <- read_csv("nba_draft.csv")
 ```
 
 **2.  Right now, we only want to look at players that were selected in the first round of the draft. This information is found in the `round_picked` variable. Write the code that selects only those players who were chosen in the first round. Store it in an object called `nba_round1s`.**
 
 ```{r echo=TRUE}
-#nba_round1s <- nba_draft %>% filter(round_picked == 1)
+nba_round1s <- nba_draft %>% filter(round_picked == 1)
 ```
 
 **3. In order to being our ANOVA exploration, we need to look at different groups within the round one selections. Since we have the order in which the players were selected (stored in the `pick_in_round` variable), we can make an additional categorical variable to keep track of where in the draft the player was selected. Make a new variable, called `pick_category`, which follows the following conditions: **
@@ -54,21 +55,21 @@ For this activity, you will be using data from the data set `nba_draft.csv`. The
 - `pick_category` = "21-30" if the player was selected in picks 21-30
 
 ```{r}
-# nba_round1s <- nba_round1s %>%
-#   mutate(
-#     pick_category = case_when(
-#       pick_in_round >= 1 & pick_in_round <= 10 ~ "1-10",
-#       pick_in_round > 10 & pick_in_round <= 20 ~ "11-20",
-#       pick_in_round > 20 & pick_in_round <= 30 ~ "21-30"
-#     )
-#   )
+nba_round1s <- nba_round1s %>%
+  mutate(
+    pick_category = case_when(
+      pick_in_round >= 1 & pick_in_round <= 10 ~ "1-10",
+      pick_in_round > 10 & pick_in_round <= 20 ~ "11-20",
+      pick_in_round > 20 & pick_in_round <= 30 ~ "21-30"
+    )
+  )
 ```
 
 **4. Make the `pick_category` variable a factor with three levels.**
 
 ```{r}
-# nba_round1s$pick_category <- factor(nba_round1s$pick_category,
-#                                   levels = c("1-10", "11-20", "21-30"))
+ nba_round1s$pick_category <- factor(nba_round1s$pick_category,
+                                  levels = c("1-10", "11-20", "21-30"))
 ```
 
 ## Part 3 - ANOVA
@@ -76,43 +77,43 @@ For this activity, you will be using data from the data set `nba_draft.csv`. The
 **1. Create a box plot that compares the average minutes played per game (`mins_per_game`) based on a player's selection in the first round of the NBA draft (`pick_category`). Try to include a title, color coded legend, and axis labels.**
 
 ```{r}
-# ggplot(nba_round1s,
-#        mapping = aes(x = mins_per_game,
-#                      y = pick_category,
-#                      fill = pick_category)) +
-#   geom_boxplot() +
-#   labs(title = "Boxplot of MPG based on Round 1 NBA draft picks",
-#        x = "Minutes Per Game",
-#        y= "Category in Draft",
-#        fill = "Pick in NBA Draft") +
-#   theme_minimal()
+ggplot(nba_round1s,
+       mapping = aes(x = mins_per_game,
+                     y = pick_category,
+                     fill = pick_category)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of MPG based on Round 1 NBA draft picks",
+       x = "Minutes Per Game",
+       y= "Category in Draft",
+       fill = "Pick in NBA Draft") +
+  theme_minimal()
 ```
 
 **2. Below is a density plot and its corresponding code comparing the average minutes played per game based on a player's selection in the first round of the NBA draft. Based on this density plot and the box plots you created above, do you feel as though ANOVA is appropriate? What conclusions can you draw upon first glance of the two data visualizations? Are there any concerns? **
 
-![Density Plot](/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/nba_draft_module_213/Exploration/DensityPlot.jpg)
+![Density Plot](DensityPlot.jpg)
 
 ```{r}
-# means = nba_round1s %>%
-#   group_by(pick_category) %>%
-#   summarize(
-#     mean_value = mean(mins_per_game))
-# 
-# 
-# ggplot(nba_round1s,
-#        mapping = aes(x = mins_per_game,
-#                      fill = pick_category)) +
-#   geom_density(alpha = 0.4) +
-#   geom_vline(data = means,
-#              mapping = aes(xintercept = mean_value, color = pick_category),
-#              linetype = "dashed",
-#              size = 1,
-#              show.legend = FALSE) +
-#   labs(title = "Distribution of MPG based on Round 1 NBA draft picks",
-#        x = "Minutes Per Game",
-#        y = "Density",
-#        fill = "Pick in draft in NBA") +
-#   theme_minimal()
+means = nba_round1s %>%
+  group_by(pick_category) %>%
+  summarize(
+    mean_value = mean(mins_per_game))
+
+
+ggplot(nba_round1s,
+       mapping = aes(x = mins_per_game,
+                     fill = pick_category)) +
+  geom_density(alpha = 0.4) +
+  geom_vline(data = means,
+             mapping = aes(xintercept = mean_value, color = pick_category),
+             linetype = "dashed",
+             size = 1,
+             show.legend = FALSE) +
+  labs(title = "Distribution of MPG based on Round 1 NBA draft picks",
+       x = "Minutes Per Game",
+       y = "Density",
+       fill = "Pick in draft in NBA") +
+  theme_minimal()
 ```
 
 The box plots show that the variance between the three groups seems to be relatively similar, which is necessary for an ANOVA test. There are limited extreme outliers which is good when looking at the distribution and variance. The distribution of the 11-20 and 21-30 groups seem to follow a relatively normal shape and have means somewhat close together. The 1-10 group is skewed slightly to the right which could be slightly concerning. A one-way ANOVA does seem appropriate, the conditions seem met and there could be a significant difference among the groups. 
@@ -132,10 +133,10 @@ The box plots show that the variance between the three groups seems to be relati
 **4. Run an ANOVA test in R and print the summary table** 
 
 ```{r}
-# mpg_aov <- aov(mins_per_game ~ pick_category,
-#                  data = nba_round1s)
-# 
-# summary(mpg_aov)
+mpg_aov <- aov(mins_per_game ~ pick_category,
+                 data = nba_round1s)
+
+summary(mpg_aov)
 ```
 
 **5. Is there sufficient evidence that there is a difference in the mean amount of minutes played per game based on the group that player was selected in the first round of the draft?**
@@ -150,7 +151,7 @@ The box plots show that the variance between the three groups seems to be relati
 **7. Is there evidence that there is a difference in average minutes played per game between someone drafted in picks 1-10 compared to someone drafted in picks 11-20? If so, what is the difference? Provide evidence as well as a specific number.**
 
 ```{r}
-#TukeyHSD(mpg_aov)
+TukeyHSD(mpg_aov)
 ```
 
 * From the output, we can see that with convincing evidence, there is a significant difference between the number of minutes played by those selected 1-10 and those who were selected 11-20. We know this because the p-value of that specific comparison is significant (0.0000), meaning that there is a difference for those specific groups. From the output, the difference between number of minutes played between those who were selected 1-10 and 11-20 is 7.035, with those who were selected 1-10 playing on average 7.035 more minutes.
