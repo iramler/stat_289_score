@@ -5,10 +5,10 @@ format: html
 
 
 Get the data
-```{r}
-library(tidyverse)
+```{r message=FALSE, warning=FALSE}
+library(tidyverse,quietly=TRUE)
 library(readr)
-athletes_df <- read_csv("athlete_events.csv")
+athletes_df <- read_csv("athlete_events.csv", show_col_types = FALSE)
 ```
 
 
@@ -31,7 +31,9 @@ rowing_df <- rowing_df |> filter(!is.na(Medal))
 Organize the data so that there is only one athlete representing each team in each event in each year.
 
 ```{r}
-country_event <- rowing_df |> group_by(Year, Event, Medal, NOC) |> select(Year, Event, NOC, Medal) |> slice(1) |> arrange(Year, Event, Medal)
+country_event <- rowing_df |> group_by(Year, Event, Medal, NOC) |> 
+  select(Year, Event, NOC, Medal) |> slice(1) |> 
+  arrange(Year, Event, Medal)
 ```
 
 ## Task 3
@@ -63,5 +65,8 @@ Create a histogram of points for all countries. Describe the distribution of poi
 ```{r}
 medals_hist <- country_medals |> filter(points >= 5) |> arrange(desc(points)) 
 
-ggplot(medals_hist, aes(x = points)) + geom_histogram(fill = "lightblue", colour = "black", bins = 20) + theme_minimal() + labs(title = "Histogram of points for all countries in all events")
+ggplot(medals_hist, aes(x = points)) + 
+  geom_histogram(fill = "lightblue", colour = "black", bins = 20) + 
+  theme_minimal() + 
+  labs(title = "Histogram of points for all countries in all events")
 ```
