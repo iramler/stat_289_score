@@ -3,6 +3,17 @@ title: "rowing_dataprep_worksheet_ANSWERS"
 format: html
 ---
 
+
+Get the data
+```{r}
+library(tidyverse)
+library(readr)
+athletes_df <- read_csv("athlete_events.csv")
+```
+
+
+
+
 ## Task 1
 
 Adjust the data so that it contains rowing as the only `Sport` and remove any NA values for `Medal`, meaning the dataset will only have medaling countries.
