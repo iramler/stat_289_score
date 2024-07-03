@@ -1,15 +1,15 @@
 ---
 title: "Olympic Swimming - Changes in the 100m Event"
 author:
-  - name: "Ivan Ramler"
-    email: iramler@stlawu.edu
+  - name: "Brendan Karadenes"
     affiliation:
       - id: slu
         name: St. Lawrence University
   - name: "Robin Lock"
     affiliation:
       - ref: slu
-  - name: "Brendan Karadenes"
+  - name: "Ivan Ramler"
+    email: iramler@stlawu.edu
     affiliation:
       - ref: slu
 date: June 14, 2024
@@ -64,7 +64,7 @@ Available on the [SCORE Data Repository](https://data.scorenetwork.org/): [olymp
 <summary><b>Variable Descriptions</b></summary>
 
 | Variable    | Description                                                                           |
-|------------------|------------------------------------------------------|
+|---------------|---------------------------------------------------------|
 | Location    | hosting city of the Olympics that the swimmer competed in                             |
 | Year        | year that the swimmer competed                                                        |
 | dist_m      | distance in meters of the race                                                        |
