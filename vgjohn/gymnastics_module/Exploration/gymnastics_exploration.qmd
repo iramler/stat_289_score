@@ -54,4 +54,4 @@ proportion? difference in proportions?
 ncaa_gymnastics_data %>% group_by(Team) %>% count(Rank)
 
 ```
-
+look at random sampling with the scores for different events , standard deviation 
