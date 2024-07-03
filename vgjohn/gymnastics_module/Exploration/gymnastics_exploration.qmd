@@ -85,21 +85,33 @@ bootstrap samples and confidence intervals for the mean scores on each event
 # mean scores for each first place team 
 ncaa_gymnastics_data %>% group_by(Rank) %>%
   summarise(
-    mean_Vault = mean(Vault),
-    sd_Vault = sd(Vault),
-    mean_Bar = mean(Bar),
-    sd_Bar = sd(Bar),
-    mean_Beam = mean(Beam),
-    sd_Beam = sd(Beam),
-    mean_Floor = mean(Floor),
-    sd_Floor = sd(Floor),
-    mean_Total = mean(Total),
-    sd_Total = sd(Total)
+    mean_Vault = round(mean(Vault), digits = 2),
+    sd_Vault = round(sd(Vault), 2),
+    mean_Bar = round(mean(Bar), 2),
+    sd_Bar = round(sd(Bar), 2),
+    mean_Beam = round(mean(Beam), 2),
+    sd_Beam = round(sd(Beam), 2),
+    mean_Floor = round(mean(Floor),2),
+    sd_Floor = round(sd(Floor), 2),
+    mean_Total = round(mean(Total), 2),
+    sd_Total = round(sd(Total),2)
   )
 ```
 
-want to create a bootstrap samples for the mean using data from all the number one ranke teams 
+want to create a bootstrap samples for the mean using data from all the number one rank teams 
 ```{r}
-ncaa_gymnastics_data %>% filter(Rank == 1) %>% select(Total)
+total_beam_rank1 <- ncaa_gymnastics_data %>% filter(Rank == 1) %>% select(Rank, Beam, Total) %>% round(digits = 2)
+total_beam_rank4 <- ncaa_gymnastics_data %>% filter(Rank == 4) %>% select(Rank, Beam, Total) %>% round(digits = 2)
+
 ```
 
+do something with comparing the individual event scores for two different ranks 
+get confidence intervals for each one 
+
+do something with comparing the 
+
+```{r}
+beam_first_last <- 
+  ncaa_gymnastics_data %>% group_by(Rank) %>% filter(Rank == 1 | Rank == 4) %>%
+  select(Beam, Total) %>% arrange(Rank) %>% round(digits = 2)
+```
