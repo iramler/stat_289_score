@@ -59,6 +59,6 @@ The data set has 144 rows with 13 variables. Each row is a fencer who participat
 
 [Fencing Wikipedia](https://en.wikipedia.org/wiki/Fencing){target="_blank"}
 
-[Fencing](https://en.wikipedia.org/wiki/Fencing){target="_blank"}
+
 
 

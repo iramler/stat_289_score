@@ -1,0 +1,116 @@
+---
+title: "fencing_question_prep"
+format: html
+---
+
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+# Data
+
+```{r}
+fencing_df <- read_csv("~/Desktop/git/score_new/awsmit22/fencing_module/exploration/fencing.csv")
+fencing_df
+```
+
+# Question 1
+
+Which of these histograms of `Victories` for each `Weapon` and `Gender` combination looks normally distributed?
+
+```{r}
+ggplot(data = fencing_df, aes(x = Victories)) + geom_histogram(bins = 10, colour = "black", fill = "lightblue") + facet_grid( Gender ~ Weapon) + theme_minimal() + theme(axis.title = element_text(size = 12, face = "bold"),strip.text = element_text(size = 12, face = "bold"), plot.title = element_text(size = 20, hjust = 0.5)) + labs(title = "Histograms of Victories for Each Weapon and Both Genders") 
+```
+
+*The distribution of `Victories` for womens' foil looks to have a normal distribution, due to its symmetrical appearance.*
+
+# Question 2
+
+The mean number of `Victories` for womens' foil is 11.5 and the standard deviation is 3.97. Can it be concluded that the distribution of `Victories` for womens' foil is normal?
+
+```{r}
+wf <- fencing_df |> filter(Gender == "Women" & Weapon == "Foil")
+mean(wf$Victories)
+sd(wf$Victories)
+```
+
+*No, normal distribution has to have a mean of 0 and a standard deviation of 1, just because a variable has a symmetrical distribution does not mean it is normally distributed.*
+
+# Question 3
+
+The 5 number summary of `Victories` for womens' foil is provided below. Calculate the IQR of `Victories` for womens' foil.
+
+```{r}
+summary(wf$Victories)
+```
+
+```{r}
+# Answer
+iqr <- 14-9.75
+iqr
+```
+
+*4.25*
+
+# Question 4
+
+Draw a boxplot of `Victories` for womens' foil. 
+
+```{r}
+boxplot(wf$Victories)
+```
+
+# Question 5
+
+Describe the trend of this scatterplot of `Victories` and `Ind`.
+
+```{r}
+plot(Victories ~ Ind, data = fencing_df)
+```
+
+*Victories increase with a higher indicator variable.*
+
+# Question 6
+
+The least squares line for `Victories` predicted by `Ind` is Victories = 11.5 + 0.16Ind. Interpret the slope of the line. 
+
+```{r}
+lm(Victories ~ Ind, data = fencing_df)
+```
+
+*For every unit increase in the indicator variable, a fencer's victories increase by 0.16.*
+
+# Question 7
+
+A fencer has an indicator score of 16, calculate their predicted `Victories`.
+
+```{r}
+victories <- 11.5 + (0.16*16)
+victories
+```
+
+*A fencer with an indicator score of 16 should have 14.06 or roughly 14 victories.*
+
+# Question 8
+
+The actual value of `Victories` for a fencer with an indicator score of 16 is 15, calculate the residual.
+
+```{r}
+fencing_df |> filter(Ind == 16)
+```
+
+```{r}
+# Answer
+resid <- 15-14
+resid
+```
+
+*1*
+
+# Question 9
+
+**MAYBE DO CONFIDENCE INTERVALS**
+
