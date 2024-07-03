@@ -106,6 +106,8 @@ The `nba_draft` data set includes data from players that were selected in the NB
 
 </details>
 
+Download [nba_draft.csv](nba_draft.csv){target="_blank"}
+
 #### Data Source
 
 This data is sourced from [Kaggle](https://www.kaggle.com/datasets/benwieland/nba-draft-data){target="_blank"}, and contains statistics from players selected in the NBA draft, as well as further on in their careers. 
