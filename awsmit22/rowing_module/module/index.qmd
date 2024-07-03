@@ -1,12 +1,12 @@
 ---
 title: "Olympic Rowing Medals Between 1896 and 2022"
 author:
-  - name: Ivan Ramler
-    email: iramler@stlawu.edu
+  - name: Abigail Smith
     affiliation:
       - id: slu
         name: St. Lawrence University
-  - name: Abigail Smith
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
     affiliation:
       - ref: slu
 date: June 6, 2024
