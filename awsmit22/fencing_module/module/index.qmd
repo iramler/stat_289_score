@@ -93,13 +93,15 @@ Download data:
 
 **More information on the rules and set up**
 
-[Olympic Badminton Rules](https://olympics.com/en/news/badminton-guide-how-to-play-rules-olympic-history){target="_blank"}
+[Olympic Fencing Rules](https://www.nbcolympics.com/news/fencing-101-rules-and-scoring){target="_blank"}
 
-[Badminton Wikipedia](https://en.wikipedia.org/wiki/Badminton){target="_blank"}
+[NCAA Fencing Website](https://www.ncaa.com/sports/fencing){target="_blank"}
 
-[BWF Tour Website](https://bwfworldtour.bwfbadminton.com/){target="_blank"}
+[NCAA Fencing Championships Wikipedia](https://en.wikipedia.org/wiki/NCAA_Fencing_Championships){target="_blank"}
 
-[BWF Tour Wikipedia](https://en.wikipedia.org/wiki/BWF_World_Tour){target="_blank"}
+[NCAA Fencing Wikipedia](https://en.wikipedia.org/wiki/Collegiate_fencing){target="_blank"}
+
+[Fencing Wikipedia](https://en.wikipedia.org/wiki/Fencing){target="_blank"}
 
 </details>
 
@@ -107,15 +109,10 @@ Download data:
 
 We provide editable MS Word handouts along with their solutions.
 
-[Worksheet](badminton_worksheet.docx)
+[Worksheet](fencing_worksheet.docx)
 
-[Worksheet Answers](badminton_worksheet_KEY.docx)
+[Worksheet Answers](fencing_worksheet_KEY.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-After finishing this activity, students should discern whether or not there are any clear patterns in the data. These patterns can relate to differences in mean `Wins` based on the `Category` of matches. The patterns can also relate to the predictability of the number of career `Wins` a player will have in the World Tour. 
+After finishing this activity, students should be able to identify if a variable is normally distributed or not. Using the 5-number summary, students will identify outliers and create boxplots. Students will also interpret the slope and r-squared value of a least-squares line and calculate residuals. 
 :::
----
-title: "index"
-format: html
----
-
