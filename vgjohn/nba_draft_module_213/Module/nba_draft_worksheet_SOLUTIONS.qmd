@@ -36,10 +36,10 @@ For this activity, you will be using data from the data set `nba_draft.csv`. The
 
 **1.  Load in the data file `nba_draft.csv`.** 
 
-```{r echo=TRUE quiet=TRUE}
+```{r echo=TRUE, warning=FALSE, message=FALSE}
 # make sure the dataset is downloaded and is saved to the student's computer. 
-library(tidyverse)
-nba_draft <- read_csv("nba_draft.csv")
+library(tidyverse,quietly=TRUE)
+nba_draft <- read_csv("nba_draft.csv",show_col_types = FALSE)
 ```
 
 **2.  Right now, we only want to look at players that were selected in the first round of the draft. This information is found in the `round_picked` variable. Write the code that selects only those players who were chosen in the first round. Store it in an object called `nba_round1s`.**
@@ -93,7 +93,7 @@ ggplot(nba_round1s,
 
 ![Density Plot](DensityPlot.jpg)
 
-```{r}
+```{r eval=FALSE}
 means = nba_round1s %>%
   group_by(pick_category) %>%
   summarize(
@@ -148,7 +148,7 @@ summary(mpg_aov)
 
 * From looking at the means in the density plot and box plot, we are most likely to find a difference between those selected 1-10 and those selected 21-30 because there is the largest difference in mean number of minutes played. We are least likely to find a difference between those selected 11-20 and 21-30 because the difference in mean is the smallest. 
 
-**7. Is there evidence that there is a difference in average minutes played per game between someone drafted in picks 1-10 compared to someone drafted in picks 11-20? If so, what is the difference? Provide evidence as well as a specific number.**
+**7. Is there evidence that there is a difference in average minutes played per game between players drafted in picks 1-10 compared to playres drafted in picks 11-20? If so, what is the difference? Provide evidence as well as a specific number.**
 
 ```{r}
 TukeyHSD(mpg_aov)

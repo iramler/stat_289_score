@@ -1,0 +1,82 @@
+---
+title: "fencing_213_question_prep"
+format: html
+---
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+# Data
+
+```{r}
+fencing_df <- read_csv("~/Desktop/git/score_new/awsmit22/fencing_module/stat213/exploration/fencing.csv")
+fencing_df
+```
+
+# Question 1
+
+Create a subset for Ivies and another for Non-Ivies. Write down the number of Ivy students and the number of Non-Ivy students.
+
+```{r}
+ivies <- subset(fencing_df, Ivy == "Ivy")
+non_ivies <- subset(fencing_df, Ivy == "Non-Ivy")
+```
+
+**Ivy = 54**
+**Non-Ivy = 90**
+
+# Question 2
+
+Find the mean Victories for Ivies and Non-Ivies.
+
+```{r}
+mean(ivies$Victories)
+mean(non_ivies$Victories)
+```
+
+**Ivies = 12.54**
+**Non-Ivies = 10.88**
+
+# Question 3
+
+Find the standard deviation of Victories for Ivies and Non-Ivies.
+
+```{r}
+sd(ivies$Victories)
+sd(non_ivies$Victories)
+```
+
+**Ivies = 3.74**
+**Non-Ivies = 3.71**
+
+# Question 4
+
+Create a side-by-side boxplot of Victories for Ivies and Non-Ivies, compare the distributions.
+
+```{r}
+boxplot(Victories ~ Ivy, data = fencing_df)
+```
+
+# Question 5
+
+Test for a discernible difference in the mean number of victories for ivy league fencers and non-ivy league fencers. 
+
+```{r}
+t.test(Victories ~ Ivy, data = fencing_df)
+```
+
+**H0: mean victories for ivy = mean victories for non-ivy**
+**Ha: mean victories for ivy != mean victories for non-ivy**
+**t_value: 2.59**
+**p_value: 0.011**
+**Conclusion: Reject H0; 0.011 < 0.05**
+**Interpretation: We have significant evidence that the mean number of victories for ivy league fencers is higher than the mean number of victories for non-ivy league fencers.**
+
+
+
+
+
+

@@ -1,12 +1,12 @@
 ---
 title: "Handball Individual Player Statistics for the 2022-2023 Season"
 author:
-  - name: Ivan Ramler
+  - name: Abigail Smith
     email: iramler@stlawu.edu
     affiliation:
       - id: slu
         name: St. Lawrence University
-  - name: Abigail Smith
+  - name: Ivan Ramler
     affiliation:
       - ref: slu
 date: June 12, 2024

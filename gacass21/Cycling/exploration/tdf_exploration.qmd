@@ -216,6 +216,7 @@ gc_timegap <- tdf_gc |> separate(col = Timelag, into = c("behind", "Gap"), sep =
                          false = hours)) |>
   mutate(tot_seconds = seconds + (60 * minutes) + (3600 * hours))
   
+gc_timegap |> select(-13)
 ```
 
 ```{r}

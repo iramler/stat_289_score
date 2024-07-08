@@ -53,29 +53,29 @@ For this activity, you will be using data from the data set `nba_draft.csv`. The
 
 **2. Below is a density plot and its corresponding code comparing the average minutes played per game based on a player's selection in the first round of the NBA draft. Based on this density plot and the box plots you created above, do you feel as though ANOVA is appropriate? What conclusions can you draw upon first glance of the two data visualizations? Are there any concerns? **
 
-![Density Plot](/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/nba_draft_module_213/Exploration/DensityPlot.jpg)
+![Density Plot](DensityPlot.jpg)
 
 ```{r}
-# means = nba_round1s %>%
-#   group_by(pick_category) %>%
-#   summarize(
-#     mean_value = mean(mins_per_game))
-# 
-# 
-# ggplot(nba_round1s,
-#        mapping = aes(x = mins_per_game,
-#                      fill = pick_category)) +
-#   geom_density(alpha = 0.4) +
-#   geom_vline(data = means,
-#              mapping = aes(xintercept = mean_value, color = pick_category),
-#              linetype = "dashed",
-#              size = 1,
-#              show.legend = FALSE) +
-#   labs(title = "Distribution of MPG based on Round 1 NBA draft picks",
-#        x = "Minutes Per Game",
-#        y = "Density",
-#        fill = "Pick in draft in NBA") +
-#   theme_minimal()
+means = nba_round1s %>%
+  group_by(pick_category) %>%
+  summarize(
+    mean_value = mean(mins_per_game))
+
+
+ggplot(nba_round1s,
+       mapping = aes(x = mins_per_game,
+                     fill = pick_category)) +
+  geom_density(alpha = 0.4) +
+  geom_vline(data = means,
+             mapping = aes(xintercept = mean_value, color = pick_category),
+             linetype = "dashed",
+             size = 1,
+             show.legend = FALSE) +
+  labs(title = "Distribution of MPG based on Round 1 NBA draft picks",
+       x = "Minutes Per Game",
+       y = "Density",
+       fill = "Pick in draft in NBA") +
+  theme_minimal()
 ```
 
 **3. Assuming an ANOVA test is most likely appropriate for our data, write and interpret in context the null and alternative hypotheses we'll be using to determine if the average number of minutes played per game (`mins_per_game`) is different based on the position in which the player is picked in the first round (`pick_in_round`).**
@@ -86,7 +86,7 @@ For this activity, you will be using data from the data set `nba_draft.csv`. The
 
 **6. Between which groups are we *most likely* to see a significant difference. Between which groups are we *least likely* to see a significant difference in minutes played. Provide evidence.**
 
-**7. Is there evidence that there is a difference in average minutes played per game between someone drafted in picks 1-10 compared to someone drafted in picks 11-20? If so, what is the difference? Provide evidence as well as a specific number.**
+**7. Is there evidence that there is a difference in average minutes played per game between players drafted in picks 1-10 compared to players drafted in picks 11-20? If so, what is the difference? Provide evidence as well as a specific number.**
 
 **8. Were your predictions in question 6 correct? Are there any comparisons that don't have a significant difference?** 
 
