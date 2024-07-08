@@ -115,3 +115,12 @@ beam_first_last <-
   ncaa_gymnastics_data %>% group_by(Rank) %>% filter(Rank == 1 | Rank == 4) %>%
   select(Beam, Total) %>% arrange(Rank) %>% round(digits = 2)
 ```
+
+```{r}
+total_beam_rank1$Beam
+```
+
+```{r}
+total_beam_rank4$Beam
+```
+
