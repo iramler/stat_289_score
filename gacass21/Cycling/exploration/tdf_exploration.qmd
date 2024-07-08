@@ -11,16 +11,30 @@ library(rvest)
 ```
 
 ```{r}
-tdf_stages <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/tdf_stages.csv")
+tdf_stages <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/exploration/tdf_stages.csv")
 
-tdf_winners <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/tdf_winners.csv")
+tdf_winners <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/exploration/tdf_winners.csv")
 
 ```
 
 
 ```{r}
 tdf_stages |> summary()
+
 tdf_stages <- tdf_stages |> mutate(Stage = as.numeric(Stage), Date = as.Date(Date))
+
+tdf_stages |> group_by(Winner_Country) |> summarise(wins = n()) |> arrange(desc(wins))
+
+tdf_stages |> filter(Date > 1969-07-02) |> group_by(Winner_Country) |> summarise(wins = n()) |> arrange(desc(wins))
+
+tdf_stages |> arrange(Date)
+
+tdf_stages |> filter(Date < 1969-08-30) |>
+  group_by(Winner_Country) |> summarise(wins = n()) |> arrange(desc(wins))
+
+tdf_stages |> group_by(Winner) |> summarise(wins = n()) |> arrange(desc(wins))
+
+tdf_stages |> summary()
 ```
 
 ```{r}
@@ -30,8 +44,37 @@ tdf_stages |> group_by(Type) |> summarise(avg_distance = mean(Distance))
 
 
 ```{r}
+tdf_winners <- tdf_winners |> mutate(start_date = as.Date(start_date),
+                                     born = as.Date(born),
+                                     died = as.Date(died), 
+                                     seconds_margin = time_margin*3600) |>
+  select(edition, start_date, winner_name, winner_team, distance, time_overall, time_margin, seconds_margin, everything())
+
+
+
 tdf_winners |> summary()
 
+tdf_winners |> group_by(nationality) |> summarise(wins = n()) |> arrange(desc(wins))
+
+tdf_winners |> arrange(desc(weight))
+
+
+tdf_winners |> mutate(seconds_margin = time_margin*3600)
+
+
+tdf_winners |> group_by(winner_team) |> summarise(wins = n()) |> arrange(desc(wins))
+
+tdf_winners |> arrange(desc(stages_led))
+
+
+ggplot(data = tdf_winners, aes(y = seconds_margin, x = start_date)) +
+  geom_col()
+
+ggplot(data = tdf_winners, aes(x = height, y = weight)) +
+  geom_point() +
+  geom_label(aes(label = winner_name))
+
+tdf_winners |> filter(stage_wins == 0)
 ```
 
 
@@ -39,7 +82,10 @@ tdf_winners |> summary()
 
 
 
+
 ```{r}
+ggplot(data = tdf_winners, aes(x = weight, y = time_margin)) +
+  geom_point()
 ```
 
 

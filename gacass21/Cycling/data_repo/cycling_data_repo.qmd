@@ -2,35 +2,71 @@
 title: Tour de France Stage and General Classifacation Results
 author: Gavin Cassidy
 date: July 3, 2024
-description: 
+description: Data detailing Stage and Overall Classifacation victories from the first Tour de France to 2019
 categories:
-  - 
 ---
 
 ## Motivation
 
-The Tour de France is a cycling stage race that happening every summer around France and other neighboring countries. This race consists of 21 stages, covering all types of terrain and difficulty where riders battle to beat each other up and down mountains and through any inclement weather. Starting in 1903, the Tour is the premier race on the cycling circuit, with most riders considering just finishing all 21 stages to be an enormous accomplishment. The stages cover a variety of different terrains, with some stages climbing high into the Alps and the Pyrenees, and others covering flat ground around France. Cycling teams bring 8 riders each with the goal of either winning stages, Climbing or Sprint Jerseys, or the General Classification. Winning a Tour de France stage is a career moment for most cyclists, with so few opportunities each year for riders to win one. Some riders dominate certain types of stages, with certain sprinters or climbers winning multiple stages in a single edition. Mark Cavendish holds the record with 35 stage wins, all of them coming from a sprint. There are also points classifications for sprints and climbing that teams will attempt to win, with points coming at race finishes or at the tops of climbs.
+The Tour de France is a cycling stage race that happening every summer around France and other neighboring countries. This race consists of 21 stages, covering all types of terrain and difficulty where riders battle to beat each other up and down mountains and through any inclement weather. Starting in 1903, the Tour is the premier race on the cycling circuit, with most riders considering just finishing all 21 stages to be an enormous accomplishment. The stages cover a variety of different terrains, with some stages climbing high into the Alps and the Pyrenees, and others covering flat ground around France. Cycling teams bring 8 riders each with the goal of either winning stages, Climbing or Sprint Jerseys, or the General Classification. Winning a Tour de France stage is a career goal for many cyclists, with tough competition and terrain each stage for riders. Some riders dominate certain types of stages, with certain sprinters or climbers winning multiple stages in a single edition of the Tour. Mark Cavendish holds the record with 35 stage wins, all of which came on flat stages in a sprint. There are points classifications for sprints and climbing that teams will attempt to win, with points coming at race finishes or at the tops of climbs.
 
-The General Classification is the pinnacle of the Tour de France. The General Classification(GC) is the overall competition of the Tour de France, with riders competing to see who can complete the 21 stages in the least cumulative time. The leader of the GC is indicated by wearing the yellow jersey, also know as the Maillot Jaune. Teams fight to win the yellow jersey on the first stage, and then hope that their rider can survive going up the mountains. GC teams will target certain stages where riders can gain time and focus on those. These include time trials, where cyclists ride a shorter course individually to see who can complete the course the fastest, or mountain stages where elevation and heat make conditions brutal for all riders. Time gaps in General Classification battles can be relatively small considering the Tour de France often covers more than 4000 km across France. The record for largest margin of victory was in the first tour where Maurice Garin won by a margin of almost 3 hours. These days the winner that emerges after three weeks is usually around 3-5 minutes ahead of their closest rivals, while the tour has been decided by as little as 8 seconds. 
-
+The General Classification(GC) is the overall competition of the Tour de France and arguably the most prestigious prize in a stage race in cycling. Riders compete to see who can complete the 21 stages in the least cumulative time and take home the yellow jersey. The leader of the GC is indicated by wearing the yellow jersey, also know as the Maillot Jaune. Teams fight to win the yellow jersey on the first stage, and then hope that their rider can survive through the Alps and Pyrenees. GC teams will target certain stages where riders can gain time and tend to focus their efforts on these stages. These stages include time trials, where cyclists ride a shorter course individually to see who can complete the course the fastest, or mountain stages where elevation and heat can make conditions brutal for all riders. Time gaps in General Classification battles can be relatively small considering the Tour de France often covers more than 4000 km across France. The record for largest margin of victory was in the first tour where Maurice Garin won by a margin of almost 3 hours. These days the winner that emerges after three weeks is usually around 3-5 minutes ahead of their closest rivals, while the tour has been decided by as little as 8 seconds.
 
 ## Data
 
-This data has stage results from 2019-2023 for Tour de France. 
+This data was found on [kaggle](https://www.kaggle.com/datasets/pablomonleon/tour-de-france-historic-stages-data)
 
+The tdf_stages data set contains information from each stage of the Tour de France from 1903 to 2017. There are 8 columns and 2236 rows, with each row being a unique stage in the Tour. The columns are listed below.
 
+[tdf_stages.csv](tdf_stages.csv)
 
-[tdf_gc.csv](tdf_gc.csv)
+| Variable       | Description                                                       |
+|------------------------|------------------------------------------------|
+| Stage          | the number of the stage in the particular edition                 |
+| Date           | the date the stage took place (yyyy-mm-dd)                        |
+| Distance       | the distance of the stage in kilometers                           |
+| Origin         | the town where the stage began                                    |
+| Destination    | the town where the stage ended                                    |
+| Type           | the type of riding that the stage entailed(flat, mountain, hilly) |
+| Winner         | the name of the stage winner                                      |
+| Winner_Country | the country where the stage winner is a citizen                   |
 
+The tdf_winners data set contains information about the winner of each edition of the Tour de France from 1903 to 2019. There are 20 columns and 106 rows that contain information about each winner. Each row is 1 edition of the Tour. The columns are listed below
 
+[tdf_winners.csv](tdf_winners.csv)
 
-
-
-
-[tdf_stage_results.csv](tdf_stage_results.csv)
+| Variable       | Description                                                          |
+|------------------------|------------------------------------------------|
+| edition        | how many Tour de France's had taken place                            |
+| start_date     | the date the tour began (yyyy-mm-dd)                                 |
+| winner_name    | the name of the winner                                               |
+| winner_team    | the name of the team of the winner                                   |
+| distance       | the total distance of the specific edition of the tour               |
+| time_overall   | the overall time of the race winner in hours                         |
+| time_margin    | the margin of victory of the winner in hours                         |
+| seconds_margin | the margin of victory of the winner in seconds                       |
+| stage_wins     | the number of stage wins of the winner of the tour                   |
+| stages_led     | the number of stages where the winner led the General Classification |
+| height         | the height of the winner of the tour in meters                       |
+| weight         | the weight of the winner of the tour in kilograms                    |
+| age            | the age of the winner of the tour when they won                      |
+| born           | the birth date of the winner (yyyy-mm-dd)                            |
+| died           | the date of death of the winner(if applicable)                       |
+| full_name      | the full name of the winner(if not used for winner name)             |
+| nickname       | the nickname of the winner(if applicable)                            |
+| birth_town     | the town where the winner was born                                   |
+| birth_country  | the country where the winner was born                                |
+| nationality    | the nationality of the winner                                        |
 
 ## Questions
 
+1. How have the nationalities of stage and GC winners changed over time?
+
+2. Are there noticeable changes in results around doping controversies in cycling?
+
+3. How does the average speed of riders change over time?
+
+4. Is there any rider that has lots of overlap between stage and GC victories?
 
 
 ## References
