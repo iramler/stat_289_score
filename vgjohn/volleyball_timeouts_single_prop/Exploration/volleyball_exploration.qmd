@@ -1,0 +1,30 @@
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+timeout <- read_csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/volleyball_timeouts_single_prop/Exploration/timeout.csv")
+play_by_play <- read_csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/volleyball_timeouts_single_prop/cassie_data/play_by_playFINAL3.csv")
+```
+
+for each set: 
+who won - need to find the end of the set when it changes numbers 
+who called first timeout 
+who called last timeout 
+who won the next point 
+
+```{r}
+play_by_play <- play_by_play %>%
+  mutate(
+    prev_set = lag(set)
+  )
+
+# when set changes 
+play_by_play <- play_by_play %>%
+  mutate(
+    change = set != prev_set
+  )
+```
+
+
