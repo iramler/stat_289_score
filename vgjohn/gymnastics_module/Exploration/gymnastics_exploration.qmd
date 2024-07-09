@@ -121,6 +121,14 @@ total_beam_rank1$Beam
 ```
 
 ```{r}
+total_beam_rank1$Total
+```
+
+```{r}
 total_beam_rank4$Beam
+```
+
+```{r}
+total_beam_rank4$Total
 ```
 
