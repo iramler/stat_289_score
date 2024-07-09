@@ -1,17 +1,61 @@
 ---
-title: "College Football Recruiting"
-author: "Brendan Karadenes"
-date: 07/03/2024
-description: The data looks at recruited collge football wide receivers and their production in the NFL.
-categories:
+title: "Football Recruiting and Impact in the NFL"
+author:
+  - name: "Brendan Karadenes"
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: "Ivan Ramler"
+    email: iramler@stlawu.edu
+    affiliation:
+      - ref: slu
+date: July 9, 2024
+description: Cleaning and analyzing football data for top high school wide receivers who played in the NFL in 2023.
+categories: 
   - data wrangling
 ---
 
-## Motivation
+### Introduction
+
+For this activity, you will be exploring football wide receivers that committed to Division 1 universities that graduated high school from 2013 to 2019 and NFL players who were targeted for receptions during the 2023 season.
+
+In particular, you will modify datasets, merge tables, and analyze the data using visualizations to compare and contrast receivers in the NFL. 
+
+Investigating this data is useful for several reasons. First, exploring the data can help us understand the accuracy of high school recruiting data and how it relates to performance in the NFL. Also cleaning and working with the data provides opportunites to gain impactful insights into both productivity in the NFL and what places players are recruited from. Analyses like these can help scouts find and recruit the players that will have the most impact on their team and help win games.
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This activity would be suitable for an in-class example or quiz.
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of the activity, you will be able to:
+
+1.  Use functions to clean and merge data
+2.  Find summary statistics in R or similar software
+3.  Analyze and create simple visualizations
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+For this activity, students will primarily use R or similar software in order to clean and modify data. Students should also have basic knowledge of means and visualizations.
+:::
+
+::: {.callout-note collapse="true" title="Technology Requiremens" appearance="minimal"}
+The provided worksheets require R or similar software. 
+
+Since the data are provided, instructors are encouraged to modify the worksheets to have student construct visualizations and clean data using whichever software they choose.
+:::
+
+### Data
 
 The data contains 3959 rows and 38 columns. Each row represents a football player who either was targeted for receptions in the NFL in 2023 and/or was recruited to play Division 1 football from the years 2013-2019.
 
-## Data
+Download data: 
+
+Available on the [SCORE Data Repository](https://data.scorenetwork.org/): [college_FB.csv](https://github.com/SCOREnetworkorg/sports-data-repository/raw/main/data/college_FB.csv)
+
+<details>
+<summary><b>Variable Descriptions</b></summary>
+
 
 | Variable               | Description                                                                                                                                                                           |
 |-------------------|-----------------------------------------------------|
@@ -54,24 +98,26 @@ The data contains 3959 rows and 38 columns. Each row represents a football playe
 | HometownInfo Longitude | longitude of the player's hometown                                                                                                                                                    |
 | HometownInfo FipsCode  | FIPS code of the player's hometown                                                                                                                                                    |
 
-Recruiting Data File
+**Data Sources**
 
-:   [football.csv](../data/football_recruiting.csv)
+[Pro Football Reference](https://www.pro-football-reference.com/){target="_blank"}
 
-## Questions
+[College Football Data](https://collegefootballdata.com/){target="_blank"}
 
--   Join the recruiting and receivers data sets so that only the players in both datasets remain.
+</details>
 
--   Split the recruiting data set into two based off of years.
+### Materials
 
--   Clean variable names so there's no spaces or special characters
+We provide editable MS Word and Quarto handouts along with their solutions.
 
-## References
+[Word handout](football_ws_doc.docx)
 
-2023 NFL
+[Word handout - with solutions](football_ws_doc_key.docx)
 
-<https://www.pro-football-reference.com/>
+[Quarto handout](football_ws.qmd)
 
-Recruiting Data
+[Quarto handout - with solutions](football_ws_key.qmd)
 
-<https://collegefootballdata.com/>
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+In conclusion, the football analyzing and cleaning data worksheet provides valuable learning experiences in several key areas. First, it allows them to understand the importance of tidy data and how clean data is easier to analyze. Learning to merge data is also important for when you are working with several related data sets. Also, creating and analyzing visualizations gives students an opportunity to be creative while also making important discoveries. All in all, this worksheet allows students to analyze the relationship between high school football recruitment and performances in the NFL.
+:::
