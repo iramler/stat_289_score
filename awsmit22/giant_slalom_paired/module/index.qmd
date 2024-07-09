@@ -26,14 +26,14 @@ Please note that these material have not yet completed the required pedagogical 
 
 In World Cup Giant Slalom (GS), there are two runs. Only the thirty fastest racers from the first run take a second run. If a racer is disqualified (DSQ) or did not finish (DNF) their first run, they do not take a second run. The order for the first run is determined by taking all racers and ordering them by their World Cup points, from highest to lowest. From that, the top 30 racers are put into three groups. The best seven racers are randomly assigning them a bib 1-7. The next eight best competitors are randomly assigned a bib 8-15. The next best 15 racers are randomly assigned a bib 16-30. The remaining racers go in descending order of points. For the second run, competitors race in reverse order of their results on the first run, so the 30th fastest racer on the first run goes 1st on the second run and so on. This data set includes data from only the top thirty finishers as any racers who placed higher than 30th do not take a second run.
 
-In this worksheet, we will be able to explore paired data, as we have information on 2 runs by the same competitor (unless they DSQ or DNF on the second run). Additionally, we will investigate difference in means between the 2 runs to determine if racers are on average faster or slower on a specific run.
+In this worksheet, students will be able to explore paired data, as students have information on 2 runs by the same competitor (unless they DSQ or DNF on the second run). Additionally, students will investigate difference in means between the 2 runs to determine if racers are on average faster or slower on a specific run.
 
 [Preliminary script for video](Tremblant_Paired_Script.docx)
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
 
-1.  Gather summary statistics
+1.  Gather the summary statistics for both run times
 
 2.  Find a confidence interval for difference in mean run time
 

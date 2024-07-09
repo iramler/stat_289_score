@@ -1,0 +1,26 @@
+---
+title: "slalom_question_check"
+format: html
+---
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+# Data
+
+```{r}
+slalom_df <- read_csv("~/Desktop/git/score_new/awsmit22/giant_slalom_paired/module/Tremblant1.csv")
+```
+
+# Question 1
+
+Find the mean and standard deviation of the difference between Run1_Time and Run2_Time. 
+
+```{r}
+mean(slalom_df$Run1_Time)
+
+```
+
