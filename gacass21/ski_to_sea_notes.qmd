@@ -1,0 +1,36 @@
+---
+title: "ski to sea practice"
+format: html
+---
+
+```{r}
+library(readr)
+library(tidyverse)
+```
+
+```{r}
+ski_to_sea <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/ski_to_sea_correlations/Ski_to_Sea_Data.csv")
+
+ski_to_sea |> summary()
+```
+
+```{r}
+overall <- ski_to_sea |> select(overall_minutes, canoe_minutes, xcski_minutes, downhill_minutes, kayak_minutes, roadbike_minutes, run_minutes, xcbike_minutes)
+
+cor(overall)
+```
+
+```{r}
+race_2009 <- ski_to_sea |> filter(Year == 2009) |> select(overall_minutes, canoe_minutes, xcski_minutes, downhill_minutes, kayak_minutes, roadbike_minutes, run_minutes, xcbike_minutes)
+
+cor(race_2009)
+```
+
+```{r}
+race_2019 <- ski_to_sea |> filter(Year == 2019) |> select(overall_minutes, canoe_minutes, xcski_minutes, downhill_minutes, kayak_minutes, roadbike_minutes, run_minutes, xcbike_minutes)
+
+cor(race_2019)
+```
+
+
+

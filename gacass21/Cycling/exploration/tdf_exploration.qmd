@@ -11,9 +11,9 @@ library(rvest)
 ```
 
 ```{r}
-tdf_stages <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/exploration/tdf_stages.csv")
+tdf_stages <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/data_repo/tdf_stages.csv")
 
-tdf_winners <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/exploration/tdf_winners.csv")
+tdf_winners <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Cycling/data_repo/tdf_winners.csv")
 
 ```
 
@@ -29,12 +29,32 @@ tdf_stages |> filter(Date > 1969-07-02) |> group_by(Winner_Country) |> summarise
 
 tdf_stages |> arrange(Date)
 
-tdf_stages |> filter(Date < 1969-08-30) |>
+tdf_stages |> filter(Date < 1945-08-30) |>
   group_by(Winner_Country) |> summarise(wins = n()) |> arrange(desc(wins))
 
 tdf_stages |> group_by(Winner) |> summarise(wins = n()) |> arrange(desc(wins))
 
 tdf_stages |> summary()
+
+tdf_stages |> 
+  filter(Date > 2007-08-30) |> 
+  group_by(Winner_Country) |> 
+  summarise(wins = n()) |> 
+  arrange(desc(wins)) 
+
+tdf_stages |>
+  filter(Date < 2007-08-30) |> 
+  group_by(Winner_Country) |>
+  summarise(wins = n()) |> 
+  arrange(desc(wins)) 
+
+
+
+
+
+
+ggplot(data = tdf_stages, aes(y = time_seconds, x = ind_half)) +
+  geom_boxplot()
 ```
 
 ```{r}
@@ -49,7 +69,6 @@ tdf_winners <- tdf_winners |> mutate(start_date = as.Date(start_date),
                                      died = as.Date(died), 
                                      seconds_margin = time_margin*3600) |>
   select(edition, start_date, winner_name, winner_team, distance, time_overall, time_margin, seconds_margin, everything())
-
 
 
 tdf_winners |> summary()
@@ -75,10 +94,23 @@ ggplot(data = tdf_winners, aes(x = height, y = weight)) +
   geom_label(aes(label = winner_name))
 
 tdf_winners |> filter(stage_wins == 0)
+
+
+avg_speed <- tdf_winners |> mutate(avg_speed = distance/time_overall) |> arrange(desc(avg_speed))
+
+
+
+tdf_winners |> filter(start_date < 2005-08-30) |> group_by(nationality) |> summarise(wins = n()) |> arrange(desc(wins))
+
+tdf_winners |> filter(start_date > 2005-08-30) |> group_by(nationality) |> summarise(wins = n()) |> arrange(desc(wins))
+
+
+winner_boxplot <- tdf_winners |> mutate(ind_half = if_else(start_date > 2005-08-30, true = 2, false = 1))
+
+
+ggplot(data = winner_boxplot, aes(x = ind_half, y = seconds_margin)) +
+  geom_boxplot(aes(group = ind_half))
 ```
-
-
-
 
 
 
@@ -86,6 +118,9 @@ tdf_winners |> filter(stage_wins == 0)
 ```{r}
 ggplot(data = tdf_winners, aes(x = weight, y = time_margin)) +
   geom_point()
+
+ggplot(data = avg_speed, aes(x = start_date, y = avg_speed)) +
+  geom_col(fill = "green", color = "black")
 ```
 
 

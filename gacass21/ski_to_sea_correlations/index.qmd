@@ -44,9 +44,9 @@ This module requires students compare correlations between pairs of variables.
 
 Technology requirement: Two handout activities accommodate different levels of available technology.
 
--   The "No Tech version" provides a correlation matrix for students to use to find the required correlations to compare.
+-   The No Tech version provides a correlation matrix for students to use to find the required correlations to compare.
 
--   The "With Tech" version provides the dataset and asks students to use technology to compute the needed correlations.
+-   The Tech version provides the dataset and asks students to use technology to compute the needed correlations.
 :::
 
 ### Data
@@ -84,15 +84,15 @@ The data and worksheet associated with this module are available for download th
 
 [Ski_to_Sea_Data.csv](Ski_to_Sea_Data.csv) - Dataset with team name, year, and time measures for each leg of the Ski to Sea Race from 2009-2019.
 
-[SkiToSeaCorrelationsNoTech.docx](SkiToSeaCorrelationsNoTech.docx)- "No Tech" version of the activity worksheet provides a correlation matrix for students to use in answering the questions.
+[SkiToSeaCorrelationsNoTech.docx](SkiToSeaCorrelationsNoTech.docx)- No Tech version of the activity worksheet provides a correlation matrix for students to use in answering the questions.
 
-[SkiToSeaCorrelationsWithTech.docx](SkiToSeaCorrelationsWithTech.docx) - "With Tech" version of the activity worksheet assumes students have technology to compute any needed correlations from the provided dataset.
+[SkiToSeaCorrelationsWithTech.docx](SkiToSeaCorrelationsWithTech.docx) - Tech version of the activity worksheet that allows students to make their own correlations and plots from the provided dataset.
 
 Sample solutions to the worksheets
 
-[SkiToSeaCorrelationsNoTech-Ans.docx](SkiToSeaCorrelationsNoTech-Ans.docx)- Sample solutions to the "No Tech" version of the activity worksheet.
+[SkiToSeaCorrelationsNoTech-Ans.docx](SkiToSeaCorrelationsNoTech-Ans.docx)- Sample solutions to the No Tech version of the activity worksheet.
 
-[SkiToSeaCorrelationsWithTech-Ans.docx](SkiToSeaCorrelationsWithTech-Ans.docx) - Sample solutions to the "With Tech" version of the activity worksheet.
+[SkiToSeaCorrelationsWithTech-Ans.docx](SkiToSeaCorrelationsWithTech-Ans.docx) - Sample solutions to the Tech version of the activity worksheet.
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should find evidence to support the claim that, overall, the kayak leg is the best predictor of overall finish time than other legs. Based on this strong, positive correlation, teams should prioritize their efforts in the kayak leg as this is most closely associated with the overall finish time.

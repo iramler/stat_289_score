@@ -4,6 +4,7 @@ author: Gavin Cassidy
 date: July 3, 2024
 description: Data detailing Stage and Overall Classifacation victories from the first Tour de France to 2019
 categories:
+  - 
 ---
 
 ## Motivation
@@ -64,9 +65,11 @@ The tdf_winners data set contains information about the winner of each edition o
 
 2. Are there noticeable changes in results around doping controversies in cycling?
 
-3. How does the average speed of riders change over time?
+3. Do the gaps and average speeds of the riders change over time?
 
 4. Is there any rider that has lots of overlap between stage and GC victories?
 
 
 ## References
+
+
