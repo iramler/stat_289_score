@@ -50,7 +50,7 @@ recruiting <- full_join(x = recruiting, y = recruits_13)
 
 ```{r}
 football_recruiting <- full_join(x = recruiting, y = receivers, by = "Player")
-write.csv(football_recruiting, "football_recruiting.csv", row.names = FALSE)
+write.csv(football_recruiting, "football.csv", row.names = FALSE)
 ```
 
 

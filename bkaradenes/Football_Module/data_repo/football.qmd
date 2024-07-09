@@ -56,7 +56,7 @@ The data contains 3959 rows and 38 columns. Each row represents a football playe
 
 Recruiting Data File
 
-:   [football_recruiting.csv](../data/football_recruiting.csv)
+:   [football.csv](../data/football_recruiting.csv)
 
 ## Questions
 
