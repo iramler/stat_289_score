@@ -1,0 +1,40 @@
+---
+title: "ump_scraping"
+format: html
+---
+# Libraries
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+# Attempt 1
+
+```{r}
+## provide the URL and name it something (in this case, url).
+url <- "https://swishanalytics.com/mlb/mlb-umpire-factors"
+
+
+## read_html() convert the html code from the URL into something R can read
+tab <- read_html(url) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r}
+test <- tab[[2]] |> html_table()
+test
+```
+
+# Cleaning attempt
+
+```{r}
+names(test) <- test[1, ]
+test
+```
+
+```{r}
+cleaner <- test |> filter(Umpire != "Umpire") |> select(!Today)
+```
+
+
