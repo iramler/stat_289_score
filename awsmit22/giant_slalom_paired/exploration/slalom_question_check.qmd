@@ -20,7 +20,33 @@ slalom_df <- read_csv("~/Desktop/git/score_new/awsmit22/giant_slalom_paired/modu
 Find the mean and standard deviation of the difference between Run1_Time and Run2_Time. 
 
 ```{r}
-mean(slalom_df$Run1_Time)
+diff <- slalom_df |> mutate(time_diff = Run1_Time-Run2_Time) |> filter(!is.na(time_diff))
 
+mean(diff$time_diff)
+
+sd(diff$time_diff)
 ```
+
+# Question 2
+
+Find a 95% CI for difference in mean run times and give an interpretation of this interval. (If computing by hand, use n = 27 as three racers DNF Run 2).
+
+```{r}
+sqrt(27)
+2.052*(0.7064455/5.196152) 
+-0.9003704 + 0.2789807
+-0.9003704 - 0.2789807
+```
+
+# Question 3
+
+Perform a test for difference in means. State hypotheses, test statistic, degrees of freedom, p-value, and an informative conclusion.
+
+```{r}
+t.test(diff$time_diff)
+```
+
+
+
+
 
