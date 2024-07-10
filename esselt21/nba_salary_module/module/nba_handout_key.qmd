@@ -58,6 +58,19 @@ nba <-
 ```
 
 ```{r}
+nba <-
+  nba |>
+  mutate(sqrtinflationsalary = sqrt(inflationAdjSalary))
+```
+
+# Question 3
+Which transformation standardizes the salary values better?
+```{r}
+ggplot(data = nba,
+       aes(x = sqrtinflationsalary)) +
+  geom_histogram(color = "black",
+                 fill = "ivory")
+
 ggplot(data = nba,
        aes(x = loginflationsalary)) +
   geom_histogram(color = "black",
