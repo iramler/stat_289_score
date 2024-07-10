@@ -1,0 +1,67 @@
+---
+title: "Rugby Exploration"
+author: "Brendan Karadenes"
+format: html
+---
+
+```{r}
+# loading in packages and data
+library(tidyverse)
+library(here)
+library(readxl)
+rugby <- read_excel(here("bkaradenes/Rugby_Module/exploration/rugby.xlsx"))
+```
+
+# Fixing date variable
+
+```{r}
+pre_1900 <- rugby[1:116, ]
+```
+
+```{r}
+post_1899 <- rugby[117:2770, ]
+```
+
+```{r}
+post_1899 <- post_1899 %>%
+  mutate(date = as.numeric(date))
+post_1899$date <- as.Date(post_1899$date, origin="1900-01-01")
+```
+
+```{r}
+post_1899 <- post_1899 %>%
+  mutate(date = as.character(date))
+```
+
+# Joining data back together
+
+```{r}
+rugby <- bind_rows(pre_1900, post_1899)
+```
+
+# Create winner variable
+
+```{r}
+rugby <- rugby %>%
+  mutate(winner = case_when(
+    home_score > away_score ~ home_team,
+    away_score > home_score ~ away_team,
+    TRUE ~ "Tie"
+  ))
+```
+
+# Parsing Date Variable
+
+```{r}
+rugby <- rugby %>%
+  mutate(year = lubridate::year(date))
+```
+
+# Visualizations
+
+
+
+
+
+
+
