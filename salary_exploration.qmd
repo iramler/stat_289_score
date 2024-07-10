@@ -54,6 +54,10 @@ final <-
 ```
 
 ```{r}
+write_csv(final, here::here("esselt21/nba_salary_module/module/initial_nba.csv"))
+```
+
+```{r}
 final |>
   ggplot(aes(x = MP)) +
   geom_histogram(fill = "lightblue",

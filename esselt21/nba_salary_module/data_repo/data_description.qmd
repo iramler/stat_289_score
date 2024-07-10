@@ -1,5 +1,5 @@
 ---
-title: Assigning a Valuation Metric to NBA Players Based on Their Salary
+title: Transforming Variables and Visualizing Large Data Sets
 author: Eric Seltzer
 date: July 1, 2024
 description: This data has NBA player season statistics from 1990 - 2022. This includes things like field goal percentages, points, assists, and turnovers. It also has their salary numbers for the season, including an inflation adjusted salary column in order to compare players from different time periods.
@@ -62,7 +62,7 @@ This data is made up of 4974 rows and 37 columns. Each row represents a player f
 
 ## Questions
 
-1.  Discuss which variables are important
+1.  Determine which variables are important to look at
 
 2.  Decide which variables should be included in interactions
 

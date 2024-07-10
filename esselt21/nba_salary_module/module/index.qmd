@@ -1,5 +1,5 @@
 ---
-title: "Assigning a Valuation Metric to NBA Players Based on Their Salary"
+title: "Transforming Variables and Visualizing Large Data Sets"
 date: July 2nd, 2024
 author:
   - name: Eric Seltzer
@@ -10,13 +10,13 @@ author:
     email: iramler@stlawu.edu
     affiliation:
       - ref: slu
-description: Multiple linear regression modeling process
+description: Thinking through dealing with large data sets
 editor: 
   canonical: true
 categories:
-  - Multiple linear regression
-  - Assumptions
-  - Interpretations
+  - Visualizaiton
+  - Transformation
+  - Data Exploration
 ---
 
 ## Module
