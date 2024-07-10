@@ -8,7 +8,7 @@ format: html
 You are an NBA GM for the Boston Celtics, one of the most historic teams of all time. You have acquired access to a data set that includes statistics and salary information for players ranging from 1990-2023. You're goal is to successfully visualize this data set, and determine a way to evaluate which type of players you want on your team. Ideally, you want players that play above what they are being paid and therefore are undervalued. 
 
 # Question 1
-Create visualizations to look at the distribution of minutes played, PER, and salary.
+Create visualizations to look at the distribution of minutes played and salary.
 ```{r}
 library(tidyverse)
 ```
@@ -20,6 +20,46 @@ nba <- read_csv(here::here("esselt21/nba_salary_module/module/initial_nba.csv"))
 ```{r}
 ggplot(data = nba,
        aes(x = MP)) +
+  geom_histogram(color = "black",
+                 fill = "ivory")
+```
+
+```{r}
+ggplot(data = nba,
+       aes(x = salary)) +
+  geom_histogram(color = "black",
+                 fill = "ivory")
+```
+
+# Question 2
+```{r}
+nba <-
+  nba |>
+  mutate(salary = salary / 1000)
+```
+
+```{r}
+ggplot(data = nba,
+       aes(x = salary)) +
+  geom_histogram(color = "black",
+                 fill = "ivory")
+```
+
+```{r}
+nba <-
+  nba |>
+  mutate(inflationAdjSalary = inflationAdjSalary / 1000)
+```
+
+```{r}
+nba <-
+  nba |>
+  mutate(loginflationsalary = log(inflationAdjSalary))
+```
+
+```{r}
+ggplot(data = nba,
+       aes(x = loginflationsalary)) +
   geom_histogram(color = "black",
                  fill = "ivory")
 ```
