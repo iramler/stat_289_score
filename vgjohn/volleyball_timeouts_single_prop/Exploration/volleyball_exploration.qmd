@@ -4,27 +4,55 @@ library(tidyverse)
 ```
 
 ```{r}
-timeout <- read_csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/volleyball_timeouts_single_prop/Exploration/timeout.csv")
-play_by_play <- read_csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/volleyball_timeouts_single_prop/cassie_data/play_by_playFINAL3.csv")
+data <- read_csv("timeout2.csv")
 ```
-
-for each set: 
-who won - need to find the end of the set when it changes numbers 
-who called first timeout 
-who called last timeout 
-who won the next point 
+214/2718? 
 
 ```{r}
-play_by_play <- play_by_play %>%
-  mutate(
-    prev_set = lag(set)
-  )
-
-# when set changes 
-play_by_play <- play_by_play %>%
-  mutate(
-    change = set != prev_set
-  )
+# the total number of sets = 3293
+max(data$overall_set_number)
 ```
 
+```{r}
+# losing team won the set after the time out was called 
+sum(data$losing_team_win)
+```
 
+in total: out of 3293 sets, in 1011 of them, the losing team at the time out won the set
+1011/3293 = 0.307 = 30.7 % 
+
+Construct a 95% confidence interval for the proportion of losing teams winning a set after the final timeout.
+
+p^ = 0.307
+Standard Error = sqrt((0.307*(1-0.307))/3293) = 0.008037851
+z = 1.96
+Margin of Error = 1.96*0.008037851 = 0.01575419
+
+0.307 +- 0.01575419
+
+95% CI = (0.291,0.323)
+
+first time out or laast time out in the set 
+after the first time out who wins the set 
+after the last tme out who wins the set 
+
+
+proportion of teams that win the set after losing before the last time out 
+
+```{r}
+data_last_timeout <- data %>% group_by(overall_set_number) %>%
+  slice_max(home_after_timeout)
+
+sum(data_last_timeout$losing_team_win)
+```
+168/2900 = 0.058 = 5.8% of teams that were losing win the game after the last time out
+
+
+proportion of teams that win the set after losing before the first time out 
+```{r}
+data_first_timeout <- data %>% group_by(overall_set_number) %>%
+  slice_min(home_before_timeout)
+
+sum(data_first_timeout$losing_team_win)
+```
+513/2875 = 0.178 = 17.8% of teams that were losing before the first timeout win the set 
