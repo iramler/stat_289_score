@@ -1,0 +1,68 @@
+---
+title: Major League Baseball Home Plate Umpires
+author: Abigail Smith
+date: July 10, 2024
+description: Analyzing various statistics from Major League Baseball home plate umpires dating back to 2008.
+categories:
+  -  COME BACK TO WHEN IM DONE QUESTIONS
+  
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Motivation
+
+
+
+## Data
+
+The data set has 954 rows with 11 variables. Each row is an MLB home plate umpire combined with a `boost_stat` ranking how they compare with the average umpire. There are 159 umpires in the dataset with 6 rows per umpire. The data is cumulative from 2008 until 2024. 
+
+| Variable | Description |
+|-----------------------|------------------------------------------------|
+| `Umpire` | The name of the umpire. |
+| `Games` | The number of games the umpire has umpired since 2008. |
+| `k_pct` | The strike out percentage of batters and pitchers when the umpire is umpiring. (`Career Strike Outs Called`/`Career Plate Appearances Umpired`)|
+| `bb_pct` | The walk percentage of batters when the umpire is umpiring. (`Career Walks Called`/`Career Plate Appearances Umpired`)|
+| `RPG`   | The career runs scored per game when the umpire is umpiring. (`Career Runs While Umpiring`/`Career Games Umpired`)|
+| `BA`  | The batting average of batters in games when the umpire is umpiring. (`Career Hits While Umpiring`/`Career Plate Appearances Umpired`)|
+| `OBP` | The on base percentage of batters when the umpire is umpiring. ((`Career Hits While Umpiring` + `Career Walks While Umpiring` +  `Career Hit by Pitches While Umpiring`) ÷ (`Career At Bats Umpired` + `Career Walks While Umpired` + `Career Hit by Pitches While Umpiring` + `Career Sacrifice Flies While Umpiring`))|
+| `TS`  | The total touches sent by the fencer in the tournament, meaning touches they scored against opponents. |
+| `TR` | The total touches received by the fencer in the tournament, meaning touches scored against the fencer. |
+| `Ind` | The indicator score, calculated by `TS`-`TR`. |
+| `Gender` | The fencer's gender, `Women` or `Men`. |
+| `Ivy` | If the fencer's school is in the Ivy League, `Ivy` or `Non-Ivy`. |
+: [fencing.csv](fencing.csv){target="_blank"}
+
+## Questions
+
+1.    The mean number of `Victories` for womens' foil is 11.5 and the standard deviation is 3.97.       Can it be concluded that the distribution of `Victories` for womens' foil is normal?
+
+2.    Draw a boxplot of `Victories` for womens' foil. 
+
+3.    The least squares line for `Victories` predicted by `Ind` is Victories = 11.5 + 0.16Ind.         Interpret the slope of the line. 
+
+4.    A fencer has an indicator score of 16, calculate their predicted `Victories`.
+
+5.    The actual value of `Victories` for a fencer with an indicator score of 16 is 15, calculate       the residual.
+
+6.    The model Victories = 11.5 + 0.16Ind has an r-squared value of 92%. Explain the                  significance of this value. 
+
+## References
+
+[Website the Data was Scraped From](https://ncaa.escrimeresults.com/ncaa2024.html){target="_blank"}
+
+[Olympic Fencing Rules](https://www.nbcolympics.com/news/fencing-101-rules-and-scoring){target="_blank"}
+
+[NCAA Fencing Website](https://www.ncaa.com/sports/fencing){target="_blank"}
+
+[NCAA Fencing Championships Wikipedia](https://en.wikipedia.org/wiki/NCAA_Fencing_Championships){target="_blank"}
+
+[NCAA Fencing Wikipedia](https://en.wikipedia.org/wiki/Collegiate_fencing){target="_blank"}
+
+[Fencing Wikipedia](https://en.wikipedia.org/wiki/Fencing){target="_blank"}
+
+
+
+
