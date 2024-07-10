@@ -32,5 +32,10 @@ race_2019 <- ski_to_sea |> filter(Year == 2019) |> select(overall_minutes, canoe
 cor(race_2019)
 ```
 
+```{r}
+ggplot(data = ski_to_sea, aes(x = xcbike_minutes, y = overall_minutes)) +
+  geom_point()
+```
+
 
 
