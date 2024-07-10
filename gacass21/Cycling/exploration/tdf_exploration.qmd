@@ -96,7 +96,8 @@ ggplot(data = tdf_winners, aes(x = height, y = weight)) +
 tdf_winners |> filter(stage_wins == 0)
 
 
-avg_speed <- tdf_winners |> mutate(avg_speed = distance/time_overall) |> arrange(desc(avg_speed))
+avg_speed <- tdf_winners |> mutate(avg_speed = distance/time_overall) |> select(-9) |> select(edition, start_date, winner_name, winner_team, distance, time_overall, avg_speed, time_margin, everything())
+
 
 
 
@@ -113,6 +114,14 @@ ggplot(data = winner_boxplot, aes(x = ind_half, y = seconds_margin)) +
 ```
 
 
+```{r}
+tdf_winners |> mutate(era = case_when((edition < 37) ~ "Amphetamine",
+                                     (edition >= 37 & edition < 53) ~ "Anti-Doping",
+                                     (edition >= 53 & edition < 77) ~ "Steroid",
+                                     (edition >= 77 & edition < 97) ~ "EPO",
+                                      (edtion >= 97) ~ "Clean"))
+```
+
 
 
 ```{r}
@@ -121,6 +130,8 @@ ggplot(data = tdf_winners, aes(x = weight, y = time_margin)) +
 
 ggplot(data = avg_speed, aes(x = start_date, y = avg_speed)) +
   geom_col(fill = "green", color = "black")
+
+tdf_winners |> slice(80:105)
 ```
 
 
