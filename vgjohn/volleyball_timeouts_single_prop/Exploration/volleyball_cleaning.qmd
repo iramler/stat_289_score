@@ -1,0 +1,177 @@
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+timeout <- read_csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/volleyball_timeouts_single_prop/Exploration/timeout.csv")
+play_by_play <- read_csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/volleyball_timeouts_single_prop/cassie_data/play_by_playFINAL3.csv")
+```
+
+for each set: 
+who won - need to find the end of the set when it changes numbers 
+who called first timeout 
+who called last timeout 
+who won the next point 
+
+
+getting the total number of sets and when the set changes 
+```{r}
+play_by_play <- play_by_play %>%
+  mutate(
+    prev_set = lag(set)
+  )
+
+# when set changes 
+play_by_play <- play_by_play %>%
+  mutate(
+    change = !is.na(set) & (set != lag(set, default = first(set)))
+    )
+  
+
+```
+
+```{r}
+
+play_by_play %>% filter(change == TRUE)
+
+play_by_play <- play_by_play %>%
+  mutate(
+    set_num = (cumsum(if_else(change, 1, 0)) +1)
+  )
+```
+
+there are 3327 total sets 
+```{r}
+play_by_play %>%
+  summarize(
+    max(set_num)
+  )
+```
+now can group by the set number and see who won 
+```{r}
+play_by_play %>% group_by(set_num) %>%
+  filter(home_team_score == max(home_team_score, na.rm = TRUE) & visiting_team_score == max(visiting_team_score, na.rm = TRUE))
+
+# make variable for who won - first number = home second number = away   
+play_by_play <- play_by_play %>% group_by(set_num) %>%
+  mutate(
+    set_winner = ifelse(max(home_team_score, na.rm = TRUE) > max(visiting_team_score, na.rm = TRUE), "home","visiting")
+  )
+
+```
+
+who called the first time out - need to get the score before the time out and after the time out 
+
+```{r}
+# scores before and after 
+scores_before_timeout <- play_by_play %>%
+  slice(., c(which(str_detect(play_descripton, "Timeout")) - 1))
+
+scores_after_timeout <- play_by_play %>%
+  slice(., c(which(str_detect(play_descripton, "Timeout")) + 1))
+```
+
+go through play description - detect time out, add scores above to prev score and scores below to scores after 
+
+```{r}
+# making empty variables 
+play_by_play$home_before_timeout <- NA
+play_by_play$visiting_before_timeout <- NA
+play_by_play$home_after_timeout <- NA
+play_by_play$visiting_after_timeout <- NA
+
+```
+
+```{r}
+for (i in seq_len(nrow(play_by_play))){
+  if(!is.na(str_detect(play_by_play$play_descripton[i], "Timeout"))){
+    if(i > 1){
+      # add from row above 
+      play_by_play$home_before_timeout[i] <- play_by_play$home_team_score[i-1]
+      play_by_play$visiting_before_timeout[i] <- play_by_play$visiting_team_score[i-1]
+    }
+    if((i < nrow(play_by_play))) {
+      # add from row below 
+      play_by_play$home_after_timeout[i] <- play_by_play$home_team_score[i+1]
+      play_by_play$visiting_after_timeout[i] <- play_by_play$visiting_team_score[i+1]
+    }
+    # if there is a na in the row above or below need to go to the one before or after that
+    k <- i + 1
+    j <- i - 1
+    while(k <= nrow(play_by_play) && is.na(play_by_play$home_team_score[k])){
+      # go forward until it isn't na 
+      k <- k + 1
+    }
+    if(k <= nrow(play_by_play)){
+      play_by_play$home_after_timeout[i] <- play_by_play$home_team_score[k]
+      play_by_play$visiting_after_timeout[i] <- play_by_play$visiting_team_score[k]
+    }
+    
+    while(j >= 1 && is.na(play_by_play$home_team_score[j])){
+      # go back until it isn't na 
+      j <- j - 1
+    }
+    if(j >= 1){
+      play_by_play$home_before_timeout[i] <- play_by_play$home_team_score[j]
+      play_by_play$visiting_before_timeout[i] <- play_by_play$visiting_team_score[j]
+    }
+  }
+}
+```
+
+```{r}
+play_by_play <- play_by_play %>% select(-away_after_timeout)
+```
+
+get the winning team from the last row before the set switches 
+
+```{r}
+timeout2 <- play_by_play %>% filter(str_detect(play_descripton, "Timeout"))
+
+# selecting cols i want 
+timeout2 <- timeout2 %>% select(-serve_team, -home_team_score, -visiting_team_score, -visiting_play_description, -home_play_description, -score, -prev_set, -change, -url, -Time, -Attendance)
+
+# renaming 
+timeout2 <- timeout2 %>%
+  rename(
+    overall_set_number = set_num,
+    play_description = play_descripton
+  )
+
+# making extra variables
+timeout2 <- timeout2 %>%
+  mutate(
+    losing_team_at_timeout = ifelse(home_before_timeout > visiting_before_timeout, "visiting",
+                                    ifelse(home_before_timeout == visiting_before_timeout, "tied", "home")),
+    
+    losing_team_win = ifelse(set_winner == losing_team_at_timeout, TRUE, FALSE),
+    winner_next_point = ifelse(home_after_timeout > home_before_timeout, "home", "visiting")
+                                    
+  )
+
+# reordering 
+timeout2 <- timeout2[, c("Date",
+                        "Site",
+                        "set",
+                        "play_description",
+                        "set_winner",
+                        "losing_team_at_timeout",
+                        "losing_team_win",
+                        "home_before_timeout",
+                        "visiting_before_timeout",
+                        "winner_next_point",
+                        "home_after_timeout",
+                        "visiting_after_timeout",
+                        "overall_set_number"
+                        )
+                    ]
+```
+
+saving file 
+```{r}
+write_csv(timeout2,
+          file = "/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/volleyball_timeouts_single_prop/timeout2.csv")
+```
+
+
