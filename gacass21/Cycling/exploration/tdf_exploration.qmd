@@ -115,11 +115,14 @@ ggplot(data = winner_boxplot, aes(x = ind_half, y = seconds_margin)) +
 
 
 ```{r}
-tdf_winners |> mutate(era = case_when((edition < 37) ~ "Amphetamine",
-                                     (edition >= 37 & edition < 53) ~ "Anti-Doping",
-                                     (edition >= 53 & edition < 77) ~ "Steroid",
-                                     (edition >= 77 & edition < 97) ~ "EPO",
-                                      (edtion >= 97) ~ "Clean"))
+eras_plot <- tdf_winners |> mutate(era = case_when((edition < 37) ~ "1. Amphetamine",
+                                     (edition >= 37 & edition < 53) ~ "2. Transition",
+                                     (edition >= 53 & edition < 77) ~ "3. Steroid",
+                                     (edition >= 77 & edition < 97) ~ "4. EPO",
+                                     (edition >= 97) ~ "5. Clean"))
+
+ggplot(data = eras_plot, aes(x = avg_speed, y = era)) +
+  geom_boxplot()
 ```
 
 
