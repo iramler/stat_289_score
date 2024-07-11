@@ -17,22 +17,18 @@ who won the next point
 
 getting the total number of sets and when the set changes 
 ```{r}
+# getting the previous set so that you know when it changes set 
+# seeing when the set number changes 
 play_by_play <- play_by_play %>%
   mutate(
-    prev_set = lag(set)
-  )
-
-# when set changes 
-play_by_play <- play_by_play %>%
-  mutate(
+    prev_set = lag(set),
     change = !is.na(set) & (set != lag(set, default = first(set)))
-    )
-  
-
+  )
 ```
 
 ```{r}
 
+# getting where the set changes and counting up from there 
 play_by_play %>% filter(change == TRUE)
 
 play_by_play <- play_by_play %>%
@@ -43,17 +39,17 @@ play_by_play <- play_by_play %>%
 
 there are 3327 total sets 
 ```{r}
-play_by_play %>%
-  summarize(
-    max(set_num)
-  )
+# seeing how many sets there are in total 
+tail(play_by_play)
 ```
-now can group by the set number and see who won 
+
+now can group by the set number and see who won each set 
 ```{r}
+# grouping by each individual set that was played, finding the last value by looking at the row with the highest visiting score and home score which will be the final score in that set 
 play_by_play %>% group_by(set_num) %>%
   filter(home_team_score == max(home_team_score, na.rm = TRUE) & visiting_team_score == max(visiting_team_score, na.rm = TRUE))
 
-# make variable for who won - first number = home second number = away   
+# make variable for who won - first number = home, second number = away   
 play_by_play <- play_by_play %>% group_by(set_num) %>%
   mutate(
     set_winner = ifelse(max(home_team_score, na.rm = TRUE) > max(visiting_team_score, na.rm = TRUE), "home","visiting")
@@ -63,16 +59,7 @@ play_by_play <- play_by_play %>% group_by(set_num) %>%
 
 who called the first time out - need to get the score before the time out and after the time out 
 
-```{r}
-# scores before and after 
-scores_before_timeout <- play_by_play %>%
-  slice(., c(which(str_detect(play_descripton, "Timeout")) - 1))
-
-scores_after_timeout <- play_by_play %>%
-  slice(., c(which(str_detect(play_descripton, "Timeout")) + 1))
-```
-
-go through play description - detect time out, add scores above to prev score and scores below to scores after 
+go through play description - detect time out, add scores above to home_before_timeout, visiting_before_timeout and scores below to home_after_timeout and visiting_after_timeout 
 
 ```{r}
 # making empty variables 
@@ -84,15 +71,20 @@ play_by_play$visiting_after_timeout <- NA
 ```
 
 ```{r}
+tail(play_by_play)
+```
+
+```{r}
 for (i in seq_len(nrow(play_by_play))){
-  if(!is.na(str_detect(play_by_play$play_descripton[i], "Timeout"))){
+  # if the play description is a time out 
+  if(!is.na(str_detect(play_by_play$play_descripton[i], "Timeout"))){ 
     if(i > 1){
-      # add from row above 
+      # add from row above (before time out)- take the home and visiting score and add it to the index of the time out 
       play_by_play$home_before_timeout[i] <- play_by_play$home_team_score[i-1]
       play_by_play$visiting_before_timeout[i] <- play_by_play$visiting_team_score[i-1]
     }
     if((i < nrow(play_by_play))) {
-      # add from row below 
+      # add from row below (after time out)
       play_by_play$home_after_timeout[i] <- play_by_play$home_team_score[i+1]
       play_by_play$visiting_after_timeout[i] <- play_by_play$visiting_team_score[i+1]
     }
@@ -100,7 +92,7 @@ for (i in seq_len(nrow(play_by_play))){
     k <- i + 1
     j <- i - 1
     while(k <= nrow(play_by_play) && is.na(play_by_play$home_team_score[k])){
-      # go forward until it isn't na 
+      # go forward until it isn't na, get index 
       k <- k + 1
     }
     if(k <= nrow(play_by_play)){
@@ -120,13 +112,11 @@ for (i in seq_len(nrow(play_by_play))){
 }
 ```
 
-```{r}
-play_by_play <- play_by_play %>% select(-away_after_timeout)
-```
-
 get the winning team from the last row before the set switches 
 
 ```{r}
+
+# only need rows with timeouts 
 timeout2 <- play_by_play %>% filter(str_detect(play_descripton, "Timeout"))
 
 # selecting cols i want 

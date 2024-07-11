@@ -6,53 +6,45 @@ library(tidyverse)
 ```{r}
 data <- read_csv("timeout2.csv")
 ```
-214/2718? 
+214/2718
 
-```{r}
-# the total number of sets = 3293
-max(data$overall_set_number)
-```
-
-```{r}
-# losing team won the set after the time out was called 
-sum(data$losing_team_win)
-```
-
-in total: out of 3293 sets, in 1011 of them, the losing team at the time out won the set
-1011/3293 = 0.307 = 30.7 % 
-
-Construct a 95% confidence interval for the proportion of losing teams winning a set after the final timeout.
-
-p^ = 0.307
-Standard Error = sqrt((0.307*(1-0.307))/3293) = 0.008037851
-z = 1.96
-Margin of Error = 1.96*0.008037851 = 0.01575419
-
-0.307 +- 0.01575419
-
-95% CI = (0.291,0.323)
-
-first time out or laast time out in the set 
+first time out or last time out in the set 
 after the first time out who wins the set 
 after the last tme out who wins the set 
 
+```{r}
+# distinct number of overall sets there are
+n_distinct(data$overall_set_number)
+```
 
-proportion of teams that win the set after losing before the last time out 
+
+proportion of teams that win the set after being behind before the last time out 
 
 ```{r}
+# getting the last time out of a set - putting into data set 
 data_last_timeout <- data %>% group_by(overall_set_number) %>%
-  slice_max(home_after_timeout)
+  slice_tail(n=1)
 
+# getting how many losing teams win the set out of the last time outs 
 sum(data_last_timeout$losing_team_win)
-```
-168/2900 = 0.058 = 5.8% of teams that were losing win the game after the last time out
 
+# the number of sets 
+n_distinct(data_last_timeout$overall_set_number)
+```
+
+139/2781 = 0.04998 = 4.998% of teams that were losing win the game after the last time out
 
 proportion of teams that win the set after losing before the first time out 
 ```{r}
+# getting the first time out of a set - putting into data set 
 data_first_timeout <- data %>% group_by(overall_set_number) %>%
-  slice_min(home_before_timeout)
+  slice_head(n=1)
 
+# getting how many losing teams win the set out of the first 
 sum(data_first_timeout$losing_team_win)
+
+# the number of sets 
+n_distinct(data_first_timeout$overall_set_number)
 ```
-513/2875 = 0.178 = 17.8% of teams that were losing before the first timeout win the set 
+
+497/2781 = 0.1787 = 17.87% of teams that were losing before the first timeout win the set 
