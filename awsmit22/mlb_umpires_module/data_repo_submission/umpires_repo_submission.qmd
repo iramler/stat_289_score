@@ -16,9 +16,7 @@ editor:
 [Baseball](https://en.wikipedia.org/wiki/Baseball){target="_blank"} is a
 popular American sport played on a diamond shaped field. Games are 9
 innings long and each inning has two halves, the first in which the
-visiting team hits and the second where the home team hits. Innings end after three batters are out. Batters aim
-to get on base by hitting a ball pitched to them by the pitcher. Batters
-can get to first, second, or third base depending on how far they hit
+visiting team hits and the second where the home team hits. Innings end after three batters are out. Batters aim to get on base by hitting a ball pitched to them by the pitcher. Batters can get to first, second, or third base depending on how far they hit
 the ball and how fast they run. If a batter hits the ball past the
 outfield fences, they along with any runners on base automatically
 score, this is called a home run. Runners can also score if another
@@ -32,14 +30,18 @@ positions is labeled in the below diagram.
 https://en.wikipedia.org/wiki/Baseball_positions](images/images.png){fig-align="center"
 width="331"}](https://en.wikipedia.org/wiki/Baseball_positions)
 
-Behind the catcher at home plate is an official known as the home plate
-umpire. The umpire's role is to enforce baseball rules and make
+Behind the catcher, at home plate is an official known as the home plate
+[umpire](https://en.wikipedia.org/wiki/Umpire_(baseball)){target="_blank"}. The umpire's role is to enforce the rules and make
 decisions during a game. Many of these decisions involve calling balls
-and strikes. Pitches that are considered strikes are pitched within the zone outlined below. Anything outside of that zone is called a ball. If a batter gets 3 strikes, they are out which is called a strike out. If the batter gets 4 balls they get to go to first base on what is called a walk. 
+and strikes. Pitches that are considered strikes are pitched within the zone outlined below. Anything outside of that zone is called a ball. If a batter gets 3 strikes, they are out on a strike out. If the batter gets 4 balls they get to go to first base on what is called a walk. 
 
 [![SOURCE:
 https://www.dimensions.com/element/strike-zone](images/5bd08351ae57fd50e3c91538_Dimensions-Guide-Sports-Baseball-Strike-Zone-Dimensions.svg){fig-align="center"
 width="300"}](https://www.dimensions.com/element/strike-zone)
+
+[Major League Baseball (MLB)](https://en.wikipedia.org/wiki/Major_League_Baseball){target="_blank"} is a professional baseball league with 30 teams and a 162 game season. The MLB has 76 umpires in total with four umpires in each game. Umpires are stationed at 1st, 2nd, and 3rd base in addition to home plate but the home plate umpire is the only one who makes calls on pitches. 
+
+The [umpires.csv](umpires.csv){target="_blank"} dataset looks at cumulative data from MLB homeplate umpires dating as far back as 2008. The boost statistics in the dataset investigate how certain umpires compare to the "average" Major League Baseball umpire. 
 
 ## Data
 
