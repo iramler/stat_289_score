@@ -5,16 +5,22 @@ format: html
 ---
 
 # Introduction
-You are an NBA GM for the Boston Celtics, one of the most historic teams of all time. You have acquired access to a data set that includes statistics and salary information for players ranging from 1990-2023. You're goal is to successfully visualize this data set, and determine a way to evaluate which type of players you want on your team. Ideally, you want players that play above what they are being paid and therefore are undervalued. 
+You are an NBA GM for the Boston Celtics, one of the most historic teams of all time. You have acquired access to a data set that includes statistics and salary information for players ranging from 1990-2023. You're goal is to successfully visualize this data set, and determine a way to evaluate which type of players you want to trade for your team. Ideally, you want players that play above what they are being paid and therefore are undervalued. 
 
 # Question 1
-Create visualizations to look at the distribution of minutes played and salary.
+Create visualizations to look at the distribution of minutes played and salary. Filter the data so it is only the most recent season.
 ```{r}
 library(tidyverse)
 ```
 
 ```{r}
 nba <- read_csv(here::here("esselt21/nba_salary_module/module/initial_nba.csv"))
+```
+
+```{r}
+nba <-
+  nba |>
+  filter(Season == 2021)
 ```
 
 ```{r}
@@ -32,6 +38,21 @@ ggplot(data = nba,
 ```
 
 # Question 2
+How should we decide what type of minutes we should limit
+```{r}
+nba <-
+  nba |>
+  filter(MP >= 1650)
+```
+
+```{r}
+ggplot(data = nba,
+       aes(x = MP)) +
+  geom_histogram(color = "black",
+                 fill = "ivory")
+```
+
+# Question 3
 ```{r}
 nba <-
   nba |>
@@ -63,7 +84,7 @@ nba <-
   mutate(sqrtinflationsalary = sqrt(inflationAdjSalary))
 ```
 
-# Question 3
+# Question 4
 Which transformation standardizes the salary values better?
 ```{r}
 ggplot(data = nba,
@@ -80,7 +101,7 @@ ggplot(data = nba,
 # create PER variable
 ```{r}
 nba <-
-  nba >
+  nba |>
   mutate(
     PER = (
       (FG * 85.910) +
@@ -99,8 +120,18 @@ nba <-
   )
 ```
 
-# create multiplier 
 ```{r}
+ggplot(data = nba,
+       aes(x = PER)) +
+  geom_histogram(color = "black",
+                 fill = "ivory")
+```
 
+# plot PER vs. log salary
+```{r}
+ggplot(data = nba,
+       aes(x = PER,
+           y = loginflationsalary * 2)) +
+  geom_point()
 ```
 

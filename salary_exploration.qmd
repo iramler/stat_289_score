@@ -139,13 +139,16 @@ final |>
 ```
 
 ```{r}
-final |>
+plot <-
+  final |>
   ggplot(aes(x = logInflationAdjustedSalary * 2,
              y = PER,
              label = Player)) +
   geom_point() +
   geom_abline(slope = 1,
               intercept = 0)
+
+plotly::ggplotly(plot)
 ```
 
 ```{r}
@@ -153,6 +156,26 @@ final <-
   final |>
   relocate(logInflationAdjustedSalary, .after = inflationAdjSalary)
 ```
+
+```{r}
+sub <-
+  final |>
+  filter(PER >= 15 & (logInflationAdjustedSalary * 2) < 20 & ESPR > 1 & PER < 25)
+```
+
+```{r}
+plot <-
+  sub |>
+  ggplot(aes(x = logInflationAdjustedSalary * 2,
+             y = PER,
+             label = Player)) +
+  geom_point() +
+  geom_abline(slope = 1,
+              intercept = 0)
+
+plotly::ggplotly(plot)
+```
+
 
 ```{r}
 write_csv(final, here::here("esselt21/nba_salary_module/exploration/nba_salary.csv"))
