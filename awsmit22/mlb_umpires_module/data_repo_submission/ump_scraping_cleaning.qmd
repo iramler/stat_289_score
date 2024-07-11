@@ -111,6 +111,11 @@ umpires <- caps |> mutate(Rating = case_when(boost_stat == "K" & boost_pct > 0 ~
                                   boost_pct == 0 ~ "Neither"))
 ```
 
+```{r}
+umpires <- umpires |> filter(Games > 1 )
+```
+
+
 # Write the csv file
 
 ```{r}

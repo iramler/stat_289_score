@@ -1,0 +1,35 @@
+---
+title: "ump_exploration"
+format: html
+---
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+# Data
+
+```{r}
+umpires_df <- read_csv("~/Desktop/git/score_new/awsmit22/mlb_umpires_module/exploration/umpires.csv")
+```
+
+# Graphical Exploration
+
+```{r}
+ggplot(data = umpires_df, aes(x = Rating, y = Games)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = umpires_df, aes(x= k_pct, y = bb_pct)) + geom_point()
+```
+
+```{r}
+ggplot(data = umpires_df, aes(x= k_pct, y = bb_pct, colour = Rating)) + geom_point()
+```
+
+```{r}
+ggplot(data = umpires_df, aes(x = boost_stat, y = boost_pct)) + geom_col()
+```
+
