@@ -77,3 +77,30 @@ ggplot(data = nba,
                  fill = "ivory")
 ```
 
+# create PER variable
+```{r}
+nba <-
+  nba >
+  mutate(
+    PER = (
+      (FG * 85.910) +
+        (STL * 53.897) +
+        (`3P` * 51.757) +
+        (FT * 46.845) +
+        (BLK * 39.190) +
+        (ORB * 39.190) +
+        (AST * 34.677) +
+        (DRB * 14.707) -
+        (PF * 17.174) -
+        ((FTA - FT) * 20.091) -
+        ((FGA - FG) * 39.190) -
+        (TOV * 53.897)
+    ) * (1 / MP)
+  )
+```
+
+# create multiplier 
+```{r}
+
+```
+
