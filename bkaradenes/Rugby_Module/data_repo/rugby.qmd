@@ -1,0 +1,56 @@
+---
+title: "International Rugby Union Results"
+author: "Brendan Karadenes"
+date: 07/11/2024
+description: The data set looks at International Rugby Union Results from 1871 to 2023.
+categories:
+  - Data Visualization
+  - Data Wrangling
+---
+
+## Motivation
+
+The International Rugby Union is comprised of 133 member unions across the globe. There are about eight million participants from all different backgrounds, creating an inclusive and diverse field. Visualizing over a century of game results yields an interesting look into how the sport has changed.
+
+## Data
+
+The data set contains 2770 rows and 13 columns. Each row represents a Rugby match that took place during the period from 1871 to 2023.
+
+| Variable       | Description                                                              |
+|-----------------|-------------------------------------------------------|
+| date      | YYYY-MM-DD date of the match                                                  |
+| home_team  | home team of the match                         |
+| away_team   | away team of the match                          |
+| home_score |  points scored by home team |
+| away_score           | points scored by away team                                                           |
+| competition         | title of the competition                                                         |
+| stadium           | stadium name of where the match took place                                       |
+| city     | host city of the match                                                     |
+| country      | host country of the match                                             |
+| neutral     | TRUE/FALSE of whether the match was held at a neutral site             |
+| world_cup     | TRUE/FALSE of whether the match was a world cup match        |
+| winner      | winning team of the match                                                  |
+| year  | year the match took place                                           |
+
+Data File
+
+:   [rugby.csv](../data/rugby.csv)
+
+## Questions
+
+- Construct a visualization displaying the number of rugby matches each year from 1871 to 2023.
+
+- Construct a visualization showing the number of wins each country has. Who has the most?
+
+- Clean up the `competition` column so that the years are out and just the name of the event is displayed.
+
+- Construct a graph displaying the winners of a specific competition over the years.
+
+## References
+
+World Rugby
+
+<https://www.world.rugby/>
+
+
+
