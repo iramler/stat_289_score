@@ -4,7 +4,8 @@ author: Gavin Cassidy
 date: July 3, 2024
 description: Data detailing Stage and Overall Classifacation victories from the first Tour de France to 2019
 categories:
-  - 
+  - Side-by-Side Boxplots
+  - ANOVA for Difference in Means
 ---
 
 ## Motivation

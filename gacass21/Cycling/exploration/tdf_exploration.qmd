@@ -119,11 +119,92 @@ eras_plot <- tdf_winners |> mutate(era = case_when((edition < 37) ~ "1. Amphetam
                                      (edition >= 37 & edition < 53) ~ "2. Transition",
                                      (edition >= 53 & edition < 77) ~ "3. Steroid",
                                      (edition >= 77 & edition < 97) ~ "4. EPO",
-                                     (edition >= 97) ~ "5. Clean"))
+                                     (edition >= 97) ~ "5. Clean")) |>
+  mutate(era = as.factor(era))
+
+
 
 ggplot(data = eras_plot, aes(x = avg_speed, y = era)) +
-  geom_boxplot()
+  geom_boxplot(aes(color = era)) +
+  coord_flip() +
+  labs(y = "Era",
+       x = "Average Speed(km/h)",
+       color = "Era") +
+  theme_minimal()
+
+ggplot(data = eras_plot, aes(x = distance, y = era)) +
+  geom_boxplot(aes(color = era)) +
+  coord_flip() +
+  labs(y = "Era",
+       x = "Distance(km)",
+       color = "Era") +
+  theme_light()
+
+ggplot(data = eras_plot, aes(x = time_overall, y = era)) +
+  geom_boxplot(aes(color = era)) +
+  coord_flip() +
+  labs(y = "Era",
+       x = "Overall Time(hours)",
+       color = "Era") +
+  theme_minimal()
+
+
+ggplot(data = eras_plot, aes(x = seconds_margin, y = era)) +
+  geom_boxplot(aes(color = era)) +
+  coord_flip() +
+  labs(y = "Era",
+       x = "Winning Margin(seconds)",
+       color = "Era") +
+  theme_minimal()
+
+ggplot(data = tdf_winners, aes(x = edition, y = avg_speed)) +
+  geom_point()
+
+
+
+
+
 ```
+
+```{r}
+dist_reg <- aov(distance ~ era, data = eras_plot)
+
+boxplot(distance ~ era, data = eras_plot)
+
+summary(dist_reg)
+
+
+pairwise.t.test(eras_plot$distance, eras_plot$era, p.adj = "none")
+
+plot(dist_reg)
+```
+
+
+```{r}
+win_margin_reg <- aov(seconds_margin ~ era, data = eras_plot)
+
+boxplot(seconds_margin ~ era, data = eras_plot)
+
+summary(win_margin_reg)
+
+pairwise.t.test(eras_plot$seconds_margin, eras_plot$era, p.adj = "none")
+
+plot(win_margin_reg)
+```
+
+
+```{r}
+speed_reg <- aov(avg_speed ~ era, data = eras_plot)
+
+boxplot(avg_speed ~ era, data = eras_plot)
+
+summary(speed_reg)
+
+pairwise.t.test(eras_plot$avg_speed, eras_plot$era, p.adj = "none")
+
+plot(win_margin_reg)
+```
+
 
 
 
