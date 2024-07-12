@@ -1,0 +1,17 @@
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+```{r}
+url <- "https://www.thefosh.net/conference/3/M?year=2023"
+
+webpage <- read_html(url)
+
+table <- webpage %>%
+  html_nodes("table.is-family-monospace.is-fullwidth.has-text-centered") %>%
+  html_table(fill = TRUE)
+
+df <- table[[1]]
+```
+
