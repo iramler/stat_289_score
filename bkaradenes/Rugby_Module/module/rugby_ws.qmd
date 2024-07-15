@@ -1,0 +1,79 @@
+---
+title: "Data Visualization in Rugby"
+author: "Brendan Karadenes"
+format: html
+editor: visual
+---
+
+# Introduction
+
+International Rugby Union matches have taken place since 1871 and includes people of all different backgrounds. In rugby, each team has 15 players on the field and the team that scores the most points wins. There are several tournaments in rugby, the most popular being the Six Nations and the Rugby Championship. Our focus will be to visualize both the popularity of the sport and its winners from 1871 to 2023. Doing so will require some data cleaning and wrangling.
+
+# Data Description
+
+`winner` - winner of the match
+`year` - year of the match
+`competition` - name of the competition that the match was a part of
+`country` - host country of the match
+
+**Exercises**
+
+```{r}
+# load in the necessary packages and dataset
+library(dplyr)
+library(here)
+rugby <- read.csv(here(".../rugby.csv"))
+```
+
+1.  Use the `summarise()` and `group_by()` functions to create a new variable that counts the number of matches per year.
+
+```{r}
+
+
+```
+
+2.  Construct a scatterplot with a smoother that displays the popularity of the sport over time. Describe the trend.
+
+```{r}
+
+
+```
+
+3.  The teams in the Rugby Championship are typically Argentina, Australia, New Zealand, and South Africa. Of those, New Zealand and South Africa are ranked the top two men's teams in the world by World Rugby. Create a line graph that displays the number of matches played by those two nations from 1871 to 2023. Use dplyr functions to filter the data.
+
+```{r}
+
+
+```
+
+4.  Do you think "home field advantage" applies to the Rugby Championship? Make and interpret a scatterplot to explore this idea. The scatterplot should include average points for both home and away teams for each year of the "Rugby Championship". Hint: You'll need to use `stringr` to filter for the "Rugby Championship" competition and `dplyr` to get the average amount of points for home and away teams.
+
+```{r}
+library(stringr)
+
+```
+
+
+
+5.  Let's go back to the original dataset with all of the matches. Us dplyr functions to see which nation has the most wins. Make sure to filter out any ties. Use the `head()` function to find the top three.
+
+```{r}
+
+
+```
+
+
+
+6.  Now create a lollipop plot and a pie chart that displays the number of wins for each nation in the top 6 for total wins. Which visual is better at presenting the data. Explain.
+
+```{r}
+
+
+```
+
+```{r}
+
+
+```
+
+
