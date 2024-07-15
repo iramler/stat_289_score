@@ -12,3 +12,109 @@ library(tidyverse)
 euros <- read_csv(here::here("esselt21/euros_module/exploration/euros.csv"))
 ```
 
+# Cleaning data
+```{r}
+# getting rid of duplicates
+eurosClean <-
+  euros |>
+  select(-c(`Away Accurate passes...28`, `Away Accurate passes...68`, `Away Total shots.`, `Away Expected goals (xG)`, `Away Shots on target.`, `Away Expected goals (xG)`, `Away Shots on target.`, `Away Shots on target.`))
+```
+
+```{r}
+# separations
+eurosClean <-
+  eurosClean |>
+  separate(`Away Accurate passes...12`,
+           into = c("Away Accurate passes", "Away Accurate passes %"),
+           sep = 3) |>
+  separate(`Away Accurate long balls`,
+           into = c("Away Accurate long balls", "Away Accurate long balls %"),
+           sep = 2) |>
+  separate(`Away Accurate crosses`,
+           into = c("Away Accurate crosses", "Away Accurate crosses %"),
+           sep = 2) |>
+  separate(`Away Tackles won`,
+           into = c("Away Tackles won", "Away Tackles won %"),
+           sep = 2) |>
+  separate(`Away Ground duels won`,
+           into = c("Away Ground duels won", "Away Ground duels won %"),
+           sep = 2) |>
+  separate(`Away Aerial duels won`,
+           into = c("Away Aerial duels won", "Away Aerial duels won %"),
+           sep = 2) |>
+  separate(`Away Successful dribbles`,
+           into = c("Away Successful dribbles", "Away Successful dribbles %"),
+           sep = 2)
+```
+
+```{r}
+# Parsing Numbers
+eurosClean <-
+  eurosClean |>
+  mutate(`Away Accurate passes` = parse_number(`Away Accurate passes`),
+         `Away Accurate passes %` = parse_number(`Away Accurate passes %`),
+         `Away Accurate long balls` = parse_number(`Away Accurate long balls`),
+         `Away Accurate long balls %` = parse_number(`Away Accurate long balls %`),
+         `Away Accurate crosses` = parse_number(`Away Accurate crosses`),
+         `Away Accurate crosses %` = parse_number(`Away Accurate crosses %`),
+         `Away Tackles won` = parse_number(`Away Tackles won`),
+         `Away Tackles won %` = parse_number(`Away Tackles won %`),
+         `Away Ground duels won` = parse_number(`Away Ground duels won`),
+         `Away Ground duels won %` = parse_number(`Away Ground duels won %`),
+         `Away Aerial duels won` = parse_number(`Away Aerial duels won`),
+         `Away Aerial duels won %` = parse_number(`Away Aerial duels won %`),
+         `Away Successful dribbles` = parse_number(`Away Successful dribbles`),
+         `Away Successful dribbles %` = parse_number(`Away Successful dribbles %`))
+```
+
+```{r}
+# separations
+eurosClean <-
+  eurosClean |>
+  separate(`Away Accurate passes...52`,
+           into = c("Away Accurate passes", "Away Accurate passes %"),
+           sep = 3) |>
+  separate(`Away Accurate long balls`,
+           into = c("Away Accurate long balls", "Away Accurate long balls %"),
+           sep = 2) |>
+  separate(`Away Accurate crosses`,
+           into = c("Away Accurate crosses", "Away Accurate crosses %"),
+           sep = 2) |>
+  separate(`Away Tackles won`,
+           into = c("Away Tackles won", "Away Tackles won %"),
+           sep = 2) |>
+  separate(`Away Ground duels won`,
+           into = c("Away Ground duels won", "Away Ground duels won %"),
+           sep = 2) |>
+  separate(`Away Aerial duels won`,
+           into = c("Away Aerial duels won", "Away Aerial duels won %"),
+           sep = 2) |>
+  separate(`Away Successful dribbles`,
+           into = c("Away Successful dribbles", "Away Successful dribbles %"),
+           sep = 2)
+```
+
+```{r}
+# Parsing Numbers
+eurosClean <-
+  eurosClean |>
+  mutate(`Away Accurate passes` = parse_number(`Away Accurate passes`),
+         `Away Accurate passes %` = parse_number(`Away Accurate passes %`),
+         `Away Accurate long balls` = parse_number(`Away Accurate long balls`),
+         `Away Accurate long balls %` = parse_number(`Away Accurate long balls %`),
+         `Away Accurate crosses` = parse_number(`Away Accurate crosses`),
+         `Away Accurate crosses %` = parse_number(`Away Accurate crosses %`),
+         `Away Tackles won` = parse_number(`Away Tackles won`),
+         `Away Tackles won %` = parse_number(`Away Tackles won %`),
+         `Away Ground duels won` = parse_number(`Away Ground duels won`),
+         `Away Ground duels won %` = parse_number(`Away Ground duels won %`),
+         `Away Aerial duels won` = parse_number(`Away Aerial duels won`),
+         `Away Aerial duels won %` = parse_number(`Away Aerial duels won %`),
+         `Away Successful dribbles` = parse_number(`Away Successful dribbles`),
+         `Away Successful dribbles %` = parse_number(`Away Successful dribbles %`))
+```
+
+```{r}
+write_csv(eurosClean, here::here("esselt21/euros_module/exploration/eurosClean.csv"))
+```
+
