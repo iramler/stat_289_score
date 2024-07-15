@@ -1,0 +1,124 @@
+---
+title: "ump_question_prep"
+format: html
+---
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+library(car)
+```
+
+# Data
+
+```{r}
+umpires_df <- read_csv("~/Desktop/git/score_new/awsmit22/mlb_umpires_module/exploration/umpires.csv")
+```
+
+# Question 1
+
+Fit a model to predict `RPG` with `Games`, `k_pct`, `BA`, and `bb_pct`. Write down the model.
+
+```{r}
+full <- lm(RPG ~ Games + k_pct + BA + bb_pct, data = umpires_df)
+```
+
+# Question 2
+
+Predict the `RPG` for an umpire that has umpired 255 games, with a `BA` for hitters of 0.270, a `k_pct` of 15%, and a `bb_pct`of 10%.
+
+```{r}
+rpg <-  -13.337050 - (0.000369*255) + (0.155425*15) + (72.944952*0.270) + (0.084174*10)
+rpg
+```
+
+**The umpire would average 9.44 runs per game.**
+
+# Question 3
+
+Obtain the t-values for each of the predictors in the model. Are all of the predictors effective? If not, which ones are not and why?
+
+```{r}
+summary(full)
+```
+
+**All predictors are effective.**
+
+# Question 4
+
+Fill in the anova table for the model and perform a test for the overall fit of the model. 
+
+```{r}
+anova(full)
+```
+
+# Question 5
+
+Record and comment on the R-squared and adjusted R-squared values for the model.
+
+```{r}
+summary(full)
+```
+
+**Multiple R-squared:  0.6472**	
+**Adjusted R-squared:  0.6457** 
+
+# Question 6
+
+Drop `bb_pct` from the model and record the new R-squared and adjusted R-squared values. Is the model without `bb_pct` better or worse?
+
+```{r}
+new <- lm(RPG ~ Games + k_pct + BA, data = umpires_df)
+summary(new)
+```
+
+**Multiple R-squared:  0.6415**	
+**Adjusted R-squared:  0.6403** 
+
+# Question 7
+
+Find the VIFs for the original model, are any of the values concerning? Explain why or why not.
+
+```{r}
+vif(full)
+```
+
+**All of the VIFs are below 4 so none of them are of concern.**
+
+# Question 8
+
+What would it mean if a predictor had a poor VIF value?
+
+**This would mean that the predictor had high multicollinearity, meaning some of the predictors are too closely related to one another, this can cause issues with the validity of t.test results.**
+
+# Question 9
+
+What would you do with a predictor with too high a VIF?
+
+**Drop it from the model.**
+
+# Question 10
+
+Find and interpret the 95% confidence interval for the mean `RPG` for umpires that have umpired 400 games, with a `BA` for hitters of 0.215, a `k_pct` of 18%, and a `bb_pct`of 9%.
+
+```{r}
+new <- data.frame(Games=400, k_pct=18, BA=0.215, bb_pct = 9)
+predict(full, new, interval="confidence")
+```
+
+**(4.933806, 6.573678)**
+**We are 95% confident that the mean `RPG` for all umpires that have umpired 400 games, with a `BA` for hitters of 0.215, a `k_pct` of 18%, and a `bb_pct`of 9% will be between 5.59 and 5.92.**
+
+# Question 11
+
+Find and interpret the 95% prediction interval for the `RPG` of an umpire that has umpired 400 games, with a `BA` for hitters of 0.215, a `k_pct` of 18%, and a `bb_pct`of 9%.
+
+```{r}
+new <- data.frame(Games=400, k_pct=18, BA=0.215, bb_pct = 9)
+predict(full, new, interval="prediction")
+```
+
+**(4.933806, 6.573678)**
+**We are 95% confident that the `RPG` for an umpire that has umpired 400 games, with a `BA` for hitters of 0.215, a `k_pct` of 18%, and a `bb_pct`of 9% will be between 4.93 and 6.57.**
+

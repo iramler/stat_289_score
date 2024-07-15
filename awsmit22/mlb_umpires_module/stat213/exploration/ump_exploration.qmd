@@ -1,0 +1,83 @@
+---
+title: "ump_exploration"
+format: html
+---
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+library(car)
+```
+
+# Data
+
+```{r}
+umpires_df <- read_csv("~/Desktop/git/score_new/awsmit22/mlb_umpires_module/exploration/umpires.csv")
+```
+
+# Graphical Exploration
+
+```{r}
+ggplot(data = umpires_df, aes(x = Rating, y = Games)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = umpires_df, aes(x= k_pct, y = bb_pct)) + geom_point()
+```
+
+```{r}
+ggplot(data = umpires_df, aes(x= k_pct, y = bb_pct, colour = Rating)) + geom_point()
+```
+
+```{r}
+ggplot(data = umpires_df, aes(x = boost_stat, y = boost_pct)) + geom_col()
+```
+
+```{r}
+ggplot(data = umpires_df, aes(x = k_pct, y = bb_pct)) + geom_point()
+```
+
+```{r}
+ggplot(data = umpires_df, aes(x = boost_pct)) + geom_histogram(bins = 20, fill = "lightblue", colour = "black")
+```
+
+```{r}
+ggplot(data = umpires_df, aes(x = Rating)) + geom_bar()
+```
+
+```{r}
+no_neither <- umpires_df |> filter(Rating != "Neither")
+ggplot(data = no_neither, aes(x = Rating, y = Games)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = umpires_df, aes(x = boost_stat)) + facet_wrap(~Rating) + geom_bar()
+```
+
+# Statistical Exploration
+
+Anova for multiple regression
+
+```{r}
+full <- lm(RPG ~ Games + k_pct + bb_pct + BA + OBP + SLG, data = umpires_df)
+summary(full)
+```
+
+```{r}
+anova(full)
+```
+
+```{r}
+numbers <- umpires_df |> select(!c(Umpire, Rating, boost_stat))
+cor(numbers)
+```
+
+
+VIF for multicollinearity
+
+```{r}
+vif(full)
+```
+
+

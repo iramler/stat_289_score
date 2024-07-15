@@ -4,7 +4,12 @@ author: Abigail Smith
 date: July 10, 2024
 description: Analyzing various statistics from Major League Baseball home plate umpires dating back to 2008.
 categories:
-  -  COME BACK TO WHEN IM DONE QUESTIONS
+  -  Multiple Linear Regression
+  -  ANOVA for Overall Fit of Multiple Linear Regression
+  -  R-Squared
+  -  Multicollinearity
+  -  Confidence Intervals
+  -  Prediction Intervals
   
 editor: 
   markdown: 
@@ -68,9 +73,42 @@ umpire. The data is cumulative from 2008 until 2024.
 
 ## Questions
 
-1.  **GO BACK TO WHEN I'M DONE QUESTIONS**
+1.  Fit a model to predict `RPG` with `Games`, `k_pct`, `BA`, and `bb_pct`.       Write down the model.
+  
+2.  Predict the `RPG` for an umpire that has umpired 255 games, with a `BA`       for hitters of 0.270, a `k_pct` of 15%, and a `bb_pct`of 10%.
+
+3.  Obtain the t-values for each of the predictors in the model. Are all of       the predictors effective? If not, which ones are not and why?
+
+4.  Fill in the anova table for the model and perform a test for the overall      fit of the model. 
+
+5.  Record and comment on the R-squared and adjusted R-squared values for the     model.
+
+6.  Drop `bb_pct` from the model and record the new R-squared and adjusted        R-squared values. Is the model without `bb_pct` better or worse?
+
+7.  Find the VIFs for the original model, are any of the values concerning?       Explain why or why not.
+
+8.  What would it mean if a predictor had a poor VIF value?
+
+9.  What would you do with a predictor with too high a VIF?
+
+10. Find and interpret the 95% confidence interval for the mean `RPG` for         umpires that have umpired 400 games, with a `BA` for hitters of 0.215, a      `k_pct` of 18%, and a `bb_pct`of 9%.
+
+11. Find and interpret the 95% prediction interval for the `RPG` of an umpire     that has umpired 400 games, with a `BA` for hitters of 0.215, a `k_pct` of     18%, and a `bb_pct`of 9%.
 
 ## References
 
-[Website the Data was Scraped
-From](https://swishanalytics.com/mlb/mlb-umpire-factors){target="_blank"}
+[Website the Data was Scraped From](https://swishanalytics.com/mlb/mlb-umpire-factors){target="_blank"}
+
+[Baseball Wikipedia](https://en.wikipedia.org/wiki/Baseball){target="_blank"}
+
+[Major League Baseball Wikipedia](https://en.wikipedia.org/wiki/Major_League_Baseball){target="_blank"}
+
+[Umpire Wikipedia](https://en.wikipedia.org/wiki/Umpire_(baseball)){target="_blank"}
+
+[Baseball Position Wikipedia](https://en.wikipedia.org/wiki/Baseball_positions){target="_blank"}
+
+[Strike Zone Diagram](https://www.dimensions.com/element/strike-zone){target="_blank"}
+
+[Major League Baseball Website](https://www.mlb.com){target="_blank"}
+
+[Major League Baseball Umpires](https://www.mlb.com/official-information/umpires/bios){target="_blank"}
