@@ -1,0 +1,48 @@
+---
+title: "Table Tennis Exploration"
+author: "Gavin Cassidy"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+```{r}
+table_tennis <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Table Tennis/Exploration/table_tennis.csv")
+```
+
+```{r}
+table_tennis <- table_tennis |> separate(Date, into = c("Date", "Time"), sep = " ")
+
+## for HomeWinner, 1 means player 1 won, 0 means player 2
+```
+
+```{r}
+table_tennis |> group_by(HomeWinner) |> summarise(n())
+
+table_tennis |> pivot_longer(cols = c(Player1, Player2)) |> mutate(win = case_when((name == "Player1" & HomeWinner == 1) ~ 1,
+                                                                                   (name == "Player1" & HomeWinner == 0) ~ 0,
+                                                                                   (name == "Player2" & HomeWinner == 1) ~ 0,
+                                                                                   (name == "Player2" & HomeWinner == 0) ~ 1))
+
+p1_success <- table_tennis |> pivot_longer(cols = c(Player1, Player2)) |> filter(name == "Player1") |>
+  pivot_longer(cols = c(P1_G1, P1_G2, P1_G3, P1_G4, P1_G5), values_to = "points", names_to = "game") |>
+  select(X, Date, Time, Sets_P1, HomeWinner, name, value, game, points) |> 
+  mutate(win = case_when((name == "Player1" & HomeWinner == 1) ~ 1,
+                         (name == "Player1" & HomeWinner == 0) ~ 0)) |>
+  filter(!is.na(points))
+
+
+p2_success <- table_tennis |> pivot_longer(cols = c(Player1, Player2)) |> filter(name == "Player2") |>
+  pivot_longer(cols = c(P2_G1, P2_G2, P2_G3, P2_G4, P2_G5), values_to = "points", names_to = "game") |>
+  select(X, Date, Time, Sets_P2, HomeWinner, name, value, game, points) |>
+mutate(win = case_when((name == "Player2" & HomeWinner == 1) ~ 0,
+                       (name == "Player2" & HomeWinner == 0) ~ 1)) |>
+  filter(!is.na(points))
+
+table_tennis_clean <- full_join(p1_success, p2_success)
+  
+```
+
