@@ -1,0 +1,13 @@
+---
+title: "stadium_exploration"
+author: "eric seltzer"
+format: html
+---
+```{r}
+library(tidyverse)
+```
+
+```{r}
+attendance <- read_csv(here::here("esselt21/stadium_module/exploration/attendance.csv"))
+```
+
