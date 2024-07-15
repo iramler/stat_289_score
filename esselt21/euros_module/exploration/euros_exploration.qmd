@@ -1,0 +1,14 @@
+---
+title: "euros_exploration"
+author: "eric seltzer"
+format: html
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+euros <- read_csv(here::here("esselt21/euros_module/exploration/euros.csv"))
+```
+

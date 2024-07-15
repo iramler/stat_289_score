@@ -71,7 +71,7 @@ library(leaflet)
 stadiums_map <- leaflet(stadiums) |>
   setView(lng = -98.583, lat = 39.833, zoom = 4) |>
   addTiles() |>
-  addProviderTiles(providers$Esri.WorldGrayCanvas) |>
+  addProviderTiles(provider = providers$Stadia) |>
   addMarkers(lng = stadiums$Long, lat = stadiums$Lat,
              clusterOptions = markerClusterOptions(),
              popup = paste("Team:", stadiums$Team, "<br>",
