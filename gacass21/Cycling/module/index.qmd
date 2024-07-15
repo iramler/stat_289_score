@@ -1,21 +1,45 @@
 ---
-title: Tour de France Stage and General Classifacation Results
-author: Gavin Cassidy
-date: July 3, 2024
-description: Data detailing Stage and Overall Classifacation victories from the first Tour de France to 2019
+ title: "Tour de France Doping Eras"
+author:
+  - name: Gavin Cassidy
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: 
+    email: 
+    affiliation:
+      - ref: slu
+date: July 15, 2024
+description: Compare different statistics from the Tour de France across the different eras of doping in the Tour
 categories:
   - Side-by-Side Boxplots
   - ANOVA for Difference in Means
-  - Pairwise t Test
 ---
 
-## Motivation
+## Module
 
-The Tour de France is a cycling stage race that happening every summer all over France. The race consists of 21 stages, covering all types of terrain and difficulty where riders battle to beat each other to the end of each stage. Stages climb up and down mountains, through inclement weather, across gravel and cobblestones, and through villages all across France. Starting in 1903, the Tour is the premier race on the cycling circuit, with most riders considering just finishing all 21 stages to be an enormous accomplishment. The stages cover a variety of different terrains, with some stages climbing high into the Alps and the Pyrenees, and others covering flat ground around France. Cycling teams bring 8 riders each with one of several goals in mind. Winning stages is a great accomplishment, as well as winning the Climbing or Sprint Jerseys. Some riders have specialties, like Mark Cavendish who holds the record with 35 stage wins, all of which came on flat stages in a sprint. There are points classifications for sprints and climbing that teams will attempt to win, with points coming at race finishes or at the tops of climbs.
+### Introduction
 
-The General Classification(GC) is the overall competition of the Tour de France and arguably the most prestigious prize in a stage race in cycling. Riders compete to see who can complete the 21 stages in the least cumulative time and take home the yellow jersey. The leader of the GC is indicated by wearing the yellow jersey, also know as the Maillot Jaune. Teams fight to win the yellow jersey on the first stage, and then hope that their rider can survive through the Alps and Pyrenees. GC teams will target certain stages where riders can gain time and tend to focus their efforts on these stages. These stages include time trials, where cyclists ride a shorter course individually to see who can complete the course the fastest, or mountain stages where elevation and heat can make conditions brutal for all riders. Time gaps in General Classification battles can be relatively small considering the Tour de France often covers more than 4000 km across France. The record for largest margin of victory was in the first tour where Maurice Garin won by a margin of almost 3 hours. These days the winner that emerges after three weeks is usually around 3-5 minutes ahead of their closest rivals, while the tour has been decided by as little as 8 seconds.
+The Tour de France is a 21 stage cycling race that takes place around the hills and mountains of France every summer. Cyclists cover around 4000 kilometers over the duration of the race and can climb over 50,000 meters through the mountains. Riders come to the tour with one of a few goals, win a stage, win the Sprint or King of the Mountains jersey, win the General Classification, or support their team mates in achieving their goal. For most riders, winning a stage at the Tour is a career accomplishment, while some riders win several in a tour. Mark Cavendish holds the record for stage wins with 35 over the course of his career, all of them coming from sprints. A prestigious as winning a stage is, the General Classification(GC) is the ultimate prize of the Tour. The General Classification is the overall classification where placing is determined by overall time. The leader in the GC wears the Yellow Jersey or Maillot Jaune, and teams compete fiercely for their leader to wear yellow. 
 
-## Data
+The real battle in the General Classification happens mainly between the top riders on 2 types of stages, individual time trials and mountains stages. These types of stages generally have larger time gains or losses than flat stages as working with teammates is less beneficial or not allowed. Individual time trials are short stages where riders are alone and try to ride to get their best possible time. Time gaps are easier to open on time trials as there are no team mates to assist riders and no references to rivals. The most time gains come on the steep mountain stages, generally taking place in the Alps or Pyrenees. The mountain stages are where the GC contenders separate themselves, as minutes can be gained or lost on the steep climbs. The tour is often decided by which rider can drop their opponents up the steep climbs and hold them off for the duration of the tour. Modern day tours are often decided by less than 5 minutes, while early tours were won by hours. The closest finish ever was a 8 second victory where American Greg LeMond edged out Frenchman Laurent Fignon on the final stage, winning a time trial by 58 seconds to close a 50 second gap.
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+The learning objectives associated with this module are:
+
+-   Defining the null and alternative hypothesis for a multi-way ANOVA
+
+-   Reading boxplots to determine is means display variance or not
+
+-   Reading a pairwise t test and understand the output
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+-   The handout provides a plots and output for an ANOVA test and pairwise t test
+:::
+
+
+### Data
 
 This data was found on [kaggle](https://www.kaggle.com/datasets/pablomonleon/tour-de-france-historic-stages-data)
 
@@ -62,21 +86,17 @@ The tdf_winners data set contains information about the winner of each edition o
 | birth_country  | the country where the winner was born                                |
 | nationality    | the nationality of the winner                                        |
 
-## Questions
 
-1. How have the nationalities of stage and GC winners changed over time?
+### Materials
 
-2. Are there noticeable changes in results around doping controversies in cycling?
+[tdf_stages.csv](tdf_stages.csv) - Data set containing data on each stage of the Tour de France
 
-3. Do the gaps and average speeds of the riders change over time?
+[tdf_winners.csv](tdf_winners.csv) - Data set containing the winner of each Tour de France and associated statistics
 
-4. Is there any rider that has lots of overlap between stage and GC victories?
+[tdf_worksheet.docx](tdf_worksheet.docx) - Worksheet containing ANOVA and Pairwise t Test questions
 
+[tdf_worksheet_ans.docx](tdf_worksheet_ans.docx) - Answer Sheet
 
-## References
-
-Data Taken from [kaggle](https://www.kaggle.com/datasets/pablomonleon/tour-de-france-historic-stages-data).
-
-Originally found on [github](https://github.com/alastairrushworth/tdf)
-
-
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Students should find that there is differences between the eras of the Tour
+:::

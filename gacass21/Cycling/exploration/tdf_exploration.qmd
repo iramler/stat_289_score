@@ -53,7 +53,7 @@ tdf_stages |>
 
 
 
-ggplot(data = tdf_stages, aes(y = time_seconds, x = ind_half)) +
+ggplot(data = tdf_stages, aes(y = time_seconds, x = stage)) +
   geom_boxplot()
 ```
 
@@ -70,6 +70,7 @@ tdf_winners <- tdf_winners |> mutate(start_date = as.Date(start_date),
                                      seconds_margin = time_margin*3600) |>
   select(edition, start_date, winner_name, winner_team, distance, time_overall, time_margin, seconds_margin, everything())
 
+tdf_winners |> filter(seconds_margin == min(seconds_margin, na.rm = TRUE))
 
 tdf_winners |> summary()
 
@@ -130,7 +131,7 @@ ggplot(data = eras_plot, aes(x = avg_speed, y = era)) +
   labs(y = "Era",
        x = "Average Speed(km/h)",
        color = "Era") +
-  theme_minimal()
+  theme_light()
 
 ggplot(data = eras_plot, aes(x = distance, y = era)) +
   geom_boxplot(aes(color = era)) +
