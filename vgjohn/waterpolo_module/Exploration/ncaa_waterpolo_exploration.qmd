@@ -1,0 +1,46 @@
+
+waterpolo exploration
+making graphs 
+group by
+totals 
+234 
+outliers
+
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+ncaa_waterpolo <- read_csv("ncaa_waterpolo.csv")
+```
+
+```{r}
+ncaa_waterpolo %>% group_by(Team) %>%
+  summarize(
+    sum = sum(Goals)
+  )
+```
+
+```{r}
+ncaa_waterpolo %>% group_by(Team) %>%
+  ggplot(.,
+         mapping = aes(x = Goals,
+                       fill = Conference
+                       )) +
+  geom_boxplot()
+```
+
+```{r}
+ncaa_waterpolo %>% group_by(Conference) %>%
+  ggplot(.,
+         mapping = aes(x = Goals,
+                       fill = Conference
+                       )) +
+  geom_boxplot()
+```
+
+```{r}
+
+```
+

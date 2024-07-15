@@ -1,0 +1,51 @@
+---
+title: "NCAA Waterpolo"
+author: "Vivian Johnson" 
+date: "July 15, 2024" 
+
+categories:
+  - 
+---
+
+## Motivation
+ 
+The goal in basketball is to score as many points as possible by throwing the ball through the other team's hoop.
+
+In the middle of [the court](https://en.wikipedia.org/wiki/Basketball_court){target="_blank"} there is a half-court line that divides the two sides. On both sides, surrounding the hoops, there is an arch called the three-point line. Within the three-point line stands the free-throw line, where a player would shoot from should there be a foul called.
+
+**Scoring**
+
+Players can shoot towards the hoop from any point on the court. A different number of points is awarded based on where the player is standing when they release the ball. The three shots are explained below.
+
+-   Field Goal: Worth 2 points, scored by shooting within the three point line
+-   Three Pointer: Worth 3 points, scored by shooting outside the three point line.
+-   Free Throw: Worth one point, taken from the free throw line after a foul.
+
+A rebound is when a player from the team that is on defense obtains the ball after the other team takes a shot attempt at the hoop. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.
+
+## Data
+
+The `ncaa_waterpolo` data set includes the leaders in goals scored from each major conference for collegiate Men's Waterpolo. Each row has details about where the player attends college, what conference it competes in, their rank, and how many goals they've scored. 
+
+| Variable         | Description                                                |
+|------------------|------------------------------------------------------------|
+| Conference       | Conference the school is a part of                         |
+| Leader Rank      | Individual Ranking in the conference                       |
+| Name             | Player Name                                                |
+| Team             | University player attends                                  |
+| Goals            | Number of goals scored by that player in the 2023 season   |
+
+: [ncaa_waterpolo.csv](ncaa_waterpolo.csv){target="_blank"}
+
+## Questions
+
+1. Do players that were selected in the first round of the NBA draft play more minutes on average per game compared to players selected in the second round? 
+
+2. Comment on the amount of variability within groups compared to amount of variability between groups. 
+
+3. Explain the results of the one-way ANOVA test and some of the applications the results can be used for. 
+
+## References
+
+[20 Years of NBA Draft Data - Kaggle](https://www.kaggle.com/datasets/benwieland/nba-draft-data){target="_blank"}
+
