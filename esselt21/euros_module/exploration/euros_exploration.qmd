@@ -118,3 +118,29 @@ eurosClean <-
 write_csv(eurosClean, here::here("esselt21/euros_module/exploration/eurosClean.csv"))
 ```
 
+```{r}
+# exploration
+home <-
+  eurosClean |>
+  group_by(home_team) |>
+  summarise(homeGoals = sum(home_goals)) |>
+  arrange(desc(homeGoals))
+
+away <-
+  eurosClean |>
+  group_by(away_team) |>
+  summarise(awayGoals = sum(away_goals)) |>
+  arrange(desc(awayGoals))
+
+goals <-
+  left_join(home,
+            away,
+            by = c("home_team" = "away_team"))
+
+goals <-
+  goals |>
+  mutate(goals = homeGoals + awayGoals) |>
+  rename("Country" = home_team) |>
+  select(Country, goals)
+```
+
