@@ -22,6 +22,7 @@ Fit a model to predict `RPG` with `Games`, `k_pct`, `BA`, and `bb_pct`. Write do
 
 ```{r}
 full <- lm(RPG ~ Games + k_pct + BA + bb_pct, data = umpires_df)
+full
 ```
 
 # Question 2
@@ -37,7 +38,7 @@ rpg
 
 # Question 3
 
-Obtain the t-values for each of the predictors in the model. Are all of the predictors effective? If not, which ones are not and why?
+Obtain the p-values for each of the predictors in the model. Are all of the predictors effective? If not, which ones and why?
 
 ```{r}
 summary(full)
@@ -51,11 +52,12 @@ Fill in the anova table for the model and perform a test for the overall fit of 
 
 ```{r}
 anova(full)
+1-pf(398367.7,4,931)
 ```
 
 # Question 5
 
-Record and comment on the R-squared and adjusted R-squared values for the model.
+Record and comment on the multiple R-squared and adjusted R-squared values for the model.
 
 ```{r}
 summary(full)

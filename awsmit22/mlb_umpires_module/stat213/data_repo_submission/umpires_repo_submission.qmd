@@ -5,7 +5,7 @@ date: July 10, 2024
 description: Analyzing various statistics from Major League Baseball home plate umpires dating back to 2008.
 categories:
   -  Multiple Linear Regression
-  -  ANOVA for Overall Fit of Multiple Linear Regression
+  -  ANOVA for Multiple Linear Regression
   -  R-Squared
   -  Multicollinearity
   -  Confidence Intervals
@@ -77,13 +77,13 @@ umpire. The data is cumulative from 2008 until 2024.
   
 2.  Predict the `RPG` for an umpire that has umpired 255 games, with a `BA`       for hitters of 0.270, a `k_pct` of 15%, and a `bb_pct`of 10%.
 
-3.  Obtain the t-values for each of the predictors in the model. Are all of       the predictors effective? If not, which ones are not and why?
+3.  Obtain the p-values for each of the predictors in the model. Are all of       the predictors effective? If not, which ones and why?
 
 4.  Fill in the anova table for the model and perform a test for the overall      fit of the model. 
 
-5.  Record and comment on the R-squared and adjusted R-squared values for the     model.
+5.  Record and comment on the multiple R-squared and adjusted R-squared values for the     model.
 
-6.  Drop `bb_pct` from the model and record the new R-squared and adjusted        R-squared values. Is the model without `bb_pct` better or worse?
+6.  Drop `bb_pct` from the model and record the new multiple R-squared and adjusted        R-squared values. Is the model without `bb_pct` better or worse?
 
 7.  Find the VIFs for the original model, are any of the values concerning?       Explain why or why not.
 
