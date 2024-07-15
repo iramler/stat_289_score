@@ -1,0 +1,102 @@
+---
+title: "Visualizing International Rugby Results from 1871-2023"
+author:
+  - name: "Brendan Karadenes"
+    affilation:
+      - id: slu
+      - name: St. Lawrence University
+  - name: "Ivan Ramler"
+  - email: iramler@stlawu.edu
+    affiliation: 
+      - ref: slu
+date: July 15, 2024
+description: Visualizing international rugby match results from 1871 to 2023.
+categories:
+  - Data Visualization
+  - Data Wrangling
+---
+
+### Introduction
+
+For this activity you will be exploring match results from nations that participated in international rugby from 1871 to 2023. 
+
+In particular you will modify datasets and create visualizations to compare rugby teams.
+
+Investigating this data is useful for several reasons. First, exploring the data can help us understand which teams have had the most success throughout the years. Also, using our data wrangling skills we can create new variables that make it easier to conduct our analysis. Analysis like these can help predict match outcomes and use different variables to predict scoring.
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This activity would be suitable for an in-class example or quiz.
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of the activity, you will be able to:
+
+1.  Use functions to clean and modify data
+2.  Find summary statistics in R or similar software
+3.  Analyze and create visualizations
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+For this activity, students will primarily use R or similar software in order to modify and visualize data. Students should have a basic understanding of programming and analyzing graphs.
+:::
+
+::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
+The provided worksheets require R or similar software. 
+
+Since the data are provided, instructors are encouraged to modify the worksheets to have student construct visualizations and modify data using whichever software they choose.
+:::
+
+### Data
+
+The data set contains 2770 rows and 13 columns. Each row represents a Rugby match that took place during the period from 1871 to 2023.
+
+Download data: 
+
+Available on the [SCORE Data Repository](https://data.scorenetwork.org/): rugby.csv](https://github.com/SCOREnetworkorg/sports-data-repository/raw/main/data/rugby.csv)
+
+<details>
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable       | Description                                                              |
+|-----------------|-------------------------------------------------------|
+| date      | YYYY-MM-DD date of the match                                                  |
+| home_team  | home team of the match                         |
+| away_team   | away team of the match                          |
+| home_score |  points scored by home team |
+| away_score           | points scored by away team                                                           |
+| competition         | title of the competition                                                         |
+| stadium           | stadium name of where the match took place                                       |
+| city     | host city of the match                                                     |
+| country      | host country of the match                                             |
+| neutral     | TRUE/FALSE of whether the match was held at a neutral site             |
+| world_cup     | TRUE/FALSE of whether the match was a world cup match        |
+| winner      | winning team of the match                                                  |
+| year  | year the match took place                                           |
+
+**Data Source**
+
+[Kaggle](https://www.kaggle.com/datasets/lylebegbie/international-rugby-union-results-from-18712022/data){target="_blank"}
+
+</details>
+
+### Materials
+
+We provide editable MS Word and Quarto handouts along with their solutions.
+
+[Word handout](rugby_ws.docx)
+
+[Word handout - with solutions](rugby_ws_key.docx)
+
+[Quarto handout](rugby_ws.qmd)
+
+[Quarto handout - with solutions](rugby_ws_key.qmd)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+In conclusion, the international rugby data visualization worksheet provides valuable learning experiences in several key areas. First, it allows students to understand the usefulness of wrangling data to create deeper analysis. Learning to create new variables can unlock doors to future research. Also, creating various visualizations and understanding the pros and cons of each one can help students critically analyze their work. To conclude, this worksheet allows students to visualize the results of international rugby matches from 1871 to 2023.  
+:::
+
+
+
+
+
+
