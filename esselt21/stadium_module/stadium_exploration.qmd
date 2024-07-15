@@ -8,6 +8,77 @@ library(tidyverse)
 ```
 
 ```{r}
+stadiums <- read_csv(here::here("esselt21/stadium_module/exploration/stadiums.csv"))
 attendance <- read_csv(here::here("esselt21/stadium_module/exploration/attendance.csv"))
 ```
+
+<!-- ```{r} -->
+<!-- locations <- -->
+<!--   locations |> -->
+<!--   filter(League == "NFL") -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- stadiums <- -->
+<!--   stadiums |> -->
+<!--   arrange(Team) -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- attendance <- -->
+<!--   attendance |> -->
+<!--   replace(is.na(attendance), 0) -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- total <- -->
+<!--   attendance |> -->
+<!--   group_by(team) |> -->
+<!--   slice(1) |> -->
+<!--   select(team, total) -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- attendanceF <- -->
+<!--   attendance |> -->
+<!--   group_by(team) |> -->
+<!--   summarise( -->
+<!--             averageAttendance = mean(weekly_attendance)) -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- final <- -->
+<!--   left_join(total, -->
+<!--             attendanceF, -->
+<!--             by = "team") -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- final <- -->
+<!--   final |> -->
+<!--   ungroup() |> -->
+<!--   select(-team) -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- stadiums <- -->
+<!--   bind_cols(locations, final) -->
+<!-- ``` -->
+
+```{r}
+library(leaflet)
+
+stadiums_map <- leaflet(stadiums) |>
+  setView(lng = -98.583, lat = 39.833, zoom = 4) |>
+  addTiles() |>
+  addProviderTiles(providers$Esri.WorldGrayCanvas) |>
+  addMarkers(lng = stadiums$Long, lat = stadiums$Lat,
+             clusterOptions = markerClusterOptions(),
+             popup = paste("Team:", stadiums$Team, "<br>",
+                           "Average Attendance:", round(stadiums$averageAttendance,2), "<br>",
+                           "Total Attendance:", stadiums$total))
+stadiums_map
+```
+
+
 
