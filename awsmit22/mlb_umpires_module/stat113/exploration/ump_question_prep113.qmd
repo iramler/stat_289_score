@@ -18,6 +18,16 @@ umpires_df <- read_csv("~/Desktop/git/score_new/awsmit22/mlb_umpires_module/stat
 
 # Question 1
 
+Describe the distribution of `k_pct` based on this histogram.
+
+```{r}
+ggplot(data = umpires_df, aes(x = k_pct)) + geom_histogram(bins = 20, colour = "black", fill = "lightblue") + theme_minimal() + labs(x = "Strikeout Percentage", title = "Histogram of Strikeout Percentage") + theme(plot.title = element_text(hjust = 0.5))
+```
+
+**Strikeout percentage is left skewed, meaning that is more common for umpires to call a high number of strikeouts**
+
+# Question 2
+
 What is the mean `k_pct` for all umpires? 
 
 ```{r}
@@ -26,7 +36,41 @@ mean(umpires_df$k_pct)
 
 **The mean strike out percentage for all umpires is 20.8%**
 
-# Question 2
+# Question 3
+
+Calculate the IQR for `k_pct` using the summary statistics provided below. 
+
+```{r}
+summary(umpires_df$k_pct)
+
+iqr <- 22.2 - 19.9
+iqr
+```
+
+**The IQR for strike out percentage is 2.3**
+
+# Question 4
+
+The below tables shwo the umpires with the highest and lowest strikeout percentages respectively. Use the IQR method to determine if there are any outliers.
+
+```{r}
+umpires_df |> group_by(Umpire) |> summarise(k_pct = mean(k_pct)) |> arrange(desc(k_pct)) |> tail()
+```
+
+```{r}
+umpires_df |> group_by(Umpire) |> summarise(k_pct = mean(k_pct)) |> arrange(desc(k_pct)) |> head()
+```
+
+```{r}
+1.5*iqr 
+upper_out <- 22.2+3.45
+upper_out
+lower_out <- 22.2-3.45
+lower_out
+```
+
+
+
 
 What is the mean `bb_pct` for all umpires? 
 
@@ -38,13 +82,6 @@ mean(umpires_df$bb_pct)
 
 # Question 3
 
-Obtain the p-values for each of the predictors in the model. Are all of the predictors effective? If not, which ones and why?
-
-```{r}
-summary(full)
-```
-
-**All predictors are effective.**
 
 # Question 4
 
