@@ -6,23 +6,23 @@ format: html
 
 Ultimate, also known as Ultimate Frisbee is a sport played with 2 teams of 7 players where players pass a Frisbee to each other and try to score in the opposing team's end zone. Each point starts with a pull where the defensive team throws the disc from their end zone towards the offensive team's end zone. The offensive team starts the point with possession and tries to score without dropping the Frisbee. If they drop the Frisbee, the defensive team can pick it up and try to score. The point ends when either team scores and the team that scored becomes the defensive team and pulls to the other team to start the next point. Games are played to 15 points, or to a time cutoff where the new target score is 1 point above the leading team.
 
-The College Ultimate Championships consist of 2 weekends of competition, one for Division 3 and one for Division 1. 16 teams competed to be Division 3 Champion in both the men's and women's divisions, while 20 teams compete for the two Division 1 titles. Statistics were measured from each game at both events and can b found on the [USA Ultimate](https://play.usaultimate.org/) Website. 
+The College Ultimate Championships consist of 2 weekends of competition, one for Division 3 and one for Division 1. 16 teams competed to be Division 3 Champion in both the men's and women's divisions, while 20 teams compete for the two Division 1 titles. Statistics were measured from each game at both events and can be found on the [USA Ultimate](https://play.usaultimate.org/) Website. 
 
 ## Import Packages
 
 ```{r}
-## install.packages("tidyverse")
+#| warning: false
 library(tidyverse)
 library(readr)
-library(here)
 ```
 
 ## Data Import
 
 Load in both tables with data from the 2024 College Ultimate Championships.
 ```{r}
-ultimate_statistics <- read_csv(here('gacass21/Ultimate/module/ultimate_total.csv'))
-ultimate_games <- read_csv(here('gacass21/Ultimate/module/ultimate_per_game.csv'))
+#| warning: false
+ultimate_statistics <- read_csv('ultimate_total.csv', show_col_types = FALSE) |> select(-1)
+ultimate_games <- read_csv('ultimate_games.csv', show_col_types = FALSE) |> select(-1)
 ```
 
 
@@ -41,7 +41,7 @@ Now that the current data is in a tidy form, create new variables that have stat
 
 ## Data Visualization
 
-1. The data set has 1,665 total players that participated in the College Ultimate Championships, figure out how many actually contributed in a statistical category using a filter function. (Don't include team games as a category)
+1. The data set has 1,665 total players that participated in the College Ultimate Championships, figure out how many actually contributed in any statistical category using a filter function. (Don't include team games as a category)
 
 ```{r}
 
@@ -61,16 +61,16 @@ Now that the current data is in a tidy form, create new variables that have stat
 ```
 
 
-4. Make a plot comparing division and assists and comment on any trends that are visible
+4. Make a plot comparing assists by division and comment on any interesting features that are visible
 
 ```{r}
 
 ```
 
 
-5. 
+5. Assists and Turns per game
 
-a. Make a plot that compares turns_per_game and Assists, label the players in the top 10 for assists using geom_text().
+a. Make a plot that compares turns per game and assists, label the players in the top 10 for assists using geom_text().
 
 ```{r}
 
@@ -80,9 +80,9 @@ a. Make a plot that compares turns_per_game and Assists, label the players in th
 b. Based on this plot, should any of the players in the top 10 for assists throw the disc less because of their turnover frequency? 
 
 
-6. 
+6. Comparing Turns by Division
 
-a. Make a plot comparing Turns and Division. Are there any differences between the divisions?
+a. Make a plot comparing turns by division. Are there any differences between the divisions?
 
 ```{r}
 
@@ -90,19 +90,18 @@ a. Make a plot comparing Turns and Division. Are there any differences between t
 
 b. Add in the players that are top 10 in assists. What does a high assist total indicate about your turnover rate?
 
-Players with a high assist count all tend to be outliers in the Turnover category. They likely are handlers who throw the disc significantly more than most other players.
 
 
-7. Plot Turns vs. plus_minus and use full_division_name as the color aesthetic, describe the relationship between Turns and plus_minus.
+7. Plot turns vs. plus minus and use division as the color aesthetic, describe the relationship between turns and plus minus.
 
 ```{r}
 
 ```
 
 
-8. 
+8. Points and Ds across divisions
 
-a. Make a bar plot with the top 15 point scorers in order using reorder if necessary. Group by full division name and note if any players are in the same division.
+a. Make a bar plot with the top 15 point scorers in order using reorder if necessary. Group by division and note how the players are distributed across divisions.
 
 ```{r}
 
@@ -115,7 +114,7 @@ b. Make the same bar plot with the top 15 players in Ds and compare the distribu
 ```
 
 
-9. 
+9. Offensive Dominance
 
 a. Make a table with the sum of plus_minus for each division. 
 

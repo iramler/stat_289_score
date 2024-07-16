@@ -5,55 +5,54 @@ format: html
 
 Ultimate, also known as Ultimate Frisbee is a sport played with 2 teams of 7 players where players pass a Frisbee to each other and try to score in the opposing team's end zone. Each point starts with a pull where the defensive team throws the disc from their end zone towards the offensive team's end zone. The offensive team starts the point with possession and tries to score without dropping the Frisbee. If they drop the Frisbee, the defensive team can pick it up and try to score. The point ends when either team scores and the team that scored becomes the defensive team and pulls to the other team to start the next point. Games are played to 15 points, or to a time cutoff where the new target score is 1 point above the leading team.
 
-The College Ultimate Championships consist of 2 weekends of competition, one for Division 3 and one for Division 1. 16 teams competed to be Division 3 Champion in both the men's and women's divisions, while 20 teams compete for the two Division 1 titles. Statistics were measured from each game at both events and 
+The College Ultimate Championships consist of 2 weekends of competition, one for Division 3 and one for Division 1. 16 teams competed to be Division 3 Champion in both the men's and women's divisions, while 20 teams compete for the two Division 1 titles. Statistics were measured from each game at both events and can be found on the [USA Ultimate](https://play.usaultimate.org/) Website. 
 
 ## Import Packages
 
 ```{r}
-## install.packages("tidyverse")
-## install.packages("readr")
+#| warning: false
 library(tidyverse)
 library(readr)
-library(here)
 ```
 
 ## Data Import
 
 Load in both tables with data from the 2024 College Ultimate Championships.
 ```{r}
-ultimate_statistics <- read_csv(here('gacass21/Ultimate/module/ultimate_total.csv'))
-ultimate_games <- read_csv(here('gacass21/Ultimate/module/ultimate_per_game.csv'))
+#| warning: false
+ultimate_statistics <- read_csv('ultimate_total.csv', show_col_types = FALSE) |> select(-1)
+ultimate_games <- read_csv('ultimate_games.csv', show_col_types = FALSE) |> select(-1)
 ```
 
 
 ## Tidy and Clean Data
 
-Starting with the ultimate_statistics table, make the table in a tidy format using the pivot_wider() function.
+Starting with the ultimate_statistics dataset, make the table in a tidy format using the pivot_wider() function.
 
 ```{r}
-ultimate_statistics <- ultimate_statistics |> pivot_wider(names_from = Measure.Names, values_from = Measure.Values)
+ultimate_statistics <- ultimate_statistics |> pivot_wider(names_from = statistic, values_from = value)
 ```
 
 After Using pivot_wider to make each row contain the statistics from 1 player, use pivot wider on ultimate_games as well.
 
 ```{r}
-ultimate_games <- ultimate_games |> pivot_wider(names_from = Measure.Names, values_from = Measure.Values)
+ultimate_games <- ultimate_games |> pivot_wider(names_from = statistic, values_from = value)
 ```
 
-Then use a join to combine the 2 tables by Player.
+Then use a join to combine the 2 datasets by player.
 
 ```{r}
-ultimate_data <- left_join(ultimate_statistics, ultimate_games, by = join_by(Player))
+ultimate_data <- left_join(ultimate_statistics, ultimate_games, by = join_by(player))
 ```
 
 Are there any repeated columns, if so use select to remove these columns.
 
 ```{r}
-ultimate_data <- ultimate_data |> select(Player, 
-                                         Competition.Level.x, 
-                                         Full.Division.Name.x, 
-                                         Full.Team.Name.x, 
-                                         Gender.Division.x, 
+ultimate_data <- ultimate_data |> select(player, 
+                                         level.x, 
+                                         gender.x,
+                                         division.x,
+                                         team_name.x, 
                                          Turns, 
                                          Ds, 
                                          Assists, 
@@ -65,12 +64,12 @@ ultimate_data <- ultimate_data |> select(Player,
 Are columns named appropriately? Use a rename function to rename columns.
 
 ```{r}
-ultimate_data <- ultimate_data |> rename(competition_level = Competition.Level.x, 
-                        full_division_name = Full.Division.Name.x, 
-                        full_team_name = Full.Team.Name.x,
-                        gender_division = Gender.Division.x,
+ultimate_data <- ultimate_data |> rename(level = level.x, 
+                        gender = gender.x, 
+                        division = division.x,
+                        team_name = team_name.x,
                         plus_minus = `Plus Minus`,
-                        team_games = `Team Games`)
+                        games = `Team Games`)
 ## Could also rename other variables to be lowercase
 ```
 
@@ -85,16 +84,16 @@ ultimate_data |> summary()
 Now that the current data is in a tidy form, create new variables that have statistics in a per_game format using a mutate function and the team games column.
 
 ```{r}
-ultimate_full <- ultimate_data |> mutate(turns_per_game = Turns/team_games, 
-                                         ds_per_game = Ds/team_games,
-                                         ast_per_game = Assists/team_games,
-                                         pts_per_game = Points/team_games,
-                                         pls_mns_per_game = plus_minus/team_games)
+ultimate_full <- ultimate_data |> mutate(turns_per_game = Turns/games, 
+                                         ds_per_game = Ds/games,
+                                         ast_per_game = Assists/games,
+                                         pts_per_game = Points/games,
+                                         pls_mns_per_game = plus_minus/games)
 ```
 
 ## Data Visualization
 
-1. The data set has 1,665 total players that participated in the College Ultimate Championships, figure out how many actually contributed in a statistical category using a filter function. (Don't include Team Games as a category)
+1. The data set has 1,665 total players that participated in the College Ultimate Championships, figure out how many actually contributed in any statistical category using a filter function. (Don't include Team Games as a category)
 
 ```{r}
 ultimate_full |> filter(Points > 0 | Assists > 0 | Turns > 0 | Ds > 0 | plus_minus != 0) |> 
@@ -107,30 +106,30 @@ ultimate_full |> filter(Points > 0 | Assists > 0 | Turns > 0 | Ds > 0 | plus_min
 2. Using dplyr functions, make a table that finds the top 15 players in assist totals from any division. Only include, player name, assists, and assists per game in your final table.
 
 ```{r}
-ultimate_full |> arrange(desc(Assists)) |> slice(1:15) |> select(Player, Assists, ast_per_game)
+ultimate_full |> arrange(desc(Assists)) |> slice(1:15) |> select(player, Assists, ast_per_game)
 ```
 
-3. Which player had the most points and assists combined in each division?
+3. Which player had the most points and assists combined in each different division?
 
 ```{r}
-ultimate_full |> mutate(pts_contributed = Points + Assists) |> group_by(full_division_name) |> arrange(desc(pts_contributed)) |> select(Player, Points, Assists, pts_contributed) |> slice(1)
+ultimate_full |> mutate(pts_contributed = Points + Assists) |> group_by(division) |> arrange(desc(pts_contributed)) |> select(player, Points, Assists, pts_contributed) |> slice(1)
 
 ## Leo Gordon, Jolie Krebs, Jacob Felton, Julianna Galian
 ```
 
 
-4. Make a plot comparing division and assists and comment on any trends that are visible
+4. Make a plot comparing assists by division and comment on any interesting features that are visible
 
 ```{r}
-ggplot(data = ultimate_full, aes(y = Assists, x = full_division_name)) +
-  geom_jitter(aes(color = full_division_name))
+ggplot(data = ultimate_full, aes(y = Assists, x = division)) +
+  geom_jitter(aes(color = division))
 
 
-ggplot(data = ultimate_full, aes(y = Assists, x = full_division_name)) +
-  geom_boxplot(aes(color = full_division_name))
+ggplot(data = ultimate_full, aes(y = Assists, x = division)) +
+  geom_boxplot(aes(color = division))
 
-ggplot(data = ultimate_full, aes(y = Assists, x = full_division_name)) +
-  geom_violin(aes(color = full_division_name))
+ggplot(data = ultimate_full, aes(y = Assists, x = division)) +
+  geom_violin(aes(color = division))
 
 
 ## Could do boxplot or strip plot, violin plot would also work but doesn't display the data very well
@@ -138,7 +137,7 @@ ggplot(data = ultimate_full, aes(y = Assists, x = full_division_name)) +
 ```
 
 
-5. 
+5. Assists and Turns per game
 
 a. Make a plot that compares turns per game and Assists, label the players in the top 10 for assists using geom_text().
 
@@ -148,13 +147,13 @@ top_10_assists <- ultimate_full |> arrange(desc(Assists)) |> slice(1:10)
 
 ggplot(data = ultimate_full, aes(x = Assists, y = turns_per_game)) +
   geom_point(color = "skyblue4") +
-  geom_text(data = top_10_assists, aes(label = Player))
+  geom_text(data = top_10_assists, aes(label = player))
 
-## Could also color = full_division_name
+## Could also color = division
 
 ggplot(data = ultimate_full, aes(x = Assists, y = turns_per_game)) +
-  geom_point(aes(color = full_division_name)) +
-  geom_text(data = top_10_assists, aes(label = Player))
+  geom_point(aes(color = division)) +
+  geom_text(data = top_10_assists, aes(label = player))
 ```
 
 
@@ -164,60 +163,69 @@ Claire Lee, Jolie Krebs, and Juliana Galian all have more Turns than assists, so
 
 
 
-6. 
+6. Comparing Turns by Division
 
-a. Make a plot comparing Turns and Division. Are there any differences between the divisions?
+a. Make a plot comparing turns by division. Are there any differences between the divisions?
 
 ```{r}
-ggplot(data = ultimate_full, aes(x = full_division_name, y = Turns)) +
-  geom_boxplot(aes(color = full_division_name)) +
-  geom_text(data = top_10_assists, aes(label = Player))
+ggplot(data = ultimate_full, aes(x = division, y = Turns)) +
+  geom_boxplot(aes(color = division))
 ```
 
-b. Add in the players that are top 10 in assists. What does a high assist total indicate about your turnover rate?
+D3 Women tend to have more turns than other divisions, along with a larger spread of outliers, D1 Women have more turns than the Mens divisions but less than D3 Women. The Mens divisions are pretty similar in distribtion of turns.
 
-Players with a high assist count all tend to be outliers in the Turnover category. They likely are handlers who throw the disc significantly more than most other players.
+b. Label the players that are top 10 in assists. What does a high assist total indicate about your turnover rate?
+
+```{r}
+ggplot(data = ultimate_full, aes(x = division, y = Turns)) +
+  geom_boxplot(aes(color = division)) +
+  geom_text(data = top_10_assists, aes(label = player))
+```
+
+Players with a high assist count all tend to be outliers in the Turnover category. They likely are handlers who throw the disc significantly more than most other players. More throws mean more opportunites to assist, but more opportunities to create a turnover.
 
 
-7. Plot Turns vs. plus_minus and use full_division_name as the color aesthetic, describe the relationship between Turns and plus_minus.
+7. Plot turns vs. plus minus and use division as the color aesthetic, describe the relationship between turns and plus minus.
 
 ```{r}
 ggplot(data = ultimate_full, aes(x = plus_minus, y = Turns)) +
-  geom_point(aes(color = full_division_name))
+  geom_point(aes(color = division))
 
 ## This is a moderate negative linear relationship. Not a very strong relationship, but there is definitely a correlation between large amounts of turnovers and a lower plus/minus.
 ```
 
 
-8. 
+8. Points and Ds across divisions
 
-a. Make a bar plot with the top 15 point scorers in order using reorder if necessary. Group by full division name and note if any players are in the same division.
+a. Make a bar plot with the top 15 point scorers in order using reorder if necessary. Group by division and note how the players are distributed across divisions.
 
 ```{r}
-top_15_points <- ultimate_full |> arrange(desc(Points)) |> slice(1:15) |> mutate(Player = reorder(Player, Points))
+top_15_points <- ultimate_full |> arrange(desc(Points)) |> slice(1:15) |> mutate(player = reorder(player, Points))
 
-ggplot(data = top_15_points, aes(y = Player, x = Points)) +
-  geom_col(aes(fill = full_division_name))
+ggplot(data = top_15_points, aes(y = player, x = Points)) +
+  geom_col(aes(fill = division))
+
+## The distribution of divisions for points is fairly balanced with every division included
 ```
 
 b. Make the same bar plot with the top 15 players in Ds and compare the distribution of divisions.
 
 ```{r}
-top_15_ds <- ultimate_full |> arrange(desc(Ds)) |> slice(1:15) |> mutate(Player = reorder(Player, Ds))
+top_15_ds <- ultimate_full |> arrange(desc(Ds)) |> slice(1:15) |> mutate(player = reorder(player, Ds))
 
-ggplot(data = top_15_ds, aes(y = Player, x = Ds)) +
-  geom_col(aes(fill = full_division_name))
+ggplot(data = top_15_ds, aes(y = player, x = Ds)) +
+  geom_col(aes(fill = division))
 
 
 ## Points is fairly balanced, with every division included while Ds only has the women's divisions, with D3 taking 11 of the top 15 spots.
 ```
 
 
-9. 
+9. Offensive Dominance
 
 a. Make a table with the sum of plus_minus for each division. 
 ```{r}
-ultimate_full |> group_by(full_division_name) |> summarise(tot_plus_minus = sum(plus_minus))
+ultimate_full |> group_by(division) |> summarise(tot_plus_minus = sum(plus_minus))
 ```
 
 
