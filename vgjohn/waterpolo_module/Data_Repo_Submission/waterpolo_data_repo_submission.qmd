@@ -1,31 +1,48 @@
 ---
-title: "NCAA Waterpolo"
+title: "NCAA Water Polo"
 author: "Vivian Johnson" 
-date: "July 15, 2024" 
+date: "July 16, 2024" 
 
 categories:
-  - 
+  - Data Visualization
+  - Combining Data Sets
+  - Data Wrangling 
 ---
 
 ## Motivation
  
-The goal in basketball is to score as many points as possible by throwing the ball through the other team's hoop.
+Water polo is a fast paced, competitive game that combines different elements of swimming, soccer, and basketball. The National Collegiate Athletic Association (NCAA) is the governing body that oversees collegiate water polo among many of the top US colleges. 
 
-In the middle of [the court](https://en.wikipedia.org/wiki/Basketball_court){target="_blank"} there is a half-court line that divides the two sides. On both sides, surrounding the hoops, there is an arch called the three-point line. Within the three-point line stands the free-throw line, where a player would shoot from should there be a foul called.
+##### Understanding Water Polo
 
-**Scoring**
+* The objective in water polo is to score more goals than the opposing team by throwing a ball into the opponent's net. 
 
-Players can shoot towards the hoop from any point on the court. A different number of points is awarded based on where the player is standing when they release the ball. The three shots are explained below.
+* Each team consists of six players plus a goal keeper. 
 
--   Field Goal: Worth 2 points, scored by shooting within the three point line
--   Three Pointer: Worth 3 points, scored by shooting outside the three point line.
--   Free Throw: Worth one point, taken from the free throw line after a foul.
+* Each game consists of four quarters, each eight minutes long, as well as a half-time break. 
 
-A rebound is when a player from the team that is on defense obtains the ball after the other team takes a shot attempt at the hoop. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.
+##### The Field 
+
+* Water polo is played in a pool with a depth of at least six feet. Though exact dimensions vary, the standard size for a NCAA Men's Water Polo game is about 25 by 20 meters. There are two, three meter wide goals are located at each end of the pool. 
+
+##### Basic Rules 
+
+* Players are not allowed to touch the bottom of the pool and must tread water or swim throughout the duration of the game. 
+
+* Players also must only use one hand to hold or pass the ball (except for the goalkeeper).
+
+* There are some minor fours that result in free throws for the opposing team. For major fouls, a player can be temporarily sent out of the game. 
+
+
+Overall, water polo is an exciting sport that requires a lot of physical fitness and athleticism. The NCAA divides competing schools into different divisions based on school size and budgets for athletics. 
 
 ## Data
 
-The `ncaa_waterpolo` data set includes the leaders in goals scored from each major conference for collegiate Men's Waterpolo. Each row has details about where the player attends college, what conference it competes in, their rank, and how many goals they've scored. 
+The `ncaa_waterpolo_goals` data set includes the leaders in goals scored from each major conference for collegiate Men's Water Polo. Each row has details about where the player attends college, what conference it competes in, their rank, and how many goals they've scored. 
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
 
 | Variable         | Description                                                |
 |------------------|------------------------------------------------------------|
@@ -35,17 +52,41 @@ The `ncaa_waterpolo` data set includes the leaders in goals scored from each maj
 | Team             | University player attends                                  |
 | Goals            | Number of goals scored by that player in the 2023 season   |
 
-: [ncaa_waterpolo.csv](ncaa_waterpolo.csv){target="_blank"}
+</details>
+
+**Download Goals Data:** [ncaa_waterpolo_goals.csv](ncaa_waterpolo_goals.csv){target="_blank"}
+
+
+Similarly, the `ncaa_waterpolo_assists` data set includes leaders in assists from each major conference for collegiate Men's Water Polo. 
+
+<details>
+
+<summary><b>Variable Descriptions </b></summary>
+
+| Variable         | Description                                                |
+|------------------|------------------------------------------------------------|
+| Conference       | Conference the school is a part of                         |
+| Leader Rank      | Individual Ranking in the conference                       |
+| Name             | Player Name                                                |
+| Team             | University player attends                                  |
+| Assists          | Number of assists scored by that player in the 2023 season |
+
+</details>
+
+
+**Download Assists Data:** [ncaa_waterpolo_assists.csv](ncaa_waterpolo_assists.csv){target="_blank"}
 
 ## Questions
 
-1. Do players that were selected in the first round of the NBA draft play more minutes on average per game compared to players selected in the second round? 
+1. Use join statements to combine and filter data sets.
 
-2. Comment on the amount of variability within groups compared to amount of variability between groups. 
+2. Arrange data to find maximum and minimum values.
 
-3. Explain the results of the one-way ANOVA test and some of the applications the results can be used for. 
+3. Build data visualizations based on group totals. 
 
 ## References
 
-[20 Years of NBA Draft Data - Kaggle](https://www.kaggle.com/datasets/benwieland/nba-draft-data){target="_blank"}
+The data are compiled from the FOSH, an online water polo score keeping website that tracks statistics and leaders from each conference for both men's and women's collegiate water polo. 
+
+[The FOSH](https://www.thefosh.net/league/1/M?year=2023){target="_blank"}
 

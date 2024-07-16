@@ -12,35 +12,145 @@ library(tidyverse)
 ```
 
 ```{r}
-ncaa_waterpolo <- read_csv("ncaa_waterpolo.csv")
+ncaa_waterpolo_goals <- read_csv("ncaa_waterpolo_goals.csv")
+ncaa_waterpolo_assists <- read_csv("ncaa_waterpolo_assists.csv")
 ```
+out of the leaders - which school has the highest number of goals scored. what about the least 
+
+- salem (322) navy (32)
 
 ```{r}
-ncaa_waterpolo %>% group_by(Team) %>%
+ncaa_waterpolo_goals %>% group_by(Team) %>%
   summarize(
     sum = sum(Goals)
+    )%>% 
+  arrange(desc(sum))
+```
+
+
+```{r}
+ncaa_waterpolo_goals %>% filter(Team == "Salem University")
+```
+
+```{r}
+ncaa_waterpolo_goals %>% group_by(Conference) %>%
+  ggplot(.,
+         mapping = aes(x = Goals,
+                       fill = Conference
+                       )) +
+  geom_boxplot()
+```
+out of all of the schools, which ones have the most leaders in their conference
+```{r}
+# Goals 
+ncaa_waterpolo_goals %>% group_by(Team) %>%
+  summarize(
+    num_leaders_goals = n()
+  ) %>%
+  arrange(desc(num_leaders_goals))
+
+# Assists
+ncaa_waterpolo_assists %>% group_by(Team) %>%
+  summarize(
+    num_leaders_assists = n()
+  ) %>%
+  arrange(desc(num_leaders_assists))
+
+```
+```{r}
+# What conference has the most number of goals 
+ncaa_waterpolo_goals %>% group_by(Conference) %>%
+  summarize(
+    num_goals = sum(Goals)
+  ) %>%
+  arrange(desc(num_goals))
+```
+
+```{r}
+ncaa_waterpolo_assists %>% filter(Team == "Salem University")
+```
+merge based on team or conference 
+
+```{r}
+# goals by conference
+summary_goals <-
+  ncaa_waterpolo_goals %>% group_by(Conference) %>%
+  summarize(
+    n_goals = sum(Goals)
   )
+
+summary_goals
+
+# assists by conference
+summary_assists <-
+  ncaa_waterpolo_assists %>% group_by(Conference) %>%
+  summarize(
+    n_assists = sum(Assists)
+  )
+
+summary_assists
+
+# joining together
+full_join(summary_assists, summary_goals,by = "Conference")
 ```
 
 ```{r}
-ncaa_waterpolo %>% group_by(Team) %>%
-  ggplot(.,
-         mapping = aes(x = Goals,
-                       fill = Conference
-                       )) +
-  geom_boxplot()
+# goals by team and conference
+team_summary_goals <-
+  ncaa_waterpolo_goals %>% group_by(Team, Conference) %>%
+  summarize(
+    n_goals = sum(Goals)
+  )
+
+team_summary_goals
+
+# conference by assists
+team_summary_assists <-
+  ncaa_waterpolo_assists %>% group_by(Team, Conference) %>%
+  summarize(
+    n_assists = sum(Assists)
+  )
+
+team_summary_assists
+
+# joining together
+join <- inner_join(team_summary_assists, team_summary_goals,by = "Team") %>%
+  arrange(desc(n_goals)) %>%
+  select(-Conference.y)
+
+# editing format 
+join <- join %>%
+  rename(
+    Conference = Conference.x,
+    `Total Assists` = n_assists,
+    `Total Goals` = n_goals
+  )
+
+join <- join[, c("Conference", "Team", "Total Assists", "Total Goals")]
+
 ```
+
+what schools don't have leaders in both the goals category and the assists category 
+```{r}
+anti_join(team_summary_goals, team_summary_assists, by = "Team")
+```
+
 
 ```{r}
-ncaa_waterpolo %>% group_by(Conference) %>%
-  ggplot(.,
-         mapping = aes(x = Goals,
-                       fill = Conference
-                       )) +
-  geom_boxplot()
+# who had the most assists - California Baptist
+join %>% arrange(desc(`Total Assists`))
+
+# who had the most goals - Salem University 
+join %>% arrange(desc(`Total Goals`))
+
+# what conference had the most assists 
+join %>% group_by(Conference) %>%
+  summarize(
+    num_assists = sum(`Total Assists`)
+  ) %>%
+  arrange(desc(num_assists))
+
 ```
 
-```{r}
 
-```
 
