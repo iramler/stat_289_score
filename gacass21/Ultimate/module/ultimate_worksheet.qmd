@@ -12,17 +12,17 @@ The College Ultimate Championships consist of 2 weekends of competition, one for
 
 ```{r}
 ## install.packages("tidyverse")
-## install.packages("readr")
 library(tidyverse)
 library(readr)
+library(here)
 ```
 
 ## Data Import
 
 Load in both tables with data from the 2024 College Ultimate Championships.
 ```{r}
-ultimate_statistics <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Ultimate/data_repo/ultimate_total.csv")
-ultimate_games <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Ultimate/data_repo/ultimate_per_game.csv")
+ultimate_statistics <- read_csv(here('gacass21/Ultimate/module/ultimate_total.csv'))
+ultimate_games <- read_csv(here('gacass21/Ultimate/module/ultimate_per_game.csv'))
 ```
 
 
