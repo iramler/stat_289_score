@@ -1,0 +1,58 @@
+---
+title: "density_visualization"
+author: "eric seltzer"
+format: html
+---
+
+```{r}
+options(rgl.useNULL = FALSE)
+
+require(tidyverse)
+require(sf)
+require(tmap)
+require(ggplot2)
+require(mapview)
+require(stars)
+require(rayshader)
+require(MetBrewer)
+require(colorspace)
+require(rayrender)
+require(magick)
+require(extrafont)
+```
+
+```{r}
+us_hex <-
+  st_read(here::here("esselt21/kontur_population_US_20231101.gpkg")) %>%
+  st_transform(3106)
+
+us_admin <-
+  st_read(here::here("esselt21/kontur_boundaries_US_20230628.gpkg")) %>%
+  st_transform(3106)
+```
+
+```{r}
+distinct_names <- 
+  us_admin |>
+  distinct(name_en)
+
+# Creating BD Boundary
+bd_boundary <-
+  bd_admin %>%
+  # filter(name_en == 'Dhaka Division') %>% # Filtering Dhaka Only
+  st_geometry %>%
+  st_union %>%
+  st_sf %>%
+  st_make_valid()
+
+# Only keep the part below if you want to plot the Dhaka Division only and plot only the dhaka_hex instead of bd_hex
+# Otherwise comment it.
+
+bd_boundary %>% 
+  ggplot()+
+  geom_sf()
+
+dhaka_hex <- st_intersection(bd_hex, bd_boundary) %>% 
+  st_transform(crs = 3106)
+```
+
