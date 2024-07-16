@@ -26,7 +26,10 @@ table_tennis |> pivot_longer(cols = c(Player1, Player2)) |> mutate(win = case_wh
                                                                                    (name == "Player1" & HomeWinner == 0) ~ 0,
                                                                                    (name == "Player2" & HomeWinner == 1) ~ 0,
                                                                                    (name == "Player2" & HomeWinner == 0) ~ 1))
+```
 
+
+```{r}
 p1_success <- table_tennis |> pivot_longer(cols = c(Player1, Player2)) |> filter(name == "Player1") |>
   pivot_longer(cols = c(P1_G1, P1_G2, P1_G3, P1_G4, P1_G5), values_to = "points", names_to = "game") |>
   rename(sets = Sets_P1) |>
@@ -34,8 +37,10 @@ p1_success <- table_tennis |> pivot_longer(cols = c(Player1, Player2)) |> filter
   mutate(win = case_when((name == "Player1" & HomeWinner == 1) ~ 1,
                          (name == "Player1" & HomeWinner == 0) ~ 0)) |>
   filter(!is.na(points))
+```
 
 
+```{r}
 p2_success <- table_tennis |> pivot_longer(cols = c(Player1, Player2)) |> filter(name == "Player2") |>
   pivot_longer(cols = c(P2_G1, P2_G2, P2_G3, P2_G4, P2_G5), values_to = "points", names_to = "game") |>
   rename(sets = Sets_P2) |>
@@ -43,13 +48,19 @@ p2_success <- table_tennis |> pivot_longer(cols = c(Player1, Player2)) |> filter
 mutate(win = case_when((name == "Player2" & HomeWinner == 1) ~ 0,
                        (name == "Player2" & HomeWinner == 0) ~ 1)) |>
   filter(!is.na(points))
+```
 
+
+```{r}
 table_tennis_clean <- full_join(p1_success, p2_success)
 
 table_tennis_clean <- table_tennis_clean |> separate(game, into = c("stuff", "game"), sep = 4)
 
 table_tennis_clean |> group_by(value) |> summarise(tot_pts = sum(points)) |> arrange(desc(tot_pts))
+```
 
+
+```{r}
 table_tennis_clean |> 
   group_by(value, X) |> 
   slice(1) |> 
@@ -57,21 +68,39 @@ table_tennis_clean |>
   group_by(value) |> 
   summarise(wins = sum(win)) |> 
   arrange(desc(wins))
-  
+```
 
+
+```{r}
 table_tennis_clean |> group_by(X, game) |> summarise(win_margin = abs(diff(points))) |>
   ungroup() |> group_by(game) |> summarise(avg_win_margin = mean(win_margin), games = n())
-  
+```
 
+
+```{r}
 table_tennis_clean |> filter(points == 0 & win == 1)
 
 table_tennis_clean |> group_by(game) |> summarise(tot_pts = sum(points))
+```
 
+
+```{r}
 table_tennis_clean |> group_by(Date) |>
   summarise(games = n()/2, tot_pts = sum(points)) |> 
   mutate(ppg = tot_pts/games)|>
   arrange(desc(ppg))
+```
 
-table_tennis_clean |> group_by(X, value)
+
+```{r}
+ppm_table <- table_tennis_clean |> group_by(X, value) |> summarise(pts = sum(points), wins = mean(win)) |>
+  ungroup() |> group_by(value) |>
+  summarise(tot_pts = sum(pts), matches = n(), wins = sum(wins)) |> mutate(ppm = tot_pts/matches, winrate = (wins/matches)*100) |> arrange(desc(winrate))
+```
+
+
+```{r}
+ggplot(data = ppm_table, aes(x = wins, y = ppm)) +
+  geom_point()
 ```
 

@@ -17,7 +17,7 @@ library(readr)
 
 ## Data Import
 
-Load in both tables with data from the 2024 College Ultimate Championships.
+Load in both datasets with data from the 2024 College Ultimate Championships.
 ```{r}
 #| warning: false
 ultimate_statistics <- read_csv('ultimate_total.csv', show_col_types = FALSE) |> select(-1)
@@ -27,7 +27,7 @@ ultimate_games <- read_csv('ultimate_games.csv', show_col_types = FALSE) |> sele
 
 ## Tidy and Clean Data
 
-Starting with the ultimate_statistics dataset, make the table in a tidy format using the pivot_wider() function.
+Starting with the ultimate_statistics dataset, make the dataset in a tidy format using the pivot_wider() function.
 
 ```{r}
 ultimate_statistics <- ultimate_statistics |> pivot_wider(names_from = statistic, values_from = value)
