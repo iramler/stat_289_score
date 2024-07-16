@@ -24,7 +24,7 @@ Describe the distribution of `k_pct` based on this histogram.
 ggplot(data = umpires_df, aes(x = k_pct)) + geom_histogram(bins = 20, colour = "black", fill = "lightblue") + theme_minimal() + labs(x = "Strikeout Percentage", title = "Histogram of Strikeout Percentage") + theme(plot.title = element_text(hjust = 0.5))
 ```
 
-**Strikeout percentage is left skewed, meaning that is more common for umpires to call a high number of strikeouts**
+**Strikeout percentage is left skewed, meaning that is more common for umpires to call a high number of strikeouts.**
 
 # Question 2
 
@@ -38,39 +38,54 @@ mean(umpires_df$k_pct)
 
 # Question 3
 
+What is the standard deviation of `k_pct` for all umpires? 
+
+```{r}
+sd(umpires_df$k_pct)
+```
+
+**The standard deviation of strike out percentage for all umpires is 2.03**
+
+# Question 4
+
 Calculate the IQR for `k_pct` using the summary statistics provided below. 
 
 ```{r}
 summary(umpires_df$k_pct)
 
-iqr <- 22.2 - 19.9
-iqr
+iqrk <- 22.2 - 19.9
+iqrk
 ```
 
 **The IQR for strike out percentage is 2.3**
 
-# Question 4
+# Question 5
 
-The below tables shwo the umpires with the highest and lowest strikeout percentages respectively. Use the IQR method to determine if there are any outliers.
+The below table shows the 25 umpires with the lowest strikeout percentages in the dataset. Use the IQR method to determine if there are any outliers.
 
 ```{r}
-umpires_df |> group_by(Umpire) |> summarise(k_pct = mean(k_pct)) |> arrange(desc(k_pct)) |> tail()
+umpires_df |> group_by(Umpire) |> summarise(k_pct = mean(k_pct)) |> arrange(desc(k_pct)) |> tail(n = 25) |> print(n = 25)
 ```
 
 ```{r}
-umpires_df |> group_by(Umpire) |> summarise(k_pct = mean(k_pct)) |> arrange(desc(k_pct)) |> head()
+1.5*iqrk 
+lower_outk <- 22.2-3.45
+lower_outk
 ```
+
+**All of the umpires in this list except for the top 11 are outliers as they are all less than `Q1-1.5IQR`.**
+
+# Question 6
+
+Describe the distribution of `bb_pct` based on this histogram.
 
 ```{r}
-1.5*iqr 
-upper_out <- 22.2+3.45
-upper_out
-lower_out <- 22.2-3.45
-lower_out
+ggplot(data = umpires_df, aes(x = bb_pct)) + geom_histogram(bins = 20, colour = "black", fill = "lightblue") + theme_minimal() + labs(x = "Walk Percentage", title = "Histogram of Walk Percentage") + theme(plot.title = element_text(hjust = 0.5))
 ```
 
+**Walk percentage is right skewed, meaning that is more common for umpires to call a low number of walks.**
 
-
+# Question 7
 
 What is the mean `bb_pct` for all umpires? 
 
@@ -78,86 +93,47 @@ What is the mean `bb_pct` for all umpires?
 mean(umpires_df$bb_pct)
 ```
 
-**The mean walk percentage for all umpires is 8.48%**
-
-# Question 3
-
-
-# Question 4
-
-Fill in the anova table for the model and perform a test for the overall fit of the model. 
-
-```{r}
-anova(full)
-1-pf(398367.7,4,931)
-```
-
-# Question 5
-
-Record and comment on the multiple R-squared and adjusted R-squared values for the model.
-
-```{r}
-summary(full)
-```
-
-**Multiple R-squared:  0.6472**	
-**Adjusted R-squared:  0.6457** 
-
-# Question 6
-
-Drop `bb_pct` from the model and record the new R-squared and adjusted R-squared values. Is the model without `bb_pct` better or worse?
-
-```{r}
-new <- lm(RPG ~ Games + k_pct + BA, data = umpires_df)
-summary(new)
-```
-
-**Multiple R-squared:  0.6415**	
-**Adjusted R-squared:  0.6403** 
-
-# Question 7
-
-Find the VIFs for the original model, are any of the values concerning? Explain why or why not.
-
-```{r}
-vif(full)
-```
-
-**All of the VIFs are below 4 so none of them are of concern.**
+**The mean walk percentage for all umpires is 8.48%.**
 
 # Question 8
 
-What would it mean if a predictor had a poor VIF value?
+What is the standard deviation of `bb_pct` for all umpires? 
 
-**This would mean that the predictor had high multicollinearity, meaning some of the predictors are too closely related to one another, this can cause issues with the validity of t.test results.**
+```{r}
+sd(umpires_df$bb_pct)
+```
+
+**The standard deviation of walk percentage for all umpires is 0.68.**
 
 # Question 9
 
-What would you do with a predictor with too high a VIF?
+Calculate the IQR for `bb_pct` using the summary statistics provided below. 
 
-**Drop it from the model.**
+```{r}
+summary(umpires_df$bb_pct)
+
+iqrw <- 8.7 - 8.1
+iqrw
+```
+
+**The IQR for walk percentage is 0.6**
 
 # Question 10
 
-Find and interpret the 95% confidence interval for the mean `RPG` for umpires that have umpired 400 games, with a `BA` for hitters of 0.215, a `k_pct` of 18%, and a `bb_pct`of 9%.
+The below table shows the 10 umpires with the highest walk percentages in the dataset. Use the IQR method to determine if there are any outliers.
 
 ```{r}
-new <- data.frame(Games=400, k_pct=18, BA=0.215, bb_pct = 9)
-predict(full, new, interval="confidence")
+umpires_df |> group_by(Umpire) |> summarise(bb_pct = mean(bb_pct)) |> arrange(desc(bb_pct)) |> head(n = 10)
 ```
-
-**(4.933806, 6.573678)**
-**We are 95% confident that the mean `RPG` for all umpires that have umpired 400 games, with a `BA` for hitters of 0.215, a `k_pct` of 18%, and a `bb_pct`of 9% will be between 5.59 and 5.92.**
-
-# Question 11
-
-Find and interpret the 95% prediction interval for the `RPG` of an umpire that has umpired 400 games, with a `BA` for hitters of 0.215, a `k_pct` of 18%, and a `bb_pct`of 9%.
 
 ```{r}
-new <- data.frame(Games=400, k_pct=18, BA=0.215, bb_pct = 9)
-predict(full, new, interval="prediction")
+1.5*iqrw 
+upper_outw <- 8.7+0.9
+upper_outw
 ```
 
-**(4.933806, 6.573678)**
-**We are 95% confident that the `RPG` for an umpire that has umpired 400 games, with a `BA` for hitters of 0.215, a `k_pct` of 18%, and a `bb_pct`of 9% will be between 4.93 and 6.57.**
+**All of the umpires in this list except for Chris Tiller are outliers as they are all more than `Q3+1.5IQR`.**
+
+
+
 
