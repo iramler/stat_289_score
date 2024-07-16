@@ -9,7 +9,7 @@ library(tidyverse)
 ```
 
 ```{r}
-euros <- read_csv(here::here("esselt21/euros_module/exploration/euros.csv"))
+eurosClean <- read_csv(here::here("esselt21/euros_module/exploration/eurosClean.csv"))
 ```
 
 # Cleaning data
@@ -119,7 +119,7 @@ write_csv(eurosClean, here::here("esselt21/euros_module/exploration/eurosClean.c
 ```
 
 ```{r}
-# exploration
+# exploration, who had the most goals
 home <-
   eurosClean |>
   group_by(home_team) |>
@@ -142,5 +142,120 @@ goals <-
   mutate(goals = homeGoals + awayGoals) |>
   rename("Country" = home_team) |>
   select(Country, goals)
+```
+
+```{r}
+# who had the most expected goals
+home <-
+  eurosClean |>
+  group_by(home_team) |>
+  summarise(homexG = sum(`Home Expected goals(xG)`))
+
+away <-
+  eurosClean |>
+  group_by(away_team) |>
+  summarise(awayxG = sum(`Away Expected goals(xG)`))
+
+xG <-
+  left_join(home,
+            away,
+            by = c("home_team" = "away_team"))
+
+xG <-
+  xG |>
+  mutate(xG = homexG + awayxG) |>
+  rename("Country" = home_team) |>
+  select(Country, xG)
+```
+
+```{r}
+# joining xG and goals
+goals_xG <-
+  left_join(goals,
+            xG,
+            by = c("Country"))
+```
+
+```{r}
+# adding a winner variable
+eurosClean <-
+  eurosClean |>
+  mutate(HomeWin = if_else(home_goals > away_goals, "W", if_else(home_goals < away_goals, "L", "D")))
+
+eurosClean <-
+  eurosClean |>
+  mutate()
+  relocate(HomeWin, .after = away_goals)
+  
+eurosClean <-
+  eurosClean |>
+  mutate(totalGoals = home_goals + away_goals,
+         totalxG = `Home Expected goals(xG)` + `Away Expected goals(xG)`)
+```
+
+```{r}
+ggplot(data = eurosClean,
+       aes(x = totalGoals)) +
+  geom_dotplot(fill = "ivory",
+               color = "black") +
+  theme_minimal()
+
+ggplot(data = eurosClean,
+       aes(x = totalxG)) +
+  geom_histogram(fill = "ivory",
+                 color = "black",
+                 binwidth = .5) +
+  geom_dotplot(aes(x = totalGoals),
+               fill = "cyan",
+               alpha = 0.5) +
+  theme_minimal()
+```
+
+```{r}
+# who missed the most big chances
+home <-
+  eurosClean |>
+  group_by(home_team) |>
+  summarise(homeMissed = sum(`Home Big chances missed`))
+
+away <-
+  eurosClean |>
+  group_by(away_team) |>
+  summarise(awayMissed = sum(`Away Big chances missed`))
+
+missedChances <-
+  left_join(home,
+            away,
+            by = c("home_team" = "away_team"))
+
+missedChances <-
+  missedChances |>
+  mutate(missedChances = homeMissed + awayMissed) |>
+  rename("Country" = home_team) |>
+  select(Country, missedChances)
+```
+
+```{r}
+# who had the most average attendance
+home <-
+  eurosClean |>
+  group_by(home_team) |>
+  summarise(homeAttendance = mean(attendance))
+
+away <-
+  eurosClean |>
+  group_by(away_team) |>
+  summarise(awayAttendance = mean(attendance))
+
+attendance <-
+  left_join(home,
+            away,
+            by = c("home_team" = "away_team"))
+
+attendance <-
+  attendance |>
+  mutate(averageAttendance = (homeAttendance + awayAttendance) / 2) |>
+  rename("Country" = home_team) |>
+  select(Country, averageAttendance)
 ```
 

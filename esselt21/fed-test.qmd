@@ -1,0 +1,47 @@
+---
+title: "fed-test"
+author: "eric seltzer"
+format: html
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+data <- read_csv(here::here("esselt21/rent-unemployment.csv"))
+```
+
+```{r}
+write_csv(data, here::here("esselt21/rent-unemployment.csv"))
+```
+
+```{r}
+filtered <-
+  data |>
+  filter(State %in% c("Nevada", "Ohio", "Arizona", "Texas", "New York", "Pennsylvania")) |>
+  mutate(State = as_factor(State))
+```
+
+```{r}
+library(plotly)
+plot <-
+  ggplot(data = filtered,
+         aes(x = `Median Rent`,
+             y = Advance)) +
+    geom_point(aes(color = State),
+               size = 4) +
+    theme_minimal() +
+    labs(title = "Median Rent vs. Advance Initial Claims",
+         subtitle = "Initial Claims Filed During Week Ended July 6",
+         caption = "UBS Takes No Days Off",
+         y = "Advance Claims") +
+    theme(legend.title = element_blank(),
+          plot.subtitle = element_text(size = 6),
+          plot.caption = element_text(size = 4),
+          legend.position = "none")
+
+ggplotly(plot)
+  
+```
+
