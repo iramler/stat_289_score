@@ -11,11 +11,11 @@ library(broom)
 ```
 
 ```{r}
-worldchamps <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/module/worldchamps.csv")
+worldchamps <- read_csv("worldchamps.csv")
 ```
 
 ```{r}
-racewalking_df <- read_csv("~/Desktop/git/stat_289_score/awsmit22/racewalking/data_repo_submission/racewalking.csv")
+racewalking_df <- read_csv("racewalking.csv")
 
 racewalking_df <- racewalkingdf |> mutate(DISTANCE = as.factor(DISTANCE), REC = as.factor(REC), PODIUM = as.factor(PODIUM))
 ```

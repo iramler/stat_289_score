@@ -12,7 +12,7 @@ library(readr)
 # Data
 
 ```{r}
-fencing_df <- read_csv("~/Desktop/git/score_new/awsmit22/fencing_module/stat213/exploration/fencing.csv")
+fencing_df <- read_csv("fencing.csv")
 fencing_df
 ```
 

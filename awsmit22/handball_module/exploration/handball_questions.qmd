@@ -16,7 +16,7 @@ library(stringr)
 # Data
 
 ```{r}
-handball_clean <- read_csv("~/Desktop/git/stat_289_score/awsmit22/handball_module/data_repo_submission/handball.csv")
+handball_clean <- read_csv("handball.csv")
 ```
 
 # Question 1

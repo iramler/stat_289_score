@@ -12,7 +12,7 @@ library(readr)
 # Data
 
 ```{r}
-slalom_df <- read_csv("~/Desktop/git/score_new/awsmit22/giant_slalom_paired/module/Tremblant1.csv")
+slalom_df <- read_csv("Tremblant1.csv")
 ```
 
 # Question 1

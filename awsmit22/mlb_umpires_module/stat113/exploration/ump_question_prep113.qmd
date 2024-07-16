@@ -13,28 +13,28 @@ library(car)
 # Data
 
 ```{r}
-umpires_df <- read_csv("umpires.csv")
+umpires_df <- read_csv("~/Desktop/git/score_new/awsmit22/mlb_umpires_module/stat113/exploration/umpires.csv")
 ```
 
 # Question 1
 
-Fit a model to predict `RPG` with `Games`, `k_pct`, `BA`, and `bb_pct`. Write down the model.
+What is the mean `k_pct` for all umpires? 
 
 ```{r}
-full <- lm(RPG ~ Games + k_pct + BA + bb_pct, data = umpires_df)
-full
+mean(umpires_df$k_pct)
 ```
+
+**The mean strike out percentage for all umpires is 20.8%**
 
 # Question 2
 
-Predict the `RPG` for an umpire that has umpired 255 games, with a `BA` for hitters of 0.270, a `k_pct` of 15%, and a `bb_pct`of 10%.
+What is the mean `bb_pct` for all umpires? 
 
 ```{r}
-rpg <-  -13.337050 - (0.000369*255) + (0.155425*15) + (72.944952*0.270) + (0.084174*10)
-rpg
+mean(umpires_df$bb_pct)
 ```
 
-**The umpire would average 9.44 runs per game.**
+**The mean walk percentage for all umpires is 8.48%**
 
 # Question 3
 

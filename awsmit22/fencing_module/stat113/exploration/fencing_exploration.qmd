@@ -14,7 +14,7 @@ library(broom)
 # Data
 
 ```{r}
-fencing_df <- read_csv("~/Desktop/git/score_new/awsmit22/fencing_module/exploration/fencing.csv")
+fencing_df <- read_csv("fencing.csv")
 fencing_df
 ```
 

@@ -15,11 +15,11 @@ library(stringr)
 ```
 
 ```{r}
-athletes_df <- read_csv("/Users/abigailsmith/Desktop/git/stat_289_score/awsmit22/rowing_module/data_repo_submission/athlete_events.csv")
+athletes_df <- read_csv("athlete_events.csv")
 ```
 
 ```{r}
-medals_df <- read_csv("/Users/abigailsmith/Desktop/git/stat_289_score/awsmit22/rowing_module/data_repo_submission/rowing_medals.csv")
+medals_df <- read_csv("rowing_medals.csv")
 ```
 
 # Worksheet questions
