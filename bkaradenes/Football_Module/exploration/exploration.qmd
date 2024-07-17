@@ -13,14 +13,14 @@ library(readxl)
 ```
 
 ```{r}
-receivers <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recievers.xlsx"))
-recruits <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit.xlsx"))
-recruits_17 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_17.xlsx"))
-recruits_15 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_15.xlsx"))
-recruits_18 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_18.xlsx"))
-recruits_19 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_19.xlsx"))
-recruits_14 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_14.xlsx"))
-recruits_13 <- read_excel(here("bkaradenes/CollegeFB_Module/exploration/recruit_13.xlsx"))
+receivers <- read_excel(here("bkaradenes/Football_Module/exploration/recievers.xlsx"))
+recruits <- read_excel(here("bkaradenes/Football_Module/exploration/recruit.xlsx"))
+recruits_17 <- read_excel(here("bkaradenes/Football_Module/exploration/recruit_17.xlsx"))
+recruits_15 <- read_excel(here("bkaradenes/Football_Module/exploration/recruit_15.xlsx"))
+recruits_18 <- read_excel(here("bkaradenes/Football_Module/exploration/recruit_18.xlsx"))
+recruits_19 <- read_excel(here("bkaradenes/Football_Module/exploration/recruit_19.xlsx"))
+recruits_14 <- read_excel(here("bkaradenes/Football_Module/exploration/recruit_14.xlsx"))
+recruits_13 <- read_excel(here("bkaradenes/Football_Module/exploration/recruit_13.xlsx"))
 ```
 
 ```{r}

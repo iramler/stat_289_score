@@ -49,8 +49,25 @@ recruiting <- full_join(x = recruiting, y = recruits_13)
 ```
 
 ```{r}
-football_recruiting <- full_join(x = recruiting, y = receivers, by = "Player")
-write.csv(football_recruiting, "football.csv", row.names = FALSE)
+full_join(x = recruiting, y = receivers, by = "Player")
+
+football_recruiting <- football_recruiting %>%
+  rename(NFL_Position = Pos,
+         Catch_Pct = `Ctch%`,
+         First_Downs = `1D`,
+         Success_Rate = `Succ%`,
+         Yd_per_Target = `Y/Tgt`,
+         Yd_per_Game = `Y/G`,
+         State = StateProvince,
+         Latitude = `HometownInfo Latitude`,
+         Longitude = `HometownInfo Longitude`,
+         FipsCode = `HometownInfo FipsCode`,
+         Rec_per_Game = `R/G`,
+         Yd_per_Rec = `Y/R`) %>%
+  select(-Position) 
+
+
+write.csv(football_recruiting,"College_NFL_WR.csv", row.names = FALSE)
 ```
 
 

@@ -5,11 +5,11 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
-  - name: "Ivan Ramler"
-    email: iramler@stlawu.edu
+  - name: "Robin Lock"
+    email: rlock@stlawu.edu
     affiliation:
       - ref: slu
-date: July 9, 2024
+date: July 17, 2024
 description: Cleaning and analyzing football data for top high school wide receivers who played in the NFL in 2023.
 categories: 
   - data wrangling
@@ -17,7 +17,7 @@ categories:
 
 ### Introduction
 
-For this activity, you will be exploring football wide receivers that committed to Division 1 universities that graduated high school from 2013 to 2019 and NFL players who were targeted for receptions during the 2023 season.
+For this activity, you will be exploring football wide receivers that graduated high school from 2013 to 2019 and committed to Division 1 universities.Also, the data includes NFL players who were targeted for receptions during the 2023 season.
 
 In particular, you will modify datasets, merge tables, and analyze the data using visualizations to compare and contrast receivers in the NFL. 
 
@@ -30,7 +30,7 @@ This activity would be suitable for an in-class example or quiz.
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of the activity, you will be able to:
 
-1.  Use functions to clean and merge data
+1.  Clean and merge data
 2.  Find summary statistics in R or similar software
 3.  Analyze and create simple visualizations
 :::
@@ -47,11 +47,11 @@ Since the data are provided, instructors are encouraged to modify the worksheets
 
 ### Data
 
-The data contains 3959 rows and 38 columns. Each row represents a football player who either was targeted for receptions in the NFL in 2023 and/or was recruited to play Division 1 football from the years 2013-2019.
+The data contains 3965 rows and 37 columns. Each row represents a football player who either was targeted for receptions in the NFL in 2023 and/or was recruited to play Division 1 football from the years 2013-2019.
 
 Download data: 
 
-Available on the [SCORE Data Repository](https://data.scorenetwork.org/): [college_FB.csv](https://github.com/SCOREnetworkorg/sports-data-repository/raw/main/data/college_FB.csv)
+Available on the [SCORE Data Repository](https://data.scorenetwork.org/): [College_NFL_WR.csv](https://github.com/SCOREnetworkorg/sports-data-repository/raw/main/data/College_NFL_WR.csv)
 
 <details>
 <summary><b>Variable Descriptions</b></summary>
@@ -63,52 +63,57 @@ Available on the [SCORE Data Repository](https://data.scorenetwork.org/): [colle
 | Player                 | first and last name of the player                                                                                                                                                     |
 | Tm                     | NFL team                                                                                                                                                                              |
 | Age                    | age in years of player                                                                                                                                                                |
-| Pos                    | player position either wide receiver (WR), tight end (TE), running back (RB), corner back (CB), fullback (FB), defensive tackle (DT), guard (G), linebacker (LB), or quarterback (QB) |
+| NFL_Position                    | player position in the NFL |
 | G                      | number of games played                                                                                                                                                                |
 | GS                     | number of games started                                                                                                                                                               |
 | Tgt                    | total times targeted for a pass                                                                                                                                                       |
 | Rec                    | total number of receptions                                                                                                                                                            |
-| Ctch%                  | percentage of passes caught                                                                                                                                                           |
+| Catch_Pct                  | percentage of passes caught                                                                                                                                                           |
 | Yds                    | total number of receiving yards                                                                                                                                                       |
-| Y/R                    | average number of yards per reception                                                                                                                                                 |
+| Yd_per_Reception                    | average number of yards per reception                                                                                                                                                 |
 | TD                     | number of receiving touchdowns                                                                                                                                                        |
-| 1D                     | number of first downs                                                                                                                                                                 |
-| Succ%                  | player gains 40% of yards to go on first down, 60% on second down, or 100% on third or fourth down                                                                                    |
+| First_Downs                     | number of first downs                                                                                                                                                                 |
+| Success_Rate                  | player gains 40% of yards to go on first down, 60% on second down, or 100% on third or fourth down                                                                                    |
 | Lng                    | longest reception in yards                                                                                                                                                            |
-| Y/Tgt                  | number of receiving yards per target                                                                                                                                                  |
-| R/G                    | number of receptions per game                                                                                                                                                         |
-| Y/G                    | number of yards per game                                                                                                                                                              |
+| Yd_per_Target                  | number of receiving yards per target                                                                                                                                                  |
+| Rec_per_Game                    | number of receptions per game                                                                                                                                                         |
+| Yd_per_Game                    | number of yards per game                                                                                                                                                              |
 | Fmb                    | number of fumbles                                                                                                                                                                     |
 | Id                     | identification number of the player in the dataset                                                                                                                                    |
 | AthleteId              | unique id number for each recruit                                                                                                                                                     |
-| RecruitType            | type of school the player got recruited from (i.e. highschool)                                                                                                                        |
-| Year                   | player's highschool graduation year                                                                                                                                                   |
-| Ranking                | prospect ranking                                                                                                                                                                      |
+| RecruitType            | type of school the player got recruited from (i.e. high school)                                                                                                                        |
+| Year                   | player's high school graduation year                                                                                                                                                   |
+| Ranking                | prospect ranking (1 = best)                                                                                                                                                                      |
 | School                 | name of school being recruited out of                                                                                                                                                 |
 | CommittedTo            | college player is committed to play at                                                                                                                                                |
-| Position               | position of the player (wide receiver)                                                                                                                                                |
-| Height                 | player's height in inches                                                                                                                                                             |
-| Weight                 | player's weight in pounds                                                                                                                                                             |
-| Stars                  | ranking based on chance in play in college or NFL from 0-5                                                                                                                            |
-| Rating                 | rating of prospect from 0 to 1                                                                                                                                                        |
+| Height                 | player's height in inches when recruited                                                                                                                                                             |
+| Weight                 | player's weight in pounds when recruited                                                                                                                                                            |
+| Stars                  | ranking based on chance in play in college or NFL from 0-5 (5 = best chance)                                                                                                                            |
+| Rating                 | rating of prospect from 0 to 1 (1 = best)                                                                                                                                                        |
 | City                   | home city of the prospect                                                                                                                                                             |
-| StateProvince          | home US state/Canadian province of the player (including Washington DC)                                                                                                               |
+| State          | home US state/Canadian province of the player (including Washington DC)                                                                                                               |
 | Country                | home country of the prospect (either US or Canada)                                                                                                                                    |
-| HometownInfo Latitude  | latitude of the player's hometown                                                                                                                                                     |
-| HometownInfo Longitude | longitude of the player's hometown                                                                                                                                                    |
-| HometownInfo FipsCode  | FIPS code of the player's hometown                                                                                                                                                    |
+| Latitude  | latitude of the player's hometown                                                                                                                                                     |
+| Longitude | longitude of the player's hometown                                                                                                                                                    |
+| FipsCode  | FIPS code of the player's hometown                                                                                                                                                    |
 
 **Data Sources**
 
-[Pro Football Reference](https://www.pro-football-reference.com/){target="_blank"}
+NFL receptions data from the 2023 season:
 
-[College Football Data](https://collegefootballdata.com/){target="_blank"}
+[Pro Football Reference](https://www.pro-football-reference.com/years/2023/receiving.htm){target="_blank"}
+
+High school recruiting data from 2013-2019:
+
+[College Football Data](https://collegefootballdata.com/exporter/recruiting/players){target="_blank"}
+
+
 
 </details>
 
 ### Materials
 
-We provide editable MS Word and Quarto handouts along with their solutions.
+We provide editable MS Word and Quarto handouts along with their solutions. The Word handouts are designed for in-class quizzes when students do not have access to R. The Quarto documents are designed for students with access to R.
 
 [Word handout](football_ws_doc.docx)
 
