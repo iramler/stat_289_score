@@ -10,20 +10,20 @@ library(readr)
 ```
 
 ```{r}
-per_game <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Ultimate/ultimate_per_game.csv")
-total_stats <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/gacass21/Ultimate/ultimate_total.csv")
+per_game <- read.csv("ultimate_games.csv") |> select(-1)
+total_stats <- read.csv("ultimate_total.csv") |> select(-1)
 ```
 
 ```{r}
-per_game <- per_game |> pivot_wider(names_from = Measure.Names, values_from = Measure.Values) |> select(-2, -3, -4, -5, -6)
+per_game <- per_game |> pivot_wider(names_from = statistic, values_from = value) |> select(-2, -3, -4, -5)
 ```
 
 ```{r}
-total_stats <- total_stats |> pivot_wider(names_from = Measure.Names, values_from = Measure.Values) 
+ultimate_stat <- total_stats |> pivot_wider(names_from = statistic, values_from = value) 
 ```
 
 ```{r}
-ultimate_data <- left_join(total_stats, per_game, by = "Player")
+ultimate_data <- left_join(ultimate_stat, per_game, by = "player")
 ```
 
 ```{r}
@@ -36,6 +36,13 @@ ultimate_full <- ultimate_data |> mutate(turns_per_game = (Turns/`Team Games`),
 
 
 ```{r}
+ultimate_full <- ultimate_full |> rename(plus_minus = `Plus Minus`, team_games = `Team Games`, pls_mns_per_game = `+/-_per_game`)
+
+```
+
+
+```{r}
+
 top_scores <- ultimate_full |> group_by(Full.Division.Name) |> 
   arrange(desc(Points)) |> 
   slice(1:10)

@@ -20,8 +20,8 @@ library(readr)
 Load in both datasets with data from the 2024 College Ultimate Championships.
 ```{r}
 #| warning: false
-ultimate_statistics <- read_csv('ultimate_total.csv', show_col_types = FALSE) |> select(-1)
-ultimate_games <- read_csv('ultimate_games.csv', show_col_types = FALSE) |> select(-1)
+ultimate_statistics <- read_csv('ultimate_total.csv', show_col_types = FALSE)
+ultimate_games <- read_csv('ultimate_games.csv', show_col_types = FALSE)
 ```
 
 
@@ -145,13 +145,13 @@ a. Make a plot that compares turns per game and Assists, label the players in th
 top_10_assists <- ultimate_full |> arrange(desc(Assists)) |> slice(1:10)
 
 
-ggplot(data = ultimate_full, aes(x = Assists, y = turns_per_game)) +
+ggplot(data = ultimate_full, aes(x = ast_per_game, y = turns_per_game)) +
   geom_point(color = "skyblue4") +
   geom_text(data = top_10_assists, aes(label = player))
 
 ## Could also color = division
 
-ggplot(data = ultimate_full, aes(x = Assists, y = turns_per_game)) +
+ggplot(data = ultimate_full, aes(x = ast_per_game, y = turns_per_game)) +
   geom_point(aes(color = division)) +
   geom_text(data = top_10_assists, aes(label = player))
 ```
@@ -185,11 +185,11 @@ ggplot(data = ultimate_full, aes(x = division, y = Turns)) +
 Players with a high assist count all tend to be outliers in the Turnover category. They likely are handlers who throw the disc significantly more than most other players. More throws mean more opportunites to assist, but more opportunities to create a turnover.
 
 
-7. Plot turns vs. plus minus and use division as the color aesthetic, describe the relationship between turns and plus minus.
+7. Plot turns vs. plus minus and describe the relationship.
 
 ```{r}
 ggplot(data = ultimate_full, aes(x = plus_minus, y = Turns)) +
-  geom_point(aes(color = division))
+  geom_point(color = "skyblue4")
 
 ## This is a moderate negative linear relationship. Not a very strong relationship, but there is definitely a correlation between large amounts of turnovers and a lower plus/minus.
 ```

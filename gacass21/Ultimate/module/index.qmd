@@ -5,10 +5,10 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
-  - name:
-    email: 
-    affiliation:
-      - ref:
+  - name: Robin Lock
+    email: rlock@stlawu.edu
+    affiliation: 
+      - ref: slu
 date: June 26, 2024
 description: Statistics from the 2024 College Ultimate Championships to be tidied and plotted.
 categories:
@@ -47,7 +47,7 @@ The learning objectives associated with this module are:
 
 ### Data
 
-This data comes from the 2024 Division 1 and 3 Men's and Women's College Ultimate Championships. It contains total scoring and defensive statistics for players at the two tournaments. There are 2 datasets, the first one contains player statistics. This dataset has 8325 rows and 7 columns, 5 rows with totals for each player in the data set.
+This data comes from the 2024 Division 1 and 3 Men's and Women's College Ultimate Championships. It contains total scoring and defensive statistics for players at the two tournaments. There are 2 datasets, the first one contains player statistics. This dataset has 8325 rows and 7 columns. Each player has 5 rows with totals for different statistics.
 
 [ultimate_total.csv](ultimate_total.csv) - - Total event statistics
 
@@ -55,19 +55,19 @@ This data comes from the 2024 Division 1 and 3 Men's and Women's College Ultimat
 
 <summary><b>Variable Descriptions</b></summary>
 
-| Variable  | Description                                                              |
+| Variable  | Description                                                                          |
 |--------------------------|----------------------------------------------|
-| player    | player name                                                              |
-| level     | the level that the player was competing at                               |
-| gender    | gender of the player's division                                          |
-| division  | level and gender of the competing player's division                      |
-| team_name | full name of the players team                                            |
-| statistic | the statistic measured by value (Points, Assists, Turns, Ds, Plus Minus) |
-| value     | the measured value of the statistic                                      |
+| player    | player name                                                                          |
+| level     | the level that the player was competing at (D1 or D3)                                |
+| gender    | gender of the player's division (Men or Women)                                       |
+| division  | level and gender of the competing player's division                                  |
+| team_name | full name of the players team                                                        |
+| statistic | the name of the statistic measured by value (Points, Assists, Turns, Ds, Plus Minus) |
+| value     | the measured value of the statistic                                                  |
 
 </details>
 
-The 2nd dataset contains the total games played by each player in the College Ultimate Championships. It has 1665 rows and 7 columns. There is only 1 row for each player and it contains the games played.
+The 2nd dataset contains the total games played by each player in the College Ultimate Championships. It has 1665 rows and 6 columns. There is only 1 row for each player and it contains the games played.
 
 [ultimate_games.csv](ultimate_games.csv) - Total games played for each player team
 
@@ -75,15 +75,14 @@ The 2nd dataset contains the total games played by each player in the College Ul
 
 <summary><b>Variable Descriptions</b></summary>
 
-| Variable  | Description                                                       |
-|--------------------------|----------------------------------------------|
-| player    | player name                                                       |
-| level     | the level that the player was competing at                        |
-| gender    | gender of the player's division                                   |
-| division  | level and gender of the competing player's division               |
-| team_name | full name of the players team                                     |
-| statistic | the statistic measured by value (Only Total Games for this Table) |
-| value     | the measured value of the statistic                               |
+| Variable   | Description                                           |
+|------------|-------------------------------------------------------|
+| player     | player name                                           |
+| level      | the level that the player was competing at (D1 or D3) |
+| gender     | gender of the player's division (Men or Women)        |
+| division   | level and gender of the competing player's division   |
+| team_name  | full name of the players team                         |
+| team_games | the total games played by the players team            |
 
 **Data Source**
 
@@ -92,8 +91,6 @@ The data is obtained from a [USA Ultimate 2024 Nationals Stats Dashboard](https:
 </details>
 
 ### Materials
-
-Data Files found on the [SCORE Sports Data Repository](https://data.scorenetwork.org/)
 
 [ultimate_worksheet.qmd](ultimate_worksheet.qmd) - Worksheet with data tidying and visualization questions.
 
