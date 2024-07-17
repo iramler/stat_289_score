@@ -1,0 +1,128 @@
+---
+title: "erging_scraping"
+format: html
+---
+# Libraries
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+# Scraping
+
+The data is scraped from [Concept2's rankings page](https://log.concept2.com/rankings){target="_blank"}. Each category is selected manually. 
+
+# Women's 2k 2023
+
+Top 50 for women's 2k 2023
+
+```{r W2k}
+## provide the URL and name it something (in this case, url).
+urlw2k2023 <- "https://log.concept2.com/rankings/2023/rower/2000?gender=F"
+
+
+## read_html() convert the html code from the URL into something R can read
+tabw2k2023 <- read_html(urlw2k2023) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r W2k}
+w2k2023 <- tabw2k2023[[2]] |> html_table()
+w2k2023
+```
+
+# Women's 6k 2023
+
+Top 50 for women's 6k 2023
+
+```{r W2k}
+## provide the URL and name it something (in this case, url).
+urlw6k2023 <- "https://log.concept2.com/rankings/2023/rower/6000?gender=F"
+
+
+## read_html() convert the html code from the URL into something R can read
+tabw6k2023 <- read_html(urlw6k2023) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r W2k}
+w6k2023 <- tabw6k2023[[2]] |> html_table()
+w6k2023
+```
+
+# Women's 10k 2023
+
+Top 50 for women's 10k 2023
+
+```{r W2k}
+## provide the URL and name it something (in this case, url).
+urlw10k2023 <- "https://log.concept2.com/rankings/2023/rower/10000?gender=F"
+
+
+## read_html() convert the html code from the URL into something R can read
+tabw10k2023 <- read_html(urlw10k2023) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r W2k}
+w10k2023 <- tabw10k2023[[2]] |> html_table()
+w10k2023
+```
+
+# Men's 2k 2023
+
+Top 50 for men's 2k 2023
+
+```{r W2k}
+## provide the URL and name it something (in this case, url).
+urlm2k2023 <- "https://log.concept2.com/rankings/2023/rower/2000?gender=M"
+
+
+## read_html() convert the html code from the URL into something R can read
+tabm2k2023 <- read_html(urlm2k2023) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r W2k}
+m2k2023 <- tabm2k2023[[2]] |> html_table()
+m2k2023
+```
+
+# Men's 6k 2023
+
+Top 50 for Men's 6k 2023
+
+```{r W2k}
+## provide the URL and name it something (in this case, url).
+urlm6k2023 <- "https://log.concept2.com/rankings/2023/rower/6000?gender=M"
+
+
+## read_html() convert the html code from the URL into something R can read
+tabm6k2023 <- read_html(urlm6k2023) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r W2k}
+m6k2023 <- tabm6k2023[[2]] |> html_table()
+m6k2023
+```
+
+# Women's 6k 2023
+
+Top 50 for women's 6k 2023
+
+```{r W2k}
+## provide the URL and name it something (in this case, url).
+urlw6k2023 <- "https://log.concept2.com/rankings/2023/rower/6000?gender=F"
+
+
+## read_html() convert the html code from the URL into something R can read
+tabw6k2023 <- read_html(urlw6k2023) |> 
+  html_nodes("table") ## html_nodes can grab only the tables 
+```
+
+```{r W2k}
+w6k2023 <- tabw6k2023[[2]] |> html_table()
+w6k2023
+```
