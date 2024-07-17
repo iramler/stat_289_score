@@ -1,0 +1,153 @@
+---
+title: "euros_module"
+author: "eric seltzer"
+format: html
+---
+
+# Looking at the best teams in the Euros
+```{r}
+library(tidyverse)
+```
+
+```{r}
+euros <- read_csv(here::here("esselt21/euros_module/module/eurosClean.csv"))
+```
+## We know the final was played between Spain and England, and eventually won by Spain. Let's look at the top goal scoring teams
+```{r}
+home <-
+  euros |>
+  group_by(home_team) |>
+  summarise(homeGoals = sum(home_goals))
+
+away <-
+  euros |>
+  group_by(away_team) |>
+  summarise(awayGoals = sum(away_goals))
+
+eurosGoals <-
+  full_join(home,
+            away,
+            by = c("home_team" = "away_team")) |>
+  mutate(totalGoals = homeGoals + awayGoals) |>
+  rename("Country" = home_team) |>
+  select(Country, totalGoals) |>
+  arrange(desc(totalGoals)) |>
+  slice(1:10) |>
+  mutate(Country = as_factor(Country))
+```
+
+```{r}
+# plotting the teams
+ggplot(data = eurosGoals,
+       aes(x = fct_reorder(Country, totalGoals, .desc = TRUE),
+           y = totalGoals)) +
+  geom_col(aes(fill = Country),
+           color = 'black') +
+  theme_minimal() +
+  labs(x = "Country",
+       y = "Total Goals",
+       title = "Top Goal Scoring Teams of Euros 2024") +
+  theme(axis.text.x = element_text(angle = 45,
+                                   family = "Times New Roman"),
+        axis.title.x = element_text(size = 15,
+                                    family = "Times New Roman"),
+        axis.title.y = element_text(size = 15,
+                                    family = "Times New Roman"),
+        plot.title = element_text(size = 20,
+                                  family = "Times New Roman"),
+        legend.position = "none")
+```
+
+As we can see, Spain was the top goal scorer, but Germany and Netherlands both scored more goals than England. This doesn't necessarily mean that England played poorly. Next we can look at xG (expected goals). Use the same process from above to create a visualization of xG.
+```{r}
+home <-
+  euros |>
+  group_by(home_team) |>
+  summarise(homexG = sum(`Home Expected goals(xG)`))
+
+away <-
+  euros |>
+  group_by(away_team) |>
+  summarise(awayxG = sum(`Away Expected goals(xG)`))
+
+eurosxG <-
+  full_join(home,
+            away,
+            by = c("home_team" = "away_team")) |>
+  mutate(totalxG = homexG + awayxG) |>
+  rename("Country" = home_team) |>
+  select(Country, totalxG) |>
+  arrange(desc(totalxG)) |>
+  slice(1:10) |>
+  mutate(Country = as_factor(Country))
+```
+
+```{r}
+ggplot(data = eurosxG,
+       aes(x = fct_reorder(Country, totalxG, .desc = TRUE),
+           y = totalxG)) +
+  geom_col(aes(fill = Country),
+           color = 'black') +
+  theme_minimal() +
+  labs(x = "Country",
+       y = "Total Expected Goals",
+       title = "Top Expected Goals of Euros 2024") +
+  theme(axis.text.x = element_text(angle = 45,
+                                   family = "Times New Roman"),
+        axis.title.x = element_text(size = 15,
+                                    family = "Times New Roman"),
+        axis.title.y = element_text(size = 15,
+                                    family = "Times New Roman"),
+        plot.title = element_text(size = 20,
+                                  family = "Times New Roman"),
+        legend.position = "none")
+```
+
+Here, England drops all the way to the 10th place. Spain still remains in the number one spot. The other teams that played in the in the Semifinals were Netherlands and France, both these teams had more expected goals than England.
+
+Next look at big chances created
+```{r}
+home <-
+  euros |>
+  group_by(home_team) |>
+  summarise(homeChances = sum(`Home Big chances`))
+
+away <-
+  euros |>
+  group_by(away_team) |>
+  summarise(awayChances = sum(`Away Big chances`))
+
+eurosChances <-
+  full_join(home,
+            away,
+            by = c("home_team" = "away_team")) |>
+  mutate(totalChances = homeChances + awayChances) |>
+  rename("Country" = home_team) |>
+  select(Country, totalChances) |>
+  arrange(desc(totalChances)) |>
+  slice(1:10) |>
+  mutate(Country = as_factor(Country))
+```
+
+```{r}
+ggplot(data = eurosChances,
+       aes(x = fct_reorder(Country, totalChances, .desc = TRUE),
+           y = totalChances)) +
+  geom_col(aes(fill = Country),
+           color = 'black') +
+  theme_minimal() +
+  labs(x = "Country",
+       y = "Total Expected Goals",
+       title = "Top Big Chances of Euros 2024") +
+  theme(axis.text.x = element_text(angle = 45,
+                                   family = "Times New Roman"),
+        axis.title.x = element_text(size = 15,
+                                    family = "Times New Roman"),
+        axis.title.y = element_text(size = 15,
+                                    family = "Times New Roman"),
+        plot.title = element_text(size = 20,
+                                  family = "Times New Roman"),
+        legend.position = "none")
+```
+
+Spain still is at the top, what we are gathering here is Spain was very dominant this tournament. They likely deserved to win, but England wasn't very high in all the top scoring categories. Next step would be to look at their defensive statistics. Identify some variables that might be helpful with this. 
