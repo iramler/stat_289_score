@@ -1,0 +1,95 @@
+---
+title: "Exploring NCAA Men's Water Polo: Data Wrangling and Visualization"
+---
+
+In this activity, we will be using data from the 2023 NCAA Men's Water Polo season to explore data wrangling and data visualizations in R.
+
+## Part 1 - Introduction
+
+Water polo is a fast paced, competitive game that combines different elements of swimming, soccer, and basketball. The National Collegiate Athletic Association (NCAA) is the governing body that oversees collegiate water polo among many of the top US colleges.
+
+##### Understanding Water Polo
+
+-   The objective in water polo is to score more goals than the opposing team by throwing a ball into the opponent's net.
+
+-   Each team consists of six players plus a goal keeper.
+
+-   Each game consists of four quarters, each eight minutes long, as well as a half-time break.
+
+##### The Field
+
+-   Water polo is played in a pool with a depth of at least six feet. Though exact dimensions vary, the standard size for a NCAA Men's Water Polo game is about 25 by 20 meters. There are two, three meter wide goals are located at each end of the pool.
+
+##### Basic Rules
+
+-   Players are not allowed to touch the bottom of the pool and must tread water or swim throughout the duration of the game.
+
+-   Players also must only use one hand to hold or pass the ball (except for the goalkeeper).
+
+-   There are some minor fours that result in free throws for the opposing team. For major fouls, a player can be temporarily sent out of the game.
+
+Overall, water polo is an exciting sport that requires a lot of physical fitness and athleticism. The NCAA divides competing schools into different divisions based on school size and budgets for athletics.
+
+## Part 2 - Loading the Data
+
+For this activity, you'll be using data from the data sets `ncaa_waterpolo_goals.csv` and `ncaa_waterpolo_assists.csv`. The data sets contain information about the conference leaders in goals and assists for NCAA Men's Water Polo. Each row represents one of the top ten leaders and information about what they lead in, how many goals or assists they have, their conference, and what school they attend.
+
+**1. Load in the data files `ncaa_waterpolo_goals.csv` and `ncaa_waterpolo_assists.csv`.**
+
+```{r}
+library(tidyverse, quietly = TRUE)
+
+ncaa_waterpolo_goals <- read_csv("ncaa_waterpolo_goals.csv",show_col_types = FALSE)
+ncaa_waterpolo_assists <- read_csv("ncaa_waterpolo_assists.csv",show_col_types = FALSE)
+```
+
+## Part 3 - The Data Sets Individually
+
+**1. Make the `Conference` variable in both the goals dataset and the assists dataset a factor, with each level being a unique value.**
+
+```{r}
+ncaa_waterpolo_goals$Conference <- factor(ncaa_waterpolo_goals$Conference)
+ncaa_waterpolo_assists$Conference <- factor(ncaa_waterpolo_assists$Conference)
+```
+
+**2. Create a boxplot showing the number of goals scored for each conference.**
+
+```{r}
+ncaa_waterpolo_goals %>% group_by(Conference) %>%
+  ggplot(.,
+         mapping = aes(x = Goals,
+                       fill = Conference
+                       )) + geom_boxplot()
+```
+
+**3. Based on the box plots you created above, answer the following questions:**
+
+a.  **Which conference shows the highest median number of goals scored, and which shows the lowest?**
+
+* The Western Water Polo Association has the highest median number of goals scored. The Mid Atlantic Water Polo Conference has the least amount of goals scored. 
+
+b.  **What conference has the most outliers? What do the outliers suggest about the competition within the conference?**
+
+* The Big West has the most outliers (2). The outliers suggest that the two players with the highest scored number of goals have considerably more goals scored than the rest of the leaders in the conference. 
+
+c.  **Are the distributions of goals scored in each conference symmetric, or is there obvious skewness? If so, what direction is the data skewed?**
+
+
+**4. Out of the top ten leaders, find the total number of goals scored for each conference. Which has the most and which has the least. Are they consistent with the box plots?**
+
+```{r}
+ncaa_waterpolo_goals %>% group_by(Conference) %>%
+  summarize(
+    sum = sum(Goals)
+    )%>% 
+  arrange(desc(sum))
+```
+
+-   The Western Water Polo Association has the most amount of goals scored, 814. The Mid Atlantic Water Polo Association has the least amount of goals scored, 442.
+ 
+
+ 
+
+
+
+## Part 4 - The Data Sets Together
