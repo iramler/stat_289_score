@@ -151,3 +151,91 @@ ggplot(data = eurosChances,
 ```
 
 Spain still is at the top, what we are gathering here is Spain was very dominant this tournament. They likely deserved to win, but England wasn't very high in all the top scoring categories. Next step would be to look at their defensive statistics. Identify some variables that might be helpful with this. 
+```{r}
+home <-
+  euros |>
+  group_by(home_team) |>
+  summarise(homeTacklesAvg = mean(`Home Tackles won %`))
+
+away <-
+  euros |>
+  group_by(away_team) |>
+  summarise(awayTacklesAvg = mean(`Away Tackles won %`))
+
+eurosTackles <-
+  full_join(home,
+            away,
+            by = c("home_team" = "away_team")) |>
+  mutate(avgTacklesPct = (homeTacklesAvg + awayTacklesAvg) / 2) |>
+  rename("Country" = home_team) |>
+  select(Country, avgTacklesPct) |>
+  arrange(desc(avgTacklesPct)) |>
+  slice(1:10) |>
+  mutate(Country = as_factor(Country))
+```
+
+```{r}
+ggplot(data = eurosTackles,
+       aes(x = fct_reorder(Country, avgTacklesPct, .desc = TRUE),
+           y = avgTacklesPct)) +
+  geom_col(aes(fill = Country),
+           color = 'black') +
+  theme_minimal() +
+  labs(x = "Country",
+       y = "Tackle Win Percentage",
+       title = "Top Tackle Win Percentages of Euros 2024") +
+  theme(axis.text.x = element_text(angle = 45,
+                                   family = "Times New Roman"),
+        axis.title.x = element_text(size = 15,
+                                    family = "Times New Roman"),
+        axis.title.y = element_text(size = 15,
+                                    family = "Times New Roman"),
+        plot.title = element_text(size = 20,
+                                  family = "Times New Roman"),
+        legend.position = "none")
+```
+
+```{r}
+home <-
+  euros |>
+  group_by(home_team) |>
+  summarise(homeTouches = sum(`Home Touches in opposition box`))
+
+away <-
+  euros |>
+  group_by(away_team) |>
+  summarise(awayTouches = sum(`Home Touches in opposition box`))
+
+eurosTouches <-
+  full_join(home,
+            away,
+            by = c("home_team" = "away_team")) |>
+  mutate(totalTouches = homeTouches + awayTouches) |>
+  rename("Country" = home_team) |>
+  select(Country, totalTouches) |>
+  arrange(desc(totalTouches)) |>
+  slice(1:10) |>
+  mutate(Country = as_factor(Country))
+```
+
+```{r}
+ggplot(data = eurosTouches,
+       aes(x = fct_reorder(Country, totalTouches, .desc = TRUE),
+           y = totalTouches)) +
+  geom_col(aes(fill = Country),
+           color = 'black') +
+  theme_minimal() +
+  labs(x = "Country",
+       y = "Touches",
+       title = "Top Touches in Opponents Box of Euros 2024") +
+  theme(axis.text.x = element_text(angle = 45,
+                                   family = "Times New Roman"),
+        axis.title.x = element_text(size = 15,
+                                    family = "Times New Roman"),
+        axis.title.y = element_text(size = 15,
+                                    family = "Times New Roman"),
+        plot.title = element_text(size = 20,
+                                  family = "Times New Roman"),
+        legend.position = "none")
+```
+Finally, England appears in a stat at the top. If I had to guess, I would assume that England dominates the possession based statistics and that is how they were able to get to the final.

@@ -14,7 +14,7 @@ library(modelr)
 ```{r}
 atp <- read_csv(here::here("esselt21/tennis_module/data_repo/new_atp.csv"))
 
-wta <- read.csv(here::here("esselt21/tennis_module/data_repo/new_wta.csv"))
+wta <- read_csv(here::here("esselt21/tennis_module/exploration/new_wta.csv"))
 ```
 
 ```{r}
@@ -26,7 +26,7 @@ summary(model_atp)
 aug_atp <-
   augment(model_atp)
 
-model_wta <- lm(WinPercentage ~ Surface*Matches + EloRank + ReturnPointsWonPercentage + AcesPerDoubleFault + AcesPerDoubleFault*Surface,
+model_wta <- lm(WinPercentage ~ Surface + EloRank + ReturnPointsWonPercentage + Matches*Surface,
             data = wta)
 summary(model_wta)
 aug_wta <-
