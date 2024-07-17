@@ -13,7 +13,7 @@ library(car)
 # Data
 
 ```{r}
-umpires_df <- read_csv("~/Desktop/git/score_new/awsmit22/mlb_umpires_module/exploration/umpires.csv")
+umpires_df <- read_csv("umpires.csv")
 ```
 
 # Graphical Exploration

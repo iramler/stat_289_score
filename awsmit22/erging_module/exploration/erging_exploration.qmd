@@ -1,0 +1,31 @@
+---
+title: "erging_exploration"
+format: html
+---
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+# Data
+
+```{r}
+erg_df <- read_csv("~/Desktop/git/score_new/awsmit22/erging_module/exploration/erg.csv")
+
+erg_df <- erg_df |> mutate(Verified = as.factor(Verified), Gender = as.factor(Gender), Year = as.factor(Year), Distance = as.factor(Distance))
+```
+
+# Graphical Exploration
+
+```{r}
+ggplot(data = erg_df, aes(x = Distance, y = Split)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = erg_df, aes(x = Verified, y = Split)) + geom_boxplot()
+```
+
+
+
