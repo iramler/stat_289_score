@@ -8,51 +8,41 @@ editor: visual
 ```{r}
 # Get the Data
 library(readr)
-install.packages("readr")
+library(tidyverse)
 vb_matches <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-05-19/vb_matches.csv', guess_max = 76000)
 ```
 
 ```{r}
-install.packages("tidyverse")
-library(tidyverse)
-vb_matches_winners_1 <- pivot_longer(data = vb_matches,     c(w_p1_tot_attacks:w_p1_tot_digs), names_to = "types", 
-values_to = "counts", values_drop_na = TRUE) %>% 
-  mutate(outcome = "Winner")
+# cleaning
+vb_matches <- vb_matches %>%
+  select(-date) %>%
+  mutate(w_p1_birthyear = year(w_p1_birthdate),
+         w_p2_birthyear = year(w_p2_birthdate),
+         l_p1_birthyear = year(l_p1_birthdate),
+         l_p2_birthyear = year(l_p2_birthdate)) %>%
+  select(-w_p1_birthdate,
+         -w_p2_birthdate,
+         -l_p1_birthdate,
+         -l_p2_birthdate) %>%
+  separate(col = score, into = c("first_round", "second_round", "thrid_round"), sep = ", ", fill = "right")
 ```
 
 ```{r}
-vb_matches_winners_2 <- pivot_longer(vb_matches,    c(w_p2_tot_attacks:w_p2_tot_digs), names_to = "types", 
-values_to = "counts", values_drop_na = TRUE) %>%
-  mutate(outcome = "Winner")
-
-vb_matches_winners_stats_1 <- vb_matches_winners_1 %>% mutate(new_type = case_when(                                 str_detect(types, "tot_aces") ~ "Aces", 
-str_detect(types, "tot_attacks") ~ "Attacks", 
-str_detect(types, "tot_blocks") ~ "Blocks",
-str_detect(types, "tot_digs") ~ "Digs",
-str_detect(types, "tot_errors") ~ "Errors",
-str_detect(types, "tot_hitpct") ~ "Hit Percentage",
-str_detect(types, "tot_kills") ~ "Kills",
-str_detect(types, "tot_serve") ~ "Serve Errors"), player_num = "Player 1")
-
-
-vb_matches_winners_stats_2 <- vb_matches_winners_2 %>% mutate(new_type = case_when(
-  str_detect(types, "tot_aces") ~ "Aces", 
-  str_detect(types, "tot_attacks") ~ "Attacks", 
-  str_detect(types, "tot_blocks") ~ "Blocks",str_detect(types, "tot_digs") ~ "Digs",
-  str_detect(types, "tot_errors") ~ "Errors",
-  str_detect(types, "tot_hitpct") ~ "Hit Percentage",
-  str_detect(types, "tot_kills") ~ "Kills",
-  str_detect(types, "tot_serve") ~ "Serve Errors"
-), player_num = "Player 2") 
-
-full_vb <- full_join(vb_matches_winners_stats_1, vb_matches_winners_stats_2)
-
-vb_matches_winners_stats <- union(vb_matches_winners_stats_1, vb_matches_winners_stats_2)
+vb_matches <- vb_matches %>%
+  mutate(w_rank = parse_number(w_rank),
+         l_rank = parse_number(l_rank))
 ```
 
 ```{r}
-pivot_wider(data = full_vb, names_from = 
+vb_matches <- vb_matches %>%
+  mutate(duration = as.numeric(period_to_seconds(hms(duration)))/60)
 ```
+
+```{r}
+write.csv(vb_matches,"vb_matches.csv", row.names = FALSE)
+```
+
+
 
 
 

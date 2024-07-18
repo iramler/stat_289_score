@@ -1,0 +1,107 @@
+---
+title: "Beach Volleyball Results"
+author: "Brendan Karadenes"
+date: 07/18/2024
+description: The data set looks at results from the FIVB Beach Volleyball World Tour and AVP Tour from 2000-2019.
+categories:
+  - Big Data
+  - Data Cleaning
+  - Correlation
+---
+
+## Motivation
+
+The FIVB Beach Volleyball World Tour was a worldwide professional beach volleyball tour for both men and woman. The AVP Tour is, according to U.S. News and World Report, the biggest and largest professional beach volleyball tour in the United States. Beach volleyball is an international sport, attracting thousands of people from all different countries and backgrounds to compete for a championship. Examining the results of these matches allows an interesting look into the large amount of people that competed in the tours.
+
+## Data
+
+The data contains 76,756 rows and 66 columns. Each row represents a match in either the FIVB or AVP tours from 2000 to 2019.
+
+| Variable       | Description                                                              |
+|-----------------|-------------------------------------------------------|
+| circuit      | the tour the match is a part of                                                  |
+| tournament  | name of the tournament on the tour                         |
+| country   | name of host country                          |
+| year | year the match took place |
+| gender           | gender of the teams                                                           |
+| match_num         | match number in the tournament                                                         |
+| w_player1           | player one on the winning team's name                                       |
+| w_p1_age     | player one on the winning team's age                                                     |
+| w_p1_hgt      | player one on the winning team's height in inches                                             |
+| w_p1_country     | player one on the winning team's home country              |
+| w_player2     | player two on the winning team's name        |
+| w_p2_age      | player two on the winning team's age                                                 |
+| w_p2_hgt  | player two on the winning team's height in inches                                           |
+| w_p2_country | player two on the winning team's home country                                                    |
+| w_rank | rank of the winning team                                                    |
+| l_player1           | player one on the losing team's name                                       |
+| l_p1_age     | player one on the losing team's age                                                     |
+| l_p1_hgt      | player one on the losing team's height in inches                                             |
+| l_p1_country     | player one on the losing team's home country              |
+| l_player2     | player two on the losing team's name        |
+| l_p2_age      | player two on the losing team's age                                                 |
+| l_p2_hgt  | player two on the losing team's height in inches                                           |
+| l_p2_country | player two on the losing team's home country                                                    |
+| l_rank | rank of the losing team                                                    | 
+| first_round | result from first round of the match |
+| second_round | result from second round of the match |
+| third_round | result from third round of the match |
+| duration | duration of the match in minutes |
+| bracket | bracket the match was a part of in the tournament |
+| round | round number in the tournament |
+| w_p1_tot_attacks | number of attacks for winning team's player 1 |
+| w_p1_tot_kills | number of kills for winning team's player 1 |
+| w_p1_tot_errors | winning team's player 1 mistakes |
+| w_p1_tot_hitpct | winning team's player 1 total hit percentage |
+| w_p1_tot_aces | winning team's player 1 total number of aces |
+| w_p1_tot_serve_errors | winning team's player 1 total number of serve errors |
+| w_p1_tot_blocks | winning team's player 1 total number of blocks |
+| w_p1_tot_digs | winning team's player 1 total number of digs |
+| w_p2_tot_attacks | number of attacks for winning team's player 2 |
+| w_p2_tot_kills | number of kills for winning team's player 2 |
+| w_p2_tot_errors | winning team's player 2 mistakes |
+| w_p2_tot_hitpct | winning team's player 2 total hit percentage |
+| w_p2_tot_aces | winning team's player 2 total number of aces |
+| w_p2_tot_serve_errors | winning team's player 2 total number of serve errors |
+| w_p2_tot_blocks | winning team's player 2 total number of blocks |
+| w_p2_tot_digs | winning team's player 2 total number of digs |
+| l_p1_tot_attacks | number of attacks for losing team's player 1 |
+| l_p1_tot_kills | number of kills for losing team's player 1 |
+| l_p1_tot_errors | losing team's player 1 mistakes |
+| l_p1_tot_hitpct | losing team's player 1 total hit percentage |
+| l_p1_tot_aces | losing team's player 1 total number of aces |
+| l_p1_tot_serve_errors | losing team's player 1 total number of serve errors |
+| l_p1_tot_blocks | losing team's player 1 total number of blocks |
+| l_p1_tot_digs | losing team's player 1 total number of digs |
+| l_p2_tot_attacks | number of attacks for losing team's player 2 |
+| l_p2_tot_kills | number of kills for losing team's player 2 |
+| l_p2_tot_errors | losing team's player 2 mistakes |
+| l_p2_tot_hitpct | losing team's player 2 total hit percentage |
+| l_p2_tot_aces | losing team's player 2 total number of aces |
+| l_p2_tot_serve_errors | losing team's player 2 total number of serve errors |
+| l_p2_tot_blocks | losing team's player 2 total number of blocks |
+| l_p2_tot_digs | losing team's player 2 total number of digs |
+| w_p1_birthyear | winning team's player 1 birthyear |
+| w_p2_birthyear | winning team's player 2 birthyear |
+| l_p1_birthyear | losing team's player 1 birthyear |
+| l_p2_birthyear | losing team's player 2 birthyear |
+
+Data File
+
+:   [vb_matches.csv](../data/vb_matches.csv)
+
+## Questions
+
+-   Find a `ggplot` `geom()` function that works well with big data and use it to create a scatterplot.
+
+-   Create two dataframes so that you can compare the performances in the two different tours.
+
+-   Does winning the first round correlate to winning the match?
+
+## References
+
+US News and World Report
+
+<https://www.usnews.com/news/sports/articles/2017-05-04/making-waves-on-the-beach-walsh-jennings-will-skip-avp-tour>
+
+

@@ -1,0 +1,43 @@
+---
+title: "Beach Volleyball Data Prep"
+author: "Brendan Karadenes"
+format: html
+editor: visual
+---
+
+```{r}
+# Get the Data
+library(readr)
+library(tidyverse)
+vb_matches <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-05-19/vb_matches.csv', guess_max = 76000)
+```
+
+```{r}
+# cleaning
+vb_matches <- vb_matches %>%
+  select(-date) %>%
+  mutate(w_p1_birthyear = year(w_p1_birthdate),
+         w_p2_birthyear = year(w_p2_birthdate),
+         l_p1_birthyear = year(l_p1_birthdate),
+         l_p2_birthyear = year(l_p2_birthdate)) %>%
+  select(-w_p1_birthdate,
+         -w_p2_birthdate,
+         -l_p1_birthdate,
+         -l_p2_birthdate) %>%
+  separate(col = score, into = c("first_round", "second_round", "thrid_round"), sep = ", ", fill = "right")
+```
+
+```{r}
+vb_matches <- vb_matches %>%
+  mutate(w_rank = parse_number(w_rank),
+         l_rank = parse_number(l_rank))
+```
+
+```{r}
+vb_matches <- vb_matches %>%
+  mutate(duration = as.numeric(period_to_seconds(hms(duration)))/60)
+```
+
+```{r}
+write.csv(vb_matches,"vb_matches.csv", row.names = FALSE)
+```
