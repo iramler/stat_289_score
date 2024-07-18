@@ -53,6 +53,7 @@ The data set has 1,800 rows with 14 variables. Each row is an erg piece complete
 | `Distance`     | The distance of the piece in meters, `2000`, `6000`, or `10000`. |
 | `Speed`     | The average speed of the piece in `meters per minute`. (`Distance/Time`)|
 | `Split`     | The average 500 meter split of the piece, meaning the average time per 500 meters of the piece. (`500*(Time/Distance)`)|
+| `Age_Group`     | The age group the rower that completed the piece is in. The age groups are defined by Concept2 on the rankings page. There are 9 age groups in the dataset. |
 : [erg.csv](erg.csv){target="_blank"}
 
 ## Questions

@@ -1192,7 +1192,16 @@ erging_df <- erging |>
   mutate(Distance = as.factor(Distance)) |>
   mutate(Location = if_else(Location == "", true = "None Listed", false = Location)) |>
   mutate(Affiliation = if_else(Affiliation == "", true = "None Listed", false = Affiliation)) |>
-  mutate(Verified = if_else(Verified == "Race", true = "Yes", false = Verified))
+  mutate(Verified = if_else(Verified == "Race", true = "Yes", false = Verified)) |>
+  mutate(Age_Group = case_when(Age > 0 & Age <=12 ~ "0-12", 
+                               Age >= 13 & Age <= 18 ~ "13-18", 
+                               Age >= 19 & Age <= 29 ~ "19-29", 
+                               Age >= 30 & Age <= 39 ~ "30-39", 
+                               Age >= 40 & Age <= 49 ~ "40-49", 
+                               Age >= 50 & Age <= 54 ~ "50-54", 
+                               Age >= 55 & Age <= 59 ~ "55-59", 
+                               Age >= 60 & Age <= 64 ~ "60-64", 
+                               Age >= 65 & Age <= 69 ~ "65-69"))
 ```
 
 # Write CSV
