@@ -14,28 +14,28 @@ editor:
 
 ## Motivation
 
-This data set is provided by Jeff Sackman on GitHub. There is an extensive repository of all tennis data. The data here is from the 2023 season.
+This data set is provided by Wheelo Ratings. It includes data on all tennis players and their statistics on each surface.
 
 ## Data
 
 This data is made up of 111 rows and 8 columns. Each row represents a player on a given type of surface.
 
-| Variable                     | Description                                       |
-|------------------------------|---------------------------------------------------|
-| Player                       | The name of the player                            |
-| Surface                      | The type of court surface for this observation    |
-| Matches                      | The number of matches played on this surface      |
-| Elo Rank                     | The calculated Elo rank of the player             |
-| Win Percentage               | The win percentage of the player                  |
-| Double Fault Percentage      | The percentage of serves that are a double fault  |
-| Return Points Won Percentage | The percentage of points won while returning      |
-| Aces Per Double Fault        | The ratio of aces to double faults for the player |
+| Variable  | Description                                       |
+|-----------|---------------------------------------------------|
+| Player    | The name of the player                            |
+| Surface   | The type of court surface for this observation    |
+| Matches   | The number of matches played on this surface      |
+| EloRank   | The calculated Elo rank of the player (best = 1)  |
+| WinPct    | The win percentage of the player                  |
+| DoubleFP  | The percentage of serves that are a double fault  |
+| ReturnGWP | The percentage of points won while returning      |
+| AcesPDF   | The ratio of aces to double faults for the player |
 
-: [tennis.csv](../data/tennis.csv)
+: [wta.csv](../data/wta.csv)
 
 ## Questions
 
-1.  Discuss which variables are important
+1.  Discuss which variables are important to include in the model
 
 2.  Decide which variables should be included in interactions
 
