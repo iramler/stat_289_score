@@ -2,11 +2,11 @@
 title: "Major League Baseball Home Plate Umpires"
 author:
   - name: Abigail Smith
-    email: iramler@stlawu.edu
     affiliation:
       - id: slu
         name: St. Lawrence University
   - name: Ivan Ramler
+    email: iramler@stlawu.edu
     affiliation:
       - ref: slu
 date: July 16, 2024

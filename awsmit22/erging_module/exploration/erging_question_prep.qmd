@@ -17,10 +17,9 @@ erg_df <- erg_df |> mutate(Verified = as.factor(Verified), Gender = as.factor(Ge
 erg_df
 ```
 
-# Question 1
 
-```{r}
-non_verified <- erg_df |> filter(Verified == "No")
-ggplot(data = non_verified, aes(x = Age, y = Time)) + geom_point() + geom_smooth + facet_wrap(~Distance)
-```
+
+
+
+
 

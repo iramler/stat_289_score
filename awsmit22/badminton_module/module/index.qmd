@@ -2,11 +2,11 @@
 title: "2018-2023 Badminton World Tour Points Head To Head"
 author:
   - name: Abigail Smith
-    email: iramler@stlawu.edu
     affiliation:
       - id: slu
         name: St. Lawrence University
   - name: Ivan Ramler
+    email: iramler@stlawu.edu
     affiliation:
       - ref: slu
 date: June 28, 2024

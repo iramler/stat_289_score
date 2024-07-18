@@ -2,11 +2,11 @@
 title: "World Athletics Race Walking Team Championships 2024"
 author:
   - name: Abigail Smith
-    email: iramler@stlawu.edu
     affiliation:
       - id: slu
         name: St. Lawrence University
   - name: Ivan Ramler
+    email: iramler@stlawu.edu
     affiliation:
       - ref: slu
 date: June 21, 2024

@@ -16,7 +16,7 @@ library(stringr)
 # Data
 
 ```{r}
-handball_clean <- read_csv("handball.csv")
+handball_clean <- read_csv("handball_bundesliga_23.csv")
 ```
 
 # Question 1

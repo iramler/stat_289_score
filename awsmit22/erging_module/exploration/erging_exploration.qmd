@@ -73,6 +73,18 @@ t.test(Speed ~ Verified, data = erg_df)
 ggplot(data = erg_df, aes(x = Verified, y = Speed)) + geom_boxplot()
 ```
 
+```{r}
+ggplot(data = erg_df, aes(x = Age, y = Pos, colour = Distance)) + geom_point(alpha = 0.5) + facet_wrap(~Gender) + theme_minimal()
+```
+
+```{r}
+ggplot(data = erg_df, aes(x = Age_Group)) + geom_bar() 
+```
+
+```{r}
+erg_df
+```
+
 # Outliers
 
 ```{r}
@@ -84,5 +96,53 @@ iqr
 erg_df |> filter(Verified == "No") |> arrange(desc(Speed))
 erg_df |> filter(Verified == "Yes") |> arrange(desc(Speed))
 ```
+
+# Question 1
+
+Describe why the below boxplot looks clustered at the bottom of the y-axis. 
+
+```{r}
+ggplot(data = erg_df, aes(x = Verified, y = Speed)) + geom_boxplot() + theme_minimal() + labs(title = "Side-by-Side Boxplots of Speed for Verified and Non-Verified Pieces") + theme(plot.title = element_text(hjust = 0.5))
+```
+
+**The 4 outliers on the verified plot are heavily skewing the data.**
+
+# Question 2
+
+Calculate the IQR for `Speed` using the provided summary statistics.
+
+```{r}
+summary(erg_df$Speed)
+301-256.5
+```
+
+**The IQR for `Speed` is 44.5.**
+
+# Question 3
+
+Using the below table of the top 10 speeds for rowers, identify the 4 outliers seen in the boxplot.
+
+```{r}
+erg_df |> arrange(desc(Speed)) |> select(Name, Speed, Verified)
+
+1.5*44.5
+301 + 66.75
+```
+
+**Natasshia Lee, Travis Willcox, Lynn Hansford, and Toño Martí Ayala are all outliers as their speeds are greater than `1.5(IQR) + Q3`.**
+
+# Question 4
+
+```{r}
+no_outliers <- erg_df |> filter(Name != "Toño Martí ayala" & Name != "Lynn Hansford" & Name != "Travis Willcox" & Name != "Natasshia Lee")
+
+ggplot(data = no_outliers, aes(x = Verified, y = Speed)) + geom_boxplot() + theme_minimal() + labs(title = "Side-by-Side Boxplots of Speed for Verified and Non-Verified Pieces") + theme(plot.title = element_text(hjust = 0.5))
+
+ggplot(data = no_outliers, aes(x = Speed)) + geom_histogram(bins = 15, fill = "lightblue", colour = "black")
+
+t.test(Speed ~ Verified, data = no_outliers)
+t.test(Speed ~ Verified, data = erg_df)
+```
+
 
 

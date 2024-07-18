@@ -32,6 +32,6 @@ handball_clean <- handball_clean |> filter(P >= 10)
 # Create the CSV file
 
 ```{r}
-write_csv(handball_clean, "handball.csv")
+write_csv(handball_clean, "handball_bundesliga_23.csv")
 ```
 

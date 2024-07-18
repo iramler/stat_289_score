@@ -26,8 +26,9 @@ goal by getting the ball in the other team's goal. The challenge to this
 is that there is a semicircle with a radius of 6m surrounding the goal
 which players other than the goal keeper are not allowed in, making it
 challenging to score. Players run back and forth down the court passing
-the ball to each other and trying to score. There are seven positions
-total in handball: the goalkeeper who defends the team's goal, left and
+the ball to each other and trying to score. 
+
+There are seven positions total in handball: the goalkeeper who defends the team's goal, left and
 rights backs are positioned on the left and right side of their half of
 the court to provide further defense, the center can move up and down
 the court and is usually the one trying to score, left and right wings
@@ -38,8 +39,7 @@ usually position in the opposing side of the court, they often work
 closely with the center. The Bundesliga regular season length is 34
 games, with playoffs the maximum number of games a team could play is
 41. Players do not play every game in the season and subbing is common,
-generally speaking playing time goes to players with experience and high
-HPIs. This can create a bit of a disparity in which players with less
+generally speaking playing time goes to players with experience. This can create a bit of a disparity in which players with less
 playing time will not necessarily have statistics that accurately
 display their skills due to the smaller sample size.
 
@@ -47,7 +47,7 @@ Handball is considered a contact sport which means aggressive strategies
 are often used in games. Aggressiveness can be measured in the penalty
 statistics as players who tend to get more penalties are usually more
 considered more aggressive players overall. Their success can be
-measured with the [handball performance index (HPI)](https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/){target="_blank"}. According to Bundesliga, HPI "measures and illustrates a player's performance during a game, a month or an entire season with the help of a concrete numerical value". Players' HPIs are calculated by plus and minus points based on their actions during games. This data set could provide insight on if players or teams that are more aggressive are more successful than those
+measured with the [handball performance index (HPI)](https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/){target="_blank"}. According to Bundesliga, HPI "measures and illustrates a player's performance during a game, a month or an entire season with the help of a concrete numerical value". Players' HPIs are calculated by plus and minus points based on their actions during games. This data set could provide insight on if players or teams that are more aggressive as measured by penalties are more successful than those
 who are more passive. 
 
 ## Data
@@ -62,10 +62,10 @@ cumulative for the entirety of the season. The data set only contains players wh
 | `NAME` | The name of the player. |
 | `CLUB`            | The club the player is on. There are 18 in the Bundesliga.                                                                                                                                                                    |
 | `POSITION`        | The position of the player. There are 7 positions in handball: goalkeeper, fullbacks (left and right), center backcourt, wingers (left and right), and pivot.                                                                 |
-| `P`               | The number of games the player was in that season.                                                                                                                                                                            |
+| `P`               | The number of games played in the 2022-23 season.                                                                                                                                                                           |
 | `total_offense`   | The total offensive plays made by the player in the season. Calculated by adding the 6 offensive focused statistics from the original dataset.                                                                                |
 | `total_penalties` | The total penalties the player had in the season. Calculated by adding the 5 penalty related statistics from the original dataset.|                                                             
-| `HPI`             | Handball performance index, complex formulaic calculation equivalent to how well the player performed in the season. Players with HPIs in the 70s are considered good, while players in the 60s are considered not as strong. |
+| `HPI`             | Handball performance index, complex formulaic calculation equivalent to how well the player performed in the season. Players with HPIs in the 70s are considered good, while players in the 60s are considered not as strong. [https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/](https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/){target="_blank"}|
 
 : [handball.csv](handball.csv){target="_blank"}
 

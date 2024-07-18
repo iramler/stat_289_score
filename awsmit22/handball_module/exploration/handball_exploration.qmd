@@ -18,7 +18,7 @@ library(stringr)
 [Kaggle](https://www.kaggle.com/datasets/nemanjagojkovic/handball-bundesliga-stats-202223)
 
 ```{r}
-handball_df <- read_csv("handball_stats.csv")
+handball_df <- read_csv("~/Desktop/git/score_new/awsmit22/handball_module/data_repo_submission/handball_stats.csv")
 ```
 
 # Cleaning to get the ideal dataset
@@ -132,6 +132,19 @@ ggplot(data = mod_plot, aes(x = club_offense, y = club_hpi)) +
   geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of club_hpi against club_offense with regression line")
 
 ggplot(data = mod_plot, aes(x = club_pen, y = club_hpi)) +
+  geom_point() +
+  geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of club_hpi against club_penalties with regression line")
+
+```
+
+```{r}
+mod_plot <- handball_clean |> group_by(CLUB) |> summarise(club_offense = mean(total_offense), club_pen = mean(total_penalties), club_hpi = mean(HPI))
+
+ggplot(data = handball_clean, aes(x = total_offense, y = HPI)) +
+  geom_point() +
+  geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of club_hpi against club_offense with regression line")
+
+ggplot(data = handball_clean, aes(x = club_pen, y = club_hpi)) +
   geom_point() +
   geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of club_hpi against club_penalties with regression line")
 
