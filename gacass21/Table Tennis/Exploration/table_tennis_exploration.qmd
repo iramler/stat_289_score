@@ -74,6 +74,10 @@ table_tennis_clean |>
 ```{r}
 table_tennis_clean |> group_by(X, game) |> summarise(win_margin = abs(diff(points))) |>
   ungroup() |> group_by(game) |> summarise(avg_win_margin = mean(win_margin), games = n())
+
+table_tennis_clean |> group_by(X, game, value) |> summarise(win_margin = abs(diff(points))) |> ungroup() |>
+  group_by(value) |>
+  summarise(avg_win_margin = mean(win_margin)) |> arrange(desc(avg_win_margin))
 ```
 
 

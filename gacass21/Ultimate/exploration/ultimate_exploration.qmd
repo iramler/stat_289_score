@@ -10,8 +10,9 @@ library(readr)
 ```
 
 ```{r}
-per_game <- read.csv("ultimate_games.csv") |> select(-1)
-total_stats <- read.csv("ultimate_total.csv") |> select(-1)
+per_game <- read.csv("ultimate_games.csv")
+total_stats <- read.csv("ultimate_total.csv")
+ultimate_full <- read.csv("ultimate_clean.csv")
 ```
 
 ```{r}
@@ -43,13 +44,13 @@ ultimate_full <- ultimate_full |> rename(plus_minus = `Plus Minus`, team_games =
 
 ```{r}
 
-top_scores <- ultimate_full |> group_by(Full.Division.Name) |> 
+top_scores <- ultimate_full |> group_by(division) |> 
   arrange(desc(Points)) |> 
   slice(1:10)
 ```
 
 ```{r}
-ultimate_full |> arrange(desc(`Plus Minus`)) |> select(Player, Points, Assists, `Plus Minus`, Turns, Ds, `Team Games`, Full.Team.Name)
+ultimate_full |> arrange(desc(plus_minus)) |> select(player, Points, Assists, plus_minus, Turns, Ds, team_games, team_name)
 ```
 
 ```{r}
@@ -406,6 +407,16 @@ Ideas for what to do with data:
 Data 234 module with practice using dply, and ggplot.
 Could also use tidyr and stringr for more content.
 
+
+```{r}
+ultimate_full |> filter(Turns > 0 & plus_minus <= 0) |> arrange(Turns) |> mutate(coeff = Turns + plus_minus) |>
+  filter(coeff == 0)
+```
+
+```{r}
+ultimate_full |> group_by(division) |> 
+  summarise(tot = sum(plus_minus), turns = sum(Turns), pts = sum(Points))
+```
 
 
 
