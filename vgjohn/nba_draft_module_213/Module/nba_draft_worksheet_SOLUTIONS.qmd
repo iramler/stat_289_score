@@ -148,7 +148,7 @@ summary(mpg_aov)
 
 * From looking at the means in the density plot and box plot, we are most likely to find a difference between those selected 1-10 and those selected 21-30 because there is the largest difference in mean number of minutes played. We are least likely to find a difference between those selected 11-20 and 21-30 because the difference in mean is the smallest. 
 
-**7. Is there evidence that there is a difference in average minutes played per game between players drafted in picks 1-10 compared to playres drafted in picks 11-20? If so, what is the difference? Provide evidence as well as a specific number.**
+**7. Is there evidence that there is a difference in average minutes played per game between players drafted in picks 1-10 compared to players drafted in picks 11-20? If so, what is the difference? Provide evidence as well as a specific number.**
 
 ```{r}
 TukeyHSD(mpg_aov)
