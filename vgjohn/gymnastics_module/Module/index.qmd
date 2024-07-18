@@ -40,6 +40,9 @@ Each team is allowed to have up to six people compete on each event, with the to
 
 Women's college gymnastics uses Perfect 10 scoring, with each routine being judged out of ten points. Gymnasts are evaluated on execution, difficulty, as well as the composition of the routine, and must meet certain requirements for each. 
 
+In this activity, we'll be using data from the NCAA Women's Gymnastics National Championship to create and analyze bootstrap distributions, as well as look at confidence intervals and the difference in means between different finishers in the championship. 
+
+
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will:
 
@@ -92,6 +95,26 @@ Download [ncaa_gymnastics.csv](ncaa_gymnastics.csv){target="_blank"}
 The data are compiled from the [USA Gymnastics Results Website](https://usagym.org/results/2024/){target="_blank"}, which holds data from the NCAA Women's Gymnastics Championship for the relevant years. 
 
 ### Materials
+
+More specifically, this activity uses the data set: [beam_by_year.csv](beam_by_year.csv){target="_blank"}
+
+The `beam_by_year.csv` is made from the original `ncaa_gymnastics.csv` data set. The data set includes information on the beam scores from each year of the national championship, as well as the difference in beam score for the first place teams and the fourth place teams for each year. The original data set can be modified like this for every event, and difference in means can be calculated for any specific combinations of places. 
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable        | Description                                                             |
+|-----------------|-------------------------------------------------------------------------|
+| Year            | Year of NCAA women's gymnastics championship                            |
+| Beam1           | Beam score of team that placed 1st that year                            |
+| Beam2           | Beam score of team that placed 2nd that year                            |
+| Beam3           | Beam score of team that placed 3rd that year                            |
+| Beam4           | Beam score of team that placed 4th that year                            |
+| Diff_1st_4th    | Difference between 1st place score and 4th place score (Beam1-Beam4)    |
+
+
+</details>
 
 [Class handout](gymnastics_worksheet.docx)
 

@@ -290,20 +290,20 @@ df2015 <- df2015[, c("Year","Rank", "Team", "Vault", "Bar", "Beam", "Floor", "To
 
 df2014 <- data.table(Rank = numeric(), Team = character(), Vault = numeric(), Bar = numeric(), Beam = numeric(), Floor = numeric(), Total = numeric(), Year = numeric())
 df2014 <- rbind(df2014, data.table(Rank = 1,
-                                   Team = "Oklahoma",
-                                   Vault = 49.325,
-                                   Bar = 49.250,
-                                   Beam = 49.350,
-                                   Floor = 49.575,
-                                   Total = 197.500,
-                                   Year = 2014))
-df2014 <- rbind(df2014, data.table(Rank = 1,
                                    Team = "Florida",
                                    Vault = 49.375,
                                    Bar = 49.550,
                                    Beam = 49.300,
                                    Floor = 49.425,
                                    Total = 197.650,
+                                   Year = 2014))
+df2014 <- rbind(df2014, data.table(Rank = 2,
+                                   Team = "Oklahoma",
+                                   Vault = 49.325,
+                                   Bar = 49.250,
+                                   Beam = 49.350,
+                                   Floor = 49.575,
+                                   Total = 197.500,
                                    Year = 2014))
 df2014 <- rbind(df2014, data.table(Rank = 3,
                                    Team = "Alabama",
@@ -614,4 +614,3 @@ ncaa_gymnastics_data <- bind_rows(df2008,df2009,df2010,df2011, df2012,df2013,df2
 
 write_csv(ncaa_gymnastics_data, file = "/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/gymnastics_module/Exploration/ncaa_gymnastics.csv")
 ```
-

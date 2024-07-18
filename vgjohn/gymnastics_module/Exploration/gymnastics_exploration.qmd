@@ -5,13 +5,17 @@ library(tidyverse)
 
 ```{r}
 ncaa_gymnastics_data <- read.csv("/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/gymnastics_module/Exploration/ncaa_gymnastics.csv")
+
+options(digits = 10)
 ```
+
 
 ```{r}
 ncaa_gymnastics_data %>%
   ggplot(mapping = aes(x = Total)) +
   geom_histogram()
 ```
+
 ```{r}
 avg_by_year <- 
   ncaa_gymnastics_data %>%
@@ -26,6 +30,7 @@ avg_by_year <-
 
 avg_by_year
 ```
+
 ```{r}
 # line graph 
 ggplot(
@@ -47,6 +52,7 @@ ggplot(
   geom_smooth() +
   scale_x_continuous(breaks = avg_by_year$Year)
 ```
+
 confidence intervals and random samples 
 proportion? difference in proportions? 
 
@@ -54,6 +60,7 @@ proportion? difference in proportions?
 ncaa_gymnastics_data %>% group_by(Team) %>% count(Rank)
 
 ```
+
 look at random sampling with the scores for different events , standard deviation 
 
 scatterplot of 
@@ -62,10 +69,12 @@ ggplot(data = ncaa_gymnastics_data,
        mapping = aes(x = Beam, y = Bar)) +
   geom_point()
 ```
+
 each event correlation matrix with the other events 
 ```{r}
 cor(x = ncaa_gymnastics_data[, c(4:7)])
 ```
+
 not very strong correlations between events
 
 regression analysis to see how much each event contributes to the total 
@@ -75,6 +84,7 @@ reg_total <- lm(Total ~ Vault + Bar + Beam + Floor,
 
 summary(reg_total)
 ```
+
 can see that bar and beam probably contribute more to the total score than floor and vault because the coefficients are higher
 
 interesting because bar and beam had the highest correlation between events. 
@@ -130,5 +140,30 @@ total_beam_rank4$Beam
 
 ```{r}
 total_beam_rank4$Total
+```
+
+```{r}
+# beam 
+beam_by_year <-
+  ncaa_gymnastics_data %>% select(Rank, Year, Beam) %>%
+  pivot_wider(names_from = "Rank",
+              values_from = "Beam") %>%
+  rename(
+    Beam1 = `1`,
+    Beam2 = `2`,
+    Beam3 = `3`,
+    Beam4 = `4`
+  ) %>%
+  mutate(
+    Beam1 = round(Beam1,2),
+    Beam2 = round(Beam2,2),
+    Beam3 = round(Beam3,2),
+    Beam4 = round(Beam4,2),
+    Diff_1st_4th= round(Beam1 - Beam4, 2)
+  )
+```
+
+```{r}
+write_csv(beam_by_year, file = "/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/gymnastics_module/Exploration/beam_by_year.csv")
 ```
 
