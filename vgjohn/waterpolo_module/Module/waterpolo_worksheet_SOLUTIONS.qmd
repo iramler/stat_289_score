@@ -68,9 +68,9 @@ a.  **Which conference shows the highest median number of goals scored, and whic
 
 * The Western Water Polo Association has the highest median number of goals scored. The Mid Atlantic Water Polo Conference has the least amount of goals scored. 
 
-b.  **What conference has the most outliers? What do the outliers suggest about the competition within the conference?**
+b.  **What conference has the most outliers? What do the outliers suggest about the competition within that conference?**
 
-* The Big West has the most outliers (2). The outliers suggest that the two players with the highest scored number of goals have considerably more goals scored than the rest of the leaders in the conference. 
+* The Big West has the most outliers (2). The outliers could suggest that 
 
 c.  **Are the distributions of goals scored in each conference symmetric, or is there obvious skewness? If so, what direction is the data skewed?**
 
