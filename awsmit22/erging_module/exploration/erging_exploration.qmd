@@ -27,5 +27,62 @@ ggplot(data = erg_df, aes(x = Distance, y = Split)) + geom_boxplot()
 ggplot(data = erg_df, aes(x = Verified, y = Split)) + geom_boxplot()
 ```
 
+```{r}
+ggplot(data = erg_df, aes(x = Age, y = Time)) + geom_point() + facet_grid(Gender ~Distance)
+```
+
+```{r}
+ggplot(data = erg_df, aes(x = Age, fill = Distance)) + geom_bar()
+```
+
+```{r}
+bar <- erg_df |> group_by(Country) |> summarise(n = n()) |> mutate(Country = fct_reorder(Country, n)) |> filter(n >= 8)
+
+ggplot(data = bar, aes(x = Country, y = n)) + geom_col() + coord_flip() + geom_text(aes(label = n), hjust = -0.1) + theme_minimal() + labs(title = "Bar Plot of 20 Countries With The Most Rowers", y = "Number of Rowers") + theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+# Statistical Exploration
+
+```{r}
+age <- lm(Speed ~ Age, data = erg_df)
+summary(age)
+```
+
+```{r}
+sex <- lm(Speed ~ Gender, data = erg_df)
+summary(sex)
+```
+
+```{r}
+dist <- lm(Speed ~ Distance, data = erg_df)
+summary(dist)
+```
+
+```{r}
+age_grp <- lm(Speed ~ Age_Group, data = erg_df)
+summary(age_grp)
+anova(age_grp)
+```
+
+```{r}
+t.test(Speed ~ Verified, data = erg_df)
+```
+
+```{r}
+ggplot(data = erg_df, aes(x = Verified, y = Speed)) + geom_boxplot()
+```
+
+# Outliers
+
+```{r}
+summary(erg_df$Speed)
+iqr <- 301-256.5
+iqr
+1.5*iqr
+66.75+301
+erg_df |> filter(Verified == "No") |> arrange(desc(Speed))
+erg_df |> filter(Verified == "Yes") |> arrange(desc(Speed))
+```
 
 

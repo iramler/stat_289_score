@@ -1,0 +1,39 @@
+```{r}
+library(tidyverse)
+```
+
+```{r}
+wta <- read_csv(here::here("esselt21/tennis_module/data_repo_213/wta.csv"))
+```
+
+```{r}
+wta <-
+  wta |>
+  filter(Surface != "All")
+```
+
+```{r}
+wta <-
+  wta |>
+  select(c(Player, Surface, Matches, EloRank, WinPercentage, DoubleFaultPercentage, ReturnPointsWonPercentage, AcesPerDoubleFault))
+```
+
+```{r}
+wta <-
+  wta |>
+  rename("DoubleFP" = DoubleFaultPercentage,
+         "ReturnPWP" = ReturnPointsWonPercentage,
+         "AcesPDF" = AcesPerDoubleFault)
+```
+
+```{r}
+wta <-
+  wta |>
+  filter(Player %in% names)
+```
+
+
+```{r}
+write_csv(wta, here::here("esselt21/tennis_module/module_213/wta.csv"))
+```
+

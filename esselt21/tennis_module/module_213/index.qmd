@@ -25,21 +25,18 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-In the Association of Tennis Professionals (ATP) the rankings are typically based on set parameters. Throughout the year there are tournaments that are worth different numbers of points. There are four tiers of events, Grand Slams, Masters 1000, ATP 500 and ATP 250. You receive the most points in your [ATP rankings](https://en.wikipedia.org/wiki/ATP_rankings) from winning a Grand Slam, and the least from winning an ATP 250 tournament. In Tennis, there are also three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Certain players perform better on certain surfaces. This data set contains information for each player on each surface. Throughout the year, there are two Grand Slams on a Hard court, one on Clay, and one on Grass.
+In Tennis, there are three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Certain players perform better on certain surfaces. This data set contains information for each player on each surface. Throughout the year, there are two Grand Slams on a Hard court, one on Clay, and one on Grass.
 
-The data set we will be using is from [Wheelo Ratings](https://www.wheeloratings.com/tennis_atp_stats_last52.html). In this rating website, they have calculated an ELO rank for each player. This ranking considers not only what tournament you are playing in, but who you are playing. For instance, if 4th ranked Coco Gauff beats 1st ranked Iga Swiatek, it will be worth more to her ELO ranking than if she beat 14th ranked Emma Navarro in the same tournament.
+The data set we will be using is from [Wheelo Ratings](https://www.wheeloratings.com/tennis_wta_stats_last52.html). In this rating website, they have calculated an ELO rank for each player. This ranking considers not only what tournament you are playing in, but who you are playing. For instance, if 4th ranked Coco Gauff beats 1st ranked Iga Swiatek, it will be worth more to her ELO ranking than if she beat 14th ranked Emma Navarro in the same tournament.
 
-#### Additional Tennis Information
-In Tennis, there is the Association of Tennis Professionals (ATP) for men, and the Women's Tennis Association (WTA) for women. The ATP has 60 tournaments a year while the WTA has over 70. Both the ATP have the WTA have four grand slam tournaments. In the ATP, these Grand Slam tournaments are played in a best of 5 format instead of a best of 3 like every other tournament. In the WTA, every tournament is played in a best of 3 format, including the Grand Slam tournaments.
-
-In this worksheet, we will look at the data including this Elo ranking and look at the process behind creating a multiple linear regression model in order to predict a player's win percentage.
+In this worksheet, we will look at the data including this Elo ranking and look at the process behind creating a multiple linear regression model in order to predict a player's match win percentage.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
 
-1.  Understand the how to determine which variables are important to test.
+1.  Understand how to determine which variables are important to include in a model.
 
-2.  Understand how interaction terms and why they should be used.
+2.  Understand interaction terms and why they should be used.
 
 3.  Be able to assess a model.
 
@@ -58,9 +55,9 @@ Technology requirement: The activity handout will require nothing more than the 
 
 ### Data
 
-There is one data set for this exercise. The data is made up of 5194 rows and 20 columns and is provided by Jeff Sackman on GitHub. Each row represents a match played between two players.
+There is one data set for this exercise. The data is made up of 111 rows and 8 columns and is provided by Wheelo Ratings. Each row represents a player on a given surface
 
-Download non tidy data: [atp_2023_213](data/atp_2023_213.csv)
+Download data: [wta](data/wta.csv)
 
 **Tennis**
 
@@ -68,26 +65,26 @@ Download non tidy data: [atp_2023_213](data/atp_2023_213.csv)
 
 <summary><b>Variable Descriptions</b></summary>
 
-| Variable                     | Description                                       |
-|------------------------------|---------------------------------------------------|
-| Player                       | The name of the player                            |
-| Surface                      | The type of court surface for this observation    |
-| Matches                      | The number of matches played on this surface      |
-| Elo Rank                     | The calculated Elo rank of the player             |
-| Win Percentage               | The win percentage of the player                  |
-| Double Fault Percentage      | The percentage of serves that are a double fault  |
-| Return Points Won Percentage | The percentage of points won while returning      |
-| Aces Per Double Fault        | The ratio of aces to double faults for the player |
+| Variable  | Description                                       |
+|-----------|---------------------------------------------------|
+| Player    | The name of the player                            |
+| Surface   | The type of court surface for this observation    |
+| Matches   | The number of matches played on this surface      |
+| EloRank   | The calculated Elo rank of the player (best = 1)  |
+| WinPct    | The win percentage of the player                  |
+| DoubleFP  | The percentage of serves that are a double fault  |
+| ReturnGWP | The percentage of points won while returning      |
+| AcesPDF   | The ratio of aces to double faults for the player |
 
 </details>
 
 #### Data Source
 
-[Wheelo Ratings](https://www.wheeloratings.com/tennis_wta_stats_last52.html){target="_blank"}
+[Wheelo Ratings](https://www.wheeloratings.com/tennis_wta_stats_last52.html){target="_blank"} An Australian Website that provides statistics, records and elo ratings for ATP and WTA tennis, and the Australian Rules football AFL competition.
 
 ### Materials
 
-[Class Handout](tennis_handout213.docx)
+[Class Handout](tennis_handout213.docx) This handout takes the student through the process of creating a model at three different stages and evaluating its' performance.
 
 [Class Handout - Solutions](tennis_handout213_key.docx)
 

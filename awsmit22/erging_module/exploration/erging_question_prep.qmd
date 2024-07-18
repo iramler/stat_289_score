@@ -1,0 +1,26 @@
+---
+title: "erging_question_prep"
+format: html
+---
+# Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+# Data
+
+```{r}
+erg_df <- read_csv("~/Desktop/git/score_new/awsmit22/erging_module/exploration/erg.csv")
+erg_df <- erg_df |> mutate(Verified = as.factor(Verified), Gender = as.factor(Gender), Year = as.factor(Year), Distance = as.factor(Distance), Age_Group = as.factor(Age_Group))
+erg_df
+```
+
+# Question 1
+
+```{r}
+non_verified <- erg_df |> filter(Verified == "No")
+ggplot(data = non_verified, aes(x = Age, y = Time)) + geom_point() + geom_smooth + facet_wrap(~Distance)
+```
+
