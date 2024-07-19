@@ -42,6 +42,34 @@ vb_matches <- vb_matches %>%
 write.csv(vb_matches,"vb_matches.csv", row.names = FALSE)
 ```
 
+# Difference in Means
+
+```{r}
+avp_vb <- avp_vb %>%
+  mutate(avg_tot_hitpct = (w_p1_tot_hitpct + w_p2_tot_hitpct + l_p1_tot_hitpct + l_p2_tot_hitpct)/4)
+```
+
+```{r}
+fivb_vb <- fivb_vb %>%
+  mutate(avg_tot_hitpct = (w_p1_tot_hitpct + w_p2_tot_hitpct + l_p1_tot_hitpct + l_p2_tot_hitpct)/4)
+```
+
+```{r}
+avp_vb %>%
+  filter(avg_tot_hitpct != "NA") %>%
+  summarise(mean(avg_tot_hitpct),
+            sd(avg_tot_hitpct),
+            n())
+```
+
+```{r}
+fivb_vb %>%
+  filter(avg_tot_hitpct != "NA") %>%
+  summarise(mean(avg_tot_hitpct),
+            sd(avg_tot_hitpct),
+            n())
+```
+
 
 
 

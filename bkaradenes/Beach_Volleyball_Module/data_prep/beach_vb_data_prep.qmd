@@ -24,7 +24,7 @@ vb_matches <- vb_matches %>%
          -w_p2_birthdate,
          -l_p1_birthdate,
          -l_p2_birthdate) %>%
-  separate(col = score, into = c("first_round", "second_round", "thrid_round"), sep = ", ", fill = "right")
+  separate(col = score, into = c("first_round", "second_round", "third_round"), sep = ", ", fill = "right")
 ```
 
 ```{r}
