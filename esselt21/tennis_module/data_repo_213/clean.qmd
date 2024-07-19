@@ -3,7 +3,11 @@ library(tidyverse)
 ```
 
 ```{r}
-wta <- read_csv(here::here("esselt21/tennis_module/data_repo_213/wta.csv"))
+wta <- read_csv(here::here("esselt21/tennis_module/module_213/wta.csv"))
+```
+
+```{r}
+mean(wta$AcesPDF)
 ```
 
 ```{r}
