@@ -138,15 +138,13 @@ ggplot(data = mod_plot, aes(x = club_pen, y = club_hpi)) +
 ```
 
 ```{r}
-mod_plot <- handball_clean |> group_by(CLUB) |> summarise(club_offense = mean(total_offense), club_pen = mean(total_penalties), club_hpi = mean(HPI))
-
 ggplot(data = handball_clean, aes(x = total_offense, y = HPI)) +
   geom_point() +
-  geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of club_hpi against club_offense with regression line")
+  geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of HPI against total_offense with regression line")
 
-ggplot(data = handball_clean, aes(x = club_pen, y = club_hpi)) +
+ggplot(data = handball_clean, aes(x = total_penalties, y = HPI)) +
   geom_point() +
-  geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of club_hpi against club_penalties with regression line")
+  geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of HPI against total_penalties with regression line")
 
 ```
 
