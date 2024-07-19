@@ -138,20 +138,23 @@ ggplot(data = mod_plot, aes(x = club_pen, y = club_hpi)) +
 ```
 
 ```{r}
-ggplot(data = handball_clean, aes(x = total_offense, y = HPI)) +
-  geom_point() +
-  geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of HPI against total_offense with regression line")
+plot(handball_clean$HPI ~ handball_clean$total_penalties)
+abline(hpi_mod)
 
-ggplot(data = handball_clean, aes(x = total_penalties, y = HPI)) +
-  geom_point() +
-  geom_smooth(method = "lm") + theme_minimal() + labs(title = "Scatterplot of HPI against total_penalties with regression line")
-
+plot(handball_clean$HPI ~ handball_clean$total_offense)
+abline(hpi_mod)
 ```
 
 SLM Plots *might use*
 
 ```{r}
-ggplot(data = handball_clean, aes(x = total_offense, y = total_penalties)) + geom_point(alpha = 0.5, aes(colour = POSITION)) + theme_minimal() + geom_smooth(method = "lm") + labs(title = "Scatterplot of total_penalties against total_offense with a regression line")
+ggplot(data = handball_clean, aes(x = total_offense, y = total_penalties)) + geom_point(alpha = 0.5) + theme_minimal() + geom_smooth(method = "lm") + labs(title = "Scatterplot of total_penalties against total_offense with a regression line")
+```
+
+```{r}
+mod <- lm(total_penalties ~ total_offense, data = handball_clean)
+plot(handball_clean$total_penalties ~ handball_clean$total_offense)
+abline(mod)
 ```
 
 # Question Ideas likely to use
