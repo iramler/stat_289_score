@@ -16,6 +16,7 @@ editor:
 categories:
   - Bootstrap Distribution
   - Confidence Intervals
+  - Paired Data
 ---
 
 ## Module
@@ -121,5 +122,5 @@ The `beam_by_year.csv` is made from the original `ncaa_gymnastics.csv` data set.
 [Class handout - with solutions](gymnastics_worksheet_SOLUTIONS.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Upon conclusion of this module, students will gain practice in analyzing bootstrap distributions and using them to create samples and construct confidence intervals. Students will also use this module to compare the means between two different groups. This module offers a valuable learning opportunity to gain familiarity with bootstrap distributions and confidence intervals. 
+Upon conclusion of this module, students will gain practice in analyzing bootstrap distributions and using them to create samples and construct confidence intervals in the context of NCAA Women's Gymnastics. This module offers a valuable learning opportunity to gain familiarity with bootstrap distributions and confidence intervals. 
 :::

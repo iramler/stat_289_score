@@ -164,6 +164,10 @@ beam_by_year <-
 ```
 
 ```{r}
+beam_by_year$Diff_1st_4th
+```
+
+```{r}
 write_csv(beam_by_year, file = "/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/gymnastics_module/Exploration/beam_by_year.csv")
 ```
 
