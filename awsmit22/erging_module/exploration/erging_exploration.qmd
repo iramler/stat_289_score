@@ -28,6 +28,14 @@ ggplot(data = erg_df, aes(x = Verified, y = Split)) + geom_boxplot()
 ```
 
 ```{r}
+ggplot(data = erg_df, aes(x = Age_Group, y = Split)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = erg_df, aes(x = Year, y = Split)) + geom_boxplot()
+```
+
+```{r}
 ggplot(data = erg_df, aes(x = Age, y = Time)) + geom_point() + facet_grid(Gender ~Distance)
 ```
 
