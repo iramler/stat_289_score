@@ -23,9 +23,8 @@ NFL_Position – Position the player played in the NFL
 To begin, load in the necessary packages and the **College_NFL_WR.csv** file. The data contains recruiting information for Division 1 college football recruits and statistics for players who played in the NFL in 2023. Note that some of the high school recruits did not play in the NFL in 2023 and some of the NFL receivers weren't identified in the high school recruiting data.
 
 ```{r message=FALSE, warning=FALSE}
-library(tidyverse)
-library(here)
-football <- read.csv(here("College_NFL_WR.csv"))
+library(tidyverse, quietly = TRUE)
+football <- read.csv("College_NFL_WR.csv")
 ```
 
 1. Create two sets of data, one containing players that competed in the NFL in 2023 and another that contains players who didn't compete in the NFL in 2023. Report the number of players in each dataset. Hint: Players who did not play in the NFL in 2023 will have Tm = NA.
