@@ -1,0 +1,80 @@
+---
+title: "Erging Data Wrangling Worksheet"
+format: html
+---
+
+1.  Copy this code to load the libraries needed for this worksheet.
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readr)
+```
+
+2.  Copy this code to read in the data set.
+
+```{r message=FALSE, warning=FALSE}
+erg_df <- read_csv("erg.csv")
+erg_df <- erg_df |> mutate(Verified = as.factor(Verified), Gender = as.factor(Gender), Year = as.factor(Year), Distance = as.factor(Distance), Age_Group = as.factor(Age_Group))
+```
+
+3.  Make a side-by-side boxplot of the `Speed` for `Verified` and `Non-Verified` pieces. Give the plot a label.
+
+```{r}
+
+```
+
+4.  Describe the distribution of the plot.
+
+
+
+5.  Find the summary statistics for `Speed` and calculate its IQR.
+
+```{r}
+
+```
+
+6.  Make a table of the top 10 speeds for rowers. Including only their `Name`, `Speed` and if their piece was `Verified`.
+
+```{r}
+
+```
+
+7.  Using the table, identify the 4 outliers seen in the boxplot.
+
+```{r}
+
+```
+
+8.  Perform a t.test to evaluate if there is a significant difference in the mean `Speed` for `Verified` and `Non-Verified` pieces.
+
+```{r}
+
+```
+
+9.  Make a new dataset which does not have the 4 outliers in it.
+
+```{r}
+
+```
+
+10.  With the new dataset make another side-by-side boxplot of the `Speed` for `Verified` and `Non-Verified` pieces and give the plot a label.
+
+```{r}
+
+```
+
+11.  Comment on the distribution of this new boxplot.
+
+```{r}
+
+```
+
+12.  Perform a t.test with the new dataset and re-evalute if there is a significant difference in the mean `Speed` for `Verified` and `Non-Verified` pieces.
+
+```{r}
+
+```
+
+13.  What does the number of outliers for `Non-Verified` pieces say about the reliability of `Non-Verified` pieces in the dataset?
+
+14. Is it ethical to remove the outliers from the dataset as done in task 9?

@@ -4,7 +4,10 @@ author: Abigail Smith
 date: July 17, 2024
 description: Analyzing the top 50 2k, 6k, and 10k erg times for both men and women from 2018 to 2023.
 categories:
-  -  COME BACK TO ONCE I'M DONE
+  -  GGPlot
+  -  Dplyr
+  -  Outlier Detection
+  -  Data ethics
   
 editor: 
   markdown: 
@@ -58,7 +61,29 @@ The data set has 1,800 rows with 14 variables. Each row is an erg piece complete
 
 ## Questions
 
-1.  **COME BACK TO WHEN IM DONE THE QUESTIONS**
+1.  Make a side-by-side boxplot of the `Speed` for `Verified` and `Non-Verified` pieces. Give the plot a label.
+
+2.  Describe the distribution of the plot.
+
+3.  Find the summary statistics for `Speed` and calculate its IQR.
+
+4.  Make a table of the top 10 speeds for rowers. Including only their `Name`, `Speed` and if their piece was `Verified`.
+
+5.  Using the table, identify the 4 outliers seen in the boxplot.
+
+6.  Perform a t.test to evaluate if there is a significant difference in the mean `Speed` for `Verified` and `Non-Verified` pieces.
+
+7.  Make a new dataset which does not have the 4 outliers in it.
+
+8.  With the new dataset make another side-by-side boxplot of the `Speed` for `Verified` and `Non-Verified` pieces and give the plot a label.
+
+9.  Comment on the distribution of this new boxplot.
+
+10.  Perform a t.test with the new dataset and re-evalute if there is a significant difference in the mean `Speed` for `Verified` and `Non-Verified` pieces.
+
+11.  What does the number of outliers for `Non-Verified` pieces say about the reliability of `Non-Verified` pieces in the dataset?
+
+12. Is it ethical to remove the outliers from the dataset as done in task 7?
 
 ## References
 
