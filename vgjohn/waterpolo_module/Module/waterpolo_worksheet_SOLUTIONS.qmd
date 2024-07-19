@@ -66,16 +66,15 @@ ncaa_waterpolo_goals %>% group_by(Conference) %>%
 
 a.  **Which conference shows the highest median number of goals scored, and which shows the lowest?**
 
-* The Western Water Polo Association has the highest median number of goals scored. The Mid Atlantic Water Polo Conference has the least amount of goals scored. 
+-   The Western Water Polo Association has the highest median number of goals scored. The Mid Atlantic Water Polo Conference has the least amount of goals scored.
 
 b.  **What conference has the most outliers? What do the outliers suggest about the competition within that conference?**
 
-* The Big West has the most outliers (2). The outliers could suggest that 
+-   The Big West has the most outliers (2). The outliers could suggest that
 
 c.  **Are the distributions of goals scored in each conference symmetric, or is there obvious skewness? If so, what direction is the data skewed?**
 
-
-**4. Out of the top ten leaders, find the total number of goals scored for each conference. Which has the most and which has the least. Are they consistent with the box plots?**
+**4. Out of the top ten leaders, find the total number of goals and assists scored for each conference. Which has the most and which has the least. Are they consistent with the box plots?**
 
 ```{r}
 ncaa_waterpolo_goals %>% group_by(Conference) %>%
@@ -86,10 +85,5 @@ ncaa_waterpolo_goals %>% group_by(Conference) %>%
 ```
 
 -   The Western Water Polo Association has the most amount of goals scored, 814. The Mid Atlantic Water Polo Association has the least amount of goals scored, 442.
- 
-
- 
-
-
 
 ## Part 4 - The Data Sets Together
