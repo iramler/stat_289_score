@@ -45,7 +45,7 @@ ncaa_waterpolo_assists <- read_csv("ncaa_waterpolo_assists.csv",show_col_types =
 
 ## Part 3 - The Data Sets Individually
 
-**1. Make the `Conference` variable in both the goals dataset and the assists dataset a factor, with each level being a unique value.**
+**1. The goals data set and the assists data set both have a `Conference` variable designating what conference the leader plays in. For both data sets, make `Conference` a factor with each level being a unique value.**
 
 ```{r}
 ncaa_waterpolo_goals$Conference <- factor(ncaa_waterpolo_goals$Conference)
@@ -68,13 +68,13 @@ a.  **Which conference shows the highest median number of goals scored, and whic
 
 -   The Western Water Polo Association has the highest median number of goals scored. The Mid Atlantic Water Polo Conference has the least amount of goals scored.
 
-b.  **What conference has the most outliers? What do the outliers suggest about the competition within that conference?**
+b.  **Are the distributions of goals scored in each conference symmetric, or is there obvious skewness? If so, what direction is the data skewed? What does the skewness imply about the competitive dynamics of the conference.**
 
--   The Big West has the most outliers (2). The outliers could suggest that
+The two conferences with the most obvious skewness is the Western Water Polo Association and the Northeast Water Polo Conference. All of the other conferences are relatively equal in distribution. Both the Western Water Polo Association and the Northeast Water Polo Conference are skewed in the positive direction this implies that there could be one or a few players from that conference that are scoring a considerably higher number of goals than other players in that conference. 
 
-c.  **Are the distributions of goals scored in each conference symmetric, or is there obvious skewness? If so, what direction is the data skewed?**
+**4. Out of the top ten leaders, find the total number of goals and assists scored for each conference. Make one table which contains the conference, number of goals, and number of assists. Which has the most and which has the least in each category? (Hint: Use a join() function)**
 
-**4. Out of the top ten leaders, find the total number of goals and assists scored for each conference. Which has the most and which has the least. Are they consistent with the box plots?**
+
 
 ```{r}
 ncaa_waterpolo_goals %>% group_by(Conference) %>%
@@ -87,3 +87,53 @@ ncaa_waterpolo_goals %>% group_by(Conference) %>%
 -   The Western Water Polo Association has the most amount of goals scored, 814. The Mid Atlantic Water Polo Association has the least amount of goals scored, 442.
 
 ## Part 4 - The Data Sets Together
+
+**1. What schools have leaders in both the assists category and the goals category, and how many of each does the school have in total? Create a table that contains the conference, number of goals, and number of assists. (Hint: Use a join() function)**
+
+```{r}
+# goals by team and conference
+team_summary_goals <-
+  ncaa_waterpolo_goals %>% group_by(Team, Conference) %>%
+  summarize(
+    n_goals = sum(Goals)
+  )
+
+# assists by team and conference 
+team_summary_assists <-
+  ncaa_waterpolo_assists %>% group_by(Team, Conference) %>%
+  summarize(
+    n_assists = sum(Assists)
+  )
+
+# joining together by team so get the matching teams 
+full_summary_table <- inner_join(team_summary_assists, team_summary_goals,by = "Team") %>%
+  arrange(desc(n_goals)) %>%
+  select(-Conference.y)
+
+# editing format 
+full_summary_table <- full_summary_table %>%
+  rename(
+    Conference = Conference.x,
+    `Total Assists` = n_assists,
+    `Total Goals` = n_goals
+  )
+
+full_summary_table <- full_summary_table[, c("Conference", "Team", "Total Assists", "Total Goals")]
+
+full_summary_table
+
+```
+**2. What proportion of teams have leaders in both goals and assists?** 
+
+$27/70 = 0.386 = 38.6$% of teams have leaders in both goals and assists 
+
+**3. **
+
+```{r}
+ggplot(data = full_summary_table,
+       mapping = aes(x = `Total Assists`,
+                     y = `Total Goals`,
+                     color = Conference)) +
+  geom_point()
+```
+

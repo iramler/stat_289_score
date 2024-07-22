@@ -68,6 +68,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="waterpolo_worksheet_SOLUTIONS_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="waterpolo_worksheet_SOLUTIONS_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -148,17 +177,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="part-3---the-data-sets-individually" class="level2">
 <h2 class="anchored" data-anchor-id="part-3---the-data-sets-individually">Part 3 - The Data Sets Individually</h2>
-<p><strong>Out of the top ten leaders, what conference has the most goals scored? What conference has the least amount of goals scored?</strong></p>
+<p><strong>1. The goals data set and the assists data set both have a <code>Conference</code> variable designating what conference the leader plays in. For both data sets, make <code>Conference</code> a factor with each level being a unique value.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ncaa_waterpolo_goals <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Conference) <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">sum =</span> <span class="fu">sum</span>(Goals)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    )<span class="sc">%&gt;%</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(sum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ncaa_waterpolo_goals<span class="sc">$</span>Conference <span class="ot">&lt;-</span> <span class="fu">factor</span>(ncaa_waterpolo_goals<span class="sc">$</span>Conference)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>ncaa_waterpolo_assists<span class="sc">$</span>Conference <span class="ot">&lt;-</span> <span class="fu">factor</span>(ncaa_waterpolo_assists<span class="sc">$</span>Conference)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>2. Create a boxplot showing the number of goals scored for each conference.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ncaa_waterpolo_goals <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Conference) <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(.,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Goals,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">fill =</span> Conference</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                       )) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="waterpolo_worksheet_SOLUTIONS_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>3. Based on the box plots you created above, answer the following questions:</strong></p>
+<ol type="a">
+<li><strong>Which conference shows the highest median number of goals scored, and which shows the lowest?</strong></li>
+</ol>
+<ul>
+<li>The Western Water Polo Association has the highest median number of goals scored. The Mid Atlantic Water Polo Conference has the least amount of goals scored.</li>
+</ul>
+<ol start="2" type="a">
+<li><strong>Are the distributions of goals scored in each conference symmetric, or is there obvious skewness? If so, what direction is the data skewed? What does the skewness imply about the competitive dynamics of the conference.</strong></li>
+</ol>
+<p>The two conferences with the most obvious skewness is the Western Water Polo Association and the Northeast Water Polo Conference. All of the other conferences are relatively equal in distribution. Both the Western Water Polo Association and the Northeast Water Polo Conference are skewed in the positive direction this implies that there could be one or a few players from that conference that are scoring a considerably higher number of goals than other players in that conference.</p>
+<p><strong>4. Out of the top ten leaders, find the total number of goals and assists scored for each conference. Make one table which contains the conference, number of goals, and number of assists. Which has the most and which has the least in each category? (Hint: Use a join() function)</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ncaa_waterpolo_goals <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Conference) <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">sum =</span> <span class="fu">sum</span>(Goals)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    )<span class="sc">%&gt;%</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(sum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 7 × 2
   Conference                                                sum
-  &lt;chr&gt;                                                   &lt;dbl&gt;
+  &lt;fct&gt;                                                   &lt;dbl&gt;
 1 Western Waterpolo Association                             814
 2 Southern California Intercollegiate Athletic Conference   685
 3 West Coast Conference                                     658
@@ -171,36 +231,68 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>The Western Water Polo Association has the most amount of goals scored, 814. The Mid Atlantic Water Polo Association has the least amount of goals scored, 442.</li>
 </ul>
-<p><strong>Make the <code>Conference</code> variable in both the goals dataset and the assists dataset a factor, with each level being a unique value.</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ncaa_waterpolo_goals<span class="sc">$</span>Conference <span class="ot">&lt;-</span> <span class="fu">factor</span>(ncaa_waterpolo_goals<span class="sc">$</span>Conference)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ncaa_waterpolo_assists<span class="sc">$</span>Conference <span class="ot">&lt;-</span> <span class="fu">factor</span>(ncaa_waterpolo_assists<span class="sc">$</span>Conference)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><strong>Create a boxplot showing the number of goals scored for each conference.</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ncaa_waterpolo_goals <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Conference) <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(.,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Goals,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">fill =</span> Conference</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                       )) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="waterpolo_worksheet_SOLUTIONS_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Based on the box plots you created above, answer the following questions:</strong></p>
-<ol type="a">
-<li><p><strong>Which conference shows the highest median number of goals scored, and which shows the lowest?</strong></p></li>
-<li><p><strong>What conference has the most outliers? How might these outliers impact the interpretation of the data?</strong></p></li>
-<li><p><strong>Are the distributions of goals scored in each conference symmetric, or is there obvious skewness? If so, what direction is the data skewed?</strong></p></li>
-</ol>
 </section>
 <section id="part-4---the-data-sets-together" class="level2">
 <h2 class="anchored" data-anchor-id="part-4---the-data-sets-together">Part 4 - The Data Sets Together</h2>
+<p><strong>1. What schools have leaders in both the assists category and the goals category, and how many of each does the school have in total? Create a table that contains the conference, number of goals, and number of assists. (Hint: Use a join() function)</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># goals by team and conference</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>team_summary_goals <span class="ot">&lt;-</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  ncaa_waterpolo_goals <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Team, Conference) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_goals =</span> <span class="fu">sum</span>(Goals)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'Team'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># conference by assists</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>team_summary_assists <span class="ot">&lt;-</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  ncaa_waterpolo_assists <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Team, Conference) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_assists =</span> <span class="fu">sum</span>(Assists)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'Team'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># joining together</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>join <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(team_summary_assists, team_summary_goals,<span class="at">by =</span> <span class="st">"Team"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n_goals)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Conference.y)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># editing format </span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>join <span class="ot">&lt;-</span> join <span class="sc">%&gt;%</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Conference =</span> Conference.x,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Total Assists</span><span class="st">`</span> <span class="ot">=</span> n_assists,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Total Goals</span><span class="st">`</span> <span class="ot">=</span> n_goals</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>join <span class="ot">&lt;-</span> join[, <span class="fu">c</span>(<span class="st">"Conference"</span>, <span class="st">"Team"</span>, <span class="st">"Total Assists"</span>, <span class="st">"Total Goals"</span>)]</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 27 × 4
+# Groups:   Team [27]
+   Conference                                Team  `Total Assists` `Total Goals`
+   &lt;fct&gt;                                     &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;
+ 1 Western Waterpolo Association             Sale…             150           322
+ 2 Northeast Waterpolo Conference            Iona              167           258
+ 3 Northeast Waterpolo Conference            Long…             149           214
+ 4 West Coast Conference                     Cali…             272           176
+ 5 Southern California Intercollegiate Athl… La V…              78           176
+ 6 West Coast Conference                     Air …              59           172
+ 7 Mid Atlantic Waterpolo Conference         Wagn…             182           161
+ 8 Mountain Pacific Sports Federation        Augu…              64           153
+ 9 Western Waterpolo Association             Biol…             148           146
+10 Big West                                  Univ…              67           146
+# ℹ 17 more rows</code></pre>
+</div>
+</div>
+<p><strong>2. What proportion of teams have leaders in both goals and assists?</strong></p>
+<p><span class="math inline">\(27/70 = 0.386\)</span> = 38.6% of teams have leaders in both goals and assists</p>
+<p><strong>3.</strong></p>
 </section>
 
 </main>
