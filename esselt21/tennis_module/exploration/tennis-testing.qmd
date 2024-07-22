@@ -39,6 +39,15 @@ coefficients(model_wta)
 ```
 
 ```{r}
+predict(model_wta, 
+        data.frame(Surface = "Grass",
+                   EloRank = 45,
+                   ReturnPWP = .45,
+                   Matches = 12,
+                   AcesPDF = 1.01))
+```
+
+```{r}
 plot(model_wta)
 ```
 
