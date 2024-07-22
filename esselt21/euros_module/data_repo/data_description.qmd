@@ -67,16 +67,12 @@ This data is made up of 51 rows and 93 columns. Each row represents a different 
 | \*\_SD      | The number of successful dribbles               |
 | \*\_SD%     | The successful dribbles percentage              |
 
-: [tennis.csv](../data/tennis.csv)
+: [eurosClean.csv](../data/eurosClean.csv)
 
 ## Questions
 
-1.  Look at differing types of distribution across variables
-
-2.  Interpret side-by-side box plots
-
-3.  Discuss why there might be differences in distribution
+insert later
 
 ## References
 
-Jeff Sackman, *ATP Tennis Rankings, Results, and Stats*. <https://github.com/JeffSackmann/tennis_atp>.
+Thamer Sekhri, *Euro 2024 Matches Stats*. <https://www.kaggle.com/datasets/thamersekhri/euro-2024-matches>.
