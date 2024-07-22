@@ -3,10 +3,9 @@ title: "Ultimate Worksheet"
 format: html
 ---
 
-
 Ultimate, also known as Ultimate Frisbee is a sport played with 2 teams of 7 players where players pass a Frisbee to each other and try to score in the opposing team's end zone. Each point starts with a pull where the defensive team throws the disc from their end zone towards the offensive team's end zone. The offensive team starts the point with possession and tries to score without dropping the Frisbee. If they drop the Frisbee, the defensive team can pick it up and try to score. The point ends when either team scores and the team that scored becomes the defensive team and pulls to the other team to start the next point. Games are played to 15 points, or to a time cutoff where the new target score is 1 point above the leading team.
 
-The College Ultimate Championships consist of 2 weekends of competition, one for Division 3 and one for Division 1. 16 teams competed to be Division 3 Champion in both the men's and women's divisions, while 20 teams compete for the two Division 1 titles. Statistics were measured from each game at both events and can be found on the [USA Ultimate](https://play.usaultimate.org/) Website. 
+The College Ultimate Championships consist of 2 weekends of competition, one for Division 3 and one for Division 1. 16 teams competed in both the Men's and Women's tournaments to be Division 3 Champion, while 20 teams competed for the two Division 1 titles. Statistics were measured from each game at both events and can be found on the [USA Ultimate](https://play.usaultimate.org/) Website.
 
 ## Import Packages
 
@@ -28,7 +27,7 @@ ultimate_games <- read_csv('ultimate_games.csv', show_col_types = FALSE)
 
 ## Tidy and Clean Data
 
-Starting with the ultimate_statistics dataset, make the dataset in a tidy format using the pivot_wider() function. There should be 1 row for each player that includes all statistics.
+The ultimate statistics dataset has 5 rows with statistics for each player, combine these into a single row for each player using a pivot function.
 
 Use a join to combine the 2 datasets by Player, make sure to remove any columns that are repeated or that have the same information.
 
@@ -54,7 +53,7 @@ Now that the current data is in a tidy form, create new variables that have stat
 
 ```
 
-3. Which player had the most points and assists combined in each division?
+3. Which player had the most points and assists combined in each of the 4 divisions?
 
 ```{r}
 
@@ -70,7 +69,7 @@ Now that the current data is in a tidy form, create new variables that have stat
 
 5. Assists per game and Turns per game
 
-a. Make a plot that compares turns per game and assists per game, label the players in the top 10 for assists using geom_text().
+a. Make a plot that compares turns per game and assists per game. Then label the names of players in the top 10 for assists using geom_text().
 
 ```{r}
 
@@ -88,11 +87,11 @@ a. Make a plot comparing turns by division. Are there any differences between th
 
 ```
 
-b. Add in the players that are top 10 in assists. What does a high assist total indicate about your turnover rate?
+b. Label the names of players that are top 10 in assists. What does a high assist total indicate about your turnover rate?
 
 
 
-7. Plot turns vs. plus minus and use division as the color aesthetic, describe the relationship between turns and plus minus.
+7. Plot turns vs. plus minus and describe the relationship.
 
 ```{r}
 

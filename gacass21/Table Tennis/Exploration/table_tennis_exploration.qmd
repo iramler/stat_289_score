@@ -14,7 +14,7 @@ table_tennis <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/ga
 ```
 
 ```{r}
-table_tennis <- table_tennis |> separate(Date, into = c("Date", "Time"), sep = " ")
+table_tennis |> slice(70)
 
 ## for HomeWinner, 1 means player 1 won, 0 means player 2
 ```
@@ -66,7 +66,7 @@ table_tennis_clean |>
   slice(1) |> 
   ungroup() |> 
   group_by(value) |> 
-  summarise(wins = sum(win)) |> 
+  summarise(wins = sum(win), matches = n()) |> 
   arrange(desc(wins))
 ```
 
@@ -74,10 +74,13 @@ table_tennis_clean |>
 ```{r}
 table_tennis_clean |> group_by(X, game) |> summarise(win_margin = abs(diff(points))) |>
   ungroup() |> group_by(game) |> summarise(avg_win_margin = mean(win_margin), games = n())
+```
 
-table_tennis_clean |> group_by(X, game, value) |> summarise(win_margin = abs(diff(points))) |> ungroup() |>
+
+```{r}
+table_tennis_clean |> group_by(X, game) |> mutate(win_margin = abs((diff(points)))) |> ungroup() |>
   group_by(value) |>
-  summarise(avg_win_margin = mean(win_margin)) |> arrange(desc(avg_win_margin))
+  summarise(avg_win_margin = mean(win_margin), n()) |> arrange(desc(avg_win_margin))
 ```
 
 

@@ -23,7 +23,7 @@ categories:
 
 Ultimate, also commonly known as Ultimate Frisbee, is a non contact sport where 2 teams of 7 players see who can reach the target score. College Ultimate has games played to 15 points, or to a time limit where the winning team has to score 1 more point to win the game. Points are scored when a team successfully throws the Frisbee to the opposing teams end zone and a teammate catches the Frisbee. Each point of Ultimate starts with both teams in their end zone. The defensive team pulls the Frisbee to the offensive team, and the offensive team tries to score without dropping the Frisbee. Players cannot move when they have possession of the Frisbee, so the defensive team tries to block their ability to pass, or intercept a pass to receivers. The defensive teams goal is to stop the offense from scoring and to pick up the Frisbee and score on them. The team that scores becomes the defensive team for the next point, and pull to the offensive team. Teams also switch ends of the field after each point to prevent any wind advantage.
 
-The 2024 College Ultimate Championships took place May 18th-20th for [Division 3](https://play.usaultimate.org/events/2024-USA-Ultimate-D-3-College-Championships/), and May 24th-27th for [Division 1](https://play.usaultimate.org/events/2024-USA-Ultimate-D-1-College-Championships/). 16 teams competed for the Division 3 titles, while 20 teams battled to win the Division 1 title. The weekends were full of exciting games and wild weather, as teams battled to win their groups, and advance to the bracket. The data from the weekends includes statistics for each player, along with the number of games their team played.
+The 2024 College Ultimate Championships took place May 18th-20th for [Division 3](https://play.usaultimate.org/events/2024-USA-Ultimate-D-3-College-Championships/), and May 24th-27th for [Division 1](https://play.usaultimate.org/events/2024-USA-Ultimate-D-1-College-Championships/). 16 teams competed in both the Men's and Women's tournaments for the Division 3 titles, while 20 teams battled to win the Men's and Women's Division 1 titles. The weekends were full of exciting games and wild weather, as teams battled to win their groups, and advance to the bracket. The data from the weekends includes statistics for each player, along with the number of games their team played.
 
 ::: {.callout-note collapse="true" title="Measured Statistics" appearance="minimal"}
 -   Points: number of points the player scored
@@ -67,7 +67,7 @@ This data comes from the 2024 Division 1 and 3 Men's and Women's College Ultimat
 
 </details>
 
-The 2nd dataset contains the total games played by each player in the College Ultimate Championships. It has 1665 rows and 6 columns. There is only 1 row for each player and it contains the games played.
+The 2nd dataset contains the total games played by each player's team in the College Ultimate Championships. It has 1665 rows and 6 columns. There is only 1 row for each player and it contains the games played.
 
 [ultimate_games.csv](ultimate_games.csv) - Total games played for each player team
 
@@ -82,7 +82,7 @@ The 2nd dataset contains the total games played by each player in the College Ul
 | gender     | gender of the player's division (Men or Women)        |
 | division   | level and gender of the competing player's division   |
 | team_name  | full name of the players team                         |
-| team_games | the total games played by the players team            |
+| team_games | the total games played by the player's team            |
 
 **Data Source**
 
@@ -92,6 +92,6 @@ The data is obtained from a [USA Ultimate 2024 Nationals Stats Dashboard](https:
 
 ### Materials
 
-[ultimate_worksheet.qmd](ultimate_worksheet.qmd) - Worksheet with data tidying and visualization questions.
+[ultimate_worksheet.qmd](ultimate_worksheet.qmd) - Worksheet with data tidying and visualization questions. Should take a student around 45-60 minutes to complete.
 
 [ultimate_worksheet_ans.qmd](ultimate_worksheet_ans.qmd) - Answer key/guide for the worksheet

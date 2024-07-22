@@ -5,7 +5,7 @@ format: html
 
 Ultimate, also known as Ultimate Frisbee is a sport played with 2 teams of 7 players where players pass a Frisbee to each other and try to score in the opposing team's end zone. Each point starts with a pull where the defensive team throws the disc from their end zone towards the offensive team's end zone. The offensive team starts the point with possession and tries to score without dropping the Frisbee. If they drop the Frisbee, the defensive team can pick it up and try to score. The point ends when either team scores and the team that scored becomes the defensive team and pulls to the other team to start the next point. Games are played to 15 points, or to a time cutoff where the new target score is 1 point above the leading team.
 
-The College Ultimate Championships consist of 2 weekends of competition, one for Division 3 and one for Division 1. 16 teams competed to be Division 3 Champion in both the men's and women's divisions, while 20 teams compete for the two Division 1 titles. Statistics were measured from each game at both events and can be found on the [USA Ultimate](https://play.usaultimate.org/) Website. 
+The College Ultimate Championships consist of 2 weekends of competition, one for Division 3 and one for Division 1. 16 teams competed in both the Men's and Women's tournaments to be Division 3 Champion, while 20 teams competed for the two Division 1 titles. Statistics were measured from each game at both events and can be found on the [USA Ultimate](https://play.usaultimate.org/) Website.
 
 ## Import Packages
 
@@ -27,7 +27,7 @@ ultimate_games <- read_csv('ultimate_games.csv', show_col_types = FALSE)
 
 ## Tidy and Clean Data
 
-Starting with the ultimate_statistics dataset, make the dataset in a tidy format using the pivot_wider() function.
+The ultimate statistics dataset has 5 rows with statistics for each player, combine these into a single row for each player using a pivot function.
 
 ```{r}
 ultimate_statistics <- ultimate_statistics |>
@@ -41,7 +41,7 @@ ultimate_data <- left_join(ultimate_statistics, ultimate_games,
                            by = join_by(player))
 ```
 
-Are there any repeated columns, if so use select to remove these columns.
+If columns are named inappropriately, use a rename function to rename them.
 
 ```{r}
 ultimate_data <- ultimate_data |> select(player, 
@@ -57,7 +57,7 @@ ultimate_data <- ultimate_data |> select(player,
                                          team_games)
 ```
 
-Are columns named appropriately? Use a rename function to rename columns.
+Check if the type of each column is appropriate for the data. If not change the type.
 
 ```{r}
 ultimate_data <- ultimate_data |> rename(level = level.x, 
@@ -98,7 +98,7 @@ ultimate_full |> filter(Points > 0 |
                         plus_minus != 0) |> 
   summarise(total_player = n())
 
-## 1455 players had at least 1 Point, Assist, Turn, D, or plus_minus
+## 1455 players had at least 1 Point, Assist, Turn, D, or a non-zero plus_minus
 ```
 
 
@@ -110,7 +110,7 @@ ultimate_full |> arrange(desc(Assists)) |>
                  select(player, Assists, ast_per_game)
 ```
 
-3. Which player had the most points and assists combined in each different division?
+3. Which player had the most points and assists combined in each of the 4 divisions?
 
 ```{r}
 ultimate_full |> mutate(pts_contributed = Points + Assists) |> 
@@ -143,7 +143,7 @@ ggplot(data = ultimate_full, aes(y = Assists, x = division)) +
 
 5. Assists per game and Turns per game
 
-a. Make a plot that compares turns per game and Assists, label the players in the top 10 for assists using geom_text().
+a. Make a plot that compares turns per game and assists per game. Then label the names of players in the top 10 for assists using geom_text().
 
 ```{r}
 top_10_assists <- ultimate_full |> arrange(desc(Assists)) |> slice(1:10)
@@ -178,7 +178,7 @@ ggplot(data = ultimate_full, aes(x = division, y = Turns)) +
 
 D3 Women tend to have more turns than other divisions, along with a larger spread of outliers, D1 Women have more turns than the Mens divisions but less than D3 Women. The Mens divisions are pretty similar in distribution of turns.
 
-b. Label the players that are top 10 in assists. What does a high assist total indicate about your turnover rate?
+b. Label the names of players that are top 10 in assists. What does a high assist total indicate about your turnover rate?
 
 ```{r}
 ggplot(data = ultimate_full, aes(x = division, y = Turns)) +
@@ -238,7 +238,7 @@ ultimate_full |> group_by(division) |>
 ```
 
 
-b. When a team on defense scores a point, the players on the field on the offensive team lose a plus minus point. With the information that plus minus is only counted for offensive possessions where teams start with the Frisbee and are more likely to score, what do the total plus minus numbers say about the dominance of offense in each division?
+b. Plus Minus is only counted for points where a player starts on offense. If the offensive team scores they get +1, if the defensive team scores, the offensive players get -1. Based on how they are calculated, what do the total plus minus numbers say about the dominance of offense in each division?
 
 In Division 1 Men, the offense is very dominant and scores much more often than the defense. Division 1 Women and Division 3 Men are similar where the offense is still very efficient and score much more than the defense. In Division 3 Women, the defense has a slight edge in plus_minus, meaning that teams on offense scores on slightly less than half of all points in this division. We can see this in both the Ds statistics and the Turns statistic, where Division 3 Women have the lead in both categories. This makes for very back and forth games when two teams are defensively strong and slightly weaker at offense.
 
