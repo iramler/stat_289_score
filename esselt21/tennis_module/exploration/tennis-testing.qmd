@@ -18,6 +18,10 @@ wta <- read_csv(here::here("esselt21/tennis_module/module_213/wta.csv"))
 ```
 
 ```{r}
+mean(wta$DoubleFP)
+```
+
+```{r}
 library(broom)
 # regression test to see difference
 model_atp <- lm(WinPercentage ~ Surface:Matches + EloRank + ReturnPointsWonPercentage + AcesPerDoubleFault,
