@@ -12,7 +12,7 @@ library(readr)
 # Data
 
 ```{r}
-erg_df <- read_csv("erg.csv")
+erg_df <- read_csv("~/Desktop/git/score_new/awsmit22/erging_module/stat213/exploration/erg.csv")
 
 erg_df <- erg_df |> mutate(Verified = as.factor(Verified), Gender = as.factor(Gender), Year = as.factor(Year), Distance = as.factor(Distance))
 ```
@@ -89,68 +89,47 @@ ggplot(data = erg_df, aes(x = Age, y = Pos, colour = Distance)) + geom_point(alp
 ggplot(data = erg_df, aes(x = Age_Group)) + geom_bar() 
 ```
 
-```{r}
-erg_df
-```
-
-# Outliers
+# Modelling
 
 ```{r}
-summary(erg_df$Speed)
-iqr <- 301-256.5
-iqr
-1.5*iqr
-66.75+301
-erg_df |> filter(Verified == "No") |> arrange(desc(Speed))
-erg_df |> filter(Verified == "Yes") |> arrange(desc(Speed))
+simple <- lm(Pos ~ Age, data = erg_df)
+summary(simple)
 ```
-
-# Question 1
-
-Describe why the below boxplot looks clustered at the bottom of the y-axis. 
 
 ```{r}
-ggplot(data = erg_df, aes(x = Verified, y = Speed)) + geom_boxplot() + theme_minimal() + labs(title = "Side-by-Side Boxplots of Speed for Verified and Non-Verified Pieces") + theme(plot.title = element_text(hjust = 0.5))
+ggplot(erg_df, aes(x = Age, y = Pos)) + geom_point() + geom_smooth() + facet_grid(Distance ~ Gender)
 ```
-
-**The 4 outliers on the verified plot are heavily skewing the data.**
-
-# Question 2
-
-Calculate the IQR for `Speed` using the provided summary statistics.
 
 ```{r}
-summary(erg_df$Speed)
-301-256.5
+ggplot(data = erg_df, aes(x = Speed)) + geom_histogram() + facet_wrap(~Year)
 ```
-
-**The IQR for `Speed` is 44.5.**
-
-# Question 3
-
-Using the below table of the top 10 speeds for rowers, identify the 4 outliers seen in the boxplot.
-
-```{r}
-erg_df |> arrange(desc(Speed)) |> select(Name, Speed, Verified)
-
-1.5*44.5
-301 + 66.75
-```
-
-**Natasshia Lee, Travis Willcox, Lynn Hansford, and Toño Martí Ayala are all outliers as their speeds are greater than `1.5(IQR) + Q3`.**
-
-# Question 4
 
 ```{r}
 no_outliers <- erg_df |> filter(Name != "Toño Martí ayala" & Name != "Lynn Hansford" & Name != "Travis Willcox" & Name != "Natasshia Lee")
-
-ggplot(data = no_outliers, aes(x = Verified, y = Speed)) + geom_boxplot() + theme_minimal() + labs(title = "Side-by-Side Boxplots of Speed for Verified and Non-Verified Pieces") + theme(plot.title = element_text(hjust = 0.5))
-
-ggplot(data = no_outliers, aes(x = Speed)) + geom_histogram(bins = 15, fill = "lightblue", colour = "black")
-
-t.test(Speed ~ Verified, data = no_outliers)
-t.test(Speed ~ Verified, data = erg_df)
 ```
 
+```{r}
+ggplot(data = no_outliers, aes(x = Speed)) + geom_histogram() + facet_wrap(~Year)
+```
 
+```{r}
+simple2 <- lm(Speed ~ Age, data = erg_df)
+summary(simple2)
+```
+
+```{r}
+ggplot(data = erg_df, aes(x = Distance, y = Age)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = erg_df, aes(x = Gender, y = Age)) + geom_boxplot()
+```
+
+```{r}
+ggplot(data = erg_df, aes(x = Age)) + geom_histogram() + facet_wrap(~Year)
+```
+
+```{r}
+ggplot(data = erg_df, aes(x = Distance, y = Age)) + geom_col()
+```
 

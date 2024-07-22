@@ -72,11 +72,10 @@ This activity could be used as a quiz or a take home-assessment.
 By the end of the activity, students will be able to:
 
 1.  Evaluate and test the correlation between two variables
-2.  Assess the overall fit of a multiple linear regression model using ANOVA
-3.  Interpret multiple linear regression coefficients
-4.  Discern the difference between prediction and confidence intervals in regression
-5.  Find and interpret prediction and confidence intervals using statistical software
-
+2.  Discern the difference between prediction and confidence intervals in regression
+3.  Find and interpret prediction and confidence intervals using statistical software
+4.  Assess the overall fit of a multiple linear regression model using ANOVA
+5.  Interpret multiple linear regression coefficients
 
 
 :::
@@ -91,7 +90,7 @@ The tech worksheet will require the use of statistical software for most of the 
 
 ### Data
 
-The dataset has 309 players from 18 different clubs, with 7 variables, 4 of which are statistics. Each row in the data set is a player in the Handball-Bundesliga during the 2022-23 season. The statistics are cumulative for the entirety of the season. The dataset only contains players who played in 10 games or more.
+The dataset has 309 players from 18 different clubs, with 7 variables, 4 of which are playing statistics. Each row in the data set is a player in the Handball-Bundesliga during the 2022-23 season. The statistics are cumulative for the entirety of the season. The dataset only contains players who played in 10 games or more.
 
 Download data: 
 
@@ -105,7 +104,7 @@ Download data:
 | `NAME` | The name of the player. |
 | `CLUB`            | The club the player is on. There are 18 in the Bundesliga.                                                                                                                                                                    |
 | `POSITION`        | The position of the player. There are 7 positions in handball: goalkeeper, fullbacks (left and right), center backcourt, wingers (left and right), and pivot.                                                                 |
-| `P`               | The number of games played in the 2022-23 season.                                                                                                                                                                            |
+| `GP`               | The number of games played in the 2022-23 season.                                                                                                                                                                            |
 | `total_offense`   | The total offensive plays made by the player in the season. Calculated by adding the 6 offensive focused statistics from the original dataset.                                                                                |
 | `total_penalties` | The total penalties the player had in the season. Calculated by adding the 5 penalty related statistics from the original dataset.|                                                             
 | `HPI`             | Handball performance index, complex formulaic calculation equivalent to how well the player performed in the season. Players with HPIs in the 70s are considered good, while players in the 60s are considered not as strong. [https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/](https://www.liquimoly-hbl.de/en/s/handball-performance-index/2021-22/handball-performance-index--data-based--transparent--fair/){target="_blank"}|

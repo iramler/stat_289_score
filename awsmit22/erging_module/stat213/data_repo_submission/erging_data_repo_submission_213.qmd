@@ -1,30 +1,17 @@
 ---
-title: "Concept2 Erg Time Rankings"
-author:
-  - name: Abigail Smith
-    affiliation:
-      - id: slu
-        name: St. Lawrence University
-  - name: Ivan Ramler
-    email: iramler@stlawu.edu
-    affiliation:
-      - ref: slu
-date: July 19, 2024
+title: Concept2 Erg Time Rankings
+author: Abigail Smith
+date: July 17, 2024
 description: Analyzing the top 50 2k, 6k, and 10k erg times for both men and women from 2018 to 2023.
 categories:
-  -  GGPlot
-  -  Dplyr
-  -  Outlier Detection
-  -  Data ethics
+  -  COME BACK TO WHEN I HAVE QUESTIONS
+  
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-### Welcome video
-
-{{< video  title="Concept2 Erg Time Rankings" >}}
-
-### Introduction
-
-This activity examines the `Speeds` of rowers on [Concept2](https://en.wikipedia.org/wiki/Concept2){target="_blank"} [indoor rowing (Erging) machines](https://en.wikipedia.org/wiki/Indoor_rower){target="_blank"} from 2018-2023.
+## Motivation
 
 [Indoor Rowing (Erging)](https://en.wikipedia.org/wiki/Indoor_rower){target="_blank"}
 is a form of indoor exercise. Erging is primarily used by rowers to
@@ -46,41 +33,9 @@ The below video shows the motion of erging.
 
 The [erg.csv](erg.csv){target="_blank"} dataset contains data from the 2018-2023 rankings. The dataset includes the top 50 erg times for 2k, 6k, and 10k distances for both men and women. In looking at the speeds and times for the different distances it will be interesting to identify any potential patterns amongst the groups. 
 
-
-::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
-This activity could be used as a take home assignment or quiz.
-:::
-
-
-
-::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
-By the end of the activity, students will be able to:
-
-1.  Create labeled plots with GGPlot 
-2.  Arrange data to identify outliers
-3.  Test for a difference in means
-4.  Filter a dataset to remove outliers
-5.  Assess the ethics of removing outliers from a dataset
-:::
-
-::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-Students will utilize an understanding of GGPlot to create plots of data. Students will also arrange data to identify outliers with the IQR method. They will test for a difference in means in data before and after removing outliers. Students will also evaluate the ethics of removing outliers from the dataset.  
-:::
-
-::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
-This worksheet will require the use of the Dplyr and GGPLot packages in RStudio. 
-:::
-
-### Data
+## Data
 
 The data set has 1,800 rows with 14 variables. Each row is an erg piece completed by a rower between 2018 and 2023. There are 1,088 different rowers in the dataset, with 50 erg pieces in each category.
-
-Download data: 
-
-: [erg.csv](erg.csv){target="_blank"}
-
-<details>
-<summary><b>Variable Descriptions</b></summary>
 
 | Variable     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |-----------------------|-------------------------------------------------|
@@ -99,12 +54,15 @@ Download data:
 | `Speed`     | The average speed of the piece in `meters per minute`. (`Distance/Time`)|
 | `Split`     | The average 500 meter split of the piece, meaning the average time per 500 meters of the piece. (`500*(Time/Distance)`)|
 | `Age_Group`     | The age group the rower that completed the piece is in. The age groups are defined by Concept2 on the rankings page. There are 9 age groups in the dataset. |
+: [erg.csv](erg.csv){target="_blank"}
 
-**Data Source**
+## Questions
 
-[Website the Data was Scraped From](https://swishanalytics.com/mlb/mlb-umpire-factors){target="_blank"}
+1.  **COME BACK TO WHEN IM DONE QUESTIONS**
 
-**More information on the rules and set up**
+## References
+
+[Website the Data was Scraped From](https://log.concept2.com/rankings){target="_blank"}
 
 [Indoor Rowing (Erging) Wikipedia](https://en.wikipedia.org/wiki/Indoor_rower){target="_blank"}
 
@@ -117,17 +75,3 @@ Download data:
 [Concept2 Pace Calculator](https://www.concept2.com/training/pace-calculator?gad_source=1&gclid=CjwKCAjw1920BhA3EiwAJT3lSehbGE4OcvpN6VrFVt6AvpP3gwUIfg90B1YvMpmVA67SPgMoPD0w9hoC73QQAvD_BwE){target="_blank"}
 
 [Concept2 Erg Technique Video](https://www.youtube.com/watch?v=4zWu1yuJ0_g){target="_blank"}
-
-</details>
-
-### Materials
-
-We provide editable qmd files along with their solutions.
-
-[Worksheet](erging_234_worksheet.qmd)
-
-[Worksheet Answers](erging_234_answers.qmd)
-
-::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-After finishing this activity, students should be able to create plots using GGPlot. They should also be able to arrange data to identify and remove outliers. Students should also be able to evaluate a difference in means both with and without outliers. Students should be able to consider the ethics of removing outliers.
-:::
