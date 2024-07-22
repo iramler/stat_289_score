@@ -115,6 +115,114 @@ eurosClean <-
 ```
 
 ```{r}
+# renaming all variables
+eurosClean <-
+  eurosClean |>
+  rename("h_xG" = `Home Expected goals(xG)`,
+         "h_TS" = `Home Total shots`,
+         "h_SOT" = `Home Shots on target`,
+         "h_BC" = `Home Big chances`,
+         "h_BCM" = `Home Big chances missed`,
+         "h_AP" = `Home Accurate passes`,
+         "h_AP%" = `Home Accurate passes %`,
+         "h_FC" = `Home Fouls committed`,
+         "h_C" = `Home Corners`,
+         "h_SOFFT" = `Home Shots off target`,
+         "h_BS" = `Home Blocked shots`,
+         "h_HW" = `Home Hit woodwork`,
+         "h_SIB" = `Home Shots inside box`,
+         "h_SOB" = `Home Shots outside box`,
+         "h_xGOP" = `Home xG open play`,
+         "h_xGSP" = `Home xG set play`,
+         "h_npxG" = `Home Non-penalty xG`,
+         "h_xGOT" = `Home xG on target (xGOT)`,
+         "h_P" = `Home Passes`,
+         "h_OHP" = `Home Own half`,
+         "h_OPHP" = `Home Opposition half`,
+         "h_ALB" = `Home Accurate long balls`,
+         "h_ALB%" = `Home Accurate long balls %`,
+         "h_AC" = `Home Accurate crosses`,
+         "h_AC%" = `Home Accurate crosses %`,
+         "h_Throws" = `Home Throws`,
+         "h_TouchOB" = `Home Touches in opposition box`,
+         "h_OFF" = `Home Offsides`,
+         "h_YC" = `Home Yellow cards`,
+         "h_RC" = `Home Red cards`,
+         "h_TW" = `Home Tackles won`,
+         "h_TW%" = `Home Tackles won %`,
+         "h_INT" = `Home Interceptions`,
+         "h_B" = `Home Blocks`,
+         "h_CL" = `Home Clearances`,
+         "h_KS" = `Home Keeper saves`,
+         "h_DW" = `Home Duels won`,
+         "h_GDW" = `Home Ground duels won`,
+         "h_GDW%" = `Home Ground duels won %`,
+         "h_ADW" = `Home Aerial duels won`,
+         "h_ADW%" = `Home Aerial duels won %`,
+         "h_SD" = `Home Successful dribbles`,
+         "h_SD%" = `Home Successful dribbles %`)
+```
+
+```{r}
+# renaming variables part 2
+eurosClean <-
+  eurosClean |>
+  rename("a_xG" = `Away Expected goals(xG)`,
+         "a_TS" = `Away Total shots`,
+         "a_SOT" = `Away Shots on target`,
+         "a_BC" = `Away Big chances`,
+         "a_BCM" = `Away Big chances missed`,
+         "a_AP" = `Away Accurate passes`,
+         "a_AP%" = `Away Accurate passes %`,
+         "a_FC" = `Away Fouls committed`,
+         "a_C" = `Away Corners`,
+         "a_SOFFT" = `Away Shots off target`,
+         "a_BS" = `Away Blocked shots`,
+         "a_HW" = `Away Hit woodwork`,
+         "a_SIB" = `Away Shots inside box`,
+         "a_SOB" = `Away Shots outside box`,
+         "a_xGOP" = `Away xG open play`,
+         "a_xGSP" = `Away xG set play`,
+         "a_npxG" = `Away Non-penalty xG`,
+         "a_xGOT" = `Away xG on target (xGOT)`,
+         "a_P" = `Away Passes`,
+         "a_OHP" = `Away Own half`,
+         "a_OPHP" = `Away Opposition half`,
+         "a_ALB" = `Away Accurate long balls`,
+         "a_ALB%" = `Away Accurate long balls %`,
+         "a_AC" = `Away Accurate crosses`,
+         "a_AC%" = `Away Accurate crosses %`,
+         "a_Throws" = `Away Throws`,
+         "a_TouchOB" = `Away Touches in opposition box`,
+         "a_OFF" = `Away Offsides`,
+         "a_YC" = `Away Yellow cards`,
+         "a_RC" = `Away Red cards`,
+         "a_TW" = `Away Tackles won`,
+         "a_TW%" = `Away Tackles won %`,
+         "a_INT" = `Away Interceptions`,
+         "a_B" = `Away Blocks`,
+         "a_CL" = `Away Clearances`,
+         "a_KS" = `Away Keeper saves`,
+         "a_DW" = `Away Duels won`,
+         "a_GDW" = `Away Ground duels won`,
+         "a_GDW%" = `Away Ground duels won %`,
+         "a_ADW" = `Away Aerial duels won`,
+         "a_ADW%" = `Away Aerial duels won %`,
+         "a_SD" = `Away Successful dribbles`,
+         "a_SD%" = `Away Successful dribbles %`)
+```
+
+```{r}
+# renaming part 3
+eurosClean <-
+  eurosClean |>
+  rename("h_country" = home_team,
+         "a_country" = away_team,
+         "h_goals" = home_goals,
+         "a_goals" = away_goals)
+```
+
+```{r}
 write_csv(eurosClean, here::here("esselt21/euros_module/exploration/eurosClean.csv"))
 ```
 

@@ -1,12 +1,11 @@
 ---
-title: Investigating the Impact of Tournament Length and Surface Type on Win Percentages in Professional Tennis
+title: Mapping NFL Stadium Locations
 author: Eric Seltzer
-date: June 24, 2024
-description: Data of the Association of Tennis Professionals (ATP) players and the Women's Tennis Associaion (WTA) from the 2023 season. Players who have played a minimum of 10 matches overall and 5 matches on a particular surface are included in the table. We will be looking into this tennis data.
+date: July 22, 2024
+description: Data of the coordinates of NFL Stadiums, as well as the attendance numbers for each NFL Stadium.
 categories:
-  - Five Number Summary
-  - Distribution
-  - Box plots
+  - Mapping
+  - Visualization
 editor:
   markdown: 
     canonical: true
@@ -14,45 +13,48 @@ editor:
 
 ## Motivation
 
-This data set is provided by Jeff Sackman on GitHub. There is an extensive repository of all tennis data. The data here is from the 2023 season.
+The first data set is provided by Logan Donaldson on Kaggle. It contains the latitude and longitude data of every stadium in the MLB, NFL, NBA, NHL, and MLS. The second data set is provided by Sujay Kapadnis, it contains the total attendance for NFL teams, the home attendance, away attendance, and weekly attendance.
 
 ## Data
 
-This data is made up of 5194 rows and 20 columns. It was cleaned into a different format to identify metrics about each individual player. Each row represents a match played on a particular surface of court. The three options for these surfaces are Clay, Grass, and Hard.
+### Stadiums
 
-| Variable           | Description                                           |
-|--------------------|-------------------------------------------------------|
-| tourney_name       | The name of the tournament                            |
-| GS                 | Whether this tournament was a grand slam or not       |
-| surface            | The type of surface that was played on for this match |
-| result             | Whether this player was a winner or not               |
-| player             | The name of the player                                |
-| rank               | The ATP ranking of the player                         |
-| hand               | The handedness of the player                          |
-| height             | The height of the player (cm)                         |
-| country            | The country the player is representing                |
-| age                | The age of the player                                 |
-| minutes            | How long the match was in minutes                     |
-| numAces            | The number of aces                                    |
-| numDF              | The number of double faults                           |
-| servePoints        | The number of serve points                            |
-| first_serve_won    | The number of serve points won                        |
-| second_serve_won   | The number of second serve points won                 |
-| serve_games_won    | The number of serve games won                         |
-| first_serve_in     | The number of first serves in                         |
-| break_points_saved | The number of break points saved                      |
-| break_points_faced | The number of break points faced                      |
+This data is made up of 32 rows and 7 columns. Each row represents a different NFL team and the stadium that they play at.
 
-: [tennis.csv](../data/tennis.csv)
+| Variable          | Description                                |
+|-------------------|--------------------------------------------|
+| Team              | The name of the team                       |
+| League            | What league the team plays in              |
+| Division          | What division the team plays in            |
+| Lat               | The latitude of the stadium                |
+| Long              | The longitude of the stadium               |
+| total             | The total team attendance for the season   |
+| averageAttendance | The average team attendance for the season |
+
+: [stadiums.csv](../data/stadiums.csv)
+
+### Attendance
+
+This data set has 10,846 rows and 8 variables. It contains data on each team from 2000-2019 and shows their attendance numbers both as totals and weekly.
+
+| Variable          | Description                               |
+|-------------------|-------------------------------------------|
+| team_name         | The name of the team                      |
+| year              | What year the season is from              |
+| total             | The total attendance for that season      |
+| home              | The total home attendance for that season |
+| away              | The total away attendance for that season |
+| week              | The week of the season                    |
+| weekly_attendance | The attendance for the given week         |
+
+: [attendance.csv](../data/attendance.csv)
 
 ## Questions
 
-1.  Look at differing types of distribution across variables
-
-2.  Interpret side-by-side box plots
-
-3.  Discuss why there might be differences in distribution
+Insert later
 
 ## References
 
-Jeff Sackman, *ATP Tennis Rankings, Results, and Stats*. <https://github.com/JeffSackmann/tennis_atp>.
+Logan Donaldson, *Sports Stadium Locations*. <https://www.kaggle.com/datasets/logandonaldson/sports-stadium-locations>.
+
+Sujay Kapadnis, *NFL Stadium Attendance*. <https://www.kaggle.com/datasets/sujaykapadnis/nfl-stadium-attendance-dataset>.

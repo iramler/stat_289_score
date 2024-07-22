@@ -1,12 +1,10 @@
 ---
-title: Investigating the Impact of Tournament Length and Surface Type on Win Percentages in Professional Tennis
+title: Exploring if the "Best" Team won the Euros
 author: Eric Seltzer
 date: June 24, 2024
-description: Data of the Association of Tennis Professionals (ATP) players and the Women's Tennis Associaion (WTA) from the 2023 season. Players who have played a minimum of 10 matches overall and 5 matches on a particular surface are included in the table. We will be looking into this tennis data.
+description: Data of the results of the 2024 Euros tournament. Includes results and lots of in game metrics. 
 categories:
-  - Five Number Summary
-  - Distribution
-  - Box plots
+?
 editor:
   markdown: 
     canonical: true
@@ -14,34 +12,60 @@ editor:
 
 ## Motivation
 
-This data set is provided by Jeff Sackman on GitHub. There is an extensive repository of all tennis data. The data here is from the 2023 season.
+This data set is provided by Thamer Sekhri on Kaggle. There is an extensive data set of all the Euro results including their advanced metrics on in game statistics.
 
 ## Data
 
-This data is made up of 5194 rows and 20 columns. It was cleaned into a different format to identify metrics about each individual player. Each row represents a match played on a particular surface of court. The three options for these surfaces are Clay, Grass, and Hard.
+This data is made up of 51 rows and 93 columns. Each row represents a different match at the 2024 Euros. All the columns are information about the Matches from the stadium it was played in, to the expected number of the goals and the passing percentages. Note: there is duplicates for every home and away which will be marked with a \*. This can mean either h for home or a for away.
 
-| Variable           | Description                                           |
-|--------------------|-------------------------------------------------------|
-| tourney_name       | The name of the tournament                            |
-| GS                 | Whether this tournament was a grand slam or not       |
-| surface            | The type of surface that was played on for this match |
-| result             | Whether this player was a winner or not               |
-| player             | The name of the player                                |
-| rank               | The ATP ranking of the player                         |
-| hand               | The handedness of the player                          |
-| height             | The height of the player (cm)                         |
-| country            | The country the player is representing                |
-| age                | The age of the player                                 |
-| minutes            | How long the match was in minutes                     |
-| numAces            | The number of aces                                    |
-| numDF              | The number of double faults                           |
-| servePoints        | The number of serve points                            |
-| first_serve_won    | The number of serve points won                        |
-| second_serve_won   | The number of second serve points won                 |
-| serve_games_won    | The number of serve games won                         |
-| first_serve_in     | The number of first serves in                         |
-| break_points_saved | The number of break points saved                      |
-| break_points_faced | The number of break points faced                      |
+| Variable    | Description                                     |
+|-------------|-------------------------------------------------|
+| stadium     | The name of the stadium the match was played in |
+| attendance  | The number of fans that attended the match      |
+| \*\_country | The country                                     |
+| \*\_goals   | The number of goals scored by the team          |
+| \*\_xG      | The number of expected goals                    |
+| \*\_TS      | The number of total shots                       |
+| \*\_SOT     | The number of shots on target                   |
+| \*\_BC      | The number of big chances                       |
+| \*\_BCM     | The number of big chances missed                |
+| \*\_AP      | The number of accurate passes                   |
+| \*\_AP%     | The accurate passes percentage                  |
+| \*\_FC      | The number of fouls committed                   |
+| \*\_C       | The number of corners                           |
+| \*\_SOFFT   | The number of shots off target                  |
+| \*\_BS      | The number of blocked shots                     |
+| \*\_HW      | The number of hit woodworks                     |
+| \*\_SIB     | The number of shots inside the box              |
+| \*\_SOB     | The number of shots outside the box             |
+| \*\_xGOP    | The number of expected goals from open play     |
+| \*\_xGSP    | The number of expected goals from set play      |
+| \*\_xnpxG   | The number of expected goals (non-penalty)      |
+| \*\_xGOT    | The number of expected goals off target         |
+| \*\_P       | The number of passes                            |
+| \*\_OHP     | The number of own half passes                   |
+| \*\_OPHP    | The number of opposition half passes            |
+| \*\_ALB     | The number of accurate long balls               |
+| \*\_ALB%    | The accurate long ball percentage               |
+| \*\_AC      | The number of accurate crosses                  |
+| \*\_AC%     | The accurate crosses percentage                 |
+| \*\_Throws  | The number of throws                            |
+| \*\_TouchOB | The number of touches in the opponent box       |
+| \*\_YC      | The number of yellow cards                      |
+| \*\_RC      | The number of red cards                         |
+| \*\_TW      | The number of tackles won                       |
+| \*\_TW%     | The tackles won percentage                      |
+| \*\_INT     | The number of interceptions                     |
+| \*\_B       | The number of blocks                            |
+| \*\_CL      | The number of clearances                        |
+| \*\_KS      | The number of keeper saves                      |
+| \*\_DW      | The number of duels won                         |
+| \*\_GDW     | The number of ground duels won                  |
+| \*\_GDW%    | The ground duels won percentage                 |
+| \*\_ADW     | The number of aerial duels won                  |
+| \*\_ADW%    | The aerial duels won percentage                 |
+| \*\_SD      | The number of successful dribbles               |
+| \*\_SD%     | The successful dribbles percentage              |
 
 : [tennis.csv](../data/tennis.csv)
 
