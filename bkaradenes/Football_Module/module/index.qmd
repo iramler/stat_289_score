@@ -17,11 +17,11 @@ categories:
 
 ### Introduction
 
-For this activity, you will be exploring football wide receivers that graduated high school from 2013 to 2019 and committed to Division 1 universities.Also, the data includes NFL players who were targeted for receptions during the 2023 season.
+For this activity, you will be exploring football wide receivers that graduated high school from 2013 to 2019 and committed to Division 1 universities. Also, the data includes NFL players who were targeted for receptions during the 2023 season.
 
-In particular, you will modify datasets, merge tables, and analyze the data using visualizations to compare and contrast receivers in the NFL. 
+In particular, you will modify datasets and analyze the data using visualizations to compare and contrast receivers in the NFL. 
 
-Investigating this data is useful for several reasons. First, exploring the data can help us understand the accuracy of high school recruiting data and how it relates to performance in the NFL. Also cleaning and working with the data provides opportunites to gain impactful insights into both productivity in the NFL and what places players are recruited from. Analyses like these can help scouts find and recruit the players that will have the most impact on their team and help win games.
+Investigating this data is useful for several reasons. First, exploring the data can help us understand the accuracy of high school recruiting data and how it relates to performance in the NFL. Also, cleaning and working with the data provides opportunities to gain impactful insights into both productivity in the NFL and what places players are recruited from. Analyses like these can help scouts find and recruit the players that will have the most impact on their team and help win games.
 
 ::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
 This activity would be suitable for an in-class example or quiz.
@@ -51,7 +51,11 @@ The data contains 3965 rows and 37 columns. Each row represents a football playe
 
 Download data: 
 
-Available on the [SCORE Data Repository](https://data.scorenetwork.org/): [College_NFL_WR.csv](https://github.com/SCOREnetworkorg/sports-data-repository/raw/main/data/College_NFL_WR.csv)
+Available on the [SCORE Data Repository](https://data.scorenetwork.org/)
+
+Data: [College_NFL_WR.csv](https://github.com/SCOREnetworkorg/sports-data-repository/raw/main/data/College_NFL_WR.csv)
+
+Variables from `Rk` to `Id` contains data from the 2023 NFL season for all players that were targeted for a reception that season (not just wide receivers). Variables from `AthleteId` to `FipsCode` contains high school recruiting data for wide receivers from 2013-2019. 
 
 <details>
 <summary><b>Variable Descriptions</b></summary>
@@ -124,5 +128,5 @@ We provide editable MS Word and Quarto handouts along with their solutions. The 
 [Quarto handout - with solutions](football_ws_key.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-In conclusion, the football analyzing and cleaning data worksheet provides valuable learning experiences in several key areas. First, it allows them to understand the importance of tidy data and how clean data is easier to analyze. Learning to merge data is also important for when you are working with several related data sets. Also, creating and analyzing visualizations gives students an opportunity to be creative while also making important discoveries. All in all, this worksheet allows students to analyze the relationship between high school football recruitment and performances in the NFL.
+In conclusion, the football analyzing and cleaning data worksheet provides valuable learning experiences in several key areas. First, it allows students to understand the importance of tidy data and how clean data is easier to analyze. Also, creating and analyzing visualizations gives students an opportunity to be creative while also making important discoveries. All in all, this worksheet allows students to analyze the relationship between high school football recruitment and performances in the NFL such as how a better recruiting ranking in high school was correlated to more receiving yards in the 2023 NFL season.
 :::
