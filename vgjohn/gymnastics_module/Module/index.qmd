@@ -5,11 +5,11 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
-  - name: Ivan Ramler
-    email: iramler@stlawu.edu
+  - name: Robin Lock
+    email: rlock@stlawu.edu
     affiliation:
       - ref: slu
-date: "July 12, 2024"
+date: "July 22, 2024"
 description: "Making bootsrap distributions and constructing confidence intervals"
 editor: 
   canonical: true
@@ -41,7 +41,7 @@ Each team is allowed to have up to six people compete on each event, with the to
 
 Women's college gymnastics uses Perfect 10 scoring, with each routine being judged out of ten points. Gymnasts are evaluated on execution, difficulty, as well as the composition of the routine, and must meet certain requirements for each. 
 
-In this activity, we'll be using data from the NCAA Women's Gymnastics National Championship to create and analyze bootstrap distributions, as well as look at confidence intervals and the difference in means between different finishers in the championship. 
+In this activity, we'll be using different scores on the beam event at the NCAA Women's Gymnastics National Championship to create and analyze bootstrap distributions, as well as look at confidence intervals and the difference in means between different finishers in the championship. 
 
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
@@ -49,9 +49,9 @@ By the end of this activity, you will:
 
 1. Increase ability to create a bootstrap sample, statistic, and distribution.  
 
-2. Understand sampling with replacement and why it's important.
+2. Be able to construct confidence intervals from a bootstrap distribution and comment on their implications.
 
-3. Be able to construct confidence intervals from a bootstrap distribution and comment on their implications.
+3. Use paired data to calculate differences and interpret the results in the context of the NCAA Women's Gymnastics Championship.  
 
 :::
 
@@ -63,7 +63,7 @@ Students should have knowledge of how to collect bootstrap samples and with the 
 
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
 
-Statistical software such as StatKey is necessary in order to construct bootstrap distributions with a large enough sample size, standard error, and sample statistic. 
+Statistical software such as StatKey is necessary in order to construct bootstrap distributions with a large enough sample size, as well as find a standard error and sample statistic for the distribution. 
 
 :::
 
@@ -122,5 +122,5 @@ The `beam_by_year.csv` is made from the original `ncaa_gymnastics.csv` data set.
 [Class handout - with solutions](gymnastics_worksheet_SOLUTIONS.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Upon conclusion of this module, students will gain practice in analyzing bootstrap distributions and using them to create samples and construct confidence intervals in the context of NCAA Women's Gymnastics. This module offers a valuable learning opportunity to gain familiarity with bootstrap distributions and confidence intervals. 
+Upon conclusion of this module, students will gain practice in analyzing bootstrap distributions and using them to create samples and construct confidence intervals in the context of NCAA Women's Gymnastics. Students will use this module to calculate the difference in beam scores between first place teams and fourth place teams, which offers valuable insight into the dynamics of NCAA Women's Gymnastics. All in all, this module offers a valuable learning opportunity to gain familiarity with bootstrap distributions, confidence intervals, and paired data. 
 :::
