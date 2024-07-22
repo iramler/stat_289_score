@@ -18,7 +18,7 @@ wta <- read_csv(here::here("esselt21/tennis_module/module_213/wta.csv"))
 ```
 
 ```{r}
-mean(wta$DoubleFP)
+mean(wta$ReturnPWP)
 ```
 
 ```{r}
@@ -35,6 +35,7 @@ model_wta <- lm(WinPercentage ~ Surface + EloRank + ReturnPWP + Matches*Surface 
 summary(model_wta)
 aug_wta <-
   augment(model_wta)
+coefficients(model_wta)
 ```
 
 ```{r}
