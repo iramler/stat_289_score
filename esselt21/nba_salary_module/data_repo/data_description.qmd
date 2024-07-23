@@ -62,13 +62,7 @@ This data is made up of 4974 rows and 37 columns. Each row represents a player f
 
 ## Questions
 
-1.  Determine which variables are important to look at
-
-2.  Decide which variables should be included in interactions
-
-3.  Is the model good, assess its' effectiveness
-
-4.  Interpret the coefficients of the model
+insert later
 
 ## References
 

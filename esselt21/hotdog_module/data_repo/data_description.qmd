@@ -1,0 +1,46 @@
+---
+title: Investigating Professional Hot Dog Eating
+author: Eric Seltzer
+date: July 22, 2024
+description: This data was taken from the Wikipedia page of Nathan's Hot Dog Eating contest and combined with other sources found online to get more information. A lot of this data outside of the winners and the number of hot dogs eaten could be false, but it is fun to look at.
+categories:
+?
+editor:
+  markdown: 
+    canonical: true
+---
+
+## Motivation
+
+This data set is provided by Logan Lauton on Kaggle. There is an extensive repository of NBA data. It includes Team Payrolls, Box Score Stats, Player Stats, and Salaries. It ranges from 1950-2023. Today, we will focus on the player stats and salaries data sets.
+
+## Data
+
+This data is made up of 4974 rows and 37 columns. Each row represents a player for a given season.
+
+| Variable      | Description                                 |
+|---------------|---------------------------------------------|
+| Year          | The year the competition took place         |
+| Winner        | The winner of the competition               |
+| Weight        | The weight of the winner                    |
+| Height        | The height of the winner                    |
+| BMI           | The BMI of the winner                       |
+| HDB           | The number of hot dogs and buns eaten       |
+| Time          | The time limit of the competition (minutes) |
+| HDPS          | The number of hot dogs eaten per second     |
+| dogWeight     | The weight of the total hot dogs eaten      |
+| bmi_dog_ratio | Ratio of the BMI to the dogWeight           |
+| dunkingEra    | If dunking the buns was invented or not     |
+| Gender        | The gender of the winner                    |
+
+: [hotdogs.csv](../data/hotdogs.csv)
+
+## Questions
+
+insert later
+
+## References
+
+Nathan's Franks, *Hall of Fame*. <https://nathansfranks.sfdbrands.com/en-us/promotions/hot-dog-eating-contest/hall-of-fame/>.
+
+Wikipedia, *Nathan's Hot Dog Eating Contest*. <https://en.wikipedia.org/wiki/Nathan%27s_Hot_Dog_Eating_Contest>.
