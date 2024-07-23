@@ -11,14 +11,13 @@ In this worksheet, you will be working with a large dataset that covers matches 
 
 # Exercises
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 # load in dataset and packages
-library(tidyverse)
-library(here)
-vb_matches <- read.csv(here("bkaradenes/Beach_Volleyball_Module/data_prep/vb_matches.csv"))
+library(tidyverse, quietly = TRUE)
+vb_matches <- read.csv("vb_matches.csv")
 ```
 
-1. To begin, make a new variable that gets the average age of the winning team. Then, make a scatterplot of the average age and their rank. What do you notice about your scatterplot?
+1.  To begin, make a new variable that gets the average age of the winning team. Then, make a scatterplot of the average age and their rank. What do you notice about your scatterplot?
 
 ```{r}
 vb_matches <- vb_matches %>%
@@ -34,7 +33,7 @@ ggplot(data = vb_matches, mapping = aes(x = avg_age, y = w_rank)) +
 
 The data points are all very close together and it's difficult to see any trends or come up with any conclusions about the graph.
 
-2. There are two methods we could use to try to solve this issue. One would be changing the alpha to make the graph more aesthetically pleasing and another would be using the `geom_hex()` function. Try both methods and report which one you think represents the data better. 
+2.  There are two methods we could use to try to solve this issue. One would be changing the alpha to make the graph more aesthetically pleasing and another would be using the `geom_hex()` function. Try both methods and report which one you think represents the data better.
 
 ```{r}
 ggplot(data = vb_matches, mapping = aes(x = avg_age, y = w_rank)) +
@@ -56,7 +55,7 @@ ggplot(data = vb_matches, mapping = aes(x = avg_age, y = w_rank)) +
 
 Sample Answer: The `geom_hex()` version seems to represent the data better because the continuous scale makes it clear that the average ages from around 25 to 35 have the better rankings, while in the plot where we changed the alpha, the area remains dark and difficult to see any obvious trends.
 
-3. Next let's use the `GGally` package and the `ggpairs()` function to see how different variables correlate to each other. For this example, use columns 31 to 34. Which two have the highest correlation?
+3.  Next let's use the `GGally` package and the `ggpairs()` function to see how different variables correlate to each other. For this example, use columns 31 to 34. Which two have the highest correlation?
 
 ```{r}
 library(GGally)
@@ -65,7 +64,7 @@ ggpairs(data = vb_matches, columns = 31:34)
 
 Winning team player 1's total kills and total attacks has the highest correlation of any two variables shown in the visual above.
 
-4. Make a dataset for each Tour (FIVB and AVP) and construct a difference in means two-sample t hypothesis test to see if the mean hit percentage is significantly different between the two leagues. Assume all conditions are met.
+4.  Make a dataset for each Tour (FIVB and AVP) and construct a difference in means two-sample t hypothesis test to see if the mean hit percentage is significantly different between the two leagues. Assume all conditions are met.
 
 ```{r}
 avp_vb <- vb_matches %>%
@@ -107,14 +106,10 @@ Null: mu1 = mu2, There is no difference between the mean hit percentages in the 
 
 Alternative: mu1 ≠ mu2, There is a difference between the mean hit percentages in the AVP and FIVB.
 
-t-stat: t = (0.438 - 0.391)/sqrt((0.113^2/1400) + (0.111^2/13158))
+t-stat: t = (0.438 - 0.391)/sqrt((0.113\^2/1400) + (0.111\^2/13158))
 
 t = 14.82
 
-p-value = ~0
+p-value = \~0
 
-Conclusion: With a t-stat of 14.82 and a p-value of approximentely 0 we have enough evidence to reject the null hypothesis and conclude that there is a significant difference between the mean hit percentage in the two leagues.
-
-
-
-
+Conclusion: With a t-stat of 14.82 and a p-value of approximately 0 we have enough evidence to reject the null hypothesis and conclude that there is a significant difference between the mean hit percentage in the two leagues.

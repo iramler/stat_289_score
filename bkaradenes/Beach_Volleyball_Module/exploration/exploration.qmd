@@ -70,6 +70,19 @@ fivb_vb %>%
             n())
 ```
 
+```{r}
+vb_matches_women <- vb_matches %>%
+  filter(gender == "W") %>%
+  mutate(avg_age = (w_p1_age + w_p2_age)/2)
+
+
+ggplot(data = vb_matches_women, mapping = aes(x = avg_age, y = w_rank)) +
+  geom_hex() +
+  scale_fill_viridis_c() +
+  theme_minimal() +
+  labs(x = "Average Age", y = "Winning Team Rank", title = "Winning Team Age vs. Rank") +
+  theme(plot.title = element_text(hjust = 0.5))
+```
 
 
 

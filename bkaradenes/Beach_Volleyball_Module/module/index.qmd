@@ -1,0 +1,149 @@
+---
+title: "Beach Volleyball Results"
+author:
+  - name: Brendan Karadenes
+    affiliation: 
+      - ref: slu
+date: July 23, 2024
+description: Analyzing professional beach volleyball matches from the FIVB and AVP tours.
+categories:
+  - Big Data
+  - Data Cleaning 
+  - Hypothesis Testing
+
+---
+
+### Introduction
+
+For this activity you will be exploring beach volleyball match results for beach volleyball players that competed in the [FIVB](https://www.fivb.com/beach-volleyball/){target="_blank"} and [AVP](https://avp.com/){target="_blank"} tours.
+
+In particular, you will clean a large dataset to make visualizations and analyze the two beach volleyball tours.
+
+Investigating these results is useful for several reasons. First, cleaning the data can help us better understand the results of the different matches and help us explore trends over the years. Second, visualizing the data gives insights into the large dataset that would otherwise be difficult to understand. Analyzing the data can show the different features and compare and contrast the two tours. Analyses like these can help us understand what the top factors are in predicting match outcomes in beach volleyball. 
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This activity would be suitable for an in-class example.
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of the activity, you will be able to:
+
+1.  Construct visualizations for large datasets
+2.  Clean large datasets.
+3.  Construct and make conclusions about two-sample t hypothesis tests.
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+For this activity, students will primarily use basic concepts of data cleaning, visualization, and conducting hypothesis tests.
+:::
+
+::: {.callout-note collapse="true" title="Technology Requiremens" appearance="minimal"}
+The provided worksheets will require R and StatKey or similar software. 
+
+Since the data are provided, instructors are encouraged to modify the worksheets to have students construct visualizations and write code using whichever software they choose.
+:::
+
+## Data 
+
+The data contains 76,756 rows and 66 columns. Each row represents a match in either the FIVB or AVP tours from 2000 to 2019.
+
+Download data: 
+
+Available on the [SCORE Data Repository](https://data.scorenetwork.org/)
+
+Data: [boston_marathon_2023.csv](https://github.com/SCOREnetworkorg/sports-data-repository/raw/main/data/vb_matches.csv)
+
+<details>
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable       | Description                                                              |
+|-----------------|-------------------------------------------------------|
+| circuit      | the tour the match is a part of                                                  |
+| tournament  | name of the tournament on the tour                         |
+| country   | name of host country                          |
+| year | year the match took place |
+| gender           | gender of the teams                                                           |
+| match_num         | match number in the tournament                                                         |
+| w_player1           | player one on the winning team's name                                       |
+| w_p1_age     | player one on the winning team's age                                                     |
+| w_p1_hgt      | player one on the winning team's height in inches                                             |
+| w_p1_country     | player one on the winning team's home country              |
+| w_player2     | player two on the winning team's name        |
+| w_p2_age      | player two on the winning team's age                                                 |
+| w_p2_hgt  | player two on the winning team's height in inches                                           |
+| w_p2_country | player two on the winning team's home country                                                    |
+| w_rank | rank of the winning team                                                    |
+| l_player1           | player one on the losing team's name                                       |
+| l_p1_age     | player one on the losing team's age                                                     |
+| l_p1_hgt      | player one on the losing team's height in inches                                             |
+| l_p1_country     | player one on the losing team's home country              |
+| l_player2     | player two on the losing team's name        |
+| l_p2_age      | player two on the losing team's age                                                 |
+| l_p2_hgt  | player two on the losing team's height in inches                                           |
+| l_p2_country | player two on the losing team's home country                                                    |
+| l_rank | rank of the losing team                                                    | 
+| first_round | score from first round of the match |
+| second_round | score from second round of the match |
+| third_round | score from third round of the match |
+| duration | duration of the match in minutes |
+| bracket | bracket the match was a part of in the tournament |
+| round | round number in the tournament |
+| w_p1_tot_attacks | number of attacks for winning team's player 1 |
+| w_p1_tot_kills | number of kills for winning team's player 1 |
+| w_p1_tot_errors | winning team's player 1 mistakes |
+| w_p1_tot_hitpct | winning team's player 1 total hit percentage |
+| w_p1_tot_aces | winning team's player 1 total number of aces |
+| w_p1_tot_serve_errors | winning team's player 1 total number of serve errors |
+| w_p1_tot_blocks | winning team's player 1 total number of blocks |
+| w_p1_tot_digs | winning team's player 1 total number of digs |
+| w_p2_tot_attacks | number of attacks for winning team's player 2 |
+| w_p2_tot_kills | number of kills for winning team's player 2 |
+| w_p2_tot_errors | winning team's player 2 mistakes |
+| w_p2_tot_hitpct | winning team's player 2 total hit percentage |
+| w_p2_tot_aces | winning team's player 2 total number of aces |
+| w_p2_tot_serve_errors | winning team's player 2 total number of serve errors |
+| w_p2_tot_blocks | winning team's player 2 total number of blocks |
+| w_p2_tot_digs | winning team's player 2 total number of digs |
+| l_p1_tot_attacks | number of attacks for losing team's player 1 |
+| l_p1_tot_kills | number of kills for losing team's player 1 |
+| l_p1_tot_errors | losing team's player 1 mistakes |
+| l_p1_tot_hitpct | losing team's player 1 total hit percentage |
+| l_p1_tot_aces | losing team's player 1 total number of aces |
+| l_p1_tot_serve_errors | losing team's player 1 total number of serve errors |
+| l_p1_tot_blocks | losing team's player 1 total number of blocks |
+| l_p1_tot_digs | losing team's player 1 total number of digs |
+| l_p2_tot_attacks | number of attacks for losing team's player 2 |
+| l_p2_tot_kills | number of kills for losing team's player 2 |
+| l_p2_tot_errors | losing team's player 2 mistakes |
+| l_p2_tot_hitpct | losing team's player 2 total hit percentage |
+| l_p2_tot_aces | losing team's player 2 total number of aces |
+| l_p2_tot_serve_errors | losing team's player 2 total number of serve errors |
+| l_p2_tot_blocks | losing team's player 2 total number of blocks |
+| l_p2_tot_digs | losing team's player 2 total number of digs |
+| w_p1_birthyear | winning team's player 1 birthyear |
+| w_p2_birthyear | winning team's player 2 birthyear |
+| l_p1_birthyear | losing team's player 1 birthyear |
+| l_p2_birthyear | losing team's player 2 birthyear |
+
+**Data Source**
+
+[Tidy Tuesday Github](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-05-19/readme.md){target="_blank"}
+
+</details>
+
+## Materials
+
+We provide editable Quarto Document handouts along with their solutions.
+
+[Class handout](beach_vb_ws.qmd)
+
+[Class handout - with solutions](beach_vb_ws_key.qmd)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+In conclusion, the big data in beach volleyball worksheet provides valuable learning opportunities for students in several key areas. It allows them to properly clean and visualize big data and find differences between two professional beach volleyball tours. Visualizing the data provides insights into what factors, such as height, may lead to a better ranking. Overall, this worksheet allows students to critically analyze the FIVB and AVP beach volleyball tours and draw meaningful conclusions about the match results from the top players in the world.
+:::
+
+
+
+
+

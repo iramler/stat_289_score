@@ -1,0 +1,85 @@
+---
+title: "Big Data in Beach Volleyball Worksheet Key"
+author: "Brendan Karadenes"
+format: html
+editor: visual
+---
+
+# Introduction
+
+In this worksheet, you will be working with a large dataset that covers matches from the AVP and FIVB beach volleyball tours. The data contains 76,756 observations and 66 variables, so it's important that we use the proper tools to make sense of all that data. Our goals will be to visualize, clean, and make statistical analysis on the large dataset.
+
+# Exercises
+
+```{r warning=FALSE, message=FALSE}
+# load in dataset and package(s)
+library(tidyverse, quietly = TRUE)
+vb_matches <- read.csv("vb_matches.csv")
+```
+
+1.  To begin, make a new variable that gets the average age of the winning team. Then, make a scatterplot of the average age and their rank. What do you notice about your scatterplot?
+
+```{r}
+
+
+```
+
+2.  There are two methods we could use to try to solve this issue. One would be changing the alpha to make the graph more aesthetically pleasing and another would be using the `geom_hex()` function. Try both methods and report which one you think represents the data better.
+
+```{r}
+
+
+```
+
+```{r}
+
+
+```
+
+3.  Next, let's use the `GGally` package and the `ggpairs()` function to see how different variables correlate to each other. For this example, use columns 31 to 34. Which two variables have the highest correlation?
+
+```{r}
+
+
+```
+
+4.  Make a dataset for each Tour (FIVB and AVP) and construct a difference in means two-sample t hypothesis test to see if the mean hit percentage is significantly different between the two leagues. Assume all conditions are met.
+
+```{r}
+
+
+```
+
+```{r}
+
+
+```
+
+```{r}
+
+
+```
+
+```{r}
+
+
+```
+
+```{r}
+
+
+```
+
+Hypotheses:
+
+Null:
+
+Alternative:
+
+t-stat:
+
+t =
+
+p-value =
+
+Conclusion:
