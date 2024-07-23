@@ -61,7 +61,7 @@ To begin, load in any necessary packages and the **College_NFL_WR.csv** file. Th
 
 
 
-4. Let's practice splitting and joining tables using the data with NFL players who had a recruiting rank. Make three different new data frames: one being from recruiting years 2013-14, another from 2015-16, and the last from 2017-19.
+4. Let's practice splitting tables using the data with NFL players who had a recruiting rank. Make three different new data frames: one being from recruiting years 2013-14, another from 2015-16, and the last from 2017-19.
 
 ```{r}
 

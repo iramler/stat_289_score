@@ -78,7 +78,7 @@ nfl_recruits_2023 %>%
 
 In the 2023 NFL there were 17 wide receivers who were a part of the top 100 in their high school recruiting class. Some possibilities that explain why worse ranked players were playing over better ranked players include injury, poor high school recruiting rankings, and larger improvements in college.
 
-4. Let's practice splitting and joining tables using the data with NFL players who had a recruiting rank. Make three different new data frames: one being from recruiting years 2013-14, another from 2015-16, and the last from 2017-19.
+4. Let's practice splitting tables using the data with NFL players who had a recruiting rank. Make three different new data frames: one being from recruiting years 2013-14, another from 2015-16, and the last from 2017-19.
 
 ```{r}
 nfl_13_14 <- nfl_recruits_2023 %>%
