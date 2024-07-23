@@ -4,6 +4,7 @@ author: Gavin Cassidy
 date: July 17, 2024
 description: Table Tennis Dataset containing data from one month of competition from the Setka Cup Table Tennis organization
 categories:
+  
 ---
 
 ## Motivation
@@ -41,10 +42,16 @@ This dataset contains data 1 month of data from a Ukranian Table tennis organiza
 
 ## Questions
 
-1. 
+1. How could you devise a system to rank players based on match results?
 
+2. Would factoring in the results of each game make a ranking more accurate?
+
+3. Does playing more matches help or hurt a players ranking?
 
 
 ## References
+
+This dataset was found on [Kaggle](https://www.kaggle.com/datasets/medaxone/one-month-table-tennis-dataset), and the data is from the [Setka Cup](https://tabletennis.setkacup.com/en/) Table Tennis Organizaiton.
+
 
 

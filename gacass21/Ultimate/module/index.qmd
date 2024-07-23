@@ -33,6 +33,10 @@ The 2024 College Ultimate Championships took place May 18th-20th for [Division 3
 -   Plus Minus: the point differential of the player for points started on offense(Note: defensive points do not contribute to plus minus)
 :::
 
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+Worksheet that will take 45-60 minutes to complete. Suitable for an in class activity or take-home assignment.
+:::
+
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 The learning objectives associated with this module are:
 

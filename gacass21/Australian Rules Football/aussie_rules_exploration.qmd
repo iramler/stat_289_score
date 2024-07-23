@@ -1,0 +1,350 @@
+---
+title: "aussie rules football"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+```{r}
+afl_url_1 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=KI&mg=1"
+afl_tab_1 <- read_html(afl_url_1) |> html_nodes("table")
+afl_stat_1 <- afl_tab_1[[1]] |> html_table()
+afl_stat_1 <- afl_stat_1 |> select(1:5) |> slice(47:703) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     kicks = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_1
+```
+
+
+```{r}
+afl_url_2 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=HB&mg=1"
+afl_tab_2 <- read_html(afl_url_2) |> html_nodes("table")
+afl_stat_2 <- afl_tab_2[[1]] |> html_table()
+afl_stat_2 <- afl_stat_2 |> select(1:5) |> slice(47:708) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     handballs = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_2
+```
+
+
+```{r}
+afl_url_3 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=DI&mg=1"
+afl_tab_3 <- read_html(afl_url_3) |> html_nodes("table")
+afl_stat_3 <- afl_tab_3[[1]] |> html_table()
+afl_stat_3 <- afl_stat_3 |> select(1:5) |> slice(47:709) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     disposals = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_3
+```
+
+```{r}
+afl_url_4 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=MA&mg=1"
+afl_tab_4 <- read_html(afl_url_4) |> html_nodes("table")
+afl_stat_4 <- afl_tab_4[[1]] |> html_table()
+afl_stat_4 <- afl_stat_4 |> select(1:5) |> slice(47:700) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     marks = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_4 |> slice(654)
+```
+
+```{r}
+afl_url_5 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=GO&mg=1"
+afl_tab_5 <- read_html(afl_url_5) |> html_nodes("table")
+afl_stat_5 <- afl_tab_5[[1]] |> html_table()
+afl_stat_5 <- afl_stat_5 |> select(1:5) |> slice(47:542) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     goals = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_5
+```
+
+```{r}
+afl_url_6 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=BE&mg=1"
+afl_tab_6 <- read_html(afl_url_6) |> html_nodes("table")
+afl_stat_6 <- afl_tab_6[[1]] |> html_table()
+afl_stat_6 <- afl_stat_6 |> select(1:5) |> slice(47:550) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     behinds = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_6
+```
+
+```{r}
+afl_url_7 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=TA&mg=1"
+afl_tab_7 <- read_html(afl_url_7) |> html_nodes("table")
+afl_stat_7 <- afl_tab_7[[1]] |> html_table()
+afl_stat_7 <- afl_stat_7 |> select(1:5) |> slice(47:701) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     tackles = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_7
+```
+
+```{r}
+afl_url_8 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=FF&mg=1"
+afl_tab_8 <- read_html(afl_url_8) |> html_nodes("table")
+afl_stat_8 <- afl_tab_8[[1]] |> html_table()
+afl_stat_8 <- afl_stat_8 |> select(1:5) |> slice(47:673) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     frees_for = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_8
+```
+
+```{r}
+afl_url_9 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=FA&mg=1"
+afl_tab_9 <- read_html(afl_url_9) |> html_nodes("table")
+afl_stat_9 <- afl_tab_9[[1]] |> html_table()
+afl_stat_9 <- afl_stat_9 |> select(1:5) |> slice(47:679) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     frees_against = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_9
+```
+
+```{r}
+afl_url_10 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=HO&mg=1"
+afl_tab_10 <- read_html(afl_url_10) |> html_nodes("table")
+afl_stat_10 <- afl_tab_10[[1]] |> html_table()
+afl_stat_10 <- afl_stat_10 |> select(1:5) |> slice(47:178) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     hitouts = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_10
+```
+
+```{r}
+afl_url_11 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=I5&mg=1"
+afl_tab_11 <- read_html(afl_url_11) |> html_nodes("table")
+afl_stat_11 <- afl_tab_11[[1]] |> html_table()
+afl_stat_11 <- afl_stat_11 |> select(1:5) |> slice(47:689) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     inside_50s = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_11
+```
+
+
+```{r}
+afl_url_12 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=GA&mg=1"
+afl_tab_12 <- read_html(afl_url_12) |> html_nodes("table")
+afl_stat_12 <- afl_tab_12[[1]] |> html_table()
+afl_stat_12 <- afl_stat_12 |> select(1:5) |> slice(47:592) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     goal_assists = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_12
+```
+
+```{r}
+afl_url_13 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=SU&mg=1"
+afl_tab_13 <- read_html(afl_url_13) |> html_nodes("table")
+afl_stat_13 <- afl_tab_13[[1]] |> html_table()
+afl_stat_13 <- afl_stat_13 |> select(1:5) |> slice(47:709) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     supercoach_score = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_13
+```
+
+```{r}
+afl_url_14 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=DT&mg=1"
+afl_tab_14 <- read_html(afl_url_14) |> html_nodes("table")
+afl_stat_14 <- afl_tab_14[[1]] |> html_table()
+afl_stat_14 <- afl_stat_14 |> select(1:5) |> slice(47:709) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     dreamteam_score = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_14
+```
+
+```{r}
+afl_url_15 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=CP&mg=1"
+afl_tab_15 <- read_html(afl_url_15) |> html_nodes("table")
+afl_stat_15 <- afl_tab_15[[1]] |> html_table()
+afl_stat_15 <- afl_stat_15 |> select(1:5) |> slice(47:706) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     contested_possessions = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_15
+```
+
+```{r}
+afl_url_16 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=UP&mg=1"
+afl_tab_16 <- read_html(afl_url_16) |> html_nodes("table")
+afl_stat_16 <- afl_tab_16[[1]] |> html_table()
+afl_stat_16 <- afl_stat_16 |> select(1:5) |> slice(47:707) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     uncontested_possessions = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_16
+```
+
+```{r}
+afl_url_17 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=ED&mg=1"
+afl_tab_17 <- read_html(afl_url_17) |> html_nodes("table")
+afl_stat_17 <- afl_tab_17[[1]] |> html_table()
+afl_stat_17 <- afl_stat_17 |> select(1:5) |> slice(47:707) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     effective_disposals = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_17
+```
+
+```{r}
+afl_url_18 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=EP&mg=1"
+afl_tab_18 <- read_html(afl_url_18) |> html_nodes("table")
+afl_stat_18 <- afl_tab_18[[1]] |> html_table()
+afl_stat_18 <- afl_stat_18 |> select(1:5) |> slice(47:709) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     disposal_efficiency = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_18
+```
+
+```{r}
+afl_url_19 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=CG&mg=1"
+afl_tab_19 <- read_html(afl_url_19) |> html_nodes("table")
+afl_stat_19 <- afl_tab_19[[1]] |> html_table()
+afl_stat_19 <- afl_stat_19 |> select(1:5) |> slice(47:697) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     clangers = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_19
+```
+
+```{r}
+afl_url_20 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=CM&mg=1"
+afl_tab_20 <- read_html(afl_url_20) |> html_nodes("table")
+afl_stat_20 <- afl_tab_20[[1]] |> html_table()
+afl_stat_20 <- afl_stat_20 |> select(1:5) |> slice(47:586) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     contested_marks = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_20
+```
+
+```{r}
+afl_url_21 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=M5&mg=1"
+afl_tab_21 <- read_html(afl_url_21) |> html_nodes("table")
+afl_stat_21 <- afl_tab_21[[1]] |> html_table()
+afl_stat_21 <- afl_stat_21 |> select(1:5) |> slice(47:535) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     marks_inside_50 = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_21
+```
+
+```{r}
+afl_url_22 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=CL&mg=1"
+afl_tab_22 <- read_html(afl_url_22) |> html_nodes("table")
+afl_stat_22 <- afl_tab_22[[1]] |> html_table()
+afl_stat_22 <- afl_stat_22 |> select(1:5) |> slice(47:643) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     clearances = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_22
+```
+
+```{r}
+afl_url_23 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=CC&mg=1"
+afl_tab_23 <- read_html(afl_url_23) |> html_nodes("table")
+afl_stat_23 <- afl_tab_23[[1]] |> html_table()
+afl_stat_23 <- afl_stat_23 |> select(1:5) |> slice(47:444) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     centre_clearances = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_23
+```
+
+```{r}
+afl_url_24 <- "https://www.footywire.com/afl/footy/ft_player_rankings?year=2023&rt=LT&pt=&st=SP&mg=1"
+afl_tab_24 <- read_html(afl_url_24) |> html_nodes("table")
+afl_stat_24 <- afl_tab_24[[1]] |> html_table()
+afl_stat_24 <- afl_stat_24 |> select(1:5) |> slice(47:628) |> mutate(rank = as.numeric(X1),
+                                                     name = X2,
+                                                     team = X3,
+                                                     games_played = as.numeric(X4),
+                                                     stoppage_clearances = as.numeric(X5)) |>
+  select(6:10)
+
+afl_stat_24 |> slice(582)
+```
+
+

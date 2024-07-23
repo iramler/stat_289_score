@@ -14,7 +14,7 @@ table_tennis <- read.csv("/Users/Gavin Cassidy/Desktop/GitHub/stat_289_score2/ga
 ```
 
 ```{r}
-table_tennis |> slice(70)
+table_tennis
 
 ## for HomeWinner, 1 means player 1 won, 0 means player 2
 ```
