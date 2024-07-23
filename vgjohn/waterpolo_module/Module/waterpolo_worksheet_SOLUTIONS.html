@@ -207,7 +207,9 @@ window.Quarto = {
 <ol start="2" type="a">
 <li><strong>Are the distributions of goals scored in each conference symmetric, or is there obvious skewness? If so, what direction is the data skewed? What does the skewness imply about the competitive dynamics of the conference.</strong></li>
 </ol>
-<p>The two conferences with the most obvious skewness is the Western Water Polo Association and the Northeast Water Polo Conference. All of the other conferences are relatively equal in distribution. Both the Western Water Polo Association and the Northeast Water Polo Conference are skewed in the positive direction this implies that there could be one or a few players from that conference that are scoring a considerably higher number of goals than other players in that conference.</p>
+<ul>
+<li>The two conferences with the most obvious skewness is the Western Water Polo Association and the Northeast Water Polo Conference. All of the other conferences are relatively equal in distribution. Both the Western Water Polo Association and the Northeast Water Polo Conference are skewed in the positive direction this implies that there could be one or a few players from that conference that are scoring a considerably higher number of goals than other players in that conference.</li>
+</ul>
 <p><strong>4. Out of the top ten leaders, find the total number of goals and assists scored for each conference. Make one table which contains the conference, number of goals, and number of assists. Which has the most and which has the least in each category? (Hint: Use a join() function)</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ncaa_waterpolo_goals <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Conference) <span class="sc">%&gt;%</span></span>
@@ -234,7 +236,7 @@ window.Quarto = {
 </section>
 <section id="part-4---the-data-sets-together" class="level2">
 <h2 class="anchored" data-anchor-id="part-4---the-data-sets-together">Part 4 - The Data Sets Together</h2>
-<p><strong>1. What schools have leaders in both the assists category and the goals category, and how many of each does the school have in total? Create a table that contains the conference, number of goals, and number of assists. (Hint: Use a join() function)</strong></p>
+<p><strong>1. What schools have leaders in both the assists category and the goals category, and how many of each does the school have in total? Create a table that contains only the conference, team, number of goals, and number of assists. (Hint: Use a join() function)</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># goals by team and conference</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>team_summary_goals <span class="ot">&lt;-</span></span>
@@ -246,7 +248,7 @@ window.Quarto = {
 <pre><code>`summarise()` has grouped output by 'Team'. You can override using the
 `.groups` argument.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># conference by assists</span></span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assists by team and conference </span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>team_summary_assists <span class="ot">&lt;-</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  ncaa_waterpolo_assists <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(Team, Conference) <span class="sc">%&gt;%</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
@@ -256,22 +258,22 @@ window.Quarto = {
 <pre><code>`summarise()` has grouped output by 'Team'. You can override using the
 `.groups` argument.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># joining together</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>join <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(team_summary_assists, team_summary_goals,<span class="at">by =</span> <span class="st">"Team"</span>) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># joining together by team so get the matching teams </span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>full_summary_table <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(team_summary_assists, team_summary_goals,<span class="at">by =</span> <span class="st">"Team"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n_goals)) <span class="sc">%&gt;%</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Conference.y)</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># editing format </span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>join <span class="ot">&lt;-</span> join <span class="sc">%&gt;%</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>full_summary_table <span class="ot">&lt;-</span> full_summary_table <span class="sc">%&gt;%</span></span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Conference =</span> Conference.x,</span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Total Assists</span><span class="st">`</span> <span class="ot">=</span> n_assists,</span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Total Goals</span><span class="st">`</span> <span class="ot">=</span> n_goals</span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>join <span class="ot">&lt;-</span> join[, <span class="fu">c</span>(<span class="st">"Conference"</span>, <span class="st">"Team"</span>, <span class="st">"Total Assists"</span>, <span class="st">"Total Goals"</span>)]</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>full_summary_table <span class="ot">&lt;-</span> full_summary_table[, <span class="fu">c</span>(<span class="st">"Conference"</span>, <span class="st">"Team"</span>, <span class="st">"Total Assists"</span>, <span class="st">"Total Goals"</span>)]</span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>join</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>full_summary_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 27 × 4
 # Groups:   Team [27]
@@ -290,9 +292,29 @@ window.Quarto = {
 # ℹ 17 more rows</code></pre>
 </div>
 </div>
-<p><strong>2. What proportion of teams have leaders in both goals and assists?</strong></p>
-<p><span class="math inline">\(27/70 = 0.386\)</span> = 38.6% of teams have leaders in both goals and assists</p>
-<p><strong>3.</strong></p>
+<p><strong>2. What does one row in this data set represent?</strong></p>
+<ul>
+<li>Each row represents a player who was a leader in both goals and assists in their conference.</li>
+</ul>
+<p><strong>3. What proportion of teams have leaders in both goals and assists?</strong></p>
+<ul>
+<li><span class="math inline">\(27/70 = 0.386 = 38.6\)</span>% of teams have leaders in both goals and assists</li>
+</ul>
+<p><strong>4.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> full_summary_table,</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Total Assists</span><span class="st">`</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> <span class="st">`</span><span class="at">Total Goals</span><span class="st">`</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> Conference)) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="waterpolo_worksheet_SOLUTIONS_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 </main>

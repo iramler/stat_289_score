@@ -43,6 +43,9 @@ Women's college gymnastics uses Perfect 10 scoring, with each routine being judg
 
 In this activity, we'll be using different scores on the beam event at the NCAA Women's Gymnastics National Championship to create and analyze bootstrap distributions, as well as look at confidence intervals and the difference in means between different finishers in the championship. 
 
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This could serve as an in class activity and should take roughly a half an hour to complete. 
+:::
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will:

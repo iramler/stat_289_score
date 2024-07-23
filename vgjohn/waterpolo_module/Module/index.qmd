@@ -14,9 +14,9 @@ description: "Using NCAA Water Polo data to create visualizations, join tables, 
 editor: 
   canonical: true
 categories:
-  - Data Visualization
-  - Combining Data Sets
-  - Data Wrangling
+  - Box Plots
+  - Joining Data Sets
+  - Data Filtering
 ---
 
 ## Module

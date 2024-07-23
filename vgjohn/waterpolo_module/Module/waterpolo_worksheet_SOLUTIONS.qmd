@@ -70,11 +70,9 @@ a.  **Which conference shows the highest median number of goals scored, and whic
 
 b.  **Are the distributions of goals scored in each conference symmetric, or is there obvious skewness? If so, what direction is the data skewed? What does the skewness imply about the competitive dynamics of the conference.**
 
-The two conferences with the most obvious skewness is the Western Water Polo Association and the Northeast Water Polo Conference. All of the other conferences are relatively equal in distribution. Both the Western Water Polo Association and the Northeast Water Polo Conference are skewed in the positive direction this implies that there could be one or a few players from that conference that are scoring a considerably higher number of goals than other players in that conference. 
+* The two conferences with the most obvious skewness is the Western Water Polo Association and the Northeast Water Polo Conference. All of the other conferences are relatively equal in distribution. Both the Western Water Polo Association and the Northeast Water Polo Conference are skewed in the positive direction this implies that there could be one or a few players from that conference that are scoring a considerably higher number of goals than other players in that conference.
 
 **4. Out of the top ten leaders, find the total number of goals and assists scored for each conference. Make one table which contains the conference, number of goals, and number of assists. Which has the most and which has the least in each category? (Hint: Use a join() function)**
-
-
 
 ```{r}
 ncaa_waterpolo_goals %>% group_by(Conference) %>%
@@ -88,10 +86,10 @@ ncaa_waterpolo_goals %>% group_by(Conference) %>%
 
 ## Part 4 - The Data Sets Together
 
-**1. What schools have leaders in both the assists category and the goals category, and how many of each does the school have in total? Create a table that contains the conference, number of goals, and number of assists. (Hint: Use a join() function)**
+**1. What schools have leaders in both the assists category and the goals category, and how many of each does the school have in total? Create a table that contains only the conference, team, number of goals, and number of assists. (Hint: Use a join() function)**
 
 ```{r}
-# goals by team and conference
+# total goals for each team 
 team_summary_goals <-
   ncaa_waterpolo_goals %>% group_by(Team, Conference) %>%
   summarize(
@@ -123,11 +121,20 @@ full_summary_table <- full_summary_table[, c("Conference", "Team", "Total Assist
 full_summary_table
 
 ```
-**2. What proportion of teams have leaders in both goals and assists?** 
 
-$27/70 = 0.386 = 38.6$% of teams have leaders in both goals and assists 
+**2. What does one row in this data set represent?**
 
-**3. **
+* Each row represents a team and has the total number of goals and assists scored by leaders in that conference 
+
+**3. What proportion of teams have leaders in both goals and assists?**
+
+* $27/70 = 0.386 = 38.6$% of teams have leaders in both goals and assists
+
+**4.**
+
+```{r}
+cor(full_summary_table$`Total Assists`, full_summary_table$`Total Goals`)
+```
 
 ```{r}
 ggplot(data = full_summary_table,
@@ -136,4 +143,22 @@ ggplot(data = full_summary_table,
                      color = Conference)) +
   geom_point()
 ```
+
+
+what are the average number of goals scored and assists made? find teams whose leaders scored higher than average in both categories? 
+
+```{r}
+# finding the average of both columns 
+avg_goals <- mean(full_summary_table$`Total Goals`)
+avg_assists <- mean(full_summary_table$`Total Assists`)
+
+# filtering
+full_summary_table %>%
+  filter(`Total Assists` > avg_assists &
+           `Total Goals` > avg_goals)
+```
+
+Does this information provide evidence to defend your answer to question 3. Explain why or why not. 
+
+This does defend the answer to question three. The Western Water Polo Association and the Northeast Water Polo Conference each have two teams that have above average total goals and total assists. This helps to explain why the data is considerably skewed in the positive direction, especially if the median of those conferences is lower than the average. 
 

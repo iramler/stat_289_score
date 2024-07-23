@@ -4,9 +4,9 @@ author: "Vivian Johnson"
 date: "July 16, 2024" 
 
 categories:
-  - Data Visualization
-  - Combining Data Sets
-  - Data Wrangling 
+  - Box Plots
+  - Joining Data Sets
+  - Data Filtering 
 ---
 
 ## Motivation
