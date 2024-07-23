@@ -2,24 +2,58 @@
 title: "climbing_cleaning"
 format: html
 ---
-
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+#### Library
 
 ```{r}
-1 + 1
+library(tidyverse)
+library(readr)
+library(rvest)
 ```
 
-You can add options to executable code like this 
+#### Scraping
+
+2023 Collegiate National Springs Climbing Center/Gripstone Climbing & Fitness Boulder Final
+
+https://usac.climb8a.com/event/6926
+
+ boulder
 
 ```{r}
-#| echo: false
-2 * 2
+urlb <- "https://usac.climb8a.com/event/6926"
+
+tabb<- read_html(urlb) |> 
+  html_nodes("table")
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+```{r}
+testb <- tabb[[1]] |> html_table()
+testb
+```
+
+#### cleaning
+
+
+```{r}
+```
+
+
+
+
+
+2023 Collegiate National Springs Climbing Center/Gripstone Climbing & Fitness Lead/TR Final
+
+https://usac.climb8a.com/event/6927
+
+lead
+
+```{r}
+urll <- "https://usac.climb8a.com/event/6927"
+
+tabl<- read_html(urll) |> 
+  html_nodes("table")
+```
+
+```{r}
+testl <- tabl[[1]] |> html_table()
+testl
+```
