@@ -1,0 +1,28 @@
+---
+title: "boxing_exploration"
+author: "eric seltzer"
+format: html
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+matches <-
+  read_csv(here::here("esselt21/boxing_module/exploration/matches.csv"))
+```
+
+```{r}
+matches <-
+  matches |>
+  select(-place)
+```
+
+```{r}
+library(lubridate)
+matches <-
+  matches |>
+  mutate(date = dmy(date))
+```
+
