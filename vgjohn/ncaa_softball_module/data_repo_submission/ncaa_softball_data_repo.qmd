@@ -1,62 +1,77 @@
 ---
-title: "Exploring Logistic Regression Through Cricket"
+title: "NCAA Softball Offense and Defense Statistics"
 author: "Vivian Johnson" 
-date: "June 10, 2024" 
+date: "July 24, 2024" 
 
 categories:
-  - Multiple Logistic Regression
+  - Multiple Linear Regression
+  - Data Filtering
 ---
 
 ## Motivation
 
-Softball is a dynamic and growing sport among women of all ages. NCAA Division I College Softball is one of the most competitive levels someone could play at, and contains many talented teams and players.
+Softball is a fast paced, competitive game played between two teams. The National Collegiate Athletics Association (NCAA) Division I level is one of the highest levels of fastpitch softball, and colleges across the US compete against eachother for a chance to win at the Women's College World Series. 
 
-As a game, the objective of softball is for a team to score more runs than the opposing team. A run is scored when a player is able to touch all bases and reach home plate. Each team plays with nine players on the field, though rosters could contain however many a coach wants, and a standard game is played over seven innings[^1]. 
+#### Understanding Softball
+Each softball game consists of two teams. There is a fielding team, which has nine players on the field at one time, and a hitting team. The goal of softball is to score more runs than the opposing team. A run is scored by rounding all of the bases and touching home plat. 
 
-[^1]: In one inning, each team get
+#### The Field
+Softball is played on a field much similar to that of a baseball field. It is diamond-shaped and has four bases. Conveniently named, the bases go in order of first, second, third, and home plate. Each base is 60 feet apart from the previous. The pitcher pitches the ball from a pitching mound, located in the middle of the field, 43 feet away from home plate. 
+
+
+#### Playing
+A softball game is seven innings long. In one inning, each team has a chance to hit and play in the field. Each play begins with the pitcher throwing the ball underhand to the batter, who attempts to hit the ball with a bat. If they hit the ball, the goal is to get to as many bases as possible without getting out. 
+
+#### Key Rules
+When the pitcher throws the ball, the aim is to hit the "strike zone". A ball thrown outside this zone is declared a "ball", a ball thrown within the zone is called a "strike". IF the pitcher throws four "balls" to a batter, that is called a walk, and the runner gets to go to first base. An out consists of three strikes (swings and misses, or not swinging at pitches in the strike zone). If the ball is hit, the fielding team tries to get the batter out by catching the ball in the air, or fielding a ground ball and throwing it to first base before the runner gets there.  
 
 ## Data
 
 The `ncaa_softball_data.csv` data set includes data from data from Division I softball games during the 2024 season. Each row represents a college team and has various cumulative statistics about their seasons. 
 
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
 
 | Variable      | Description                                             |
 |-----------------------|-------------------------------------------------|
 | Team                  | College  |
 | Conference            | NCAA Division I conference college is apart of   |
 | Hits                  | Number of recorded hits by that team  |
-| Batting_Avg           | Team batting average  |
+| Batting_Avg           | Team batting average, a measure of hitting performance. Calculated by dividing number of hits by official at bats   |
 | 2B                    | Number of doubles recorded by that team  |
 | Innings_Pitched       | Number of innings pitched by that team   |
-| Runs_Allowed          |  |
-| Earned_Runs           |  |
-| Earned_Run_Average    |  |
-| Errors                |  |
-| Fielding_Pct          |  |
-| Home_Runs             |  |
-| Home_Run_Per_Game     |  |
-| Strike_Outs_For       |  |
-| Walks_Given_Up        |  |
-| K_Per_BB_Ratio        |  |
-| At_Bats               |  |
-| Hit_By_Pitch          |  |
-| Sac_Fly               |  |
-| Sac_Hit               |  |
-| On_Base_Pct           |  |
-| Runs_Scored           |  |
-| Runs_Per_Game         |  |
-| 3B                    |  |
-| 3B_Per_Game           |  |
-| Walks_Drawn           |  |
-| Win_Loss_Pct          |  |
+| Runs_Allowed          | Total number of runs that the team gave up to the opposing team |
+| Earned_Runs           | Runs scored by the opposing team that are due to the pitchers performance (not including runs attributed to fielding errors or passed balls) |
+| Earned_Run_Average    | A measure of a pitcher's effectiveness that calculates the average number of earned runs per inning. |
+| Errors                | Number of fielding errors recorded by that team |
+| Fielding_Pct          | Fielding percentage, a measure of how often a team successfully makes a play without an error. A higher fielding percent corresponds to a better defensive team. (Putouts + Assists + Errors / Total number of chances ) |
+| Home_Runs             | Total number of home runs recorded by that team |
+| Home_Run_Per_Game     | Average number of home runs per game by a team |
+| Strike_Outs_For       | Number of strike outs pitchers for that team recorded  |
+| Walks_Given_Up        | Number of walks pitchers for that team gave up |
+| K_Per_BB_Ratio        | Ratio between strikeouts and walks given up for pitchers on that team. (Strikeouts / Walks) |
+| At_Bats               | Total number of at bats recorded for that team |
+| Hit_By_Pitch          | Total number of times a batter got hit by a pitch for that team |
+| Sac_Fly               | Total number of sacrifice flies recorded by that team (When a batter hits the ball in the air and is out but the runner on base is able to score) |
+| Sac_Hit               | Total number of sacrifice hits recorded by that team (When a batter hits the ball and gets out but the runner on base is able to score a run) |
+| On_Base_Pct           | A measure of how often batters on the team get on base. Calculated by dividing the total number of times players on the team get on base by total plate appearances. (Hits + Walks + Hit by Pitch) / (At-Bats, Walks, Hit By Pitch, Sac Hits/Fly)  |
+| Runs_Scored           | Total number of runs scored by that team in the season |
+| Runs_Per_Game         | Average number of runs scored per game in the season |
+| 3B                    | Total number of triples recorded by that team |
+| 3B_Per_Game           | Average number of triples recorded per game by that team |
+| Walks_Drawn           | Total number of walks that a team was able to draw when batting |
+| Win_Loss_Pct          | The total number of wins divided by the total number of losses. |
 
-: [ncaa_softball_data.csv](stat_289_score_new/vgjohn/ncaa_softball_module/data_repo_submission/ncaa_softball_data.csv)
+</details>
+
+Download Data: [ncaa_softball_data.csv](ncaa_softball_data.csv){target="_blank"}
 
 ## Questions
 
-1.  Building Simple Logistic Regression and Multiple Logistic Regression
-2.  Interpreting Logistic Regression
-3.  Finding odds and log odds of an event
+1.  Build a multiple linear regression and interpret it in context.
+2.  Filter data based on columns.
+3.  Find averages and outliers within the data. 
 
 ## References
 
