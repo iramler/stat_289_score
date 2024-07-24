@@ -1,8 +1,7 @@
 ---
-title: "exploration"
+title: "Batting Data Prep"
 author: "Brendan Karadenes"
 format: html
-editor: visual
 ---
 
 ```{r message=TRUE, warning=TRUE}

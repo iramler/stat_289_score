@@ -1,0 +1,94 @@
+---
+title: "Spring vs Regular Season MLB Batting Statistics"
+author: "Brendan Karadenes"
+date: 07/24/2024
+description: The dataset looks at batting statistics from the 2023 regular season and spring training season.
+categories:
+  - Linear Regression
+---
+
+## Motivation
+
+Spring training is MLB's pre-season that is meant to prepare players for the upcoming season and decide final roster spots. All 30 teams participate and play about 25-30 games compared to the 162 played in the regular season. Examining batting statistics yields an interesting look into the similarities and differences between spring training and regular season batting statistics.
+
+## Data
+
+The data contains 681 rows and 52 columns. Each row represents a player that competed in the regular season and spring training in 2023.
+
+| Variable       | Description                                                              |
+|-----------------|-------------------------------------------------------|
+| Name      | first and last name of the player                                                 |
+| Age  | age of the player                          |
+| Reg_Tm   | player's team during the regular season                          |
+| Lg | league the team is a part of during the regular season (NL or AL) |
+| Reg_G           | number of games played during the regular season                                                           |
+| Reg_PA         | number of plate appearances during the regular season                                                         |
+| Reg_AB           | number of at-bats during the regular season                                       |
+| Reg_R     | number of runs scored during the regular season                                                     |
+| Reg_H      | number of hits during the regular season                                             |
+| Reg_Doubles     | number of doubles during the regular season              |
+| Reg_Triples     | number of triples during the regular season        |
+| Reg_HR      | number of homeruns during the regular season                                                 |
+| Reg_RBI  | number of runs batted in during the regular season                                           |
+| Reg_SB | number of stolen bases during the regular season                                                    |
+| Reg_CS | number of times caught stealing during the regular season                                                    |
+| Reg_BB           | number of walks during the regular season                                       |
+| Reg_SO     | number of strikeouts during the regular season                                                     |
+| Reg_BA      | regular season batting average                                             |
+| Reg_OBP    | regular season on-base percentage              |
+| Reg_SLG     | regular season slugging percentage        |
+| Reg_OPS      | regular season on-base plus slugging percentage                                                 |
+| OPS+  | regular season on-base plus slugging percentage normalized across the league                                           |
+| Reg_TB | regular season total bases                                                    |
+| Reg_GDP | amount of times grounded into a double play during the regular season                                                    | 
+| Reg_HBP | number of hit by pitches during the regular season |
+| Reg_SH | regular season sacrifice hits |
+| Reg_SF | regular season sacrifice flies |
+| Reg_IBB | regular season intentional walks |
+| OppQual | spring training opponent quality on a scale of 1(rookie ball) to 10(MLB) |
+| Spring_G           | number of games played during spring training                                                           |
+| Spring_PA         | number of plate appearances during spring training                                                         |
+| Spring_AB           | number of at-bats during spring training                                       |
+| Spring_R     | number of runs scored during spring training                                                     |
+| Spring_H      | number of hits during spring training                                             |
+| Spring_Doubles     | number of doubles during spring training              |
+| Spring_Triples     | number of triples during spring training        |
+| Spring_HR      | number of homeruns during spring training                                                 |
+| Spring_RBI  | number of runs batted in during spring training                                           |
+| Spring_SB | number of stolen bases during spring training                                                    |
+| Spring_CS | number of times caught stealing during spring training                                                    |
+| Spring_BB           | number of walks during spring training                                       |
+| Spring_SO     | number of strikeouts during spring training                                                     |
+| Spring_BA      | spring training batting average                                             |
+| Spring_OBP    | spring training on-base percentage              |
+| Spring_SLG     | spring training slugging percentage        |
+| Spring_OPS      | spring training on-base plus slugging percentage                                                 |
+| Spring_TB | spring training total bases                                                    |
+| Spring_GDP | amount of times grounded into a double play during spring training                                                    | 
+| Spring_HBP | number of hit by pitches during spring training |
+| Spring_SH | spring training sacrifice hits |
+| Spring_SF | spring training sacrifice flies |
+| Spring_IBB | spring training intentional walks |
+
+Data File
+
+:   [batting_stats.csv](../data/batting_stats.csv)
+
+## Questions
+
+- How strong is the correlation between spring and regular season batting average?
+
+- Interpret a scatterplot between spring and regular season statistics.
+
+## References
+
+Baseball Reference
+
+<https://www.baseball-reference.com/>
+
+
+
+
+
+
+
