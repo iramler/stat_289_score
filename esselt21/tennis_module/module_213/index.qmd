@@ -89,5 +89,5 @@ Download data: [wta.csv](data/wta.csv)
 [Class Handout - Solutions](tennis_handout213_key.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-This exercise is an introduction to creating models to predict how good a player is at tennis. It can be further used to identify a players strengths and weaknesses. Things that are statistically significant are areas that players should focus on, such as their Aces per Double Fault Ratio.
+This exercise is an introduction to creating models to predict how good a player is at tennis. It can be further used to identify a players strengths and weaknesses. Things that are statistically significant are areas that players should focus on, such as their Aces per Double Fault Ratio. 
 :::
