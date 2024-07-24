@@ -1,0 +1,68 @@
+```{r}
+library(tidyverse)
+library(leaps)
+library("bestglm")
+```
+
+```{r}
+ncaa_softball_data <- read_csv("ncaa_softball_data.csv")
+```
+predicting win loss percentage 
+```{r}
+numeric_df <- ncaa_softball_data %>% select(where(is.numeric))
+cor(numeric_df)
+```
+first glance - runs scored, runs per game, on base percentage, era, fielding percentage .. 
+
+```{r}
+ShowSubsets=function(regout){
+  z=summary(regout)
+  q=as.data.frame(z$outmat)
+  q$Rsq=round(z$rsq*100,2)
+  q$adjRsq=round(z$adjr2*100,2)
+  q$Cp=round(z$cp,2)
+  #q$BIC=round(z$bic,2)
+  return(q)
+}
+```
+
+```{r}
+all_subsets_softball <- regsubsets(Win_Loss_Pct ~
+                                     Hits +
+                                     Batting_Avg +
+                                     `2B` +
+                                     Innings_Pitched +
+                                     Runs_Allowed +
+                                     Earned_Runs +
+                                     Earned_Run_Average +
+                                     Errors +
+                                     Fielding_Pct +
+                                     Home_Runs +
+                                     Home_Run_Per_Game +
+                                     Strike_Outs_For +
+                                     Walks_Given_Up +
+                                     K_Per_BB_Ratio +
+                                     At_Bats +
+                                     Hit_By_Pitch +
+                                     Sac_Fly +
+                                     Sac_Hit +
+                                     On_Base_Pct +
+                                     Runs_Scored +
+                                     Runs_Per_Game +
+                                     `3B` +
+                                     `3B_Per_Game` +
+                                     Walks_Drawn,
+                                   data = ncaa_softball_data,
+                                   nbest = 2)
+
+ShowSubsets <- ShowSubsets(all_subsets_softball)
+```
+testing some regressions 
+```{r}
+reg_five_1 <- lm(Win_Loss_Pct ~ Batting_Avg + Innings_Pitched + Runs_Allowed + At_Bats + Runs_Per_Game,
+                 data = ncaa_softball_data,
+                 )
+summary(reg_five_1)
+plot(reg_five_1)
+```
+

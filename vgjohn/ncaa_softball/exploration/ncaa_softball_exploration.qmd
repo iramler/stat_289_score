@@ -1,8 +1,0 @@
-```{r}
-library(tidyverse)
-```
-
-```{r}
-ncaa_softball_data <- read_csv("ncaa_softball_data.csv")
-```
-

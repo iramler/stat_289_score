@@ -78,6 +78,6 @@ ncaa_softball_data <- ncaa_softball_data %>%
 ```
 
 ```{r}
-write_csv(ncaa_softball_data, file = "/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/ncaa_softball/exploration/ncaa_softball_data.csv")
+write_csv(ncaa_softball_data, file = "/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/ncaa_softball_module/exploration/ncaa_softball_data.csv")
 ```
 
