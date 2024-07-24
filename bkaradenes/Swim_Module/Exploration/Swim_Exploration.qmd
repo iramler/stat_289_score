@@ -362,4 +362,13 @@ time_graph %>%
   summarise(mean(Results))
 ```
 
+```{r}
+swimming <- swimming %>%
+  filter(Gender == "Women")
+```
+
+```{r}
+write.csv(swimming, "olympic_swimming.csv", row.names = FALSE)
+```
+
 

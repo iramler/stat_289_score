@@ -1,0 +1,38 @@
+---
+title: "exploration"
+author: "Brendan Karadenes"
+format: html
+editor: visual
+---
+
+```{r message=TRUE, warning=TRUE}
+library(tidyverse)
+library(readxl)
+library(here)
+reg_season <- read_excel(here("bkaradenes/MLB_Module/exploration/regular_season.xlsx"))
+spring_training <- read_excel(here("bkaradenes/MLB_Module/exploration/spring_training.xlsx"))
+```
+
+```{r}
+full_data <- inner_join(x = reg_season, y = spring_training, by = "Name")
+```
+
+# Data Cleaning
+
+```{r}
+batting_stats <- full_data %>%
+  select(-Rk.x, -Rk.y, -`Name-additional.x`, -`Name-additional.y`, -GS, -Age.y, -E, -`Pos Summary.x`, -`Pos Summary.y`, -Tm.y) %>%
+  rename(Age = Age.x, Reg_Tm = Tm.x, Reg_G = G.x, Reg_PA = `PA.x`, Reg_AB = AB.x, Reg_R = R.x, Reg_H = H.x, Reg_Doubles = `2B.x`, Reg_Triples = `3B.x`, Reg_HR = HR.x, Reg_RBI = RBI.x, Reg_SB = SB.x, Reg_CS = CS.x, Reg_BB = BB.x, Reg_SO = SO.x, Reg_BA = BA.x, Reg_OBP = OBP.x, Reg_SLG = SLG.x, Reg_OPS = OPS.x, Reg_TB = TB.x, Reg_GDP = GDP.x, Reg_HBP = HBP.x, Reg_SH = SH.x, Reg_SF = SF.x, Reg_IBB = IBB.x, Spring_G = G.y, Spring_PA = PA.y, Spring_AB = AB.y, Spring_R = R.y, Spring_H = H.y, Spring_Doubles = `2B.y`, Spring_Triples = `3B.y`, Spring_HR = `HR.y`, Spring_RBI = RBI.y, Spring_SB = SB.y, Spring_CS = CS.y, Spring_BB = BB.y, Spring_SO = SO.y, Spring_BA = BA.y, Spring_OBP = OBP.y, Spring_SLG = SLG.y, Spring_OPS = OPS.y, Spring_TB = TB.y, Spring_GDP = GDP.y, Spring_HBP = HBP.y, Spring_SH = SH.y, Spring_SF = SF.y, Spring_IBB = IBB.y) 
+
+full_data$Name <- gsub("[\\*\\#]", "", full_data$Name)
+```
+
+```{r}
+write.csv()
+```
+
+
+
+
+
+
