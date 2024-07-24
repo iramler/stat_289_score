@@ -1,0 +1,175 @@
+---
+title: "climbing_cleaning"
+format: html
+---
+### Libraries
+
+```{r}
+library(tidyverse)
+library(readr)
+library(rvest)
+```
+
+### Bouldering
+
+[2023 Collegiate National Springs Climbing Center/Gripstone Climbing & Fitness Boulder Final](https://usac.climb8a.com/event/6926){target="_blank"}
+
+#### Scraping
+
+```{r}
+urlb <- "https://usac.climb8a.com/event/6926"
+
+tabb<- read_html(urlb) |> 
+  html_nodes("table")
+```
+
+```{r}
+testb <- tabb[[1]] |> html_table()
+testb
+```
+
+#### Cleaning
+
+```{r}
+write_csv(testb, "testb.csv")
+```
+
+```{r}
+boulder <- read_csv("testb_cleaner.csv")
+```
+
+```{r}
+boulder_cleaner <- boulder |> 
+  separate(Climber, into= c("Climber", "Number"), sep = "#") |> 
+  separate(Number, into = c("Number", "Gender"), sep = 2) |> 
+  separate(Gender, into = c("Gender", "School"), sep = 4) |> 
+  mutate(Gender = str_remove_all(Gender, " ")) |> 
+  mutate(Gender = if_else(Gender == "MenC", true = "Men", false = Gender)) |> 
+  mutate(Gender = if_else(Gender != "Men", true = "Women", false = Gender)) |> 
+  mutate(School = if_else(School == "", true = "None Listed", false = School)) |> 
+  mutate(School = if_else(School == "en", true = "None Listed", false = School)) |> 
+  mutate(School = if_else(School == "olorado College", true = "Colorado College", false = School)) |>
+  mutate(School = if_else(Gender == "Women", true = str_remove(School, "en"), false = School)) |>
+  mutate(School = if_else(School == "nNorthern Arizona University", true = "Northern Arizona University", false = School)) |> mutate(School = if_else(School == "nTufts University", true = "Tufts University", false = School)) |> 
+  mutate(Number = as.integer(Number)) |>
+  select(!Score2) |> 
+  mutate(Score1 = str_remove_all(Score1, "av")) |>
+  mutate(Score3 = str_remove_all(Score3, "av")) |> 
+  separate(Score1, into = c("Tops", "Zones"), sep = 1) |> 
+  separate(Score3, into =c("Attempts_Tops", "Attempts_Zones"), sep = 1) |>
+  mutate(Attempts_Tops = if_else(Number == "32", true = "14", false = Attempts_Tops)) |>
+  mutate(Attempts_Zones = if_else(Number == "32", true = "10", false = Attempts_Zones)) |>
+  mutate(Attempts_Tops = if_else(Number == "53", true = "15", false = Attempts_Tops)) |>
+  mutate(Attempts_Zones = if_else(Number == "53", true = "7", false = Attempts_Zones)) |>
+  mutate(Attempts_Tops = if_else(Number == "14", true = "10", false = Attempts_Tops)) |>
+  mutate(Attempts_Zones = if_else(Number == "14", true = "13", false = Attempts_Zones)) |>
+  separate(B1, into = c("B1_P1", "B1_P2"), sep = 1) |>
+  separate(B1_P2, into = c("B1_P2", "B1_P3"), sep = 1) |>
+  separate(B2, into = c("B2_P1", "B2_P2"), sep = 1) |>
+  separate(B2_P2, into = c("B2_P2", "B2_P3"), sep = 1) |>
+  separate(B3, into = c("B3_P1", "B3_P2"), sep = 1) |>
+  separate(B3_P2, into = c("B3_P2", "B3_P3"), sep = 1) |>
+  separate(B4, into = c("B4_P1", "B4_P2"), sep = 1) |>
+  separate(B4_P2, into = c("B4_P2", "B4_P3"), sep = 1) |>
+  mutate(B3_P1 = if_else(Number == "53", true = "10", false = B3_P1)) |>
+  mutate(B3_P2 = if_else(Number == "53", true = "3", false = B3_P2)) |>
+  mutate(B3_P3 = if_else(Number == "53", true = "10", false = B3_P3)) |>
+  mutate(B2_P2 = if_else(Number == "39", true = "10", false = B2_P2)) |>
+  mutate(B2_P3 = if_else(Number == "39", true = "0", false = B2_P3)) |>
+  mutate(B3_P1 = if_else(Number == "39", true = "10", false = B3_P1)) |>
+  mutate(B3_P2 = if_else(Number == "39", true = "0", false = B3_P2)) |>
+  mutate(B4_P1 = if_else(Number == "66", true = "10", false = B4_P1)) |>
+  mutate(B4_P2 = if_else(Number == "66", true = "0", false = B4_P2)) |>
+  mutate(B4_P1 = if_else(Number == "15", true = "10", false = B4_P1)) |>
+  mutate(B4_P2 = if_else(Number == "15", true = "0", false = B4_P2)) |>
+  mutate(B4_P1 = if_else(Number == "69", true = "10", false = B4_P1)) |>
+  mutate(B4_P2 = if_else(Number == "69", true = "0", false = B4_P2)) |>
+  mutate(B4_P1 = if_else(Number == "8", true = "20", false = B4_P1)) |>
+  mutate(B4_P2 = if_else(Number == "8", true = "0", false = B4_P2)) |>
+  mutate(B4_P1 = if_else(Number == "48", true = "10", false = B4_P1)) |>
+  mutate(B4_P2 = if_else(Number == "48", true = "0", false = B4_P2)) |>
+  mutate(B1_P2 = if_else(B1_P2 == "", true = "0", false = B1_P2)) |>
+  mutate(B1_P3 = if_else(B1_P3 == "", true = "0", false = B1_P3)) |>
+  mutate(B2_P2 = if_else(B2_P2 == "", true = "0", false = B2_P2)) |>
+  mutate(B2_P3 = if_else(B2_P3 == "", true = "0", false = B2_P3)) |>
+  mutate(B3_P2 = if_else(B3_P2 == "", true = "0", false = B3_P2)) |>
+  mutate(B3_P3 = if_else(B3_P3 == "", true = "0", false = B3_P3)) |>
+  mutate(B4_P2 = if_else(B4_P2 == "", true = "0", false = B4_P2)) |>
+  mutate(B4_P3 = if_else(B4_P3 == "", true = "0", false = B4_P3)) 
+```
+
+```{r}
+boulder_df <-boulder_cleaner |> 
+  pivot_longer(c(10:21), names_to = "B_P", values_to = "Attempts") |> 
+  separate(B_P, into = c("Boulder", "Problem"), sep = "_") |> 
+  mutate(Boulder = str_remove_all(Boulder, "B")) |> 
+  mutate(Problem = str_remove_all(Problem, "P")) |> 
+  mutate(Gender = as.factor(Gender), 
+         Tops = as.integer(Tops), 
+         Zones = as.integer(Zones), 
+         Attempts_Tops = as.integer(Attempts_Tops), 
+         Attempts_Zones = as.integer(Attempts_Zones), 
+         Attempts = as.integer(Attempts), 
+         Boulder = as.factor(Boulder), 
+         Problem = as.factor(Problem))
+```
+
+#### Final
+
+```{r}
+write_csv(boulder_df, "boulder.csv")
+```
+
+### Lead
+
+[2023 Collegiate National Springs Climbing Center/Gripstone Climbing & Fitness Lead/TR Fina](https://usac.climb8a.com/event/6927){target="_blank"}
+
+#### Scraping
+
+```{r}
+urll <- "https://usac.climb8a.com/event/6927"
+
+tabl<- read_html(urll) |> 
+  html_nodes("table")
+```
+
+```{r}
+testl <- tabl[[1]] |> html_table()
+testl
+```
+
+#### Cleaning
+
+```{r}
+write_csv(testl, "testl.csv")
+```
+
+```{r}
+lead <- read_csv("testl_cleaner.csv")
+```
+
+```{r}
+lead_df <- lead |>
+  separate(Climber, into= c("Climber", "Number"), sep = "#") |> 
+  separate(Number, into = c("Number", "Gender"), sep = 2) |> 
+  separate(Gender, into = c("Gender", "School"), sep = 4) |> 
+  mutate(Gender = str_remove_all(Gender, " ")) |>
+  mutate(Number = as.integer(Number)) |>
+  mutate(Gender = if_else(Gender == "MenU", true = "Men", false = Gender)) |>
+  mutate(Gender = if_else(Gender == "MenV", true = "Men", false = Gender)) |>
+  mutate(Gender = if_else(Gender != "Men", true = "Women", false = Gender)) |> 
+  mutate(School = if_else(School == "", true = "None Listed", false = School)) |> 
+  mutate(School = if_else(School == "en", true = "None Listed", false = School)) |> 
+  mutate(School = if_else(School == " of Colorado Boulder", true = "U of Colorado Boulder", false = School)) |>
+  mutate(School = if_else(School == " of Denver", true = "U of Denver", false = School)) |>
+  mutate(School = if_else(School == "anderbilt University", true = "Vanderbilt University", false = School)) |>
+  mutate(School = if_else(Gender == "Women", true = str_remove(School, "en"), false = School)) |>
+  mutate(School = if_else(School == "nU of Utah", true = "U of Utah ", false = School)) |> mutate(School = if_else(School == "nU of Colorado Boulder ", true = "U of Colorado Boulder ", false = School)) |> 
+  mutate(Gender = as.factor(Gender))
+```
+
+#### Final
+
+```{r}
+write_csv(lead_df, "lead.csv")
+```
