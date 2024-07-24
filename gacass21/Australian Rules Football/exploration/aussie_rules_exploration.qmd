@@ -6,6 +6,7 @@ format: html
 ```{r}
 library(tidyverse)
 library(rvest)
+library(readr)
 ```
 
 ```{r}
@@ -480,6 +481,8 @@ afl_stats <- read.csv("afl_stats.csv")
 
 ```{r}
 afl_stats |> summary()
+
+afl_stats |> group_by(team)
 ```
 
 
