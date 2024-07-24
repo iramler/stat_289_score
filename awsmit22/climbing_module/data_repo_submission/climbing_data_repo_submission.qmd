@@ -1,0 +1,75 @@
+---
+title: 2023 Collegiate National Climbing Finals
+author: Abigail Smith
+date: July 24, 2024
+description: Data from the collegiate national climbing finals for both bouldering and lead in Colorado Springs, Colorado on April 28th, 2023.
+  
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Motivation
+
+[Climbing](https://en.wikipedia.org/wiki/Climbing){target="_blank"} can be a form of adventure tourism but is also a [competitive sport](https://en.wikipedia.org/wiki/Competition_climbing){target="_blank"} at the [collegiate level](https://usaclimbing.org/compete/collegiate-series/){target="_blank"}. 
+
+In collegiate climbing, there are typically two main disciplines: lead climbing and bouldering.The main difference is that in lead climbing competitions, climbers ascend higher walls using ropes whereas bouldering competitions take place on shorter walls without ropes. In bouldering, climbers complete short, challenging "problems" (routes) that require strength, technique, and problem-solving skills. In lead climbing climbers have a set amount of time (usually 6 minutes) to complete a single, challenging route. They aim to reach as high as possible and score points based on the difficulty of holds reached. Points in lead climbing are typically awarded based on the highest point reached on the route. Bonus points might be given for reaching certain holds or making progress. For bouldering, points are awarded based on successfully completing each problem. Climbers earn points for reaching the top or completing designated holds, with fewer attempts leading to higher scores.
+
+In collegiate climbing competitions, both lead climbing and bouldering are often included as separate disciplines. Each discipline tests different aspects of a climber’s skills and strengths, providing a diverse and challenging environment for competitors.
+
+Both the [boulder.csv](boulder.csv){target="_blank"} and [lead.csv](lead.csv){target="_blank"} datasets are taken from the [2023 collegiate national climbing championship finals](https://usac.climb8a.com/comp/2023-collegiate-nat){target="_blank"} hosted in Colorado Springs, Colorado on April 28th, 2023. The datasets contrain the results from the boulder and lead disciplines respectively for both men and women. 
+
+## Data
+
+### Bouldering
+
+The data set has 480 rows with 12 variables. Each row is a `Boulder` and a `Problem`, the climber had to complete in the finals of the national climbing championship in 2023. There are 40 climbers total in the dataset with four boulders and 3 problems per boulder. So there are 12 rows per climber. 
+
+| Variable     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|-----------------------|-------------------------------------------------|
+| `Rank`     | The rank of the climber based on the number of tops they achieved and number of attempts they took.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `Climber`      | The name of the climber.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `Number`      | The number assigned to the climber.                                                                                                                                                                                                                                                                                                                                                                |
+| `Gender`     | The gender of the climber, `Men` or `Women`.                                                                           |
+| `School`        | The school the climber is representing.                                                                                                                                                                                                                                                                                                                                                                                              |
+| `Tops`         | The number of tops the climber reached in their entire performance of the competition. Meaning the number of times the climber reached the top.                                                                                                                                                                                                                                                                                          |
+| `Zones`        | The number of zones the climber reached, these zones will be marked on routes and can provide different amounts of points.                                                                                                                                                                                            |
+| `Attempts_Tops`        | The number of attempts the climber took to reach the top in the competition.                                                                                                                                                                                                                                                                      |
+| `Attempts_Zones` | The number of attempts the climber took to the reach zones in the competiion.                                                                                                                                                                                                                                                                                        |
+| `Boulder`  | The boulder that the row is for.                                                                                                                                                                                                                                                                                                                                                        |
+| `Problem`     | The problem that the row is for. |
+| `Attempts`     | The total attempts it took the climber for that particular boulder and problem combination. |
+: [boulder.csv](boulder.csv){target="_blank"}
+
+### Lead
+
+The data set has 44 rows with 7 variables. Each row is a climber's performance in the finals of the national climbing championship in 2023. There are 44 climbers total in the dataset.
+
+
+| Variable     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|-----------------------|-------------------------------------------------|
+| `Rank`     | The rank of the climber based on the lowest number of points.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `Climber`      | The name of the climber.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `Number`      | The number assigned to the climber.                                                                                                                                                                                                                                                                                                                                                                |
+| `Gender`     | The gender of the climber, `Men` or `Women`.                                                                           |
+| `School`        | The school the climber is representing.                                                                                                                                                                                                                                                                                                                                                                                              |
+| `pts`         | The number of points the climber gained in the competition which is a calculated number based on the holds.                                                                                                                                                                                           |                                                                                                                                                                                    |
+| `R1hold`        | If the climber was able to reach the top it is marked `TOP` otherwise it is the score of the highest point they managed to reach.                                                                                                                                                                                                                                                                   |
+
+: [lead.csv](lead.csv){target="_blank"}
+
+## References
+
+[Website the Bouldering Data was Scraped From](https://usac.climb8a.com/event/6926){target="_blank"}
+
+[Website the Lead Data was Scraped From](https://usac.climb8a.com/event/6927){target="_blank"}
+
+[Lead Points Breakdown](https://docs.google.com/document/d/e/2PACX-1vRdmYYmJaDVxmGL6PegwK0TgN8VwTHmQ4SK0VBnT9FNi8TkVn99QDFhUYY4cuLWV7l-8hxXx7G_A0PK/pub){target="_blank"}
+
+[Bouldering Points Breakdown](https://docs.google.com/document/d/e/2PACX-1vT3xbbG7N7WXxL1GfNPcrOcI_p5RZa76a_kJU6K_p7V1YeDEwy7aOjf4jLTG4_O8iNqarA3OOdFnAGH/pub){target="_blank"}
+
+[Climbing Wikipedia](https://en.wikipedia.org/wiki/Climbing){target="_blank"} 
+
+[Competitive Climbing Wikipedia](https://en.wikipedia.org/wiki/Competition_climbing){target="_blank"}
+
+[Collegiate Climbing Website](https://usaclimbing.org/compete/collegiate-series/){target="_blank"}
