@@ -25,7 +25,7 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-In Tennis, there are three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Certain players perform better on certain surfaces. This data set contains information for each player on each surface. Throughout the year, there are two Grand Slams on a Hard court, one on Clay, and one on Grass.
+In tennis, there are three different types of surfaces that are played on. The options are Grass, Hard, and Clay. The surfaces are important to keep track of as the speed of tennis changes, e.g., clay generally slows the ball down whereas grass speeds it up. Certain players perform better on certain surfaces. This data set contains information for each player on each surface. Throughout the year, there are two Grand Slams on a Hard court, one on Clay, and one on Grass.
 
 The data set we will be using is from [Wheelo Ratings](https://www.wheeloratings.com/tennis_wta_stats_last52.html). In this rating website, they have calculated an ELO rank for each player. This ranking considers not only what tournament you are playing in, but who you are playing. For instance, if 4th ranked Coco Gauff beats 1st ranked Iga Swiatek, it will be worth more to her ELO ranking than if she beat 14th ranked Emma Navarro in the same tournament.
 
@@ -36,11 +36,11 @@ By the end of this activity, you will be able to:
 
 1.  Understand how to determine which variables are important to include in a model.
 
-2.  Understand interaction terms and why they should be used.
+2.  Be able to assess a model.
 
-3.  Be able to assess a model.
+3.  Be able to interpret coefficients of a model.
 
-4.  Be able to interpret coefficients of a model.
+4.  Understand interaction terms and why they should be used.
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
@@ -48,16 +48,16 @@ Technology requirement: The activity handout will require nothing more than the 
 
 1.  Knowledge of multiple linear regression.
 
-2.  Knowledge of normal assumptions.
+2.  Knowledge of normal conditions for regression.
 
 3.  Knowledge of assessing a model.
 :::
 
 ### Data
 
-There is one data set for this exercise. The data is made up of 111 rows and 8 columns and is provided by Wheelo Ratings. Each row represents a player on a given surface
+The exercise is based on data from Wheelo Ratings. They provide data on tennis statistics on each playing surface. They also calculate the previously explained EloRank. 
 
-Download data: [wta](data/wta.csv)
+Download data: [wta.csv](data/wta.csv)
 
 **Tennis**
 
@@ -89,5 +89,5 @@ Download data: [wta](data/wta.csv)
 [Class Handout - Solutions](tennis_handout213_key.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Forthcoming
+This exercise is an introduction to creating models to predict how good a player is at tennis. It can be further used to identify a players strengths and weaknesses. Things that are statistically significant are areas that players should focus on, such as their Aces per Double Fault Ratio. 
 :::

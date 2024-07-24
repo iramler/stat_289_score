@@ -4,7 +4,7 @@ author: Eric Seltzer
 date: July 22, 2024
 description: This data was taken from the Wikipedia page of Nathan's Hot Dog Eating contest and combined with other sources found online to get more information. A lot of this data outside of the winners and the number of hot dogs eaten could be false, but it is fun to look at.
 categories:
-?
+? 
 editor:
   markdown: 
     canonical: true

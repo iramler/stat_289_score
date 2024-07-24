@@ -1,5 +1,5 @@
 ---
-title: "Exploring NCAA Men's Water Polo: Data Wrangling and Visualization"
+title: "Exploring NCAA Men's Water Polo: Data Wrangling and Visualization - SOLUTIONS"
 ---
 
 In this activity, we will be using data from the 2023 NCAA Men's Water Polo season to explore data wrangling and data visualizations in R.
@@ -45,14 +45,14 @@ ncaa_waterpolo_assists <- read_csv("ncaa_waterpolo_assists.csv",show_col_types =
 
 ## Part 3 - The Data Sets Individually
 
-**1. The goals data set and the assists data set both have a `Conference` variable designating what conference the leader plays in. For both data sets, make `Conference` a factor with each level being a unique value.**
+**2. The goals data set and the assists data set both have a `Conference` variable designating what conference the leader plays in. For both data sets, make `Conference` a factor with each level being a unique value.**
 
 ```{r}
 ncaa_waterpolo_goals$Conference <- factor(ncaa_waterpolo_goals$Conference)
 ncaa_waterpolo_assists$Conference <- factor(ncaa_waterpolo_assists$Conference)
 ```
 
-**2. Create a boxplot showing the number of goals scored for each conference.**
+**3. Create a boxplot showing the number of goals scored for each conference.**
 
 ```{r}
 ncaa_waterpolo_goals %>% group_by(Conference) %>%
@@ -62,7 +62,7 @@ ncaa_waterpolo_goals %>% group_by(Conference) %>%
                        )) + geom_boxplot()
 ```
 
-**3. Based on the box plots you created above, answer the following questions:**
+**4. Based on the box plots you created above, answer the following questions:**
 
 a.  **Which conference shows the highest median number of goals scored, and which shows the lowest?**
 
@@ -72,21 +72,10 @@ b.  **Are the distributions of goals scored in each conference symmetric, or is 
 
 * The two conferences with the most obvious skewness is the Western Water Polo Association and the Northeast Water Polo Conference. All of the other conferences are relatively equal in distribution. Both the Western Water Polo Association and the Northeast Water Polo Conference are skewed in the positive direction this implies that there could be one or a few players from that conference that are scoring a considerably higher number of goals than other players in that conference.
 
-**4. Out of the top ten leaders, find the total number of goals and assists scored for each conference. Make one table which contains the conference, number of goals, and number of assists. Which has the most and which has the least in each category? (Hint: Use a join() function)**
-
-```{r}
-ncaa_waterpolo_goals %>% group_by(Conference) %>%
-  summarize(
-    sum = sum(Goals)
-    )%>% 
-  arrange(desc(sum))
-```
-
--   The Western Water Polo Association has the most amount of goals scored, 814. The Mid Atlantic Water Polo Association has the least amount of goals scored, 442.
 
 ## Part 4 - The Data Sets Together
 
-**1. What schools have leaders in both the assists category and the goals category, and how many of each does the school have in total? Create a table that contains only the conference, team, number of goals, and number of assists. (Hint: Use a join() function)**
+**5. What schools have leaders in both the assists category and the goals category, and how many of each does the school have in total? Create a table that contains only the conference, team, number of goals, and number of assists. (Hint: Use a join() function)**
 
 ```{r}
 # total goals for each team 
@@ -122,30 +111,15 @@ full_summary_table
 
 ```
 
-**2. What does one row in this data set represent?**
+**6. What does one row in this data set represent?**
 
 * Each row represents a team and has the total number of goals and assists scored by leaders in that conference 
 
-**3. What proportion of teams have leaders in both goals and assists?**
+**7. What proportion of teams have leaders in both goals and assists?**
 
 * $27/70 = 0.386 = 38.6$% of teams have leaders in both goals and assists
 
-**4.**
-
-```{r}
-cor(full_summary_table$`Total Assists`, full_summary_table$`Total Goals`)
-```
-
-```{r}
-ggplot(data = full_summary_table,
-       mapping = aes(x = `Total Assists`,
-                     y = `Total Goals`,
-                     color = Conference)) +
-  geom_point()
-```
-
-
-what are the average number of goals scored and assists made? find teams whose leaders scored higher than average in both categories? 
+**8. For the teams that have leaders in both categories, what are the average number of goals scored and assists made? Find the teams whose leaders scored higher than average in both categories.**
 
 ```{r}
 # finding the average of both columns 
@@ -158,7 +132,9 @@ full_summary_table %>%
            `Total Goals` > avg_goals)
 ```
 
-Does this information provide evidence to defend your answer to question 3. Explain why or why not. 
+* The average number of assists is 96.33 and the average number of goals made is 123.41. The teams above are those whose leaders, combined, had a higher than average number of goals and assists. 
 
-This does defend the answer to question three. The Western Water Polo Association and the Northeast Water Polo Conference each have two teams that have above average total goals and total assists. This helps to explain why the data is considerably skewed in the positive direction, especially if the median of those conferences is lower than the average. 
+**9. Does this information provide evidence to defend your answer to question 4? Explain why or why not.**
+
+* This does defend the answer to question three. The Western Water Polo Association and the Northeast Water Polo Conference each have two teams that have above average total goals and total assists. This helps to explain why the data is considerably skewed in the positive direction, especially if the median of those conferences is lower than the average. 
 

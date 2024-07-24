@@ -50,24 +50,27 @@ Water polo is a fast paced, competitive game that combines different elements of
 
 Overall, water polo is an exciting sport that requires a lot of physical fitness and athleticism. The NCAA divides competing schools into different divisions based on school size and budgets for athletics. 
 
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This could serve as an in class activity and should take roughly 30 minutes to complete. 
+:::
+
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will:
 
-1.  
+1. Enhance ability to filter and create groups in R, and use the groups to understand summary statistics. 
 
-2. 
+2. Create and analyze box plots with different groups, and how the skewness of the boxplots affects the competition of the conference. 
 
-3. 
+3. Use join functions to combine data sets and use those for analysis. 
 
-:::
-
-::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-
-methods
 :::
 
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
-A calculator is recommended. Access to a statistical software such as StatKey is necessary inorder to create bootstrap distributions with many observations. 
+The statistical software R is required to complete the learning materials in this module. 
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Students should be familiar with basic usage of the various packages within the tidyverse package in R. Students should be comfortable using the ggplot package to make data visualizations, and should be comfortable with grouping data and using those groups to summarize data. Students will also need to combine data sets using the correct join function. 
 :::
 
 ### Data
@@ -118,11 +121,12 @@ The data are compiled from the FOSH, an online water polo score keeping website 
 
 ### Materials
 
+[Class handout](waterpolo_worksheet.qmd){target="_blank"}
 
-
+[Class handout - with solutions](waterpolo_worksheet_SOLUTIONS.qmd){target="_blank"}
 
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-conclusion
+Upon conclusion, this learning module offers students practice with joining two data sets, and using the new data to answer questions. Students could also practice analyzing a box plot in context and examining what the skewness of the box plot means for the competition within the water polo conference. Students also gain practice in filtering data and answering questions based on the grouping of rows of data. 
 
 :::

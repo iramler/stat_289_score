@@ -1,0 +1,83 @@
+```{r}
+library(tidyverse)
+library(purrr)
+```
+
+```{r}
+#batting avg
+batting_average <- read_csv("sb_ba.csv")
+batting_average <- batting_average %>% select(Team, H, BA) %>%
+  rename(Hits = H,
+         Batting_Avg = BA)
+
+#fielding pct
+fielding_pct <- read_csv("sb_fp.csv") %>% select(-Rank, -games) %>% rename(Putouts = putouts,
+                                                                           Attempts = attempts,
+                                                                           Fielding_Pct = `fielding_pct`)
+
+# doubles 
+doubles <- read_csv("sb_2b.csv")
+
+#era 
+era <- read_csv("sb_era.csv")
+
+#runs 
+runs_scored <- read_csv("sb_runs.csv")
+
+# obp 
+on_base_pct <- read_csv("sb_obp.csv")
+
+#win loss percent 
+wl_pct <- read_csv("sb_wlp.csv")
+
+# home runs 
+home_runs <- read_csv("sb_hr.csv")
+
+# 3b
+triples <- read_csv("sb_3b.csv")
+
+# Walks
+walks_drawn <- read_csv("sb_walks.csv")
+
+# k per walk 
+k_per_walk <- read_csv("sb_kperbb.csv")
+```
+
+```{r}
+#making big data set
+
+dfs <- list(batting_average, doubles, era, fielding_pct, home_runs,
+            k_per_walk, on_base_pct, runs_scored, triples, walks_drawn, wl_pct)
+
+ncaa_softball_data <- reduce(dfs, ~ inner_join(.x, .y, by = "Team")) %>% rename(Hits = Hits.x,
+                                                                                `3B` = Triples,
+                                                                                `3B_Per_Game` = Triples_Per_Game,
+                                                                                Win_Loss_Pct = win_loss_percent,
+                                                                                On_Base_Pct = On_Base_Percent,
+                                                                                Runs_Allowed = Runs) %>%
+  select(-Hits.y, -Putouts, -Attempts, -Walks)
+
+ncaa_softball_data$Team[3] <- "Miami (MAC)"
+ncaa_softball_data$Team[40] <- "Saint Francis (NEC)"
+ncaa_softball_data$Team[78] <- "Saint Mary's (WCC)"
+ncaa_softball_data$Team[90] <- "LMU (WCC)"
+ncaa_softball_data$Team[213] <- "St. John's (Big East)"
+
+```
+
+```{r}
+# separating the conference 
+ncaa_softball_data <- ncaa_softball_data %>%
+  separate(Team,
+           into = c("Team", "Conference"),
+           sep = " \\(",
+           remove = FALSE) %>%
+  mutate(
+    Conference = str_remove(Conference, "\\)$")
+  )
+```
+
+```{r}
+write_csv(ncaa_softball_data, file = "/Users/vivianjohnson/Desktop/stat_289_score_new/vgjohn/ncaa_softball/exploration/ncaa_softball_data.csv")
+```
+
