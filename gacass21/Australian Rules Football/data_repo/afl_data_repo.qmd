@@ -8,25 +8,66 @@ categories:
 
 ## Motivation
 
-Australian Rules Football, also known as Aussie Rules, Football, or Footy, is the most popular sport in Australia. The AFL features 18 teams who compete for the Premiership Cup, with the top 8 teams
+Australian Rules Football, also known as Aussie Rules, Football, or Footy, is the most popular sport in Australia. The AFL features 18 teams who play a 22 game regular season, with the top 8 teams competing in the Finals. The Grand Finals takes place between the final 2 teams and the winner gets the Premiership Cup. Games consist of 4 quarters, each 20 minutes long. The goal of the game is to advance the ball down the field and score. Players can advance the ball by kicking it, punching in(called handball), or by running and bouncing the ball every 15 meters. Players cannot throw the ball or it results in a turnover. Players score by kicking or handballing the ball through a set of posts. There are 4 posts, and if the ball goes between the middle 2 posts it is a goal worth 6 points. If the ball hits one of those posts, or travels between the one of the middle posts and an outside post, the score is called a behind and worth 1 point. 
+
+Another key feature of Aussie Rules Football is the Mark. Players can kick the ball 15 meters to a teammate and if they catch the ball it is a Mark. The catcher can choose to play on or stop play and take an unobstructed kick. Similarly to rugby, the game is quite physical and players tackle each other to try and gain possession of the ball. The player must legally dispose of the ball before being tackled or will be called for holding the ball and turn it over. The field is a large oval and has 2 arcs that are 50 meters from each set of goal posts. Inside the 50 meter arc, if a player gets a Mark they have time to set themselves and kick a goal or behind. 
 
 ## Data
 
 This dataset contains statistics for each player from the 2023 season of the Australian Football League. Each row contains the statistics for one player. There are 663 rows and 36 columns.
 
-| Variable     | Description                                |
-|--------------|--------------------------------------------|
-| name         | the name of the player                     |
-| team         | the team of the player                     |
-| games_played | the number of games played                 |
-| kicks        | the number of kicks taken by the player    |
-| handballs    | the number of handballs done by the player |
-| disposals    | the number of disposals by the player(kicks + handballs) |
-| marks        | the number of marks caught by the player                               |
-| goals        | the number of goals scored by the player                               |
-| behinds      | the number of behinds scored by the player                             |
-| tackles      | the number of tackles by the player                               |
+[afl_stats.csv](afl_stats.csv)
+
+| Variable                | Description                                                                       |
+|-------------------|-----------------------------------------------------|
+| name                    | the name of the player                                                            |
+| team                    | the team of the player                                                            |
+| games_played            | the number of games played                                                        |
+| kicks                   | the number of kicks taken by the player                                           |
+| handballs               | the number of handballs done by the player                                        |
+| disposals               | the number of disposals by the player(kicks + handballs)                          |
+| marks                   | the number of marks caught by the player                                          |
+| goals                   | the number of goals scored by the player                                          |
+| behinds                 | the number of behinds scored by the player                                        |
+| tackles                 | the number of tackles by the player                                               |
+| frees_for               | the number of freekicks taken by the player                                       |
+| frees_against           | the number of freekicks given by the player                                       |
+| hitouts                 | the number of times the player knocked the ball out of a ruck contest             |
+| inside_50s              | the number of times the player moved the ball from the midfield to forward zone   |
+| goal_assists            | the number of goals created by the players actions(passing)                       |
+| supercoach_score        | a popular fantasy sports metric that assess the performance of players            |
+| dreamteam_score         | a popular fantasy sports metric that assess the performance of players            |
+| contested_possessions   | the number of possessions gained when the ball is in dipute                       |
+| uncontested_possessions | the number of possessions gained while not under pressure(pass or turnover)       |
+| effective_disposals     | the number of disposals that were effective(not turned over)                      |
+| disposal_efficiency     | the percent of disposals that were effective                                      |
+| clangers                | the number of errors made that had a negative result(turnovers and penalties)     |
+| contested_marks         | the number of marks the player caught under pressure from opponents               |
+| marks_inside_50         | the number of marks caught inside the 50 meter arc                                |
+| clearances              | the number of clearances of the ball out of a stoppage                            |
+| centre_clearances       | the number of clearances of the ball out of a centre ruck                         |
+| stoppage_clearances     | the number of clearances of the ball out of a stoppage ruck                       |
+| rebound_50s             | the number of times the player moved the ball from the defensive zone to midfield |
+| one_percenters          | the number of high effort defensive plays the player made                         |
+| bounces                 | the number of time the player was involved in a bounce-in                         |
+| metres_gained           | the number of metres gained by the player running                                 |
+| score_involvements      | the number of scoring chains where the player was involved                        |
+| turnovers               | the number of times the player lost the ball in general play                      |
+| intercepts              | the number of times the player intercepted the ball from the opponent             |
+| tackles_inside_50       | the number of tackles made inside the 50                                          |
+| time_on_ground_pct      | the percent of time spent on the field                                            |
 
 ## Questions
 
+1. Based on these stats, can you predict the best player?
+
+2. Can you predict which team was most successful?
+
+3. What non scoring stat seems most correlated with scoring?
+
+4. What statistic might be more usefull than teams realize?
+
+
 ## Refernces
+
+This data was scraped from [Footywire](https://www.footywire.com/), and were originally taken from the [Australian Football League](https://www.afl.com.au/).
