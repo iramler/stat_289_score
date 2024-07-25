@@ -26,3 +26,64 @@ matches <-
   mutate(date = dmy(date))
 ```
 
+```{r}
+# renaming variables
+matches <-
+  matches |>
+  rename("fighter1" = opponent_1,
+         "fighter2" = opponent_2,
+         "fighter1_PP" = opponent_1_estimated_punch_power,
+         "fighter2_PP" = opponent_2_estimated_punch_power,
+         "fighter1_PR" = opponent_1_estimated_punch_resistance,
+         "fighter2_PR" = opponent_2_estimated_punch_resistance,
+         "fighter1_TP" = opponent_1_estimated_ability_to_take_punch,
+         "fighter2_TP" = opponent_2_estimated_ability_to_take_punch,
+         "fighter1_RB" = opponent_1_rounds_boxed,
+         "fighter2_RB" = opponent_2_rounds_boxed,
+         "fighter1_KO%" = opponent_1_round_ko_percentage,
+         "fighter2_KO%" = opponent_2_round_ko_percentage,
+         "fighter1_HKO%" = opponent_1_has_been_ko_percentage,
+         "fighter2_HKO%" = opponent_2_has_been_ko_percentage,
+         "fighter1_W" = opponent_1_avg_weight,
+         "fighter2_W" = opponent_2_avg_weight)
+```
+
+```{r}
+# removing NAs
+matches <-
+  matches |>
+  drop_na()
+```
+
+```{r}
+# create verdict variable
+matches <-
+  matches |>
+  separate(verdict,
+           sep = " ",
+           into = c("verdict", "random"))
+```
+
+```{r}
+# get rid of zero observations
+matches <-
+  matches |>
+  filter(fighter1_PP != 0)
+```
+
+```{r}
+# get rid of final variable
+matches <-
+  matches |>
+  select(-random)
+```
+
+```{r}
+write_csv(matches, here::here("esselt21/boxing_module/exploration/matches.csv"))
+```
+
+```{r}
+fighters <-
+  read_csv(here::here("esselt21/boxing_module/exploration/fighters.csv"))
+```
+
