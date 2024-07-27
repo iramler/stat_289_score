@@ -4,9 +4,12 @@ author: Abigail Smith
 date: July 8, 2024
 description: Assessing the difference in victories for Ivy and Non-Ivy league fencers at the 2024 NCAA Fencing National Championships. 
 categories:
+  -  Boxplot
+  -  Linear regression
   -  Side-by-side boxplots
   -  Summary statistics
   -  Difference in means hypothesis test
+  
 
 editor: 
   markdown: 
@@ -41,24 +44,28 @@ The data set has 144 rows with 13 variables. Each row is a fencer who participat
 | `Ind` | The indicator score, calculated by `TS`-`TR`. |
 | `Gender` | The fencer's gender, `Women` or `Men`. |
 | `Ivy` | If the fencer's school is in the Ivy League, `Ivy` or `Non-Ivy`. |
-: [NCAAFencingIndividuals.csv](NCAAFencingIndividuals.csv){target="_blank"}
+: [NCAAfencing.csv](NCAAfencing.csv){target="_blank"}
 
 ## Questions
 
-1.    Create a subset for Ivies and another for Non-Ivies. Write down the number of Ivy students       and the number of Non-Ivy students.
+1.    Draw a boxplot of `Victories` for womens' foil.
 
-2.    Find the mean Victories for Ivies and Non-Ivies.
+2. Fit a regression model to predict number of victories using eh indicator score (Ind). 
 
-3.    Find the standard deviation of Victories for Ivies and Non-Ivies.
+3. If a fencer has 16 victories with an idicator score of 15, compute the resudual uing the fitted model in the previous question. 
 
-4.    Create a side-by-side boxplot of Victories for Ivies and Non-Ivies, compare the                  distributions.
+4.    How many of the competitors were from Ivy league schools. How many were non-Ivies? .
 
-5.    Test for a discernible difference in the mean number of victories for ivy league             fencers and non-ivy league fencers. 
+5.    Find the means and standard deviations of Victories for Ivies and Non-Ivies.
+
+6.    Create a side-by-side boxplot of Victories for Ivies and non-Ivies, compare the distributions.
+
+7.    Test for a discernible difference in the mean number of victories for ivy league fencers and non-ivy league fencers. 
 
 
 ## References
 
-[Website the Data was Scraped From](https://ncaa.escrimeresults.com/ncaa2024.html){target="_blank"}
+[NCAA cChampionships results](https://ncaa.escrimeresults.com/ncaa2024.html){target="_blank"}
 
 [Olympic Fencing Rules](https://www.nbcolympics.com/news/fencing-101-rules-and-scoring){target="_blank"}
 
