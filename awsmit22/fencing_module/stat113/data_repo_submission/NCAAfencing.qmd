@@ -1,14 +1,13 @@
 ---
-title: 2024 NCAA Fencing National Championship Results
+title: 2024 NCAA Fencing National Championship Individual Results
 author: Abigail Smith
 date: July 8, 2024
 description: Assessing the difference in victories for Ivy and Non-Ivy league fencers at the 2024 NCAA Fencing National Championships. 
 categories:
-  -  Boxplots
-  -  Summary Statistics
-  -  T.Test for Difference in Means
-  -  Grouped Data
-  
+  -  Side-by-side boxplots
+  -  Summary statistics
+  -  Difference in means hypothesis test
+
 editor: 
   markdown: 
     wrap: 72
@@ -42,7 +41,7 @@ The data set has 144 rows with 13 variables. Each row is a fencer who participat
 | `Ind` | The indicator score, calculated by `TS`-`TR`. |
 | `Gender` | The fencer's gender, `Women` or `Men`. |
 | `Ivy` | If the fencer's school is in the Ivy League, `Ivy` or `Non-Ivy`. |
-: [fencing.csv](fencing.csv){target="_blank"}
+: [NCAAFencingIndividuals.csv](NCAAFencingIndividuals.csv){target="_blank"}
 
 ## Questions
 

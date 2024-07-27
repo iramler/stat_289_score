@@ -4,12 +4,11 @@ author: Abigail Smith
 date: June 18, 2024
 description: Comparing both the 10 and 20k speeds and records for racers and countries in the 2024 World Athletics Race Walking Team Championships in Antalya, Turkey. 
 categories:
- -  Distribution and skewness
- -  Two-Sample t.test
- -  Two-Way ANOVA for difference in means
- -  Odds, predicted odds, and log(odds)
- -  G-test for overall fit 
-  
+ -  Distribution description
+ -  Difference in means hypothesis test
+ -  Two-way ANOVA for means
+ -  Logistic regression
+
 editor: 
   markdown: 
     wrap: 72
@@ -51,9 +50,9 @@ In the dataset there are 237 cases with 10 variables. Each case is a male or fem
 
 4.    Fit the model: REC = DISTANCE + PODIUM + SPEED + GENDER. A female athlete walked in the 10k with a podium finish and a speed of 221 meters per minute. Calculate the log(odds), odds, and predicted odds of her making a record.  
 
-5.    Perform a g-test to assess the overall fit of the multiple logistic regression model: REC = DISTANCE + PODIUM + SPEED + GENDER 
+5.    Perform a test to assess the overall fit of the multiple logistic regression model: REC = DISTANCE + PODIUM + SPEED + GENDER 
 
-6.    After performing all of these tests on different models, are there any noticeable differences in the different races the athletes competed in? Are there any discernable patterns with records?
+6.    After performing all of these tests on different models, are there any noticeable differences in the different races the athletes competed in? Are there any discernible patterns with records?
 
 ## References
 

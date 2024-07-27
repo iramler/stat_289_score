@@ -4,12 +4,12 @@ author: Abigail Smith
 date: June 26, 2024
 description: Analyzing wins and points head to head in singles and doubles in the Badminton World Tour from 2018-2023. 
 categories:
-  -  Histograms
-  -  Summary Statistics
-  -  Side-By-Side Boxplots
-  -  T.Test for Difference in Means
-  -  Linear Regression Analysis
-  -  Confidence Intervals
+  -  Histogram
+  -  Summary statistics
+  -  Side-by-side boxplots
+  -  Difference in means hypothesis test
+  -  Linear regression
+  -  Confidence interval for regression slope
   
 editor: 
   markdown: 
@@ -82,7 +82,7 @@ The data set has 185 rows with 9 variables. Each row is a player who participate
 
 ## References
 
-[Original Dataset](https://www.badmintonstatistics.net/Reports?reportname=MostPointsH2H&category=%&year=-1&level=worldtour&country=%){target="_blank"}
+[Original Dataset](https://www.badmintonstatistics.net/Reports?reportname=MostPointsH2H&category=%&year=-1&level=worldtour&country=%){target="_blank"} from www.badmintonstatistics.net
 
 [Olympic Badminton Rules](https://olympics.com/en/news/badminton-guide-how-to-play-rules-olympic-history){target="_blank"}
 

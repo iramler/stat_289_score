@@ -9,16 +9,13 @@ author:
     email: iramler@stlawu.edu
     affiliation:
       - ref: slu
-date: July 3, 2024
-description: Analyzing various statistics from the results of the 2024 NCAA Fencing National Championships for both genders and all weapons. 
+date: July 8, 2024
+description: Assessing the difference in victories for Ivy and Non-Ivy league fencers at the 2024 NCAA Fencing National Championships. 
 categories:
-  -  Normal Distribution
   -  Boxplots
   -  Summary Statistics
-  -  Outlier Detection
-  -  Least Squares Line
-  -  Residuals
-  -  R-Squared
+  -  T.Test for Difference in Means
+  -  Grouped Data
 ---
 
 ### Welcome video
@@ -35,10 +32,10 @@ declared winner.
 At the [collegiate level](https://en.wikipedia.org/wiki/Collegiate_fencing){target="_blank"}
 the fencing season comes to a close with the [NCAA Fencing Championships](https://en.wikipedia.org/wiki/NCAA_Fencing_Championships){target="_blank"} which is hosted at a different school every year. The championship is non-divisional and consists of the top fencers from schools in each NCAA region (Northeast, Mid-Atlantic/South, Midwest, and West). Fencers qualify for nationals based on their performance at regionals. Schools are allowed up to 12 fencers total in the tournament, but are only allowed a maximum of two fencers in each weapon and gender. The final championship consists of a 24 fencer round-robin in which each fencer in the discipline faces each other in 5-touch bouts. Fencers are ranked based on descending indicator scores which is the difference in touches sent and touches received. The top 4 fencers from each discipline face each other off in a round of 15-touch semifinals and championship bouts. The fencer to win the championship places number 1 in the discipline. Each school is awarded a point for each victory from each of their fencers. Schools' points are added and ranked, and the school with the most points at the end of the tournament wins.
 
-This [fencing dataset](fencing.csv){target="_blank"}(fencing.csv) contains the final results for each individual fencer in the 2024 NCAA Fencing Championships hosted at Ohio State University. It has data for both men and women in all three weapon types. The indicator variable in particular highlights the performance of fencers in the tournament and is often used in fencing in general to rank fencers. Since it is a calculation of a fencer's touches sent minus the touches they received, it is a good measure of offensive strength. Investigating this variable in conjuncture with the number of victories per fencer in the tournament can assess the performance of fencers in the data set.
+This [fencing dataset](fencing.csv){target="_blank"}(fencing.csv) contains the final results for each individual fencer in the 2024 NCAA Fencing Championships hosted at Ohio State University. It has data for both men and women in all three weapon types. Investigating the number of `Victories` for Ivy League and Non-Ivy League fencers in this dataset can reveal patterns in NCAA fencing. 
 
 ::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
-This activity could be used as a quiz, an in class or take home assignment. 
+This activity could be used as an in class assignment. 
 :::
 
 
@@ -46,18 +43,17 @@ This activity could be used as a quiz, an in class or take home assignment.
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of the activity, students will be able to:
 
-1.  Assess a variable's distribution
-2.  Create a boxplot and identify outliers using summary statistics
-3.  Interpret a least squares line
-4.  Evaluate the R-Squared value of a model
+1.  Compare distributions of grouped data.
+2.  Create side-by-side boxplots.
+4.  Evaluate for a difference of means in grouped data.
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-Students will use a basic understanding of histograms to evaluate a variable's distribution and to determine if that distribution is normal. Students will also use summary statistics to find outliers and draw boxplots. Students will assess the relationship between variables through looking at scatterplots and least squares lines. Students can evaluate the strength of this relationship through interpreting R-Squared. 
+Students will use a basic understanding of statistical software to find the means and standard deviations for different groups in data. Students will also compare the distribution of variables based on side-by-side boxplots. Using a t.test, students will evaluate if there is a significant difference in means in grouped data.
 :::
 
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
-This worksheet will not require the use of any technology.
+This worksheet will require the use of basic statistical software such as BaseR or an equivalent program.
 :::
 
 ### Data
@@ -109,10 +105,10 @@ Download data:
 
 We provide editable MS Word handouts along with their solutions.
 
-[Worksheet](fencing_worksheet.docx)
+[Worksheet](fencing_worksheet_tech.docx)
 
-[Worksheet Answers](fencing_worksheet_KEY.docx)
+[Worksheet Answers](fencing_worksheet_tech_KEY.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-After finishing this activity, students should be able to identify if a variable is normally distributed or not. Using the 5-number summary, students will identify outliers and create boxplots. Students will also interpret the slope and r-squared value of a least-squares line and calculate residuals. 
+After finishing this activity, students should be able to identify a significant difference in means in grouped data. Students should also be able to find summary statistics for grouped data and create side-by-side boxplots.
 :::
