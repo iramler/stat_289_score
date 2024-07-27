@@ -4,8 +4,8 @@ author: "Vivian Johnson"
 date: "July 3, 2024" 
 
 categories:
-  - Bootstrap Distribution
-  - Confidence Interval
+  - Bootstrap distribution
+  - Confidence interval for a mean
 ---
 
 ## Motivation
@@ -46,11 +46,11 @@ The `ncaa_gymnastics.csv` data set includes data from the women's NCAA Gymnastic
 
 ## Questions
 
-1. Calculate the bootstrap statistic for the sample population
+1. Calculate the bootstrap statistic for the mean of one of the events
 
 2. Create and comment on a bootstrap distribution. 
 
-3. Create a confidence interval for the population statistic
+3. Create a confidence interval for the population mean of that event
 
 
 ## References

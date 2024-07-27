@@ -14,9 +14,9 @@ description: "Using NCAA Water Polo data to create visualizations, join tables, 
 editor: 
   canonical: true
 categories:
-  - Box Plots
-  - Joining Data Sets
-  - Data Filtering
+  - Boxplots
+  - Joiningp
+  - Filtering
 ---
 
 ## Module
@@ -84,7 +84,7 @@ The `ncaa_waterpolo_goals` data set includes the leaders in goals scored from ea
 | Variable         | Description                                                |
 |------------------|------------------------------------------------------------|
 | Conference       | Conference the school is a part of                         |
-| Leader Rank      | Individual Ranking in the conference                       |
+| Rank             | Individual Ranking in the conference                       |
 | Name             | Player Name                                                |
 | Team             | University player attends                                  |
 | Goals            | Number of goals scored by that player in the 2023 season   |
@@ -103,7 +103,7 @@ Similarly, the `ncaa_waterpolo_assists` data set includes leaders in assists fro
 | Variable         | Description                                                |
 |------------------|------------------------------------------------------------|
 | Conference       | Conference the school is a part of                         |
-| Leader Rank      | Individual Ranking in the conference                       |
+| Rank             | Individual Ranking in the conference                       |
 | Name             | Player Name                                                |
 | Team             | University player attends                                  |
 | Assists          | Number of assists scored by that player in the 2023 season |
