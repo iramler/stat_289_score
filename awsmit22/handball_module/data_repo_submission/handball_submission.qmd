@@ -4,11 +4,11 @@ author: Abigail Smith
 date: June 7, 2024
 description: Comparing offensive statistics to penalties for individual players in the Handball-Bundesliga for the 2022-23 season.
 categories:
-  - confidence intervals
-  - prediction intervals
-  - multiple linear regression
-  - anova for overall fit
-  - t.test for correlation
+  -  Confidence intervals for a mean
+  -  Prediction intervals for regression
+  -  Linear regressoin
+  -  Multiple regression
+  -  Test for correlation
   
 editor: 
   markdown: 
@@ -71,23 +71,27 @@ cumulative for the entirety of the season. The data set only contains players wh
 
 ## Questions
 
-1.  Find and interpret a 98% confidence interval for the mean HPI
-    of a player with 30 total_penalties. 
+1.  Treating this season as a sample, find a 98% confidence interval for the mean HPI of Bundesliga handball players. 
 
-2.  Find and interpret a 98% prediction interval for the HPI of a
+2.  Fit a regressoin model to predict HPI using total_penalities. 
+
+3.  Find and interpret a 98% confidence interval for the mean HPI
+    of all players with 30 total_penalties. 
+
+4.  Find and interpret a 98% prediction interval for the HPI of a
     player with 30 total_penalties. 
 
-3.  Perform an ANOVA test to assess the overall fit of `HPI` =
+5.  Perform an ANOVA test to assess the overall fit of `HPI` =
     `total_offense` + `total_penalties`. Provide an interpretation of
     the results. 
     
-4.	 Find the correlation of total_penalties and total_offense. 
+6	 Find the correlation of total_penalties and total_offense. 
 
-5.  Test the significance of the correlation between the `total_offense`
+7.  Test the significance of the correlation between the `total_offense`
     and the `total_penalties` of a player. Provide an interpretation of
     the results.
 
-6.  Could it be concluded that having more penalties increases the skill
+8.  Could it be concluded that having more penalties increases the skill
     and success of a player in the form of HPI?
 
 ## References
