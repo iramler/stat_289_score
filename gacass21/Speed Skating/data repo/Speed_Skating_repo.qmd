@@ -4,8 +4,8 @@ author: Gavin Cassidy
 date: June 13, 2024
 description: Race and Lap times from 500m short track speed skating athletes at European Championship, World Cup, World Championship and Olympic events.
 categories:
-  - Histograms
-  - Summary Statistics
+  - Histogram
+  - Summary statistics
   - Outliers
 ---
 
@@ -50,7 +50,7 @@ The Short Track Speed Skating data set contains 5125 rows and 28 columns, where 
 | time_lap5      | the time of the racer after lap 5                                               |
 | Time_Event     | the date of event expressed as year followed by a decimal month and day         |
 
-Data File: [short_track.csv](../data/short_track.csv)
+Data File: [short_track.csv](short_track.csv)
 
 ## Questions
 

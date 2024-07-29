@@ -4,9 +4,9 @@ author: Gavin Cassidy
 date: July 3, 2024
 description: Data detailing Stage and Overall Classifacation victories from the first Tour de France to 2019
 categories:
-  - Side-by-Side Boxplots
-  - ANOVA for Difference in Means
-  - Pairwise t Test
+  - Side-by-side boxplots
+  - ANOVA for means
+  - Pairwise comparisons
 ---
 
 ## Motivation
@@ -17,7 +17,7 @@ The General Classification(GC) is the overall competition of the Tour de France 
 
 ## Data
 
-This data was found on [kaggle](https://www.kaggle.com/datasets/pablomonleon/tour-de-france-historic-stages-data)
+These data were found on [kaggle](https://www.kaggle.com/datasets/pablomonleon/tour-de-france-historic-stages-data)
 
 The tdf_stages data set contains information from each stage of the Tour de France from 1903 to 2017. There are 8 columns and 2236 rows, with each row being a unique stage in the Tour. The columns are listed below.
 
@@ -30,7 +30,7 @@ The tdf_stages data set contains information from each stage of the Tour de Fran
 | Distance       | the distance of the stage in kilometers                           |
 | Origin         | the town where the stage began                                    |
 | Destination    | the town where the stage ended                                    |
-| Type           | the type of riding that the stage entailed(flat, mountain, hilly) |
+| Type           | the type of riding that the stage entailed (flat, mountain, hilly) |
 | Winner         | the name of the stage winner                                      |
 | Winner_Country | the country where the stage winner is a citizen                   |
 

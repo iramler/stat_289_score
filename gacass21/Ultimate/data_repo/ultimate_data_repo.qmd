@@ -4,9 +4,8 @@ author: Gavin Cassidy
 date: June 21, 2024
 description: College Ultimate Chamionship Statistics contianing statistics from the 2024 Division 1 and 3 Men's and Women's Ultimate Championships 
 categories:
-  - Data Cleaning
-  - Joining
-  - Data Visualization
+  - Comparing groups
+  - Data visualization
 ---
 
 ## Motivation
@@ -66,7 +65,7 @@ This data comes from the 2024 Division 1 and 3 Men's and Women's College Ultimat
 
 -   What might strengths in different variable mean about players/teams?
 
--   What trends are different for different divisions
+-   What variables differ discernibly between different divisions?
 
 ## References
 

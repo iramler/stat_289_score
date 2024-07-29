@@ -2,8 +2,9 @@
 title: Setka Table Tennis Dataset
 author: Gavin Cassidy
 date: July 17, 2024
-description: Table Tennis Dataset containing data from one month of competition from the Setka Cup Table Tennis organization
+description: Table Tennis dataset containing results from one month of competition from the Setka Cup Table Tennis organization
 categories:
+  -  Ranking methods
   
 ---
 
@@ -17,7 +18,7 @@ Setka has tournaments around the clock, so players have ample opportunity to com
 
 This dataset contains data 1 month of data from a Ukranian Table tennis organization, Setka Cup. Setka holds daily events where players have several matches, usually against a player of similar skill. Each row in the data set holds the information for 1 match, including information about each game. The dataset contains 7851 rows and 18 columns.
 
-[table_tennis.csv](table_tennis.csv)
+Dowload the data: [table_tennis.csv](table_tennis.csv)
 
 | Variable   | Description                                                          |
 |-------------------------|-----------------------------------------------|
