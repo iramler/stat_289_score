@@ -30,7 +30,7 @@ PWHL_Final - Name of the data set P_Per_GP - Number of points scored by the play
 # Load in the necessary packages and data
 library(tidyverse)
 library(here)
-PWHL_Final <- read.csv(here("bkaradenes/PWHL_Module/Module/PWHL_Final.csv"))
+PWHL_Final <- read.csv(here("Your-Path/PWHL_Final.csv"))
 ```
 
 The density plot below displays the distribution of goals per game played for each position. Use it to answer the following two questions.
