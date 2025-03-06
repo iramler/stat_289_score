@@ -1,0 +1,21 @@
+---
+title: "Gymnastics Data"
+author: "Maia Wahlquist"
+format: html
+---
+
+Data set 1:
+
+```{r}
+library(readr)
+gymnasticsdata <- read_csv("data/data_2022_2023.csv")
+```
+
+Data Set 2:
+
+```{r}
+library(readr)
+ncaa_gymnastics <- read_csv("data/ncaa_gymnastics.csv")
+head(ncaa_gymnastics)
+```
+
