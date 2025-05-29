@@ -1,0 +1,25 @@
+---
+title: "Getting Started"
+format: html
+---
+
+To get started, you will work through some existing modules (both fully published and on the preprint repository). After working through the activity, you'll then go to the three different "reviewer forms" and evaluate them. (This is to help you understand how modules are evaluated to help you create excellent first drafts of your own!)
+
+## Example Module 1: 
+
+[League of Legends - Buffing and Nerfing](https://modules.scorenetwork.org/esports/league-of-legends-buffing-nerfing/){target="_blank"}
+
+
+## Example Module 2:
+
+[NASCAR Transformation Module](https://modules.scorenetwork.org/motor_sports/nascar_regression_transformation/){target="_blank"}
+
+
+## Example Module 3:
+
+[Strength Ratios - Flat Dumbbell Press to Barbell Bench Press](https://iramler.github.io/slu_score_preprints/fitness_and_training/dumbbell_barbell_bench_ratio/){target="_blank"}
+
+
+## Example Module 4:
+
+[Modeling the Impact of Age on Powerlifting](https://iramler.github.io/slu_score_preprints/fitness_and_training/powerlifting_polyreg/){target="_blank"}
