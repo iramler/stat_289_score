@@ -1,5 +1,5 @@
 ---
-title: "Exploring ANOVA Through the NBA Draft"
+title: "Introducing ANOVA Through the NBA Draft"
 author:
   - name: Vivian Johnson
     affiliation:
@@ -30,7 +30,7 @@ Each year, the National Basketball Association (NBA) holds a [draft](https://www
 
 In order to be eligible for the draft, a player must be at least 19 years old and out of high school for at least one year. Prior to 2006, this rule was not in effect, and players could be drafted during/right out of high school.
 
-The draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field. It's important to note that there weren't always 30 players selected in each round, the number made its way up to 30 as more teams were added into the NBA. 
+The draft is comprised of 60 players and takes place over two rounds of 30 selections. Teams pick players in an order based on performance from the previous season, with teams that performed poorly getting earlier picks in order to create a seemingly more level playing field. It's important to note that there weren't always 30 players selected in each round, the number made its way up to 30 as more teams were added into the NBA.
 
 #### Playing Basketball
 
@@ -48,28 +48,22 @@ Players can shoot towards the hoop from any point on the court. A different numb
 
 A rebound is when a player from the team that is on defense obtains the ball after the other team takes a shot attempt at the hoop. At the end of the game, which is played in four twelve-minute quarters, the team with the most points wins.
 
-
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will:
 
-1. Further understand the different components of a one-way ANOVA test and how to solve for them. 
+1.  Further understand the different components of a one-way ANOVA test and how to solve for them.
 
-2. Be able to explain the significance of the F-statistic and the implications it has on the result of the ANOVA test
+2.  Be able to explain the significance of the F-statistic and the implications it has on the result of the ANOVA test
 
-3. Become proficient in ability to interpret the results of an ANOVA test in context and apply it to real world examples. 
-
+3.  Become proficient in ability to interpret the results of an ANOVA test in context and apply it to real world examples.
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-
-Students should have prior knowledge of conducting one-way analysis of variance tests and the implications. Students should be able to explain the different components of an ANOVA table as well as familiarity with the formulas necessary to complete the table. 
-
+Students should have prior knowledge of conducting one-way analysis of variance tests and the implications. Students should be able to explain the different components of an ANOVA table as well as familiarity with the formulas necessary to complete the table.
 :::
 
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
-
-No explicit technology is necessary, although a calculator is recommended. 
-
+No explicit technology is necessary, although a calculator is recommended.
 :::
 
 ### Data
@@ -81,7 +75,7 @@ The `nba_draft` data set includes data from players that were selected in the NB
 <summary><b>Variable Descriptions</b></summary>
 
 | Variable          | Description                                                                                                          |
-|------------------|------------------------------------------------------|
+|-------------------|----------------------------------------------------------------------------------------------------------------------|
 | draft_pick        | The pick number a player was selected in the NBA draft                                                               |
 | team              | The NBA team that drafted the player                                                                                 |
 | player_name       | The name of the player selected                                                                                      |
@@ -100,9 +94,8 @@ The `nba_draft` data set includes data from players that were selected in the NB
 | pts_per_game      | Average number of points scored per game for career in the NBA                                                       |
 | rebounds_per_game | Average number of rebounds per game for career in the NBA                                                            |
 | assists_per_game  | Average number of assists per game for career in the NBA                                                             |
-| round_picked | Indicates the round the player was selected (either round 1 or round 2) |
-| pick_in_round | Indicates the order in which players were selected in that round | 
-
+| round_picked      | Indicates the round the player was selected (either round 1 or round 2)                                              |
+| pick_in_round     | Indicates the order in which players were selected in that round                                                     |
 
 </details>
 
@@ -110,7 +103,7 @@ Download [nba_draft.csv](nba_draft.csv){target="_blank"}
 
 #### Data Source
 
-This data is sourced from [Kaggle](https://www.kaggle.com/datasets/benwieland/nba-draft-data){target="_blank"}, and contains statistics from players selected in the NBA draft, as well as further on in their careers. 
+This data is sourced from [Kaggle](https://www.kaggle.com/datasets/benwieland/nba-draft-data){target="_blank"}, and contains statistics from players selected in the NBA draft, as well as further on in their careers.
 
 ### Materials
 
@@ -119,5 +112,5 @@ This data is sourced from [Kaggle](https://www.kaggle.com/datasets/benwieland/nb
 [Class handout - with solutions](nba_draft_worksheet_word_SOLUTIONS.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Upon conclusion of this module, students will discover that there does seem to be a significant difference between the average number of minutes played based on which group a player was selected in the NBA draft. This learning module offers a valuable opportunity to explore each component of a one-way ANOVA test and how they affect the overall result. 
+Upon conclusion of this module, students will discover that there does seem to be a significant difference between the average number of minutes played based on which group a player was selected in the NBA draft. This learning module offers a valuable opportunity to explore each component of a one-way ANOVA test and how they affect the overall result.
 :::
