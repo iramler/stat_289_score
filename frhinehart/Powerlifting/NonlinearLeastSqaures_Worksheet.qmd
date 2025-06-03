@@ -1,0 +1,126 @@
+---
+title: "NonlinearLeastSqauresPowerliftingWorksheet"
+format: 
+  html:
+    embed-resources: true
+format: html
+---
+
+Powerlifting is a strength sport where participants compete to lift the heaviest weight. Competitors compete within weight classes, so their opponents are around the same weight as them. The sport consists of three different lifts: Squat, Bench, and Deadlift. Squat lifts require lifters to squat so that their hips are below their knees and lift the weight to a specific depth. Bench lifts are done while the lifter is lying on a bench. Bench lifters start with the bar weight being held in the air and must lower the bar down to their body. Once the bar touches their body, lifters wait for the command to lift the bar back into the air with their elbows fully extended. Deadlifting, like squats, start with the lifter standing up. The lifter must lift the bar off the ground and get into the position where their shoulders are back and knees are locked. Competitors are overseen by three judges who determine whether the lift follows the rules of the events. If a judge believes the lifter followed the rules, they will turn on a white light. In order for a lift to count, competitors must receive at least two white lights. 
+
+
+INTRO
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(readr)
+library(broom)
+library(readr)
+powerlift <- read_csv("frhinehart/Powerlifting/powerlift_sample_data_updated.csv") |>
+  filter(Event == "SBD") |>
+  filter(Equipment %in% c("Raw", "Single-ply")) |>
+  filter(Place != "DQ") |>
+  filter(Place != "NS") |>
+  drop_na(Place) |>
+  filter(Place != "G") |>
+  filter(Place != "DD") |>
+  drop_na(Age) |>
+  drop_na(AgeClass) |>
+  drop_na(Best3DeadliftKg)
+```
+
+```{r}
+# Defining a shifted gamma function
+shifted_gamma <- function(x, a, b, x0) {
+  x_shift <- pmax(x - x0, 0)
+  a * x_shift * exp(-b * x_shift)
+}
+```
+
+1) Fit a nonlinear least squares model using the shifted gamma function provided above
+
+```{r}
+nls_fit <- nls(
+  Best3DeadliftKg ~ shifted_gamma(Age, a, b, x0),
+ data = powerlift,
+ start = list(a = 300, b = 0.05, x0 = 10)
+)
+nls_fit
+```
+
+
+a) Add predicted values to your dataset
+```{r}
+powerlift$pred <- predict(nls_fit)
+```
+
+b) Plot a scatterplot of Actual vs Predicted using a smoother for Best3DeadliftKg and with a line of best fit. 
+```{r}
+ggplot(powerlift, aes(x = Age)) +
+  geom_point(aes(y = Best3DeadliftKg), 
+             alpha = 0.3, color = "gray40") +
+  geom_smooth(aes(y = Best3DeadliftKg), color = "blue", fill = "blue") +
+  geom_line(aes(y = pred), color = "red", linewidth = 1.2) +
+ labs(
+   title = "Fitted Shifted Gamma Curve to Deadlift vs. Age",
+   x = "Age",
+   y = "Best 3 Deadlift (kg)") +
+ theme_minimal()
+```
+
+
+2) Fit a nonlinear least squares model using the reparameterized double exponential with x_peak provided below
+```{r}
+double_exp_peak <- function(x, A, k1, k2, x_peak) {
+  x_shift <- pmax(x - x_peak, 0)
+  A * exp(-k1 * x_shift) * (1 - exp(-k2 * x_shift))
+}
+```
+
+```{r}
+nls_fit2 <- nls(
+  Best3DeadliftKg ~ double_exp_peak(Age, A, k1, k2, x_peak),
+  data = powerlift,
+  start = list(A = 300, k1 = 0.02, k2 = 0.1, x_peak = 27)
+)
+nls_fit2
+```
+
+a) Add predicted values to your dataset
+```{r}
+powerlift$pred <- predict(nls_fit2)
+```
+
+b) Plot a scatterplot of Actual vs Predicted using a smoother for Best3DeadliftKg and with a line of best fit.
+```{r}
+ggplot(powerlift, aes(x = Age)) +
+  geom_point(aes(y = Best3DeadliftKg), alpha = 0.3, color = "gray40") +
+  geom_smooth(aes(y = Best3DeadliftKg), color = "blue", fill = "blue") +
+  geom_line(aes(y = pred), color = "darkgreen", linewidth = 1.2) +
+  labs(
+    title = "Double Exponential with Explicit Peak Parameter",
+    subtitle = "Estimated peak location is directly modeled",
+    x = "Age",
+    y = "Best 3 Deadlift (kg)"
+  ) +
+  theme_minimal()
+```
+
+c) Use a confidence interval for x-peak parameter and find the coeffients for A, k1, k2, and x_peak. Interpret your results, why can the lower bound not be calcualted?
+```{r}
+confint(nls_fit, "x_peak")
+coef(nls_fit)
+```
+
+Based on the model fit with shifting, we are 95% confident that the peak age of performance is less than or equal to 8.46 years. However, the lower bound of the confidence interval could not be estimated, suggesting the model may be unstable or the parameter is not well-identified.
+
+3) Compare both models you created. Which one is more useful in predicting dead lift using age? Report the residual sum-of-squares for both models
+
+Gamma residual sum-of-squares: 9838215
+
+Reparameterized residual sum-of-squares: 9448921
+
+reparameterized double exponential with x_peak is more useful since it has a lower residual sum-of-squares
+
+

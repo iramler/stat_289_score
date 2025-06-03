@@ -10,15 +10,12 @@ Process for updating repo:
  
 3) **Commit** (sending the file to the repo to commit to an update)
 - in the terminal:
- git add -m "a brief message indicating that you're sending"
+ git commit -m "a brief message indicating that you're sending"
  
 4) **Push** files to the repo
 - in the terminal:
  git push
- 
-Worked when says "Everything up-to-date"
 
 If you get ahead on branches:
-git reset HEAD~1
-
+ git reset HEAD~1
 (You can change the 1 to other vaules if you are ahead by more than one commit)

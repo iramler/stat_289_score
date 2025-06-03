@@ -1,0 +1,8 @@
+---
+title: "NonlinearLeastSquares_Solutions"
+format: 
+  html:
+    embed-resources: true
+format: html
+---
+
