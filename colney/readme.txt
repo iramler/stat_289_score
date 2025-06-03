@@ -19,3 +19,12 @@ Step 4: **Push** files to the repo
 In the terminal
 
 git push
+
+
+
+If you get head on branches 
+
+git reset HEAD~1
+
+(you can change the 1 to other values if you are ahead by more than one commit...
+ or just rerun the command a bunch)
