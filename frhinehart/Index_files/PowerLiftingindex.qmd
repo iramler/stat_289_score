@@ -5,21 +5,12 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
-  - name: Phoebe Jones
-    affiliation:
-      - ref: slu
-  - name: Cooper Olney
-    affiliation:
-      - ref: slu
-  - name: Faith Rhinehart
-    affiliation:
-      - ref: slu
   - name: Ivan Ramler
     email: iramler@stlawu.edu
     affiliation:
       - ref: slu
-date: "June 3, 2025"
-description: "Exploring the impact of age on powerlifting"
+date: "June 13, 2024"
+description: "Exploring the impact of age on powerlifting // In progress"
 editor: 
   canonical: true
 categories:
@@ -33,7 +24,7 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-Powerlifting is a strength sport where participants compete to lift the heaviest weight. Competitors compete within weight classes, so their opponents are around the same weight as them. The sport consists of three different lifts: Squat, Bench, and Deadlift. Squat lifts require lifters to squat so that their hips are below their knees and lift the weight to a specific depth. Bench lifts are done while the lifter is lying on a bench. Bench lifters start with the bar weight being held in the air and must lower the bar down to their body. Once the bar touches their body, lifters wait for the command to lift the bar back into the air with their elbows fully extended. Deadlifting, like squats, start with the lifter standing up. The lifter must lift the bar off the ground and get into the position where their shoulders are back and knees are locked. Competitors are overseen by three judges who determine whether the lift follows the rules of the events. If a judge believes the lifter followed the rules, they will turn on a white light. In order for a lift to count, competitors must receive at least two white lights.  
+Powerlifting is a sport consisting of three different lifts: Squat, Bench, and Deadlift. Competitors compete against opponents in the same weight class to lift the heaviest possible weights in the three categories.
 
 
 
