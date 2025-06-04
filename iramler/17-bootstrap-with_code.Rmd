@@ -1,0 +1,234 @@
+---
+title: "Confidence Intervals via Resampling"
+author: "STAT/DATA 234"
+output: html_document
+knit: 
+  (function(inputFile, encoding) { 
+    rmarkdown::render(inputFile, encoding = encoding,   
+    output_file = file.path(dirname(inputFile),   
+    '17-bootstrap-solutions.html')) 
+    })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+## Review of Confidence Intervals
+
+Recall that a confidence interval is a statement about the plausible range of values of an unknown population parameter (e.g, a population mean) or function of parameters (e.g., a difference in two means) that are supported by a random sample of data.
+
+In Stat 113, regardless of which instructor taught it, we focus on parameters for which Normal distributions can be used to model the sample-to-sample variability of the corresponding sample statistic. Ths distribution is commonly called the _sampling distribution_ of the sample statistic.
+
+For example, for sufficiently large random sample of size $n$, the distribution of sample proprortions $\hat{p}$ can be modeled using
+
+$\hat{p} \sim Normal(p, \sqrt{\frac{p*(1-p)}{n} )}$
+
+Then, for a given sample of size $n$, we can construct a $C\%$ confidence interval using
+
+$\hat{p} \pm z^*\times \sqrt{\frac{\hat{p}*(1-\hat{p})}{n} )}$
+
+## Complications
+
+What if we are interested in a more complex parameter, or function of parameter(s), whose corresponding sample statistics do not follow a Normal distribution?
+
+Well, that depends on a few things:
+
+1) If you have a small sample size, you need to determine the "exact" distribution of the statistic. (I recommend taking STAT 326 - Mathematical Statistics to learn some strategies for doing so.)
+
+2) If the exact distribution can't be determined, you are pretty much out of luck.
+
+3) If you have a very large sample size, you can still use a Normal distribution to approximate the exact distribution, using with a technique called the [Delta Method]("https://en.wikipedia.org/wiki/Delta_method"){target="_blank"} to approximate the sampling distribution. This techniques requires using a bit of calculus. 
+
+4) For moderately sized samples, you can use a method called the _Bootstrap_ to construct approximate confidence intervals.
+
+## Overview of the Bootstrap
+
+For confidence intervals, the bootstrap is relatively simple, but powerful, technique used to approximate the sampling distribution. _FYI, the name is derived from the saying “pull oneself by one’s bootstraps” which essentially means to succeed only by one's own efforts or abilities. In this case, it refers to the idea that the sample data itself can be used to derive the sampling distribution of the statistic._
+
+### How it works
+
+It samples (with replacement) from itself multiple times and, for each resample, computes the statistic of interest. These bootstrap resamples of the statistic approximate the sampling distribution and can then be used to determine the confidence interval.
+
+#### The Simple Percentile Bootstrap Interval
+
+One of the most easy to construct bootstrap interval is know as the percentile method. Given a set of bootstrapped statistics, we can construct a $C\%$ confidence interval by finding the bounding values that correspond to the middle $C\%$ of this distribution.
+
+#### Steps to Constructing a Percentile Bootstrap Interval
+
+Here we will investigate the procedure for two styles of problems.
+
+##### C% Bootrap Interval for a Single Population
+
+Given a sample of size n from a population
+
+i. Draw a resample of size n with replacement from the sample. Computer a statistic that estimates the parameter of interest
+
+ii. Repeat this resampling process B times (where B is as large as reasonably possible given computing resources)
+
+iii. Construct the bootstrap distribution of the statistic.
+
+iv. Find the two values that contain the middle C% of the bootstrapped statistics.
+
+
+##### C% Bootrap Interval for Comparing Two Population
+
+Given independent samples of sizes m and n from two populations,
+
+i. Draw a resample of size m with replacement for the first sample and a separate resample of size n from the second sample. Compute the statistic that represents the comparison of interest for the two groups.
+
+ii. Repeat this process B times.
+
+iii. Construct the bootstrap distribution of the statistic.
+
+iv. Find the two values that contain the middle C% of the bootstrapped statistics.
+
+### Implementing a Bootstrap in R
+
+While there are a number of packages that help automate the construction of bootstrap distributions, we will focus on manually constructing them using a programming concept known as iteration. To do so, we'll first need to learn how to do basic iteration programming in R.
+
+### Side Quest: Interation - the loop
+
+In computer programming, a *loop* is a sequence of commands that are continually repeated until a certain condition is reached. Loops are a core component to most (if not all) computer languages. Further, many of the functions we work with in this course are simply "wrappers" around an underlying  batch of code that loops through our data. We won't go into details about loops in this class, but will instead focus on how then can be used to build bootstrap intervals. _Additional note, we won't be making any real attempts to make our code "efficient". If, in practice, you have a large enough data set that computation time is a potential issue, then I suggest learning more advanced computational techniques. e.g., parallel computing. Disclaimer: Please don't use the R Studio server for parallel tasks. We have a high performance computer cluster available for larger projects._
+
+##### The **for** loop
+
+The **for** loop is used when you have a fixed number of iterations:
+
+```{r, eval = F}
+for (index_counter in iteration_vector){
+  Statements
+}
+
+```
+
+```{r}
+# print the first ten "squares"
+for(i in 1:10){
+  print(c( i, i^2) )
+}
+```
+
+For example, if we wish to loop through a data set to find the maximum value of a specific variable we could do the following. (Of course, we already know the `max` function so this is a silly example. We'll just use it to illustrate how a for-loop is constructed in R...and introduce a small amount of other programming concepts.)
+
+
+```{r}
+library(tidyverse)
+stat113 <- read_csv("data/stat113.csv")
+
+stat113_clean <- drop_na(stat113, Haircut)
+maxHaircut = -Inf # need to "initialize" the value we plan to track
+
+for(r in 1:nrow(stat113_clean) ){
+  # extract the current row's value
+  currentHaircut <- stat113_clean$Haircut[r]
+  
+  # check if it is value than the current "max value"
+  # and replace it if it is
+  if(currentHaircut > maxHaircut){
+    maxHaircut <- currentHaircut
+  }
+  
+  # this will continue until all rows of the data are checked, one at a time
+}
+
+maxHaircut
+```
+
+
+
+### Implementing a Bootstrap in R - part 2
+
+
+Example 1: Suppose we want to construct a 95% confidence interval for the average price of Stat 113 students  "back-to-school" haircut.
+
+```{r}
+# prep data by cleaning it up
+stat113_clean <- drop_na(stat113, Haircut)
+
+# Step 0. Set up objects 
+B <- 1000 # number of bootstrap samples
+
+all_mean_boots <- rep(NA, B) # a blank vector to store the bootstrap statistics
+
+
+# set up loop
+for(i in 1:B){
+  # 1. Resample Data
+  resampled_data <- slice_sample(stat113_clean, prop = 1, replace = TRUE)
+          
+  #2. Calculate statistic
+  one_mean_boot <- mean(resampled_data$Haircut)
+        
+  #3. Store results
+  all_mean_boots[i] <- one_mean_boot
+} # Back to 1. Resample Data, repeat B times
+        
+
+```
+
+```{r}
+#4. Calculate CI
+qplot(all_mean_boots) # invest
+
+conf.level <- 0.95
+alpha <- 1 - conf.level
+
+quantile(all_mean_boots, probs = c(alpha/2, 1-alpha/2)) %>% 
+  round(2)
+```
+
+
+Example 2: Suppose we want to calculate a 95% confidence interval for the difference in average haircut prices for male and female students.
+
+```{r}
+# prep data by cleaning it up
+stat113_clean <- drop_na(stat113, Haircut, Sex)
+
+# Step 0. Set up objects 
+B <- 1000 # number of bootstrap samples
+
+all_mean_diff_boots <- rep(NA, B) # a blank vector to store the bootstrap statistics
+
+# set up loop
+for(i in 1:B){
+  # 1. Resample Data
+  # Do so by male vs femal
+  resampled_data <- stat113_clean %>%
+    group_by(Sex) %>%
+    slice_sample(prop = 1, replace = TRUE)
+          
+  #2. Calculate statistic
+  group_boot <- resampled_data %>%
+    group_by(Sex) %>%
+    summarize(mnHaricut = mean(Haircut))
+  
+  one_mean_diff_boot <- group_boot$mnHaricut[1] - group_boot$mnHaricut[2] # does F - M
+    
+    
+    
+  #3. Store results
+  all_mean_diff_boots[i] <- one_mean_diff_boot
+} # Back to 1. Resample Data, repeat B times
+```
+
+```{r}
+#4. Calculate CI
+qplot(all_mean_diff_boots)
+
+conf.level <- 0.95
+alpha <- 1 - conf.level
+
+quantile(all_mean_diff_boots, probs = c(alpha/2, 1-alpha/2)) %>% 
+  round(2)
+```
+
+
+#### Exercises
+
+1. Construct a 98% confidence interval for the standard deviation of haircut prices.
+
+2. Construct a 90% confidence interval for the proportion of students with a haircut of at least $50.
+
+3. Construct a 95% confidence interval for the median difference in haircut prices for athletes vs non-athletes.
+
