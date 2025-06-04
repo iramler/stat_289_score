@@ -1,18 +1,10 @@
 ---
-title: "NonlinearLeastSqauresPowerliftingWorksheet"
+title: "NonlinearLeastSquares_Solutions"
 format: 
   html:
     embed-resources: true
 format: html
 ---
-
-Powerlifting is a strength sport where participants compete to lift the heaviest weight. Competitors compete within weight classes, so their opponents are around the same weight as them. The sport consists of three different lifts: Squat, Bench, and Deadlift. Squat lifts require lifters to squat so that their hips are below their knees and lift the weight to a specific depth. Bench lifts are done while the lifter is lying on a bench. Bench lifters start with the bar weight being held in the air and must lower the bar down to their body. Once the bar touches their body, lifters wait for the command to lift the bar back into the air with their elbows fully extended. Deadlifting, like squats, start with the lifter standing up. The lifter must lift the bar off the ground and get into the position where their shoulders are back and knees are locked. Competitors are overseen by three judges who determine whether the lift follows the rules of the events. If a judge believes the lifter followed the rules, they will turn on a white light. In order for a lift to count, competitors must receive at least two white lights. 
-
-The Powerlifting dataset features data from individual lifters during their most recent competitions. Variables include characteristics such as sex, age, birth year and age classes, and division. Other variables include 3 types of weightlifting: squats, benches, and deadlifts.The relevant variables for this specific module are Age and Best3DeadliftKg. 
-
-For the sake of this module, the data set was tidied so that it only included the event "SBD" (Squat, Bench, Deadlift) and two types of equipment use: Raw, meaning no equipment except knee sleeves, and Single-ply, which is a single layer suit. The data was also tided to exclude any lifter that did not finish the competition or had missing information for key variables.
-
-For this worksheet, we want to use Age as predictors for Best3DeadliftKg.
 
 ```{r}
 library(tidyverse)
@@ -20,7 +12,7 @@ library(ggplot2)
 library(readr)
 library(broom)
 library(readr)
-powerlift <- read_csv("frhinehart/Powerlifting/powerlift_sample_data_updated.csv") |>
+powerlift <- read_csv(here::here("frhinehart/Powerlifting/module/powerlift_sample_data_updated.csv")) |>
   filter(Event == "SBD") |>
   filter(Equipment %in% c("Raw", "Single-ply")) |>
   filter(Place != "DQ") |>
@@ -34,47 +26,82 @@ powerlift <- read_csv("frhinehart/Powerlifting/powerlift_sample_data_updated.csv
 ```
 
 
+1) Graph a scatter plot showing the relationship comparing Age and Best3DeadliftKg. Add a smoother. What do you notice about the curve?
 
 
-1) Fit a nonlinear least squares model using the shifted gamma function provided below
-
+2) 
+a) Fit a nonlinear least squares model using the shifted gamma function provided below:
 ```{r}
 # Defining a shifted gamma function
 shifted_gamma <- function(x, a, b, x0) {
-  x_shift <- pmax(x - x0, 0)
-  a * x_shift * exp(-b * x_shift)
-}
+  x_start <- pmax(x - x0, 0)
+  a * x_start * exp(-b * x_start)}
 ```
 
 
-a) Add predicted values to your dataset
+This is the model you should get:
+$$y = (19.67175)(age - 4.94486)e^{((-.03451)(age - 4.94486))}$$
+The model starts using age to model how strength progresses, with the deadlift increasing as age increases. The  rate of increase slows due to the exponential decay factor. As people age, the exponential decay term reduces the growth of the deadlift. The older someone gets, the less their deadlift will increase. This can be modeled when graphed...
+
+b) Add predicted values to your dataset
 
 
-b) Plot a scatterplot of Actual vs Predicted using a smoother for Best3DeadliftKg and with a line of best fit. 
+c) Plot a scatterplot of Actual vs Predicted using a smoother for Best3DeadliftKg and with a prediction line. 
 
 
+d) For this particular equation the maximum age for peak deadlift is 33.92. If you have taken calculus, derive $$(x-x0)e^{(-b(x-x0))}$$ to model this using the values given in part a
 
-2) Fit a nonlinear least squares model using the reparameterized double exponential with x_peak provided below
+
+e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 33.92 on the original dataset). Interpret your results and does it contain the value found in part d. 
+
 ```{r}
-double_exp_peak <- function(x, A, k1, k2, x_peak) {
-  x_shift <- pmax(x - x_peak, 0)
-  A * exp(-k1 * x_shift) * (1 - exp(-k2 * x_shift))
-}
+values <- coef(nls_fit)
+x_max <- values["x0"] + 1/values["b"]
 ```
 
 
-a) Add predicted values to your dataset
+3) 
+a) Fit a nonlinear least squares model using the reparameterized double exponential with x_shift provided below
+```{r}
+double_exp_shift <- function(x, A, k1, k2, x_shift) {
+  x_start <- pmax(x - x_shift, 0)
+  A * exp(-k1 * x_start) * (1 - exp(-k2 * x_start))}
+```
+
+This is the model you should get:
+$$y = (285.116)e^{((-.0111)(xstart))} * 1- e^{-.1150 * xstart)}$$
+
+The second term increases significantly, reflecting a growth in deadlift strength over time. This suggests that the individual’s best 3 deadlift increases as they age, reaching their peak in their 20s or 30s. The first starts to lower the deadlift value, reflecting the gradual reduction in strength due to aging where the second term reaches it's maximum values and stabilizes. This can be modeled when graphed...
+
+b) Add predicted values to your dataset
 
 
-b) Plot a scatterplot of Actual vs Predicted using a smoother for Best3DeadliftKg and with a line of best fit.
+c) Plot a scatterplot of Actual vs Predicted using a smoother for Best3DeadliftKg and with a line of best fit.
 
 
-c) Use a confidence interval for x-peak parameter and find the coefficients for A, k1, k2, and x_peak. Interpret your results, why can the lower bound not be calculated?
+d) For this particular equation the maximum age for peak deadlift is 26.05. If you have taken calculus, derive $$Ae^{(-k1(x-xstart)} * (1-e^{k2(x-xstart)})$$ to model this using the values given in part a
+
+
+e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 26.05 on the original dataset). Interpret your results and does it contain the value found in part d.
+
+```{r}
+values2 <- coef(nls_fit2)
+x_max2 <- (-1 / values2["k2"]) * log(values2["k1"] / (values2["k1"] + values2["k2"]))
+```
+
+
+4) Compare both models you created. Which one is more useful in predicting dead lift using age? Report the residual sum-of-squares for both models
 
 
 
+5) If you completed the other powerlift module, use the indicator variable code provided below to recreate a 5th order polynomial regression model and find the AIC
+```{r}
+powerlift_new$SexIND = ifelse(powerlift_new$Sex == "M", 1, 0)
+``` 
 
-3) Compare both models you created. Which one is more useful in predicting dead lift using age? Report the residual sum-of-squares for both models
 
 
+a) Find the AIC for the model you answered in question 4
 
+
+b) Compare the polynomial model' AIC to your answer in question 4's AIC. Which one is better in predicting dead lift using age? Report each of the model's AIC. 
