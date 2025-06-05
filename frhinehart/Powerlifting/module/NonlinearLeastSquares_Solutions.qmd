@@ -1,9 +1,12 @@
 ---
 title: "NonlinearLeastSquares_Solutions"
+Authors: Phoebe Jones, Cooper Olney, Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
 format: 
   html:
     embed-resources: true
-format: html
 ---
 ```{r}
 library(tidyverse)
@@ -75,7 +78,7 @@ nls_fit
 ```
 
 This is the model you should get:
-$$y = (12.82910)(age - 3.26764)e^{((0.03302)(age - 3.26764))}$$
+$$Deadlift = (12.82910)(age - 3.26764)e^{((0.03302)(age - 3.26764))}$$
 In its final form, this model will use age to model how strength progresses, with the deadlift increasing as age increases. The rate of increase will slow due to the exponential decay factor. As people age, the exponential decay term reduces the growth of the deadlift. The older someone gets, the less their deadlift will increase. This can be modeled when graphed...
 
 
@@ -100,7 +103,7 @@ ggplot(powerlift_f, aes(x = Age)) +
 ```
 
 
-d) For this particular equation the maximum age for peak deadlift is 33.92. If you have taken calculus, derive $$(x-x0)e^{(-b(x-x0))}$$ to model this using the values given in part a (plug in values and solve equation)
+d) For this particular equation the maximum age for peak deadlift is 33.55. If you have taken calculus, derive $$(x-x0)e^{(-b(x-x0))}$$ to model this using the values given in part a (plug in values and solve equation)
 
 We will use z = x-c to simplify solving
 
@@ -115,7 +118,7 @@ Plug in values and get:
 $$x = 3.26764 +(1/0.03302) = 33.55 $$
 
 
-e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 33.55 on the original dataset) using the code provided below. Interpret your results and does it contain the value found in part d
+e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 33.55 on the original dataset). Interpret your results and does it contain the value found in part d
 
 ```{r}
 values <- coef(nls_fit)
@@ -164,7 +167,7 @@ With 95% confidence, the peak age for max deadlift is between 32.88 and 34.23 ye
 
 
 3 -  
-What is a nonlinear least squares model? Motivation for it. 
+Another function possibility is a double exponential function. This type of function represents a rise and fall. This equation for the distribution has 4 parameters that impact its shape/scale: A(amplitude term), k1(rate of decay), k2(rate of growth), x-start (calculated using x and x_shift, where x is the specific observation’s age, and x_shift is a minimum age threshold). Again, the pmax() function ensures that x_start is non-negative.
 
 
 a) Fit a nonlinear least squares model using the reparameterized double exponential with x_shift provided below
@@ -174,6 +177,8 @@ double_exp_shift <- function(x, A, k1, k2, x_shift) {
   A * exp(-k1 * x_start) * (1 - exp(-k2 * x_start))}
 ```
 
+** For the initial model, use A = 300, k1 = 0.02, k2 = 0.1, and x_shift = 27. 300 represents a scaling factor for the maximum deadlift strength (we can see the data points thin out around y = 300), 0.02 represents the slow decay in performance after the peak, 0.1 represents the faster increase in performance before the peak, and 27 is an estimate for the peak that allows for appropriate shifting of ages in the data set.
+
 ```{r}
 nls_fit2 <- nls(Best3DeadliftKg ~ double_exp_shift(Age, A, k1, k2, x_shift),
   data = powerlift_f,
@@ -182,9 +187,8 @@ nls_fit2
 ```
 
 This is the model you should get:
-$$y = (243.19078)e^{((- 0.01381)(xstart))} * 1- e^{-0.06932 * xstart)}$$
-
-The second term increases significantly, reflecting a growth in deadlift strength over time. This suggests that the individual’s best 3 deadlift increases as they age, reaching their peak in their 20s or 30s. The first starts to lower the deadlift value, reflecting the gradual reduction in strength due to aging where the second term reaches it's maximum values and stabilizes. This can be modeled when graphed...
+$$Deadlift = (243.19078)e^{((- 0.01381)(xstart))} * 1- e^{-0.06932 * xstart)}$$
+k2 increases significantly, reflecting a growth in deadlift strength over time. This suggests that the individual’s best 3 deadlift increases as they age, reaching their peak in their 20s or 30s. k1 starts to lower the deadlift weight, reflecting the gradual reduction in strength due to aging where the second term reaches its maximum value and stabilizes. This can be modeled when graphed...
 
 
 b) Add predicted values to your dataset
@@ -207,7 +211,7 @@ ggplot(powerlift_f, aes(x = Age)) +
 ```
 
 
-d) For this particular equation the maximum age for peak deadlift is 26.05. If you have taken calculus, derive $$Ae^{(-k1(x-xshift)} * (1-e^{k2(x-xshift)})$$ to model this using the values given in part a (Plug in values to solve equation)
+d) For this particular equation the maximum age for peak deadlift is 31.21. If you have taken calculus, derive $$Ae^{(-k1(x-xshift)} * (1-e^{k2(x-xshift)})$$ to model this using the values given in part a (Plug in values to solve equation)
 
 we will use z = x-xshift to simplify solving
 
@@ -218,7 +222,7 @@ $$-k2z = ln(k1/k1+k2)$$
 $$z = -1/k2ln(k1/k1+k2) $$
 replace z with x - xshift...
 $$x = (-1/k2) ln(k1/(k1+k2)) + xshift$$
-PLug in the values: 
+Plug in the values: 
 $$x = (-1/0.06932)ln(0.01381/(0.01381+0.06932)) + 5.31499 = 31.21$$
 
 e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 31.21 on the original dataset). Interpret your results and does it contain the value found in part d
@@ -271,7 +275,6 @@ With 95% confidence, the peak age for max deadlift is between 29.66 and 32.43. W
 
 
 
-
 4 - Compare both models you created. Which one is more useful in predicting dead lift using age? Report the residual sum-of-squares for both models
 
 Gamma residual sum-of-squares: 842596
@@ -314,4 +317,3 @@ The polynomial model is better as it has a lower AIC
 
 dl_finish AIC: 38328
 nls_fit2 AIC: 40775.1
-

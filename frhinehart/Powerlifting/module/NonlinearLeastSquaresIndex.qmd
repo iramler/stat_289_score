@@ -23,20 +23,28 @@ description: "Exploring the impact of age on powerlifting"
 editor: 
   canonical: true
 categories:
-  - High order modeling 
-  - Indicator variables 
+  - Nonlinear Least Squares Modeling
+  - Confidence Intervals 
 ---
 
 ## Module
 
 Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
 
-### Introduction
+
+### Background to Powerlifting Video
+
+If you are unfamiliar with powerlifting, please watch this video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XAcjcFGY_Uc?si=-08ToeR9dV7JIjSE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Introduction to Module
 
 Powerlifting is a strength sport where participants compete to lift the heaviest weight. Competitors compete within weight classes, so their opponents are around the same weight as them. The sport consists of three different lifts: Squat, Bench, and Deadlift. Squat lifts require lifters to squat so that their hips are below their knees and lift the weight to a specific depth. Bench lifts are done while the lifter is lying on a bench. Bench lifters start with the bar weight being held in the air and must lower the bar down to their body. Once the bar touches their body, lifters wait for the command to lift the bar back into the air with their elbows fully extended. Deadlifting, like squats, start with the lifter standing up. The lifter must lift the bar off the ground and get into the position where their shoulders are back and knees are locked. Competitors are overseen by three judges who determine whether the lift follows the rules of the events. If a judge believes the lifter followed the rules, they will turn on a white light. In order for a lift to count, competitors must receive at least two white lights.
 
+The Powerlifting dataset features data from individual lifters during their most recent competitions. Variables include characteristics such as sex, age, birth year and age classes, and division. Other variables include 3 types of weightlifting: squats, benches, and deadlifts.The relevant variables for this specific module are Sex, Age, and Best3DeadliftKg. 
 
-
+For the sake of this module, the data set was tidied so that it only included the event "SBD" (Squat, Bench, Deadlift) and two types of equipment use: Raw, meaning no equipment except knee sleeves, and Single-ply, which is a single layer suit. The data was also tided to exclude any lifter that did not finish the competition or had missing information for key variables like Age and Sex.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 Learning Objectives:
@@ -92,5 +100,5 @@ Download data: [dumbbell_barbell_weight_ratio.csv](https://data.scorenetwork.org
 [Class handout - with solutions]
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-They should gain an understanding of non-linear least squared regression models when dealing with indicator variables. Students should be able to determine the best model in predicting using exploratory plots and evaluation values.
+Students should gain an understanding of non-linear least squared regression models when dealing with indicator variables. Students should be able to determine the best model in predicting using exploratory plots and evaluation values.
 :::

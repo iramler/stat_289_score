@@ -1,9 +1,12 @@
 ---
 title: "NonlinearLeastSquares_Solutions"
+Authors: Phoebe Jones, Cooper Olney, Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
 format: 
   html:
     embed-resources: true
-format: html
 ---
 ```{r}
 library(tidyverse)
@@ -69,12 +72,7 @@ c) Plot a scatterplot of Actual vs Predicted using a smoother for Best3DeadliftK
 d) For this particular equation the maximum age for peak deadlift is 33.92. If you have taken calculus, derive $$(x-x0)e^{(-b(x-x0))}$$ to model this using the values given in part a (plug in values and solve equation)
 
 
-e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 33.55 on the original dataset) using the code provided below. Interpret your results and does it contain the value found in part d
-
-```{r}
-values <- coef(nls_fit)
-x_max <- values["x0"] + 1/values["b"]
-```
+e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 33.55 on the original dataset). Interpret your results and does it contain the value found in part d
 
 
  
@@ -105,11 +103,6 @@ d) For this particular equation the maximum age for peak deadlift is 26.05. If y
 
 
 e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 31.21 on the original dataset). Interpret your results and does it contain the value found in part d
-
-```{r}
-values2 <- coef(nls_fit2)
-x_max2 <- (-1 / values2["k2"]) * log(values2["k1"] / (values2["k1"] + values2["k2"])) + values2["x_shift"]
-```
 
 
  
