@@ -50,7 +50,11 @@ write_csv(tidy, "tidy_powerlift.csv")
 tidy_male<-
   tidy %>%
   filter(Sex == "M") %>%
-  select(-Sex) %>%
+  select(-Sex,
+         -Squat1Kg, -Squat2Kg, -Squat3Kg, -Squat4Kg,
+         -Bench1Kg, -Bench2Kg, -Bench3Kg, -Bench4Kg,
+         -Deadlift1Kg, -Deadlift2Kg, -Deadlift3Kg, -Deadlift4Kg,
+         ) %>%
   ungroup() %>%
   mutate(id = row_number()) %>%
   relocate(id, .before = Name)
@@ -63,7 +67,11 @@ tidy_male<-
 tidy_female<-
   tidy %>%
   filter(Sex == "F") %>%
-  select(-Sex) %>%
+  select(-Sex,
+         -Squat1Kg, -Squat2Kg, -Squat3Kg, -Squat4Kg,
+         -Bench1Kg, -Bench2Kg, -Bench3Kg, -Bench4Kg,
+         -Deadlift1Kg, -Deadlift2Kg, -Deadlift3Kg, -Deadlift4Kg,
+         ) %>%
   ungroup() %>%
   mutate(id = row_number()) %>%
   relocate(id, .before = Name)
