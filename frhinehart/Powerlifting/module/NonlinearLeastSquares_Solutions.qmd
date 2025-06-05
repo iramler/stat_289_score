@@ -5,7 +5,6 @@ format:
     embed-resources: true
 format: html
 ---
-
 ```{r}
 library(tidyverse)
 library(ggplot2)
@@ -25,7 +24,6 @@ powerlift <- read_csv(here::here("frhinehart/Powerlifting/module/powerlift_sampl
   drop_na(Best3DeadliftKg)
 ```
 
-
 1) Graph a scatter plot showing the relationship comparing Age and Best3DeadliftKg. Add a smoother. What do you notice about the curve?
 
 ```{r}
@@ -37,7 +35,6 @@ ggplot(data = powerlift, aes(x = Age, y = Best3DeadliftKg)) +
 It is nonlinear.
 
 2) 
-
 a) Fit a nonlinear least squares model using the shifted gamma function provided below:
 ```{r}
 # Defining a shifted gamma function
@@ -141,9 +138,9 @@ double_exp_shift <- function(x, A, k1, k2, x_shift) {
 ```
 
 ```{r}
-nls_fit2 <- nls(Best3DeadliftKg ~ double_exp_shift(Age, A, k1, k2, x_start),
+nls_fit2 <- nls(Best3DeadliftKg ~ double_exp_shift(Age, A, k1, k2, x_shift),
   data = powerlift,
-  start = list(A = 300, k1 = 0.02, k2 = 0.1, x_start = 27))
+  start = list(A = 300, k1 = 0.02, k2 = 0.1, x_shift = 27))
 nls_fit2
 ```
 
@@ -170,32 +167,31 @@ ggplot(powerlift, aes(x = Age)) +
   theme_minimal()
 ```
 
+d) For this particular equation the maximum age for peak deadlift is 26.05. If you have taken calculus, derive $$Ae^{(-k1(x-xshift)} * (1-e^{k2(x-xshift)})$$ to model this using the values given in part a
 
-d) For this particular equation the maximum age for peak deadlift is 26.05. If you have taken calculus, derive $$Ae^{(-k1(x-xstart)} * (1-e^{k2(x-xstart)})$$ to model this using the values given in part a
-
-we will use z - x-xstart to simplify solving
+we will use z - x-xshift to simplify solving
 
 $$e^{-k1z} = e^{-(k1 + k2)z}$$
 $$-k1e^{-k1z} - (k1 + k2) e^{-k2z}= 0$$
 $$e^{-k2z} = k1/k1+k2$$
 $$-k2z = ln(k1/k1+k2)$$
 $$z = -1/k2ln(k1/k1+k2) $$
-replace z with x - xstart...
-$$x = (-1/k2) ln(k1/(k1+k2) + xstart$$
+replace z with x - xshift...
+$$x = (-1/k2) ln(k1/(k1+k2)) + xshift$$
 PLug in the values: 
-$$x = (-1/0.11501654) ln(.01109791/(.01109791+0.11501654) + 8.12145801$$
-
-e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 26.05 on the original dataset). Interpret your results and does it contain the value found in part d.
+$$x = (-1/0.11501654) ln(.01109791/(.01109791+0.11501654)) + 8.12145801 = 29.25$$
+e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 29.25 on the original dataset). Interpret your results and does it contain the value found in part d.
 
 ```{r}
 values2 <- coef(nls_fit2)
-x_max2 <- (-1 / values2["k2"]) * log(values2["k1"] / (values2["k1"] + values2["k2"]))
+x_max2 <- (-1 / values2["k2"]) * log(values2["k1"] / (values2["k1"] + values2["k2"])) + values2["x_shift"]
 ```
 
 ```{r}
 # Step 0. Set up objects 
 B <- 1000 # number of bootstrap samples
 
+set.seed(1)
 agePeak_boots2 <- rep(NA, B) # a blank vector to store the bootstrap statistics
 
 # set up loop
@@ -211,7 +207,7 @@ for(i in 1:B){
   data = resampled_data,
   start = list(A = 300, k1 = 0.02, k2 = 0.1, x_shift = 27))
   values2 <- coef(nls_fit_boot2)
-  x_max_boot2 <-  (-1 / values2["k2"]) * log(values2["k1"] / (values2["k1"] + values2["k2"]))
+  x_max_boot2 <-  (-1 / values2["k2"]) * log(values2["k1"] / (values2["k1"] + values2["k2"])) + values2["x_shift"]
     
   #3. Store results
   agePeak_boots2[i] <- x_max_boot2
@@ -229,7 +225,7 @@ quantile(agePeak_boots2, probs = c(alpha/2, 1-alpha/2)) |>
   round(2)
 ```
 
-With 95% confidence, the peak age for max deadlift is between 20.14 and 22.49. Which contains the max value found in part d. 
+With 95% confidence, the peak age for max deadlift is between 20.14 and 22.49. Which does not contain the max value found in part d. 
 
 4) Compare both models you created. Which one is more useful in predicting dead lift using age? Report the residual sum-of-squares for both models
 
@@ -262,6 +258,4 @@ The polynomial model is better as it has a lower AIC
 
 dl_finish AIC: 38328
 nls_fit2 AIC: 40775.1
-
-
 
