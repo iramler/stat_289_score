@@ -1,0 +1,93 @@
+---
+title: "NonlinearLeastSquares_Solutions"
+format: 
+  html:
+    embed-resources: true
+format: html
+---
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(readr)
+library(broom)
+library(readr)
+powerlift <- read_csv(here::here("frhinehart/Powerlifting/module/powerlift_sample_data_updated.csv")) |>
+  filter(Event == "SBD") |>
+  filter(Equipment %in% c("Raw", "Single-ply")) |>
+  filter(Place != "DQ") |>
+  filter(Place != "NS") |>
+  drop_na(Place) |>
+  filter(Place != "G") |>
+  filter(Place != "DD") |>
+  drop_na(Age) |>
+  drop_na(AgeClass) |>
+  drop_na(Best3DeadliftKg)
+```
+
+1) Graph a scatter plot showing the relationship comparing Age and Best3DeadliftKg. Add a smoother. What do you notice about the curve?
+
+2) 
+a) Fit a nonlinear least squares model using the shifted gamma function provided below:
+```{r}
+# Defining a shifted gamma function
+shifted_gamma <- function(x, a, b, x0) {
+  x_start <- pmax(x - x0, 0)
+  a * x_start * exp(-b * x_start)}
+```
+
+This is the model you should get:
+$$y = (19.67175)(age - 4.94486)e^{((-.03451)(age - 4.94486))}$$
+The model starts using age to model how strength progresses, with the deadlift increasing as age increases. The  rate of increase slows due to the exponential decay factor. As people age, the exponential decay term reduces the growth of the deadlift. The older someone gets, the less their deadlift will increase. This can be modeled when graphed...
+
+b) Add predicted values to your dataset
+
+c) Plot a scatterplot of Actual vs Predicted using a smoother for Best3DeadliftKg and with a prediction line. 
+
+d) For this particular equation the maximum age for peak deadlift is 33.92. If you have taken calculus, derive $$(x-x0)e^{(-b(x-x0))}$$ to model this using the values given in part a
+
+e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 33.92 on the original dataset). Interpret your results and does it contain the value found in part d. 
+
+```{r}
+values <- coef(nls_fit)
+x_max <- values["x0"] + 1/values["b"]
+```
+
+3) 
+a) Fit a nonlinear least squares model using the reparameterized double exponential with x_shift provided below
+```{r}
+double_exp_shift <- function(x, A, k1, k2, x_shift) {
+  x_start <- pmax(x - x_shift, 0)
+  A * exp(-k1 * x_start) * (1 - exp(-k2 * x_start))}
+```
+
+This is the model you should get:
+$$y = (285.116)e^{((-.0111)(xstart))} * 1- e^{-.1150 * xshift)}$$
+
+The second term increases significantly, reflecting a growth in deadlift strength over time. This suggests that the individual’s best 3 deadlift increases as they age, reaching their peak in their 20s or 30s. The first starts to lower the deadlift value, reflecting the gradual reduction in strength due to aging where the second term reaches it's maximum values and stabilizes. This can be modeled when graphed...
+
+b) Add predicted values to your dataset
+
+c) Plot a scatterplot of Actual vs Predicted using a smoother for Best3DeadliftKg and with a line of best fit.
+
+d) For this particular equation the maximum age for peak deadlift is 26.05. If you have taken calculus, derive $$Ae^{(-k1(x-shift)} * (1-e^{k2(x-xshift)})$$ to model this using the values given in part a
+
+e) Use boot strap to calculate a 95% confidence interval for age where the peak occurs (x = 26.05 on the original dataset). Interpret your results and does it contain the value found in part d.
+
+```{r}
+values2 <- coef(nls_fit2)
+x_max2 <- (-1 / values2["k2"]) * log(values2["k1"] / (values2["k1"] + values2["k2"])) + values2["x_shift"]
+```
+
+4) Compare both models you created. Which one is more useful in predicting dead lift using age? Report the residual sum-of-squares for both models
+
+5) If you completed the other powerlift module, use the indicator variable code provided below to recreate a 5th order polynomial regression model and find the AIC
+```{r}
+powerlift_new$SexIND = ifelse(powerlift_new$Sex == "M", 1, 0)
+``` 
+
+a) Find the AIC for the model you answered in question 4
+
+b) Compare the polynomial model' AIC to your answer in question 4's AIC. Which one is better in predicting dead lift using age? Report each of the model's AIC. 
+
+Extra Practice:
+

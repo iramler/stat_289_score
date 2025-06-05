@@ -1,0 +1,96 @@
+---
+title: "Modeling the Impact of Age on Powerlifting "
+author:
+  - name: Sarah Sheldon
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Phoebe Jones
+    affiliation:
+      - ref: slu
+  - name: Cooper Olney
+    affiliation:
+      - ref: slu
+  - name: Faith Rhinehart
+    affiliation:
+      - ref: slu
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - ref: slu
+date: "June 3, 2025"
+description: "Exploring the impact of age on powerlifting"
+editor: 
+  canonical: true
+categories:
+  - High order modeling 
+  - Indicator variables 
+---
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction
+
+Powerlifting is a strength sport where participants compete to lift the heaviest weight. Competitors compete within weight classes, so their opponents are around the same weight as them. The sport consists of three different lifts: Squat, Bench, and Deadlift. Squat lifts require lifters to squat so that their hips are below their knees and lift the weight to a specific depth. Bench lifts are done while the lifter is lying on a bench. Bench lifters start with the bar weight being held in the air and must lower the bar down to their body. Once the bar touches their body, lifters wait for the command to lift the bar back into the air with their elbows fully extended. Deadlifting, like squats, start with the lifter standing up. The lifter must lift the bar off the ground and get into the position where their shoulders are back and knees are locked. Competitors are overseen by three judges who determine whether the lift follows the rules of the events. If a judge believes the lifter followed the rules, they will turn on a white light. In order for a lift to count, competitors must receive at least two white lights. 
+
+
+
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+Learning Objectives:
+
+1. Students will learn how to write a nonlinear least squares regression model 
+
+2. Students will learn how to find and interpret a confidence interval for the models
+
+3. Students will learn to how to compare the models' usefulness in predicting a desired question using residual sum of squares
+
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+For this activity, students will need to use R Studio. 
+
+Students are expected to understand the concept of non-linear least squares regression models with confidence intervals. There's also an expectation that they are able to make basic graphs in R using ggplot.
+
+This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
+:::
+
+
+
+### Data
+
+The powerlifting data contains records of competitors from the open powerlifting data set. 
+
+Download data: [dumbbell_barbell_weight_ratio.csv](https://data.scorenetwork.org/data/dumbbell_barbell_weight_ratio.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable | Description                                             |
+|----------|---------------------------------------------------------|
+|Name   | Name of the competitor |
+|Sex | Sex of the competitor |
+|Event | |
+|Equipment| Use of equipment during the competition|
+|Age | |
+|AgeClass | |
+|BirthYearClass | |
+|Division | |
+|BodyweightKg | |
+|Best3DeadliftKg | |
+
+</details>
+
+
+### Materials
+
+[Class handout]
+
+[Class handout - with solutions]
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+They should gain an understanding of non-linear least squared regression models when dealing with indicator variables. Students should be able to determine the best model in predicting using exploratory plots and evaluation values.
+:::
