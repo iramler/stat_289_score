@@ -7,26 +7,44 @@ format: html
 library(tidyverse)
 library(readr)
 library(broom)
-ironman <- read_csv("phoebechar/ironman/ironman_lake_placid_female_2022.csv")
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+ironman <- read_csv("phoebechar/ironman/2024_Ironman_Female.csv")
+ironman <- ironman |> filter(Swim_Time != "NA") |> filter (Overall_Time != "NA")
+ironman <- ironman |> mutate(Swim_Time = as.duration(Swim_Time)) |> mutate(Overall_Time = as.duration(Overall_Time)) |> mutate (Run_Time = as.duration(Run_Time)) |> mutate(Bike_Time = as.duration(Bike_Time)) 
 ```
 
 ```{r}
-ironman_noDom <- ironman |> arrange(desc(Swim.Time)) |> slice(-1)
-```
-
-```{r}
-ggplot(ironman_noDom, aes(x = Swim.Time, y = Overall.Time, color = Division)) +
+ggplot(ironman, aes(x = Swim_Time, y = Overall_Time, color = Division)) +
   geom_point()
 ```
 
 ```{r}
-swim_mod_out <- lm(Overall.Time ~ Swim.Time, ironman)
-
-ironman_residuals = left_join(select(ironman, Name, Overall.Time, Swim.Time) , augment(swim_mod_out))
-ironman_residuals |> filter(.cooksd > .5)
-
-swim_mod <- lm(Overall.Time ~ Swim.Time, ironman_noDom)
+swim_mod <- lm(Overall_Time ~ Swim_Time, ironman)
 summary(swim_mod)
+
+ironman_resid = left_join(select(ironman, Name, Overall_Time, Swim_Time), augment(swim_mod))
+
+ironman_resid |> filter(abs(.std.resid) > 2)
+
+ironman_resid |> arrange(desc(.cooksd))
+
+iron_noDeb <- ironman |> filter (Name != "Deborah Eckhouse")
+iron_deb <- ironman |> filter (Name == "Deborah Eckhouse")
+
+ironman_small <- iron_noDeb |> sample_n(49)
+
+ironman_small <- full_join(ironman_small, iron_deb)
+
+swim_mod_small <- lm(Overall_Time ~ Swim_Time, ironman_small)
+summary(swim_mod_small)
+
+small_ironman_resid = left_join(select(ironman_small, Name, Overall_Time, Swim_Time), augment(swim_mod_small))
+
+small_ironman_resid |> filter(abs(.std.resid) > 2)
+
+small_ironman_resid |> arrange(desc(.cooksd))
 ```
 
 
