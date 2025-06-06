@@ -1,0 +1,16 @@
+---
+title: "ICF"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+
+ICF_final <- read_tsv("phoebechar/2024_ICF_Results .txt") |> separate("Rank/ Bib/ Name/ Country/ Result", into = c("Rank", "Bib", "Name", "Country", "Result"), sep = "/")
+
+ICF_final <- ICF_final |> mutate(Result = parse_double(Result)) 
+ICF_final <- ICF_final |> mutate(Time = Result + 42.79)
+ICF_final
+```
+

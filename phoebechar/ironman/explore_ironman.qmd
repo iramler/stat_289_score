@@ -1,0 +1,32 @@
+---
+title: "explore_ironman"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+library(broom)
+ironman <- read_csv("phoebechar/ironman/ironman_lake_placid_female_2022.csv")
+```
+
+```{r}
+ironman_noDom <- ironman |> arrange(desc(Swim.Time)) |> slice(-1)
+```
+
+```{r}
+ggplot(ironman_noDom, aes(x = Swim.Time, y = Overall.Time, color = Division)) +
+  geom_point()
+```
+
+```{r}
+swim_mod_out <- lm(Overall.Time ~ Swim.Time, ironman)
+
+ironman_residuals = left_join(select(ironman, Name, Overall.Time, Swim.Time) , augment(swim_mod_out))
+ironman_residuals |> filter(.cooksd > .5)
+
+swim_mod <- lm(Overall.Time ~ Swim.Time, ironman_noDom)
+summary(swim_mod)
+```
+
+
