@@ -129,7 +129,7 @@ openpl_female<-
   group_modify(~ if (nrow(.x) >= 500) sample_n(.x, 500) else .x) %>%
   ungroup()  |>
   # keeping primary varaibles of interest
-  select(Name,Age, AgeClass, BodyweightKg, 
+  select(Name, Age, AgeClass, BodyweightKg, 
          Squat, Bench, Deadlift, 
          TotalKg, Place, Dots, Wilks, Glossbrenner, Goodlift,
          Date)
