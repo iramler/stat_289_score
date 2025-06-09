@@ -16,11 +16,16 @@ library(stringr)
 
 ```
 
+# Step 1
+Download zip file from openpowerlift.org, go to data tab, go to bulks csv downloads, download openpowerlifting-latest.zip.
 ```{r}
-
-openpowerlifting <- read_csv(here::here("colney/powerlifting_module/exploration/openpowerlifting-2025-05-31.csv"))
+openpowerlifting <- read_csv(here::here("colney/powerlifting_module/exploration/openpowerlifting-2025-05-31.csv")) # change file path
 
 ```
+
+
+
+
 
 ```{r}
 tidy <-openpowerlifting %>%
@@ -36,9 +41,6 @@ tidy <-openpowerlifting %>%
     )%>%
   drop_na(Age, Best3SquatKg, Best3BenchKg, Best3DeadliftKg) 
   
-
-
-# DQ, NS, G, DD
 ```
 
 ```{r}
@@ -46,7 +48,6 @@ write_csv(tidy, "tidy_powerlift.csv")
 ```
 
 ```{r}
-# Male Podium Lifters
 tidy_male<-
   tidy %>%
   filter(Sex == "M") %>%
@@ -63,7 +64,6 @@ tidy_male<-
 ```
 
 ```{r}
-# Female Podium Lifters
 tidy_female<-
   tidy %>%
   filter(Sex == "F") %>%
@@ -78,7 +78,6 @@ tidy_female<-
 
 
 # write_csv(tidy_female, "tidy_powerlift_female.csv")
-
 ```
 
 ```{r}
@@ -103,7 +102,6 @@ write_csv(sample_tidy_female, "sample_powerlift_female.csv")
 male <- read_csv(here::here("colney/powerlifting_module/exploration/sample_powerlift_male.csv"))
 
 female <- read_csv(here::here("colney/powerlifting_module/exploration/sample_powerlift_female.csv"))
-
 ```
 
 ```{r}

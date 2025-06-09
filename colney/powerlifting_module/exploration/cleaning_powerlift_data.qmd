@@ -1,0 +1,144 @@
+---
+title: "cleaning_powerlift_data"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(readr)
+library(broom)
+library(readr)
+```
+
+# Step 1
+Download zip file from openpowerlift.org, go to data tab, go to bulk csv downloads, download openpowerlifting-latest.zip.
+```{r}
+openpowerlifting <- read_csv(here::here("colney/powerlifting_module/exploration/openpowerlifting-2025-05-31.csv")) # change file path
+```
+
+# Step 2
+Some cleaning
+```{r}
+tidy <-openpowerlifting %>%
+  group_by(Name) %>%
+  arrange(desc(Date), 
+          .by_group = TRUE) %>% # group_by(name) %>%
+  slice(1) %>%                              # slice_max(date, n=1)
+  filter(
+    (Tested == "Yes") 
+    & (Event == "SBD") 
+    & Equipment %in% c("Single-ply","Raw") 
+    & !(Place %in% c("DQ", "NS", "G", "DD"))
+    )%>%
+  drop_na(Age, Best3SquatKg, Best3BenchKg, Best3DeadliftKg) 
+  
+```
+
+```{r}
+# write_csv(tidy, "tidy_powerlift.csv")
+```
+
+#Step 3
+Split into male and female datasets
+```{r}
+tidy_male<-
+  tidy %>%
+  filter(Sex == "M") %>%
+  select(-Sex,
+         -Squat1Kg, -Squat2Kg, -Squat3Kg, -Squat4Kg,
+         -Bench1Kg, -Bench2Kg, -Bench3Kg, -Bench4Kg,
+         -Deadlift1Kg, -Deadlift2Kg, -Deadlift3Kg, -Deadlift4Kg,
+         ) %>%
+  ungroup() %>%
+  mutate(id = row_number()) %>%
+  relocate(id, .before = Name)
+
+```
+
+```{r}
+# write_csv(podium_male, "tidy_powerlift_male.csv")
+```
+
+```{r}
+tidy_female<-
+  tidy %>%
+  filter(Sex == "F") %>%
+  select(-Sex,
+         -Squat1Kg, -Squat2Kg, -Squat3Kg, -Squat4Kg,
+         -Bench1Kg, -Bench2Kg, -Bench3Kg, -Bench4Kg,
+         -Deadlift1Kg, -Deadlift2Kg, -Deadlift3Kg, -Deadlift4Kg,
+         ) %>%
+  ungroup() %>%
+  mutate(id = row_number()) %>%
+  relocate(id, .before = Name)
+
+
+```
+
+```{r}
+# write_csv(tidy_female, "tidy_powerlift_female.csv")
+```
+
+# Step 4
+Take samples of each dataset
+```{r}
+sample_tidy_male <-
+  tidy_male %>%
+  slice_sample(n = 8000)
+```
+
+```{r}
+sample_tidy_female <-
+  tidy_female %>%
+  slice_sample(n = 8000)
+```
+
+```{r}
+write_csv(sample_tidy_male, "sample_powerlift_male.csv")
+
+```
+
+```{r}
+write_csv(sample_tidy_female, "sample_powerlift_female.csv")
+```
+
+
+# Step 5 
+Orginally in the NLS worksheet
+```{r}
+new_male <- read_csv(here::here("colney/powerlifting_module/exploration/sample_powerlift_male.csv")) |>
+  filter(Event == "SBD") |>
+  filter(Equipment %in% c("Raw", "Single-ply")) |>
+  filter(Place != "DQ") |>
+  filter(Place != "NS") |>
+  drop_na(Place) |>
+  filter(Place != "G") |>
+  filter(Place != "DD") |>
+  drop_na(Age) |>
+  drop_na(AgeClass) |>
+  drop_na(Best3DeadliftKg)
+
+new_female <- read_csv(here::here("colney/powerlifting_module/exploration/sample_powerlift_female.csv")) |>
+  filter(Event == "SBD") |>
+  filter(Equipment %in% c("Raw", "Single-ply")) |>
+  filter(Place != "DQ") |>
+  filter(Place != "NS") |>
+  drop_na(Place) |>
+  filter(Place != "G") |>
+  filter(Place != "DD") |>
+  drop_na(Age) |>
+  drop_na(AgeClass) |>
+  drop_na(Best3DeadliftKg)
+```
+
+# Use these csv files for the module
+I think these will give the fully cleaned and updated datasets
+```{r}
+write_csv(new_male, "new_powerlift_male.csv")
+```
+
+```{r}
+write_csv(new_female, "new_powerlift_female.csv")
+```
+
