@@ -24,7 +24,7 @@ editor:
   canonical: true
 categories:
   - Nonlinear Least Squares Modeling
-  - Confidence Intervals 
+  - Confidence Intervals (Bootstrap)
 ---
 
 ## Module
