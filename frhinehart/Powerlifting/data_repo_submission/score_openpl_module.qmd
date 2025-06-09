@@ -99,6 +99,9 @@ write_csv(sample_tidy_male, "sample_powerlift_male.csv")
 write_csv(sample_tidy_female, "sample_powerlift_female.csv")
 ```
 
+
+
+
 ```{r}
 male <- read_csv(here::here("colney/powerlifting_module/exploration/sample_powerlift_male.csv"))
 
@@ -121,6 +124,9 @@ female %>%
 ```{r}
 current <- read_csv(here::here("colney/powerlifting_module/exploration/powerlift_sample_data_updated.csv"))
 ```
+
+
+
 
 ```{r}
 library(quantreg)
