@@ -7,28 +7,57 @@ format: html
 library(tidyverse)
 library(readr)
 library(lubridate)
+library(ggplot2)
+library(broom)
 
 ICF_final <- read_tsv("phoebechar/2024_ICF_Results .txt") |> separate("Rank/ Bib/ Name/ Country/ Result", into = c("Rank", "Bib", "Name", "Country", "Result"), sep = "/")
 
 ICF_final <- ICF_final |> mutate(Result = parse_double(Result)) 
-ICF_final <- ICF_final |> mutate(Time = as.duration(Result + 42.79))
-ICF_final
+ICF_final <- ICF_final |> mutate(FinalTime = as.duration(Result + 42.79))
 ```
 
 ```{r}
 ICF_heats1 <- read_tsv("phoebechar/2024_ICF_Results_Heats1.txt") |> separate("Rank/ Bib/ Name/ Country/ Result", into = c("Rank", "Bib", "Name", "Country", "Result"), sep = "/")
 
 ICF_heats1 <- ICF_heats1 |> mutate(Result = parse_double(Result)) 
-ICF_heats1 <- ICF_heats1 |> mutate(Time = as.duration(Result + 43.25))
-ICF_heats1
+ICF_heats1 <- ICF_heats1 |> mutate(HeatTime = as.duration(Result + 43.25))
 ```
 
 ```{r}
 ICF_heats2 <- read_tsv("phoebechar/2024_ICF_Heats2.txt") |> separate("Rank/ Bib/ Name/ Country/ Result", into = c("Rank", "Bib", "Name", "Country", "Result"), sep = "/")
 
 ICF_heats2 <- ICF_heats2 |> mutate(Result = parse_double(Result)) 
-ICF_heats2 <- ICF_heats2 |> mutate(Time = as.duration(Result + 42.96))
-ICF_heats2
+ICF_heats2 <- ICF_heats2 |> mutate(HeatTime = as.duration(Result + 42.96))
+```
+
+```{r}
+ICF_heats <- full_join(ICF_heats2, ICF_heats1)
+ICF_heats <- ICF_heats |> select(Bib, Name, Country, HeatTime)
+ICF_results <- left_join(ICF_final, ICF_heats)
+
+ICF_results <- ICF_results |> group_by(Name) |> arrange(HeatTime) |> slice(1)
+```
+
+```{r}
+ggplot(ICF_results, aes(x = HeatTime, y = FinalTime)) +
+  geom_point()
+
+
+heat_mod <- lm(FinalTime ~ HeatTime, ICF_results)
+summary(heat_mod)
+
+heatResid = left_join(select(ICF_results, Name, FinalTime, HeatTime), augment(heat_mod))
+
+heatResid |> arrange(desc(.cooksd))
+
+ICF_results_noKC <- ICF_results |> ungroup() |> arrange(desc(FinalTime)) |> slice(-1)
+
+heat_mod2 <- lm(FinalTime ~ HeatTime, ICF_results_noKC)
+summary(heat_mod)
+
+ggplot(ICF_results_noKC, aes(x = HeatTime, y = FinalTime)) +
+  geom_point()
+
 ```
 
 

@@ -1,0 +1,32 @@
+---
+title: "raisin_river_read"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+library(jsonlite)
+
+url <- "https://paddlestats.net/json/r/RAISIN/2025/2015"
+rr_results <- read_json(url, simplifyVector = TRUE)
+rr_results <- as.data.frame(rr_results)
+rrbig_tibble <- 
+  rr_results |> unnest_longer(results.rank) |> unnest_longer(results.paddlers)
+```
+
+```{r}
+rrbig_tibble <- rrbig_tibble |> select(results.year, results.boatType, results.bib, results.classId, results.value, results.rank, results.courseId, results.notes, results.paddlers, results.status)
+
+rrbig_tibble
+
+results.year = list(2015, 2016, 2017, 2018, 2019, 2022, 2023, 2024, 2025)
+flow = list(300, 636, 2649, 450, 1300, 1400, 630, 790, 380)
+
+flow = as.data.frame(tibble(results.year = results.year, flow = flow))
+```
+
+```{r}
+write_csv(rrbig_tibble)
+```
+
