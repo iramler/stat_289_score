@@ -1,17 +1,17 @@
 ---
 title: "Modeling the Impact of Age on Powerlifting "
 author:
-  - name: Sarah Sheldon
+  - name: Phoebe Jones
     affiliation:
       - id: slu
         name: St. Lawrence University
-  - name: Phoebe Jones
-    affiliation:
-      - ref: slu
   - name: Cooper Olney
     affiliation:
       - ref: slu
   - name: Faith Rhinehart
+    affiliation:
+      - ref: slu
+  - name: Jessica Chapman
     affiliation:
       - ref: slu
   - name: Ivan Ramler
