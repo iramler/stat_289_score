@@ -1,0 +1,34 @@
+---
+title: "ICF"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+library(lubridate)
+
+ICF_final <- read_tsv("phoebechar/2024_ICF_Results .txt") |> separate("Rank/ Bib/ Name/ Country/ Result", into = c("Rank", "Bib", "Name", "Country", "Result"), sep = "/")
+
+ICF_final <- ICF_final |> mutate(Result = parse_double(Result)) 
+ICF_final <- ICF_final |> mutate(Time = as.duration(Result + 42.79))
+ICF_final
+```
+
+```{r}
+ICF_heats1 <- read_tsv("phoebechar/2024_ICF_Results_Heats1.txt") |> separate("Rank/ Bib/ Name/ Country/ Result", into = c("Rank", "Bib", "Name", "Country", "Result"), sep = "/")
+
+ICF_heats1 <- ICF_heats1 |> mutate(Result = parse_double(Result)) 
+ICF_heats1 <- ICF_heats1 |> mutate(Time = as.duration(Result + 43.25))
+ICF_heats1
+```
+
+```{r}
+ICF_heats2 <- read_tsv("phoebechar/2024_ICF_Heats2.txt") |> separate("Rank/ Bib/ Name/ Country/ Result", into = c("Rank", "Bib", "Name", "Country", "Result"), sep = "/")
+
+ICF_heats2 <- ICF_heats2 |> mutate(Result = parse_double(Result)) 
+ICF_heats2 <- ICF_heats2 |> mutate(Time = as.duration(Result + 42.96))
+ICF_heats2
+```
+
+

@@ -1,0 +1,17 @@
+Rank/ Bib/ Name/ Country/ Result
+1/ 44/ Marie NEMCOVA/ Czech Republic/ 0
+2/ 39/ Kristina NOVOSADOVA/ Czech Republic/ +0.430
+3/ 42/ Ana STEBLAJ/ Slovenia/ +0.530
+4/ 2/ Claire BREN/ France/ +0.740
+5/ 45/ Lise VINET/ France/ +0.770
+6/ 38/ Mathilde Serena ROSA/ Italy/ +0.930
+7/ 24/ Clara GAUBERT/ France/ +1.220
+8/ 33/ Lisa LEBOUC/ France/ +1.440
+8/ 46/ Giulia FORMENTON/ Italy/ +1.440
+10/ 31/ Cecilia PANATO/ Italy/ +1.700
+11/ 41/ Klara VANKOVA/ Czech Republic/ +1.810
+12/ 43/ Hannah MUELLER/ Switzerland/ +1.960
+13/ 35/ Mona CLAVADETSCHER/ Switzerland/ +2.560
+14/ 12/ Lea NOVAK/ Slovenia/ +2.590
+15/ 30/ Constanze FEINE/ Germany/ +2.930
+16/ 36/ Kerry CHRISTIE/ Great Britain/ +7.010

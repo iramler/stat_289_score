@@ -1,0 +1,104 @@
+---
+title: "nba_wingspan_exploration"
+format: html
+editor: visual
+---
+
+
+# from crafted NBA, wingspans dataset
+```{r}
+library(tidyverse)
+library(rvest)
+
+
+url <- "https://craftednba.com/player-traits/length"
+
+h <- read_html(url)
+
+tab <- h %>% html_nodes("table")
+
+objs <- tab %>% html_table()
+
+wingspans <- objs[[1]]
+```
+
+
+# clean up data
+```{r}
+#tidy_wingspans <- 
+  wingspans %>%
+  select(-1) %>%
+  # tidy height
+  mutate(
+    height = Height
+  ) %>%
+  separate_wider_delim(
+      cols = Height, 
+      names = c("feet", "inches"), 
+      delim = "'") %>%
+  mutate(
+    feet = parse_number(feet),
+    inches = parse_number(inches),
+    height_inches = feet * 12 + inches
+  ) %>%
+  select(-feet, -inches) %>%
+  # tidy wingspan
+  mutate(wingspan = Wingspan) %>%
+  separate_wider_delim(
+    cols = Wingspan,
+    names = c("feetW", "inchesW"),
+    delim = "'") %>%
+  mutate(
+    feetW = parse_number(feetW),
+    inchesW = parse_number(inchesW),
+    wingspan_inches = feetW * 12 + inchesW
+  ) %>%
+  select(-feetW, -inchesW) %>%
+  rename(wingspan_advantage = Length,
+         name = Name) %>%
+  relocate(wingspan_advantage, .after = last_col()) %>%
+  # tidy name
+  separate_wider_delim(
+    cols = name,
+    names = c("name", "position"),
+    delim = " | ") %>%
+  arrange(name) %>%
+  # remove free agents
+  filter(str_detect(name, pattern = "[A-Z]{3}$")) %>%
+  mutate(
+    team = str_extract(name, pattern = "[A-Z]{3}$"),
+    name = str_remove(name, pattern = "[A-Z]{3}$")
+  ) %>%
+  relocate(team, .after = name)
+
+```
+
+
+```{r}
+# fixing duplicate players
+tidy_wingspans %>%
+  group_by(team, position, height, wingspan) %>%
+  filter(n() > 1) %>%
+  summarise(name)
+
+# only dupes are Alex Sarr and Bub Carrington, so remove them
+# fix name errors
+nba_wingspans_2025 <- tidy_wingspans %>%
+  filter(name != "Alexandre Sarr" & name != "Carlton Carrington") %>%
+  mutate(name = if_else(name == "AJ Johnson", "A.J Johnson", name))
+
+# remove name that shouldn't be there
+nba_wingspans_2025 <- nba_wingspans_2025 %>%
+  slice(-149)
+
+```
+
+
+
+
+
+
+
+
+
+
