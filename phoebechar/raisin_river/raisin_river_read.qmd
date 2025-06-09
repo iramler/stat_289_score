@@ -7,26 +7,45 @@ format: html
 library(tidyverse)
 library(readr)
 library(jsonlite)
+library(dplyr)
+library(ggplot2)
 
 url <- "https://paddlestats.net/json/r/RAISIN/2025/2015"
 rr_results <- read_json(url, simplifyVector = TRUE)
 rr_results <- as.data.frame(rr_results)
-rrbig_tibble <- 
-  rr_results |> unnest_longer(results.rank) |> unnest_longer(results.paddlers)
+rrbig_results <- 
+  rr_results |> unnest_longer(results.paddlers)
+rr_results <- as.data.frame(rr_results)
 ```
 
 ```{r}
-rrbig_tibble <- rrbig_tibble |> select(results.year, results.boatType, results.bib, results.classId, results.value, results.rank, results.courseId, results.notes, results.paddlers, results.status)
+rr_results <- rr_results |> select(results.year, results.boatType, results.bib, results.classId, results.value, results.courseId, results.notes, results.paddlers, results.status) 
 
-rrbig_tibble
+rr_classes <- rr_results |> group_by(results.classId) |> filter (results.value != 0) summarise(avg_time = mean(results.value)) |> arrange(avg_time)
 
-results.year = list(2015, 2016, 2017, 2018, 2019, 2022, 2023, 2024, 2025)
-flow = list(300, 636, 2649, 450, 1300, 1400, 630, 790, 380)
+ggplot(rr_classes, aes(x = results.classId, y = results.value)) +
+  geom_boxplot()
 
-flow = as.data.frame(tibble(results.year = results.year, flow = flow))
 ```
 
 ```{r}
-write_csv(rrbig_tibble)
+rr_year_avg <- rr_results |> group_by(results.year) |> filter (results.year != 2017) |> summarise(mean_time = mean(results.value))
 ```
+
+
+```{r}
+flow = read_csv("phoebechar/raisin_river/RRflow - Sheet1.csv")
+
+```
+
+```{r}
+rr_results_flow <- full_join(rr_year_avg, flow)
+
+rr_results_flow |> filter(results.year != 2017)
+
+ggplot(rr_results_flow, aes(x = mean_time, y = flow)) +
+  geom_point()
+
+```
+
 
