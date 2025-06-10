@@ -9,47 +9,97 @@ library(readr)
 library(jsonlite)
 library(dplyr)
 library(ggplot2)
+library(broom)
+library(forcats)
 
 url <- "https://paddlestats.net/json/r/RAISIN/2025/2015"
-rr_results <- read_json(url, simplifyVector = TRUE)
-rr_results <- as.data.frame(rr_results)
-rr_results <- rr_results |> unnest_longer(results.paddlers)
-rr_results <- as.data.frame(rr_results)
+rr <- read_json(url, simplifyVector = TRUE)
 
-rr_results <- rr_results |> select(results.year, results.boatType, results.bib, results.classId, results.value, results.courseId, results.notes, results.paddlers, results.status)
+rr <- rr$results |> as_tibble() |> 
+  unnest_wider(rank) |> 
+  unnest_longer(paddlers) |>
+  unnest_wider(col = c(paddlers, elemVals)) |>
+  unnest_wider(`1`, names_sep = "_")
 
-rr_results <- rr_results |> mutate( rename(year = results.year, boatType = results.boatType, bib = results.bib, classID = results.classId, time = results.value, courseID = results.courseId, notes = results.notes, paddlers = results.paddlers, status = results.status) )
+rr_results <- rr |> select(year, boatType, bib, classId, place, value, overall, byClass, byYrClass, byYrOver, courseId, notes, displayName, status)
 
+## renaming columns
+rr_results <- rename(rr_results, classID = classId, time = value, courseID = courseId)
+
+## make version with everyone (duplicates for tandem)
+rr_team_results <- rr_results
+
+rr_results <- rr_results |> select(!displayName)
+
+## remove duplicates for tandem teams
+rr_results <- rr_results |> group_by(year, bib) |> slice(1) |> ungroup()
+
+rr_results <- rr_results |> mutate(boatType = as.factor(boatType))
 ```
 
 ```{r}
+flow = read_csv("phoebechar/Exploration/raisin_river/RRflow - Sheet1.csv")
 
+rr_results_flow <- full_join(rr_results, flow)
+```
 
-rr_classes <- rr_results |> group_by(results.classId) |> filter (results.value != 0) summarise(avg_time = mean(results.value)) |> arrange(avg_time)
+```{r}
+## using flow to predict DNF (2017 as outlier)
+rr_DNF <- rr_results |> group_by(year) |> mutate(n = n()) |> filter(status == "DNF") |> mutate(n_DNF = n()) |> slice(1) |> summarise(ratio_DNF = n_DNF/n)
 
-ggplot(rr_classes, aes(x = results.classId, y = results.value)) +
+rr_DNF <- full_join(rr_DNF, flow)
+
+write_csv(rr_DNF, "phoebechar/raisin_river/module/raisin_river_DNF.csv")
+
+ggplot(rr_DNF, aes(x = flow, y = ratio_DNF)) +
+  geom_point() 
+
+dnf_mod <- lm(ratio_DNF ~ flow, rr_DNF)
+summary(dnf_mod)
+
+dnf_resid = left_join(select(rr_DNF, year, ratio_DNF, flow), augment(dnf_mod))
+
+dnf_resid |> arrange(desc(.cooksd))
+
+rr_dnf_edit <- rr_DNF |> filter(year != 2017)
+
+dnf_mod_edit <- lm(ratio_DNF ~ flow, rr_dnf_edit)
+summary(dnf_mod_edit)
+```
+
+```{r}
+## rank/time relationship
+rr_results_flow_noDNF <- rr_results_flow |> filter(time != 0)
+
+ggplot(rr_results_flow_noDNF, aes(group = flow, y = time)) +
   geom_boxplot()
 
+ggplot(rr_results_flow_noDNF, aes(x = overall, y = time)) +
+  geom_point()
+
+ggplot(rr_results_flow_noDNF, aes(x = time, y = byYrOver)) +
+  geom_point()
+```
+
+```{r}
+ggplot(rr_results_flow_noDNF, aes(x = boatType, group = boatType, y = time)) +
+  geom_boxplot()
+```
+
+```{r}
+###########################################
+rr_class <- rr_results |> filter(is.na(status)) |> group_by(classID, year) |> mutate(avg_time = mean(time)) |> filter(classID == "oc2rec" | classID == "k1short" | classID == "oc2recmix" | classID == "oc2recjrsr" | classID == "k1long") |> slice(1)
+
+rr_classes_flow <- full_join(rr_class, flow) |> ungroup()
+
+ggplot(rr_classes_flow, aes(x = flow, y = avg_time)) +
+  geom_point() +
+  facet_wrap(~classID)
 ```
 
 ```{r}
 rr_year_avg <- rr_results |> group_by(results.year) |> filter (results.year != 2017) |> summarise(mean_time = mean(results.value))
 ```
 
-
-```{r}
-flow = read_csv("phoebechar/raisin_river/RRflow - Sheet1.csv")
-
-```
-
-```{r}
-rr_results_flow <- full_join(rr_year_avg, flow)
-
-rr_results_flow |> filter(results.year != 2017)
-
-ggplot(rr_results_flow, aes(x = mean_time, y = flow)) +
-  geom_point()
-
-```
 
 

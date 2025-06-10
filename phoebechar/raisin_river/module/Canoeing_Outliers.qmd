@@ -1,0 +1,69 @@
+---
+title: "Canoeing_Outliers"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(broom)
+
+RR_dnf_data <- read_csv("phoebechar/raisin_river/module/raisin_river_DNF.csv")
+```
+
+## Graph a scatterplot that shows flow rate as a predictor for rate of DNF
+
+```{r}
+ggplot(RR_dnf_data, aes(x = flow, y = ratio_DNF)) +
+  geom_point() 
+```
+
+### What do you notice?
+
+There is one point that is inconsistent with the others.
+
+## Fit a model with flow rate as a predictor for number of DNFs
+
+```{r}
+dnf_mod <- lm(ratio_DNF ~ flow, RR_dnf_data)
+summary(dnf_mod)
+```
+
+## Comment on the usefulness of the model
+
+It is not useful
+
+## Use the augment function to add the residuals into the dataset
+
+```{r}
+dnf_resid = left_join(select(rr_DNF, year, ratio_DNF, flow), augment(dnf_mod))
+```
+
+## Do any observations have unusual leverage? standardized residual? Influence?
+
+```{r}
+dnf_resid |> filter(.hat > 2*(2/9)) ## 2017 has unusual leverage
+dnf_resid |> filter( abs(.std.resid) >= 2) ## none with usual standardized residual
+dnf_resid |> filter(.cooksd > 2) ## 2017 is highly influential
+```
+
+## Remove the influential observation from the data set.
+
+```{r}
+RR_dnf_data <- RR_dnf_data |> filter(year != 2017)
+```
+
+## regraph the scatterplot without the influential observation
+
+```{r}
+ggplot(RR_dnf_data, aes(x = flow, y = ratio_DNF)) +
+  geom_point() +
+  geom_smooth(method = lm, se = FALSE)
+```
+
+## refit the model
+
+```{r}
+dnf_mod <- lm(ratio_DNF ~ flow, RR_dnf_data)
+summary(dnf_mod)
+```
