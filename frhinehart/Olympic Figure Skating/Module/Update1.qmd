@@ -100,3 +100,42 @@ ggplot(data = Skating, aes(x = Year, y = TP)) +
 ```
 
 - we can notice that there seems to be an upward trend in athletes scoring higher throughout the years
+
+##Interesting Graphs part 2:
+```{r}
+ggplot(data = allwomen_data, aes(x = as.numeric(SP.1), y = as.numeric(FS.1), color = as.factor(Year))) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Women's SP versus FS Points")
+```
+
+```{r}
+ggplot(data = Skating, aes(x = SP, y = FS, color = as.factor(Year))) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(title = "Men's SP versus FS Points")
+```
+
+- Looking at the Men's graph we see the there is a spike in points between 2014 and 2018 than levels back down in 2022
+- For the women, the spike is not as drastic but still there is an increase
+- Why this sudden spike in the men?
+
+##Athleticism over Artistry
+- Athletes began to notice that the "risk is worth the reward" (even attempting a jump can lead to more points than artistry)
+- Advancements in technical difficulty that led to a higher scoring 
+  - Nathan Chen landed 5 Quad jumps in his FS which brought up overall scores (outlier on graph) even though his SP score was low due      to him faltering on every jump
+- Evolution of skating styles to include more complex choreo and innovative elements
+- Refined the criteria -> Judges became more adept at distinguishing subtle differences, leading to more precise and often higher overall scores
+- The introduction of technical panels reduced human error and inconsistencies, leading to more accurate assessments and higher scores for well-executed elements
+
+##After 2018
+- Scores began to lower a bit in 2022 after policies were placed to "close the gap" between athleticism and artistry scoring
+- Updated GOE scoring was introduced that ranged from -5 to 5 to allow a broader range of scores that better reflected the naunces in the execution of elements
+- The Zagitova Rule was introduced that limited the number of jump elements eligible for the 10% bonus in the second half of a program to encourage a more balanced distribution of technical elements throughout the program
+
+##What's Next
+- Develop a question/storyline for the module to explore relating to these ideas
+- Module will most likely be Stat 213 level
+- ANOVA at the end to identify if the new regulations did in fact equalize the scoring
+
+##Thank You
