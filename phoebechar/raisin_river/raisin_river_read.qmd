@@ -13,13 +13,17 @@ library(ggplot2)
 url <- "https://paddlestats.net/json/r/RAISIN/2025/2015"
 rr_results <- read_json(url, simplifyVector = TRUE)
 rr_results <- as.data.frame(rr_results)
-rrbig_results <- 
-  rr_results |> unnest_longer(results.paddlers)
+rr_results <- rr_results |> unnest_longer(results.paddlers)
 rr_results <- as.data.frame(rr_results)
+
+rr_results <- rr_results |> select(results.year, results.boatType, results.bib, results.classId, results.value, results.courseId, results.notes, results.paddlers, results.status)
+
+rr_results <- rr_results |> mutate( rename(year = results.year, boatType = results.boatType, bib = results.bib, classID = results.classId, time = results.value, courseID = results.courseId, notes = results.notes, paddlers = results.paddlers, status = results.status) )
+
 ```
 
 ```{r}
-rr_results <- rr_results |> select(results.year, results.boatType, results.bib, results.classId, results.value, results.courseId, results.notes, results.paddlers, results.status) 
+
 
 rr_classes <- rr_results |> group_by(results.classId) |> filter (results.value != 0) summarise(avg_time = mean(results.value)) |> arrange(avg_time)
 
