@@ -5,27 +5,28 @@ editor: visual
 ---
 
 
-# from crafted NBA, wingspans dataset
+# From crafted NBA, wingspans dataset
 ```{r}
 library(tidyverse)
 library(rvest)
+library(janitor)
+```
 
-
+```{r}
 url <- "https://craftednba.com/player-traits/length"
-
-h <- read_html(url)
-
-tab <- h %>% html_nodes("table")
-
-objs <- tab %>% html_table()
+objs <-
+  url %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
 
 wingspans <- objs[[1]]
 ```
 
 
-# clean up data
+## clean up data
 ```{r}
-#tidy_wingspans <- 
+tidy_wingspans <- 
   wingspans %>%
   select(-1) %>%
   # tidy height
@@ -84,8 +85,8 @@ tidy_wingspans %>%
 # only dupes are Alex Sarr and Bub Carrington, so remove them
 # fix name errors
 nba_wingspans_2025 <- tidy_wingspans %>%
-  filter(name != "Alexandre Sarr" & name != "Carlton Carrington") %>%
-  mutate(name = if_else(name == "AJ Johnson", "A.J Johnson", name))
+  filter(name != "Alexandre Sarr" & name != "Carlton Carrington") #%>%
+  # mutate(name = if_else(name == "AJ Johnson", "A.J Johnson", name))
 
 # remove name that shouldn't be there
 nba_wingspans_2025 <- nba_wingspans_2025 %>%
@@ -93,11 +94,157 @@ nba_wingspans_2025 <- nba_wingspans_2025 %>%
 
 ```
 
+## write csv
+```{r}
+#write_csv()
+```
 
 
 
+# From basketball reference, shooting and adjusted shooting
+```{r}
+# shooting table
+url <- "https://www.basketball-reference.com/leagues/NBA_2025_shooting.html"
+objs2 <-
+  url %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+shooting <- objs2[[1]]
+```
+
+```{r}
+# adjusted shooting table
+url <- "https://www.basketball-reference.com/leagues/NBA_2025_adj_shooting.html"
+objs3 <-
+  url %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+adjusted_shooting <- objs3[[1]]
+```
+
+## general tidying and selecting rows
+```{r}
+# clean up shooting table
+tidy_shooting <- shooting %>% 
+  row_to_names(row_number = 1) %>%
+  clean_names() %>%
+  select(2, 6, 8, 9, 10, 11, 16, 17, 22) %>%
+  rename(games = g,
+         minutes = mp,
+         avg_dist_of_fg = dist,
+         `2pt_rate` = x2p,
+         `3pt_rate` = x3p,
+         `2pt_percent` = x2p_2,
+         `3pt_percent` = x3p_2) %>%
+  mutate(games = as.numeric(games))
+```
+
+```{r}
+# clean up adjusted shooting
+tidy_adjusted_shooting <- adjusted_shooting %>%
+  row_to_names(row_number = 1) %>%
+  clean_names() %>%
+  select(2, 6, 12, 13, 14) %>%
+  mutate(g = as.numeric(g))
+```
 
 
+## remove certain rows
+When a player has played on two teams they will show up three times, the stats for each team and the total stats thorughout the season.
+```{r}
+tidy_shooting <- tidy_shooting %>%
+  group_by(player) %>%
+  slice_max(order_by = games, n = 1, with_ties = FALSE) %>%
+  ungroup()
+```
+
+```{r}
+#check code above
+tidy_shooting %>%
+  count(player) %>%
+  filter(n > 1)
+```
+
+
+```{r}
+tidy_adjusted_shooting <- tidy_adjusted_shooting %>%
+  group_by(player) %>%
+  slice_max(order_by = g, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  select(-g)
+```
+
+
+## combine shooting and adjusted shooting
+```{r}
+nba_shooting_2025 <-
+  tidy_shooting %>%
+  left_join(tidy_adjusted_shooting, by = "player") %>%
+  slice(-361) %>%
+  mutate(
+    across(3:12, as.numeric)
+  )
+```
+
+
+# Check: combine wingspan data with shooting data
+```{r}
+nba_wingspans_2025 %>%
+  left_join(nba_shooting_2025, by = c("name" = "player"))
+```
+
+```{r}
+# Check with fuzzyjoin
+library(fuzzyjoin)
+
+stringdist_join(
+nba_wingspans_2025, nba_shooting_2025,
+by = c("name" = "player"),
+method = "osa",
+max_dist = 2,
+mode = "left"
+) %>%
+  select(-player) %>%
+  # show players that it doubles up
+  count(name) %>%
+  filter(n > 1)
+
+# don't think fuzzy join is possible for this dataset.
+```
+
+
+
+# Combine wingspan and shooting data
+About 15 names don't match between datasets, so change them in the wingspan dataset. Also a couple of players didn't play at all during the 2024-2025 season so remove them from the wingspan dataset.
+```{r}
+nba_wingspans_shooting_2025 <- nba_wingspans_2025 %>%
+  # names that dont match between datasets
+  mutate(
+    name = if_else(name == "Alperen Sengun", "Alperen Şengün", name),
+    name = if_else(name == "Danté Exum", "Dante Exum", name),
+    name = if_else(name == "GG Jackson", "GG Jackson II", name),
+    name = if_else(name == "Jimmy Butler III", "Jimmy Butler", name),
+    name = if_else(name == "Monté Morris", "Monte Morris", name),
+    name = if_else(name == "Robert Williams III", "Robert Williams", name),
+    name = if_else(name == "Ronald Holland II", "Ron Holland", name),
+    name = if_else(name == "Tristan da Silva", "Tristan Da Silva", name),
+    name = if_else(name == "Xavier Tillman", "Xavier Tillman Sr.", name)
+  ) %>%
+  # players that didn't play in 2024-2025 season
+  # 85, 320, 360
+  slice(-85,-320,-360) %>%
+  # check combining
+  left_join(nba_shooting_2025, by = c("name" = "player"))
+  
+```
+
+```{r}
+write_csv(nba_wingspans_shooting_2025, "partial_wingspan_shooting.csv")
+```
 
 
 
