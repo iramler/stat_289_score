@@ -1,0 +1,11 @@
+---
+title: "Figure_Skating_Worksheet"
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+format: 
+  html:
+    embed-resources: true
+---
+

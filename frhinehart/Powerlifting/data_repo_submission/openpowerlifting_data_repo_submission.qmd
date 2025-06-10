@@ -48,22 +48,22 @@ This process was used (separately) for both male and female lifters.
 <details>
 <summary><strong>Variable Descriptions</strong></summary>
 
-| Variable      | Description                                                                 |
-|---------------|-----------------------------------------------------------------------------|
-| Name          | Powerlifter's name                                                          |
-| Age           | Age of the lifter at the time of the meet                                   |
-| AgeClass      | Reported age class (e.g., "13-15", "24-25", "80+")                          |
-| BodyweightKg  | Body weight of the lifter in kilograms at weigh-in                         |
-| Squat         | Best squat weight from the lifter's three attempts (in kg)                 |
-| Bench         | Best bench press from the lifter's three attempts (in kg)                  |
-| Deadlift      | Best deadlift from the lifter's three attempts (in kg)                     |
-| TotalKg       | Sum of best squat, bench press, and deadlift (in kg)                       |
-| Place         | Lifter's placement in the meet (numeric)    |
-| Dots          | Bodyweight-adjusted score (modern Wilks alternative)                       |
-| Wilks         | Traditional Wilks score                                                     |
-| Glossbrenner  | Score used by GPC-affiliated federations                                    |
-| Goodlift      | IPF GL points (IPF performance standard score)                              |
-| Date          | Date of the meet (format: yyyy-mm-dd)                                       |
+| Variable      | Description                                                   |
+|---------------|---------------------------------------------------------------|
+| Name          | Powerlifter's name                                            |
+| Age           | Age of the lifter at the time of the meet                     |
+| AgeClass      | Reported age class (e.g., "13-15", "24-25", "80+")            |
+| BodyweightKg  | Body weight of the lifter in kilograms at weigh-in            |
+| Squat         | Best squat weight from the lifter's three attempts (in kg)    |
+| Bench         | Best bench press from the lifter's three attempts (in kg)     |
+| Deadlift      | Best deadlift from the lifter's three attempts (in kg)        |
+| TotalKg       | Sum of best squat, bench press, and deadlift (in kg)          |
+| Place         | Lifter's placement in the meet (numeric)                      |
+| Dots          | Bodyweight-adjusted score (modern Wilks alternative)          |
+| Wilks         | Traditional Wilks score                                       |
+| Glossbrenner  | Score used by GPC-affiliated federations                      |
+| Goodlift      | IPF GL points (IPF performance standard score)                |
+| Date          | Date of the meet (format: yyyy-mm-dd)                         |
 
 </details>
 
