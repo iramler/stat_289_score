@@ -73,11 +73,12 @@ steady deadline ("decay") in deadlift amount.**
 
 2 - There are often many possible statistical models for any given data
 situation. In this activity, we introduce non-linear least squares
-regression. XXXXXXX Add a brief description or reference to NLS in general.
-XXXXXXX Non-linear regression modeling typically starts by identifying a
-reasonable non-linear form for the model. In this case, we want a model
-that allows for growth (increasing response value) followed by decay
-(decrease in response value). One such function has the following form
+regression. XXXXXXX Add a brief description or reference to NLS in
+general. XXXXXXX Non-linear regression modeling typically starts by
+identifying a reasonable non-linear form for the model. In this case, we
+want a model that allows for growth (increasing response value) followed
+by decay (decrease in response value). One such function has the
+following form
 
 $$y = axe^{-bx}$$
 
@@ -100,7 +101,31 @@ solutions (e.g., derivable formulas) do not usually exist and numerical
 optimization methods are needed to obtain estimates of the model
 parameters. While we will not delve into the specifics of how a
 numerical optimization algorithm works, most algorithms require the user
-to specify "initial values" to start the optimization.
+to specify "initial values" to start the optimization. These initial values can be thought of a guesses about what the model parameters might be. These guesses do not need to be perfect, but if the guesses are "bad," it might take the algorithm longer to find the optimal parameter estimates.
+
+Use this R chunk to define the form of our growth-decay curve.
+
+```{r}
+# Define growth-decay curve
+
+growth_decay_curve1 <- function(x, a, b) {
+  a * x * exp(-b * x)}
+
+```
+
+Use 
+
+```{r}
+ggplot(powerlift, aes(x = Age)) +
+  geom_point(aes(y = Deadlift), 
+             alpha = 0.3, color = "gray40") +
+  geom_smooth(aes(y = Deadlift), color = "blue", fill = "blue") +
+  geom_function(fun = function(x) {(15)*(x)*exp((-0.04)*(x))} ,color="red") +
+ labs(title = "Fitted shifted Gamma Curve to Deadlift vs. Age",
+   x = "Age",
+   y = "Deadlift (kg)") +
+ theme_minimal()
+``` 
 
 A potential way to fix this would be to transform the data itself, but
 another approach is to use a different function to fit the model. One
@@ -116,13 +141,10 @@ a)  Fit a nonlinear least squares model using the shifted gamma function
     provided below:
 
 ```{r}
-# Define growth-decay curve
+### OLD
 shifted_gamma <- function(x, a, b, x0) {
   x_start <- pmax(x - x0, 0)
   a * x_start * exp(-b * x_start)}
-
-growth_decay_curve1 <- function(x, a, b) {
-  a * x * exp(-b * x)}
 
 ```
 
@@ -132,17 +154,7 @@ see that 300 looks to be about the max weight), 0.05 represents the slow
 changes in performance, and 10 is an estimate for the minimum age in the
 dataset.
 
-```{r}
-ggplot(powerlift, aes(x = Age)) +
-  geom_point(aes(y = Deadlift), 
-             alpha = 0.3, color = "gray40") +
-  geom_smooth(aes(y = Deadlift), color = "blue", fill = "blue") +
-  geom_function(fun = function(x) {(15)*(x)*exp((-0.04)*(x))} ,color="red") +
- labs(title = "Fitted shifted Gamma Curve to Deadlift vs. Age",
-   x = "Age",
-   y = "Deadlift (kg)") +
- theme_minimal()
-```
+
 
 ```{r}
 #nls_fit <- nls(Deadlift ~ shifted_gamma(Age, a, b, x0),
