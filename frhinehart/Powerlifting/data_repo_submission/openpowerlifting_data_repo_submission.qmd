@@ -1,11 +1,12 @@
 ---
 title: "OpenPowerlifting: Most Recent Lifts by Competitors"
-author: "Phoebe Jones, Cooper Olney, Faith Rhinehart, Josh Larson, Ivan Ramler" 
-date: "June 9th, 2025" 
+author: "Josh Larson, Phoebe Jones, Cooper Olney, Faith Rhinehart,  Ivan Ramler" 
+date: "June 9, 2025" 
 format: html
 categories:
-  - Nonlinear Least Squares Modeling
-  - Bootstrap Intervals
+  - Nonlinear regresion
+  - ANOVA
+  - Data visualization
 ---
 
 ## Motivation
@@ -19,9 +20,9 @@ There are two datasets provided - one for male lifters and one for females. Both
 
 The data sets were created using the code available in [openpl_initial_wrangle.qmd](../_prep/openpl/openpl_initial_wrangle.qmd). Details are also below.
 
-::: {.callout-note title="Sampling Process"}
+::: {.callout-note collapse="true" title="Sampling Process"}
 
-This process was done for separately for both male and female lifters.
+This process was used (separately) for both male and female lifters.
 
 - **Filtered the full dataset** to include only:
   - Drug-tested lifters (`Tested == "Yes"`)
@@ -67,22 +68,17 @@ This process was done for separately for both male and female lifters.
 </details>
 
 
-: [sample_powerlift_female.csv]()
-
-Similar tidying was done to male competitors with the same variables.
-
-: [sample_powerlift_male.csv]()
+: [openpl_sample_female.csv](openpl_sample_female.csv), [openpl_sample_male.csv](openpl_sample_male.csv)
 
 
 ## 
 
 1. Graph a scatterplot to explore the relationship between age and best deadlift. 
-2. Fit a nonlinear least squares regression model using a shifted gamma function, use bootstrap confidence interval to find peak age
-3. Fit a nonlinear least squares regression model using reparameterized double exponential function, use bootstrap confidence interval to find peak age
-4. Compare the models using residual sum of squares and AIC
+2. Estimate the age at which peak performance occurs.
+3. Combine datasets and compare male vs female for the different lifts.
 
 ## References
 
 [Open Powerlifting Data Service](https://openpowerlifting.gitlab.io/opl-csv/bulk-csv-docs.html){target="_blank"}
 
-The data set for this module was extracted from OpenPowerlifting Data Service. It contains over 3.6 million observations with 43 different variables containing the classifications and totals for an individual lifter. 
+The data set for this module was extracted from OpenPowerlifting Data Service. It contains over 3.6 million observations over 40 different variables containing the classifications and totals for an individual lifter. 
