@@ -29,7 +29,7 @@ For this worksheet, the data has been updated to only include female competitors
 
 1 - 
 
-a) Graph a scatter plot showing the relationship comparing Age and Deadlift and add a smoother. Comment on what you notice about the line
+Graph a scatterplot of Deadlift amount versus age. Add a smoother. Comment on the trend you see.
 
 ```{r}
 ggplot(data = powerlift, aes(x = Age, y = Deadlift)) +
@@ -37,26 +37,49 @@ ggplot(data = powerlift, aes(x = Age, y = Deadlift)) +
   geom_smooth(color = "blue", se = FALSE)
 ```
 
-It is nonlinear and right-skewed.
+There is a clear non-linear trend. Specifically, we see a fast increase ("growth") in deadlift amount initially, leading to a peak in deadlift amount around age 25 or so. After that peak, there is a slow, steady deadline ("decay") in deadlift amount. 
 
 
 2 - 
-The plot shows that the data is both non-linear and right-skewed. A potential way to fix this would be to transform the data itself, but another approach is to use a different function to fit the model. One option is a gamma distribution. A gamma distribution accommodates positive, right-skewed data, like this data set, and includes 3 parameters that impact its shape/scale. In the function below, these parameters are defined as a(a scaling parameter), b(a rate parameter), and x_start(which is calculated using x and x0, where x is the specific observation’s age and x0 is a minimum age threshold). Note: the pmax() function in the x-start calculation ensures that x_start is not a negative value, so the model does not become undefined.
+ A potential way to fix this would be to transform the data itself, but another approach is to use a different function to fit the model. One option is a gamma function. A gamma distribution , and includes 3 parameters that impact its shape/scale. In the function below, these parameters are defined as a(a scaling parameter), b(a rate parameter), and x_start(which is calculated using x and x0, where x is the specific observation’s age and x0 is a minimum age threshold). Note: the pmax() function in the x-start calculation ensures that x_start is not a negative value, so the model does not become undefined.
 
 a) Fit a nonlinear least squares model using the shifted gamma function provided below:
 ```{r}
-# Defining a shifted gamma function
+# Defining a shifted gamma curve
 shifted_gamma <- function(x, a, b, x0) {
   x_start <- pmax(x - x0, 0)
   a * x_start * exp(-b * x_start)}
+
+growth_decay_curve1 <- function(x, a, b) {
+  a * x * exp(-b * x)}
+
 ```
 
 ** For the initial model, use a = 300, b = 0.05, and x0 = 10. 300 represents a scaling factor for the maximum deadlift strength (we can see that 300 looks to be about the max weight), 0.05 represents the slow changes in performance, and 10 is an estimate for the minimum age in the dataset.
 
+
 ```{r}
-nls_fit <- nls(Deadlift ~ shifted_gamma(Age, a, b, x0),
+ggplot(powerlift, aes(x = Age)) +
+  geom_point(aes(y = Deadlift), 
+             alpha = 0.3, color = "gray40") +
+  geom_smooth(aes(y = Deadlift), color = "blue", fill = "blue") +
+  geom_function(fun = function(x) {(15)*(x)*exp((-0.04)*(x))} ,color="red") +
+ labs(title = "Fitted shifted Gamma Curve to Deadlift vs. Age",
+   x = "Age",
+   y = "Deadlift (kg)") +
+ theme_minimal()
+```
+
+
+
+```{r}
+#nls_fit <- nls(Deadlift ~ shifted_gamma(Age, a, b, x0),
+# data = powerlift,
+# start = list(a = 300, b = 0.05, x0 = 10))
+
+nls_fit <- nls(Deadlift ~ growth_decay_curve1(Age, a, b),
  data = powerlift,
- start = list(a = 300, b = 0.05, x0 = 10))
+ start = list(a = 15, b = 0.05))
 nls_fit
 ```
 
@@ -77,7 +100,8 @@ ggplot(powerlift, aes(x = Age)) +
   geom_point(aes(y = Deadlift), 
              alpha = 0.3, color = "gray40") +
   geom_smooth(aes(y = Deadlift), color = "blue", fill = "blue") +
-  geom_function(fun = function(x) {(12.74899)*(x - 3.23262)*exp((-0.03306)*(x - 3.23262))} ,color="red") +
+  #geom_function(fun = function(x) {(12.74899)*(x - 3.23262)*exp((-0.03306)*(x - 3.23262))} ,color="red") +
+  geom_function(fun = function(x) {(10.8)*x*exp((-0.029)*x)} ,color="red") +
   #geom_line(aes(y = pred), color = "red", linewidth = 1.2) +
  labs(title = "Fitted shifted Gamma Curve to Deadlift vs. Age",
    x = "Age",
