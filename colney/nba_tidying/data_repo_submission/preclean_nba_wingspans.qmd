@@ -1,0 +1,66 @@
+---
+title: "preclean_nba_wingspans"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(rvest)
+library(janitor)
+```
+
+# 1. Pull Data
+Take data from [Crafted NBA](https://craftednba.com/player-traits/length) to get the NBA player profile data
+```{r}
+url <- "https://craftednba.com/player-traits/length"
+objs <-
+  url %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+wingspans <- objs[[1]]
+```
+
+# 2. Clean Data
+```{r}
+test <- wingspans %>%
+  select(-1) %>%
+  clean_names() %>%
+  rename(wingspan_advantage = length) %>%
+  arrange(name) %>%
+  
+  # remove names duplicates
+  filter(name != "Alexandre SarrWAS | PF" & name != "Carlton CarringtonWAS | SG") %>%
+  
+  # removing weird outlier (player is a free agent and has III at the end of name, so makes it through the str_remove)
+  slice(-149) %>%
+  
+  # removing names that don't match between the craftedNBA dataset and the bball reference dataset, (kept Sengun and Jimmy Butler for the fuzzyjoin question)
+  mutate(
+    name = if_else(name == "Danté ExumDAL | SG", "Dante ExumDAL | SG", name),
+    name = if_else(name == "GG JacksonMEM | PF", "GG Jackson IIMEM | PF", name),
+    name = if_else(name == "Monté MorrisPHX | PG", "Monte MorrisPHX | PG", name),
+    name = if_else(name == "Robert Williams IIIPOR | C", "Robert WilliamsPOR | C", name),
+    name = if_else(name == "Ronald Holland IIDET | SG", "Ron HollandDET | SG", name),
+    name = if_else(name == "Tristan da SilvaORL | PF", "Tristan Da SilvaORL | PF", name),
+    name = if_else(name == "Xavier TillmanBOS | PF", "Xavier Tillman Sr.BOS | PF", name)
+  ) %>%
+  
+  # remove players that didn't play in the 2024-25 season (daron holmes, nikola topic and saddiq bey)
+  slice(-96, -377, -429)
+```
+
+```{r}
+write_csv(test, "nba_player_profiles_2025.csv")
+```
+
+
+
+
+
+
+
+
+
+

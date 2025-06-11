@@ -1,0 +1,24 @@
+---
+title: "nba_tidying_worksheet"
+format: html
+---
+
+
+# background/context
+
+
+
+# 0. Load the following packages
+```{r}
+
+```
+
+
+# 1. Load in ______
+```{r}
+
+```
+
+
+# 2. Clean the dataset using the following packages from tidyverse: dplyr, tidyr, readr and stringr.
+

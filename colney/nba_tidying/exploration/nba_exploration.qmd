@@ -28,42 +28,51 @@ wingspans <- objs[[1]]
 ```{r}
 tidy_wingspans <- 
   wingspans %>%
-  select(-1) %>%
+  select(-1) %>% # in preclean
+  
   # tidy height
   mutate(
-    height = Height
+    height = Height # worksheet, copies Height var, to use later
   ) %>%
-  separate_wider_delim(
+  separate_wider_delim( # worksheet
       cols = Height, 
-      names = c("feet", "inches"), 
+      names = c("feet", "inches"), # removes Height and splits into ft and in
       delim = "'") %>%
-  mutate(
-    feet = parse_number(feet),
+  mutate( # worksheet
+    feet = parse_number(feet), 
     inches = parse_number(inches),
-    height_inches = feet * 12 + inches
+    height_inches = feet * 12 + inches # new var, in numerica(inches) format
   ) %>%
-  select(-feet, -inches) %>%
+  select(-feet, -inches) %>% # removing helping vars
+  
   # tidy wingspan
-  mutate(wingspan = Wingspan) %>%
-  separate_wider_delim(
+  mutate(wingspan = Wingspan) %>% # worksheet, copies Wingspan var, to use later
+  separate_wider_delim( # worksheet
     cols = Wingspan,
-    names = c("feetW", "inchesW"),
+    names = c("feetW", "inchesW"), # removes wingspan, splits into ftW and inW
     delim = "'") %>%
-  mutate(
+  mutate( # worksheet
     feetW = parse_number(feetW),
     inchesW = parse_number(inchesW),
-    wingspan_inches = feetW * 12 + inchesW
+    wingspan_inches = feetW * 12 + inchesW # new var, in numerical(inches) format
   ) %>%
-  select(-feetW, -inchesW) %>%
-  rename(wingspan_advantage = Length,
+  select(-feetW, -inchesW) %>% # remove helping var
+  
+  rename(wingspan_advantage = Length, # in preclean
          name = Name) %>%
   relocate(wingspan_advantage, .after = last_col()) %>%
+  
+  # above will be part a
+  # and below will be part b
+  
   # tidy name
-  separate_wider_delim(
+  separate_wider_delim( # worksheet
     cols = name,
     names = c("name", "position"),
     delim = " | ") %>%
   arrange(name) %>%
+  
+  
   # remove free agents
   filter(str_detect(name, pattern = "[A-Z]{3}$")) %>%
   mutate(
@@ -221,7 +230,8 @@ mode = "left"
 About 15 names don't match between datasets, so change them in the wingspan dataset. Also a couple of players didn't play at all during the 2024-2025 season so remove them from the wingspan dataset.
 
 ```{r}
-nba_wingspans_shooting_2025 <- nba_wingspans_2025 %>%
+#nba_wingspans_shooting_2025 <- 
+  nba_wingspans_2025 %>%
   # names that dont match between datasets
   mutate(
     name = if_else(name == "Alperen Sengun", "Alperen Şengün", name),
@@ -236,7 +246,7 @@ nba_wingspans_shooting_2025 <- nba_wingspans_2025 %>%
   ) %>%
   # players that didn't play in 2024-2025 season
   # 85, 320, 360
-  slice(-85,-320,-360) %>%
+  #slice(-85,-320,-360) %>%
   # check combining
   left_join(nba_shooting_2025, by = c("name" = "player"))
   
