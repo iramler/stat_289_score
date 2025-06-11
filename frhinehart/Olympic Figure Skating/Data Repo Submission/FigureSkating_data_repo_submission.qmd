@@ -1,0 +1,81 @@
+---
+title: "FigureSkating"
+author: "Faith Rhinehart" 
+date: "June 11, 2025" 
+format: html
+categories:
+  - ?
+  - ?
+  - ?
+---
+
+## Motivation
+
+Figure skating is a sport where individuals, pairs, or groups preform with music on ice skates. Performing various tricks such as jumps, spins, and footwork showcases a combination of athleticism and artistry. Figure skating was the first winter sport to be in included in the Olympic Games in 1908. 
+
+In the Olympics, athletes first performs a **Short Program** that lasts 2 minutes and 40 seconds. The **Short Program** is designed to highlight the skaters' technical skills and artistry since they must perform specific required elements. After the **Short Program**, skaters perform the **Free Skate** which last 1 to 4.5 minutes. The **Free Skate** allows for more creativity as Skaters' can choose from a variety of elements to create their performance. The combination of the **Short Program** score and **Free Skate** score gets added up into a total score which determines the winner. 
+
+## Data
+
+There are three datasets provided - one for male skaters Olympics scores since 2006, one for female Olympic scores since 2006, and one for Olympics 2022 men and women. They were scraped from Wikipedia ______________ (link). You may download a copy of the dataset at __________ (link)
+
+::: {.callout-note collapse="true" title="Tidying Process"}
+
+This process was used (separately) for all three data sets.
+
+- **Sliced the full dataset** to exclude:                                 fix
+  - Skaters' who were disqualified or did not advanced to free skate      fix
+
+- **Selected Columns** to include only:                                   fix
+  - 
+  
+- **Combined Columns**                                                    fix
+
+- For each **AgeClass**:                                                  fix
+  - If **500 or more lifters**, took a **random sample of 500**
+  - If **fewer than 500 lifters**, included **all available lifters**     fix
+
+- **Removed extraneous columns** and kept only key demographic variables for classroom analysis
+
+:::
+
+
+<details>
+<summary><strong>Variable Descriptions</strong></summary>
+
+Olympics since 2006 men and women data:
+
+| Variable        | Description                                    |
+|-----------------|------------------------------------------------|
+| Name            | Skater's Name                                  |
+| Nation          | Nation representing Skater                     |
+| FS/FS.1         | Free Skate Score                               |
+| SP/SP.1         | Short Program score                            |
+| TP/Total Points | Combined score of free skate and short program |
+| Year            | Olympic Year                                   |
+| Sex             | Gender of Skater                               |
+
+2022 combined women and men data:
+
+| Variable   | Description                                    |
+|------------|------------------------------------------------|
+| Name       | Skater's Name                                  |
+| Nation     | Nation representing Skater                     |
+| FS         | Free Skate Score                               |
+| SP         | Short Program score                            |
+| Total      | Combined score of free skate and short program |                                 
+| Sex        | Gender of Skater                               |
+                       
+</details>
+
+
+_____(link)
+
+## Questions Investigated
+1. 
+2. 
+3. 
+
+## References
+
+??

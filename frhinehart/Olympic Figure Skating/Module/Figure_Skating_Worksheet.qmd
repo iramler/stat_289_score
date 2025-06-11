@@ -1,5 +1,5 @@
 ---
-title: "Figure_Skating_Worksheet"
+title: "Figure_skating_Worksheet"
 Authors: Faith Rhinehart
 execute: 
   echo: true
@@ -8,4 +8,52 @@ format:
   html:
     embed-resources: true
 ---
+
+Reading in the Dataset:
+```{r}
+library(readr)
+library(ggplot2)
+library(tidyverse)
+library(rvest)
+library(here)
+library(dplyr)
+Skating <- read_csv(here::here("frhinehart/Olympic Figure Skating/Module/MensFigureSkating.csv")) |>
+  select(2:7)
+```
+
+Question 1:
+
+a) Fit a model that uses year to predict total points (TP). Write the fitted model below using the model summary output. 
+
+
+b) Provide an interpretation of the intercept of the model.
+
+
+c) Plot the model on a scatterplot and add a smoother. Comment on any trends you see on the graph.
+
+
+Question 3: 
+
+Consider the new variable being made in the code below. Use the internet to determine what is special about the number used to create the new variable? What would be an interpretation of the new variable? Would you rather create the new variable by subtracting mean(Year)? Why or why not? (Before we move on, we will give the new variable a better name.)
+```{r}
+Skating2 <- Skating |>
+  mutate(YearsSince2006 = Year - 2006)
+```
+
+Question 4: Fit a model that uses the new variable created above to predict TP. Provide an interpretation of the intercept of the model.
+
+
+Question 5:
+
+a) Fit a model that uses `SP` (Short program) to predict `FS` (Free Skating). Comment on the 4 model assumptions and if applicable, provide relevant plots to support your answer.
+
+
+b) Based on the answers in part a what transformation should you preform on what variable?
+
+
+
+c) Preform a the transformation on and write down the fitted model below using the model summary output.
+
+
+d) Interpret $$\hat{\beta{_0}}$$ and $$\hat{\beta{_1}}$$. 
 

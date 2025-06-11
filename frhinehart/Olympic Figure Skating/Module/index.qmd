@@ -1,5 +1,5 @@
 ---
-title: "Modeling the Impact of Age on Powerlifting "
+title: "Determining Outlier Influence With Figure Skating "
 author:
   - name: Faith Rhinehart
     affiliation:
@@ -10,12 +10,13 @@ author:
     affiliation:
       - ref: slu
 date: "June 9th, 2025"
-description: "Exploring the impact of year on figure skating"
+description: "Exploring Different Outlier Detection Stratigies"
 editor: 
   canonical: true
 categories:
-  - Nonlinear Least Squares Modeling
-  - Confidence Intervals (Bootstrap)
+  - Standarized Residuals
+  - Leverage
+  - Cook's Distance
 ---
 
 ## Module
@@ -25,33 +26,39 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Background to Powerlifting Video
 
-If you are unfamiliar with powerlifting, please watch this video:
+If you are unfamiliar with Figure Skating, please watch this video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XAcjcFGY_Uc?si=-08ToeR9dV7JIjSE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SSQzeYYs6s0?si=3so0I5NXUR7tee56" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Introduction to Module
 
-Powerlifting is a strength sport where participants compete to lift the heaviest weight. Competitors compete within weight classes, so their opponents are around the same weight as them. The sport consists of three different lifts: Squat, Bench, and Deadlift. Squat lifts require lifters to squat so that their hips are below their knees and lift the weight to a specific depth. Bench lifts are done while the lifter is lying on a bench. Bench lifters start with the bar weight being held in the air and must lower the bar down to their body. Once the bar touches their body, lifters wait for the command to lift the bar back into the air with their elbows fully extended. Deadlifting, like squats, start with the lifter standing up. The lifter must lift the bar off the ground and get into the position where their shoulders are back and knees are locked. Competitors are overseen by three judges who determine whether the lift follows the rules of the events. If a judge believes the lifter followed the rules, they will turn on a white light. In order for a lift to count, competitors must receive at least two white lights.
+Figure skating is a sport where individuals, pairs, or groups preform with music on ice skates. Performing various tricks such as jumps, spins, and footwork showcases a combination of athleticism and artistry. Figure skating was the first winter sport to be in included in the Olympic Games in 1908. 
 
-The Powerlifting dataset features data from individual lifters during their most recent competitions. Variables include characteristics such as sex, age, birth year and age classes, and division. Other variables include 3 types of weightlifting: squats, benches, and deadlifts.The relevant variables for this specific module are Sex, Age, and Best3DeadliftKg. 
+In the Olympics, athletes first performs a Short Program that lasts 2 minutes and 40 seconds. The Short Program is designed to highlight the skaters' technical skills and artistry since they must perform specific required elements. After the hort Program, skaters perform the Free Skate which last 1 to 4.5 minutes. The Free Skate allows for more creativity as Skaters' can choose from a variety of elements to create their performance. The combination of the Short Program score and Free Skate score gets added up into a total score which determines the winner. 
 
-For the sake of this module, the data set was tidied so that it only included the event "SBD" (Squat, Bench, Deadlift) and two types of equipment use: Raw, meaning no equipment except knee sleeves, and Single-ply, which is a single layer suit. The data was also tided to exclude any lifter that did not finish the competition or had missing information for key variables like Age and Sex.
+The menSkating dataset features data from individual sakters during the winter olympics since 2006. Variables include Name, Nation, Year, Free Skate Score (FS), Short Program Score (SP), and Total Points (TP). The relevant variables for this specific module are FS and SP. 
+
+For the sake of this module, the data set was tidied so that it excluded skaters who did not make it to the free skate round, were disqualified, or drop out of competition.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 Learning Objectives:
 
-1. Students will learn how to write a nonlinear least squares regression model 
+1. Students will learn how to detect outliers
 
-2. Students will learn how to find and interpret a confidence interval for the models
+2. Students will learn how about Standardized Residuals
 
-3. Students will learn to how to compare the models' usefulness in predicting a desired question using residual sum of squares
+3. Students will learn how about Leverage
+
+4. Students will learn how about Cook's Distance
+
+5. Students will learn how to determine an outlier's influence
 
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 For this activity, students will need to use R Studio. 
 
-Students are expected to understand the concept of non-linear least squares regression models with confidence intervals. There's also an expectation that they are able to make basic graphs in R using ggplot.
+Students are expected to understand the concept of what an outlier is. There's also an expectation that they are able to make basic graphs in R using ggplot and write models in R.
 
 This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
 :::
@@ -60,26 +67,23 @@ This activity would be suitable for an in-class activity or as an out-of-class a
 
 ### Data
 
-The powerlifting data contains records of competitors from the open powerlifting data set. 
+The menSkating data contains records of competitors from the 2006-2022 winter Olympics. 
 
-Download data: [dumbbell_barbell_weight_ratio.csv](https://data.scorenetwork.org/data/dumbbell_barbell_weight_ratio.csv){target="_blank"}
+Download data: ____ (link)
 
 <details>
 
 <summary><b>Variable Descriptions</b></summary>
 
-| Variable | Description                                             |
-|----------|---------------------------------------------------------|
-|Name   | Name of the competitor |
-|Sex | Sex of the competitor |
-|Event | |
-|Equipment| Use of equipment during the competition|
-|Age | |
-|AgeClass | |
-|BirthYearClass | |
-|Division | |
-|BodyweightKg | |
-|Best3DeadliftKg | |
+| Variable        | Description                                    |
+|-----------------|------------------------------------------------|
+| Name            | Skater's Name                                  |
+| Nation          | Nation representing Skater                     |
+| FS/FS.1         | Free Skate Score                               |
+| SP/SP.1         | Short Program score                            |
+| TP/Total Points | Combined score of free skate and short program |
+| Year            | Olympic Year                                   |
+| Sex             | Gender of Skater                               |
 
 </details>
 
@@ -91,5 +95,5 @@ Download data: [dumbbell_barbell_weight_ratio.csv](https://data.scorenetwork.org
 [Class handout - with solutions]
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Students should gain an understanding of non-linear least squared regression models when dealing with indicator variables. Students should be able to determine the best model in predicting using exploratory plots and evaluation values.
+Students should gain an understanding of outlier detection and determining an outlier's influence. Students should be able to calculate Standardized Residual, Leverage, and Cook's Distance.
 :::
