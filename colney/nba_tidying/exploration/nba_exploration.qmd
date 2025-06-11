@@ -1,11 +1,11 @@
 ---
-title: "nba_wingspan_exploration"
+title: "nba_exploration"
 format: html
 editor: visual
 ---
 
+# 1. From crafted NBA, wingspans dataset
 
-# From crafted NBA, wingspans dataset
 ```{r}
 library(tidyverse)
 library(rvest)
@@ -23,8 +23,8 @@ objs <-
 wingspans <- objs[[1]]
 ```
 
-
 ## clean up data
+
 ```{r}
 tidy_wingspans <- 
   wingspans %>%
@@ -74,7 +74,6 @@ tidy_wingspans <-
 
 ```
 
-
 ```{r}
 # fixing duplicate players
 tidy_wingspans %>%
@@ -95,13 +94,13 @@ nba_wingspans_2025 <- nba_wingspans_2025 %>%
 ```
 
 ## write csv
+
 ```{r}
 #write_csv()
 ```
 
+# 2. From basketball reference, shooting and adjusted shooting
 
-
-# From basketball reference, shooting and adjusted shooting
 ```{r}
 # shooting table
 url <- "https://www.basketball-reference.com/leagues/NBA_2025_shooting.html"
@@ -127,6 +126,7 @@ adjusted_shooting <- objs3[[1]]
 ```
 
 ## general tidying and selecting rows
+
 ```{r}
 # clean up shooting table
 tidy_shooting <- shooting %>% 
@@ -152,9 +152,10 @@ tidy_adjusted_shooting <- adjusted_shooting %>%
   mutate(g = as.numeric(g))
 ```
 
-
 ## remove certain rows
-When a player has played on two teams they will show up three times, the stats for each team and the total stats thorughout the season.
+
+When a player has played on two teams they will show up three times, the stats for each team and the total stats throughout the season.
+
 ```{r}
 tidy_shooting <- tidy_shooting %>%
   group_by(player) %>%
@@ -169,7 +170,6 @@ tidy_shooting %>%
   filter(n > 1)
 ```
 
-
 ```{r}
 tidy_adjusted_shooting <- tidy_adjusted_shooting %>%
   group_by(player) %>%
@@ -178,8 +178,8 @@ tidy_adjusted_shooting <- tidy_adjusted_shooting %>%
   select(-g)
 ```
 
-
 ## combine shooting and adjusted shooting
+
 ```{r}
 nba_shooting_2025 <-
   tidy_shooting %>%
@@ -190,15 +190,15 @@ nba_shooting_2025 <-
   )
 ```
 
+## Check: combine wingspan data with shooting data
 
-# Check: combine wingspan data with shooting data
 ```{r}
 nba_wingspans_2025 %>%
   left_join(nba_shooting_2025, by = c("name" = "player"))
 ```
 
 ```{r}
-# Check with fuzzyjoin
+# Check with fuzzyjoin (don't need this)
 library(fuzzyjoin)
 
 stringdist_join(
@@ -216,10 +216,10 @@ mode = "left"
 # don't think fuzzy join is possible for this dataset.
 ```
 
-
-
 # Combine wingspan and shooting data
+
 About 15 names don't match between datasets, so change them in the wingspan dataset. Also a couple of players didn't play at all during the 2024-2025 season so remove them from the wingspan dataset.
+
 ```{r}
 nba_wingspans_shooting_2025 <- nba_wingspans_2025 %>%
   # names that dont match between datasets
@@ -246,6 +246,135 @@ nba_wingspans_shooting_2025 <- nba_wingspans_2025 %>%
 write_csv(nba_wingspans_shooting_2025, "partial_wingspan_shooting.csv")
 ```
 
+# 3. From basketball reference, per game, per 100 poss and advanced tables
 
+```{r}
+# per 36 min table
+url4 <- "https://www.basketball-reference.com/leagues/NBA_2025_per_minute.html"
+objs4 <-
+  url4 %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
 
+per_min <- objs4[[1]]
+```
 
+```{r}
+# per 100 poss table
+url5 <- "https://www.basketball-reference.com/leagues/NBA_2025_per_poss.html"
+objs5 <-
+  url5 %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+per_100_poss <- objs5[[1]]
+```
+
+```{r}
+# advanced table
+url6 <- "https://www.basketball-reference.com/leagues/NBA_2025_advanced.html"
+objs6 <-
+  url6 %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+advanced <- objs6[[1]]
+```
+
+## general tidying and selecting rows
+
+```{r}
+# clean up per 36 min
+tidy_per_min <- 
+  per_min %>%
+  clean_names() %>%
+  select(2, 6, 24, 26, 27, 30) %>%
+  group_by(player) %>%
+  slice_max(order_by = g, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  select(-g)
+```
+
+```{r}
+# clean up per 100 poss
+tidy_per_100_poss <- per_100_poss %>%
+  clean_names() %>%
+  select(2, 6, 32) %>%
+  group_by(player) %>%
+  slice_max(order_by = g, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  select(-g)
+```
+
+```{r}
+# clean up advanced
+tidy_advanced <- advanced %>%
+  clean_names() %>%
+  select(2, 6, 22, 26) %>%
+  group_by(player) %>%
+  slice_max(order_by = g, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  select(-g)
+```
+
+## combine per game, per 100 poss and advanced
+
+```{r}
+nba_defense <- tidy_per_min %>%
+  left_join(tidy_per_100_poss, by = "player") %>%
+  left_join(tidy_advanced, by = "player") %>%
+  slice(-361)
+```
+
+# 4. Combine all data, wingspan and shooting data with defensive data
+
+```{r}
+full_data <- 
+  nba_wingspans_shooting_2025 %>%
+  left_join(nba_defense, by = c("name" = "player")) %>%
+  drop_na() %>%
+  filter(minutes >= 440) %>%
+  relocate(fg_percent, .after = `3pt_rate`) %>%
+  relocate(ft_percent, .after = `3pt_percent`) %>%
+  relocate(pts, .after = ts_percent)
+```
+
+## csv
+
+```{r}
+write_csv(full_data, "nba_wingspan_stats_2025.csv")
+```
+
+# 5. From NBA, deflections data
+
+```{r}
+# hustle table
+url7 <- "https://www.nba.com/stats/players/hustle?SeasonType=Regular+Season"
+objs7 <-
+  url7 %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+deflections <- objs7[[2]]
+```
+
+# 6. Look for relationships in the data
+
+```{r}
+full_data %>%
+  ggplot(., aes(x = wingspan_advantage)) +
+  geom_density()
+```
+
+```{r}
+full_data %>%
+  filter (minutes > 1500) %>%
+  filter(position == "C") %>%
+  ggplot(., aes(x = wingspan_advantage, y = trb)) +
+  geom_point() +
+  geom_smooth(method = "loess", se = FALSE)
+```
