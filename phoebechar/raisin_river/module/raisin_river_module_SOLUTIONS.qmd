@@ -62,13 +62,13 @@ In 2017, the water level was too high for the race to start where it usually doe
 #### 4. Remove the influential observation from the data set.
 
 ```{r}
-RR_dnf_data <- RR_dnf_data |> filter(year != 2017)
+RR_dnf_data2 <- RR_dnf_data |> filter(year != 2017)
 ```
 
 #### 5. Regraph the scatterplot without the influential observation and add a smoother.
 
 ```{r}
-ggplot(RR_dnf_data, aes(x = flow, y = ratio_DNF)) +
+ggplot(RR_dnf_data2, aes(x = flow, y = ratio_DNF)) +
   geom_point() +
   geom_smooth(method = lm, se = FALSE) +
   labs(x = "Flow Rate (ft^3/sec)",

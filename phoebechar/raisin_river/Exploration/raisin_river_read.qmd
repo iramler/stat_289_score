@@ -21,35 +21,81 @@ rr <- rr$results |> as_tibble() |>
   unnest_wider(col = c(paddlers, elemVals)) |>
   unnest_wider(`1`, names_sep = "_")
 
-rr_results <- rr |> select(year, boatType, bib, classId, place, value, overall, byClass, byYrClass, byYrOver, courseId, notes, displayName, status)
+rr_results1 <- rr |> select(year, boatType, bib, classId, place, value, overall, byClass, byYrClass, byYrOver, courseId, notes, displayName, status)
 
 ## renaming columns
-rr_results <- rename(rr_results, classID = classId, time = value, courseID = courseId)
+rr_results1 <- rename(rr_results1, classID = classId, time = value, courseID = courseId)
 
 ## make version with everyone (duplicates for tandem)
-rr_team_results <- rr_results
+rr_team_results1 <- rr_results1
 
-rr_results <- rr_results |> select(!displayName)
+rr_results1 <- rr_results1 |> select(!displayName)
 
 ## remove duplicates for tandem teams
-rr_results <- rr_results |> group_by(year, bib) |> slice(1) |> ungroup()
+rr_results1 <- rr_results1 |> group_by(year, bib) |> slice(1) |> ungroup()
 
-rr_results <- rr_results |> mutate(boatType = as.factor(boatType))
+rr_results1 <- rr_results1 |> mutate(boatType = as.factor(boatType))
 ```
 
 ```{r}
-flow = read_csv("phoebechar/Exploration/raisin_river/RRflow - Sheet1.csv")
+url <- "https://paddlestats.net/json/r/RAISIN/2014/2011"
+rr <- read_json(url, simplifyVector = TRUE)
 
-rr_results_flow <- full_join(rr_results, flow)
+rr <- rr$results |> as_tibble() |> 
+  unnest_wider(rank) |> 
+  unnest_longer(paddlers) |>
+  unnest_wider(col = c(paddlers, elemVals)) |>
+  unnest_wider(`1`, names_sep = "_")
+
+rr_results2 <- rr |> select(year, boatType, bib, classId, place, value, overall, byClass, byYrClass, byYrOver, courseId, notes, displayName, status)
+
+## renaming columns
+rr_results2 <- rename(rr_results2, classID = classId, time = value, courseID = courseId)
+
+## make version with everyone (duplicates for tandem)
+rr_team_results2 <- rr_results2
+
+rr_results2 <- rr_results2 |> select(!displayName)
+
+## remove duplicates for tandem teams
+rr_results2 <- rr_results2 |> group_by(year, bib) |> slice(1) |> ungroup()
+
+rr_results2 <- rr_results2 |> mutate(boatType = as.factor(boatType))
 ```
+
+
+```{r}
+flow = read_csv("phoebechar/raisin_river/Exploration/RRflow - Sheet1.csv")
+
+rr_results_full <- full_join(rr_results1, rr_results2)
+
+rr_results_flow <- full_join(rr_results_full, flow)
+```
+
+```{r}
+rr_attendence <- rr_results_flow |> group_by(year) |> mutate(n = n()) |> slice(1)
+
+ggplot(rr_attendence, aes(x = flow, y = n)) +
+  geom_point()
+
+attendence_mod <- lm(n ~ flow, rr_attendence)
+summary(attendence_mod)
+
+rr_attendence_no17 <- rr_attendence |> filter(year != 2017)
+attendence_mod <- lm(n ~ flow, rr_attendence_no17)
+summary(attendence_mod)
+
+
+```
+
 
 ```{r}
 ## using flow to predict DNF (2017 as outlier)
-rr_DNF <- rr_results |> group_by(year) |> mutate(n = n()) |> filter(status == "DNF") |> mutate(n_DNF = n()) |> slice(1) |> summarise(ratio_DNF = n_DNF/n)
+rr_DNF <- rr_results1 |> group_by(year) |> mutate(n = n()) |> filter(status == "DNF") |> mutate(n_DNF = n()) |> slice(1) |> summarise(ratio_DNF = n_DNF/n)
 
 rr_DNF <- full_join(rr_DNF, flow)
 
-write_csv(rr_DNF, "phoebechar/raisin_river/Exploration/raisin_river_DNF.csv")
+write_csv(rr_DNF, "phoebechar/raisin_river/module/raisin_river_DNF.csv")
 
 ggplot(rr_DNF, aes(x = flow, y = ratio_DNF)) +
   geom_point() 
