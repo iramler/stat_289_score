@@ -49,7 +49,7 @@ rr_DNF <- rr_results |> group_by(year) |> mutate(n = n()) |> filter(status == "D
 
 rr_DNF <- full_join(rr_DNF, flow)
 
-write_csv(rr_DNF, "phoebechar/raisin_river/module/raisin_river_DNF.csv")
+write_csv(rr_DNF, "phoebechar/raisin_river/Exploration/raisin_river_DNF.csv")
 
 ggplot(rr_DNF, aes(x = flow, y = ratio_DNF)) +
   geom_point() 
