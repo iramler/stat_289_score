@@ -1,0 +1,88 @@
+---
+title: "read_in_races"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+library(jsonlite)
+library(dplyr)
+library(ggplot2)
+library(broom)
+library(forcats)
+
+url <- "https://paddlestats.net/json/r/KENDUSKEAG/2025/2015"
+kenduskeag <- read_json(url, simplifyVector = TRUE)
+
+kenduskeag <- kenduskeag$results |> as_tibble() |> 
+  unnest_wider(rank) |> 
+  unnest_longer(paddlers) |>
+  unnest_wider(col = c(paddlers, elemVals)) |>
+  unnest_wider(`1`, names_sep = "_")
+
+kenduskeag <- rename(kenduskeag, classID = classId, time = value, courseID = courseId)
+
+write_csv(kenduskeag, "phoebechar/multirace/full_kenduskeag.csv")
+```
+
+
+```{r}
+## rank/time relationship
+## almost identical to the same graph from raisin
+
+kenduskeag_results <- kenduskeag_results |> filter(time != 0) |> filter(courseID != "kenduskeag2019")
+
+ggplot(kenduskeag_results, aes(x = overall, y = time)) +
+  geom_point()
+
+```
+
+```{r}
+url <- "https://paddlestats.net/json/yearlist"
+years <- read_json(url, simplifyVector = TRUE)
+years <- years$yearList |> as_tibble()
+years <- years |> filter (year >= 2000, year != 2025)
+years <- years |> mutate(attend_per_race = numPaddlers / numRaces)
+
+ggplot(years, aes(x = year, y = attend_per_race)) +
+  geom_point() +
+  geom_line()
+```
+
+```{r}
+url <- "https://paddlestats.net/json/paddlers/colecl01"
+clay <- read_json(url, simplifyVector = TRUE)
+clay <- clay$results |> as_tibble() |> select(resultId, year, raceId, raceShortName, eventId, eventShortName, raceDate, boatType, bib, classId, className, place, value, courseId, courseShortName, numPaddlers)
+
+clay <- clay |> filter(value != 0)
+```
+
+```{r}
+clay_prop <- clay |> group_by(courseId) |> mutate(prop_time = value / max(value)) |> ungroup() |> group_by(year) |> mutate(avg_prop = mean(prop_time))
+
+ggplot(clay_prop, aes(x = year, y = avg_prop)) +
+  geom_point()
+```
+
+
+
+```{r}
+url <- "https://paddlestats.net/json/paddlers/lizakpa01"
+pat <- read_json(url, simplifyVector = TRUE)
+pat <- pat$results |> as_tibble() |> select(resultId, year, raceId, raceShortName, eventId, eventShortName, raceDate, boatType, bib, classId, className, place, value, courseId, courseShortName, numPaddlers)
+
+pat <- pat |> filter(value != 0)
+
+pat_stur <- pat |> filter(raceId == "SCANTIC")
+```
+
+```{r}
+pat_prop <- pat |> group_by(courseId) |> mutate(prop_time = value / max(value)) |> ungroup() |> group_by(year) |> mutate(avg_prop = mean(prop_time))
+
+ggplot(pat_stur, aes(x = year, y = value)) +
+  geom_point()
+```
+
+
+

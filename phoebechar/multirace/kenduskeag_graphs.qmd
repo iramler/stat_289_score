@@ -1,0 +1,77 @@
+---
+title: "kenduskeag_graphs"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+library(dplyr)
+library(ggplot2)
+
+kenduskeag_full <- read_csv("phoebechar/multirace/full_kenduskeag.csv")
+```
+
+#### 1. Make a bar graph comparing counts of the different boat types.
+
+```{r}
+ggplot(kenduskeag_full, aes(x = boatType)) +
+  geom_bar()
+```
+
+##### a. Change the color and fill of the bars to any combination you like
+
+```{r}
+ggplot(kenduskeag_full, aes(x = boatType)) +
+  geom_bar(colour = "darkslategrey", fill = "darkseagreen")
+```
+
+##### b. Make a horizontal version of the same graph
+
+```{r}
+ggplot(kenduskeag_full, aes(y = boatType)) +
+  geom_bar(colour = "darkslategrey", fill = "darkseagreen")
+```
+
+#### 2. Make a histogram showing the distribution of times.
+
+```{r}
+ggplot(kenduskeag_full, aes(x = time)) +
+  geom_histogram()
+```
+
+##### a. Change the number of bins (test out a few options!)
+
+```{r}
+ggplot(kenduskeag_full, aes(x = time)) +
+  geom_histogram(bins = 17)
+```
+
+##### b. Add a frequency line
+
+```{r}
+ggplot(kenduskeag_full, aes(x = time)) +
+  geom_histogram() +
+  geom_freqpoly()
+```
+
+```{r}
+ggplot(kenduskeag_full, aes(x = courseID)) +
+  geom_bar(position = "fill", aes(fill = boatType))
+```
+
+```{r}
+kenduskeag_attend <- kenduskeag_full |> group_by(year, bib) |> slice(1) |> ungroup() |> group_by(year) |> summarise(n_boats = n())
+```
+
+```{r}
+ggplot(kenduskeag_attend, aes(x = year, y = n_boats)) +
+  geom_col()
+```
+
+#### Make a pink violin plot showing time differences based on the boat type.
+
+```{r}
+ggplot(kenduskeag_full, aes(x = boatType, y = time)) +
+  geom_violin(color = "hotpink", fill = "pink")
+```
