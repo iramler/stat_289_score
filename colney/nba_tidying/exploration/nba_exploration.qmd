@@ -41,7 +41,7 @@ tidy_wingspans <-
   mutate( # worksheet
     feet = parse_number(feet), 
     inches = parse_number(inches),
-    height_inches = feet * 12 + inches # new var, in numerica(inches) format
+    height_inches = feet * 12 + inches # new var, in numerical(inches) format
   ) %>%
   select(-feet, -inches) %>% # removing helping vars
   
@@ -357,6 +357,11 @@ full_data <-
 ```{r}
 write_csv(full_data, "nba_wingspan_stats_2025.csv")
 ```
+
+```{r}
+ completeData <- read_csv(here::here("colney/nba_tidying/exploration/nba_full_stats_2025.csv"))
+```
+
 
 # 5. From NBA, deflections data
 

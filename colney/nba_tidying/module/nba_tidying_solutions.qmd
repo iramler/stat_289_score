@@ -3,3 +3,27 @@ title: "nba_tidying_solutions"
 format: html
 ---
 
+
+# Background/context
+
+
+
+# 0. Load the following packages.
+```{r}
+#| message: false
+library(tidyverse)
+library(rvest)
+library(janitor)
+```
+
+
+
+# 1. Load in nba_player_profiles_2025.csv from the data folder.
+```{r}
+
+```
+
+
+
+# 2. Clean the dataset using the following packages from tidyverse: dplyr, tidyr, readr and stringr.---
+

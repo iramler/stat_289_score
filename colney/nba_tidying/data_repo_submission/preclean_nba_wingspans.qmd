@@ -24,7 +24,7 @@ wingspans <- objs[[1]]
 
 # 2. Clean Data
 ```{r}
-test <- wingspans %>%
+preclean <- wingspans %>%
   select(-1) %>%
   clean_names() %>%
   rename(wingspan_advantage = length) %>%
@@ -51,8 +51,10 @@ test <- wingspans %>%
   slice(-96, -377, -429)
 ```
 
+
 ```{r}
-write_csv(test, "nba_player_profiles_2025.csv")
+# the dataset used in the worksheet
+write_csv(preclean, "nba_player_profiles_2025.csv")
 ```
 
 
