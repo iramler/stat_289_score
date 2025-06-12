@@ -1,0 +1,129 @@
+---
+title: "Raisin River Results and Oulier Impact/Exclusion"
+author:
+  - name: Phoebe Jones
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: 
+    email: 
+    affiliation:
+      - ref: slu
+date: "June 11, 2025"
+description: "Finding and removing highly influential outliers"
+editor: 
+  canonical: true
+categories:
+  - Linear Regression
+  - Outlier Detectors
+---
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction
+
+Each year, the National Collegiate Athletics Association (NCAA) holds the championship tournament for women's gymnastics to crown the national champion. There are two semi-final meets that consist of four teams, and the top two teams from each semi-final meet square off in the championship finals. 
+
+The competition consists of four events:
+
+1. [Vault](https://www.youtube.com/watch?v=vmFMXk3WQow){target="_blank"}: A high-energy, quick event where the gymnast gains momentum by running down a padded runway, jumps onto a spring board, and propels themselves over a slightly inclined vaulting table while performing an aerial combination of flips and twists. 
+
+2. [Uneven Bars](https://www.youtube.com/watch?v=j8N_xzlczQI){target="_blank"}: This is a routine in which the gymnast does a variety of flips and rotations on two horizontal bars that are set at different heights. The gymnast mounts onto a bar and the routine consists of transitioning from one bar to the other while swinging and flipping. The routine ends with a dismount off of the bar and onto the floor. 
+
+3. [Balance Beam](https://www.youtube.com/watch?v=bzi565Ioo3o){target="_blank"}: Gymnasts mount onto an elevated balance beam, which is a long, firm, padded plank about four inches (10 cm) wide. As the name suggests, this event highlights the gymnast's balance, acrobatic skills, and leaps while they attempt multiple turns, jumps, and flips on the beam before an aerial dismount. 
+
+4. [Floor](https://www.youtube.com/watch?v=_FBdDwpfH4I){target="_blank"}: The floor routine takes place on a square mat, and the gymnast performs a carefully choreographed routine that shows off dance skills as well as acrobats and tumbling. 
+
+Each team is allowed to have up to six people compete on each event, with the top five scores contributing to the combined score of that event for the team. After the entire rotation for each event, the combined scores for the four events are added together for a total score, and the team with the highest overall score is the champion. 
+
+Women's college gymnastics uses Perfect 10 scoring, with each routine being judged out of ten points. Gymnasts are evaluated on execution, difficulty, as well as the composition of the routine, and must meet certain requirements for each. 
+
+In this activity, we'll be using different scores on the beam event at the NCAA Women's Gymnastics National Championship to create and analyze bootstrap distributions, as well as look at confidence intervals and the difference in means between different finishers in the championship. 
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This could serve as an in class activity and should take roughly a half an hour to complete. 
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will:
+
+1. Increase ability to create a bootstrap sample, statistic, and distribution.  
+
+2. Be able to construct confidence intervals from a bootstrap distribution and comment on their implications.
+
+3. Use paired data to calculate differences and interpret the results in the context of the NCAA Women's Gymnastics Championship.  
+
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+
+Students should have knowledge of how to fit linear regression models and familiarity with the measures of unusualness/influence. Students should also be able to modify data sets to remove unwanted observations.
+
+:::
+
+::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
+
+Students will need to use RStudio. 
+
+:::
+
+### Data
+
+The `rr_results1.csv` data set includes data from Paddlestats and the Raisin River Race website about the Raisin River Race from the years 2015-2025 (excluding 2020 and 2021 as no race was held due to the COVID-19 pandemic). Each row represents a specific boat that competed in the race.
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable      | Description                                               |
+|---------------|-----------------------------------------------------------|
+| year          | Year raced.                                               |
+| boatType      | Type of boat raced (canoe, kayak, SUP)                    |
+| bib           | Bib number                                                |
+| classID       | Class (oc1, oc2, etc)                                     |
+| place         | Where the boat placed in their class's results            |
+| time          | The time to complete the race (in sec)                    |
+| overall       | Overall rank (out of all boats ever)                      |
+| byClass       | Rank out of all boats in class (all years)                |
+| byYrClass     | Rank out of the boats in their class in their year        |
+| byYrOver      | Rank out of all the boats that year (all classes)         |
+| courseID      | Version of the course raced                               |
+| notes         | Extra information                                         |
+| status        | Finishing status (DNF, DNS, DQ, etc.)                     |  
+
+</details>
+
+Download [raisin_river_DNF.csv](raisin_river_DNF.csv){target="_blank"}
+
+#### Data Source
+
+The data are compiled from the [Paddlestats Website](https://paddlestats.net/racehistory/RAISIN){target="_blank"} and the [Raisin River Race Website](https://rrca.on.ca/page.php?id=13){target="_blank"}
+
+### Materials
+
+More specifically, this activity uses the data set: [raisin_river_DNF.csv](raisin_river_DNF.csv){target="_blank"}
+
+
+The `raisin_river_DNF.csv` data set includes data from Paddlestats and the Raisin River Race website about the Raisin River Race from the years 2015-2025 (excluding 2020 and 2021 as no race was held due to the COVID-19 pandemic). Each row contains the year, the flow from that year, and the ratio of DNFs from that year (calculated by dividing number of DNFs by total number of participants). 
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable      | Description                                     |
+|---------------|-------------------------------------------------|
+| year          | Year of Raisin River Race                       |
+| ratio_DNF     | The ratio of DNFs at the race.                  |
+| flow          | The flow of the water for that year             |
+
+</details>
+
+[Class handout]()
+
+[Class handout - with solutions]()
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Upon conclusion of this module
+:::

@@ -93,7 +93,7 @@ summary(attendence_mod)
 ## using flow to predict DNF (2017 as outlier)
 rr_DNF <- rr_results1 |> group_by(year) |> mutate(n = n()) |> filter(status == "DNF") |> mutate(n_DNF = n()) |> slice(1) |> summarise(ratio_DNF = n_DNF/n)
 
-rr_DNF <- full_join(rr_DNF, flow)
+rr_DNF <- left_join(rr_DNF, flow)
 
 write_csv(rr_DNF, "phoebechar/raisin_river/module/raisin_river_DNF.csv")
 
@@ -120,7 +120,9 @@ rr_results_flow_noDNF <- rr_results_flow |> filter(time != 0)
 ggplot(rr_results_flow_noDNF, aes(group = flow, y = time)) +
   geom_boxplot()
 
-ggplot(rr_results_flow_noDNF, aes(x = overall, y = time)) +
+rr_results1_noDNF <- rr_results1 |> filter(time != 0) |> filter(courseID == "raisin")
+
+ggplot(rr_results1_noDNF, aes(x = overall, y = time)) +
   geom_point()
 
 ggplot(rr_results_flow_noDNF, aes(x = time, y = byYrOver)) +
