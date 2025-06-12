@@ -1,5 +1,5 @@
 ---
-title: "Rasin_River_Module_SOLUTIONS"
+title: "The Impact of Outliers: The Raisin River Canoe Race | SOLUTIONS"
 format: html
 ---
 

@@ -1,0 +1,67 @@
+---
+title: "Raisin River Race Results 2015-2025"
+author: "Phoebe Jones" 
+date: "June 12th, 2025" 
+
+categories:
+  - Linear Regression
+  - Outliers 
+---
+
+## Motivation
+
+Downriver paddling is a difficult and competitive sport. The Raisin River Race is one of the longest races in Eastern Ontario, spanning almost 19 miles on the Raisin River, from St. Andrews West to Williamstown. Paddlers compete against each other to achieve the fastest time in their class.
+
+### Understanding Downriver Racing
+
+Downriver racing is a sport where competitors take their watercraft (usually a canoe, kayak, or stand-up paddle board) down a race course in competition with other paddlers, sometimes navigating rapids, in an attempt to get the fastest time either overall or in their class (classes are split up by boat and paddler type). Times are tracked by race officials on shore.
+
+### Classes
+
+The number of classes and how they are separated is variable depending on the race. For canoes, the Raisin River Race distinguishes classes first by boat type: pro, rec, and medium. Different boat types have their pros and cons, but pro boats are typically faster and used by more experienced paddlers, while rec boats are slower and more commonly available. A boat's class is also determined by how many paddlers are in the boat. For example, 'oc2mixed' refers to an open canoe being paddled by 2 people of different genders. Kayaks are split up by paddlers and by length: long or short. Long kayaks are typically faster. Stand-up paddleboards are not permitted at the Raisin River Race.
+
+### Raisin River
+
+As mentioned, the normal Raisin River course is about 18.6 miles (30 km). It contains some rapids of moderate difficulty and an optional portage (on land detour) around the Martintown Dam, which is a significantly more difficult drop than any other obstacles on the course.
+
+## Data
+
+The `raisin_river_full.csv` data set includes data from the Paddlestats and Raisin River Race websites about the Raisin River Race from the years 2015-2025 (excluding 2020 and 2021 as no race was held due to the COVID-19 pandemic). Each row represents a specific paddler that competed in the race.
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable    | Description                                        |
+|-------------|----------------------------------------------------|
+| year        | Year raced                                         |
+| boatType    | Type of boat raced (canoe, kayak, SUP)             |
+| bib         | Bib number                                         |
+| classID     | Class (oc1, oc2, etc)                              |
+| place       | Where the boat placed in their class's results     |
+| time        | The time to complete the race (in sec)             |
+| overall     | Overall rank (out of all boats ever)               |
+| byBoat      | Rank out of all boats of the same type             |
+| byClass     | Rank out of all boats in class (all years)         |
+| byYrClass   | Rank out of the boats in their class in their year |
+| byYrOver    | Rank out of all the boats that year (all classes)  |
+| byYrBoat    | Rank out of all boats of the same type that year   |
+| courseID    | Version of the course raced                        |
+| notes       | Extra information                                  |
+| displayName | Name of the racer                                  |
+| status      | Finishing status (DNF, DNS, DQ, etc.)              |
+| flow        | Flow of the river that year                        |
+
+</details>
+
+Download [raisin_river_DNF.csv](raisin_river_DNF.csv){target="_blank"}
+
+## Questions
+
+1.  Build a linear regression model determine its usefulness
+2.  Find outliers within the data
+3.  See the impact of removing influential observations (with reason)
+
+## References
+
+[Paddlestats Website: Raisin River Race History](https://paddlestats.net/racehistory/RAISIN){target="_blank"}, [Raisin River Race Website](https://rrca.on.ca/page.php?id=13){target="_blank"}

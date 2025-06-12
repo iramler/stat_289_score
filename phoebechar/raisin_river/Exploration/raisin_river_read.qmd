@@ -21,13 +21,15 @@ rr <- rr$results |> as_tibble() |>
   unnest_wider(col = c(paddlers, elemVals)) |>
   unnest_wider(`1`, names_sep = "_")
 
-rr_results1 <- rr |> select(year, boatType, bib, classId, place, value, overall, byClass, byYrClass, byYrOver, courseId, notes, displayName, status)
+rr_results <- rr |> select(year, boatType, bib, classId, place, value, overall, byBoat, byClass, byYrClass, byYrOver, byYrBoat, courseId, notes, displayName, city, state, country, status)
 
 ## renaming columns
-rr_results1 <- rename(rr_results1, classID = classId, time = value, courseID = courseId)
+rr_results <- rename(rr_results, classID = classId, time = value, courseID = courseId)
 
 ## make version with everyone (duplicates for tandem)
-rr_team_results1 <- rr_results1
+rr_full_results <- rr_results
+
+write_csv(rr_full_results, "phoebechar/raisin_river/data_repo_submission/raisin_river_full.csv")
 
 rr_results1 <- rr_results1 |> select(!displayName)
 
@@ -69,7 +71,7 @@ flow = read_csv("phoebechar/raisin_river/Exploration/RRflow - Sheet1.csv")
 
 rr_results_full <- full_join(rr_results1, rr_results2)
 
-rr_results_flow <- full_join(rr_results_full, flow)
+rr_full_results <- full_join(rr_full_results, flow)
 ```
 
 ```{r}
