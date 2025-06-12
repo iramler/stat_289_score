@@ -8,7 +8,7 @@ format: html
 
 
 
-# 0. Load the following packages
+# 0. Load the Following Packages
 ```{r}
 #| message: false
 library(tidyverse)
@@ -17,13 +17,16 @@ library(janitor)
 ```
 
 
-# 1. Load in nba_player_profiles_2025.csv from the data folder.
+# 1. Load in CSV File
+Load in the nba_player_profiles_2025.csv from the data folder.
 ```{r}
 
 ```
 
 
-# 2. Clean the dataset using the following packages from tidyverse: `dplyr`, `tidyr`, `readr` and `stringr`.
+# 2. Clean the Dataset 
+Clean the dataset using the following packages from tidyverse: `dplyr`, `tidyr`, `readr` and `stringr`.
+
 Once you are finished cleaning this dataset, these should be the following variables.
 
 Variable | Type | Description
@@ -61,7 +64,7 @@ d. Remove players who are not currently on a team. In the `name` column, these p
 
 
 
-# 3. Scrape data from Basketball Reference
+# 3. Scrape Data From Basketball Reference
 - Go to this link, [basketball-reference.com](https://www.basketball-reference.com/leagues/NBA_2025_totals.html)
 - In the middle of the page, you'll see boxes with links to different data tables. Choose one of the following tables to scrape: **Totals, Per Game, Per 36 Min, Per 100 Poss** or **Advanced**.
 
@@ -107,18 +110,49 @@ d. Combine the two cleaned datasets you scraped from Basketball Reference into a
 
 
 
-# 4. Combine the cleaned player profiles dataset from part 2, with the combined Basketball Reference dataset you created in part 3.d.
-In the 'nba_player_profiles_2025.csv' file, two names were intentionally spelled differently from how Basketball Reference spells the player's names. Keep this issue in the back of your mind. 
+# 4. Combine Datasets
+Combine the cleaned player profiles dataset from part 2, with the combined Basketball Reference dataset you created in part 3.d.
 
-a. Use `left_join()` to combine the datasets. Do you notice the misspelled names, what occurred?
+In the 'nba_player_profiles_2025.csv' file, two names were intentionally misspelled compared to their spellings on Basketball Reference.
+
+- CSV spelling → Correct spelling (Basketball Reference)
+- Jimmy Butler III → should be Jimmy Butler
+- Alperen Sengun → should be Alperen Şengün
+
+Keep this in mind as you work through the questions.
 
 
-b. Use `stringdist_join` from `fuzzyjoin` to combine the datasets. Compare the differences using `stringdist_join` and using `left_join()`.
+Combine the datasets using **two** different strategies.
+
+a. Use `left_join()` to combine the datasets. Do you notice the misspelled names, what happens as a result of the misspelled names?
+```{r}
+
+```
 
 
-b. fix names manually.
+b. Use `stringdist_join()` from the `fuzzyjoin` package to combine the datasets. How does the result differ from using 'left_join()'?
+```{r}
+
+```
 
 
+c. After comparing the differences, use `mutate()` to correct the two misspelled names in the player profiles dataset. Then, recombine the datasets and this time their should be no mismatches.
+```{r}
+
+```
+
+
+
+# 5. Explore the Combined Dataset
+Use the newly created dataset to investigate any relationships you find interesting. You can explore relationships between wingspan_advantage and different defensive or shooting statistics. Create **at least two** different visualizations using `ggplot2`.
+
+- Answer the following question for each graph.
+
+- What does the graph show?
+
+- Are there any surprising patterns or outliers?
+
+- Do your findings suggest any potential explanations? 
 
 
 
