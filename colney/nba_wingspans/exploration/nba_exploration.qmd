@@ -362,7 +362,6 @@ write_csv(full_data, "nba_wingspan_stats_2025.csv")
  completeData <- read_csv(here::here("colney/nba_tidying/exploration/nba_full_stats_2025.csv"))
 ```
 
-
 # 5. From NBA, deflections data
 
 ```{r}
