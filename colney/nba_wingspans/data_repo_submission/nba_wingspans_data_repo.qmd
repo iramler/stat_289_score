@@ -1,0 +1,59 @@
+---
+title: "Wingspan & Performance in the NBA"
+author: "Cooper Olney"
+date: "June __, 2025"
+
+categories:
+  - ____
+  - ____
+---
+
+
+## Motivation
+
+Basketball fans, analysts and scouts often consider a player's physical attributes, especially wingspan as a key factor in evaluating ability and performance. [Wingspan](https://www.nba.com/knicks/videos/how-to-measure-your-wingspan){target="_blank"}, the distance from fingertip to fingertip with arms outstretched, can offer players advantages on both ends of the court, affecting shot-blocking, rebounding and finishing at the rim. However, wingspans are relative to the players height, that's where the concept of wingspan advantage comes in.
+
+Wingspans advantage refers to the difference between a player's wingspans and their height. A larger wingspan advantage suggests a player has a longer reach relative to their size, which can translate to greater on-court impact. For example, a 6'6" player with a with a 7'1" wingspan has a +7 inch wingspan advantage, an edge that might  help them disrupt opponents defensively or finish more effectively near the basket.
+
+This concept is increasing used in scouting reports and draft analysis to identify players with unique physical tools. By quantifying this ratio and combining it with in-game performance data, we can start to examine how much these physical advantages matter statistically.
+
+
+
+## Data
+The **nba_player_profiles_2025.csv** data set contains 499 rows and 4 columns. Each row represents a NBA player from the 2024-25 season. **Note** this dataset is partially cleaned from the data found at craftednba.com.
+
+Download Data: [nba_player_profiles_2025.csv](/data_repo_submission/nba_player_profiles_2025.csv){target="_blank"}
+
+Original Data Found At: [https://craftednba.com/player-traits/length](https://craftednba.com/player-traits/length){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+| name    | Full Name of NBA player, with team abbreviation and primary position
+| height    | Player's height in feet & inches format
+| wingspan    | Player's wingspan in feet & inches format 
+| wingspan_advantage    | Difference between wingspan and height in inches (wingspan - height)  
+
+</details>
+
+
+
+## Questions
+
+1. Load and clean datasets using tidyverse packages, transforming raw data into a tidy and usable format for analysis.
+
+2. Scrape player statistics form external sources like Basketball Reference and prepare the data for analysis.
+
+3. Merge datasets from different sources, addressing inconsistencies such as mismatched player names.
+
+4. Explore relationships between wingspan advantage and a variety of performance statistics from the 2024-25 NBA season.
+
+
+
+## References
+
+Height & Wingspan—NBA Stats & Analytics | CraftedNBA. (n.d.). Retrieved from https://craftednba.com/player-traits/length
+
