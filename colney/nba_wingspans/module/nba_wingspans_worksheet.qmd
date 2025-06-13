@@ -134,13 +134,13 @@ a.  Use `left_join()` to combine the datasets. Do you notice the misspelled name
 
 ```
 
-b.  Use `stringdist_join()` from the `fuzzyjoin` package to combine the datasets. How does the result differ from using 'left_join()'?
+b.  Use `stringdist_join()` from the `fuzzyjoin` package to combine the datasets. How does the result differ from using `left_join()`?
 
 ```{r}
 
 ```
 
-c.  After comparing the differences, use `mutate()` to correct the two misspelled names in the player profiles dataset. Then, recombine the datasets and this time their should be no mismatches.
+c.  After comparing the differences, use `mutate()` to correct the two misspelled names in the player profiles dataset. Then, recombine the datasets and this time there should be no mismatches.
 
 ```{r}
 
@@ -150,7 +150,7 @@ c.  After comparing the differences, use `mutate()` to correct the two misspelle
 
 Use the newly created dataset to investigate any relationships you find interesting. You can explore relationships between wingspan_advantage and different defensive or shooting statistics. Create **at least two** different visualizations using `ggplot2`.
 
--   Answer the following question for each graph.
+Answer the following question for each graph.
 
 -   What does the graph show?
 

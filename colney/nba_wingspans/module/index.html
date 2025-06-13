@@ -6,8 +6,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Cooper Olney">
+<meta name="author" content="Ivan Ramler">
+<meta name="dcterms.date" content="2025-06-01">
+<meta name="description" content="___">
 
-<title>Wingspan &amp; Performance in the NBA</title>
+<title>Practice Data Wrangling Using NBA Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,53 +24,19 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="nba_wingspans_worksheet_files/libs/clipboard/clipboard.min.js"></script>
-<script src="nba_wingspans_worksheet_files/libs/quarto-html/quarto.js"></script>
-<script src="nba_wingspans_worksheet_files/libs/quarto-html/popper.min.js"></script>
-<script src="nba_wingspans_worksheet_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="nba_wingspans_worksheet_files/libs/quarto-html/anchor.min.js"></script>
-<link href="nba_wingspans_worksheet_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="nba_wingspans_worksheet_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="nba_wingspans_worksheet_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="nba_wingspans_worksheet_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="nba_wingspans_worksheet_files/libs/bootstrap/bootstrap-c0367b04c37547644fece4185067e4a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-c0367b04c37547644fece4185067e4a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -79,14 +49,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Wingspan &amp; Performance in the NBA</h1>
+<h1 class="title">Practice Data Wrangling Using NBA Data</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">___</div>
+    <div class="quarto-category">___</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    ___
+  </div>
 </div>
 
-
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Cooper Olney </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            St.&nbsp;Lawrence University
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author">Ivan Ramler <a href="mailto:iramler@stlawu.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            St.&nbsp;Lawrence University
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 1, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -96,161 +102,120 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In professional basketball, physical traits can have a major impact on how a player performs. One key trait that often draws attention from scouts and analysts is <strong>wingspan</strong>, the distance from fingertip to fingertip with arms fully extended.</p>
-<p>This worksheet explores the question: How does wingspan, especially wingspan relative to height, relate to player performance in the NBA?</p>
-<p>You’ll analyze data combining NBA player profiles (including height and wingspan) with in-game statistics from the 2024–25 season. A key variable is <strong>wingspan_advantage</strong>: the difference between a player’s wingspan and height, often viewed as a potential edge in defense and rebounding, but a potential disadvantage in shooting.</p>
-<p>Throughout this worksheet, you’ll clean and combine messy datasets, visualize relationships, and explore meaningful patterns, just like a data analyst working for an NBA front office. Your goal is to investigate whether a player’s wingspan advantage is linked to any performance metrics, and to think critically about how physical traits might (or might not) translate to on-court impact.</p>
-<section id="load-the-following-packages" class="level1">
-<h1>0. Load the Following Packages</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="module" class="level2">
+<h2 class="anchored" data-anchor-id="module">Module</h2>
+<p>Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.</p>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<p>The National Basketball Association (NBA) is a professional basketball league featuring the best players from around the world. In the modern NBA, player evaluation has gone far beyond just points. Physical attributes like height, wingspan and reach are increasingly used by teams to gain a competitive edge. These measurements not only influence how players are scouted and drafted, but also how they’re expected to perform on the court. One particularly interesting metric is wingspan advantage which is the difference between a player’s wingspan and their height (wingspan - height). A larger wingspan relative to height is often considered beneficial for defense, rebounding, and shot-blocking, but does this actually show up in the data?</p>
+<p>In this worksheet, you’ll explore how physical traits like wingspan advantage relate to on-court performance. You’ll work with real NBA data to practice essential data science skills such as cleaning, tidying and joining datasets, as well as visualizing relationships. By the end, you’ll use your cleaned and combined datasets to look for meaningful patterns between a player’s wingspan advantage and their statistical output.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Learning Objectives">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Objectives
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By the end of this activity, you will be able to:</p>
+<ol type="1">
+<li><p>Clean and transform raw and messy data into a structured and analysis ready format.</p></li>
+<li><p>Combine multiple datasets, including resolving issues like inconsistent naming.</p></li>
+<li><p>Use web scraping tools to gather additional data from an online source.</p></li>
+<li><p>Explore relationships between variables and communicate findings using visualizations.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Methods">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Methods
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Technology Requirement:</strong></p>
+<p>This activity requires the use of RStudio with familiarity in Quarto documents and several <code>tidyverse</code> packages including <code>dplyr</code>, <code>tidyr</code>, <code>readr</code> and <code>stringr</code>. Students will also work with the <code>janitor</code>, <code>rvest</code> and <code>fuzzyjoin</code> packages to perform webs scraping, clean raw datasets and attempt to resolve joining issues due to data inconsistencies.</p>
+</div>
+</div>
 </div>
 </section>
-<section id="load-in-csv-file" class="level1">
-<h1>1. Load in CSV File</h1>
-<p>Load in the nba_player_profiles_2025.csv from the data folder.</p>
-</section>
-<section id="clean-the-dataset" class="level1">
-<h1>2. Clean the Dataset</h1>
-<p>Clean the dataset using the following packages from tidyverse: <code>dplyr</code>, <code>tidyr</code>, <code>readr</code> and <code>stringr</code>.</p>
-<p>Once you are finished cleaning this dataset, these should be the following variables.</p>
+<section id="data" class="level3">
+<h3 class="anchored" data-anchor-id="data">Data</h3>
+<p>The <strong>nba_player_profiles_2025.csv</strong> data set contains 499 rows and 4 columns. Each row represents a NBA player from the 2024-25 season. <strong>Note</strong> this dataset is precleaned from the data found from craftednba.com.</p>
+<p>Download Data: <a href="./data_repo_submission/nba_player_profiles_2025.csv" target="_blank">nba_player_profiles_2025.csv</a></p>
+<details>
+<summary>
+<b>Variable Descriptions</b>
+</summary>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 28%">
+<col style="width: 71%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Variable</th>
-<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>name</code></td>
-<td>chr</td>
-<td>Full name of the NBA player</td>
+<td>name</td>
+<td>Full Name of NBA player, with team abbreviation and primary position</td>
 </tr>
 <tr class="even">
-<td><code>team</code></td>
-<td>chr</td>
-<td>Three-letter abbreviation of the team the player is on</td>
+<td>height</td>
+<td>Player’s height in feet &amp; inches format</td>
 </tr>
 <tr class="odd">
-<td><code>position</code></td>
-<td>chr</td>
-<td>Player’s primary on-court position in abbreviated form</td>
+<td>wingspan</td>
+<td>Player’s wingspan in feet &amp; inches format</td>
 </tr>
 <tr class="even">
-<td><code>height_inches</code></td>
-<td>num</td>
-<td>Player’s height in inches</td>
-</tr>
-<tr class="odd">
-<td><code>wingspan_inches</code></td>
-<td>num</td>
-<td>Player’s wingspan in inches</td>
-</tr>
-<tr class="even">
-<td><code>wingspan_advantage</code></td>
-<td>num</td>
+<td>wingspan_advantage</td>
 <td>Difference between wingspan and height in inches (wingspan - height)</td>
 </tr>
 </tbody>
 </table>
-<ol type="a">
-<li>Convert the <code>height</code> variable (which is currently a character string like “6’4”) into a new numeric variable called <code>height_inches</code> that represents each player’s height in total inches. <strong>Hint</strong> using helper variables (such as separate variables for feet and inches) can make this process easier.</li>
-</ol>
-<ol start="2" type="a">
-<li>Do the same thing as above, but with the <code>wingspan</code> variable. Create a new numeric variable called <code>wingspan_inches</code> that represents each player’s wingspan in total inches.</li>
-</ol>
-<ol start="3" type="a">
-<li>Extract the player’s position (e.g.&nbsp;“SG” or “C”) from the <code>name</code> variable and store it in a new variable called <code>position</code>, so that the position is no longer part of the name column.</li>
-</ol>
-<ol start="4" type="a">
-<li>Remove players who are not currently on a team. In the <code>name</code> column, these players do not have a three-letter team abbreviation at the end of their name (e.g.&nbsp;“LeBron JamesLAL” vs.&nbsp;“LeBron James”). Then, split the name and team abbreviation into two separate variables: <code>name</code> and <code>team</code>. <strong>Hint:</strong> Use stringr functions to complete this step.</li>
-</ol>
+</details>
+<section id="data-source" class="level4">
+<h4 class="anchored" data-anchor-id="data-source">Data Source</h4>
+<p><a href="https://craftednba.com/player-traits/length" target="_blank">https://craftednba.com/player-traits/length</a></p>
 </section>
-<section id="scrape-data-from-basketball-reference" class="level1">
-<h1>3. Scrape Data From Basketball Reference</h1>
-<ul>
-<li>Go to this link, <a href="https://www.basketball-reference.com/leagues/NBA_2025_totals.html">basketball-reference.com</a></li>
-<li>In the middle of the page, you’ll see boxes with links to different data tables. Choose one of the following tables to scrape: <strong>Totals, Per Game, Per 36 Min, Per 100 Poss</strong> or <strong>Advanced</strong>.</li>
-</ul>
-<p>From the janitor library, use the help section to get more details on the functions.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Function</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>clean_names()</code></td>
-<td>Standardizes column names to be lowercase, snake_case, and R-friendly.</td>
-</tr>
-<tr class="even">
-<td><code>row_to_names()</code></td>
-<td>Promotes a row (usually the first) to become the column names of the table.</td>
-</tr>
-</tbody>
-</table>
-<ol type="a">
-<li>Scrape the data from the chosen data table</li>
-</ol>
-<ol start="2" type="a">
-<li>To tidy the chosen dataset, complete the following steps:</li>
-</ol>
-<p><strong>First</strong>, standardize all variable names using the <code>clean_names()</code> function.</p>
-<p><strong>Second</strong>, remove duplicate player entries by keeping only the row that represents a player’s full season total. (For example, Luka Dončić was traded mid-season, so he might appear three times: once for his stats with DAL, once with LAL, and once for his total 2024–25 season stats.) <strong>Hint:</strong> Use <code>group_by()</code> and <code>ungroup()</code> to help identify duplicates. Also, games played will be the highest for rows that represent a full season total.</p>
-<p><strong>Optional:</strong> Use <code>select()</code> to keep only the variables you’re interested in.</p>
-<ol start="3" type="a">
-<li>Do the same steps as in parts <strong>a</strong> and <strong>b</strong>, but this time choose one of the following tables: <strong>Play-by-Play</strong>, <strong>Shooting</strong>, or <strong>Adjusted Shooting</strong>.</li>
-</ol>
-<p><strong>Note:</strong> These tables contain <strong>two</strong> rows of column headers. To fix this issue, use the <code>row_to_names()</code> function.</p>
-<ol start="4" type="a">
-<li>Combine the two cleaned datasets you scraped from Basketball Reference into a single dataset.</li>
-</ol>
 </section>
-<section id="combine-datasets" class="level1">
-<h1>4. Combine Datasets</h1>
-<p>Combine the cleaned player profiles dataset from part 2, with the combined Basketball Reference dataset you created in part 3.d.</p>
-<p>In the ‘nba_player_profiles_2025.csv’ file, two names were intentionally misspelled compared to their spellings on Basketball Reference.</p>
-<ul>
-<li>CSV spelling → Correct spelling (Basketball Reference)</li>
-<li>Jimmy Butler III → should be Jimmy Butler</li>
-<li>Alperen Sengun → should be Alperen Şengün</li>
-</ul>
-<p>Keep this in mind as you work through the questions.</p>
-<p>Combine the datasets using <strong>two</strong> different strategies.</p>
-<ol type="a">
-<li>Use <code>left_join()</code> to combine the datasets. Do you notice the misspelled names, what happens as a result of the misspelled names?</li>
-</ol>
-<ol start="2" type="a">
-<li>Use <code>stringdist_join()</code> from the <code>fuzzyjoin</code> package to combine the datasets. How does the result differ from using ‘left_join()’?</li>
-</ol>
-<ol start="3" type="a">
-<li>After comparing the differences, use <code>mutate()</code> to correct the two misspelled names in the player profiles dataset. Then, recombine the datasets and this time there should be no mismatches.</li>
-</ol>
+<section id="materials" class="level3">
+<h3 class="anchored" data-anchor-id="materials">Materials</h3>
+<p><a href="___">Class handout</a></p>
+<p><a href="___">Class handout - with solutions</a></p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Conclusion">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Conclusion
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Through this module, you explored how physical attributes, specifically wingspan and wingspan advantage might relate to on-court performance in the NBA. By cleaning the combining data from multiple sources, you’ve created a comprehensive dataset that allowed for deeper exploration of relationships between physical characteristics and basketball statistics.</p>
+<p>With your final combined dataset, you were able to generate visualizations to investigate potential connections, such as whether players with longer wingspan advantages tend to have a larger defensive impact. These kinds of relationships can provide use insights for analysts, scouts and even fans trying to understand the value of certain physical traits.</p>
+<p>This activity underscores the value of data wrangling, merging and visualization and sets the stage for more advanced analysis in the future. Whether that’s building predictive models, exploring important relationships, or applying machine learning techniques to sports data.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="explore-the-combined-dataset" class="level1">
-<h1>5. Explore the Combined Dataset</h1>
-<p>Use the newly created dataset to investigate any relationships you find interesting. You can explore relationships between wingspan_advantage and different defensive or shooting statistics. Create <strong>at least two</strong> different visualizations using <code>ggplot2</code>.</p>
-<p>Answer the following question for each graph.</p>
-<ul>
-<li><p>What does the graph show?</p></li>
-<li><p>Are there any surprising patterns or outliers?</p></li>
-<li><p>Do your findings suggest any potential explanations?</p></li>
-</ul>
 </section>
 
 </main>
