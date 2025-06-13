@@ -1,5 +1,5 @@
 ---
-title: "kenduskeag_graphs"
+title: "clinton_graphs_and_dplyr"
 format: html
 ---
 
@@ -9,13 +9,20 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-kenduskeag_full <- read_csv("phoebechar/multirace/full_kenduskeag.csv")
+clinton_full <- read_csv("phoebechar/canoeing/clinton/full_clinton.csv")
 ```
+
+#### Using the fact that each bib number is only assigned to one boat per year, modify the data set to only include each boat/team once (rather than including each racer in a boat/team)
+
+```{r}
+
+```
+
 
 #### 1. Make a bar graph comparing counts of the different boat types.
 
 ```{r}
-ggplot(kenduskeag_full, aes(x = boatType)) +
+ggplot(clinton_full, aes(x = boatType)) +
   geom_bar()
 ```
 
