@@ -63,7 +63,11 @@ Comment on the trend you see.
 ```{r}
 ggplot(data = powerlift, aes(x = Age, y = Deadlift)) +
   geom_point() +
-  geom_smooth(color = "blue", se = FALSE)
+  geom_smooth(color = "blue", se = FALSE)+
+ labs(title = "Deadlift vs. Age with Smoother",
+   x = "Age",
+   y = "Deadlift (kg)") +
+ theme_minimal()
 ```
 
 **There is a clear non-linear trend. Specifically, we see a fast
@@ -77,13 +81,13 @@ regression. XXXXXXX Add a brief description or reference to NLS in
 general. XXXXXXX Non-linear regression modeling typically starts by
 identifying a reasonable non-linear form for the model. In this case, we
 want a model that allows for growth (increasing response value) followed
-by decay (decrease in response value). One such function has the
+by decay (decrease in response value). One such function (with two parameters) has the
 following form
 
 $$y = axe^{-bx}$$
 
 Use the provided figure to summarize how values of the parameters $a$
-and $b$ affect this growth-decay curve.
+and $b$ affect this two-parameter growth-decay curve.
 
 ![Growth-decay curves](example_growth_decay_curves.png)
 
@@ -101,125 +105,109 @@ solutions (e.g., derivable formulas) do not usually exist and numerical
 optimization methods are needed to obtain estimates of the model
 parameters. While we will not delve into the specifics of how a
 numerical optimization algorithm works, most algorithms require the user
-to specify "initial values" to start the optimization. These initial values can be thought of a guesses about what the model parameters might be. These guesses do not need to be perfect, but if the guesses are "bad," it might take the algorithm longer to find the optimal parameter estimates.
+to specify "initial values" to start the optimization. These initial
+values can be thought of a guesses about what the model parameters might
+be. These guesses do not need to be perfect, but if the guesses are
+especially "bad," it might take the algorithm longer to find the optimal
+parameter estimates.
 
-Use this R chunk to define the form of our growth-decay curve.
+a)  The following code plots the powerlifting data with a smoother.
+    There is also a line of code ("geom_function") for plotting the two-parameter
+    growth-decay curve. Explore possible initial values for the
+    parameters $a$ and $b$. Do not spend too much time trying to get
+    "perfect" values for $a$ and $b$ - that is what the optimization
+    algorithm will you. You just need to help the algorithm start in a
+    reasonable place.
 
 ```{r}
-# Define growth-decay curve
-
-growth_decay_curve1 <- function(x, a, b) {
-  a * x * exp(-b * x)}
-
-```
-
-Use 
-
-```{r}
+a=30
+b=0.01
 ggplot(powerlift, aes(x = Age)) +
   geom_point(aes(y = Deadlift), 
              alpha = 0.3, color = "gray40") +
   geom_smooth(aes(y = Deadlift), color = "blue", fill = "blue") +
-  geom_function(fun = function(x) {(15)*(x)*exp((-0.04)*(x))} ,color="red") +
- labs(title = "Fitted shifted Gamma Curve to Deadlift vs. Age",
+  geom_function(fun = function(x) {(a)*(x)*exp((-b)*(x))} ,color="red") +
+ labs(title = "Initial Values for two-parameter growth-decay curve to Deadlift vs. Age",
    x = "Age",
    y = "Deadlift (kg)") +
  theme_minimal()
-``` 
-
-A potential way to fix this would be to transform the data itself, but
-another approach is to use a different function to fit the model. One
-option is a gamma function. A gamma distribution , and includes 3
-parameters that impact its shape/scale. In the function below, these
-parameters are defined as a(a scaling parameter), b(a rate parameter),
-and x_start(which is calculated using x and x0, where x is the specific
-observation’s age and x0 is a minimum age threshold). Note: the pmax()
-function in the x-start calculation ensures that x_start is not a
-negative value, so the model does not become undefined.
-
-a)  Fit a nonlinear least squares model using the shifted gamma function
-    provided below:
-
-```{r}
-### OLD
-shifted_gamma <- function(x, a, b, x0) {
-  x_start <- pmax(x - x0, 0)
-  a * x_start * exp(-b * x_start)}
-
 ```
-
-\*\* For the initial model, use a = 300, b = 0.05, and x0 = 10. 300
-represents a scaling factor for the maximum deadlift strength (we can
-see that 300 looks to be about the max weight), 0.05 represents the slow
-changes in performance, and 10 is an estimate for the minimum age in the
-dataset.
+**Values like $a=15$ and $b=0.04$ would be much better than the default values of $a=30$ and $b=0.01$ provided in the code.**
 
 
+b)  The following code will fit a nonlinear least squares model using
+    the two-parameter growth-decay curve. In the "nls_fit" function, specify the
+    initial values for the parameters $a$ and $b$ that you selected in
+    part a.
 
 ```{r}
-#nls_fit <- nls(Deadlift ~ shifted_gamma(Age, a, b, x0),
-# data = powerlift,
-# start = list(a = 300, b = 0.05, x0 = 10))
+growth_decay_curve_2par <- function(x, a, b) {
+  a * x * exp(-b * x)}
 
-nls_fit <- nls(Deadlift ~ growth_decay_curve1(Age, a, b),
+nls_fit <- nls(Deadlift ~ growth_decay_curve_2par(Age, a, b),
  data = powerlift,
- start = list(a = 15, b = 0.05))
+ start = list(a = 30, b = 0.1))
 nls_fit
 ```
 
-This is the model you should get:
-$$Deadlift = (13.10023)(age - 2.25517)e^{((0.03421)(age - 2.25517))}$$
-In its final form, this model will use age to model how strength
-progresses, with the deadlift increasing as age increases. The rate of
-increase will slow due to the exponential decay factor. As people age,
-the exponential decay term reduces the growth of the deadlift. The older
-someone gets, the less their deadlift will increase. This can be modeled
-when graphed...
+Our fitted model is $$\hat{Deadlift} = 10.8*age*e^{-0.029age}$$
 
-b)  Add predicted values to your dataset
-
-```{r}
-powerlift$pred <- predict(nls_fit)
-```
-
-c)  Plot a scatterplot of Actual vs Predicted using a smoother for
-    Best3DeadliftKg and with a prediction line
+c)  Once again, plot the data with a smoother. Use "geom_function"
+    again, this time with the estimates obtained from part b, to plot
+    the fitted two-parameter growth decay curve. Comment on the model fit.
 
 ```{r}
 ggplot(powerlift, aes(x = Age)) +
   geom_point(aes(y = Deadlift), 
              alpha = 0.3, color = "gray40") +
   geom_smooth(aes(y = Deadlift), color = "blue", fill = "blue") +
-  #geom_function(fun = function(x) {(12.74899)*(x - 3.23262)*exp((-0.03306)*(x - 3.23262))} ,color="red") +
-  geom_function(fun = function(x) {(10.8)*x*exp((-0.029)*x)} ,color="red") +
-  #geom_line(aes(y = pred), color = "red", linewidth = 1.2) +
- labs(title = "Fitted shifted Gamma Curve to Deadlift vs. Age",
+    geom_function(fun = function(x) {(10.8)*x*exp((-0.029)*x)} ,color="red") +
+ labs(title = "Deadlift vs. Age with Smoother and Fitted Growth-Decay Curve",
    x = "Age",
    y = "Deadlift (kg)") +
  theme_minimal()
 ```
 
-d)  For this particular equation the maximum age for peak deadlift is
-    33.55. If you have taken calculus, derive $$(x-x0)e^{(-b(x-x0))}$$
-    to model this using the values given in part a (plug in values and
-    solve equation)
+*While the fitted curve captures some features of the non-linear trend, we do notice that it not get the peak, or ends, of the graph quite right.**
 
-We will use z = x-c to simplify solving
 
-$$ze^{-bz}$$ $$z(e^{-bz}) + (e^{-bz})$$ $$e^{-bz} (-zb + 1) = 0$$ What
-is in the () is what needs to equal 0 so we can drop $$e^{-bz}$$
-$$-zb + 1 = 0 \text{ which equals } z = 1/b$$ Since z = x - x0 the
-updated formula is $$x - x0 = 1/b \text{ where } x = x0 + 1/b$$ Plug in
-values and get: $$x = 2.25517 +(1/0.03421) = 31.49 $$
+d)  According to our fitted model, female powerlifters achieve peak deadlift amount at age 34.48 years. If you have taken calculus, find the value of age that maximizes our fitted two-parameter growth-decay curve. If you have not taken calculus, use a guess and test method to verify that the age that maximizes our fitted two-parameter growth-decay curve.
+
+
+**Calculus solution**
+To find the age at which our fitted two-paramter growth-decay curve achieves its maximum, we can take the derivative of the function, set the result equal to 0, and then solve for age. This process can be made slightly easier by first taking the natural logarithm of our function.
+
+$$\frac{d}{dx} log(a*x*e^{-bx}) = \frac{d}{dx} log(a) + log(x)-bx = \frac{1}{x}-b$$
+Setting this equal to 0 we have
+$$1/x - b = 0  $$
+Solving for $x$ yields $x=1/b$.
+
+
+```{r}
+values <- coef(nls_fit)
+x_max <-  1/values["b"]
+```
+
+**Guess and Check Method**
+Using a guess and check method, plug in values of age around 34.48 and summarize what happens.
+```{r}
+growth_decay_curve1(34,10.8,0.029)
+growth_decay_curve1(34.2,10.8,0.029)
+growth_decay_curve1(34.4,10.8,0.029)
+growth_decay_curve1(34.45,10.8,0.029)
+growth_decay_curve1(34.48,10.8,0.029)
+growth_decay_curve1(34.5,10.8,0.029)
+growth_decay_curve1(34.6,10.8,0.029)
+```
+* Optional: Bootstrap
+
+
 
 e)  Use boot strap to calculate a 95% confidence interval for age where
     the peak occurs (x = 31.49 on the original dataset). Interpret your
     results. Is this consistent with what you found in part d?
 
-```{r}
-values <- coef(nls_fit)
-x_max <- values["x0"] + 1/values["b"]
-```
+
 
 ```{r}
 # Step 0. Set up objects 
@@ -235,11 +223,11 @@ for(i in 1:B){
           
   #2. Calculate statistic
   # Step 1: refit model
-  nls_fit_boot <- nls(Best3DeadliftKg ~ shifted_gamma(Age, a, b, x0),
+  nls_fit_boot <- nls(Deadlift ~ growth_decay_curve_2par(Age, a, b),
   data = resampled_data,
-  start = list(a = 300, b = 0.05, x0 = 10))
+  start = list(a = 30, b = 0.01))
   values <- coef(nls_fit_boot)
-  x_max_boot <- values["x0"] + 1/values["b"]
+  x_max_boot <- 1/values["b"]
     
   #3. Store results
   agePeak_boots[i] <- x_max_boot
@@ -257,25 +245,27 @@ quantile(agePeak_boots, probs = c(alpha/2, 1-alpha/2)) |>
   round(2)
 ```
 
-With 95% confidence, the peak age for max deadlift is between 31.02 and
-31.94 years old. Which contains the max value found in part d.
+**With 95% confidence, the peak age for max deadlift is between 34.06 and
+34.78 years old.**
 
-3 -\
+4 - We noticed that the two-parameter growth-decay curve did not quite adequately captures the features of the data.
 Another function possibility is a double exponential function. This type
 of function represents a rise and fall. This equation for the
 distribution has 4 parameters that impact its shape/scale: A(amplitude
 term), k1(rate of decay), k2(rate of growth), x-start (calculated using
 x and x_shift, where x is the specific observation’s age, and x_shift is
-a minimum age threshold). Again, the pmax() function ensures that
-x_start is non-negative.
+a minimum age threshold). 
 
 a)  Fit a nonlinear least squares model using the reparameterized double
     exponential with x_shift provided below
 
 ```{r}
 double_exp_shift <- function(x, A, k1, k2, x_shift) {
-  x_start <- pmax(x - x_shift, 0)
+  x_start <- pmax(x - x_shift, 0)  # this ensures that x_start is non-negative
   A * exp(-k1 * x_start) * (1 - exp(-k2 * x_start))}
+
+growth_decay_curve_3par <- function(x, a, k1, k2) {
+  a * exp(-k1 * x) * (1 - exp(-k2 * x))}
 ```
 
 \*\* For the initial model, use A = 300, k1 = 0.02, k2 = 0.1, and
@@ -286,10 +276,13 @@ the faster increase in performance before the peak, and 27 is an
 estimate for the peak that allows for appropriate shifting of ages in
 the data set.
 
+
+
+
 ```{r}
-nls_fit2 <- nls(Best3DeadliftKg ~ double_exp_shift(Age, A, k1, k2, x_shift),
+nls_fit2 <- nls(Deadlift ~ double_exp_shift(Age, A, k1, k2,x_shift),
   data = powerlift,
-  start = list(A = 300, k1 = 0.02, k2 = 0.1, x_shift = 27))
+  start = list(A = 300, k1 = 0.02, k2 = 0.1,x_shift=27))
 nls_fit2
 ```
 
@@ -302,26 +295,23 @@ the deadlift weight, reflecting the gradual reduction in strength due to
 aging where the second term reaches its maximum value and stabilizes.
 This can be modeled when graphed...
 
-b)  Add predicted values to your dataset
 
-```{r}
-powerlift$pred <- predict(nls_fit2)
-```
-
-c)  Plot a scatterplot of Actual vs Predicted using a smoother for
-    Best3DeadliftKg and with a line of best fit
-
+c)  Once again, plot the data with a smoother. Use "geom_function"
+    again, this time with the estimates obtained from part b, to plot
+    the fitted XXXXXXXXXXXXXXXXXXXXXX. Comment on the model fit.
+    
 ```{r}
 ggplot(powerlift, aes(x = Age)) +
-  geom_point(aes(y = Best3DeadliftKg), alpha = 0.3, color = "gray40") +
-  geom_smooth(aes(y = Best3DeadliftKg), color = "blue", fill = "blue") +
-  geom_line(aes(y = pred), color = "darkgreen", linewidth = 1.2) +
+  geom_point(aes(y = Deadlift), alpha = 0.3, color = "gray40") +
+  geom_smooth(aes(y = Deadlift), color = "blue", fill = "blue") +
+  geom_function(fun = function(x) {(216)*exp(-0.012*(x-5.6))*(1-exp(-0.08*(x-5.6)))} ,color="red") +
   labs(title = "Double Exponential with Explicit shift Parameter",
     subtitle = "Estimated shift location is directly modeled",
     x = "Age",
     y = "Best 3 Deadlift (kg)") +
   theme_minimal()
 ```
+
 
 d)  For this particular equation the maximum age for peak deadlift is
     31.21. If you have taken calculus, derive
@@ -399,11 +389,10 @@ has a lower residual sum-of-squares.
 
 5 -
 
-a)  Create a 5th order polynomial regression model predicting Age using
-    Best3DeadliftKg
+a)  Create a 5th order polynomial regression model predicting Deadlift using Age.
 
 ```{r}
-dl_finish <- lm(data = powerlift, Best3DeadliftKg ~ poly(Age, 5))
+dl_finish <- lm(data = powerlift, Deadlift ~ poly(Age, 5))
 summary(dl_finish)
 ```
 
@@ -417,6 +406,7 @@ c)  Find the AIC for the model you preferred in question 4
 
 ```{r}
 AIC(nls_fit2)
+AIC(nls_fit)
 ```
 
 d)  Compare the AIC in part b and c. Which one is better in predicting
