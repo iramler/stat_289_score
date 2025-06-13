@@ -23,10 +23,9 @@ clinton <- clinton$results |> as_tibble() |>
 
 clinton <- rename(clinton, classID = classId, time = value, courseID = courseId)
 
-write_csv(clinton_small, "phoebechar/canoeing/clinton/clinton_small.csv")
+clinton <- clinton |> select(!"resultId" & !"raceId" & !"eventId" & !"primaryClass" & !"raceRoleId" & !"isRacePaddler" & !"1_id" & !"1_dType" & !"1_value" & !"allCourses")
 
-ggplot(kenduskeag, aes(x = overall, y = time)) +
-  geom_point()
+clinton <- rename(clinton, personID = personId)
 
 write_csv(clinton, "phoebechar/canoeing/clinton/full_clinton.csv")
 ```

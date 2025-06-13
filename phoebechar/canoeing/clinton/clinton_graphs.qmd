@@ -12,6 +12,12 @@ library(ggplot2)
 clinton_full <- read_csv("phoebechar/canoeing/clinton/full_clinton.csv")
 ```
 
+#### The Clinton tracks registered teams who did not start or did not finish the race by marking them as DNS or DNF, terms which are entered under 'status' in the data. Remove teams who DNSed or DNFed from the data set.
+
+```{r}
+clinton_full <- clinton_full |> filter(time != 0)
+```
+
 #### Using the fact that each bib number is only assigned to one boat per year, modify the data set to only include each boat/team once (rather than including each racer in a boat/team)
 
 ```{r}
@@ -19,10 +25,10 @@ clinton_full <- read_csv("phoebechar/canoeing/clinton/full_clinton.csv")
 ```
 
 
-#### 1. Make a bar graph comparing counts of the different boat types.
+#### 1. Make a horizontal bar graph comparing counts of the different classes.
 
 ```{r}
-ggplot(clinton_full, aes(x = boatType)) +
+ggplot(clinton_full, aes(y = classID)) +
   geom_bar()
 ```
 
@@ -43,7 +49,7 @@ ggplot(kenduskeag_full, aes(y = boatType)) +
 #### 2. Make a histogram showing the distribution of times.
 
 ```{r}
-ggplot(kenduskeag_full, aes(x = time)) +
+ggplot(clinton_full, aes(x = time)) +
   geom_histogram()
 ```
 
