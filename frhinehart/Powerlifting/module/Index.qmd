@@ -69,26 +69,34 @@ This activity would be suitable for an in-class activity or as an out-of-class a
 
 ### Data
 
-The powerlifting data contains records of competitors from the open powerlifting data set. 
+The powerlifting data contains 6497 records of female competitors from the open powerlifting data set. 
 
-Download data: [dumbbell_barbell_weight_ratio.csv](https://data.scorenetwork.org/data/dumbbell_barbell_weight_ratio.csv){target="_blank"}
+Data is available on the SCORE [Data Repository Website](https://data.scorenetwork.org/){target="_blank"}
+
+Download data: [openpl_sample_female.csv](https://data.scorenetwork.org/data/openpl_sample_female.csv){target="_blank"}
+
+Similar data for male powerlifters is available at [https://data.scorenetwork.org/powerlifting/openpowerlifting.html](https://data.scorenetwork.org/powerlifting/openpowerlifting.html){target="_blank"}
 
 <details>
 
 <summary><b>Variable Descriptions</b></summary>
 
-| Variable | Description                                             |
-|----------|---------------------------------------------------------|
-|Name   | Name of the competitor |
-|Sex | Sex of the competitor |
-|Event | |
-|Equipment| Use of equipment during the competition|
-|Age | |
-|AgeClass | |
-|BirthYearClass | |
-|Division | |
-|BodyweightKg | |
-|Best3DeadliftKg | |
+| Variable      | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| Name          | Powerlifter's name                                                          |
+| Age           | Age of the lifter at the time of the meet                                   |
+| AgeClass      | Reported age class (e.g., "13-15", "24-25", "80+")                          |
+| BodyweightKg  | Body weight of the lifter in kilograms at weigh-in                         |
+| Squat         | Best squat weight from the lifter's three attempts (in kg)                 |
+| Bench         | Best bench press from the lifter's three attempts (in kg)                  |
+| Deadlift      | Best deadlift from the lifter's three attempts (in kg)                     |
+| TotalKg       | Sum of best squat, bench press, and deadlift (in kg)                       |
+| Place         | Lifter's placement in the meet (numeric)    |
+| Dots          | Bodyweight-adjusted score (modern Wilks alternative)                       |
+| Wilks         | Traditional Wilks score                                                     |
+| Glossbrenner  | Score used by GPC-affiliated federations                                    |
+| Goodlift      | IPF GL points (IPF performance standard score)                              |
+| Date          | Date of the meet (format: yyyy-mm-dd)                                       |
 
 </details>
 
