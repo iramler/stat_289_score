@@ -12,16 +12,16 @@ library(ggplot2)
 clinton_full <- read_csv("phoebechar/canoeing/clinton/full_clinton.csv")
 ```
 
-#### The Clinton tracks registered teams who did not start or did not finish the race by marking them as DNS or DNF, terms which are entered under 'status' in the data. Remove teams who DNSed or DNFed from the data set.
+#### The Clinton tracks registered teams who did not start or did not finish the race by marking them as DNS or DNF, terms which are entered under 'status' in the data. Modify the data set so it only includes teams with an NA under 'status'.
 
 ```{r}
-clinton_full <- clinton_full |> filter(time != 0)
+clinton_full <- clinton_full |> filter(is.na(status))
 ```
 
 #### Using the fact that each bib number is only assigned to one boat per year, modify the data set to only include each boat/team once (rather than including each racer in a boat/team)
 
 ```{r}
-
+clinton_full <- clinton_full |> group_by(year, bib) |> slice(1)
 ```
 
 
