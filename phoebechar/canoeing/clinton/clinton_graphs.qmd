@@ -12,18 +12,11 @@ library(ggplot2)
 clinton_full <- read_csv("phoebechar/canoeing/clinton/full_clinton.csv")
 ```
 
-#### The Clinton tracks registered teams who did not start or did not finish the race by marking them as DNS or DNF, terms which are entered under 'status' in the data. Modify the data set so it only includes teams with an NA under 'status'.
-
-```{r}
-clinton_full <- clinton_full |> filter(is.na(status))
-```
-
 #### Using the fact that each bib number is only assigned to one boat per year, modify the data set to only include each boat/team once (rather than including each racer in a boat/team)
 
 ```{r}
 clinton_full <- clinton_full |> group_by(year, bib) |> slice(1)
 ```
-
 
 #### 1. Make a horizontal bar graph comparing counts of the different classes.
 
@@ -35,15 +28,14 @@ ggplot(clinton_full, aes(y = classID)) +
 ##### a. Change the color and fill of the bars to any combination you like
 
 ```{r}
-ggplot(kenduskeag_full, aes(x = boatType)) +
+ggplot(clinton_full, aes(y = classID)) +
   geom_bar(colour = "darkslategrey", fill = "darkseagreen")
 ```
 
-##### b. Make a horizontal version of the same graph
+#### The Clinton tracks registered teams who did not start or did not finish the race by marking them as DNS or DNF, terms which are entered under 'status' in the data. Modify the data set to only include teams with an NA under 'status'.
 
 ```{r}
-ggplot(kenduskeag_full, aes(y = boatType)) +
-  geom_bar(colour = "darkslategrey", fill = "darkseagreen")
+clinton_full <- clinton_full |> filter(is.na(status))
 ```
 
 #### 2. Make a histogram showing the distribution of times.
@@ -53,38 +45,43 @@ ggplot(clinton_full, aes(x = time)) +
   geom_histogram()
 ```
 
+#### We can see a very short bar at time == 0 (which is obviously impossible), indicating one boat with an unrecorded time slipped through our earlier filtering. Open the data set and sort ascendingly by time to find the boat and filter it out.
+
+```{r}
+clinton <- clinton_full |> filter(time != 0)
+```
+
+#### Remake the histogram.
+
+```{r}
+ggplot(clinton, aes(x = time)) +
+  geom_histogram()
+```
+
 ##### a. Change the number of bins (test out a few options!)
 
 ```{r}
-ggplot(kenduskeag_full, aes(x = time)) +
+ggplot(clinton, aes(x = time)) +
   geom_histogram(bins = 17)
 ```
 
 ##### b. Add a frequency line
 
 ```{r}
-ggplot(kenduskeag_full, aes(x = time)) +
+ggplot(clinton, aes(x = time)) +
   geom_histogram() +
   geom_freqpoly()
 ```
 
-```{r}
-ggplot(kenduskeag_full, aes(x = courseID)) +
-  geom_bar(position = "fill", aes(fill = boatType))
-```
+#### Make boxplots showing times for each year.
 
 ```{r}
-kenduskeag_attend <- kenduskeag_full |> group_by(year, bib) |> slice(1) |> ungroup() |> group_by(year) |> summarise(n_boats = n())
+ggplot(clinton, aes(x = year, y = time, group = year)) +
+  geom_boxplot()
 ```
+##### a) Point out 2 years that look to have very different means and two that look to have very similar means.
 
-```{r}
-ggplot(kenduskeag_attend, aes(x = year, y = n_boats)) +
-  geom_col()
-```
+Answers may vary. One example: 2023 and 2025 look to have very different means. 2017 and 2018 look to have very similar means.
 
-#### Make a pink violin plot showing time differences based on the boat type.
 
-```{r}
-ggplot(kenduskeag_full, aes(x = boatType, y = time)) +
-  geom_violin(color = "hotpink", fill = "pink")
-```
+

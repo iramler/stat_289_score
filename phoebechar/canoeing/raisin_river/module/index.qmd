@@ -49,7 +49,7 @@ Students should have knowledge of how to fit linear regression models and famili
 
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
 
-Students will need to use RStudio. 
+Students will need to use RStudio. Or other stat software like Minitab.
 
 :::
 
