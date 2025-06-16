@@ -46,7 +46,7 @@ Once you are finished cleaning this dataset, these should be the following varia
 | `wingspan_inches` | num | Player's wingspan in inches |
 | `wingspan_advantage` | num | Difference between wingspan and height in inches (wingspan - height) |
 
-a.  Convert the `height` variable (which is currently a character string like "6'4") into a new numeric variable called `height_inches` that represents each player's height in total inches. **Hint** using helper variables (such as separate variables for feet and inches) can make this process easier.
+a.  Convert the `height` variable (which is currently a character string like 6'4") into a new numeric variable called `height_inches` that represents each player's height in total inches. **Hint** using helper variables (such as separate variables for feet and inches) can make this process easier.
 
 ```{r}
 
