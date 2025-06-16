@@ -5,7 +5,8 @@ date: "June 12th, 2025"
 format: html
 categories:
   - ANOVA
-  - Welch's t-test
+  - Post Hoc Tukey Test
+  - Confidence Interval
 ---
 
 ## Motivation
@@ -16,7 +17,17 @@ In the Olympics, athletes first performs a **Short Program** that lasts 2 minute
 
 ## Data
 
-The dataset provided (male skaters' winter Olympic scores since 2006 with demographic information) was scraped from Wikipedia ______________ (link). You may download a copy of the dataset at __________ (link)
+The dataset provided (male skaters' winter Olympic scores since 2006 with demographic information) was scraped from Wikipedia: 
+
+[skate2006](https://en.wikipedia.org/wiki/Figure_skating_at_the_2006_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
+
+[skate2010](https://en.wikipedia.org/wiki/Figure_skating_at_the_2010_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
+
+[skate2014](https://en.wikipedia.org/wiki/Figure_skating_at_the_2014_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
+
+[skate2018](https://en.wikipedia.org/wiki/Figure_skating_at_the_2018_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
+
+[skate2022](https://en.wikipedia.org/wiki/Figure_skating_at_the_2022_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
 
 ::: {.callout-note collapse="true" title="Tidying Process"}
 
@@ -46,13 +57,23 @@ Olympics since 2006 data:
 </details>
 
 
-_____(link)
+:[Figure Skating Data](frhinehart/Olympic Figure Skating/Module/MensFigureSkating.csv)
 
 ## Questions Investigated
 1. Is there a significant difference in mean scores throughout the different years of the winter Olympics
+2. Which specific years have a significant difference in mean scores
 
 ## References
 
-____ (Link)
+[skate2006](https://en.wikipedia.org/wiki/Figure_skating_at_the_2006_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
 
-____ (Link)
+[skate2010](https://en.wikipedia.org/wiki/Figure_skating_at_the_2010_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
+
+[skate2014](https://en.wikipedia.org/wiki/Figure_skating_at_the_2014_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
+
+[skate2018](https://en.wikipedia.org/wiki/Figure_skating_at_the_2018_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
+
+[skate2022](https://en.wikipedia.org/wiki/Figure_skating_at_the_2022_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i6pw07k3GkM?si=ud_nUmub-iDQ_cAm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
