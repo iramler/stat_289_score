@@ -4,9 +4,9 @@ author: "Phoebe Jones"
 date: "June 13, 2025" 
 
 categories:
-  - 
-  -  
-  -  
+  - Ggplot
+  - Dplry
+  - Beginner data cleaning
 ---
 
 ## Motivation
@@ -65,11 +65,11 @@ Each row in the `full_clinton` data set represents a specific paddler from a yea
 
 ## Questions
 
-1. 
+1. Make various differ plots based on a data set
 
-2. 
+2. Filter a data set based on context
 
-3.  
+3. Identify an issue with data based on a plot
 
 ## References
 

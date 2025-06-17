@@ -54,7 +54,7 @@ The `raisin_river_full.csv` data set includes data from the Paddlestats database
 
 </details>
 
-Download [raisin_river_DNF.csv](raisin_river_DNF.csv){target="_blank"}
+Download [raisin_river_full.csv](raisin_river_full.csv){target="_blank"}
 
 ## Questions
 
