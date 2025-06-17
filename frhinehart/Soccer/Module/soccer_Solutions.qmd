@@ -1,5 +1,5 @@
 ---
-title: "WomenSoccer_Solutions"
+title: "soccer_Solutions"
 Authors: Faith Rhinehart
 execute: 
   echo: true
@@ -9,6 +9,11 @@ format:
   html:
     embed-resources: true
 ---
+Loading necessary packages:
+```{r}
+library(dplyr)
+```
+
 
 Reading in the Women's data set:
 ```{r}
@@ -26,6 +31,8 @@ tab1 <- read_html(url1) |>
 menSoccer <- tab1[[1]] |> html_table()
 ```
 
+Notice in both data sets the variable names are being treated as values instead of the column names. 
+
 1) Fix the `womenSoccer` and the `menSoccer` data set so that the first row is the variable names.
 
 ```{r}
@@ -39,7 +46,48 @@ menSoccer1 <- menSoccer[-1, ]
 2) Combine the men and women's data set into one data set. 
 
 ```{r}
-
+combined_soccer <- bind_rows(womenSoccer1, menSoccer1)
 ```
+
+a - What looks wrong in the new data set?
+
+There are a bunch of NA values 
+
+b - Why do you think the data set doesn't look right?
+
+The variable names are labeled differently in each data set and the men's soccer data set has added variables the women's data set does not have.
+
+3) Change the variable names of the women's data set to match the men's and get rid of any variables in the men's that don't appear in the women's data set.
+
+```{r}
+womenSoccerMatched <- womenSoccer1 |> rename(Player = Name, Pos = Pos., YC = Y, RC = R, `Career Goals` = Goals, MIN = Min)
+
+menSoccerMatched <- menSoccer1 |> select(1:7, 9:10, 12:13)
+```
+
+Before we recombine the data sets, it might be helpful to know if the player is male or female. 
+
+4) Add a new variable to both individual data sets that says "M" or "F' for gender of player. 
+
+```{r}
+womenSoccerMatched$Sex <- "F"
+
+menSoccerMatched$Sex <- "M"
+View(menSoccerMatched)
+```
+
+5) Slice the Men's data set to exclude `OWN GOAL`, `TOTALS`, and `OPPONENT TOTALS` and slice the Women's data set to exclude `Own Goal`, `TOTAL`, and `Opponent`.
+
+```{r}
+cleanedwomenSoccer <- womenSoccerMatched |> slice(1:39)
+cleanedmenSoccer <- menSoccerMatched |> slice(1:48)
+```
+
+6) Combine the the updated data sets.
+
+```{r}
+combined_SoccerMatched <- bind_rows(cleanedwomenSoccer, cleanedmenSoccer)
+```
+
 
 

@@ -20,7 +20,7 @@ In the Olympics, athletes first performs a **Short Program** that lasts 2 minute
 
 ## Data
 
-The dataset provided (male and female skaters' winter Olympic scores since 2006 with demographic information) was scraped from Wikipedia: 
+The dataset provided (male skaters' winter Olympic scores since 2006 with demographic information) was scraped from Wikipedia: 
 
 [skate2006](https://en.wikipedia.org/wiki/Figure_skating_at_the_2006_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
 
@@ -44,7 +44,7 @@ The dataset provided (male and female skaters' winter Olympic scores since 2006 
 
 ::: {.callout-note collapse="true" title="Tidying Process"}
 
-This process was used to make the dataset
+This process was used to make that dataset.
 - **Copied and pasted the data set into Excel**
   - Added a year variable to indicate the year of Olympics
   - Added a sex variable to indicate the gender of skater
@@ -72,9 +72,7 @@ Olympics since 2006 Men and Women's data:
 </details>
 
 
-:[Men's Figure Skating Data](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Olympic Figure Skating/MensFigureSkating.csv)
-
-:[Women's Figure Skating Data](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Olympic Figure Skating/womensFigureSkating.csv)
+:[Figure Skating Data](frhinehart/Olympic Figure Skating/Module/MensFigureSkating.csv)
 
 ## Questions Investigated
 1. Is there a significant difference in mean scores throughout the different years of the winter Olympics
