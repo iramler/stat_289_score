@@ -4,14 +4,13 @@ author:
   - name: Faith Rhinehart
     affiliation:
       - ref: slu
-date: "June 12th, 2025"
-description: "Using ANOVA to determine a difference in mean scores throughout the years of winter Olympics"
+date: "June 17th, 2025"
+description: "Model Building on the US Olympic Figure Skaters"
 editor: 
   canonical: true
 categories:
-  - ANOVA
-  - Post Hoc Tukey Test
-  - Confidence Interval
+  - Model Bulding
+  - Log Transformations
 ---
 
 ### Background to Figure Skating Video
@@ -26,23 +25,20 @@ Figure skating is a sport where people perform routines on ice to music, combini
 
 The menSkating dataset features data from male skaters in the winter Olympics since 2006. Variables include characteristics such as Name, Nation, Year. Other variables included the 3 types of scoring: Free Skate, Short Program, and Total Points. The relevant variables for this specific module are Total Points and Year.   
 
-For the sake of this module, the data set was tidied so that it excluded any Skater who did not advance to the Free Skate round.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 Learning Objectives:
 
-1. Students will learn when and how to use ANOVA
+1. Students will gain a further understanding log transformations and model building
 
-2. Students will learn how to preform a Post Hoc Tukey Test
-
-3. Students will gain a further understanding of interpreting graphs and outputs
+2. Students will practice their skills of interpreting a model 
 
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 For this activity, students will need to use R Studio. 
 
-Students are expected to understand the concept of hypothesis forming, rejecting hypothesis, confidence intervals and interpreting output. Students are also expected to now how to code basic ggplots, fit models, and use functions in R Studio.
+Students are expected to understand the concept of model building, model assumptions, and model transformations. Knowing how to code these things will be helpful in completing this assignment.
 
 This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
 :::
@@ -55,7 +51,7 @@ The menSkating data contains scores from skaters in the winter Olympics since 20
 
 Download data: 
 
-:[Figure Skating Data](frhinehart/Olympic Figure Skating/Module/MensFigureSkating.csv)
+:[Figure Skating Data](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Olympic Figure Skating/logTransformation/Module/MensFigureSkating.csv)
 
 <details>
 
@@ -76,10 +72,10 @@ Download data:
 
 ### Materials
 
-:[Class handout](FigureSkatingANOVA_Worksheet.qmd)
+:[Class handout](Figure_Skating_Worksheet.qmd)
 
-:[Class handout - with solutions](FigureSkatingANOVA_Solutions.qmd)
+:[Class handout - with solutions](Figure_skating_Solutions.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Students should gain an understanding of how the process of ANOVA and the Post Hoc Tukey test works in R Studio. 
+Students should gain an understanding of model building, interpreting coefficients, and the process of log transformations.
 :::
