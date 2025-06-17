@@ -9,7 +9,7 @@ library(rvest)
 library(janitor)
 ```
 
-# 1. Pull Data
+# 1. Player Profiles Dataset
 Take data from [Crafted NBA](https://craftednba.com/player-traits/length) to get the NBA player profile data
 ```{r}
 url <- "https://craftednba.com/player-traits/length"
@@ -22,7 +22,7 @@ objs <-
 wingspans <- objs[[1]]
 ```
 
-# 2. Clean Data
+
 ```{r}
 preclean <- wingspans %>%
   select(-1) %>%
@@ -59,7 +59,66 @@ write_csv(preclean, "nba_player_profiles_2025.csv")
 
 
 
+# 2. First Basketball Reference Dataset
+```{r}
+url2 <- "https://www.basketball-reference.com/leagues/NBA_2025_per_poss.html"
+objs2 <-
+  url2 %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
 
+per100poss <- objs2[[1]]
+```
+
+```{r}
+per100poss <- 
+  per100poss %>%
+  clean_names() %>%
+  select(2, 6, 8, 18, 21, 22, 23, 24, 25, 26, 27, 30, 31, 32) %>%
+  relocate(e_fg_percent, .after = d_rtg) %>%
+  relocate(ft_percent, .after = e_fg_percent) %>%
+  relocate(pts, .after = mp)
+  
+```
+
+```{r}
+write_csv(per100poss, "nba_per100possessions_2025.csv")
+```
+
+
+
+# 3. Second Basketball Reference Dataset
+```{r}
+url3 <- "https://www.basketball-reference.com/leagues/NBA_2025_shooting.html"
+objs3 <-
+  url3 %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+shooting <- objs3[[1]]
+```
+
+```{r}
+shooting <- 
+  shooting %>%
+  row_to_names(1) %>%
+  clean_names() %>%
+  select(2, 9, 10, 11, 16, 17, 22, 25) %>%
+  rename(
+    avg_dist_of_fg = dist,
+    `2pt_rate` = x2p,
+    `3pt_rate` = x3p,
+    `2pt_percent` = x2p_2,
+    `3pt_percent` = x3p_2,
+    `dunk_rate` = percent_fga
+  )
+```
+
+```{r}
+write_csv(shooting, "nba_shooting_2025.csv")
+```
 
 
 

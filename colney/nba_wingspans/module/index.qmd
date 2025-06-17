@@ -23,7 +23,9 @@ Please note that these material have not yet completed the required pedagogical 
 
 
 ### Introduction
-The National Basketball Association (NBA) is a professional basketball league featuring the best players from around the world. In the modern NBA, player evaluation has gone far beyond just points. Physical attributes like height, [wingspan](https://www.nba.com/knicks/videos/how-to-measure-your-wingspan){target="_blank"} and reach are increasingly used by teams to gain a competitive edge. These measurements not only influence how players are scouted and drafted, but also how they're expected to perform on the court. One particularly interesting metric is wingspan advantage which is the difference between a player's wingspan and their height (wingspan - height). A larger wingspan relative to height is often considered beneficial for defense, rebounding, and shot-blocking, but does this actually show up in the data?
+The National Basketball Association (NBA) is a professional basketball league featuring the best players from around the world. In the modern NBA, player evaluation has gone far beyond just points. Physical attributes like height, [wingspan](https://www.nba.com/knicks/videos/how-to-measure-your-wingspan){target="_blank"} and reach are increasingly used by teams to gain a competitive edge. These measurements not only influence how players are scouted and drafted, but also how they're expected to perform on the court. 
+
+One particularly interesting metric is wingspan advantage which is the difference between a player's wingspan and their height (wingspan - height). A larger wingspan relative to height is often considered beneficial for defense, rebounding, and shot-blocking. However, longer arms can also affect shooting mechanics, sometimes offering an edge by helping players shoot over defenders, but also potentially making it harder to develop a consistent shooting form, but does this actually show up in the data?
 
 In this worksheet, you'll explore how physical traits like wingspan advantage relate to on-court performance. You'll work with real NBA data to practice essential skills such as cleaning, tidying and joining datasets, as well as visualizing relationships. By the end, you'll use your cleaned and combined datasets to look for meaningful patterns between a player's wingspan advantage and their statistical output.
 
@@ -51,9 +53,10 @@ This activity requires the use of RStudio with familiarity in Quarto documents a
 :::
 
 ### Data
-The **nba_player_profiles_2025.csv** data set contains 499 rows and 4 columns. Each row represents a NBA player from the 2024-25 season. **Note** this dataset is partially cleaned from the data found at craftednba.com.
+The **nba_player_profiles_2025.csv** dataset contains 499 rows and 4 columns. Each row represents a NBA player from the 2024-25 season. **Note** this dataset is partially cleaned from the data found at craftednba.com.
 
 Download Data: [nba_player_profiles_2025.csv](/data_repo_submission/nba_player_profiles_2025.csv){target="_blank"}
+
 
 <details>
 
@@ -68,12 +71,74 @@ Download Data: [nba_player_profiles_2025.csv](/data_repo_submission/nba_player_p
 
 </details>
 
-#### Data Source
+**Data For Worksheet Without Web Scraping**
+
+The **nba_per100possesions_2025.csv** dataset contains 736 rows and 14 columns. Each row represents a NBA player from the 2024-25 season. 
+
+Download Data: [nba_per100possesions_2025.csv](/data_repo_submission/nba_per100possesions_2025.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+| player   | Full Name of NBA player
+| g    | Games played during the 2024-25 season
+| mp    | Minutes played during the 2024-25 season 
+| pts    | Points scored per 100 possessions
+| orb | Offensive rebounds per 100 possessions
+| drb | Defensive rebounds per 100 possessions
+| trb | Total rebounds per 100 possessions
+| ast | Assists per 100 possessions
+| stl | Steals per 100 possessions
+| blk | Blocks per 100 possessions
+| o_rtg | Offensive Rating: An estimate of points produced per 100 possessions
+| d_rtg | Defensive Rating: An esitmate of points allowed per 100 possessions
+| e_fg_percent | Effective field goal percentage: Adjusts percentage for the fact that a 3pt field goal is worth more than a 2pt field goal
+| ft_percent | Free throw percentage
+
+</details>
+
+The **nba_shooting_2025** data contains 737 rows and 8 columns. Each row represents a NBA player from the 2024-25 season.
+
+Download Data: [nba_shooting_2025.csv](/data_repo_submission/nba_shooting_2025.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+| player   | Full Name of NBA player
+| fg_percent | 
+| avg_dist_of_fg
+| 2pt_rate
+| 3pt_rate
+| 2_pt_percent
+| 3pt_percent
+| dunk_rate
+
+</details>
+
+#### Data Sources
 
 [https://craftednba.com/player-traits/length](https://craftednba.com/player-traits/length){target="_blank"}
 
+[https://www.basketball-reference.com/leagues/NBA_2025_per_poss.html](https://www.basketball-reference.com/leagues/NBA_2025_per_poss.html){target="_blank"}
+
+[https://www.basketball-reference.com/leagues/NBA_2025_shooting.html](https://www.basketball-reference.com/leagues/NBA_2025_shooting.html){target="_blank"}
+
 
 ### Materials
+
+**Version With Web Scraping**
+
+[Class handout](___)
+
+[Class handout - with solutions](___)
+
+**Version Without Web Scraping**
 
 [Class handout](___)
 
