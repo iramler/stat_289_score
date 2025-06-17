@@ -1,0 +1,53 @@
+---
+title: "rodeo_explore"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+library(ggplot2)
+library(lubridate)
+
+## top rider 2025
+jose <- read_csv("phoebechar/rodeo/Jose_Vitor_Leme.csv")
+
+jose <- jose |> mutate(date = ymd(date))
+
+## rookie of the year 2025
+hudson <- read_csv("phoebechar/rodeo/Hudson_Bolton.csv")
+
+hudson <- hudson |> mutate(date = ymd(date))
+
+ggplot(jose, aes(x = date, y = score)) +
+  geom_point()
+
+jose_noDQ <- jose |> filter(score != 0)
+
+hudson_noDQ <- hudson |> filter(score != 0)
+
+ggplot(jose_noDQ, aes(x = date, y = score)) +
+  geom_point()
+
+ggplot(jose_noDQ, aes(x = score)) +
+  geom_histogram()
+
+ggplot(hudson_noDQ, aes(x = score)) +
+  geom_histogram()
+
+jose <- jose |> mutate(rider = "Jose")
+
+hudson <- hudson |> mutate(rider = "Hudson")
+
+compare <- full_join(hudson, jose)
+
+full_noDQ <- compare |> filter(score != 0)
+
+ggplot(full_noDQ, aes(x = rider, group = rider, y = score)) +
+  geom_boxplot()
+
+
+ggplot(full_noDQ, aes(x = date, y = score)) +
+  geom_point(aes(colour = rider))
+```
+
