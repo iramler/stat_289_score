@@ -31,7 +31,9 @@ The dataset provided (male skaters' winter Olympic scores since 2006 with demogr
 
 ::: {.callout-note collapse="true" title="Tidying Process"}
 
-This process was used to tidy dataset.
+This process was used to make that dataset.
+- **Copied and pasted the data set into Excel**
+  - Added a year variable to incidate the year of Olympics
 
 - **Sliced the full data set** to exclude:                                 
   - Skaters' who did not advance to free skate      

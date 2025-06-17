@@ -36,5 +36,21 @@ c - Interpret the confidence interval
 With 95% confidence, the true difference in mean total points between pre2018 and post2018 lies between −60.87 and −37.79. Since this interval does not include zero, it further supports the conclusion that there is a significant difference between the groups.
 
 
+Residual and cook's d for outlier:
+```{r}
+ggplot(data = menSkating, aes(x = SP, y = FS, color = factor(Year), group = Year)) +
+ geom_point() +
+ geom_smooth(method = "lm", se = TRUE) +
+ scale_color_brewer(palette = "Dark2") +
+  labs(title = "Figure Skating Scatterplot",
+       x = "Short Program",
+       y = "Free Skate")
 
+plot(model)
+standardized_residuals <- rstandard(model)
+standardized_residuals
+
+cooks_d <- cooks.distance(model)
+cooks_d
+```
 
