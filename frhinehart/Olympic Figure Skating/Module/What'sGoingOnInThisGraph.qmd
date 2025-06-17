@@ -1,5 +1,52 @@
 ---
 title: "What'sGoingOnInThisGraph"
-format: html
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
 ---
+
+```{r}
+library(ggplot2)
+
+menSkating <- read_csv(here::here("frhinehart/Olympic Figure Skating/Module/MensFigureSkating.csv")) 
+
+
+ggplot(data = menSkating, aes(x = SP, y = FS, color = factor(Year), group = Year)) +
+ geom_point() +
+ geom_smooth(method = "lm", se = TRUE) +
+ scale_color_brewer(palette = "Dark2") +
+  labs(title = "Figure Skating Scatterplot",
+       x = "Short Program",
+       y = "Free Skate")
+
+menSkating2018 <- menSkating |> filter(Year == 2018)
+menSkating20142022 <- menSkating |> filter(Year >= 2014)
+
+ggplot(data = menSkating2018, aes(x = SP, y = FS)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(title = "Figure Skating 2018 Scatterplot",
+       x = "Short Program",
+       y = "Free Skate")
+
+ggplot(data = menSkating, aes(x = Year, y = TP, group = Year)) +
+  geom_boxplot() +
+  labs(title = "Figure Skating Boxplot",
+       x = "Year",
+       y = "Total Points")
+
+ggplot(data = menSkating20142022, aes(x = SP, y = FS, color = factor(Year), group = Year)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE) +
+  scale_color_brewer(palette = "Dark2") +
+  labs(title = "Figure Skating 2014 -2022 Scatterplot",
+       x = "Short Program",
+       y = "Free Skate")
+  
+```
 

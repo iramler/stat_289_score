@@ -1,6 +1,13 @@
 ---
 title: "TwoWayANOVA"
-format: html
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
 ---
 
 ```{r}
@@ -37,7 +44,6 @@ real <- combinedSkate |> select(1, 2, 6, 7, 11:13)
 View(real)
 ```
 
-
 ```{r}
 real$Total <- as.numeric(as.character(real$Total))
 anova_result <- aov(Total ~ Year * Sex, data = real)
@@ -45,3 +51,24 @@ summary(anova_result)
 ```
 
 Significant difference for all three
+
+
+
+
+```{r}
+ggplot(data = menSkating, aes(x = SP, y = FS, color = factor(Year), group = Year)) +
+ geom_point() +
+ geom_smooth(method = "lm", se = TRUE) +
+ scale_color_brewer(palette = "Dark2") +
+  labs(title = "Figure Skating Scatterplot",
+       x = "Short Program",
+       y = "Free Skate")
+
+plot(model)
+standardized_residuals <- rstandard(model)
+standardized_residuals
+
+cooks_d <- cooks.distance(model)
+cooks_d
+```
+
