@@ -1,5 +1,5 @@
 ---
-title: "FigureSkating"
+title: "Olympic Figure Skating Scoring 2006-2022"
 author: "Faith Rhinehart" 
 date: "June 12th, 2025" 
 format: html
@@ -17,35 +17,15 @@ categories:
 
 Figure skating is a sport where individuals, pairs, or groups preform with music on ice skates. Performing various tricks such as jumps, spins, and footwork showcases a combination of athleticism and artistry. Figure skating was the first winter sport to be in included in the Olympic Games in 1908. 
 
-In the Olympics, athletes first performs a **Short Program** that lasts 2 minutes and 40 seconds. The **Short Program** is designed to highlight the skaters' technical skills and artistry since they must perform specific required elements. After the **Short Program**, skaters perform the **Free Skate** which last 1 to 4.5 minutes. The **Free Skate** allows for more creativity as Skaters' can choose from a variety of elements to create their performance. The combination of the **Short Program** score and **Free Skate** score gets added up into a total score which determines the winner. 
+In the Olympics, athletes first performs a **Short Program** that lasts 2 minutes and 40 seconds. The **Short Program** is designed to highlight the skaters' technical skills and artistry since they must perform specific required elements. After the **Short Program**, skaters perform the **Free Skate** which last 1 to 4.5 minutes. The **Free Skate** allows for more creativity as Skaters' can choose from a variety of elements to create their performance. The programs are scored by combining two main parts: the Technical Score, which evaluates the difficulty and execution of jumps, spins, and footwork, and the Program Components Score, which judges artistry, choreography, and interpretation. Points can be deducted for mistakes like falls. The combination of the **Short Program** score and **Free Skate** score gets added up into a total score which determines the winner. 
 
 ## Data
 
-The dataset provided (male skaters' winter Olympic scores since 2006 with demographic information) was scraped from Wikipedia: 
-
-[skate2006](https://en.wikipedia.org/wiki/Figure_skating_at_the_2006_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
-
-[skate2010](https://en.wikipedia.org/wiki/Figure_skating_at_the_2010_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
-
-[skate2014](https://en.wikipedia.org/wiki/Figure_skating_at_the_2014_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
-
-[skate2018](https://en.wikipedia.org/wiki/Figure_skating_at_the_2018_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
-
-[skate2022](https://en.wikipedia.org/wiki/Figure_skating_at_the_2022_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
-
-[Womenskate2006](https://en.wikipedia.org/wiki/Figure_skating_at_the_2006_Winter_Olympics_%E2%80%93_Ladies%27_singles){target="_blank'}
-
-[Womenskate2010](https://en.wikipedia.org/wiki/Figure_skating_at_the_2010_Winter_Olympics_%E2%80%93_Ladies%27_singles){target="_blank'}
-
-[Womenskate2014](https://en.wikipedia.org/wiki/Figure_skating_at_the_2014_Winter_Olympics_%E2%80%93_Ladies%27_singles){target="_blank'}
-
-[Womenskate2018](https://en.wikipedia.org/wiki/Figure_skating_at_the_2018_Winter_Olympics_%E2%80%93_Ladies%27_singles){target="_blank'}
-
-[Womenskate2022](https://en.wikipedia.org/wiki/Figure_skating_at_the_2022_Winter_Olympics_%E2%80%93_Women%27s_singles){target="_blank'}
+The dataset provided (male and female skaters' winter Olympic scores since 2006 with demographic information) was scraped from Wikipedia see references for links. 
 
 ::: {.callout-note collapse="true" title="Tidying Process"}
 
-This process was used to make that dataset.
+This process was used to make the dataset
 - **Copied and pasted the data set into Excel**
   - Added a year variable to indicate the year of Olympics
   - Added a sex variable to indicate the gender of skater
@@ -59,10 +39,11 @@ This process was used to make that dataset.
 <details>
 <summary><strong>Variable Descriptions</strong></summary>
 
-Olympics since 2006 Men and Women's data:
+Olympics since 2006 Men's (7 variables and 120 cases) and Women's (6 variables and 120 cases) data:
 
 | Variable        | Description                                    |
 |-----------------|------------------------------------------------|
+| Rank            | Place of Skater in Competition (Men's only)    |
 | Name            | Skater's Name                                  |
 | Nation          | Nation representing Skater                     |
 | FS              | Free Skate Score                               |
@@ -72,36 +53,33 @@ Olympics since 2006 Men and Women's data:
                        
 </details>
 
+Download Men's Data:[MensFigureSkating.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Olympic Figure Skating/MensFigureSkating.csv)
 
-:[Figure Skating Data](frhinehart/Olympic Figure Skating/Module/MensFigureSkating.csv)
+Download Women's Data:[womensFigureSkating.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Olympic Figure Skating/womensFigureSkating.csv)
 
 ## Questions Investigated
-1. Is there a significant difference in mean scores throughout the different years of the winter Olympics
-2. Which specific years have a significant difference in mean scores
-3. Determining log transformations and model building
-4. Exploring Interaction Variables
+1. Is there a significant difference in mean scores throughout the different years of the winter Olympics?
+2. Which specific years have a significant difference in mean scores?
+3. Can we use year to predict total points?
+4. Can we use short program score to predict free skate score?
+4. Is there a main effect of year and sex on total points and is there an interaction effect?
 
 ## References
 
-[skate2006](https://en.wikipedia.org/wiki/Figure_skating_at_the_2006_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
+Data was scraped from Wikipedia:
 
-[skate2010](https://en.wikipedia.org/wiki/Figure_skating_at_the_2010_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
+[skate2006](https://en.wikipedia.org/wiki/Figure_skating_at_the_2006_Winter_Olympics_%E2%80%93_Men's_singles){   }
+[skate2010](https://en.wikipedia.org/wiki/Figure_skating_at_the_2010_Winter_Olympics_%E2%80%93_Men's_singles){   }
+[skate2014](https://en.wikipedia.org/wiki/Figure_skating_at_the_2014_Winter_Olympics_%E2%80%93_Men's_singles){   }
+[skate2018](https://en.wikipedia.org/wiki/Figure_skating_at_the_2018_Winter_Olympics_%E2%80%93_Men's_singles){   }
+[skate2022](https://en.wikipedia.org/wiki/Figure_skating_at_the_2022_Winter_Olympics_%E2%80%93_Men's_singles){   }
 
-[skate2014](https://en.wikipedia.org/wiki/Figure_skating_at_the_2014_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
+[Womenskate2006](https://en.wikipedia.org/wiki/Figure_skating_at_the_2006_Winter_Olympics_%E2%80%93_Ladies%27_singles){   }
+[Womenskate2010](https://en.wikipedia.org/wiki/Figure_skating_at_the_2010_Winter_Olympics_%E2%80%93_Ladies%27_singles){   }
+[Womenskate2014](https://en.wikipedia.org/wiki/Figure_skating_at_the_2014_Winter_Olympics_%E2%80%93_Ladies%27_singles){   }
+[Womenskate2018](https://en.wikipedia.org/wiki/Figure_skating_at_the_2018_Winter_Olympics_%E2%80%93_Ladies%27_singles){   }
+[Womenskate2022](https://en.wikipedia.org/wiki/Figure_skating_at_the_2022_Winter_Olympics_%E2%80%93_Women%27s_singles){   }
 
-[skate2018](https://en.wikipedia.org/wiki/Figure_skating_at_the_2018_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
-
-[skate2022](https://en.wikipedia.org/wiki/Figure_skating_at_the_2022_Winter_Olympics_%E2%80%93_Men's_singles){target="_blank'}
-
-[Womenskate2006](https://en.wikipedia.org/wiki/Figure_skating_at_the_2006_Winter_Olympics_%E2%80%93_Ladies%27_singles){target="_blank'}
-
-[Womenskate2010](https://en.wikipedia.org/wiki/Figure_skating_at_the_2010_Winter_Olympics_%E2%80%93_Ladies%27_singles){target="_blank'}
-
-[Womenskate2014](https://en.wikipedia.org/wiki/Figure_skating_at_the_2014_Winter_Olympics_%E2%80%93_Ladies%27_singles){target="_blank'}
-
-[Womenskate2018](https://en.wikipedia.org/wiki/Figure_skating_at_the_2018_Winter_Olympics_%E2%80%93_Ladies%27_singles){target="_blank'}
-
-[Womenskate2022](https://en.wikipedia.org/wiki/Figure_skating_at_the_2022_Winter_Olympics_%E2%80%93_Women%27s_singles){target="_blank'}
-
+Video was scarped from YouTube:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/i6pw07k3GkM?si=ud_nUmub-iDQ_cAm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

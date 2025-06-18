@@ -23,7 +23,6 @@ library(dplyr)
 MensFigureSkating <- read_csv("MensFigureSkating.csv")
 
 womensFigureSkating <- read_csv("womensFigureSkating.csv")
-View(womensFigureSkating)
 ```
 
 1) Change the `TP` variable in the women's data set into a <double> instead of a <character>
