@@ -12,13 +12,14 @@ format:
 
 Figure skating is a sport where people perform routines on ice to music, combining athletic skill with artistic expression. Skaters compete in different categories like men's singles, women's singles, pairs (a man and a woman skating together), and ice dance (which focuses more on rhythm and movement). Each skater or team performs two routines: the short program and the free skate. The short program is a shorter routine with a list of required moves that every skater must include. Judges look at how well each move is done and how smoothly everything fits with the music. The free skate is longer and gives skaters more freedom to show their personal style and creativity. They still need to include certain types of moves, but they can choose how to put them together. Judges give scores for both routines based on how difficult the moves are, how well they’re done, and how artistic the performance is. The scores from both routines are added together, and the skater or team with the highest total wins.
 
-Read in the data and necessary packages:
+Read in the data:
 ```{r}
 library(ggplot2)
 library(tidyverse)
 library(here)
 library(readr)
 library(dplyr)
+library(ggthemes)
 
 MensFigureSkating <- read_csv("MensFigureSkating.csv")
 
@@ -68,7 +69,7 @@ ggplot(combined_Skate, aes(x = Sex, y = TP, fill = factor(Year))) +
 
 Females tend to increases by steps whereas for males it increase unevenly. 
 
-5) Conduct another two-way ANOVA with Sex as a additive term. Make sure to include all parts of a formal hypothesis test.
+5) Conduct another two-way ANOVA with `Sex` as a additive term. Make sure to include all parts of a formal hypothesis test.
 
 Main Effects:
 H₀₁ (Sex): There is no main effect of Sex on TP.
@@ -110,7 +111,7 @@ $Sex
                 diff      lwr      upr p adj
 Male-Female 56.60501 49.27531 63.93472     0
 
-7) Make a Letter's Table for Years to visualize the significance between years.
+7) Make a Pair-Wise Comparisons for `Year` to visualize the significance between years.
 
 2022 --- a
 2018 --- a
@@ -118,6 +119,6 @@ Male-Female 56.60501 49.27531 63.93472     0
 2010 ---  b  
 2006 ---     
 
-8) If you completed the one-way ANOVA module and did the optional letter's table, comment on how and why this two-way ANOVA letter's table is different from the one you did in the other one. 
+8) If you completed the one-way ANOVA module and did the optional pair wise comparisons, comment on how and why this two-way ANOVA letter's table is different from the one you did in the other one. 
 
-There is significance between 2006 and 2010 in the two-way ANOVA (granted it is very weak), but in the other one there was no significance. This is because the two-way ANOVA accounts for the interaction between two independent variables, which can reveal subtle effects that a one-way ANOVA might miss. In the one-way ANOVA, only one factor (such as year) was considered in isolation, so any interaction effects with a second factor (Sex) were ignored. The letter's table in the two-way ANOVA reflects these interactions, which can lead to different groupings and significance outcomes compared to the one-way version.
+There is significance between 2006 and 2010 in the two-way ANOVA (granted it is very weak), but in the other one there was no significance. This is because the two-way ANOVA accounts for the interaction between two independent variables, which can reveal subtle effects that a one-way ANOVA might miss. In the one-way ANOVA, only one factor (such as year) was considered in isolation, so any interaction effects with a second factor (Sex) were ignored. The one in the two-way ANOVA reflects these interactions, which can lead to different groupings and significance outcomes compared to the one-way version.

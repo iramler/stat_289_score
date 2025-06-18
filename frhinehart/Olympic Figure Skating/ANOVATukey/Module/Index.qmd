@@ -1,5 +1,5 @@
 ---
-title: "Investing Figure Skating Scores in the Winter Olympics"
+title: "Investing The Difference in Figure Skating Scores Throughout the Years"
 author:
   - name: Faith Rhinehart
     affiliation:
@@ -51,11 +51,11 @@ This activity would be suitable for an in-class activity or as an out-of-class a
 
 ### Data
 
-The menSkating data contains scores from skaters in the winter Olympics since 2006. 
+The menSkating data contains scores from skaters in the Winter Olympics since 2006. 
 
 Download data: 
 
-:[Figure Skating Data](frhinehart/Olympic Figure Skating/Module/MensFigureSkating.csv)
+:[MensFigureSkating.csv](frhinehart/Olympic Figure Skating/Module/MensFigureSkating.csv)
 
 <details>
 

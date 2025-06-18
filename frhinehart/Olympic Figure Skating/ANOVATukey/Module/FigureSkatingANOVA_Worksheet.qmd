@@ -12,7 +12,14 @@ format:
 
 Figure skating is a sport where people perform routines on ice to music, combining athletic skill with artistic expression. Skaters compete in different categories like men's singles, women's singles, pairs (a man and a woman skating together), and ice dance (which focuses more on rhythm and movement). Each skater or team performs two routines: the short program and the free skate. The short program is a shorter routine with a list of required moves that every skater must include. Judges look at how well each move is done and how smoothly everything fits with the music. The free skate is longer and gives skaters more freedom to show their personal style and creativity. They still need to include certain types of moves, but they can choose how to put them together. Judges give scores for both routines based on how difficult the moves are, how well they’re done, and how artistic the performance is. The scores from both routines are added together, and the skater or team with the highest total wins.
 
-Read in the dataset and the necessary packages:
+Read in the dataset:
+```{r}
+library(ggplot2)
+library(tidyverse)
+library(here)
+library(dplyr)
+```
+
 
 
 1) Create a box plot graph with `Year` on the x-axis and `TP` (Total Points) on the y-axis. Group by Year to get a box plot for each year. Describe what you see. 
@@ -60,7 +67,7 @@ b - Interpret a confidence interval for 2022 and 2014 comparison
 
 Optional:
 
-A letter's table is used for significance testing. Each column is assigned a letter to indicate if it is significantly different from another column (for this case each year will represent a column). If two columns don't have a matching letter then they are significanty different. We can use the TukeyHSD output to do this. 
+A Pair Wise Comparison is used for significance testing. Each column is assigned a letter to indicate if it is significantly different from another column (for this case each year will represent a column). If two columns don't have a matching letter then they are significantly different. We can use the TukeyHSD output to do this. 
 
 We arrange the columns (whatever variable is on  th x-axis of your plots) typically from largest sample size to smallest sample size but since the years all have the same sample size we will put them in order from largest year to smallest year). This will be our letter table. 
 
@@ -80,7 +87,7 @@ Then we move to 2018 with the letter "b". Since all years have significance with
 a - Place a "b" with any year that does not have significance with 2014 (remember to also place one at 2014). If there is none move onto the next year with "b"
 
 b - Place a "c" with any year that does not have significance with 2010 (remember to also place one at 2010). If there is none move onto the next year with "c"
-Note: if you already paired two years together as not significant you don't pair them again with a new letter. For example you already paired 2014 and 2010 with "b", you do not pair them again with "c" (if you do it can lead to confusion that 2006 and are not signifiacnt when they are.)
+Note: if you already paired two years together as not significant you don't pair them again with a new letter. For example you already paired 2014 and 2010 with "b", you do not pair them again with "c" (if you do it can lead to confusion that 2006 and are not significant when they are.)
 
 c - Place a "d" with any year that does not have significance with 2006 (remember to also place one at 2006).
 

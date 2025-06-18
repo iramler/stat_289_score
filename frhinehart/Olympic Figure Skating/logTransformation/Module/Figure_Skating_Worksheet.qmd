@@ -11,12 +11,20 @@ format:
 
 Figure skating is a sport where people perform routines on ice to music, combining athletic skill with artistic expression. Skaters compete in different categories like men's singles, women's singles, pairs (a man and a woman skating together), and ice dance (which focuses more on rhythm and movement). Each skater or team performs two routines: the short program and the free skate. The short program is a shorter routine with a list of required moves that every skater must include. Judges look at how well each move is done and how smoothly everything fits with the music. The free skate is longer and gives skaters more freedom to show their personal style and creativity. They still need to include certain types of moves, but they can choose how to put them together. Judges give scores for both routines based on how difficult the moves are, how well they’re done, and how artistic the performance is. The scores from both routines are added together, and the skater or team with the highest total wins.
 
-Reading in the Dataset and the necessary packages:
+Reading in the Dataset:
+```{r}
+library(readr)
+library(ggplot2)
+library(tidyverse)
+library(rvest)
+library(here)
+library(dplyr)
+```
 
 
 Question 1:
 
-a) Fit a model that uses year to predict total points (TP). Write the fitted model below using the model summary output. 
+a) Fit a model that uses year to predict total points (`TP`). Write the fitted model below using the model summary output. 
 
 
 b) Provide an interpretation of the intercept of the model.
@@ -33,7 +41,7 @@ Skating2 <- Skating |>
   mutate(YearsSince2006 = Year - 2006)
 ```
 
-Question 4: Fit a model that uses the new variable created above to predict TP. Provide an interpretation of the intercept of the model.
+Question 4: Fit a model that uses the new variable created above to predict `TP`. Provide an interpretation of the intercept of the model.
 
 
 Question 5:
@@ -42,7 +50,6 @@ a) Fit a model that uses `SP` (Short program) to predict `FS` (Free Skating). Co
 
 
 b) Based on the answers in part a what transformation should you preform on what variable?
-
 
 
 c) Preform a the transformation on and write down the fitted model below using the model summary output.

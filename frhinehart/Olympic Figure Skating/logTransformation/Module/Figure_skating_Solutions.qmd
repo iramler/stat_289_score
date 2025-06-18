@@ -25,7 +25,7 @@ Skating <- read_csv(here::here("frhinehart/Olympic Figure Skating/Module/MensFig
 
 Question 1:
 
-a) Fit a model that uses year to predict total points (TP). Write the fitted model below using the model summary output. 
+a) Fit a model that uses year to predict total points (`TP`). Write the fitted model below using the model summary output. 
 ```{r}
 skating_mod1 = lm(TP ~ Year, data = Skating)
 summary(skating_mod1)

@@ -100,7 +100,7 @@ With 95% confidence, the true difference in mean total points between 2022 and 2
 
 Optional:
 
-A letter's table is used for significance testing. Each column is assigned a letter to indicate if it is significantly different from another column (for this case each year will represent a column). If two columns don't have a matching letter then they are significanty different. We can use the TukeyHSD output to do this. 
+A Pair Wise Comparison is used for significance testing. Each column is assigned a letter to indicate if it is significantly different from another column (for this case each year will represent a column). If two columns don't have a matching letter then they are significantly different. We can use the TukeyHSD output to do this. 
 
 We arrange the columns (whatever variable is on  th x-axis of your plots) typically from largest sample size to smallest sample size but since the years all have the same sample size we will put them in order from largest year to smallest year). This will be our letter table. 
 
@@ -120,7 +120,7 @@ Then we move to 2018 with the letter "b". Since all years have significance with
 a - Place a "b" with any year that does not have significance with 2014 (remember to also place one at 2014). If there is none move onto the next year with "b"
 
 b - Place a "c" with any year that does not have significance with 2010 (remember to also place one at 2010). If there is none move onto the next year with "c"
-Note: if you already paired two years together as not significant you don't pair them again with a new letter. For example you already paired 2014 and 2010 with "b", you do not pair them again with "c" (if you do it can lead to confusion that 2006 and are not signifiacnt when they are.)
+Note: if you already paired two years together as not significant you don't pair them again with a new letter. For example you already paired 2014 and 2010 with "b", you do not pair them again with "c" (if you do it can lead to confusion that 2006 and are not significant when they are.)
 
 c - Place a "d" with any year that does not have significance with 2006 (remember to also place one at 2006).
 
