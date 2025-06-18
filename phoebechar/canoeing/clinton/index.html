@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-06-11">
-<meta name="description" content="Finding and removing highly influential outliers">
+<meta name="dcterms.date" content="2025-06-17">
+<meta name="description" content="Using data from the Clinton Canoe Regatta to explore ggplot and dplyr">
 
-<title>Raisin River Results and Oulier Impact/Exclusion</title>
+<title>Clinton Canoe Regatta: Graphing and Data Manipulation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -47,16 +47,16 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Raisin River Results and Oulier Impact/Exclusion</h1>
+<h1 class="title">Clinton Canoe Regatta: Graphing and Data Manipulation</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Linear Regression</div>
-    <div class="quarto-category">Outlier Detectors</div>
+    <div class="quarto-category">GGplot</div>
+    <div class="quarto-category">Dplyr</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Finding and removing highly influential outliers
+    Using data from the Clinton Canoe Regatta to explore ggplot and dplyr
   </div>
 </div>
 
@@ -67,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 11, 2025</p>
+      <p class="date">June 17, 2025</p>
     </div>
   </div>
   
@@ -84,8 +84,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.</p>
 <section id="introduction" class="level3">
 <h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
-<p>Each year, the Raisin Region Conservation Authority (RRCA) holds the Raisin River Race. This race is one of the longest races in Eastern Ontario, spanning almost 19 miles (30 km) on the Raisin River, from St.&nbsp;Andrews West to Williamstown. Paddlers compete against each other to achieve the fastest time in their class. Classes vary by the years and are split up based on boat type and paddler/s.</p>
-<p>The Raisin River Race can be paddled by canoes or kayaks, but stand-up paddleboards are not permitted.</p>
+<p>The Clinton Canoe Regatta (the 70-miler) is an annual event in the downriver canoeing community. This race is one leg of the Canoeing Triple Crown, a challenge made up of three marathon canoe races in North America, and spans about 63 miles on the Susquehanna River, from Cooperstown to Bainsbridge, NY. Paddlers compete against each other to achieve the fastest time in their class.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Activity Length">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -114,10 +113,11 @@ Learning Objectives
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>By the end of this activity, you will:</p>
+<p>By the end of this activity, students will:</p>
 <ol type="1">
-<li><p>Increase ability to find and investigate outliers in a dataset.</p></li>
-<li><p>Be able remove influential observations from a dataset.</p></li>
+<li><p>Increase ability to create different plots in R using GGPlot.</p></li>
+<li><p>Learn more about filtering to include specific observations.</p></li>
+<li><p>Be able to notice and fix issues in data.</p></li>
 </ol>
 </div>
 </div>
@@ -134,7 +134,7 @@ Methods
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Students should have knowledge of how to fit linear regression models and familiarity with the measures of unusualness/influence. Students should also be able to modify data sets to remove unwanted observations.</p>
+<p>Students should have introductory experience with both ggplot and dplyr.</p>
 </div>
 </div>
 </div>
@@ -150,20 +150,24 @@ Technology Requirements
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Students will need to use RStudio. Or other stat software like Minitab.</p>
+<p>Students will need to use RStudio.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
-<p>This activity uses the data set: <a href="raisin_river_DNF.csv" target="_blank">raisin_river_DNF.csv</a></p>
-<p>The <code>raisin_river_DNF.csv</code> data set includes data from Paddlestats and the Raisin River Race website about the Raisin River Race from the years 2015-2025 (excluding 2020 and 2021 as no race was held due to the COVID-19 pandemic and 2019 due to incomplete finish status data). Each row contains the year, the flow from that year, and the ratio of DNFs from that year (calculated by dividing number of DNFs by total number of participants).</p>
+<p>This activity uses the data set: <a href="full_clinton.csv" target="_blank">full_clinton.csv</a></p>
+<p>The <code>full_clinton.csv</code> data set includes data from Paddlestats about the Clinton Canoe Regatta from the years 2014-2025 (excluding 2020 and 2021 as no race was held due to the COVID-19 pandemic). Each row refers to a specefic racer from a year at the race.</p>
 <details>
 <summary>
 <b>Variable Descriptions</b>
 </summary>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Variable</th>
@@ -173,29 +177,104 @@ Technology Requirements
 <tbody>
 <tr class="odd">
 <td>year</td>
-<td>Year of Raisin River Race</td>
+<td>Year raced</td>
 </tr>
 <tr class="even">
-<td>ratio_DNF</td>
-<td>The ratio of DNFs at the race.</td>
+<td>boatType</td>
+<td>Type of boat raced (canoe, kayak, SUP)</td>
 </tr>
 <tr class="odd">
-<td>flow</td>
-<td>The flow of the water for that year</td>
+<td>bib</td>
+<td>Bib number</td>
+</tr>
+<tr class="even">
+<td>classID</td>
+<td>Class (oc4stock, oc2pro, etc)</td>
+</tr>
+<tr class="odd">
+<td>place</td>
+<td>Where the boat placed in their class’s results</td>
+</tr>
+<tr class="even">
+<td>time</td>
+<td>The time to complete the race (in sec)</td>
+</tr>
+<tr class="odd">
+<td>overall</td>
+<td>Overall rank (out of all boats ever)</td>
+</tr>
+<tr class="even">
+<td>byBoat</td>
+<td>Rank out of all boats of the same type</td>
+</tr>
+<tr class="odd">
+<td>byClass</td>
+<td>Rank out of all boats in class (all years)</td>
+</tr>
+<tr class="even">
+<td>byYrClass</td>
+<td>Rank out of the boats in their class in their year</td>
+</tr>
+<tr class="odd">
+<td>byYrOver</td>
+<td>Rank out of all the boats that year (all classes)</td>
+</tr>
+<tr class="even">
+<td>byYrBoat</td>
+<td>Rank out of all boats of the same type that year</td>
+</tr>
+<tr class="odd">
+<td>courseID</td>
+<td>Version of the course raced (all the same here)</td>
+</tr>
+<tr class="even">
+<td>notes</td>
+<td>Extra information (usually about class)</td>
+</tr>
+<tr class="odd">
+<td>personID</td>
+<td>The person’s PaddleStats ID</td>
+</tr>
+<tr class="even">
+<td>displayName</td>
+<td>Name of the racer</td>
+</tr>
+<tr class="odd">
+<td>sortName</td>
+<td>Name of the race with last name first</td>
+</tr>
+<tr class="even">
+<td>city</td>
+<td>Racer’s home city (as given at registration)</td>
+</tr>
+<tr class="odd">
+<td>state</td>
+<td>Racer’s home state or province (as given at registration)</td>
+</tr>
+<tr class="even">
+<td>country</td>
+<td>Racer’s home country (as given at registration)</td>
+</tr>
+<tr class="odd">
+<td>teamName</td>
+<td>Racer’s team name</td>
+</tr>
+<tr class="even">
+<td>status</td>
+<td>Finishing status (DNF, DNS, DQ, etc.)</td>
 </tr>
 </tbody>
 </table>
 </details>
 <section id="data-source" class="level4">
 <h4 class="anchored" data-anchor-id="data-source">Data Source</h4>
-<p>The data are compiled from the <a href="https://paddlestats.net/racehistory/RAISIN" target="_blank">Paddlestats Website</a> and the <a href="https://rrca.on.ca/page.php?id=13" target="_blank">Raisin River Race Website</a>. This data set is a pared down version of the <code>raisin_river_full.csv</code>. <a href="raisin_river_DNF.csv" target="_blank">raisin_river_full.csv</a></p>
+<p>The data are compiled from the <a href="https://paddlestats.net/racehistory/CLINTON70" target="_blank">Paddlestats Website</a>.</p>
 </section>
 </section>
 <section id="materials" class="level3">
 <h3 class="anchored" data-anchor-id="materials">Materials</h3>
-<p><a href="raisin_river_module_worksheet.qmd" target="_blank">Module Worksheet (R Studio Version)</a></p>
-<p><a href="%22Raisin%20River%20Module%20Worksheet.docx%22" target="_blank">Module Worksheet (Other Software Version)</a></p>
-<p><a href="raisin_river_module_SOLUTIONS.qmd" target="_blank">Solutions to Worksheet (R Studio Version)</a></p>
+<p><a href="clinton_module_worksheet.qmd">Module Worksheet</a>{target= “_blank”}</p>
+<p><a href="clinton_module_SOLUTIONS.qmd">Solutions to Worksheet</a>{target= “_blank”}</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Conclusion">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -208,7 +287,7 @@ Conclusion
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Upon conclusion of this module, students will have an understanding of how to detect outliers in their data set, the influence these observations can have, and how to remove them if appropriate.</p>
+<p>Upon conclusion of this module, students will have a greater understanding of the uses of ggplot and dplyr and will be better prepared to use both with less clear-cut data.</p>
 </div>
 </div>
 </div>
