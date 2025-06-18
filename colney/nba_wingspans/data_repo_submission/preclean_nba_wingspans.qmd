@@ -105,7 +105,7 @@ shooting <-
   shooting %>%
   row_to_names(1) %>%
   clean_names() %>%
-  select(2, 9, 10, 11, 16, 17, 22, 25) %>%
+  select(2, 6, 9, 10, 11, 16, 17, 22, 25) %>%
   rename(
     avg_dist_of_fg = dist,
     `2pt_rate` = x2p,
@@ -121,7 +121,223 @@ write_csv(shooting, "nba_shooting_2025.csv")
 ```
 
 
+# 4. Fully cleaned player profiles
+```{r}
+url3 <- "https://craftednba.com/player-traits/length"
+objs3 <-
+  url3 %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+wingspansFull <- objs3[[1]]
+```
 
 
+```{r}
+tidy_wingspans <- 
+  wingspansFull %>%
+  select(-1) %>% # in preclean
+  
+  # tidy height
+  mutate(
+    height = Height # worksheet, copies Height var, to use later
+  ) %>%
+  separate_wider_delim( # worksheet
+      cols = Height, 
+      names = c("feet", "inches"), # removes Height and splits into ft and in
+      delim = "'") %>%
+  mutate( # worksheet
+    feet = parse_number(feet), 
+    inches = parse_number(inches),
+    height_inches = feet * 12 + inches # new var, in numerical(inches) format
+  ) %>%
+  select(-feet, -inches) %>% # removing helping vars
+  
+  # tidy wingspan
+  mutate(wingspan = Wingspan) %>% # worksheet, copies Wingspan var, to use later
+  separate_wider_delim( # worksheet
+    cols = Wingspan,
+    names = c("feetW", "inchesW"), # removes wingspan, splits into ftW and inW
+    delim = "'") %>%
+  mutate( # worksheet
+    feetW = parse_number(feetW),
+    inchesW = parse_number(inchesW),
+    wingspan_inches = feetW * 12 + inchesW # new var, in numerical(inches) format
+  ) %>%
+  select(-feetW, -inchesW) %>% # remove helping var
+  
+  rename(wingspan_advantage = Length, # in preclean
+         name = Name) %>%
+  relocate(wingspan_advantage, .after = last_col()) %>%
+  
+  # above will be part a
+  # and below will be part b
+  
+  # tidy name
+  separate_wider_delim( # worksheet
+    cols = name,
+    names = c("name", "position"),
+    delim = " | ") %>%
+  arrange(name) %>%
+  
+  
+  # remove free agents
+  filter(str_detect(name, pattern = "[A-Z]{3}$")) %>%
+  mutate(
+    team = str_extract(name, pattern = "[A-Z]{3}$"),
+    name = str_remove(name, pattern = "[A-Z]{3}$")
+  ) %>%
+  relocate(team, .after = name)
+
+```
+
+```{r}
+# fixing duplicate players
+tidy_wingspans %>%
+  group_by(team, position, height, wingspan) %>%
+  filter(n() > 1) %>%
+  summarise(name)
+
+# only dupes are Alex Sarr and Bub Carrington, so remove them
+# fix name errors
+nba_wingspans_2025 <- tidy_wingspans %>%
+  filter(name != "Alexandre Sarr" & name != "Carlton Carrington") #%>%
+  # mutate(name = if_else(name == "AJ Johnson", "A.J Johnson", name))
+
+# remove name that shouldn't be there
+nba_wingspans_2025 <- nba_wingspans_2025 %>%
+  slice(-149) %>%
+  # remove cols that shouldn't be there
+  select(-4, -6)
+
+```
+
+# 5. Complete dataset
+
+## first dataset
+
+```{r}
+profiles <- read_csv(here::here("colney/nba_wingspans/data_repo_submission/nba_player_profiles_2025.csv"))
+```
+
+
+```{r}
+profiles <-
+  profiles %>%
+  separate_wider_delim(
+    cols = height,
+    names = c("feet", "inches"),
+    delim = "'"
+  ) %>%
+  mutate(
+    feet = parse_number(feet),
+    inches = parse_number(inches),
+    height_inches = feet * 12 + inches
+  ) %>%
+  select(-feet, -inches)
+```
+
+
+```{r}
+profiles <-
+  profiles %>%
+  separate_wider_delim(
+    cols = wingspan,
+    names = c("feet", "inches"),
+    delim = "'"
+  ) %>%
+  mutate(
+    feet = parse_number(feet),
+    inches = parse_number(inches),
+    wingspan_inches = feet * 12 + inches
+  ) %>%
+  select(-feet, -inches) %>%
+  relocate(wingspan_advantage, .after = wingspan_inches)
+```
+
+
+```{r}
+profiles <-
+  profiles %>%
+  separate_wider_delim(
+    cols = name,
+    names = c("name", "position"),
+    delim = " | "
+  )
+```
+
+
+```{r}
+profiles <-
+  profiles %>%
+  filter(
+    str_detect(name, pattern = "[A-Z]{3}$")
+  ) %>%
+  mutate(
+    team = str_extract(name, pattern = "[A-Z]{3}$"),
+    name = str_remove(name, pattern = "[A-Z]{3}$")
+  ) %>%
+  relocate(team, .after = name)
+```
+
+
+## second dataset
+```{r}
+per_100_poss <- read_csv(here::here("colney/nba_wingspans/data_repo_submission/nba_per100possessions_2025.csv"))
+```
+
+
+```{r}
+per_100_poss <-
+  per_100_poss %>%
+  group_by(player) %>%
+  slice_max(order_by = g, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  # remove any unwanted rows
+  slice(-361)
+```
+
+
+## third dataset
+
+```{r}
+shooting <- read_csv(here::here("colney/nba_wingspans/data_repo_submission/nba_shooting_2025.csv"))
+```
+
+```{r}
+shooting <-
+  shooting %>%
+  group_by(player) %>%
+  slice_max(order_by = g, n = 1, with_ties = FALSE) %>%
+  ungroup() %>%
+  # remove any unwanted rows and cols
+  slice(-361) %>%
+  select(-2)
+```
+
+## combining
+
+```{r}
+bball_ref <-
+  per_100_poss %>%
+  left_join(shooting, by = "player")
+```
+
+
+```{r}
+combined <- 
+  profiles %>%
+  mutate(
+    name = if_else(name == "Alperen Sengun", "Alperen Şengün", name),
+    name = if_else(name == "Jimmy Butler III", "Jimmy Butler", name)
+  ) %>%
+  left_join(bball_ref, by = c("name" = "player"))
+```
+
+## csv
+```{r}
+write_csv(combined, "nba_wingspan_performance_2025.csv")
+```
 
 

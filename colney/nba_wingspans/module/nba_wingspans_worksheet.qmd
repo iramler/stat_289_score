@@ -95,7 +95,7 @@ b.  To tidy the dataset by completing the following steps:
 
 **Second**, remove duplicate player entries by keeping only the row that represents a player’s full season total. (For example, Luka Dončić was traded mid-season, so he might appear three times: once for his stats with DAL, once with LAL, and once for his total 2024–25 season stats.) **Hint:** Use `group_by()` and `ungroup()` to help identify duplicates. Also, games played will be the highest for rows that represent a full season total.
 
-**Optional:** Use `select()` to keep only the variables you're interested in.
+**Optional:** Use `select()` to keep only the variables you're interested in. Also use `rename()` and `relocate()` to improve clarity in the dataset.
 
 ```{r}
 
@@ -162,7 +162,7 @@ b. Create a scatterplot using `wingspan_advantage` as the explanatory variable a
 
 ```
 
-c. Create a scatterplot using `wingspan_inches` as the explanatory variable and `3pt_percentage` as the response variable. Include a regression line, a title, and labels for the x and y axes. Then use `facet_wrap()` to sepeate the plot by `position`. What patterns or relationships stand out within or across positions?
+c. Create a scatterplot using `wingspan_advantage` as the explanatory variable and `3pt_rate` as the response variable. Include a regression line, a title, and labels for the x and y axes. Then use `facet_wrap()` to separate the plot by `position`. What patterns or relationships stand out within or across positions?
 ```{r}
 
 ```
@@ -171,7 +171,6 @@ d. **Optional:** Investigate any other combination of physical traits and on-cou
 ```{r}
 
 ```
-
 
 
 

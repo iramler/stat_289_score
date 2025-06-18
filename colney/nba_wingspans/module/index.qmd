@@ -64,16 +64,16 @@ Download Data: [nba_player_profiles_2025.csv](/data_repo_submission/nba_player_p
 
 | Variable          | Description
 |-------------------|------------------------------------------------
-| name    | Full Name of NBA player, with team abbreviation and primary position
+| name    | Full name of NBA player, with team abbreviation and primary position
 | height    | Player's height in feet & inches format
 | wingspan    | Player's wingspan in feet & inches format 
 | wingspan_advantage    | Difference between wingspan and height in inches (wingspan - height)  
 
 </details>
 
-**Data For Worksheet Without Web Scraping**
+#### Data For Version Without Web Scraping
 
-The **nba_per100possesions_2025.csv** dataset contains 736 rows and 14 columns. Each row represents a NBA player from the 2024-25 season. 
+The **nba_per100possessions_2025.csv** dataset contains 736 rows and 14 columns. Each row represents a NBA player from the 2024-25 season. 
 
 Download Data: [nba_per100possesions_2025.csv](/data_repo_submission/nba_per100possesions_2025.csv){target="_blank"}
 
@@ -83,7 +83,7 @@ Download Data: [nba_per100possesions_2025.csv](/data_repo_submission/nba_per100p
 
 | Variable          | Description
 |-------------------|------------------------------------------------
-| player   | Full Name of NBA player
+| player   | Full name of NBA player
 | g    | Games played during the 2024-25 season
 | mp    | Minutes played during the 2024-25 season 
 | pts    | Points scored per 100 possessions
@@ -94,13 +94,13 @@ Download Data: [nba_per100possesions_2025.csv](/data_repo_submission/nba_per100p
 | stl | Steals per 100 possessions
 | blk | Blocks per 100 possessions
 | o_rtg | Offensive Rating: An estimate of points produced per 100 possessions
-| d_rtg | Defensive Rating: An esitmate of points allowed per 100 possessions
+| d_rtg | Defensive Rating: An estimate of points allowed per 100 possessions
 | e_fg_percent | Effective field goal percentage: Adjusts percentage for the fact that a 3pt field goal is worth more than a 2pt field goal
 | ft_percent | Free throw percentage
 
 </details>
 
-The **nba_shooting_2025** data contains 737 rows and 8 columns. Each row represents a NBA player from the 2024-25 season.
+The **nba_shooting_2025** data contains 737 rows and 9 columns. Each row represents a NBA player from the 2024-25 season.
 
 Download Data: [nba_shooting_2025.csv](/data_repo_submission/nba_shooting_2025.csv){target="_blank"}
 
@@ -110,14 +110,15 @@ Download Data: [nba_shooting_2025.csv](/data_repo_submission/nba_shooting_2025.c
 
 | Variable          | Description
 |-------------------|------------------------------------------------
-| player   | Full Name of NBA player
-| fg_percent | 
-| avg_dist_of_fg
-| 2pt_rate
-| 3pt_rate
-| 2_pt_percent
-| 3pt_percent
-| dunk_rate
+| player   | Full name of NBA player
+| g    | Games played during the 2024-25 season
+| fg_percent | Field goal percentage
+| avg_dist_of_fg | Average distance (in feet) of field goal attempts
+| 2pt_rate | Percentage of field goal attempts that are 2 point attempts
+| 3pt_rate | Percentage of field goal attempts that are 3 point attempts
+| 2pt_percent | Make percentage on 2 point attempts
+| 3pt_percent | Make percentage on 3 point attempts
+| dunk_rate | Percentage of field goal attempts that are dunks
 
 </details>
 

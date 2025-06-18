@@ -98,7 +98,9 @@ nba_wingspans_2025 <- tidy_wingspans %>%
 
 # remove name that shouldn't be there
 nba_wingspans_2025 <- nba_wingspans_2025 %>%
-  slice(-149)
+  slice(-149) %>%
+  # remove cols that shouldn't be there
+  select(-4, -6)
 
 ```
 
