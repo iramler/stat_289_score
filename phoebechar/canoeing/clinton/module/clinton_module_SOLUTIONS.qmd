@@ -12,7 +12,7 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-clinton_full <- read_csv("phoebechar/canoeing/clinton/full_clinton.csv")
+clinton_full <- read_csv("phoebechar/canoeing/clinton/module/full_clinton.csv")
 ```
 
 Each row in this data set represents a specific paddler from a year of the Clinton. This data set contains results from 2014-2025 (excluding 2020 and 2021, when the race was cancelled due to the Covid-19 Pandemic).

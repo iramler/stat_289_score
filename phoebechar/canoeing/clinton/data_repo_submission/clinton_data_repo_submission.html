@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Phoebe Jones">
+<meta name="dcterms.date" content="2025-06-13">
 
-<title>Raisin River Race Results 2015-2025</title>
+<title>General Clinton Canoe Regatta</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,16 +25,16 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="Raisin_River_data_repo_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Raisin_River_data_repo_files/libs/quarto-html/quarto.js"></script>
-<script src="Raisin_River_data_repo_files/libs/quarto-html/popper.min.js"></script>
-<script src="Raisin_River_data_repo_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Raisin_River_data_repo_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Raisin_River_data_repo_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Raisin_River_data_repo_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Raisin_River_data_repo_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Raisin_River_data_repo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Raisin_River_data_repo_files/libs/bootstrap/bootstrap-c0367b04c37547644fece4185067e4a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="clinton_data_repo_submission_files/libs/clipboard/clipboard.min.js"></script>
+<script src="clinton_data_repo_submission_files/libs/quarto-html/quarto.js"></script>
+<script src="clinton_data_repo_submission_files/libs/quarto-html/popper.min.js"></script>
+<script src="clinton_data_repo_submission_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="clinton_data_repo_submission_files/libs/quarto-html/anchor.min.js"></script>
+<link href="clinton_data_repo_submission_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="clinton_data_repo_submission_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="clinton_data_repo_submission_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="clinton_data_repo_submission_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="clinton_data_repo_submission_files/libs/bootstrap/bootstrap-c0367b04c37547644fece4185067e4a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -46,10 +47,11 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Raisin River Race Results 2015-2025</h1>
+<h1 class="title">General Clinton Canoe Regatta</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Linear Regression</div>
-    <div class="quarto-category">Outliers</div>
+    <div class="quarto-category">Ggplot</div>
+    <div class="quarto-category">Dplyr</div>
+    <div class="quarto-category">Beginner data cleaning</div>
   </div>
   </div>
 
@@ -67,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
+      <p class="date">June 13, 2025</p>
     </div>
   </div>
   
@@ -81,28 +83,32 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="motivation" class="level2">
 <h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Downriver paddling is a difficult and competitive sport. The Raisin River Race is one of the longest races in Eastern Ontario, spanning almost 19 miles on the Raisin River, from St.&nbsp;Andrews West to Williamstown. Paddlers compete against each other to achieve the fastest time in their class.</p>
+<p>Downriver paddling is a difficult and competitive sport. The General Clinton Canoe Regatta (nicknamed “the 70-miler”) is a prominent race in the sport that has been running since the 1960s. The race is a 63 mile course down the Susquehanna River in New York (from Cooperstown to Bainbridge). Paddlers compete against each other to achieve the fastest time in their class, with the fastest boats finishing about 7-8 hours after they start.</p>
 <section id="understanding-downriver-racing" class="level3">
 <h3 class="anchored" data-anchor-id="understanding-downriver-racing">Understanding Downriver Racing</h3>
 <p>Downriver racing is a sport where competitors take their watercraft (usually a canoe, kayak, or stand-up paddle board) down a race course in competition with other paddlers, sometimes navigating rapids, in an attempt to get the fastest time either overall or in their class (classes are split up by boat and paddler type). Times are tracked by race officials on shore.</p>
 <section id="classes" class="level4">
 <h4 class="anchored" data-anchor-id="classes">Classes</h4>
-<p>The number of classes and how they are separated is variable depending on the race. For canoes, the Raisin River Race distinguishes classes first by boat type: pro, rec, and medium. Different boat types have their pros and cons, but pro boats are typically faster and used by more experienced paddlers, while rec boats are slower and more commonly available. A boat’s class is also determined by how many paddlers are in the boat. For example, ‘oc2mixed’ refers to an open canoe being paddled by 2 people of different genders. Kayaks are split up by paddlers and by length: long or short. Long kayaks are typically faster. Stand-up paddleboards are not permitted at the Raisin River Race.</p>
+<p>The number of classes and how they are separated is variable depending on the race. Type of boat is the primary separation, with kayaks and canoes (possibly stand-up paddle boards) having completely separate categories that are then further split. For canoes, the General Clinton splits classes based on the boat’s material and build (classic aluminum boats versus small and light pro boats) as well as the paddlers in the boat. The number of paddlers matters, as does gender.</p>
 </section>
 </section>
-<section id="raisin-river" class="level3">
-<h3 class="anchored" data-anchor-id="raisin-river">Raisin River</h3>
-<p>As mentioned, the normal Raisin River course is about 18.6 miles (30 km). It contains some rapids of moderate difficulty and an optional portage (on land detour) around the Martintown Dam, which is a significantly more difficult drop than any other obstacles on the course.</p>
+<section id="general-clinton-canoe-regatta" class="level3">
+<h3 class="anchored" data-anchor-id="general-clinton-canoe-regatta">General Clinton Canoe Regatta</h3>
+<p>As mentioned, the General Clinton is 63 miles long and can take paddlers anywhere between 7 and 13 hours to complete. Due to the difficulty, almost all paddlers have a pit crew of some kind who can get them water and fuel refills at various points throughout the race, as well as keep them informed about their pace and performance. The effort required for this race means that it is imperative that race officials know as much as possible what to expect on race day, to keep everyone involved safe.</p>
 </section>
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The <code>raisin_river_full.csv</code> data set includes data from the Paddlestats database and the Raisin River Race website about the Raisin River Race from the years 2015-2025 (excluding 2020 and 2021 as no race was held due to the COVID-19 pandemic). Each row represents a specific paddler that competed in the race.</p>
+<p>Each row in the <code>full_clinton</code> data set represents a specific paddler from a year of the Clinton. This data set contains results from 2014-2025 (excluding 2020 and 2021, when the race was cancelled due to the Covid-19 Pandemic).</p>
 <details>
 <summary>
 <b>Variable Descriptions</b>
 </summary>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Variable</th>
@@ -124,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>classID</td>
-<td>Class (oc1, oc2, etc)</td>
+<td>Class (oc4stock, oc2pro, etc)</td>
 </tr>
 <tr class="odd">
 <td>place</td>
@@ -160,40 +166,61 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td>courseID</td>
-<td>Version of the course raced</td>
+<td>Version of the course raced (all the same here)</td>
 </tr>
 <tr class="even">
 <td>notes</td>
-<td>Extra information</td>
+<td>Extra information (usually about class)</td>
 </tr>
 <tr class="odd">
+<td>personID</td>
+<td>The person’s PaddleStats ID</td>
+</tr>
+<tr class="even">
 <td>displayName</td>
 <td>Name of the racer</td>
+</tr>
+<tr class="odd">
+<td>sortName</td>
+<td>Name of the race with last name first</td>
+</tr>
+<tr class="even">
+<td>city</td>
+<td>Racer’s home city (as given at registration)</td>
+</tr>
+<tr class="odd">
+<td>state</td>
+<td>Racer’s home state or province (as given at registration)</td>
+</tr>
+<tr class="even">
+<td>country</td>
+<td>Racer’s home country (as given at registration)</td>
+</tr>
+<tr class="odd">
+<td>teamName</td>
+<td>Racer’s team name</td>
 </tr>
 <tr class="even">
 <td>status</td>
 <td>Finishing status (DNF, DNS, DQ, etc.)</td>
 </tr>
-<tr class="odd">
-<td>flow</td>
-<td>Flow of the river that year</td>
-</tr>
 </tbody>
 </table>
 </details>
-<p>Download <a href="raisin_river_full.csv" target="_blank">raisin_river_full.csv</a></p>
+<p><strong>Download Clinton Data:</strong> <a href="full_clinton.csv" target="_blank">full_clinton.csv</a></p>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
 <ol type="1">
-<li>Build a linear regression model determine its usefulness</li>
-<li>Find outliers within the data</li>
-<li>See the impact of removing influential observations (with reason)</li>
+<li><p>Make various differ plots based on a data set</p></li>
+<li><p>Filter a data set based on context</p></li>
+<li><p>Identify an issue with data based on a plot</p></li>
 </ol>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>[Paddlestats Website: Raisin River Race History], <a href="https://rrca.on.ca/page.php?id=13">Raisin River Race Website</a></p>
+<p>The data are compiled from PaddleStats, an online database of paddling results.</p>
+<p><a href="https://paddlestats.net/racehistory/CLINTON70" target="_blank">Paddlestats: General Clinton (70-Miler)</a></p>
 </section>
 
 </main>

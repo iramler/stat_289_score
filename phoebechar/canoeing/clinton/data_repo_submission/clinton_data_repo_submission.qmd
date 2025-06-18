@@ -1,7 +1,7 @@
 ---
 title: "General Clinton Canoe Regatta"
 author: "Phoebe Jones" 
-date: "June 13, 2025" 
+date: "June 18, 2025" 
 
 categories:
   - Ggplot
@@ -65,7 +65,7 @@ Each row in the `full_clinton` data set represents a specific paddler from a yea
 
 ## Questions
 
-1. Make various differ plots based on a data set
+1. Make various differ plots based on a data set. What can they tell you?
 
 2. Filter a data set based on context
 
