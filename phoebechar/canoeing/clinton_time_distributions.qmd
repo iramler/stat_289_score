@@ -10,6 +10,8 @@ library(ggplot2)
 
 clinton <- read.csv("phoebechar/canoeing/clinton/data_repo_submission/full_clinton.csv")
 
+clinton <- clinton |> group_by(year, bib) |> slice(1)
+
 clinton <- clinton |> filter(time != 0)
 
 ggplot(clinton, aes(x = time)) +
@@ -21,16 +23,33 @@ clinton_pro <- clinton |> mutate(pro = if_else(grepl("pro", classID), 1, 0)) |>
 clinton_canoe <- clinton |> mutate(pro = if_else(grepl("pro", classID), 1, 0)) |>
   filter(pro == 0) |> mutate(canoe = if_else(grepl("oc", classID), 1, 0)) |> filter(canoe == 1)
 
+
+```
+
+This histogram shows the distribution of times on the Clinton from 2014-2025 for only the pro boats. 
+```{r}
 ggplot(clinton_pro, aes(x = time)) +
   geom_histogram(binwidth = 600) +
   xlim(25000, 55000) +
-  ylim(0, 130)
+  ylim(0, 70)
+```
+Describe the shape, spread, and skew of the data.
+Estimate the mode.
 
+
+This histogram shows the distribution of times on the Clinton from 2014-2025 for all canoes that are not pro boats
+```{r}
 ggplot(clinton_canoe, aes(x = time)) +
   geom_histogram(binwidth = 600)+
   xlim(25000, 55000) +
-  ylim(0, 130)
+  ylim(0, 70)
 ```
+Describe the shape, spread, and skew of the data.
+Estimate the mode.
+
+How are the distributions different? Provide a possible explanation for why this could be.
+
+In 2025, Adam Blanchard and Rebecca Sutton placed first in the C2 Stock (not pro) Mixed class with a time of 8 hours, 32 minutes, and 21 seconds (30741 seconds). In the same year, Dean Brown & Chris Prater placed 40th in the pro class with a time of 8 hours, 3 minutes and 11 seconds (28991 seconds). Which of these times is better relatively?
 
 Observe skew and compare. Comment on mode/mean. Compare times relatively. z-scores. 
 
