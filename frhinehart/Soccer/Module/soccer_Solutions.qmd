@@ -70,10 +70,9 @@ Before we recombine the data sets, it might be helpful to know if the player is 
 4) Add a new variable to both individual data sets that says "M" or "F' for gender of player. 
 
 ```{r}
-womenSoccerMatched$Sex <- "F"
+womenSoccerMatched$Sex <- "Female"
 
-menSoccerMatched$Sex <- "M"
-View(menSoccerMatched)
+menSoccerMatched$Sex <- "Male"
 ```
 
 5) Slice the Men's data set to exclude `OWN GOAL`, `TOTALS`, and `OPPONENT TOTALS` and slice the Women's data set to exclude `Own Goal`, `TOTAL`, and `Opponent`.
@@ -86,7 +85,19 @@ cleanedmenSoccer <- menSoccerMatched |> slice(1:48)
 6) Combine the the updated data sets.
 
 ```{r}
-combined_SoccerMatched <- bind_rows(cleanedwomenSoccer, cleanedmenSoccer)
+combined_SoccerMatched <- bind_rows(cleanedwomenSoccer, cleanedmenSoccer) 
+View(combined_SoccerMatched)
+```
+
+```{r}
+filtered <- combined_SoccerMatched |> group_by(Pos)
+View(filtered)
+```
+
+
+```{r}
+ggplot(data = combined_SoccerMatched, aes(x = GP, y = MIN)) +
+  geom_point(aes(color = Sex))
 ```
 
 

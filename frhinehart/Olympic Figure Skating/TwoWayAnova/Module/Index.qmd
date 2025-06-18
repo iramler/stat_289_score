@@ -10,6 +10,8 @@ editor:
   canonical: true
 categories:
   - Two Way Interaction ANOVA
+  - Post Hoc Tukey
+  - Letter's Table
 ---
 
 ### Background to Figure Skating Video

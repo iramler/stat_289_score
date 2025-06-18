@@ -10,6 +10,7 @@ categories:
   - Log Transformations
   - Model Building
   - Two-Way Anova Interaction
+  - Letter's Table
 ---
 
 ## Motivation
