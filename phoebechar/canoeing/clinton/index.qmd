@@ -24,7 +24,7 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-The Clinton Canoe Regatta (the 70-miler) is an annual event in the downriver canoeing community. This race is one leg of the Canoeing Triple Crown, a challenge made up of three marathon canoe races in North America, and spans about 63 miles on the Susquehanna River, from Cooperstown to Bainsbridge, NY. Paddlers compete against each other to achieve the fastest time in their class.
+The Clinton Canoe Regatta (the 70-miler) is an annual event in the downriver canoeing community. This race is one leg of the Canoeing Triple Crown (a challenge made up of three marathon canoe races in North America) and spans about 63 miles on the Susquehanna River in New York, from Cooperstown to Bainsbridge. Paddlers compete against each other to achieve the fastest time in their class.
 
 ::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
 This could serve as an in class activity and should take roughly a half an hour to complete. 
@@ -57,7 +57,7 @@ Students will need to use RStudio.
 
 This activity uses the data set: [full_clinton.csv](full_clinton.csv){target="_blank"}
 
-The `full_clinton.csv` data set includes data from Paddlestats about the Clinton Canoe Regatta from the years 2014-2025 (excluding 2020 and 2021 as no race was held due to the COVID-19 pandemic). Each row refers to a specefic racer from a year at the race. 
+The `full_clinton.csv` data set includes data from Paddlestats about the Clinton Canoe Regatta from the years 2014-2025 (excluding 2020 and 2021 as no race was held due to the COVID-19 pandemic). Each row refers to a specific racer from a year at the race. 
 
 <details>
 
@@ -96,9 +96,9 @@ The data are compiled from the [Paddlestats Website](https://paddlestats.net/rac
 
 ### Materials
 
-[Module Worksheet](clinton_module_worksheet.qmd){target= "_blank"}
+[Module Worksheet](clinton_module_worksheet.qmd){target="_blank"}
 
-[Solutions to Worksheet](clinton_module_SOLUTIONS.qmd){target= "_blank"}
+[Solutions to Worksheet](clinton_module_SOLUTIONS.qmd){target="_blank"}
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Upon conclusion of this module, students will have a greater understanding of the uses of ggplot and dplyr and will be better prepared to use both with less clear-cut data.

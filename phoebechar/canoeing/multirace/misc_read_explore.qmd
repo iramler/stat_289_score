@@ -27,86 +27,19 @@ clinton <- clinton |> select(!"resultId" & !"raceId" & !"eventId" & !"primaryCla
 
 clinton <- rename(clinton, personID = personId)
 
-write_csv(clinton, "phoebechar/canoeing/clinton/full_clinton.csv")
-```
-
-```{r}
-url <- "https://paddlestats.net/json/r/CLINTON70/2025/2015"
-clinton <- read_json(url, simplifyVector = TRUE)
-
-clinton <- clinton$results |> as_tibble() |> 
-  unnest_wider(rank) |> 
-  unnest_longer(paddlers) |>
-  unnest_wider(col = c(paddlers, elemVals)) |>
-  unnest_wider(`1`, names_sep = "_")
-
-clinton <- rename(clinton, classID = classId, time = value, courseID = courseId)
-
 clinton <- clinton |> filter(time != 0)
 
-ggplot(clinton, aes(x = overall, y = time)) +
-  geom_point()
+ggplot(clinton, aes(x = time)) +
+  geom_histogram()
 ```
 
 ```{r}
-url <- "https://paddlestats.net/json/r/CLINTON70/2025/2015"
-clinton <- read_json(url, simplifyVector = TRUE)
-
-clinton <- clinton$results |> as_tibble() |> 
-  unnest_wider(rank) |> 
-  unnest_longer(paddlers) |>
-  unnest_wider(col = c(paddlers, elemVals)) |>
-  unnest_wider(`1`, names_sep = "_")
-
-clinton <- rename(clinton, classID = classId, time = value, courseID = courseId)
-
-clinton <- clinton |> filter(time != 0)
-
-ggplot(clinton, aes(x = overall, y = time)) +
-  geom_point()
-```
-
-```{r}
-raisin <- read_csv("phoebechar/raisin_river/data_repo_submission/raisin_river_full.csv")
+raisin <- read_csv("phoebechar/canoeing/raisin_river/data_repo_submission/raisin_river_full.csv")
 
 raisin <- raisin |> filter(time != 0) |> filter(year != 2017)
 
-ggplot(raisin, aes(x = overall, y = time)) +
-  geom_point()
+ggplot(raisin, aes(x = time)) +
+  geom_histogram()
 ```
 
-```{r}
-url <- "https://paddlestats.net/json/r/DESPLAINES/2025/2015"
-des_plaines <- read_json(url, simplifyVector = TRUE)
-
-des_plaines <- des_plaines$results |> as_tibble() |> 
-  unnest_wider(rank) |> 
-  unnest_longer(paddlers) |>
-  unnest_wider(col = c(paddlers, elemVals)) |>
-  unnest_wider(`1`, names_sep = "_")
-
-des_plaines <- rename(des_plaines, classID = classId, time = value, courseID = courseId)
-
-des_plaines <- des_plaines |> filter(time != 0) |> filter(courseID != "desplainesshort")
-
-ggplot(des_plaines, aes(x = overall, y = time)) +
-  geom_point()
-```
-
-```{r}
-url <- "https://paddlestats.net/json/r/ADK90/2025/2015"
-adk <- read_json(url, simplifyVector = TRUE)
-
-adk <- adk$results |> as_tibble() |> 
-  unnest_wider(rank) |> 
-  unnest_longer(paddlers) |>
-  unnest_wider(col = c(paddlers, elemVals))
-
-adk <- rename(adk, classID = classId, time = value, courseID = courseId)
-
-adk <- adk |> filter(time != 0) |> filter(courseID != "adk90_2001_2day")
-
-ggplot(adk, aes(x = overall, y = time)) +
-  geom_point()
-```
 
