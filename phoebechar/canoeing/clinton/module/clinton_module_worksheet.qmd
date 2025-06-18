@@ -17,6 +17,8 @@ clinton_full <- read_csv("phoebechar/canoeing/clinton/module/full_clinton.csv")
 
 Each row in this data set represents a specific paddler from a year of the Clinton. This data set contains results from 2014-2025 (excluding 2020 and 2021, when the race was cancelled due to the Covid-19 Pandemic).
 
+#### For ease of understanding, modify the data set so the first columns are `displayName` and `bib` number. The order after that does not matter.
+
 #### Using the fact that each bib number is only assigned to one boat per year, modify the data set to only include each boat/team once (rather than including each racer in a boat/team)
 
 #### 1. Make a horizontal bar graph comparing counts of the different classes.

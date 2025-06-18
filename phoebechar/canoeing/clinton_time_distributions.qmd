@@ -1,0 +1,38 @@
+---
+title: "Clinton Canoe Regatta: Looking at Normality in Distributions"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+library(ggplot2)
+
+clinton <- read.csv("phoebechar/canoeing/clinton/data_repo_submission/full_clinton.csv")
+
+clinton <- clinton |> filter(time != 0)
+
+ggplot(clinton, aes(x = time)) +
+  geom_histogram(binwidth = 600)
+
+clinton_pro <- clinton |> mutate(pro = if_else(grepl("pro", classID), 1, 0)) |>
+  filter(pro == 1)
+
+clinton_canoe <- clinton |> mutate(pro = if_else(grepl("pro", classID), 1, 0)) |>
+  filter(pro == 0) |> mutate(canoe = if_else(grepl("oc", classID), 1, 0)) |> filter(canoe == 1)
+
+ggplot(clinton_pro, aes(x = time)) +
+  geom_histogram(binwidth = 600) +
+  xlim(25000, 55000) +
+  ylim(0, 130)
+
+ggplot(clinton_canoe, aes(x = time)) +
+  geom_histogram(binwidth = 600)+
+  xlim(25000, 55000) +
+  ylim(0, 130)
+```
+
+Observe skew and compare. Comment on mode/mean. Compare times relatively. z-scores. 
+
+
+

@@ -65,4 +65,6 @@ Download [raisin_river_full.csv](raisin_river_full.csv){target="_blank"}
 
 ## References
 
-[Paddlestats Website: Raisin River Race History](https://paddlestats.net/racehistory/RAISIN), [Raisin River Race Website](https://rrca.on.ca/page.php?id=13)
+[Paddlestats Website: Raisin River Race History](https://paddlestats.net/racehistory/RAISIN)
+
+[Raisin River Race Website](https://rrca.on.ca/page.php?id=13)

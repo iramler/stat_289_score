@@ -65,15 +65,15 @@ Each row in the `full_clinton` data set represents a specific paddler from a yea
 
 ## Questions
 
-1. Make various differ plots based on a data set. What can they tell you?
+1. Which class has the most boats?
 
-2. Filter a data set based on context
+2. Are times significantly different based on year?
 
-3. Identify an issue with data based on a plot
+3. Are paddlers with an existing Paddlestats id faster than those without?
 
 ## References
 
-The data are compiled from PaddleStats, an online database of paddling results. 
+The data are compiled from Paddlestats, an online database of paddling results. 
 
 [Paddlestats: General Clinton (70-Miler)](https://paddlestats.net/racehistory/CLINTON70){target="_blank"}
 
