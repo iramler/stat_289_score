@@ -15,7 +15,9 @@ editor:
   canonical: true
 categories:
   - Histograms
+  - Boxplots
   - Normal Distributions
+  - Skewed Distributions
 ---
 
 ## Module
@@ -35,19 +37,21 @@ By the end of this activity, students will:
 
 1. Increase ability to describe the appearances of data distributions.
 
-2. 
+2. Be able to use summary statistics to compare the distribution of data.
+
+3. Apply context to data to explain phenomenon.
 
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 
-Students should have had an introduction to with normal distributions, histograms, boxplots, and summary statistics.
+Students should have had an introduction to normal distributions, histograms, boxplots, and summary statistics.
 
 :::
 
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
 
-Students may need access to a calculation (of any sort).
+Students may need access to a calculator (of any sort).
 
 :::
 
@@ -99,5 +103,5 @@ The data are compiled from the [Paddlestats Website](https://paddlestats.net/rac
 [Solutions to Worksheet](Clinton_Time_Distribution_SOLUTIONS.docx){target="_blank"}
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Upon conclusion of this module, students will have a greater understanding 
+Upon conclusion of this module, students will have a greater understanding of the importance of the shape, spread, and centers of data distributions as well as how those factors can be seen through various plots and summary statistics.
 :::

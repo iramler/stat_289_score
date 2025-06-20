@@ -7,6 +7,7 @@ format: html
 ## load required packages
 library(tidyverse)
 library(ggplot2)
+library(dplyr)
 ## read in data
 clinton <- read.csv("phoebechar/canoeing/clinton/data_repo_submission/full_clinton.csv")
 ## filter to include each boat ONLY once
@@ -46,6 +47,24 @@ ggplot(clinton_canoe, aes(x = time)) +
        title = "Time distribution for non-pro canoes at the Clinton") +
   theme_minimal()
 ```
+
+```{r}
+pro_merge <- clinton_pro |> ungroup() |> select(time, pro)
+canoe_merge <- clinton_canoe |> ungroup() |> select(time, pro)
+
+merge <- full_join(pro_merge, canoe_merge)
+
+merge <- merge |> mutate(pro_char = if_else(pro == 0, "non-pro", "pro"))
+
+ggplot(merge, aes(y = time, x = pro_char, group = pro_char)) +
+  geom_boxplot(outliers = FALSE) +
+  theme_minimal() +
+  labs(x = "Class",
+       y = "Time (in seconds")
+  
+```
+
+
 ```{r}
 ## find the summary statistics for the two datasets
 
@@ -68,6 +87,7 @@ pro_sum <- tibble(value = c(mean(clinton_pro$time), sd(clinton_pro$time),
                     stat = c("Mean", "SD", "Min", "Q1", "Median", "Q3", "Max"))
 pro_sum <- pro_sum |> tidyr::pivot_wider(names_from = stat, values_from = value) |>
   knitr::kable()
+
 ```
 
 In 2025, Adam Blanchard and Rebecca Sutton placed first in the C2 Stock (not pro) Mixed class with a time of 8 hours, 32 minutes, and 21 seconds (30741 seconds). In the same year, Dean Brown & Chris Prater placed 40th in the pro class with a time of 8 hours, 3 minutes and 11 seconds (28991 seconds). Which of these times is better relatively?
