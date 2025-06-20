@@ -7,6 +7,7 @@ format: html
 library(tidyverse)
 library(readr)
 library(ggplot2)
+library(forcats)
 
 clinton <- read.csv("phoebechar/canoeing/clinton/data_repo_submission/full_clinton.csv")
 
@@ -22,17 +23,20 @@ clinton_pro <- clinton |> mutate(pro = if_else(grepl("pro", classID), 1, 0)) |>
 
 clinton_canoe <- clinton |> mutate(pro = if_else(grepl("pro", classID), 1, 0)) |>
   filter(pro == 0) |> mutate(canoe = if_else(grepl("oc", classID), 1, 0)) |> filter(canoe == 1)
-
-
 ```
 
 This histogram shows the distribution of times on the Clinton from 2014-2025 for only the pro boats. 
 ```{r}
 ggplot(clinton_pro, aes(x = time)) +
-  geom_histogram(binwidth = 600) +
+  geom_histogram(binwidth = 600, colour = "royalblue4", fill = "royalblue3") +
   xlim(25000, 55000) +
-  ylim(0, 70)
+  ylim(0, 70) +
+  labs(x = "Time to Complete the Race (in sec)",
+       y = "Count (number of boats)",
+       title = "Time distribution for pro canoes at the Clinton") +
+  theme_minimal()
 ```
+
 Describe the shape, spread, and skew of the data.
 Estimate the mode.
 
@@ -40,9 +44,13 @@ Estimate the mode.
 This histogram shows the distribution of times on the Clinton from 2014-2025 for all canoes that are not pro boats
 ```{r}
 ggplot(clinton_canoe, aes(x = time)) +
-  geom_histogram(binwidth = 600)+
+  geom_histogram(binwidth = 600, colour = "royalblue4", fill = "royalblue3")+
   xlim(25000, 55000) +
-  ylim(0, 70)
+  ylim(0, 70) +
+  labs(x = "Time to Complete the Race (in sec)",
+       y = "Count (number of boats)",
+       title = "Time distribution for non-pro canoes at the Clinton") +
+  theme_minimal()
 ```
 Describe the shape, spread, and skew of the data.
 Estimate the mode.
@@ -53,5 +61,24 @@ In 2025, Adam Blanchard and Rebecca Sutton placed first in the C2 Stock (not pro
 
 Observe skew and compare. Comment on mode/mean. Compare times relatively. z-scores. 
 
+```{r}
+quantiles <- c(0, 0.25, 0.5, 0.75, 1)
 
+canoe_sum <- tibble(value = c(mean(clinton_canoe$time), sd(clinton_canoe$time),
+                              quantile(clinton_canoe$time, quantiles)
+                              ), 
+                    stat = c("Mean", "SD", "Min", "Q1", "Median", "Q3", "Max"))
+
+canoe_sum <- canoe_sum |> tidyr::pivot_wider(names_from = stat, values_from = value) |>
+  knitr::kable()
+
+
+pro_sum <- tibble(value = c(mean(clinton_pro$time), sd(clinton_pro$time),
+                              quantile(clinton_pro$time, quantiles)
+                              ), 
+                    stat = c("Mean", "SD", "Min", "Q1", "Median", "Q3", "Max"))
+
+pro_sum <- pro_sum |> tidyr::pivot_wider(names_from = stat, values_from = value) |>
+  knitr::kable()
+```
 
