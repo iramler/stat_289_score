@@ -27,7 +27,7 @@ As mentioned, the General Clinton is 63 miles long and can take paddlers anywher
 
 ## Data
 
-Each row in the `full_clinton` data set represents a specific paddler from a year of the Clinton. This data set contains results from 2014-2025 (excluding 2020 and 2021, when the race was cancelled due to the Covid-19 Pandemic).
+Each row in the `full_clinton` data set represents a specific paddler from a year of the Clinton (so if a boat has more than one paddler, its time and bib number will appear in the same number of rows as there were people in the boat). This data set contains results from 2014-2025 (excluding 2020 and 2021, when the race was cancelled due to the Covid-19 Pandemic). There are 3227 total paddlers with 22 variables for each one. If a paddler did the race multiple times from 2014-2025, they will have a row for each year they ran it.
 
 <details>
 
