@@ -1,11 +1,11 @@
 ---
-title: "Wingspan & Performance in the NBA (Complete Dataset)"
+title: "NBA Wingspan & Performance (Complete Dataset)"
 author: "Cooper Olney"
-date: "June __, 2025"
+date: "June 23, 2025"
 
 categories:
-  - ____
-  - ____
+  - Data visualization
+  - Data wrangling
 ---
 
 
@@ -16,7 +16,6 @@ Basketball fans, analysts and scouts often consider a player's physical attribut
 Wingspans advantage refers to the difference between a player's wingspan and their height (wingspan - height). A larger wingspan advantage suggests a player has a longer reach relative to their size, which can translate to greater on-court impact. For example, a 6'6" player with a 7'1" wingspan has a +7 inch wingspan advantage, an edge that might help them disrupt opponents defensively or finish more effectively near the basket. However, wingspan can also influence a player's shooting ability. While a longer reach can make it easier to shoot over defenders, it may also affect shooting mechanics and consistency. This dual impact makes wingspan advantage a valuable trait to explore across both defensive and offensive performance metrics.
 
 This concept is increasingly used in scouting reports and draft analysis to highlight players with unique physical tools. By analyzing wingspan relative to height, alongside in-game performance data, we can begin to explore how these physical traits are related to on-court impact.
-
 
 
 ## Data

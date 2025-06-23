@@ -1,11 +1,12 @@
 ---
-title: "Wingspan & Performance in the NBA"
+title: "NBA Wingspan & Performance (Raw Datasets)"
 author: "Cooper Olney"
-date: "June 20, 2025"
+date: "June 23, 2025"
 
 categories:
   - Webscraping
   - Data visualization
+  - Data wrangling
 ---
 
 ## Motivation
@@ -15,6 +16,9 @@ Basketball fans, analysts and scouts often consider a player's physical attribut
 Wingspans advantage refers to the difference between a player's wingspan and their height (wingspan - height). A larger wingspan advantage suggests a player has a longer reach relative to their size, which can translate to greater on-court impact. For example, a 6'6" player with a 7'1" wingspan has a +7 inch wingspan advantage, an edge that might help them disrupt opponents defensively or finish more effectively near the basket. However, wingspan can also influence a player's shooting ability. While a longer reach can make it easier to shoot over defenders, it may also affect shooting mechanics and consistency. This dual impact makes wingspan advantage a valuable trait to explore across both defensive and offensive performance metrics.
 
 This concept is increasingly used in scouting reports and draft analysis to highlight players with unique physical tools. By analyzing wingspan relative to height, alongside in-game performance data, we can begin to explore how these physical traits are related to on-court impact.
+
+Combining wingspan data with performance statistics allows for a more complete analysis of how physical attributes translate to real in-game impact. While wingspan advantage alone is an interesting measurement, its significance becomes clearer when viewed alongside metrics like blocks, steals and shooting percentages. Merging these datasets creates opportunities to uncover patterns and deepen our understanding of how a player's wingspan influences their effectiveness on the court.
+
 
 ## Data
 
@@ -27,7 +31,7 @@ Two files are provided with different types of performance statistics.
 
 ---
 
-The **nba_per100possesions_2025.csv** dataset contains 736 rows and 14 columns. Each row represents a NBA player from the 2024-25 season.
+The **nba_per100possesions_2025.csv** dataset contains 736 rows and 14 columns. Each row represents a NBA player from the 2024-25 season. **Note** this dataset contains duplicates because of players switching teams midseason. For example, Luka Dončić will have 3 total rows for his stats with DAL, LAL and his total 2024-25 season stats.
 
 Download Data: [nba_per100possesions_2025.csv](/data_repo_submission/nba_per100possesions_2025.csv){target="_blank"}
 
@@ -56,7 +60,7 @@ Download Data: [nba_per100possesions_2025.csv](/data_repo_submission/nba_per100p
 
 ---
 
-The **nba_shooting_2025** data contains 736 rows and 9 columns. Each row represents a NBA player from the 2024-25 season.
+The **nba_shooting_2025.csv** dataset contains 736 rows and 9 columns. Each row represents a NBA player from the 2024-25 season. **Note** this dataset contains duplicates because of players switching teams midseason. For example, Luka Dončić will have 3 total rows for his stats with DAL, LAL and his total 2024-25 season stats.
 
 Download Data: [nba_shooting_2025.csv](/data_repo_submission/nba_shooting_2025.csv){target="_blank"}
 
@@ -90,7 +94,7 @@ Download Data: [nba_shooting_2025.csv](/data_repo_submission/nba_shooting_2025.c
 
 ::: {.callout-note collapse="true" title="Wingspan Data Only" appearance="minimal"}
 
-The **nba_player_profiles_2025.csv** data set contains 499 rows and 4 columns. Each row represents a NBA player from the 2024-25 season. **Note** this dataset is partially cleaned from the data found at [craftednba.com](https://craftednba.com/){target="\"_blank"}
+The **nba_wingspan_2025.csv** data set contains 499 rows and 4 columns. Each row represents a NBA player from the 2024-25 season. **Note** this dataset is partially cleaned from the data found at [craftednba.com](https://craftednba.com/){target="\"_blank"}
 
 Download Data: [nba_player_profiles_2025.csv](/data_repo_submission/nba_player_profiles_2025.csv){target="_blank"}
 
