@@ -1,0 +1,54 @@
+---
+title: "rugby"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(readr)
+library(stringr)
+
+players <- read.csv("phoebechar/rugby.csv")
+
+rename(players, Birthdate = Birthdate.)
+
+players <- players |> mutate(Age = parse_number(Age))
+
+players <- players |> mutate(Height = parse_number(Height), Weight = parse_number(Weight)) 
+
+ggplot(players, aes(x = Age)) +
+  geom_histogram()
+
+teams <- players |> group_by(Team) |> mutate(TotalAge = sum(Age, na.rm = TRUE), TotalHeight = sum(Height, na.rm = TRUE), TotalWeight = sum(Weight, na.rm = TRUE))
+
+teams <- teams |> mutate(AvgAge = mean(Age, na.rm = TRUE), AvgHeight = mean(Height, na.rm = TRUE), AvgWeight = mean(Weight, na.rm = TRUE)) |> slice(1)
+
+teams <- teams |> select(Team, TotalAge, AvgAge, TotalHeight, AvgHeight, TotalWeight, AvgWeight)
+
+performance <- read.csv("phoebechar/rugby - performance.csv")
+
+performance <- performance |> mutate(Team = str_to_lower(Team))
+
+performanceStats <- full_join(teams, performance)
+
+ggplot(performanceStats, aes(x = TotalWeight, y = Scrums)) +
+  geom_point()
+
+ggplot(performanceStats, aes(x = AvgWeight, y = Discipline)) +
+  geom_point()
+
+
+## this is polynomial
+ggplot(performanceStats, aes(x = TotalAge, y = Defence)) +
+  geom_point() +
+  geom_smooth()
+
+ggplot(performanceStats, aes(x = Kicking, y = Attack)) +
+  geom_point() +
+  geom_smooth()
+
+ggplot(performanceStats, aes(x = TotalAge, y = Kicking)) +
+  geom_point()
+```
+

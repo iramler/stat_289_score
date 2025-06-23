@@ -1,0 +1,726 @@
+Name,Position,Age,"Birthdate
+",Height,Weight,Height (ft/in),"Weight
+st/lb",Contract,Length,Team 
+Denis BUCKLEY,Prop,34 y/o,09/08/1990,1.77 m,110 kg,5 ft 10 in,17 st 4.51 lb; 242.51 lb,PRO,2025 +1,connacht
+Finlay BEALHAM,Prop,33 y/o,09/10/1991,1.89 m,123 kg,6 ft 2 in,19 st 5.17 lb; 271.17 lb,PRO,2026,connacht
+Jack AUNGIER,Prop,26 y/o,20/11/1998,1.88 m,120 kg,6 ft 2 in,18 st 12.55 lb; 264.55 lb,PRO,2026,connacht
+Jordan DUGGAN,Prop,27 y/o,07/01/1998,1.85 m,114 kg,6 ft 1 in,17 st 13.33 lb; 251.33 lb,PRO,2026,connacht
+Peter DOOLEY,Prop,30 y/o,04/08/1994,1.83 m,116 kg,6 ft,18 st; 255.74 lb,PRO,2025 +1,connacht
+Sam ILLO,Prop,24 y/o,16/02/2001,1.85 m,121 kg,6 ft 1 in,19 st 0.76 lb; 266.76 lb,PRO,2027,connacht
+Temi LASISI,Prop,24 y/o,09/05/2001,1.83 m,125 kg,6 ft,19 st; 275.58 lb,PRO,,connacht
+Dave HEFFERNAN,Hooker,34 y/o,31/01/1991,1.87 m,111 kg,6 ft 2 in,17 st 6.71 lb; 244.71 lb,PRO,2027,connacht
+Dylan TIERNEY-MARTIN,Hooker,26 y/o,20/06/1999,1.82 m,101 kg,6 ft,15 st; 222.67 lb,PRO,2026,connacht
+Eoin DE BUITLÉAR,Hooker,23 y/o,09/11/2001,1.75 m,104 kg,5 ft 9 in,16 st 5.28 lb; 229.28 lb,PRO,,connacht
+Darragh MURRAY,Lock,23 y/o,04/07/2001,2.01 m,115 kg,6 ft 7 in,18 st 1.53 lb; 253.53 lb,PRO,2026,connacht
+David O'CONNOR,Lock,30 y/o,19/05/1995,1.93 m,110 kg,6 ft 4 in,17 st 4.51 lb; 242.51 lb,PRO,,connacht
+Joe JOYCE,Lock,31 y/o,07/02/1994,1.96 m,119 kg,6 ft 5 in,18 st 10.35 lb; 262.35 lb,PRO,,connacht
+Josh MURPHY,Lock,30 y/o,17/02/1995,1.98 m,110 kg,6 ft 6 in,17 st 4.51 lb; 242.51 lb,PRO,2027,connacht
+Niall MURRAY,Lock,25 y/o,13/10/1999,2.01 m,111 kg,6 ft 7 in,17 st 6.71 lb; 244.71 lb,PRO,2027,connacht
+Oisín DOWLING,Lock,28 y/o,23/06/1997,1.96 m,112 kg,6 ft 5 in,17 st 8.92 lb; 246.92 lb,PRO,2026,connacht
+Cian PRENDERGAST,Back row,25 y/o,23/02/2000,1.96 m,115 kg,6 ft 5 in,18 st 1.53 lb; 253.53 lb,PRO,2028,connacht
+Conor OLIVER,Back row,29 y/o,21/09/1995,1.83 m,102 kg,6 ft,16 st; 224.87 lb,PRO,2025,connacht
+Oisín MCCORMACK,Back row,24 y/o,21/02/2001,1.83 m,102 kg,6 ft,16 st; 224.87 lb,PRO,2025,connacht
+Paul BOYLE,Back row,28 y/o,14/01/1997,1.89 m,112 kg,6 ft 2 in,17 st 8.92 lb; 246.92 lb,PRO,2027,connacht
+Seán F. O'BRIEN,Back row,24 y/o,31/07/2000,1.93 m,105 kg,6 ft 4 in,16 st 7.49 lb; 231.49 lb,PRO,2026,connacht
+Sean JANSEN,Back row,26 y/o,10/05/1999,1.91 m,118 kg,6 ft 3 in,18 st 8.15 lb; 260.15 lb,PRO,2027,connacht
+Shamus HURLEY-LANGTON,Back row,25 y/o,22/04/2000,1.85 m,108 kg,6 ft 1 in,17 st 0.10 lb; 238.10 lb,PRO,2026,connacht
+Ben MURPHY,Scrum-half,24 y/o,23/04/2001,1.73 m,80 kg,5 ft 8 in,12 st 8.37 lb; 176.37 lb,PRO,2026,connacht
+Caolin BLADE,Scrum-half,31 y/o,29/04/1994,1.70 m,81 kg,5 ft 7 in,12 st 10.57 lb; 178.57 lb,PRO,2026,connacht
+Colm REILLY,Scrum-half,25 y/o,09/08/1999,1.78 m,78 kg,5 ft 10 in,12 st 3.96 lb; 171.96 lb,PRO,2025,connacht
+Matt DEVINE,Scrum-half,23 y/o,19/02/2002,1.80 m,84 kg,5 ft 11 in,13 st 3.19 lb; 185.19 lb,PRO,,connacht
+Cathal FORDE,Fly-half,24 y/o,11/04/2001,1.88 m,95 kg,6 ft 2 in,14 st 13.44 lb; 209.44 lb,PRO,2026,connacht
+Jack CARTY,Fly-half,32 y/o,31/08/1992,1.83 m,92 kg,6 ft,14 st; 202.83 lb,PRO,2026,connacht
+JJ HANRAHAN,Fly-half,32 y/o,27/07/1992,1.83 m,93 kg,6 ft,14 st; 205.03 lb,PRO,2025,connacht
+Josh IOANE,Fly-half,29 y/o,11/07/1995,1.80 m,92 kg,5 ft 11 in,14 st 6.83 lb; 202.83 lb,PRO,2027,connacht
+Bundee AKI,Centre,35 y/o,07/04/1990,1.78 m,101 kg,5 ft 10 in,15 st 12.67 lb; 222.67 lb,PRO,2026,connacht
+David HAWKSHAW,Centre,25 y/o,03/07/1999,1.78 m,89 kg,5 ft 10 in,14 st 0.21 lb; 196.21 lb,PRO,,connacht
+Hugh GAVIN,Centre,21 y/o,10/01/2004,1.92 m,103 kg,6 ft 4 in,16 st 3.08 lb; 227.08 lb,PRO,,connacht
+Piers O'CONOR,Centre,29 y/o,28/08/1995,1.88 m,102 kg,6 ft 2 in,16 st 0.87 lb; 224.87 lb,PRO,2025,connacht
+Byron RALSTON,Winger,25 y/o,03/05/2000,1.84 m,94 kg,6 ft,14 st; 207.23 lb,PRO,2026,connacht
+Santiago CORDERO,Winger,31 y/o,06/12/1993,1.77 m,83 kg,5 ft 10 in,13 st 0.98 lb; 182.98 lb,PRO,2025,connacht
+Shane JENNINGS,Winger,24 y/o,14/01/2001,1.91 m,96 kg,6 ft 3 in,15 st 1.64 lb; 211.64 lb,PRO,2026 +1,connacht
+Shayne BOLTON,Winger,25 y/o,29/06/2000,1.88 m,100 kg,6 ft 2 in,15 st 10.46 lb; 220.46 lb,PRO,2026,connacht
+Chay MULLINS,Fullback,23 y/o,23/01/2002,1.91 m,95 kg,6 ft 3 in,14 st 13.44 lb; 209.44 lb,PRO,,connacht
+Mack HANSEN,Fullback,27 y/o,27/03/1998,1.88 m,89 kg,6 ft 2 in,14 st 0.21 lb; 196.21 lb,PRO,2027,connacht
+Alulutho TSHAKWENI,Prop,26 y/o,26/09/1998,1.83 m,110 kg,6 ft,17 st; 242.51 lb,PRO,2026,bulls
+Dylan SMITH,Prop,31 y/o,26/02/1994,1.80 m,116 kg,5 ft 11 in,18 st 3.74 lb; 255.74 lb,PRO,2025,bulls
+François KLOPPER,Prop,25 y/o,07/09/1999,1.88 m,130 kg,6 ft 2 in,20 st 6.60 lb; 286.60 lb,PRO,,bulls
+Gerhard STEENEKAMP,Prop,28 y/o,09/04/1997,1.94 m,128 kg,6 ft 4 in,20 st 2.19 lb; 282.19 lb,PRO,2028,bulls
+Juann ELSE,Prop,22 y/o,22/05/2003,1.80 m,101 kg,5 ft 11 in,15 st 12.67 lb; 222.67 lb,PRO,,bulls
+Mornay SMITH,Prop,27 y/o,30/01/1998,1.81 m,119 kg,5 ft 11 in,18 st 10.35 lb; 262.35 lb,PRO,2026,bulls
+Seb LOMBARD,Prop,22 y/o,07/10/2002,1.90 m,126 kg,6 ft 3 in,19 st 11.78 lb; 277.78 lb,PRO,,bulls
+Simphiwe MATANZIMA,Prop,27 y/o,18/08/1997,1.83 m,121 kg,6 ft,19 st; 266.76 lb,PRO,2025,bulls
+Tielman NIEUWOUDT,Prop,23 y/o,22/04/2002,1.80 m,128 kg,5 ft 11 in,20 st 2.19 lb; 282.19 lb,PRO,2025,bulls
+Wilco LOUW,Prop,30 y/o,20/07/1994,1.85 m,144 kg,6 ft 1 in,22 st 9.47 lb; 317.47 lb,PRO,2026,bulls
+Akker VAN DER MERWE,Hooker,34 y/o,17/06/1991,1.78 m,108 kg,5 ft 10 in,17 st 0.10 lb; 238.10 lb,PRO,2026,bulls
+Jan-Hendrik WESSELS,Hooker,24 y/o,08/05/2001,1.88 m,121 kg,6 ft 2 in,19 st 0.76 lb; 266.76 lb,PRO,2026,bulls
+Joe VAN ZYL,Hooker,26 y/o,21/01/1999,1.85 m,114 kg,6 ft 1 in,17 st 13.33 lb; 251.33 lb,PRO,,bulls
+Johan GROBBELAAR,Hooker,27 y/o,30/12/1997,1.83 m,105 kg,6 ft,16 st; 231.49 lb,PRO,2027,bulls
+Cobus WIESE,Lock,28 y/o,02/06/1997,1.99 m,125 kg,6 ft 6 in,19 st 9.58 lb; 275.58 lb,PRO,2026,bulls
+Deon SLABBERT,Lock,25 y/o,04/05/2000,2.00 m,117 kg,6 ft 7 in,18 st 5.94 lb; 257.94 lb,PRO,,bulls
+Jaco GROBBELAAR,Lock,20 y/o,01/01/2005,1.98 m,109 kg,6 ft 6 in,17 st 2.30 lb; 240.30 lb,ACADEMY,,bulls
+JF VAN HEERDEN,Lock,21 y/o,06/05/2004,2.01 m,122 kg,6 ft 7 in,19 st 2.96 lb; 268.96 lb,PRO,2027,bulls
+Reinhardt LUDWIG,Lock,22 y/o,27/08/2002,1.98 m,110 kg,6 ft 6 in,17 st 4.51 lb; 242.51 lb,PRO,,bulls
+Ruan NORTJÉ,Lock,26 y/o,25/07/1998,2.00 m,113 kg,6 ft 7 in,17 st 11.12 lb; 249.12 lb,PRO,2027,bulls
+Ruan VERMAAK,Lock,27 y/o,01/05/1998,1.99 m,120 kg,6 ft 6 in,18 st 12.55 lb; 264.55 lb,PRO,2027,bulls
+Sintu MANJEZI,Lock,30 y/o,07/04/1995,1.98 m,118 kg,6 ft 6 in,18 st 8.15 lb; 260.15 lb,PRO,2028,bulls
+Cameron HANEKOM,Back row,23 y/o,10/05/2002,1.93 m,104 kg,6 ft 4 in,16 st 5.28 lb; 229.28 lb,PRO,,bulls
+Corné BEETS,Back row,21 y/o,01/10/2003,1.88 m,105 kg,6 ft 2 in,16 st 7.49 lb; 231.49 lb,PRO,2026,bulls
+Cyle BRINK,Back row,31 y/o,16/01/1994,1.91 m,115 kg,6 ft 3 in,18 st 1.53 lb; 253.53 lb,PRO,,bulls
+Elrigh LOUW,Back row,25 y/o,20/09/1999,1.95 m,112 kg,6 ft 5 in,17 st 8.92 lb; 246.92 lb,PRO,2027,bulls
+Ghudian VAN REENEN,Back row,21 y/o,17/09/2003,1.90 m,104 kg,6 ft 3 in,16 st 5.28 lb; 229.28 lb,PRO,,bulls
+Jannes KIRSTEN,Back row,31 y/o,01/12/1993,1.97 m,117 kg,6 ft 6 in,18 st 5.94 lb; 257.94 lb,PRO,2026,bulls
+Marcell COETZEE,Back row,34 y/o,08/05/1991,1.91 m,118 kg,6 ft 3 in,18 st 8.15 lb; 260.15 lb,PRO,2027,bulls
+Marco VAN STADEN,Back row,29 y/o,25/08/1995,1.84 m,112 kg,6 ft,17 st; 246.92 lb,PRO,2027,bulls
+Mihlali MOSI,Back row,29 y/o,12/05/1996,1.90 m,106 kg,6 ft 3 in,16 st 9.69 lb; 233.69 lb,PRO,2025,bulls
+Mpilo GUMEDE,Back row,24 y/o,08/07/2000,1.93 m,110 kg,6 ft 4 in,17 st 4.51 lb; 242.51 lb,PRO,2028,bulls
+Nama XABA,Back row,27 y/o,26/07/1997,1.85 m,103 kg,6 ft 1 in,16 st 3.08 lb; 227.08 lb,PRO,2026,bulls
+Nizaam CARR,Back row,34 y/o,04/04/1991,1.78 m,106 kg,5 ft 10 in,16 st 9.69 lb; 233.69 lb,PRO,2027,bulls
+Bernard VAN DER LINDE,Scrum-half,24 y/o,30/11/2000,1.75 m,86 kg,5 ft 9 in,13 st 7.60 lb; 189.60 lb,PRO,2025,bulls
+Embrose PAPIER,Scrum-half,28 y/o,25/04/1997,1.71 m,80 kg,5 ft 7 in,12 st 8.37 lb; 176.37 lb,PRO,2027,bulls
+Keagan JOHANNES,Scrum-half,25 y/o,27/11/1999,1.78 m,77 kg,5 ft 10 in,12 st 1.76 lb; 169.76 lb,PRO,2026,bulls
+Zak BURGER,Scrum-half,26 y/o,20/08/1998,1.74 m,83 kg,5 ft 9 in,13 st 0.98 lb; 182.98 lb,PRO,2026,bulls
+Boeta CHAMBERLAIN,Fly-half,26 y/o,22/02/1999,1.84 m,83 kg,6 ft,13 st; 182.98 lb,PRO,2025,bulls
+Jaco VAN DER WALT,Fly-half,31 y/o,01/02/1994,1.82 m,92 kg,6 ft,14 st; 202.83 lb,PRO,2025,bulls
+Johan GOOSEN,Fly-half,32 y/o,27/07/1992,1.84 m,89 kg,6 ft,14 st; 196.21 lb,PRO,2026,bulls
+Chris SMIT,Centre,29 y/o,01/08/1995,1.82 m,93 kg,6 ft,14 st; 205.03 lb,PRO,2025,bulls
+Cornel SMIT,Centre,27 y/o,10/09/1997,1.83 m,96 kg,6 ft,15 st; 211.64 lb,PRO,,bulls
+Harold VORSTER,Centre,31 y/o,11/10/1993,1.88 m,101 kg,6 ft 2 in,15 st 12.67 lb; 222.67 lb,PRO,,bulls
+Katlego LETEBELE,Centre,21 y/o,18/11/2003,1.87 m,92 kg,6 ft 2 in,14 st 6.83 lb; 202.83 lb,PRO,,bulls
+Stedman GANS,Centre,28 y/o,19/03/1997,1.80 m,99 kg,5 ft 11 in,15 st 8.26 lb; 218.26 lb,PRO,,bulls
+Aphiwe DYANTYI,Winger,30 y/o,26/08/1994,1.82 m,90 kg,6 ft,14 st; 198.42 lb,PRO,2026,bulls
+Canan MOODIE,Winger,22 y/o,05/11/2002,1.91 m,94 kg,6 ft 3 in,14 st 11.23 lb; 207.23 lb,PRO,2027,bulls
+Sebastian DE KLERK,Winger,25 y/o,05/04/2000,1.80 m,91 kg,5 ft 11 in,14 st 4.62 lb; 200.62 lb,PRO,2026,bulls
+Sergeal PETERSEN,Winger,30 y/o,01/08/1994,1.73 m,86 kg,5 ft 8 in,13 st 7.60 lb; 189.60 lb,PRO,,bulls
+Stravino JACOBS,Winger,25 y/o,21/02/2000,1.80 m,103 kg,5 ft 11 in,16 st 3.08 lb; 227.08 lb,PRO,,bulls
+David KRIEL,Fullback,26 y/o,15/02/1999,1.95 m,102 kg,6 ft 5 in,16 st 0.87 lb; 224.87 lb,PRO,2027,bulls
+Devon WILLIAMS,Fullback,33 y/o,16/04/1992,1.75 m,79 kg,5 ft 9 in,12 st 6.17 lb; 174.16 lb,PRO,,bulls
+Sibongile NOVUKA,Fullback,27 y/o,01/02/1998,1.92 m,97 kg,6 ft 4 in,15 st 3.85 lb; 213.85 lb,PRO,,bulls
+Willie LE ROUX,Fullback,35 y/o,18/08/1989,1.84 m,92 kg,6 ft,14 st; 202.83 lb,PRO,2027,bulls
+Corey DOMACHOWSKI,Prop,28 y/o,19/09/1996,1.83 m,124 kg,6 ft,19 st; 273.37 lb,PRO,,cardiff
+Danny SOUTHWORTH,Prop,26 y/o,04/05/1999,1.83 m,120 kg,6 ft,18 st; 264.55 lb,PRO,,cardiff
+Ed BYRNE,Prop,31 y/o,09/09/1993,1.80 m,115 kg,5 ft 11 in,18 st 1.53 lb; 253.53 lb,PRO,,cardiff
+Keiron ASSIRATTI,Prop,28 y/o,30/06/1997,1.78 m,119 kg,5 ft 10 in,18 st 10.35 lb; 262.35 lb,PRO,,cardiff
+Rhys LITTERICK,Prop,26 y/o,02/03/1999,1.79 m,120 kg,5 ft 10 in,18 st 12.55 lb; 264.55 lb,PRO,2025,cardiff
+Will DAVIES-KING,Prop,26 y/o,28/07/1998,1.93 m,128 kg,6 ft 4 in,20 st 2.19 lb; 282.19 lb,PRO,,cardiff
+Dafydd HUGHES,Hooker,29 y/o,08/01/1996,1.79 m,105 kg,5 ft 10 in,16 st 7.49 lb; 231.49 lb,PRO,,cardiff
+Efan DANIEL,Hooker,22 y/o,14/12/2002,1.85 m,105 kg,6 ft 1 in,16 st 7.49 lb; 231.49 lb,PRO,2025,cardiff
+Evan LLOYD,Hooker,23 y/o,28/12/2001,1.85 m,115 kg,6 ft 1 in,18 st 1.53 lb; 253.53 lb,PRO,,cardiff
+Liam BELCHER,Hooker,29 y/o,28/04/1996,1.77 m,107 kg,5 ft 10 in,16 st 11.89 lb; 235.89 lb,PRO,,cardiff
+Josh MCNALLY,Lock,34 y/o,21/08/1990,2.01 m,125 kg,6 ft 7 in,19 st 9.58 lb; 275.58 lb,PRO,2026,cardiff
+Rory THORNTON,Lock,30 y/o,16/03/1995,2.01 m,119 kg,6 ft 7 in,18 st 10.35 lb; 262.35 lb,PRO,,cardiff
+Seb DAVIES,Lock,29 y/o,17/05/1996,2.03 m,119 kg,6 ft 8 in,18 st 10.35 lb; 262.35 lb,PRO,2025,cardiff
+Alex MANN,Back row,23 y/o,06/01/2002,1.91 m,98 kg,6 ft 3 in,15 st 6.05 lb; 216.05 lb,PRO,,cardiff
+Alun LAWRENCE,Back row,26 y/o,15/09/1998,1.91 m,112 kg,6 ft 3 in,17 st 8.92 lb; 246.92 lb,PRO,,cardiff
+Ben DONNELL,Back row,24 y/o,02/08/2000,1.98 m,115 kg,6 ft 6 in,18 st 1.53 lb; 253.53 lb,PRO,,cardiff
+Dan THOMAS,Back row,31 y/o,11/10/1993,1.83 m,101 kg,6 ft,15 st; 222.67 lb,PRO,,cardiff
+Gwilym BRADLEY,Back row,24 y/o,10/09/2000,1.88 m,99 kg,6 ft 2 in,15 st 8.26 lb; 218.26 lb,PRO,2025,cardiff
+James BOTHAM,Back row,27 y/o,22/02/1998,1.91 m,108 kg,6 ft 3 in,17 st 0.10 lb; 238.10 lb,PRO,,cardiff
+Mackenzie MARTIN,Back row,21 y/o,26/10/2003,1.96 m,116 kg,6 ft 5 in,18 st 3.74 lb; 255.74 lb,PRO,,cardiff
+Teddy WILLIAMS,Back row,24 y/o,18/10/2000,1.98 m,118 kg,6 ft 6 in,18 st 8.15 lb; 260.15 lb,PRO,,cardiff
+Toby FALETAU,Back row,34 y/o,12/11/1990,1.88 m,113 kg,6 ft 2 in,17 st 11.12 lb; 249.12 lb,PRO,,cardiff
+Tom YOUNG,Back row,33 y/o,18/05/1992,1.81 m,104 kg,5 ft 11 in,16 st 5.28 lb; 229.28 lb,PRO,2025,cardiff
+Aled DAVIES,Scrum-half,32 y/o,19/07/1992,1.78 m,88 kg,5 ft 10 in,13 st 12.01 lb; 194.01 lb,PRO,,cardiff
+Callum BRALEY,Scrum-half,31 y/o,20/03/1994,1.78 m,84 kg,5 ft 10 in,13 st 3.19 lb; 185.19 lb,PRO,,cardiff
+Ellis BEVAN,Scrum-half,25 y/o,10/03/2000,1.80 m,92 kg,5 ft 11 in,14 st 6.83 lb; 202.83 lb,PRO,,cardiff
+Ethan LLOYD,Scrum-half,23 y/o,29/09/2001,1.78 m,82 kg,5 ft 10 in,12 st 12.78 lb; 180.78 lb,PRO,,cardiff
+Johan MULDER,Scrum-half,25 y/o,06/08/1999,1.76 m,85 kg,5 ft 9 in,13 st 5.39 lb; 187.39 lb,PRO,,cardiff
+Ben THOMAS,Fly-half,26 y/o,25/11/1998,1.83 m,93 kg,6 ft,14 st; 205.03 lb,PRO,,cardiff
+Callum SHEEDY,Fly-half,29 y/o,28/10/1995,1.77 m,88 kg,5 ft 10 in,13 st 12.01 lb; 194.01 lb,PRO,,cardiff
+Rory JENNINGS,Fly-half,29 y/o,24/12/1995,1.80 m,91 kg,5 ft 11 in,14 st 4.62 lb; 200.62 lb,PRO,2026,cardiff
+Tinus DE BEER,Fly-half,29 y/o,24/01/1996,1.76 m,90 kg,5 ft 9 in,14 st 2.42 lb; 198.42 lb,PRO,2025,cardiff
+Harri MILLARD,Centre,28 y/o,17/08/1996,1.83 m,94 kg,6 ft,14 st; 207.23 lb,PRO,,cardiff
+Louie HENNESSEY,Centre,21 y/o,29/03/2004,1.91 m,105 kg,6 ft 3 in,16 st 7.49 lb; 231.49 lb,PRO,,cardiff
+Rey LEE-LO,Centre,39 y/o,20/02/1986,1.81 m,98 kg,5 ft 11 in,15 st 6.05 lb; 216.05 lb,PRO,2025,cardiff
+Gabe HAMER-WEBB,Winger,24 y/o,07/11/2000,1.83 m,95 kg,6 ft,14 st; 209.44 lb,PRO,2025,cardiff
+Iwan STEPHENS,Winger,23 y/o,24/03/2002,1.70 m,83 kg,5 ft 7 in,13 st 0.98 lb; 182.98 lb,PRO,,cardiff
+Josh ADAMS,Winger,30 y/o,21/04/1995,1.86 m,96 kg,6 ft 1 in,15 st 1.64 lb; 211.64 lb,PRO,,cardiff
+Mason GRADY,Winger,23 y/o,29/03/2002,1.96 m,111 kg,6 ft 5 in,17 st 6.71 lb; 244.71 lb,PRO,,cardiff
+Regan GRACE,Winger,28 y/o,12/12/1996,1.78 m,82 kg,5 ft 10 in,12 st 12.78 lb; 180.78 lb,PRO,2025,cardiff
+Theo CABANGO,Winger,23 y/o,29/11/2001,1.74 m,83 kg,5 ft 9 in,13 st 0.98 lb; 182.98 lb,PRO,,cardiff
+Cam WINNETT,Fullback,22 y/o,07/01/2003,1.80 m,85 kg,5 ft 11 in,13 st 5.39 lb; 187.39 lb,PRO,,cardiff
+Jacob BEETHAM,Fullback,24 y/o,18/04/2001,1.85 m,87 kg,6 ft 1 in,13 st 9.80 lb; 191.80 lb,PRO,,cardiff
+Chris COLEMAN,Prop,26 y/o,31/08/1998,1.89 m,130 kg,6 ft 2 in,20 st 6.60 lb; 286.60 lb,PRO,,dragons
+Dmitri ARHIP,Prop,36 y/o,12/11/1988,1.83 m,120 kg,6 ft,18 st; 264.55 lb,PRO,2025,dragons
+Jamie HUGHES,Prop,28 y/o,30/09/1996,1.88 m,121 kg,6 ft 2 in,19 st 0.76 lb; 266.76 lb,PRO,,dragons
+Josh REYNOLDS,Prop,26 y/o,01/12/1998,1.80 m,116 kg,5 ft 11 in,18 st 3.74 lb; 255.74 lb,PRO,2025,dragons
+Luke YENDLE,Prop,25 y/o,27/06/2000,1.85 m,120 kg,6 ft 1 in,18 st 12.55 lb; 264.55 lb,PRO,,dragons
+Nathan EVANS,Prop,23 y/o,03/01/2002,1.78 m,120 kg,5 ft 10 in,18 st 12.55 lb; 264.55 lb,PRO,2025,dragons
+Paula LATU,Prop,29 y/o,14/02/1996,1.87 m,123 kg,6 ft 2 in,19 st 5.17 lb; 271.17 lb,PRO,2025,dragons
+Rhodri JONES,Prop,33 y/o,23/12/1991,1.91 m,120 kg,6 ft 3 in,18 st 12.55 lb; 264.55 lb,PRO,,dragons
+Rodrigo MARTINEZ,Prop,26 y/o,07/07/1998,1.88 m,120 kg,6 ft 2 in,18 st 12.55 lb; 264.55 lb,PRO,,dragons
+Brodie COGHLAN,Hooker,24 y/o,21/12/2000,1.83 m,112 kg,6 ft,17 st; 246.92 lb,PRO,,dragons
+Elliot DEE,Hooker,31 y/o,07/03/1994,1.86 m,106 kg,6 ft 1 in,16 st 9.69 lb; 233.69 lb,PRO,,dragons
+James BENJAMIN,Hooker,31 y/o,21/02/1994,1.83 m,100 kg,6 ft,15 st; 220.46 lb,PRO,,dragons
+Lewis MORGAN,Hooker,21 y/o,01/08/2003,1.78 m,108 kg,5 ft 10 in,17 st 0.10 lb; 238.10 lb,PRO,,dragons
+Oli BURROWS,Hooker,23 y/o,16/05/2002,1.88 m,110 kg,6 ft 2 in,17 st 4.51 lb; 242.51 lb,PRO,,dragons
+Barny LANGTON,Lock,24 y/o,26/01/2001,1.95 m,117 kg,6 ft 5 in,18 st 5.94 lb; 257.94 lb,PRO,,dragons
+Ben CARTER,Lock,24 y/o,23/01/2001,1.98 m,122 kg,6 ft 6 in,19 st 2.96 lb; 268.96 lb,PRO,,dragons
+George NOTT,Lock,29 y/o,21/06/1996,1.98 m,114 kg,6 ft 6 in,17 st 13.33 lb; 251.33 lb,PRO,2025,dragons
+Joe DAVIES,Lock,29 y/o,13/11/1995,1.97 m,130 kg,6 ft 6 in,20 st 6.60 lb; 286.60 lb,PRO,2025,dragons
+Matthew SCREECH,Lock,32 y/o,24/10/1992,1.96 m,116 kg,6 ft 5 in,18 st 3.74 lb; 255.74 lb,PRO,,dragons
+Steven CUMMINS,Lock,33 y/o,29/03/1992,2.02 m,120 kg,6 ft 8 in,18 st 12.55 lb; 264.55 lb,PRO,,dragons
+Aaron WAINWRIGHT,Back row,27 y/o,25/09/1997,1.88 m,110 kg,6 ft 2 in,17 st 4.51 lb; 242.51 lb,PRO,,dragons
+Dan LYDIATE,Back row,37 y/o,18/12/1987,1.93 m,115 kg,6 ft 4 in,18 st 1.53 lb; 253.53 lb,PRO,2025,dragons
+George YOUNG,Back row,23 y/o,10/10/2001,1.92 m,108 kg,6 ft 4 in,17 st 0.10 lb; 238.10 lb,PRO,2025,dragons
+Harri KEDDIE,Back row,28 y/o,10/07/1996,1.88 m,110 kg,6 ft 2 in,17 st 4.51 lb; 242.51 lb,PRO,,dragons
+Shane LEWIS-HUGHES,Back row,27 y/o,20/09/1997,1.96 m,115 kg,6 ft 5 in,18 st 1.53 lb; 253.53 lb,PRO,,dragons
+Solomone FUNAKI,Back row,31 y/o,25/04/1994,1.87 m,115 kg,6 ft 2 in,18 st 1.53 lb; 253.53 lb,PRO,,dragons
+Taine BASHAM,Back row,25 y/o,02/11/1999,1.82 m,100 kg,6 ft,15 st; 220.46 lb,PRO,2025,dragons
+Dane BLACKER,Scrum-half,26 y/o,06/07/1998,1.78 m,78 kg,5 ft 10 in,12 st 3.96 lb; 171.96 lb,PRO,2025,dragons
+Rhodri WILLIAMS,Scrum-half,32 y/o,05/05/1993,1.79 m,81 kg,5 ft 10 in,12 st 10.57 lb; 178.57 lb,PRO,,dragons
+Angus O'BRIEN,Fly-half,30 y/o,17/09/1994,1.80 m,89 kg,5 ft 11 in,14 st 0.21 lb; 196.21 lb,PRO,,dragons
+Cai EVANS,Fly-half,26 y/o,23/06/1999,1.85 m,84 kg,6 ft 1 in,13 st 3.19 lb; 185.19 lb,PRO,,dragons
+Josh THOMAS,Fly-half,24 y/o,30/06/2000,1.78 m,83 kg,5 ft 10 in,13 st 0.98 lb; 182.98 lb,PRO,2025,dragons
+Lloyd EVANS,Fly-half,29 y/o,14/12/1995,1.83 m,90 kg,6 ft,14 st; 198.42 lb,PRO,2025,dragons
+Will REED,Fly-half,23 y/o,03/11/2001,1.76 m,80 kg,5 ft 9 in,12 st 8.37 lb; 176.37 lb,PRO,2025,dragons
+Aneurin OWEN,Centre,24 y/o,19/10/2000,1.80 m,89 kg,5 ft 11 in,14 st 0.21 lb; 196.21 lb,PRO,,dragons
+Harry WILSON,Centre,24 y/o,17/08/2000,1.90 m,97 kg,6 ft 3 in,15 st 3.85 lb; 213.85 lb,PRO,2025,dragons
+Scott WILLIAMS,Centre,34 y/o,10/10/1990,1.87 m,100 kg,6 ft 2 in,15 st 10.46 lb; 220.46 lb,PRO,2025,dragons
+Ashton HEWITT,Winger,30 y/o,20/11/1994,1.80 m,90 kg,5 ft 11 in,14 st 2.42 lb; 198.42 lb,PRO,2025,dragons
+Ewan ROSSER,Winger,24 y/o,16/12/2000,1.78 m,85 kg,5 ft 10 in,13 st 5.39 lb; 187.39 lb,PRO,,dragons
+Jared ROSSER,Winger,27 y/o,31/12/1997,1.83 m,99 kg,6 ft,15 st; 218.26 lb,PRO,,dragons
+Rio DYER,Winger,25 y/o,21/12/1999,1.85 m,84 kg,6 ft 1 in,13 st 3.19 lb; 185.19 lb,PRO,,dragons
+Jordan WILLIAMS,Fullback,31 y/o,20/09/1993,1.73 m,81 kg,5 ft 8 in,12 st 10.57 lb; 178.57 lb,PRO,2025,dragons
+Angus WILLIAMS,Prop,31 y/o,11/11/1993,1.80 m,117 kg,5 ft 11 in,18 st 5.94 lb; 257.94 lb,PRO,2026,edinburgh
+Boan VENTER,Prop,28 y/o,12/04/1997,1.87 m,124 kg,6 ft 2 in,19 st 7.37 lb; 273.37 lb,PRO,2026,edinburgh
+D'Arcy RAE,Prop,30 y/o,21/12/1994,1.86 m,125 kg,6 ft 1 in,19 st 9.58 lb; 275.58 lb,PRO,2027,edinburgh
+Javan SEBASTIAN,Prop,30 y/o,27/09/1994,1.77 m,125 kg,5 ft 10 in,19 st 9.58 lb; 275.58 lb,PRO,2025,edinburgh
+Paul HILL,Prop,30 y/o,02/03/1995,1.89 m,123 kg,6 ft 2 in,19 st 5.17 lb; 271.17 lb,PRO,2026,edinburgh
+Pierre SCHOEMAN,Prop,31 y/o,07/05/1994,1.84 m,118 kg,6 ft,18 st; 260.15 lb,PRO,2028,edinburgh
+Robin HISLOP,Prop,33 y/o,26/02/1992,1.80 m,116 kg,5 ft 11 in,18 st 3.74 lb; 255.74 lb,PRO,2025,edinburgh
+Dave CHERRY,Hooker,34 y/o,03/01/1991,1.83 m,107 kg,6 ft,16 st; 235.89 lb,PRO,2025,edinburgh
+Ewan ASHMAN,Hooker,25 y/o,03/04/2000,1.88 m,113 kg,6 ft 2 in,17 st 11.12 lb; 249.12 lb,PRO,2027,edinburgh
+Patrick HARRISON,Hooker,23 y/o,20/06/2002,1.81 m,111 kg,5 ft 11 in,17 st 6.71 lb; 244.71 lb,PRO,2027,edinburgh
+Glen YOUNG,Lock,30 y/o,04/11/1994,2.01 m,118 kg,6 ft 7 in,18 st 8.15 lb; 260.15 lb,PRO,,edinburgh
+Grant GILCHRIST,Lock,34 y/o,09/08/1990,1.98 m,120 kg,6 ft 6 in,18 st 12.55 lb; 264.55 lb,PRO,2026,edinburgh
+Marshall SYKES,Lock,25 y/o,29/12/1999,2.00 m,121 kg,6 ft 7 in,19 st 0.76 lb; 266.76 lb,PRO,2026,edinburgh
+Rob CARMICHAEL,Lock,22 y/o,04/04/2003,2.10 m,125 kg,6 ft 11 in,19 st 9.58 lb; 275.58 lb,PRO,2027,edinburgh
+Ben MUNCASTER,Back row,23 y/o,14/10/2001,1.90 m,110 kg,6 ft 3 in,17 st 4.51 lb; 242.51 lb,PRO,2027,edinburgh
+Connor BOYLE,Back row,25 y/o,19/02/2000,1.83 m,91 kg,6 ft,14 st; 200.62 lb,PRO,2025,edinburgh
+Hamish WATSON,Back row,33 y/o,15/10/1991,1.85 m,106 kg,6 ft 1 in,16 st 9.69 lb; 233.69 lb,PRO,2026,edinburgh
+Jamie RITCHIE,Back row,28 y/o,16/08/1996,1.90 m,110 kg,6 ft 3 in,17 st 4.51 lb; 242.51 lb,PRO,2025,edinburgh
+Liam MCCONNELL,Back row,21 y/o,24/06/2004,1.94 m,106 kg,6 ft 4 in,16 st 9.69 lb; 233.69 lb,PRO,,edinburgh
+Luke CROSBIE,Back row,28 y/o,22/04/1997,1.96 m,112 kg,6 ft 5 in,17 st 8.92 lb; 246.92 lb,PRO,2027,edinburgh
+Magnus BRADBURY,Back row,29 y/o,23/08/1995,1.91 m,116 kg,6 ft 3 in,18 st 3.74 lb; 255.74 lb,PRO,,edinburgh
+Sam SKINNER,Back row,30 y/o,31/01/1995,1.96 m,115 kg,6 ft 5 in,18 st 1.53 lb; 253.53 lb,PRO,2026,edinburgh
+Tom DODD,Back row,27 y/o,28/10/1997,1.91 m,109 kg,6 ft 3 in,17 st 2.30 lb; 240.30 lb,PRO,2027,edinburgh
+Ali PRICE,Scrum-half,32 y/o,12/05/1993,1.77 m,88 kg,5 ft 10 in,13 st 12.01 lb; 194.01 lb,PRO,2025,edinburgh
+Ben VELLACOTT,Scrum-half,30 y/o,28/03/1995,1.67 m,78 kg,5 ft 6 in,12 st 3.96 lb; 171.96 lb,PRO,2027,edinburgh
+Charlie SHIEL,Scrum-half,27 y/o,03/12/1997,1.78 m,83 kg,5 ft 10 in,13 st 0.98 lb; 182.98 lb,PRO,2026,edinburgh
+Ben HEALY,Fly-half,26 y/o,29/06/1999,1.91 m,100 kg,6 ft 3 in,15 st 10.46 lb; 220.46 lb,PRO,2026,edinburgh
+Cammy SCOTT,Fly-half,23 y/o,08/09/2001,1.81 m,83 kg,5 ft 11 in,13 st 0.98 lb; 182.98 lb,PRO,2027,edinburgh
+James LANG,Fly-half,30 y/o,04/04/1995,1.83 m,95 kg,6 ft,14 st; 209.44 lb,PRO,2026,edinburgh
+Ross THOMPSON,Fly-half,26 y/o,10/04/1999,1.83 m,86 kg,6 ft,13 st; 189.60 lb,PRO,2027,edinburgh
+Mark BENNETT,Centre,32 y/o,03/02/1993,1.83 m,91 kg,6 ft,14 st; 200.62 lb,PRO,2025,edinburgh
+Matt CURRIE,Centre,24 y/o,22/02/2001,1.91 m,95 kg,6 ft 3 in,14 st 13.44 lb; 209.44 lb,PRO,2027,edinburgh
+Matt SCOTT,Centre,34 y/o,30/09/1990,1.87 m,101 kg,6 ft 2 in,15 st 12.67 lb; 222.67 lb,PRO,2025,edinburgh
+Mosese TUIPULOTU,Centre,24 y/o,05/05/2001,1.82 m,102 kg,6 ft,16 st; 224.87 lb,PRO,2026,edinburgh
+Wes GOOSEN,Centre,29 y/o,20/10/1995,1.80 m,92 kg,5 ft 11 in,14 st 6.83 lb; 202.83 lb,PRO,2027,edinburgh
+Darcy GRAHAM,Winger,28 y/o,21/06/1997,1.77 m,85 kg,5 ft 10 in,13 st 5.39 lb; 187.39 lb,PRO,2027,edinburgh
+Duhan VAN DER MERWE,Winger,30 y/o,04/06/1995,1.93 m,106 kg,6 ft 4 in,16 st 9.69 lb; 233.69 lb,PRO,2027,edinburgh
+Ross MCCANN,Winger,27 y/o,30/10/1997,1.81 m,91 kg,5 ft 11 in,14 st 4.62 lb; 200.62 lb,PRO,2026,edinburgh
+Ross MCKNIGHT,Winger,23 y/o,03/04/2002,1.95 m,108 kg,6 ft 5 in,17 st 0.10 lb; 238.10 lb,PRO,2025,edinburgh
+Emiliano BOFFELLI,Fullback,30 y/o,16/01/1995,1.92 m,96 kg,6 ft 4 in,15 st 1.64 lb; 211.64 lb,PRO,2025,edinburgh
+Harry PATERSON,Fullback,24 y/o,28/06/2001,1.91 m,93 kg,6 ft 3 in,14 st 9.03 lb; 205.03 lb,PRO,2027,edinburgh
+Nathan SWEENEY,Fullback,24 y/o,17/04/2001,1.81 m,89 kg,5 ft 11 in,14 st 0.21 lb; 196.21 lb,PRO,2025,edinburgh
+Fin RICHARDSON,Prop,26 y/o,16/09/1998,1.83 m,120 kg,6 ft,18 st; 264.55 lb,PRO,,glasgow
+Jamie BHATTI,Prop,31 y/o,08/09/1993,1.85 m,125 kg,6 ft 1 in,19 st 9.58 lb; 275.58 lb,PRO,2026,glasgow
+Murphy WALKER,Prop,25 y/o,25/10/1999,1.85 m,110 kg,6 ft 1 in,17 st 4.51 lb; 242.51 lb,PRO,2026,glasgow
+Nathan MCBETH,Prop,27 y/o,08/06/1998,1.89 m,120 kg,6 ft 2 in,18 st 12.55 lb; 264.55 lb,PRO,2027,glasgow
+Patrick SCHICKERLING,Prop,26 y/o,16/10/1998,1.82 m,120 kg,6 ft,18 st; 264.55 lb,PRO,,glasgow
+Rory SUTHERLAND,Prop,32 y/o,24/08/1992,1.83 m,116 kg,6 ft,18 st; 255.74 lb,PRO,2026,glasgow
+Sam TALAKAI,Prop,33 y/o,04/09/1991,1.83 m,122 kg,6 ft,19 st; 268.96 lb,PRO,,glasgow
+Zander FAGERSON,Prop,29 y/o,19/01/1996,1.88 m,126 kg,6 ft 2 in,19 st 11.78 lb; 277.78 lb,PRO,,glasgow
+Angus FRASER,Hooker,25 y/o,09/12/1999,1.81 m,110 kg,5 ft 11 in,17 st 4.51 lb; 242.51 lb,PRO,,glasgow
+Grant STEWART,Hooker,30 y/o,28/02/1995,1.82 m,113 kg,6 ft,17 st; 249.12 lb,PRO,2026,glasgow
+Gregor HIDDLESTON,Hooker,23 y/o,26/03/2002,1.87 m,120 kg,6 ft 2 in,18 st 12.55 lb; 264.55 lb,PRO,,glasgow
+Johnny MATTHEWS,Hooker,31 y/o,05/07/1993,1.83 m,110 kg,6 ft,17 st; 242.51 lb,PRO,2026,glasgow
+Alex SAMUEL,Lock,22 y/o,27/12/2002,2.07 m,124 kg,6 ft 9 in,19 st 7.37 lb; 273.37 lb,PRO,2027,glasgow
+Euan FERRIE,Lock,23 y/o,23/07/2001,1.94 m,110 kg,6 ft 4 in,17 st 4.51 lb; 242.51 lb,PRO,2027,glasgow
+Gregor BROWN,Lock,23 y/o,01/07/2001,1.96 m,109 kg,6 ft 5 in,17 st 2.30 lb; 240.30 lb,PRO,2027,glasgow
+JP DU PREEZ,Lock,30 y/o,09/11/1994,2.08 m,130 kg,6 ft 10 in,20 st 6.60 lb; 286.60 lb,PRO,2025,glasgow
+Max WILLIAMSON,Lock,23 y/o,08/05/2002,2.01 m,120 kg,6 ft 7 in,18 st 12.55 lb; 264.55 lb,PRO,2027,glasgow
+Richie GRAY,Lock,35 y/o,24/08/1989,2.05 m,126 kg,6 ft 9 in,19 st 11.78 lb; 277.78 lb,PRO,,glasgow
+Scott CUMMINGS,Lock,28 y/o,03/12/1996,1.99 m,117 kg,6 ft 6 in,18 st 5.94 lb; 257.94 lb,PRO,2026,glasgow
+Ally MILLER,Back row,29 y/o,10/05/1996,1.93 m,112 kg,6 ft 4 in,17 st 8.92 lb; 246.92 lb,PRO,2026,glasgow
+Henco VENTER,Back row,33 y/o,27/03/1992,1.87 m,108 kg,6 ft 2 in,17 st 0.10 lb; 238.10 lb,PRO,2025,glasgow
+Jack DEMPSEY,Back row,31 y/o,12/04/1994,1.91 m,112 kg,6 ft 3 in,17 st 8.92 lb; 246.92 lb,PRO,2025,glasgow
+Jack MANN,Back row,25 y/o,17/11/1999,1.94 m,115 kg,6 ft 4 in,18 st 1.53 lb; 253.53 lb,PRO,2025,glasgow
+Matt FAGERSON,Back row,26 y/o,16/07/1998,1.86 m,110 kg,6 ft 1 in,17 st 4.51 lb; 242.51 lb,PRO,2028,glasgow
+Rory DARGE,Back row,25 y/o,23/02/2000,1.86 m,102 kg,6 ft 1 in,16 st 0.87 lb; 224.87 lb,PRO,2028,glasgow
+Sione VAILANU,Back row,30 y/o,27/01/1995,1.89 m,119 kg,6 ft 2 in,18 st 10.35 lb; 262.35 lb,PRO,,glasgow
+Ben AFSHAR,Scrum-half,22 y/o,02/04/2003,1.84 m,81 kg,6 ft,12 st; 178.57 lb,PRO,,glasgow
+George HORNE,Scrum-half,30 y/o,12/05/1995,1.74 m,81 kg,5 ft 9 in,12 st 10.57 lb; 178.57 lb,PRO,2027,glasgow
+Jamie DOBIE,Scrum-half,24 y/o,07/06/2001,1.75 m,81 kg,5 ft 9 in,12 st 10.57 lb; 178.57 lb,PRO,,glasgow
+Sean KENNEDY,Scrum-half,34 y/o,24/04/1991,1.73 m,80 kg,5 ft 8 in,12 st 8.37 lb; 176.37 lb,PRO,2025,glasgow
+Adam HASTINGS,Fly-half,28 y/o,05/10/1996,1.89 m,93 kg,6 ft 2 in,14 st 9.03 lb; 205.03 lb,PRO,2026,glasgow
+Duncan WEIR,Fly-half,34 y/o,10/05/1991,1.76 m,91 kg,5 ft 9 in,14 st 4.62 lb; 200.62 lb,PRO,2026,glasgow
+Tom JORDAN,Fly-half,26 y/o,18/09/1998,1.89 m,96 kg,6 ft 2 in,15 st 1.64 lb; 211.64 lb,PRO,2025,glasgow
+Huw JONES,Centre,31 y/o,17/12/1993,1.86 m,102 kg,6 ft 1 in,16 st 0.87 lb; 224.87 lb,PRO,2026,glasgow
+Kyle STEYN,Centre,31 y/o,29/01/1994,1.88 m,102 kg,6 ft 2 in,16 st 0.87 lb; 224.87 lb,PRO,2028,glasgow
+Sione TUIPULOTU,Centre,28 y/o,12/02/1997,1.78 m,104 kg,5 ft 10 in,16 st 5.28 lb; 229.28 lb,PRO,2028,glasgow
+Stafford MCDOWALL,Centre,27 y/o,24/02/1998,1.93 m,103 kg,6 ft 4 in,16 st 3.08 lb; 227.08 lb,PRO,2025,glasgow
+Facundo CORDERO,Winger,26 y/o,31/07/1998,1.77 m,86 kg,5 ft 10 in,13 st 7.60 lb; 189.60 lb,PRO,2025,glasgow
+Sebastián CANCELLIERE,Winger,31 y/o,17/09/1993,1.85 m,90 kg,6 ft 1 in,14 st 2.42 lb; 198.42 lb,PRO,2025,glasgow
+Josh MCKAY,Fullback,27 y/o,10/10/1997,1.83 m,95 kg,6 ft,14 st; 209.44 lb,PRO,2028,glasgow
+Kyle ROWE,Fullback,27 y/o,08/02/1998,1.83 m,88 kg,6 ft,13 st; 194.01 lb,PRO,2027,glasgow
+Ollie SMITH,Fullback,24 y/o,07/08/2000,1.88 m,90 kg,6 ft 2 in,14 st 2.42 lb; 198.42 lb,PRO,,glasgow
+Enzo AVACA,Prop,25 y/o,12/06/2000,1.88 m,118 kg,6 ft 2 in,18 st 8.15 lb; 260.15 lb,PRO,,benetton
+Giosué ZILOCCHI,Prop,28 y/o,15/01/1997,1.89 m,115 kg,6 ft 2 in,18 st 1.53 lb; 253.53 lb,PRO,2027,benetton
+Ivan NEMER,Prop,27 y/o,22/04/1998,1.80 m,117 kg,5 ft 11 in,18 st 5.94 lb; 257.94 lb,PRO,2026,benetton
+Mirco SPAGNOLO,Prop,24 y/o,02/01/2001,1.86 m,110 kg,6 ft 1 in,17 st 4.51 lb; 242.51 lb,PRO,2027,benetton
+Nahuel TETAZ CHAPARRO,Prop,35 y/o,06/11/1989,1.86 m,121 kg,6 ft 1 in,19 st 0.76 lb; 266.76 lb,PRO,,benetton
+Simone FERRARI,Prop,31 y/o,28/03/1994,1.86 m,120 kg,6 ft 1 in,18 st 12.55 lb; 264.55 lb,PRO,2029,benetton
+Thomas GALLO,Prop,26 y/o,30/04/1999,1.77 m,107 kg,5 ft 10 in,16 st 11.89 lb; 235.89 lb,PRO,2027,benetton
+Tiziano PASQUALI,Prop,30 y/o,14/07/1994,1.85 m,118 kg,6 ft 1 in,18 st 8.15 lb; 260.15 lb,PRO,2026,benetton
+Agustín CREEVY,Hooker,40 y/o,15/03/1985,1.80 m,108 kg,5 ft 11 in,17 st 0.10 lb; 238.10 lb,PRO,2025,benetton
+Bautista BERNASCONI,Hooker,23 y/o,14/09/2001,1.75 m,114 kg,5 ft 9 in,17 st 13.33 lb; 251.33 lb,PRO,2027,benetton
+Marco MANFREDI,Hooker,27 y/o,18/09/1997,1.83 m,110 kg,6 ft,17 st; 242.51 lb,PRO,2026,benetton
+Siua MAILE,Hooker,28 y/o,18/02/1997,1.81 m,113 kg,5 ft 11 in,17 st 11.12 lb; 249.12 lb,PRO,2026,benetton
+Edoardo IACHIZZI,Lock,27 y/o,26/05/1998,1.96 m,112 kg,6 ft 5 in,17 st 8.92 lb; 246.92 lb,PRO,2025,benetton
+Eli SNYMAN,Lock,29 y/o,25/01/1996,2.01 m,119 kg,6 ft 7 in,18 st 10.35 lb; 262.35 lb,PRO,2026,benetton
+Federico RUZZA,Lock,30 y/o,04/08/1994,1.98 m,110 kg,6 ft 6 in,17 st 4.51 lb; 242.51 lb,PRO,2028,benetton
+Gideon KOEGELENBERG,Lock,30 y/o,25/11/1994,2.02 m,124 kg,6 ft 8 in,19 st 7.37 lb; 273.37 lb,PRO,2025,benetton
+Jadin KINGI,Lock,22 y/o,19/08/2002,1.98 m,108 kg,6 ft 6 in,17 st 0.10 lb; 238.10 lb,PRO,2027 +1,benetton
+Niccolò CANNONE,Lock,27 y/o,17/05/1998,1.97 m,121 kg,6 ft 6 in,19 st 0.76 lb; 266.76 lb,PRO,2026,benetton
+Riccardo FAVRETTO,Lock,23 y/o,18/10/2001,2.00 m,108 kg,6 ft 7 in,17 st 0.10 lb; 238.10 lb,PRO,2026,benetton
+Scott SCRAFTON,Lock,32 y/o,18/04/1993,2.00 m,120 kg,6 ft 7 in,18 st 12.55 lb; 264.55 lb,PRO,2026 +1,benetton
+Alessandro IZEKOR,Back row,25 y/o,05/03/2000,1.96 m,110 kg,6 ft 5 in,17 st 4.51 lb; 242.51 lb,PRO,2028,benetton
+Giulio MARINI,Back row,23 y/o,23/01/2002,1.95 m,102 kg,6 ft 5 in,16 st 0.87 lb; 224.87 lb,PRO,,benetton
+Lorenzo CANNONE,Back row,24 y/o,28/01/2001,1.90 m,106 kg,6 ft 3 in,16 st 9.69 lb; 233.69 lb,PRO,2026,benetton
+Manuel ZULIANI,Back row,25 y/o,26/04/2000,1.88 m,111 kg,6 ft 2 in,17 st 6.71 lb; 244.71 lb,PRO,2027,benetton
+Michele LAMARO,Back row,27 y/o,03/06/1998,1.88 m,103 kg,6 ft 2 in,16 st 3.08 lb; 227.08 lb,PRO,2028,benetton
+Seb NEGRI,Back row,31 y/o,30/06/1994,1.94 m,111 kg,6 ft 4 in,17 st 6.71 lb; 244.71 lb,PRO,2028,benetton
+Toa HALAFIHI,Back row,31 y/o,27/11/1993,1.85 m,110 kg,6 ft 1 in,17 st 4.51 lb; 242.51 lb,PRO,2025,benetton
+Alessandro GARBISI,Scrum-half,23 y/o,11/04/2002,1.74 m,88 kg,5 ft 9 in,13 st 12.01 lb; 194.01 lb,PRO,2027,benetton
+Andy UREN,Scrum-half,29 y/o,20/02/1996,1.78 m,93 kg,5 ft 10 in,14 st 9.03 lb; 205.03 lb,PRO,2028,benetton
+Lautaro BAZÁN VÉLEZ,Scrum-half,29 y/o,24/02/1996,1.73 m,82 kg,5 ft 8 in,12 st 12.78 lb; 180.78 lb,PRO,2025,benetton
+Nicolò CASILIO,Scrum-half,26 y/o,12/10/1998,1.80 m,85 kg,5 ft 11 in,13 st 5.39 lb; 187.39 lb,PRO,2025,benetton
+Giuliano AVACA,Fly-half,22 y/o,25/02/2003,1.80 m,89 kg,5 ft 11 in,14 st 0.21 lb; 196.21 lb,PRO,,benetton
+Jacob UMAGA,Fly-half,26 y/o,08/07/1998,1.82 m,91 kg,6 ft,14 st; 200.62 lb,PRO,2026,benetton
+Leonardo MARIN,Fly-half,23 y/o,23/02/2002,1.88 m,88 kg,6 ft 2 in,13 st 12.01 lb; 194.01 lb,PRO,2026,benetton
+Tomás ALBORNOZ,Fly-half,27 y/o,17/09/1997,1.77 m,82 kg,5 ft 10 in,12 st 12.78 lb; 180.78 lb,PRO,2026,benetton
+Federico ZANANDREA,Centre,20 y/o,30/01/2005,1.90 m,103 kg,6 ft 3 in,16 st 3.08 lb; 227.08 lb,PRO,,benetton
+Ignacio BREX,Centre,33 y/o,26/05/1992,1.89 m,99 kg,6 ft 2 in,15 st 8.26 lb; 218.26 lb,PRO,2025,benetton
+Malakai FEKITOA,Centre,33 y/o,10/05/1992,1.87 m,100 kg,6 ft 2 in,15 st 10.46 lb; 220.46 lb,PRO,2026,benetton
+Marco ZANON,Centre,27 y/o,03/10/1997,1.88 m,97 kg,6 ft 2 in,15 st 3.85 lb; 213.85 lb,PRO,2026,benetton
+Tommaso MENONCELLO,Centre,22 y/o,20/08/2002,1.87 m,101 kg,6 ft 2 in,15 st 12.67 lb; 222.67 lb,PRO,2026,benetton
+Ignacio MENDY,Winger,25 y/o,29/06/2000,1.87 m,90 kg,6 ft 2 in,14 st 2.42 lb; 198.42 lb,PRO,2025,benetton
+Louis LYNAGH,Winger,24 y/o,03/12/2000,1.80 m,96 kg,5 ft 11 in,15 st 1.64 lb; 211.64 lb,PRO,2026 +1,benetton
+Onisi RATAVE,Winger,33 y/o,06/06/1992,1.79 m,100 kg,5 ft 10 in,15 st 10.46 lb; 220.46 lb,PRO,2026,benetton
+Paolo ODOGWU,Winger,28 y/o,18/02/1997,1.75 m,100 kg,5 ft 9 in,15 st 10.46 lb; 220.46 lb,PRO,2027,benetton
+Matt GALLAGHER,Fullback,28 y/o,26/10/1996,1.85 m,96 kg,6 ft 1 in,15 st 1.64 lb; 211.64 lb,PRO,2027,benetton
+Rhyno SMITH,Fullback,32 y/o,11/02/1993,1.73 m,83 kg,5 ft 8 in,13 st 0.98 lb; 182.98 lb,PRO,2026,benetton
+Andrew PORTER,Prop,29 y/o,16/01/1996,1.85 m,125 kg,6 ft 1 in,19 st 9.58 lb; 275.58 lb,PRO,2027,leinster
+Cian HEALY,Prop,37 y/o,07/10/1987,1.85 m,117 kg,6 ft 1 in,18 st 5.94 lb; 257.94 lb,PRO,2025,leinster
+Ivan SOROKA,Prop,30 y/o,01/10/1994,1.80 m,110 kg,5 ft 11 in,17 st 4.51 lb; 242.51 lb,PRO,,leinster
+Jack BOYLE,Prop,23 y/o,10/03/2002,1.85 m,113 kg,6 ft 1 in,17 st 11.12 lb; 249.12 lb,PRO,,leinster
+Paddy MCCARTHY,Prop,22 y/o,28/05/2003,1.82 m,110 kg,6 ft,17 st; 242.51 lb,PRO,,leinster
+Rabah SLIMANI,Prop,35 y/o,18/10/1989,1.78 m,124 kg,5 ft 10 in,19 st 7.37 lb; 273.37 lb,PRO,2026,leinster
+Tadhg FURLONG,Prop,32 y/o,14/11/1992,1.83 m,119 kg,6 ft,18 st; 262.35 lb,PRO,2027,leinster
+Tom CLARKSON,Prop,25 y/o,22/02/2000,1.85 m,118 kg,6 ft 1 in,18 st 8.15 lb; 260.15 lb,PRO,,leinster
+Dan SHEEHAN,Hooker,26 y/o,17/09/1998,1.91 m,110 kg,6 ft 3 in,17 st 4.51 lb; 242.51 lb,PRO,2026,leinster
+John MCKEE,Hooker,25 y/o,15/02/2000,1.83 m,109 kg,6 ft,17 st; 240.30 lb,PRO,,leinster
+Ronan KELLEHER,Hooker,27 y/o,24/01/1998,1.85 m,108 kg,6 ft 1 in,17 st 0.10 lb; 238.10 lb,PRO,2025,leinster
+Brian DEENY,Lock,25 y/o,03/02/2000,2.00 m,119 kg,6 ft 7 in,18 st 10.35 lb; 262.35 lb,PRO,,leinster
+James RYAN,Lock,28 y/o,24/07/1996,2.01 m,115 kg,6 ft 7 in,18 st 1.53 lb; 253.53 lb,PRO,2028,leinster
+Joe MCCARTHY,Lock,24 y/o,26/03/2001,1.98 m,119 kg,6 ft 6 in,18 st 10.35 lb; 262.35 lb,PRO,2028,leinster
+RG SNYMAN,Lock,30 y/o,29/01/1995,2.07 m,131 kg,6 ft 9 in,20 st 8.81 lb; 288.81 lb,PRO,2026,leinster
+Ryan BAIRD,Lock,25 y/o,26/07/1999,1.98 m,113 kg,6 ft 6 in,17 st 11.12 lb; 249.12 lb,PRO,,leinster
+Alex SOROKA,Back row,24 y/o,19/02/2001,1.96 m,107 kg,6 ft 5 in,16 st 11.89 lb; 235.89 lb,PRO,,leinster
+Caelan DORIS,Back row,27 y/o,02/04/1998,1.93 m,106 kg,6 ft 4 in,16 st 9.69 lb; 233.69 lb,PRO,2027,leinster
+Jack CONAN,Back row,32 y/o,29/07/1992,1.93 m,111 kg,6 ft 4 in,17 st 6.71 lb; 244.71 lb,PRO,2027,leinster
+James CULHANE,Back row,22 y/o,22/10/2002,1.93 m,113 kg,6 ft 4 in,17 st 11.12 lb; 249.12 lb,PRO,,leinster
+Josh VAN DER FLIER,Back row,32 y/o,25/04/1993,1.83 m,105 kg,6 ft,16 st; 231.49 lb,PRO,2026,leinster
+Max DEEGAN,Back row,28 y/o,01/10/1996,1.93 m,110 kg,6 ft 4 in,17 st 4.51 lb; 242.51 lb,PRO,,leinster
+Scott PENNY,Back row,25 y/o,22/09/1999,1.85 m,104 kg,6 ft 1 in,16 st 5.28 lb; 229.28 lb,PRO,,leinster
+Will CONNORS,Back row,29 y/o,04/04/1996,1.96 m,105 kg,6 ft 5 in,16 st 7.49 lb; 231.49 lb,PRO,,leinster
+Cormac FOLEY,Scrum-half,25 y/o,24/10/1999,1.80 m,90 kg,5 ft 11 in,14 st 2.42 lb; 198.42 lb,PRO,,leinster
+Jamison GIBSON-PARK,Scrum-half,33 y/o,23/02/1992,1.75 m,83 kg,5 ft 9 in,13 st 0.98 lb; 182.98 lb,PRO,,leinster
+Luke MCGRATH,Scrum-half,32 y/o,03/02/1993,1.75 m,84 kg,5 ft 9 in,13 st 3.19 lb; 185.19 lb,PRO,,leinster
+Ciarán FRAWLEY,Fly-half,27 y/o,04/12/1997,1.91 m,98 kg,6 ft 3 in,15 st 6.05 lb; 216.05 lb,PRO,,leinster
+Ross BYRNE,Fly-half,30 y/o,08/04/1995,1.93 m,95 kg,6 ft 4 in,14 st 13.44 lb; 209.44 lb,PRO,2025,leinster
+Sam PRENDERGAST,Fly-half,22 y/o,12/02/2003,1.94 m,91 kg,6 ft 4 in,14 st 4.62 lb; 200.62 lb,PRO,,leinster
+Garry RINGROSE,Centre,30 y/o,26/01/1995,1.86 m,92 kg,6 ft 1 in,14 st 6.83 lb; 202.83 lb,PRO,2028,leinster
+Jamie OSBORNE,Centre,23 y/o,16/11/2001,1.93 m,98 kg,6 ft 4 in,15 st 6.05 lb; 216.05 lb,PRO,,leinster
+Jordie BARRETT,Centre,28 y/o,17/02/1997,1.96 m,102 kg,6 ft 5 in,16 st 0.87 lb; 224.87 lb,PRO,2025,leinster
+Robbie HENSHAW,Centre,32 y/o,12/06/1993,1.91 m,100 kg,6 ft 3 in,15 st 10.46 lb; 220.46 lb,PRO,2028,leinster
+Tommy O'BRIEN,Centre,27 y/o,28/05/1998,1.83 m,95 kg,6 ft,14 st; 209.44 lb,PRO,,leinster
+James LOWE,Winger,32 y/o,08/07/1992,1.88 m,105 kg,6 ft 2 in,16 st 7.49 lb; 231.49 lb,PRO,,leinster
+Jordan LARMOUR,Winger,28 y/o,10/06/1997,1.78 m,91 kg,5 ft 10 in,14 st 4.62 lb; 200.62 lb,PRO,,leinster
+Liam TURNER,Winger,25 y/o,14/07/1999,1.75 m,91 kg,5 ft 9 in,14 st 4.62 lb; 200.62 lb,PRO,2025,leinster
+Rob RUSSELL,Winger,26 y/o,13/01/1999,1.83 m,91 kg,6 ft,14 st; 200.62 lb,PRO,2025,leinster
+Hugo KEENAN,Fullback,29 y/o,18/06/1996,1.85 m,92 kg,6 ft 1 in,14 st 6.83 lb; 202.83 lb,PRO,2026,leinster
+Jimmy O'BRIEN,Fullback,28 y/o,27/11/1996,1.83 m,90 kg,6 ft,14 st; 198.42 lb,PRO,,leinster
+Asenathi NTLABAKANYE,Prop,26 y/o,15/04/1999,1.82 m,153 kg,6 ft,24 st; 337.31 lb,PRO,2027,lions
+Conraad VAN VUUREN,Prop,29 y/o,34798,1.83 m,115 kg,6 ft,18 st; 253.53 lb,PRO,,lions
+Heiko POHLMANN,Prop,23 y/o,16/01/2002,1.85 m,128 kg,6 ft 1 in,20 st 2.19 lb; 282.19 lb,PRO,,lions
+Juan SCHOEMAN,Prop,33 y/o,18/09/1991,1.86 m,120 kg,6 ft 1 in,18 st 12.55 lb; 264.55 lb,PRO,,lions
+Morgan NAUDÉ,Prop,26 y/o,36107,1.81 m,108 kg,5 ft 11 in,17 st 0.10 lb; 238.10 lb,PRO,2025,lions
+RF SCHOEMAN,Prop,21 y/o,14/08/2003,1.88 m,122 kg,6 ft 2 in,19 st 2.96 lb; 268.96 lb,PRO,,lions
+Sivu MABECE,Prop,22 y/o,27/07/2002,1.86 m,120 kg,6 ft 1 in,18 st 12.55 lb; 264.55 lb,PRO,,lions
+Stian DE BRUYN,Prop,-,-,1.88 m,118 kg,6 ft 2 in,18 st 8.15 lb; 260.15 lb,PRO,,lions
+Franco MARAIS,Hooker,32 y/o,23/09/1992,1.85 m,108 kg,6 ft 1 in,17 st 0.10 lb; 238.10 lb,PRO,,lions
+Jaco VISAGIE,Hooker,32 y/o,33823,1.88 m,107 kg,6 ft 2 in,16 st 11.89 lb; 235.89 lb,PRO,,lions
+Jacques-Lois DU TOIT,Hooker,24 y/o,23/04/2001,1.75 m,96 kg,5 ft 9 in,15 st 1.64 lb; 211.64 lb,PRO,,lions
+Marno GROBBELAAR,Hooker,21 y/o,37903,1.83 m,105 kg,6 ft,16 st; 231.49 lb,PRO,,lions
+Morné BRANDON,Hooker,24 y/o,25/11/2000,1.84 m,106 kg,6 ft,16 st; 233.69 lb,PRO,2025,lions
+PJ BOTHA,Hooker,27 y/o,20/01/1998,1.81 m,105 kg,5 ft 11 in,16 st 7.49 lb; 231.49 lb,PRO,,lions
+SJ KOTZE,Hooker,22 y/o,37653,1.86 m,110 kg,6 ft 1 in,17 st 4.51 lb; 242.51 lb,PRO,,lions
+Darrien LANDSBERG,Lock,26 y/o,26/07/1998,1.96 m,111 kg,6 ft 5 in,17 st 6.71 lb; 244.71 lb,PRO,,lions
+Etienne OOSTHUIZEN,Lock,32 y/o,22/12/1992,1.98 m,128 kg,6 ft 6 in,20 st 2.19 lb; 282.19 lb,PRO,,lions
+Johnré STOPFORTH,Lock,-,-,2.00 m,105 kg,6 ft 7 in,16 st 7.49 lb; 231.49 lb,PRO,,lions
+Luca RIBBENS,Lock,21 y/o,37719,1.93 m,112 kg,6 ft 4 in,17 st 8.92 lb; 246.92 lb,PRO,,lions
+Raynard ROETS,Lock,24 y/o,37138,1.97 m,108 kg,6 ft 6 in,17 st 0.10 lb; 238.10 lb,PRO,2025,lions
+Reinhard NOTHNAGEL,Lock,27 y/o,25/09/1997,2.02 m,117 kg,6 ft 8 in,18 st 5.94 lb; 257.94 lb,PRO,2025,lions
+Ruan VENTER,Lock,22 y/o,29/11/2002,1.98 m,120 kg,6 ft 6 in,18 st 12.55 lb; 264.55 lb,PRO,2025,lions
+Ruben SCHOEMAN,Lock,29 y/o,14/03/1996,1.99 m,124 kg,6 ft 6 in,19 st 7.37 lb; 273.37 lb,PRO,2025,lions
+Siba QOMA,Lock,28 y/o,17/02/1997,1.90 m,108 kg,6 ft 3 in,17 st 0.10 lb; 238.10 lb,PRO,,lions
+Tiaan WESSELS,Lock,22 y/o,37865,1.95 m,120 kg,6 ft 5 in,18 st 12.55 lb; 264.55 lb,PRO,,lions
+Francke HORN,Back row,26 y/o,24/05/1999,1.90 m,106 kg,6 ft 3 in,16 st 9.69 lb; 233.69 lb,PRO,2028,lions
+Izan ESTERHUIZEN,Back row,24 y/o,37108,1.91 m,112 kg,6 ft 3 in,17 st 8.92 lb; 246.92 lb,PRO,,lions
+Jarod CAIRNS,Back row,24 y/o,18/05/2001,1.88 m,100 kg,6 ft 2 in,15 st 10.46 lb; 220.46 lb,PRO,,lions
+JC PRETORIUS,Back row,27 y/o,29/01/1998,1.86 m,92 kg,6 ft 1 in,14 st 6.83 lb; 202.83 lb,PRO,,lions
+Renzo DU PLESSIS,Back row,22 y/o,37597,1.88 m,108 kg,6 ft 2 in,17 st 0.10 lb; 238.10 lb,PRO,2025,lions
+Ruan DELPORT,Back row,22 y/o,37322,2.00 m,109 kg,6 ft 7 in,17 st 2.30 lb; 240.30 lb,PRO,2025,lions
+Ruhan STRAEULI,Back row,26 y/o,35896,1.93 m,112 kg,6 ft 4 in,17 st 8.92 lb; 246.92 lb,PRO,2025,lions
+WJ STEENKAMP,Back row,24 y/o,28/09/2000,1.90 m,107 kg,6 ft 3 in,16 st 11.89 lb; 235.89 lb,PRO,,lions
+Layton HORN,Scrum-half,22 y/o,21/05/2003,1.83 m,82 kg,6 ft,12 st; 180.78 lb,PRO,,lions
+Morné VAN DEN BERG,Scrum-half,27 y/o,24/10/1997,1.75 m,82 kg,5 ft 9 in,12 st 12.78 lb; 180.78 lb,PRO,2025,lions
+Nico STEYN,Scrum-half,23 y/o,37594,1.77 m,78 kg,5 ft 10 in,12 st 3.96 lb; 171.96 lb,PRO,,lions
+Gianni LOMBARD,Fly-half,27 y/o,22/01/1998,1.78 m,82 kg,5 ft 10 in,12 st 12.78 lb; 180.78 lb,PRO,,lions
+Kade WOLHUTER,Fly-half,24 y/o,28/06/2001,1.82 m,93 kg,6 ft,14 st; 205.03 lb,PRO,2026,lions
+Lubabalo DOBELA,Fly-half,27 y/o,35831,1.75 m,80 kg,5 ft 9 in,12 st 8.37 lb; 176.37 lb,PRO,,lions
+Sam FRANCIS,Fly-half,22 y/o,14/03/2003,1.90 m,100 kg,6 ft 3 in,15 st 10.46 lb; 220.46 lb,PRO,,lions
+Zander DU PLESSIS,Fly-half,25 y/o,36742,1.90 m,90 kg,6 ft 3 in,14 st 2.42 lb; 198.42 lb,PRO,,lions
+Erich CRONJÉ,Centre,28 y/o,35431,1.84 m,95 kg,6 ft,14 st; 209.44 lb,PRO,,lions
+Henco VAN WYK,Centre,24 y/o,37077,1.80 m,92 kg,5 ft 11 in,14 st 6.83 lb; 202.83 lb,PRO,2027,lions
+Manuel RASS,Centre,27 y/o,19/04/1998,1.74 m,88 kg,5 ft 9 in,13 st 12.01 lb; 194.01 lb,PRO,2025,lions
+Marius LOUW,Centre,29 y/o,24/10/1995,1.82 m,97 kg,6 ft,15 st; 213.85 lb,PRO,2025,lions
+Rynhardt JONKER,Centre,25 y/o,18/04/2000,1.80 m,90 kg,5 ft 11 in,14 st 2.42 lb; 198.42 lb,PRO,,lions
+Boldwin HANSEN,Winger,24 y/o,26/03/2001,1.92 m,98 kg,6 ft 4 in,15 st 6.05 lb; 216.05 lb,PRO,,lions
+Edwill VAN DER MERWE,Winger,29 y/o,35403,1.81 m,90 kg,5 ft 11 in,14 st 2.42 lb; 198.42 lb,PRO,2025,lions
+Keagan SMITH,Winger,22 y/o,15/05/2003,1.75 m,81 kg,5 ft 9 in,12 st 10.57 lb; 178.57 lb,PRO,,lions
+Rabz MAXWANE,Winger,29 y/o,14/08/1995,1.81 m,90 kg,5 ft 11 in,14 st 2.42 lb; 198.42 lb,PRO,2025,lions
+Quan HORN,Fullback,24 y/o,27/06/2001,1.81 m,84 kg,5 ft 11 in,13 st 3.19 lb; 185.19 lb,PRO,2025,lions
+Richard KRIEL,Fullback,24 y/o,36714,1.94 m,95 kg,6 ft 4 in,14 st 13.44 lb; 209.44 lb,PRO,,lions
+Tapiwa MAFURA,Fullback,29 y/o,35373,1.75 m,80 kg,5 ft 9 in,12 st 8.37 lb; 176.37 lb,PRO,,lions
+Dian BLEULER,Prop,25 y/o,05/08/1999,1.83 m,120 kg,6 ft,18 st; 264.55 lb,PRO,,sharks
+Dian HEUNIS,Prop,22 y/o,20/05/2003,1.85 m,126 kg,6 ft 1 in,19 st 11.78 lb; 277.78 lb,PRO,,sharks
+Hanro JACOBS,Prop,25 y/o,14/03/2000,1.85 m,129 kg,6 ft 1 in,20 st 4.40 lb; 284.40 lb,PRO,2027,sharks
+Khwezi MONA,Prop,32 y/o,08/10/1992,1.83 m,120 kg,6 ft,18 st; 264.55 lb,PRO,,sharks
+Mawande MDANDA,Prop,22 y/o,09/03/2003,1.89 m,132 kg,6 ft 2 in,20 st 11.01 lb; 291.01 lb,PRO,,sharks
+Ntuthuko MCHUNU,Prop,26 y/o,05/04/1999,1.88 m,120 kg,6 ft 2 in,18 st 12.55 lb; 264.55 lb,PRO,2025,sharks
+Ox NCHÉ,Prop,29 y/o,23/07/1995,1.76 m,123 kg,5 ft 9 in,19 st 5.17 lb; 271.17 lb,PRO,2028,sharks
+Phatu GANYANE,Prop,22 y/o,17/01/2003,1.85 m,123 kg,6 ft 1 in,19 st 5.17 lb; 271.17 lb,PRO,2027,sharks
+Ruan DREYER,Prop,34 y/o,16/09/1990,1.86 m,115 kg,6 ft 1 in,18 st 1.53 lb; 253.53 lb,PRO,2027,sharks
+Trevor NYAKANE,Prop,36 y/o,04/05/1989,1.78 m,122 kg,5 ft 10 in,19 st 2.96 lb; 268.96 lb,PRO,,sharks
+Vincent KOCH,Prop,35 y/o,13/03/1990,1.85 m,118 kg,6 ft 1 in,18 st 8.15 lb; 260.15 lb,PRO,,sharks
+Bongi MBONAMBI,Hooker,34 y/o,07/01/1991,1.75 m,118 kg,5 ft 9 in,18 st 8.15 lb; 260.15 lb,PRO,2026,sharks
+Bryce CALVERT,Hooker,-,-,1.80 m,107 kg,5 ft 11 in,16 st 11.89 lb; 235.89 lb,PRO,,sharks
+Ethan BESTER,Hooker,20 y/o,31/10/2004,1.87 m,112 kg,6 ft 2 in,17 st 8.92 lb; 246.92 lb,PRO,2028,sharks
+Fez MBATHA,Hooker,25 y/o,02/08/1999,1.80 m,112 kg,5 ft 11 in,17 st 8.92 lb; 246.92 lb,PRO,2026,sharks
+Coetzee LE ROUX,Lock,22 y/o,22/01/2003,1.93 m,112 kg,6 ft 4 in,17 st 8.92 lb; 246.92 lb,PRO,2026,sharks
+Corné RAHL,Lock,23 y/o,27/05/2002,2.03 m,122 kg,6 ft 8 in,19 st 2.96 lb; 268.96 lb,PRO,2025,sharks
+Deon SLABBERT,Lock,25 y/o,04/05/2000,2.00 m,117 kg,6 ft 7 in,18 st 5.94 lb; 257.94 lb,PRO,,sharks
+Eben ETZEBETH,Lock,33 y/o,29/10/1991,2.03 m,126 kg,6 ft 8 in,19 st 11.78 lb; 277.78 lb,PRO,2027,sharks
+Emile VAN HEERDEN,Lock,24 y/o,08/08/2000,2.00 m,110 kg,6 ft 7 in,17 st 4.51 lb; 242.51 lb,PRO,2027,sharks
+Gerbrandt GROBLER,Lock,33 y/o,06/02/1992,2.00 m,120 kg,6 ft 7 in,18 st 12.55 lb; 264.55 lb,PRO,2025,sharks
+Jason JENKINS,Lock,29 y/o,02/12/1995,2.03 m,127 kg,6 ft 8 in,19 st 13.99 lb; 279.99 lb,PRO,,sharks
+Reniel HUGO,Lock,34 y/o,19/07/1990,1.97 m,112 kg,6 ft 6 in,17 st 8.92 lb; 246.92 lb,PRO,2025,sharks
+Thomas DYER,Lock,20 y/o,16/11/2004,1.96 m,115 kg,6 ft 5 in,18 st 1.53 lb; 253.53 lb,PRO,,sharks
+Batho HLEKANI,Back row,20 y/o,05/04/2005,1.93 m,115 kg,6 ft 4 in,18 st 1.53 lb; 253.53 lb,ACADEMY,,sharks
+Dylan RICHARDSON,Back row,26 y/o,15/01/1999,1.85 m,110 kg,6 ft 1 in,17 st 4.51 lb; 242.51 lb,PRO,2025,sharks
+James VENTER,Back row,28 y/o,21/08/1996,1.82 m,97 kg,6 ft,15 st; 213.85 lb,PRO,2025,sharks
+Jannes POTGIETER,Back row,22 y/o,05/05/2003,1.93 m,112 kg,6 ft 4 in,17 st 8.92 lb; 246.92 lb,PRO,2027,sharks
+Manu TSHITUKA,Back row,25 y/o,16/06/2000,1.93 m,110 kg,6 ft 4 in,17 st 4.51 lb; 242.51 lb,PRO,,sharks
+Mèno BARNARD,Back row,-,-,1.93 m,104 kg,6 ft 4 in,16 st 5.28 lb; 229.28 lb,PRO,,sharks
+Nick HATTON,Back row,22 y/o,17/01/2003,1.91 m,103 kg,6 ft 3 in,16 st 3.08 lb; 227.08 lb,PRO,2027,sharks
+Phepsi BUTHELEZI,Back row,26 y/o,30/05/1999,1.88 m,108 kg,6 ft 2 in,17 st 0.10 lb; 238.10 lb,PRO,2026,sharks
+Siya KOLISI,Back row,34 y/o,16/06/1991,1.89 m,104 kg,6 ft 2 in,16 st 5.28 lb; 229.28 lb,PRO,2027,sharks
+Tino MAVESERE,Back row,26 y/o,17/10/1998,1.89 m,105 kg,6 ft 2 in,16 st 7.49 lb; 231.49 lb,PRO,2028,sharks
+Vincent TSHITUKA,Back row,26 y/o,10/09/1998,1.94 m,110 kg,6 ft 4 in,17 st 4.51 lb; 242.51 lb,PRO,2027,sharks
+Bradley DAVIDS,Scrum-half,22 y/o,30/07/2002,1.76 m,79 kg,5 ft 9 in,12 st 6.17 lb; 174.16 lb,PRO,2027,sharks
+Grant WILLIAMS,Scrum-half,28 y/o,22/07/1996,1.74 m,80 kg,5 ft 9 in,12 st 8.37 lb; 176.37 lb,PRO,2027,sharks
+Jaden HENDRIKSE,Scrum-half,25 y/o,23/03/2000,1.84 m,92 kg,6 ft,14 st; 202.83 lb,PRO,2025,sharks
+Tiaan FOURIE,Scrum-half,23 y/o,22/04/2002,1.73 m,78 kg,5 ft 8 in,12 st 3.96 lb; 171.96 lb,PRO,,sharks
+Tian MEYER,Scrum-half,36 y/o,20/09/1988,1.77 m,84 kg,5 ft 10 in,13 st 3.19 lb; 185.19 lb,PRO,,sharks
+Jean SMITH,Fly-half,22 y/o,01/04/2003,1.81 m,89 kg,5 ft 11 in,14 st 0.21 lb; 196.21 lb,PRO,,sharks
+Jordan HENDRIKSE,Fly-half,24 y/o,28/06/2001,1.88 m,93 kg,6 ft 2 in,14 st 9.03 lb; 205.03 lb,PRO,,sharks
+Lionel CRONJÉ,Fly-half,36 y/o,25/05/1989,1.84 m,92 kg,6 ft,14 st; 202.83 lb,PRO,,sharks
+Siya MASUKU,Fly-half,28 y/o,01/08/1996,1.89 m,95 kg,6 ft 2 in,14 st 13.44 lb; 209.44 lb,PRO,2028,sharks
+André ESTERHUIZEN,Centre,31 y/o,30/03/1994,1.93 m,115 kg,6 ft 4 in,18 st 1.53 lb; 253.53 lb,PRO,,sharks
+Diego APPOLLIS,Centre,24 y/o,27/08/2000,1.78 m,94 kg,5 ft 10 in,14 st 11.23 lb; 207.23 lb,PRO,,sharks
+Ethan HOOKER,Centre,22 y/o,20/01/2003,1.93 m,100 kg,6 ft 4 in,15 st 10.46 lb; 220.46 lb,PRO,2027,sharks
+Francois VENTER,Centre,34 y/o,19/04/1991,1.85 m,95 kg,6 ft 1 in,14 st 13.44 lb; 209.44 lb,PRO,,sharks
+Jurenzo JULIUS,Centre,21 y/o,11/05/2004,1.78 m,96 kg,5 ft 10 in,15 st 1.64 lb; 211.64 lb,PRO,,sharks
+Litelihle BESTER,Centre,21 y/o,01/04/2004,1.87 m,92 kg,6 ft 2 in,14 st 6.83 lb; 202.83 lb,PRO,,sharks
+Lukhanyo AM,Centre,31 y/o,28/11/1993,1.88 m,101 kg,6 ft 2 in,15 st 12.67 lb; 222.67 lb,PRO,,sharks
+Eduan KEYTER,Winger,29 y/o,13/06/1996,1.84 m,101 kg,6 ft,15 st; 222.67 lb,PRO,2025,sharks
+Gurshwin WEHR,Winger,26 y/o,08/09/1998,1.85 m,85 kg,6 ft 1 in,13 st 5.39 lb; 187.39 lb,PRO,,sharks
+Makazole MAPIMPI,Winger,34 y/o,26/07/1990,1.84 m,92 kg,6 ft,14 st; 202.83 lb,PRO,2027,sharks
+Marnus POTGIETER,Winger,26 y/o,20/06/1999,1.88 m,106 kg,6 ft 2 in,16 st 9.69 lb; 233.69 lb,PRO,2025,sharks
+Yaw PENXE,Winger,28 y/o,03/04/1997,1.83 m,93 kg,6 ft,14 st; 205.03 lb,PRO,,sharks
+Aphelele FASSI,Fullback,27 y/o,23/01/1998,1.90 m,94 kg,6 ft 3 in,14 st 11.23 lb; 207.23 lb,PRO,,sharks
+Hakeem KUNENE,Fullback,22 y/o,03/02/2003,1.83 m,90 kg,6 ft,14 st; 198.42 lb,PRO,2026,sharks
+Henry IMMELMAN,Fullback,30 y/o,26/05/1995,1.90 m,103 kg,6 ft 3 in,16 st 3.08 lb; 227.08 lb,PRO,2025,sharks
+Jaco WILLIAMS,Fullback,19 y/o,25/08/2005,1.75 m,73 kg,5 ft 9 in,11 st 6.94 lb; 160.94 lb,PRO,,sharks
+Alec HEPBURN,Prop,32 y/o,30/03/1993,1.86 m,114 kg,6 ft 1 in,17 st 13.33 lb; 251.33 lb,PRO,,scarlets
+Archer HOLZ,Prop,25 y/o,01/03/2000,1.89 m,128 kg,6 ft 2 in,20 st 2.19 lb; 282.19 lb,PRO,,scarlets
+Gabe HAWLEY,Prop,-,-,1.90 m,130 kg,6 ft 3 in,20 st 6.60 lb; 286.60 lb,ACADEMY,,scarlets
+Harri O'CONNOR,Prop,24 y/o,25/10/2000,1.82 m,118 kg,6 ft,18 st; 260.15 lb,PRO,,scarlets
+Henry THOMAS,Prop,33 y/o,30/10/1991,1.88 m,120 kg,6 ft 2 in,18 st 12.55 lb; 264.55 lb,PRO,,scarlets
+Kemsley MATHIAS,Prop,25 y/o,29/07/1999,1.85 m,121 kg,6 ft 1 in,19 st 0.76 lb; 266.76 lb,PRO,2027,scarlets
+Sam WAINWRIGHT,Prop,27 y/o,07/05/1998,1.82 m,119 kg,6 ft,18 st; 262.35 lb,PRO,2025,scarlets
+Marnus VAN DER MERWE,Hooker,28 y/o,17/02/1997,1.86 m,115 kg,6 ft 1 in,18 st 1.53 lb; 253.53 lb,PRO,,scarlets
+Ryan ELIAS,Hooker,30 y/o,07/01/1995,1.88 m,115 kg,6 ft 2 in,18 st 1.53 lb; 253.53 lb,PRO,2025,scarlets
+Shaun EVANS,Hooker,28 y/o,14/09/1996,1.83 m,103 kg,6 ft,16 st; 227.08 lb,PRO,2025,scarlets
+Alex CRAIG,Lock,28 y/o,26/04/1997,1.98 m,119 kg,6 ft 6 in,18 st 10.35 lb; 262.35 lb,PRO,2025,scarlets
+Jac PRICE,Lock,24 y/o,04/08/2000,1.98 m,115 kg,6 ft 6 in,18 st 1.53 lb; 253.53 lb,PRO,,scarlets
+Max DOUGLAS,Lock,25 y/o,01/01/2000,2.01 m,112 kg,6 ft 7 in,17 st 8.92 lb; 246.92 lb,PRO,,scarlets
+Morgan JONES,Lock,26 y/o,23/05/1999,2.00 m,112 kg,6 ft 7 in,17 st 8.92 lb; 246.92 lb,PRO,2025,scarlets
+Sam LOUSI,Lock,33 y/o,20/07/1991,1.98 m,121 kg,6 ft 6 in,19 st 0.76 lb; 266.76 lb,PRO,,scarlets
+Taine PLUMTREE,Lock,25 y/o,09/03/2000,1.95 m,108 kg,6 ft 5 in,17 st 0.10 lb; 238.10 lb,PRO,,scarlets
+Vaea FIFITA,Lock,33 y/o,17/06/1992,1.96 m,116 kg,6 ft 5 in,18 st 3.74 lb; 255.74 lb,PRO,,scarlets
+Ben WILLIAMS,Back row,23 y/o,23/04/2002,1.88 m,108 kg,6 ft 2 in,17 st 0.10 lb; 238.10 lb,PRO,,scarlets
+Dan DAVIS,Back row,26 y/o,17/09/1998,1.82 m,101 kg,6 ft,15 st; 222.67 lb,PRO,,scarlets
+Jarrod TAYLOR,Back row,24 y/o,15/02/2001,1.88 m,100 kg,6 ft 2 in,15 st 10.46 lb; 220.46 lb,PRO,,scarlets
+Josh MACLEOD,Back row,28 y/o,27/10/1996,1.89 m,110 kg,6 ft 2 in,17 st 4.51 lb; 242.51 lb,PRO,,scarlets
+Archie HUGHES,Scrum-half,22 y/o,14/02/2003,1.73 m,77 kg,5 ft 8 in,12 st 1.76 lb; 169.76 lb,PRO,,scarlets
+Efan JONES,Scrum-half,27 y/o,11/12/1997,1.77 m,85 kg,5 ft 10 in,13 st 5.39 lb; 187.39 lb,PRO,2025,scarlets
+Gareth DAVIES,Scrum-half,34 y/o,18/08/1990,1.78 m,88 kg,5 ft 10 in,13 st 12.01 lb; 194.01 lb,PRO,,scarlets
+Ioan LLOYD,Fly-half,24 y/o,05/04/2001,1.79 m,86 kg,5 ft 10 in,13 st 7.60 lb; 189.60 lb,PRO,2025,scarlets
+Sam COSTELOW,Fly-half,24 y/o,10/01/2001,1.75 m,84 kg,5 ft 9 in,13 st 3.19 lb; 185.19 lb,PRO,,scarlets
+Eddie JAMES,Centre,22 y/o,10/08/2002,1.93 m,104 kg,6 ft 4 in,16 st 5.28 lb; 229.28 lb,PRO,,scarlets
+Ioan NICHOLAS,Centre,27 y/o,03/04/1998,1.82 m,92 kg,6 ft,14 st; 202.83 lb,PRO,,scarlets
+Joe ROBERTS,Centre,25 y/o,10/05/2000,1.82 m,96 kg,6 ft,15 st; 211.64 lb,PRO,,scarlets
+Johnny WILLIAMS,Centre,28 y/o,18/10/1996,1.91 m,105 kg,6 ft 3 in,16 st 7.49 lb; 231.49 lb,PRO,2027,scarlets
+Ellis MEE,Winger,21 y/o,06/10/2003,1.93 m,92 kg,6 ft 4 in,14 st 6.83 lb; 202.83 lb,PRO,,scarlets
+Steff EVANS,Winger,30 y/o,01/09/1994,1.82 m,95 kg,6 ft,14 st; 209.44 lb,PRO,2025,scarlets
+Tom ROGERS,Winger,26 y/o,17/12/1998,1.85 m,87 kg,6 ft 1 in,13 st 9.80 lb; 191.80 lb,PRO,,scarlets
+Blair MURRAY,Fullback,23 y/o,09/10/2001,1.73 m,83 kg,5 ft 8 in,13 st 0.98 lb; 182.98 lb,PRO,,scarlets
+Tomi LEWIS,Fullback,26 y/o,17/01/1999,1.85 m,87 kg,6 ft 1 in,13 st 9.80 lb; 191.80 lb,PRO,2027,scarlets
+Ali VERMAAK,Prop,39 y/o,28/04/1986,1.78 m,111 kg,5 ft 10 in,17 st 6.71 lb; 244.71 lb,PRO,,stormers
+Brok HARRIS,Prop,40 y/o,22/02/1985,1.86 m,121 kg,6 ft 1 in,19 st 0.76 lb; 266.76 lb,PRO,2025,stormers
+Corné WEILBACH,Prop,23 y/o,18/02/2002,1.85 m,124 kg,6 ft 1 in,19 st 7.37 lb; 273.37 lb,PRO,,stormers
+Frans MALHERBE,Prop,34 y/o,14/03/1991,1.90 m,141 kg,6 ft 3 in,22 st 2.85 lb; 310.85 lb,PRO,2026,stormers
+Leon LYONS,Prop,26 y/o,02/12/1998,1.87 m,123 kg,6 ft 2 in,19 st 5.17 lb; 271.17 lb,PRO,,stormers
+Neethling FOUCHÉ,Prop,32 y/o,10/01/1993,1.89 m,120 kg,6 ft 2 in,18 st 12.55 lb; 264.55 lb,PRO,2028,stormers
+Sazi SANDI,Prop,26 y/o,11/07/1998,1.81 m,124 kg,5 ft 11 in,19 st 7.37 lb; 273.37 lb,PRO,2027,stormers
+Sti SITHOLE,Prop,32 y/o,31/03/1993,1.80 m,115 kg,5 ft 11 in,18 st 1.53 lb; 253.53 lb,PRO,,stormers
+Vernon MATONGO,Prop,23 y/o,28/02/2002,1.81 m,120 kg,5 ft 11 in,18 st 12.55 lb; 264.55 lb,PRO,,stormers
+André-Hugo VENTER,Hooker,23 y/o,10/09/2001,1.87 m,107 kg,6 ft 2 in,16 st 11.89 lb; 235.89 lb,PRO,,stormers
+JJ KOTZÉ,Hooker,24 y/o,06/11/2000,1.87 m,109 kg,6 ft 2 in,17 st 2.30 lb; 240.30 lb,PRO,,stormers
+Joseph DWEBA,Hooker,29 y/o,25/10/1995,1.80 m,111 kg,5 ft 11 in,17 st 6.71 lb; 244.71 lb,PRO,2025,stormers
+Lukhanyo VOKOZELA,Hooker,23 y/o,05/02/2002,1.75 m,108 kg,5 ft 9 in,17 st 0.10 lb; 238.10 lb,PRO,,stormers
+Siyabonga NTUBENI,Hooker,34 y/o,18/02/1991,1.74 m,109 kg,5 ft 9 in,17 st 2.30 lb; 240.30 lb,PRO,2026,stormers
+Ben-Jason DIXON,Lock,27 y/o,29/04/1998,1.98 m,110 kg,6 ft 6 in,17 st 4.51 lb; 242.51 lb,PRO,2027,stormers
+Connor EVANS,Lock,23 y/o,24/01/2002,1.98 m,113 kg,6 ft 6 in,17 st 11.12 lb; 249.12 lb,PRO,,stormers
+Gary PORTER,Lock,28 y/o,22/07/1996,2.01 m,115 kg,6 ft 7 in,18 st 1.53 lb; 253.53 lb,PRO,,stormers
+JD SCHICKERLING,Lock,30 y/o,09/05/1995,2.03 m,121 kg,6 ft 8 in,19 st 0.76 lb; 266.76 lb,PRO,2027,stormers
+Ruben VAN HEERDEN,Lock,27 y/o,27/10/1997,2.00 m,121 kg,6 ft 7 in,19 st 0.76 lb; 266.76 lb,PRO,2027,stormers
+Salmaan MOERAT,Lock,27 y/o,06/03/1998,2.00 m,122 kg,6 ft 7 in,19 st 2.96 lb; 268.96 lb,PRO,2027,stormers
+CJ VELLEMAN,Back row,30 y/o,24/02/1995,1.78 m,103 kg,5 ft 10 in,16 st 3.08 lb; 227.08 lb,PRO,,stormers
+Dave EWERS,Back row,34 y/o,03/11/1990,1.93 m,126 kg,6 ft 4 in,19 st 11.78 lb; 277.78 lb,PRO,2025,stormers
+Deon FOURIE,Back row,38 y/o,25/09/1986,1.76 m,98 kg,5 ft 9 in,15 st 6.05 lb; 216.05 lb,PRO,2026,stormers
+Evan ROOS,Back row,25 y/o,21/01/2000,1.92 m,108 kg,6 ft 4 in,17 st 0.10 lb; 238.10 lb,PRO,2027,stormers
+Keke MORABE,Back row,24 y/o,21/04/2001,1.88 m,115 kg,6 ft 2 in,18 st 1.53 lb; 253.53 lb,PRO,2028,stormers
+Louw NEL,Back row,22 y/o,09/08/2002,1.90 m,107 kg,6 ft 3 in,16 st 11.89 lb; 235.89 lb,PRO,,stormers
+Marcel THEUNISSEN,Back row,26 y/o,09/06/1999,1.92 m,104 kg,6 ft 4 in,16 st 5.28 lb; 229.28 lb,PRO,,stormers
+Paul DE VILLIERS,Back row,22 y/o,13/01/2003,1.81 m,100 kg,5 ft 11 in,15 st 10.46 lb; 220.46 lb,PRO,,stormers
+Dewaldt DUVENAGE,Scrum-half,37 y/o,22/05/1988,1.75 m,82 kg,5 ft 9 in,12 st 12.78 lb; 180.78 lb,PRO,,stormers
+Herschel JANTJIES,Scrum-half,29 y/o,22/04/1996,1.67 m,77 kg,5 ft 6 in,12 st 1.76 lb; 169.76 lb,PRO,2025,stormers
+Imad KHAN,Scrum-half,21 y/o,02/12/2003,1.79 m,80 kg,5 ft 10 in,12 st 8.37 lb; 176.37 lb,PRO,,stormers
+Paul DE WET,Scrum-half,29 y/o,16/03/1996,1.76 m,83 kg,5 ft 9 in,13 st 0.98 lb; 182.98 lb,PRO,2025,stormers
+Stefan UNGERER,Scrum-half,31 y/o,23/11/1993,1.83 m,93 kg,6 ft,14 st; 205.03 lb,PRO,,stormers
+Damian WILLEMSE,Fly-half,27 y/o,07/05/1998,1.84 m,96 kg,6 ft,15 st; 211.64 lb,PRO,2027,stormers
+Jean-Luc DU PLESSIS,Fly-half,31 y/o,07/05/1994,1.80 m,92 kg,5 ft 11 in,14 st 6.83 lb; 202.83 lb,PRO,,stormers
+Jurie MATTHEE,Fly-half,24 y/o,04/11/2000,1.91 m,89 kg,6 ft 3 in,14 st 0.21 lb; 196.21 lb,PRO,2026,stormers
+Manie LIBBOK,Fly-half,27 y/o,15/07/1997,1.84 m,80 kg,6 ft,12 st; 176.37 lb,PRO,2025,stormers
+Sacha MNGOMEZULU,Fly-half,23 y/o,22/02/2002,1.85 m,90 kg,6 ft 1 in,14 st 2.42 lb; 198.42 lb,PRO,2027,stormers
+Dan DU PLESSIS,Centre,31 y/o,15/02/1994,1.93 m,103 kg,6 ft 4 in,16 st 3.08 lb; 227.08 lb,PRO,2026,stormers
+Jonathan ROCHE,Centre,22 y/o,01/02/2003,1.88 m,99 kg,6 ft 2 in,15 st 8.26 lb; 218.26 lb,PRO,,stormers
+Luke BURGER,Centre,22 y/o,12/08/2002,1.88 m,90 kg,6 ft 2 in,14 st 2.42 lb; 198.42 lb,PRO,,stormers
+Ruhan NEL,Centre,34 y/o,17/05/1991,1.91 m,101 kg,6 ft 3 in,15 st 12.67 lb; 222.67 lb,PRO,2026,stormers
+Suleiman HARTZENBERG,Centre,22 y/o,20/05/2003,1.87 m,95 kg,6 ft 2 in,14 st 13.44 lb; 209.44 lb,PRO,2027,stormers
+Wandisile SIMELANE,Centre,27 y/o,21/03/1998,1.80 m,95 kg,5 ft 11 in,14 st 13.44 lb; 209.44 lb,PRO,2026,stormers
+Angelo DAVIDS,Winger,26 y/o,01/06/1999,1.78 m,94 kg,5 ft 10 in,14 st 11.23 lb; 207.23 lb,PRO,2025,stormers
+Ben LOADER,Winger,26 y/o,08/11/1998,1.88 m,95 kg,6 ft 2 in,14 st 13.44 lb; 209.44 lb,PRO,2025,stormers
+Courtnall SKOSAN,Winger,33 y/o,24/07/1991,1.83 m,96 kg,6 ft,15 st; 211.64 lb,PRO,,stormers
+Leolin ZAS,Winger,29 y/o,20/10/1995,1.84 m,95 kg,6 ft,14 st; 209.44 lb,PRO,2026,stormers
+Seabelo SENATLA,Winger,32 y/o,10/02/1993,1.79 m,89 kg,5 ft 10 in,14 st 0.21 lb; 196.21 lb,PRO,,stormers
+Warrick GELANT,Fullback,30 y/o,20/05/1995,1.78 m,96 kg,5 ft 10 in,15 st 1.64 lb; 211.64 lb,PRO,2026,stormers
+Ben WARREN,Prop,25 y/o,02/04/2000,1.85 m,122 kg,6 ft 1 in,19 st 2.96 lb; 268.96 lb,PRO,,ospreys
+Cameron JONES,Prop,23 y/o,04/10/2001,1.93 m,113 kg,6 ft 4 in,17 st 11.12 lb; 249.12 lb,PRO,,ospreys
+Gareth THOMAS,Prop,31 y/o,02/08/1993,1.88 m,120 kg,6 ft 2 in,18 st 12.55 lb; 264.55 lb,PRO,,ospreys
+Garyn PHILLIPS,Prop,24 y/o,14/05/2001,1.83 m,113 kg,6 ft,17 st; 249.12 lb,PRO,,ospreys
+Math IORWERTH-SCOTT,Prop,-,-,-,-,-,-,ACADEMY,,ospreys
+Rhys HENRY,Prop,26 y/o,08/09/1998,1.73 m,114 kg,5 ft 8 in,17 st 13.33 lb; 251.33 lb,PRO,,ospreys
+Steff THOMAS,Prop,28 y/o,22/04/1997,1.83 m,122 kg,6 ft,19 st; 268.96 lb,PRO,,ospreys
+Tom BOTHA,Prop,34 y/o,31/08/1990,1.79 m,117 kg,5 ft 10 in,18 st 5.94 lb; 257.94 lb,PRO,,ospreys
+Dewi LAKE,Hooker,26 y/o,16/05/1999,1.85 m,114 kg,6 ft 1 in,17 st 13.33 lb; 251.33 lb,PRO,,ospreys
+Ethan LEWIS,Hooker,31 y/o,28/03/1994,1.82 m,109 kg,6 ft,17 st; 240.30 lb,PRO,,ospreys
+George MCGUIGAN,Hooker,32 y/o,30/03/1993,1.83 m,113 kg,6 ft,17 st; 249.12 lb,PRO,2025,ospreys
+Lewis LLOYD,Hooker,21 y/o,20/07/2003,1.80 m,92 kg,5 ft 11 in,14 st 6.83 lb; 202.83 lb,PRO,,ospreys
+Sam PARRY,Hooker,33 y/o,17/12/1991,1.86 m,114 kg,6 ft 1 in,17 st 13.33 lb; 251.33 lb,PRO,,ospreys
+Adam BEARD,Lock,29 y/o,07/01/1996,2.03 m,121 kg,6 ft 8 in,19 st 0.76 lb; 266.76 lb,PRO,2025,ospreys
+Huw SUTTON,Lock,25 y/o,17/11/1999,1.99 m,122 kg,6 ft 6 in,19 st 2.96 lb; 268.96 lb,PRO,,ospreys
+James FENDER,Lock,23 y/o,03/08/2001,2.04 m,125 kg,6 ft 8 in,19 st 9.58 lb; 275.58 lb,PRO,,ospreys
+James RATTI,Lock,27 y/o,14/10/1997,1.96 m,120 kg,6 ft 5 in,18 st 12.55 lb; 264.55 lb,PRO,,ospreys
+Lewis JONES,Lock,22 y/o,19/07/2002,2.00 m,105 kg,6 ft 7 in,16 st 7.49 lb; 231.49 lb,PRO,,ospreys
+Rhys DAVIES,Lock,26 y/o,09/11/1998,1.97 m,116 kg,6 ft 6 in,18 st 3.74 lb; 255.74 lb,PRO,,ospreys
+Rhys THOMAS,Lock,24 y/o,17/02/2001,1.94 m,112 kg,6 ft 4 in,17 st 8.92 lb; 246.92 lb,PRO,,ospreys
+Will GREATBANKS,Lock,22 y/o,18/01/2003,1.98 m,109 kg,6 ft 6 in,17 st 2.30 lb; 240.30 lb,PRO,,ospreys
+Will GRIFFITHS,Lock,26 y/o,25/12/1998,1.93 m,106 kg,6 ft 4 in,16 st 9.69 lb; 233.69 lb,PRO,,ospreys
+Will SPENCER,Lock,33 y/o,30/05/1992,2.01 m,125 kg,6 ft 7 in,19 st 9.58 lb; 275.58 lb,PRO,2025,ospreys
+Harri DEAVES-SMALL,Back row,24 y/o,13/06/2001,1.82 m,96 kg,6 ft,15 st; 211.64 lb,PRO,,ospreys
+Jac MORGAN,Back row,25 y/o,21/01/2000,1.82 m,104 kg,6 ft,16 st; 229.28 lb,PRO,,ospreys
+Justin TIPURIC,Back row,35 y/o,06/08/1989,1.88 m,107 kg,6 ft 2 in,16 st 11.89 lb; 235.89 lb,PRO,2025,ospreys
+Morgan MORRIS,Back row,26 y/o,28/08/1998,1.83 m,110 kg,6 ft,17 st; 242.51 lb,PRO,,ospreys
+Tristan DAVIES,Back row,23 y/o,30/09/2001,1.93 m,104 kg,6 ft 4 in,16 st 5.28 lb; 229.28 lb,PRO,2025,ospreys
+Kieran HARDY,Scrum-half,29 y/o,30/11/1995,1.84 m,90 kg,6 ft,14 st; 198.42 lb,PRO,,ospreys
+Luke DAVIES,Scrum-half,23 y/o,26/02/2002,1.75 m,80 kg,5 ft 9 in,12 st 8.37 lb; 176.37 lb,PRO,,ospreys
+Reuben MORGAN-WILLIAMS,Scrum-half,27 y/o,03/02/1998,1.80 m,85 kg,5 ft 11 in,13 st 5.39 lb; 187.39 lb,PRO,2025,ospreys
+Dan EDWARDS,Fly-half,22 y/o,07/05/2003,1.78 m,83 kg,5 ft 10 in,13 st 0.98 lb; 182.98 lb,PRO,,ospreys
+Jack WALSH,Fly-half,25 y/o,11/01/2000,1.84 m,88 kg,6 ft,13 st; 194.01 lb,PRO,2026,ospreys
+Luke SCULLY,Fly-half,25 y/o,28/02/2000,1.80 m,80 kg,5 ft 11 in,12 st 8.37 lb; 176.37 lb,PRO,,ospreys
+Owen WILLIAMS,Fly-half,33 y/o,27/02/1992,1.85 m,98 kg,6 ft 1 in,15 st 6.05 lb; 216.05 lb,PRO,2025,ospreys
+Evardi BOSHOFF,Centre,26 y/o,06/10/1998,1.83 m,92 kg,6 ft,14 st; 202.83 lb,PRO,,ospreys
+Keiran WILLIAMS,Centre,27 y/o,04/12/1997,1.78 m,90 kg,5 ft 10 in,14 st 2.42 lb; 198.42 lb,PRO,,ospreys
+Owen WATKIN,Centre,28 y/o,12/10/1996,1.88 m,112 kg,6 ft 2 in,17 st 8.92 lb; 246.92 lb,PRO,,ospreys
+Phil COKANASIGA,Centre,23 y/o,31/07/2001,1.83 m,98 kg,6 ft,15 st; 216.05 lb,PRO,,ospreys
+Tom FLORENCE,Centre,22 y/o,19/03/2003,1.88 m,96 kg,6 ft 2 in,15 st 1.64 lb; 211.64 lb,PRO,,ospreys
+Harri HOUSTON,Winger,21 y/o,27/11/2003,1.78 m,82 kg,5 ft 10 in,12 st 12.78 lb; 180.78 lb,PRO,,ospreys
+Keelan GILES,Winger,27 y/o,29/01/1998,1.73 m,80 kg,5 ft 8 in,12 st 8.37 lb; 176.37 lb,PRO,,ospreys
+Luke MORGAN,Winger,33 y/o,16/05/1992,1.75 m,81 kg,5 ft 9 in,12 st 10.57 lb; 178.57 lb,PRO,,ospreys
+Ryan CONBEER,Winger,26 y/o,05/02/1999,1.77 m,91 kg,5 ft 10 in,14 st 4.62 lb; 200.62 lb,PRO,,ospreys
+Daniel KASENDE,Fullback,30 y/o,09/05/1995,1.87 m,92 kg,6 ft 2 in,14 st 6.83 lb; 202.83 lb,PRO,,ospreys
+Iestyn HOPKINS,Fullback,23 y/o,04/04/2002,1.73 m,88 kg,5 ft 8 in,13 st 12.01 lb; 194.01 lb,PRO,,ospreys
+Max NAGY,Fullback,26 y/o,13/06/1999,1.93 m,95 kg,6 ft 4 in,14 st 13.44 lb; 209.44 lb,PRO,,ospreys
+Conor BARTLEY,Prop,-,-,-,-,-,-,PRO,2025,munster
+Dave KILCOYNE,Prop,36 y/o,14/12/1988,1.85 m,112 kg,6 ft 1 in,17 st 8.92 lb; 246.92 lb,PRO,2025,munster
+Jeremy LOUGHMAN,Prop,29 y/o,22/07/1995,1.83 m,120 kg,6 ft,18 st; 264.55 lb,PRO,2026,munster
+John RYAN,Prop,36 y/o,02/08/1988,1.85 m,121 kg,6 ft 1 in,19 st 0.76 lb; 266.76 lb,PRO,2026,munster
+Josh WYCHERLEY,Prop,25 y/o,22/07/1999,1.83 m,108 kg,6 ft,17 st; 238.10 lb,PRO,2027,munster
+Mark DONNELLY,Prop,24 y/o,14/03/2001,1.80 m,110 kg,5 ft 11 in,17 st 4.51 lb; 242.51 lb,PRO,2026,munster
+Michael MILNE,Prop,25 y/o,05/02/2000,1.83 m,115 kg,6 ft,18 st; 253.53 lb,PRO,2027,munster
+Oli JAGER,Prop,29 y/o,05/07/1995,1.92 m,127 kg,6 ft 4 in,19 st 13.99 lb; 279.99 lb,PRO,2027,munster
+Roman SALANOA,Prop,27 y/o,28/10/1997,1.83 m,123 kg,6 ft,19 st; 271.17 lb,PRO,2025,munster
+Stephen ARCHER,Prop,37 y/o,29/01/1988,1.88 m,121 kg,6 ft 2 in,19 st 0.76 lb; 266.76 lb,PRO,2025,munster
+Diarmuid BARRON,Hooker,26 y/o,06/08/1998,1.84 m,100 kg,6 ft,15 st; 220.46 lb,PRO,2026,munster
+Lee BARRON,Hooker,24 y/o,15/02/2001,1.91 m,109 kg,6 ft 3 in,17 st 2.30 lb; 240.30 lb,PRO,2027,munster
+Niall SCANNELL,Hooker,33 y/o,08/04/1992,1.85 m,111 kg,6 ft 1 in,17 st 6.71 lb; 244.71 lb,PRO,2026,munster
+Edwin EDOGBO,Lock,22 y/o,21/12/2002,1.96 m,122 kg,6 ft 5 in,19 st 2.96 lb; 268.96 lb,PRO,2026,munster
+Fineen WYCHERLEY,Lock,27 y/o,11/12/1997,1.96 m,112 kg,6 ft 5 in,17 st 8.92 lb; 246.92 lb,PRO,2027,munster
+Jean KLEYN,Lock,31 y/o,26/08/1993,2.03 m,123 kg,6 ft 8 in,19 st 5.17 lb; 271.17 lb,PRO,2026,munster
+Tadhg BEIRNE,Lock,33 y/o,08/01/1992,1.98 m,114 kg,6 ft 6 in,17 st 13.33 lb; 251.33 lb,PRO,2027,munster
+Tom AHERN,Lock,25 y/o,22/02/2000,2.06 m,117 kg,6 ft 9 in,18 st 5.94 lb; 257.94 lb,PRO,2027,munster
+Alex KENDELLEN,Back row,24 y/o,03/03/2001,1.88 m,105 kg,6 ft 2 in,16 st 7.49 lb; 231.49 lb,PRO,2027,munster
+Brian GLEESON,Back row,21 y/o,05/02/2004,1.93 m,116 kg,6 ft 4 in,18 st 3.74 lb; 255.74 lb,PRO,2026,munster
+Cian HURLEY,Back row,25 y/o,25/04/2000,1.96 m,106 kg,6 ft 5 in,16 st 9.69 lb; 233.69 lb,PRO,2025,munster
+Gavin COOMBES,Back row,27 y/o,11/12/1997,1.98 m,110 kg,6 ft 6 in,17 st 4.51 lb; 242.51 lb,PRO,2027,munster
+Jack DALY,Back row,26 y/o,12/08/1998,1.83 m,107 kg,6 ft,16 st; 235.89 lb,PRO,2025,munster
+Jack O'DONOGHUE,Back row,31 y/o,08/02/1994,1.91 m,110 kg,6 ft 3 in,17 st 4.51 lb; 242.51 lb,PRO,2026,munster
+John HODNETT,Back row,26 y/o,10/01/1999,1.85 m,105 kg,6 ft 1 in,16 st 7.49 lb; 231.49 lb,PRO,2026,munster
+Peter O'MAHONY,Back row,35 y/o,17/09/1989,1.91 m,108 kg,6 ft 3 in,17 st 0.10 lb; 238.10 lb,PRO,2025,munster
+Conor MURRAY,Scrum-half,36 y/o,20/04/1989,1.88 m,94 kg,6 ft 2 in,14 st 11.23 lb; 207.23 lb,PRO,2025,munster
+Craig CASEY,Scrum-half,26 y/o,19/04/1999,1.65 m,76 kg,5 ft 5 in,11 st 13.55 lb; 167.55 lb,PRO,2026,munster
+Ethan COUGHLAN,Scrum-half,23 y/o,13/04/2002,1.75 m,81 kg,5 ft 9 in,12 st 10.57 lb; 178.57 lb,PRO,2026,munster
+Paddy PATTERSON,Scrum-half,26 y/o,30/11/1998,1.75 m,75 kg,5 ft 9 in,11 st 11.35 lb; 165.35 lb,PRO,2026,munster
+Billy BURNS,Fly-half,31 y/o,13/06/1994,1.83 m,87 kg,6 ft,13 st; 191.80 lb,PRO,2025,munster
+Jack CROWLEY,Fly-half,25 y/o,13/01/2000,1.85 m,90 kg,6 ft 1 in,14 st 2.42 lb; 198.42 lb,PRO,2027,munster
+Tony BUTLER,Fly-half,23 y/o,23/04/2002,1.78 m,85 kg,5 ft 10 in,13 st 5.39 lb; 187.39 lb,PRO,2026,munster
+Alex NANKIVELL,Centre,28 y/o,25/10/1996,1.88 m,98 kg,6 ft 2 in,15 st 6.05 lb; 216.05 lb,PRO,2027,munster
+Rory SCANNELL,Centre,31 y/o,22/12/1993,1.79 m,96 kg,5 ft 10 in,15 st 1.64 lb; 211.64 lb,PRO,2025,munster
+Seán O'BRIEN,Centre,27 y/o,12/05/1998,1.87 m,101 kg,6 ft 2 in,15 st 12.67 lb; 222.67 lb,PRO,2027,munster
+Shane DALY,Centre,28 y/o,19/12/1996,1.91 m,92 kg,6 ft 3 in,14 st 6.83 lb; 202.83 lb,PRO,2027,munster
+Tom FARRELL,Centre,31 y/o,01/10/1993,1.90 m,107 kg,6 ft 3 in,16 st 11.89 lb; 235.89 lb,PRO,2026,munster
+Andrew SMITH,Winger,24 y/o,21/07/2000,1.83 m,90 kg,6 ft,14 st; 198.42 lb,PRO,2026,munster
+Calvin NASH,Winger,27 y/o,08/08/1997,1.80 m,90 kg,5 ft 11 in,14 st 2.42 lb; 198.42 lb,PRO,2026,munster
+Diarmuid KILGALLEN,Winger,25 y/o,08/03/2000,1.93 m,96 kg,6 ft 4 in,15 st 1.64 lb; 211.64 lb,PRO,2026,munster
+Liam COOMBES,Winger,28 y/o,01/05/1997,1.91 m,90 kg,6 ft 3 in,14 st 2.42 lb; 198.42 lb,PRO,2025,munster
+Mike HALEY,Fullback,31 y/o,28/06/1994,1.91 m,94 kg,6 ft 3 in,14 st 11.23 lb; 207.23 lb,PRO,2027,munster
+Patrick CAMPBELL,Fullback,22 y/o,22/07/2002,1.78 m,88 kg,5 ft 10 in,13 st 12.01 lb; 194.01 lb,PRO,2025,munster
+Thaakir ABRAHAMS,Fullback,26 y/o,10/01/1999,1.75 m,77 kg,5 ft 9 in,12 st 1.76 lb; 169.76 lb,PRO,2026,munster
+Andy WARWICK,Prop,34 y/o,12/03/1991,1.78 m,116 kg,5 ft 10 in,18 st 3.74 lb; 255.74 lb,PRO,2025,ulster
+Bryan O'CONNOR,Prop,26 y/o,23/10/1998,1.91 m,107 kg,6 ft 3 in,16 st 11.89 lb; 235.89 lb,PRO,,ulster
+Callum REID,Prop,26 y/o,16/01/1999,1.83 m,120 kg,6 ft,18 st; 264.55 lb,PRO,2027,ulster
+Corrie BARRETT,Prop,27 y/o,13/06/1998,1.76 m,112 kg,5 ft 9 in,17 st 8.92 lb; 246.92 lb,PRO,2025,ulster
+Eric O'SULLIVAN,Prop,29 y/o,30/11/1995,1.86 m,118 kg,6 ft 1 in,18 st 8.15 lb; 260.15 lb,PRO,2027,ulster
+Tom O'TOOLE,Prop,26 y/o,23/09/1998,1.85 m,123 kg,6 ft 1 in,19 st 5.17 lb; 271.17 lb,PRO,2027,ulster
+John ANDREW,Hooker,32 y/o,26/05/1993,1.80 m,103 kg,5 ft 11 in,16 st 3.08 lb; 227.08 lb,PRO,2026,ulster
+Rob HERRING,Hooker,35 y/o,27/04/1990,1.85 m,106 kg,6 ft 1 in,16 st 9.69 lb; 233.69 lb,PRO,2026,ulster
+Tom STEWART,Hooker,24 y/o,11/01/2001,1.83 m,103 kg,6 ft,16 st; 227.08 lb,PRO,2026,ulster
+Alan O'CONNOR,Lock,32 y/o,10/09/1992,1.97 m,113 kg,6 ft 6 in,17 st 11.12 lb; 249.12 lb,PRO,2025,ulster
+Cormac IZUCHUKWU,Lock,25 y/o,28/01/2000,2.01 m,117 kg,6 ft 7 in,18 st 5.94 lb; 257.94 lb,PRO,2026,ulster
+Harry SHERIDAN,Lock,23 y/o,21/09/2001,1.96 m,121 kg,6 ft 5 in,19 st 0.76 lb; 266.76 lb,PRO,2027,ulster
+Iain HENDERSON,Lock,33 y/o,21/02/1992,1.98 m,116 kg,6 ft 6 in,18 st 3.74 lb; 255.74 lb,PRO,2027,ulster
+Kieran TREADWELL,Lock,29 y/o,06/11/1995,1.99 m,117 kg,6 ft 6 in,18 st 5.94 lb; 257.94 lb,PRO,2025,ulster
+Matthew DALTON,Lock,26 y/o,16/11/1998,1.98 m,117 kg,6 ft 6 in,18 st 5.94 lb; 257.94 lb,PRO,2026,ulster
+Dave MCCANN,Back row,25 y/o,13/06/2000,1.93 m,110 kg,6 ft 4 in,17 st 4.51 lb; 242.51 lb,PRO,2026,ulster
+Marcus REA,Back row,27 y/o,08/09/1997,1.89 m,109 kg,6 ft 2 in,17 st 2.30 lb; 240.30 lb,PRO,,ulster
+Matty REA,Back row,31 y/o,21/09/1993,1.93 m,113 kg,6 ft 4 in,17 st 11.12 lb; 249.12 lb,PRO,2025,ulster
+Nick TIMONEY,Back row,29 y/o,01/08/1995,1.88 m,114 kg,6 ft 2 in,17 st 13.33 lb; 251.33 lb,PRO,2027,ulster
+Reuben CROTHERS,Back row,23 y/o,28/01/2002,1.88 m,99 kg,6 ft 2 in,15 st 8.26 lb; 218.26 lb,PRO,2025,ulster
+Sean REFFELL,Back row,27 y/o,11/04/1998,1.80 m,100 kg,5 ft 11 in,15 st 10.46 lb; 220.46 lb,PRO,2026,ulster
+Conor MCKEE,Scrum-half,24 y/o,20/03/2001,1.83 m,87 kg,6 ft,13 st; 191.80 lb,PRO,2026,ulster
+Dave SHANAHAN,Scrum-half,32 y/o,20/06/1993,1.76 m,80 kg,5 ft 9 in,12 st 8.37 lb; 176.37 lb,PRO,2026,ulster
+John COONEY,Scrum-half,35 y/o,01/05/1990,1.78 m,87 kg,5 ft 10 in,13 st 9.80 lb; 191.80 lb,PRO,2025,ulster
+Michael MCDONALD,Scrum-half,26 y/o,24/06/1999,1.78 m,85 kg,5 ft 10 in,13 st 5.39 lb; 187.39 lb,PRO,2025,ulster
+Nathan DOAK,Scrum-half,23 y/o,17/12/2001,1.85 m,87 kg,6 ft 1 in,13 st 9.80 lb; 191.80 lb,PRO,2026,ulster
+Aidan MORGAN,Fly-half,24 y/o,07/06/2001,1.72 m,82 kg,5 ft 8 in,12 st 12.78 lb; 180.78 lb,PRO,2025,ulster
+Jake FLANNERY,Fly-half,26 y/o,07/06/1999,1.83 m,91 kg,6 ft,14 st; 200.62 lb,PRO,2026,ulster
+Ben CARSON,Centre,23 y/o,24/02/2002,1.83 m,101 kg,6 ft,15 st; 222.67 lb,PRO,2028,ulster
+James HUME,Centre,26 y/o,07/09/1998,1.88 m,98 kg,6 ft 2 in,15 st 6.05 lb; 216.05 lb,PRO,2027,ulster
+Jude POSTLETHWAITE,Centre,23 y/o,03/04/2002,1.93 m,106 kg,6 ft 4 in,16 st 9.69 lb; 233.69 lb,PRO,2026,ulster
+Stewart MOORE,Centre,25 y/o,08/08/1999,1.84 m,92 kg,6 ft,14 st; 202.83 lb,PRO,2027,ulster
+Stuart MCCLOSKEY,Centre,32 y/o,06/08/1992,1.93 m,112 kg,6 ft 4 in,17 st 8.92 lb; 246.92 lb,PRO,2027,ulster
+Ben MOXHAM,Winger,24 y/o,09/06/2001,1.91 m,102 kg,6 ft 3 in,16 st 0.87 lb; 224.87 lb,PRO,,ulster
+Jacob STOCKDALE,Winger,29 y/o,03/04/1996,1.91 m,103 kg,6 ft 3 in,16 st 3.08 lb; 227.08 lb,PRO,2027,ulster
+Robert BALOUCOUNE,Winger,27 y/o,19/08/1997,1.94 m,99 kg,6 ft 4 in,15 st 8.26 lb; 218.26 lb,PRO,,ulster
+Werner KOK,Winger,32 y/o,17/01/1993,1.80 m,96 kg,5 ft 11 in,15 st 1.64 lb; 211.64 lb,PRO,2026,ulster
+Zac WARD,Winger,26 y/o,11/12/1998,1.91 m,101 kg,6 ft 3 in,15 st 12.67 lb; 222.67 lb,PRO,2028,ulster
+Ethan MCILROY,Fullback,24 y/o,10/08/2000,1.88 m,90 kg,6 ft 2 in,14 st 2.42 lb; 198.42 lb,PRO,,ulster
+Mike LOWRY,Fullback,26 y/o,20/08/1998,1.71 m,80 kg,5 ft 7 in,12 st 8.37 lb; 176.37 lb,PRO,2028,ulster
+Danilo FISCHETTI,Prop,27 y/o,26/01/1998,1.81 m,112 kg,5 ft 11 in,17 st 8.92 lb; 246.92 lb,PRO,2025,zebre
+Ion NECULAI,Prop,24 y/o,25/01/2001,1.89 m,135 kg,6 ft 2 in,21 st 3.62 lb; 297.62 lb,PRO,2026,zebre
+Juan PITINARI,Prop,30 y/o,18/01/1995,1.87 m,118 kg,6 ft 2 in,18 st 8.15 lb; 260.15 lb,PRO,2026,zebre
+Luca FRANCESCHETTO,Prop,26 y/o,07/06/1999,1.93 m,127 kg,6 ft 4 in,19 st 13.99 lb; 279.99 lb,PRO,2027,zebre
+Luca RIZZOLI,Prop,23 y/o,03/05/2002,1.78 m,109 kg,5 ft 10 in,17 st 2.30 lb; 240.30 lb,PRO,2026,zebre
+Matteo NOCERA,Prop,26 y/o,16/01/1999,1.94 m,130 kg,6 ft 4 in,20 st 6.60 lb; 286.60 lb,PRO,2027,zebre
+Muhamed HASA,Prop,23 y/o,10/09/2001,1.83 m,125 kg,6 ft,19 st; 275.58 lb,PRO,2027,zebre
+Paolo BUONFIGLIO,Prop,30 y/o,28/01/1995,1.83 m,114 kg,6 ft,17 st; 251.33 lb,PRO,2026,zebre
+Giampietro RIBALDI,Hooker,28 y/o,12/03/1997,1.86 m,110 kg,6 ft 1 in,17 st 4.51 lb; 242.51 lb,PRO,2026,zebre
+Giovanni QUATTRINI,Hooker,21 y/o,29/09/2003,1.79 m,111 kg,5 ft 10 in,17 st 6.71 lb; 244.71 lb,PRO,2026,zebre
+Luca BIGI,Hooker,34 y/o,19/04/1991,1.82 m,108 kg,6 ft,17 st; 238.10 lb,PRO,2025,zebre
+Tommaso DI BARTOLOMEO,Hooker,24 y/o,04/01/2001,1.80 m,107 kg,5 ft 11 in,16 st 11.89 lb; 235.89 lb,PRO,2028,zebre
+Andrea ZAMBONIN,Lock,24 y/o,03/09/2000,2.02 m,112 kg,6 ft 8 in,17 st 8.92 lb; 246.92 lb,PRO,2025,zebre
+Francesco RUFFOLO,Lock,22 y/o,31/10/2002,1.98 m,118 kg,6 ft 6 in,18 st 8.15 lb; 260.15 lb,PRO,,zebre
+Leonard KRUMOV,Lock,29 y/o,01/05/1996,1.98 m,120 kg,6 ft 6 in,18 st 12.55 lb; 264.55 lb,PRO,2026,zebre
+Matteo CANALI,Lock,26 y/o,11/09/1998,1.98 m,123 kg,6 ft 6 in,19 st 5.17 lb; 271.17 lb,PRO,2028,zebre
+Bautista STAVILE,Back row,28 y/o,22/02/1997,1.83 m,100 kg,6 ft,15 st; 220.46 lb,PRO,,zebre
+Davide RUGGERI,Back row,26 y/o,07/05/1999,1.89 m,109 kg,6 ft 2 in,17 st 2.30 lb; 240.30 lb,PRO,2027,zebre
+Giacomo FERRARI,Back row,23 y/o,22/01/2002,1.90 m,107 kg,6 ft 3 in,16 st 11.89 lb; 235.89 lb,PRO,2028,zebre
+Giovanni LICATA,Back row,28 y/o,18/02/1997,1.93 m,111 kg,6 ft 4 in,17 st 6.71 lb; 244.71 lb,PRO,2026,zebre
+Guido VOLPI,Back row,29 y/o,22/08/1995,1.93 m,112 kg,6 ft 4 in,17 st 8.92 lb; 246.92 lb,PRO,2026,zebre
+Iacopo BIANCHI,Back row,27 y/o,05/05/1998,1.88 m,108 kg,6 ft 2 in,17 st 0.10 lb; 238.10 lb,PRO,2026,zebre
+Luca ANDREANI,Back row,24 y/o,19/04/2001,1.90 m,103 kg,6 ft 3 in,16 st 3.08 lb; 227.08 lb,PRO,2025,zebre
+Rusiate NASOVE,Back row,29 y/o,27/10/1995,1.95 m,102 kg,6 ft 5 in,16 st 0.87 lb; 224.87 lb,PRO,2025,zebre
+Samuele LOCATELLI,Back row,23 y/o,30/07/2001,1.87 m,105 kg,6 ft 2 in,16 st 7.49 lb; 231.49 lb,PRO,,zebre
+Alessandro FUSCO,Scrum-half,25 y/o,28/10/1999,1.85 m,91 kg,6 ft 1 in,14 st 4.62 lb; 200.62 lb,PRO,,zebre
+Gonzalo GARCIA,Scrum-half,26 y/o,05/03/1999,1.73 m,78 kg,5 ft 8 in,12 st 3.96 lb; 171.96 lb,PRO,2026,zebre
+Patricio BARONIO,Scrum-half,29 y/o,06/05/1996,1.78 m,82 kg,5 ft 10 in,12 st 12.78 lb; 180.78 lb,,,zebre
+Thomas DOMINGUEZ,Scrum-half,25 y/o,18/12/1999,1.75 m,79 kg,5 ft 9 in,12 st 6.17 lb; 174.16 lb,PRO,2026,zebre
+Geronimo PRISCIANTELLI,Fly-half,25 y/o,23/08/1999,1.83 m,87 kg,6 ft,13 st; 191.80 lb,PRO,2026,zebre
+Giacomo DA RE,Fly-half,26 y/o,29/03/1999,1.80 m,84 kg,5 ft 11 in,13 st 3.19 lb; 185.19 lb,PRO,2026,zebre
+Giovanni MONTEMAURI,Fly-half,24 y/o,24/10/2000,1.89 m,92 kg,6 ft 2 in,14 st 6.83 lb; 202.83 lb,PRO,,zebre
+Damiano MAZZA,Centre,26 y/o,16/02/1999,1.83 m,99 kg,6 ft,15 st; 218.26 lb,PRO,2026,zebre
+Enrico LUCCHIN,Centre,30 y/o,04/04/1995,1.88 m,103 kg,6 ft 2 in,16 st 3.08 lb; 227.08 lb,PRO,2026,zebre
+Fetuli PAEA,Centre,30 y/o,16/08/1994,1.90 m,102 kg,6 ft 3 in,16 st 0.87 lb; 224.87 lb,PRO,2025,zebre
+Filippo DRAGO,Centre,23 y/o,24/12/2001,1.86 m,96 kg,6 ft 1 in,15 st 1.64 lb; 211.64 lb,PRO,2025,zebre
+Luca MORISI,Centre,34 y/o,22/02/1991,1.83 m,102 kg,6 ft,16 st; 224.87 lb,PRO,2026,zebre
+Scott GREGORY,Centre,26 y/o,07/01/1999,1.85 m,101 kg,6 ft 1 in,15 st 12.67 lb; 222.67 lb,PRO,2025,zebre
+Simone GESI,Winger,24 y/o,23/05/2001,1.83 m,80 kg,6 ft,12 st; 176.37 lb,PRO,2026,zebre
+Jacopo TRULLA,Fullback,24 y/o,05/07/2000,1.83 m,88 kg,6 ft,13 st; 194.01 lb,PRO,2026,zebre
+Lorenzo PANI,Fullback,22 y/o,04/07/2002,1.93 m,96 kg,6 ft 4 in,15 st 1.64 lb; 211.64 lb,PRO,2027,zebre
