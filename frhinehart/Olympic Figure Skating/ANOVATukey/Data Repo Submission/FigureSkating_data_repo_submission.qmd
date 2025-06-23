@@ -62,7 +62,7 @@ Download Women's Data:  [womensFigureSkating.csv](C:/Users/0211f/GitHub/slu_scor
 2. Which specific years have a significant difference in mean scores?
 3. Can we use year to predict total points?
 4. Can we use short program score to predict free skate score?
-4. Is there a main effect of year and sex on total points and is there an interaction effect?
+5. Is there a main effect of year and sex on total points and is there an interaction effect?
 
 ## References
 
