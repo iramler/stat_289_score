@@ -38,7 +38,6 @@ ggplot(performanceStats, aes(x = TotalWeight, y = Scrums)) +
 ggplot(performanceStats, aes(x = AvgWeight, y = Discipline)) +
   geom_point()
 
-
 ## this is polynomial
 ggplot(performanceStats, aes(x = TotalAge, y = Defence)) +
   geom_point() +
@@ -50,5 +49,11 @@ ggplot(performanceStats, aes(x = Kicking, y = Attack)) +
 
 ggplot(performanceStats, aes(x = TotalAge, y = Kicking)) +
   geom_point()
+```
+
+```{r}
+ageD_mod <- lm(data = performanceStats, Defence ~ poly(TotalAge, 4))
+
+summary(ageD_mod)
 ```
 
