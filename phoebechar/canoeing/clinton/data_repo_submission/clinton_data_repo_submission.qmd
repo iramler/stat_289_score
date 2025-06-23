@@ -23,7 +23,7 @@ The number of classes and how they are separated is variable depending on the ra
 
 ### General Clinton Canoe Regatta
 
-As mentioned, the General Clinton is 63 miles long and can take paddlers anywhere between 7 and 13 hours to complete. Due to the difficulty, almost all paddlers have a pit crew of some kind who can get them water and fuel refills at various points throughout the race, as well as keep them informed about their pace and performance. The effort required for this race means that it is imperative that race officials know as much as possible what to expect on race day, to keep everyone involved safe.
+The General Clinton is 63 miles long and can take paddlers anywhere between 7 and 13 hours to complete. Due to the difficulty, almost all paddlers have a pit crew of some kind who can get them water and fuel refills at various points throughout the race, as well as keep them informed about their pace and performance. The effort required for this race means that it is imperative that race officials know as much as possible what to expect on race day, to keep everyone involved safe.
 
 ## Data
 
