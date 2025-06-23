@@ -1,5 +1,5 @@
 ---
-title: "Wingspan & Performance in the NBA Solutions"
+title: "NBA Wingspan & Performance Solutions"
 format: html
 ---
 

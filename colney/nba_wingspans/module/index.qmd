@@ -1,5 +1,5 @@
 ---
-title: "Wingspan & Performance in the NBA"
+title: "NBA Wingspan & Performance"
 author:
   - name: Cooper Olney
     affiliation:
@@ -9,13 +9,14 @@ author:
     email: iramler@stlawu.edu
     affiliation:
       - ref: slu
-date: "June __, 2025"
-description: "___"
+date: "June 23, 2025"
+description: "Exploring wingspan and performance in the NBA by cleaning, merging and analyzing datasets."
 editor: 
   canonical: true
 categories:
-  -  ___
-  -  ___
+  - Webscraping
+  - Data visualization
+  - Data wrangling
 ---
 
 ## Module
@@ -27,9 +28,7 @@ The National Basketball Association (NBA) is a professional basketball league fe
 
 One particularly interesting metric is wingspan advantage which is the difference between a player's wingspan and their height (wingspan - height). A larger wingspan relative to height is often considered beneficial for defense, rebounding, and shot-blocking. However, longer arms can also affect shooting mechanics, sometimes offering an edge by helping players shoot over defenders, but also potentially making it harder to develop a consistent shooting form, but does this actually show up in the data?
 
-In this worksheet, you'll explore how physical traits like wingspan advantage relate to on-court performance. You'll work with real NBA data to practice essential skills such as cleaning, tidying and joining datasets, as well as visualizing relationships. By the end, you'll use your cleaned and combined datasets to look for meaningful patterns between a player's wingspan advantage and their statistical output.
-
-
+In this worksheet, you'll explore how physical traits like wingspan advantage relate to on-court performance. You'll work with real NBA data to practice essential skills such as cleaning and joining datasets, as well as visualizing relationships. By the end, you'll use your cleaned and combined datasets to look for meaningful patterns between a player's wingspan advantage and their statistical output.
 
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
@@ -73,7 +72,7 @@ Download Data: [nba_wingspan_2025.csv](/data_repo_submission/nba_wingspan_2025.c
 
 #### Data For Version Without Web Scraping
 
-The **nba_per100possessions_2025.csv** dataset contains 736 rows and 14 columns. Each row represents a NBA player from the 2024-25 season. 
+The **nba_per100possessions_2025.csv** dataset contains 736 rows and 14 columns. Each row represents a NBA player from the 2024-25 season. **Note** this dataset contains duplicates because of players switching teams midseason. For example, Luka Dončić will have 3 total rows for his stats with DAL, LAL and his total 2024-25 season stats.
 
 Download Data: [nba_per100possesions_2025.csv](/data_repo_submission/nba_per100possesions_2025.csv){target="_blank"}
 
@@ -100,7 +99,7 @@ Download Data: [nba_per100possesions_2025.csv](/data_repo_submission/nba_per100p
 
 </details>
 
-The **nba_shooting_2025** data contains 737 rows and 9 columns. Each row represents a NBA player from the 2024-25 season.
+The **nba_shooting_2025** data contains 737 rows and 9 columns. Each row represents a NBA player from the 2024-25 season. **Note** this dataset contains duplicates because of players switching teams midseason. For example, Luka Dončić will have 3 total rows for his stats with DAL, LAL and his total 2024-25 season stats.
 
 Download Data: [nba_shooting_2025.csv](/data_repo_submission/nba_shooting_2025.csv){target="_blank"}
 
@@ -135,15 +134,15 @@ Download Data: [nba_shooting_2025.csv](/data_repo_submission/nba_shooting_2025.c
 
 **Version With Web Scraping**
 
-[Class handout](___)
+[Class handout](/module/nba_wingspans_worksheet.qmd)
 
-[Class handout - with solutions](___)
+[Class handout - with solutions](/module/nba_wingspans_solutions.qmd)
 
 **Version Without Web Scraping**
 
-[Class handout](___)
+[Class handout](/module/nba_wingspans_solutions_no_webscraping.qmd)
 
-[Class handout - with solutions](___)
+[Class handout - with solutions](/module/nba_wingspans_solutions_no_webscraping.qmd)
 
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
@@ -152,8 +151,6 @@ Through this module, you explored how physical attributes, specifically wingspan
 With your final combined dataset, you were able to generate visualizations to investigate potential connections, such as whether players with longer wingspan advantages tend to have a larger defensive impact. These kinds of relationships can provide use insights for analysts, scouts and even fans trying to understand the value of certain physical traits. 
 
 This activity underscores the value of data wrangling, merging and visualization and sets the stage for more advanced analysis in the future. Whether that's building predictive models, exploring important relationships, or applying machine learning techniques to sports data.
-
-
 
 :::
 
