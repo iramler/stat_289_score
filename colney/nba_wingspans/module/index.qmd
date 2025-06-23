@@ -53,9 +53,9 @@ This activity requires the use of RStudio with familiarity in Quarto documents a
 :::
 
 ### Data
-The **nba_player_profiles_2025.csv** dataset contains 499 rows and 4 columns. Each row represents a NBA player from the 2024-25 season. **Note** this dataset is partially cleaned from the data found at craftednba.com.
+The **nba_wingspan_2025.csv** dataset contains 499 rows and 4 columns. Each row represents a NBA player from the 2024-25 season. **Note** this dataset is partially cleaned from the data found at craftednba.com.
 
-Download Data: [nba_player_profiles_2025.csv](/data_repo_submission/nba_player_profiles_2025.csv){target="_blank"}
+Download Data: [nba_wingspan_2025.csv](/data_repo_submission/nba_wingspan_2025.csv){target="_blank"}
 
 
 <details>

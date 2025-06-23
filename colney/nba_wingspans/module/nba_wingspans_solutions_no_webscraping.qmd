@@ -23,12 +23,12 @@ library(rvest)
 library(janitor)
 ```
 
-# 1. Load Player Profiles csv file.
+# 1. Load in CSV file
 
-Load in the `nba_player_profiles_2025.csv` from the data folder.
+Load in the `nba_wingspan_2025.csv` from the data folder.
 
 ```{r}
-profiles <- read_csv(here::here("colney/nba_wingspans/data_repo_submission/nba_player_profiles_2025.csv"))
+wingspan <- read_csv(here::here("colney/nba_wingspans/data_repo_submission/nba_wingspan_2025.csv"))
 ```
 
 # 2. Clean the Dataset
@@ -49,8 +49,8 @@ Once you are finished cleaning this dataset, these should be the following varia
 a.  Convert the `height` variable (which is currently a character string like 6'4") into a new numeric variable called `height_inches` that represents each player's height in total inches. **Hint** using helper variables (such as separate variables for feet and inches) can make this process easier.
 
 ```{r}
-profiles <-
-  profiles %>%
+wingspan <-
+  wingspan %>%
   separate_wider_delim(
     cols = height,
     names = c("feet", "inches"),
@@ -67,8 +67,8 @@ profiles <-
 b.  Do the same thing as above, but with the `wingspan` variable. Create a new numeric variable called `wingspan_inches` that represents each player’s wingspan in total inches.
 
 ```{r}
-profiles <-
-  profiles %>%
+wingspan <-
+  wingspan %>%
   separate_wider_delim(
     cols = wingspan,
     names = c("feet", "inches"),
@@ -86,8 +86,8 @@ profiles <-
 c.  Extract the player's position (e.g. "SG" or "C") from the `name` variable and store it in a new variable called `position`, so that the position is no longer part of the name column.
 
 ```{r}
-profiles <-
-  profiles %>%
+wingspan <-
+  wingspan %>%
   separate_wider_delim(
     cols = name,
     names = c("name", "position"),
@@ -98,8 +98,8 @@ profiles <-
 d.  Remove players who are not currently on a team. In the `name` column, these players do not have a three-letter team abbreviation at the end of their name (e.g. "LeBron JamesLAL" vs. "LeBron James"). Then, split the name and team abbreviation into two separate variables: `name` and `team`. **Hint:** Use stringr functions to complete this step.
 
 ```{r}
-profiles <-
-  profiles %>%
+wingspan <-
+  wingspan %>%
   filter(
     str_detect(name, pattern = "[A-Z]{3}$")
   ) %>%
@@ -163,9 +163,9 @@ bball_ref <-
 
 # 4. Combine Datasets
 
-Combine the cleaned player profiles dataset from part 2, with the combined Basketball Reference dataset you created in part 3.d.
+Combine the cleaned wingspan dataset from part 2, with the combined Basketball Reference dataset you created in part 3.d.
 
-In the 'nba_player_profiles_2025.csv' file, two names were intentionally misspelled compared to their spellings on Basketball Reference.
+In the 'nba_wingspan_2025.csv' file, two names were intentionally misspelled compared to their spellings on Basketball Reference.
 
 -   CSV spelling → Correct spelling (Basketball Reference)
 -   Jimmy Butler III → should be Jimmy Butler
@@ -178,7 +178,7 @@ Combine the datasets using **two** different strategies.
 a.  Use `left_join()` to combine the datasets. Do you notice the misspelled names, what happens as a result of the misspelled names?
 
 ```{r}
-profiles %>%
+wingspan %>%
   left_join(bball_ref, by = c("name" = "player"))
 ```
 
@@ -186,7 +186,7 @@ b.  Use `stringdist_join()` from the `fuzzyjoin` package to combine the datasets
 
 ```{r}
 stringdist_join(
-  profiles, bball_ref,
+  wingspan, bball_ref,
   by = c("name" = "player"),
   method = "osa",
   max_dist = 2,
@@ -200,11 +200,11 @@ stringdist_join(
   filter(n > 1)
 ```
 
-c.  After comparing the differences, use `mutate()` to correct the two misspelled names in the player profiles dataset. Then, recombine the datasets and this time there should be no mismatches.
+c.  After comparing the differences, use `mutate()` to correct the two misspelled names in the wingspan dataset. Then, recombine the datasets and this time there should be no mismatches.
 
 ```{r}
 combined <- 
-  profiles %>%
+  wingspan %>%
   mutate(
     name = if_else(name == "Alperen Sengun", "Alperen Şengün", name),
     name = if_else(name == "Jimmy Butler III", "Jimmy Butler", name)
