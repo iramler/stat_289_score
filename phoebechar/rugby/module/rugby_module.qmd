@@ -1,0 +1,13 @@
+---
+title: "rugby_module"
+format: html
+---
+
+```{r}
+library(tidyverse)
+
+URC_players <- read.csv("phoebechar/rugby/module/URCplayers.csv")
+
+
+```
+

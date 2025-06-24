@@ -9,13 +9,15 @@ library(dplyr)
 library(readr)
 library(stringr)
 
-players <- read.csv("phoebechar/rugby.csv")
+players <- read.csv("phoebechar/rugby/rugby.csv")
 
 rename(players, Birthdate = Birthdate.)
 
 players <- players |> mutate(Age = parse_number(Age))
 
 players <- players |> mutate(Height = parse_number(Height), Weight = parse_number(Weight)) 
+
+write_csv(players, "phoebechar/rugby/data_repo_submission/URCplayers.csv")
 
 ggplot(players, aes(x = Age)) +
   geom_histogram()

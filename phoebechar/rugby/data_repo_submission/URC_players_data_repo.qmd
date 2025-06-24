@@ -1,0 +1,56 @@
+---
+title: "URC_players_data_repo"
+author: "Phoebe Jones" 
+date: "June 24, 2025" 
+
+categories:
+  - Indicator variables 
+---
+
+## Motivation
+
+
+### Understanding Rugby
+
+
+#### Positions
+
+
+### United Rugby Championship
+
+
+## Data
+
+The `rugby.csv` data set includes data from .
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable    | Description                                  |
+|-------------|----------------------------------------------|
+| Name        | Player name (First LAST)                     |
+| Position    | Player position (Scrum-Half, Winger, etc.)   |                 
+| Age         | Player age                                   |
+| Birthdate   | Player birthdate (dd/mm/yyyy)                |
+| Height      | Player height (meters)                       |
+| Weight      | Player weight (kg)                           |
+| Height_ft   | Player height (ft in)                        |
+| Weight_lb   | Player weight (lb)                           |
+| Contract    | Player contract type (PRO or ACADEMY)        |
+| Length      | Player contract end year                     |
+| Team        | Player team in the URC                       | 
+
+</details>
+
+Download [URCplayers.csv](URCplayers.csv){target="_blank"}
+
+## Questions
+
+1. 
+
+## References
+
+[Paddlestats Website: Raisin River Race History](https://paddlestats.net/racehistory/RAISIN)
+
+[Raisin River Race Website](https://rrca.on.ca/page.php?id=13)
