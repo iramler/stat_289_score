@@ -1,0 +1,39 @@
+---
+title: "baseball_explore"
+format: html
+---
+
+```{r}
+#install.packages("baseballr")
+
+library(baseballr)
+library(tidyverse)
+```
+
+```{r}
+#install.packages("remotes")
+
+library(remotes)
+install_github("BillPetti/baseballr")
+```
+
+```{r}
+playerid_lookup(last_name = "Judge",
+                first_name = "Aaron")
+```
+
+```{r}
+start_date <- "2023-03-01"
+end_date <- "2023-10-01"  # Adjust if playoffs needed
+
+
+judge_id <- playerid_lookup("Judge", "Aaron")$mlbam_id
+
+
+judge_pitches <- statcast_search(
+  start_date = start_date,
+  end_date = end_date,
+  player_type = "batter",
+  playerid = judge_id
+)
+```
