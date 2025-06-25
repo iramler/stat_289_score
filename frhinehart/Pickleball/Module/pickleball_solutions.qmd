@@ -1,5 +1,142 @@
 ---
 title: "pickleball_solutions"
-format: html
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
 ---
+
+```{r}
+library(readr)
+library(dplyr)
+library(ggplot2)
+
+pickleBall <- read_csv("pickleBall.csv")
+View(pickleBall)
+```
+
+
+Preform a Pearson's R correlation of `Overall` on `Overall Reliability`
+```{r}
+correlation <- pickleBall |>
+  group_by(Sex) |>
+  summarize(pearson_r = cor(Overall, `Overall Reliability`, method = "pearson"))
+correlation
+```
+
+```{r}
+cor_test_result <- cor.test(pickleBall$Overall, pickleBall$`Overall Reliability`, method = 'pearson')
+cor_test_result
+
+ggplot(data = pickleBall, aes(x = Overall, y = `Overall Reliability`, color = Sex)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  theme_minimal()
+```
+
+Model how Overall Reliability (reliable) is predicted by Overall (quality):
+```{r}
+model <- lm(`Overall Reliability` ~ Overall, data = pickleBall)
+summary(model)
+```
+
+If you want to see if Sex moderates the relationship between Overall and Reliability:
+```{r}
+model2 <- lm(`Overall Reliability` ~ Overall + Sex, data = pickleBall)
+summary(model2)
+```
+
+```{r}
+model3 <- lm(`Overall Reliability` ~ Overall * Sex, data = pickleBall)
+summary(model3)
+```
+This shows whether the relationship between quality and reliability is different for males vs females.
+
+regression modeling quality versus reliability
+
+
+
+Scatterplot of singles versus doubles rating
+```{r}
+ggplot(data = pickleBall, aes(x = Singles, y = Doubles, color = Sex)) +
+  geom_point() +
+  geom_smooth()
+```
+
+Scatterplot of doubles versus singles reliability
+```{r}
+ggplot(data = pickleBall, aes(x = `Singles Reliability`, y = `Doubles Reliability`, color = Sex)) +
+  geom_point() +
+  geom_smooth()
+```
+
+```{r}
+ggplot(data = pickleBall, aes(x = Doubles, y = Mixed, color = Sex)) +
+  geom_point() +
+  geom_smooth()
+
+model = lm(Mixed ~ Doubles, data = pickleBall)
+plot(model)
+```
+
+```{r}
+ggplot(data = pickleBall, aes(x = `Doubles Reliability`, y = `Mixed Reliability`, color = Sex)) +
+  geom_point() +
+  geom_smooth()
+```
+
+Histogram of Single rating with gender
+```{r}
+ggplot(data = pickleBall, aes(x = Singles, fill = Sex)) +
+  geom_histogram()
+```
+
+Histogram of Single reliability with gender
+```{r}
+ggplot(data = pickleBall, aes(x = `Singles Reliability`, fill = Sex)) +
+  geom_histogram()
+```
+
+Histogram of Double rating with gender
+```{r}
+ggplot(data = pickleBall, aes(x = Doubles, fill = Sex)) +
+  geom_histogram()
+```
+
+Histogram of Double reliability with gender
+```{r}
+ggplot(data = pickleBall, aes(x = `Doubles Reliability`, fill = Sex)) +
+  geom_histogram()
+```
+
+
+Boxplots:
+```{r}
+ggplot(data = pickleBall, aes(x = Singles, y = Doubles, fill = Sex)) +
+  geom_boxplot()
+```
+
+```{r}
+ggplot(data = pickleBall, aes(x = `Singles Reliability`, y = `Doubles Reliability`, fill = Sex)) +
+  geom_boxplot()
+```
+
+```{r}
+ggplot(data = pickleBall, aes(x = Singles, y = `Singles Reliability`, color = Sex)) +
+  geom_point() +
+  geom_smooth()
+
+```
+
+
+```{r}
+pickle_long <- pivot_longer(pickleBall, cols = c(5, 7, 9, 11), names_to = "Category", values_to = "Rating")
+
+ggplot(data = pickle_long, aes(x = Category, y = Rating, fill = Sex)) +
+  geom_boxplot()
+```
 
