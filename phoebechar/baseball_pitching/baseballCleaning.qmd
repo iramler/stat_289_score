@@ -1,0 +1,16 @@
+---
+title: "baseballCleaning"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+
+pitchers <- read.csv("phoebechar/baseball/pitchersLarge.csv")
+
+pitchers <- pitchers |> select(player_name, pitch_type, type, release_speed, events, description, des, balls, strikes, outs_when_up)
+
+write_csv(pitchers, "phoebechar/baseball/pitchers.csv")
+```

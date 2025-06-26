@@ -1,0 +1,39 @@
+---
+title: "baseball"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(baseballr)
+library(dplyr)
+
+CK <- statcast_search_pitchers(start_date = "2015-04-05", end_date = "2019-10-30", pitcherid = 477132)
+
+JV <- statcast_search_pitchers(start_date = "2015-04-05", end_date = "2019-10-30", pitcherid = 434378)
+
+MS <- statcast_search_pitchers(start_date = "2015-04-05", end_date = "2019-10-30", pitcherid = 453286)
+
+CS <- statcast_search_pitchers(start_date = "2015-04-05", end_date = "2019-10-30", pitcherid = 519242)
+
+MB <- statcast_search_pitchers(start_date = "2015-04-05", end_date = "2019-10-30", pitcherid = 518516)
+
+CH <- statcast_search_pitchers(start_date = "2015-04-05", end_date = "2019-10-30", pitcherid = 430935)
+
+ZG <- statcast_search_pitchers(start_date = "2015-04-05", end_date = "2019-10-30", pitcherid = 425844)
+
+DP <- statcast_search_pitchers(start_date = "2015-04-05", end_date = "2019-10-30", pitcherid = 456034)
+
+JD <- statcast_search_pitchers(start_date = "2015-04-05", end_date = "2019-10-30", pitcherid = 594798)
+
+JL <- statcast_search_pitchers(start_date = "2015-04-05", end_date = "2019-10-30", pitcherid = 452657)
+
+pitchers <- bind_rows(CK, JV, MS, CS, MB, CH, ZG, DP, JD, JL)
+
+pitchers <- pitchers |> select(player_name, everything())
+
+is.data.frame(pitchers)
+
+write_csv(pitchers, "phoebechar/baseball/pitchersLarge.csv")
+```
+
