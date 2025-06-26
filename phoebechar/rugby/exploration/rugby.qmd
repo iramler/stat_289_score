@@ -24,9 +24,6 @@ players <- players |> mutate(Birthdate = dmy(Birthdate))
 
 write_csv(players, "phoebechar/rugby/data_repo_submission/URCplayers.csv")
 
-ggplot(players, aes(x = Age)) +
-  geom_histogram()
-
 teams <- players |> group_by(Team) |> mutate(TotalAge = sum(Age, na.rm = TRUE), TotalHeight = sum(Height, na.rm = TRUE), TotalWeight = sum(Weight, na.rm = TRUE))
 
 teams <- teams |> mutate(AvgAge = mean(Age, na.rm = TRUE), AvgHeight = mean(Height, na.rm = TRUE), AvgWeight = mean(Weight, na.rm = TRUE)) |> slice(1)
@@ -38,12 +35,16 @@ performance <- read.csv("phoebechar/rugby - performance.csv")
 performance <- performance |> mutate(Team = str_to_lower(Team))
 
 performanceStats <- full_join(teams, performance)
+```
 
-ggplot(performanceStats, aes(x = TotalWeight, y = Scrums)) +
-  geom_point()
+```{r}
+URC_players <- players |> filter(Position %in% c("Prop", "Hooker", "Lock", "Scrum-half", "Fullback", "Fly-half"))
 
-ggplot(performanceStats, aes(x = AvgWeight, y = Discipline)) +
-  geom_point()
+URC_players <- URC_players |> filter(!is.na(Height), !is.na(Weight))
 
+write_csv(URC_players, "phoebechar/rugby/module/URCpositions.csv")
+```
+
+```{r}
 ```
 

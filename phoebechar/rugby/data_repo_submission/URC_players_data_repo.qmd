@@ -27,7 +27,7 @@ The United Rugby Championship (URC) is a global league of 16 club teams from aro
 
 ## Data
 
-The `rugby.csv` data set includes data from all.rugby about the make-up of each of the teams in the United Rugby Championships.
+The `rugby.csv` data set includes data from all.rugby about the make-up of each of the teams in the United Rugby Championships. There are 723 players with 7 variables recorded for each.
 
 <details>
 

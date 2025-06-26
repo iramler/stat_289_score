@@ -1,0 +1,67 @@
+---
+title: "Positions in the United Rugby Championships: Understanding Indicator Variables | SOLUTIONS"
+author: "Phoebe Jones"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(ggplot) ## for graphing
+library(dplyr) ##
+
+players <- read.csv("phoebechar/rugby/module/URCpositions.csv")
+```
+
+### The following scatterplot shows height of players being used as a predictor for weight. The graph has a separate line for each position.
+```{r}
+ggplot(players, aes(x = Height, y = Weight, colour = Position)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+### In the graph, we can see that some positions have very different lines. To make a model that accounts for this, we will have to use indicator variables.
+
+### There are 6 positions present in the data set, so we need 5 indicator variables. The code block below defines 4 of them: the indicators for prop, hooker, lock, and scrum-half. For each of them, the observation will be assigned a `1` if that is the player's position, and a `0` otherwise.
+
+```{r}
+players <- players |> mutate(prop_ind = if_else(Position == "Prop", 1, 0),
+                                     hook_ind = if_else(Position == "Hooker", 1, 0), 
+                                     lock_ind = if_else(Position == "Lock", 1, 0), 
+                                     scrum_ind = if_else(Position == "Scrum-half", 1, 0))
+```
+
+### Define the 5th indicator variable (for `Fullback`).
+```{r}
+players <- players |> mutate(full_ind = if_else(Position == "Fullback", 1, 0))
+```
+
+### Fit a model that uses `Height` as a predictor for `Weight` and includes all of the indicator variables. Print a summary of the model.
+```{r}
+modPos = lm(Weight ~ Height + prop_ind + hook_ind + lock_ind + scrum_ind + full_ind, data = players)
+
+summary(modPos)
+```
+
+### What does the summary tell you? Is it consistent with the scatterplot?
+
+The summary shows
+
+### Is it helpful to have indicator variables for ALL of the different positions in this dataset? Why or why not?
+
+Answers may vary. Students should point out that according to both the scatterplot and the model summary, the scrum-hal, fly-half, and fullback positions have very similar lines and most likely do not need separate indicator variables.
+
+### Regardless of your answer, refit the model without the indicator variables for scrum-half and fullback. Instead we will leave them grouped in with the fly-halves. We will call this group the Backs.
+```{r}
+modPos2 = lm(Weight ~ Height + prop_ind + hook_ind + lock_ind, data = players)
+
+summary(modPos2)
+```
+
+```{r}
+players <- players |> mutate(Position2 = if_else(Position %in% c("Fullback", "Scrum-half", "Fly-half"), "Backs", Position))
+
+ggplot(players, aes(x = Height, y = Weight)) +
+  geom_point(aes(colour = Position)) +
+  geom_smooth(aes(colour = Position2), method = "lm", se = FALSE)
+```
+
+INTERPRETATIONS
