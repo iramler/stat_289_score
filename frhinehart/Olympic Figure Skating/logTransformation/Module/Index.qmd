@@ -4,7 +4,7 @@ author:
   - name: Faith Rhinehart
     affiliation:
       - ref: slu
-date: "June 17th, 2025"
+date: "June 17, 2025"
 description: "Model Building on the US Olympic Figure Skaters"
 editor: 
   canonical: true

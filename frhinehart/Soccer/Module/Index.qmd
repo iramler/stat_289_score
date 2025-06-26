@@ -4,7 +4,7 @@ author:
   - name: Faith Rhinehart
     affiliation:
       - ref: slu
-date: "June 23th, 2025"
+date: "June 23, 2025"
 description: "Using R Functions for Data Manipulation"
 editor: 
   canonical: true
@@ -103,9 +103,9 @@ Women's data:
 
 ### Materials
 
-:[Class handout](soccer_Worksheet.qmd)
+[Class handout](soccer_Worksheet.qmd)
 
-:[Class handout - with solutions](soccer_Solutions.qmd)
+[Class handout - with solutions](soccer_Solutions.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of how the process of data manipulation works and the different strategies used to achieve a certain dataset. 

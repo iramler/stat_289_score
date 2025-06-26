@@ -1,0 +1,89 @@
+---
+title: "Exploring Differences in Reliability Scores"
+author:
+  - name: Faith Rhinehart
+    affiliation:
+      - ref: slu
+date: "June 26, 2025"
+description: "Using matched pairs to determine a difference in mean reliability scores for pickle ball players"
+editor: 
+  canonical: true
+categories:
+  - Matched Pairs t-test
+---
+
+### Background to Figure Skating Video
+
+If you are unfamiliar with Pickleball, please watch this video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fTvPYdKZqO0?si=1UuCNuORNX791EU6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Introduction to Module
+
+Pickleball is a fast-paced sport blending tennis, badminton, and ping-pong, played with paddles and a plastic ball on a small court. College tournaments feature singles, doubles, and mixed doubles in a best-of-three format, emphasizing strategy, teamwork, and precision. Player performance is often tracked using the DUPR (Dynamic Universal Pickleball Rating) system, which rates skill from 2.000 to 8.000 based on match results, opponent strength, and recent play. A Reliability Score (1–100%) reflects how accurate a rating is, with 60%+ considered dependable.
+
+The pickleBall dataset features data from the NCPA (National Collegiate Pickleball Association) of male and female players. Variables include characteristics such as name and sex. Other variables included the overrall, singles, doubles, and mixed rating and the overall, singles, doubles, and mixed reliability score. The relevant variables for this specific module are doubles reliability and singles reliability.   
+
+For the sake of this module, the data set was tidied so that it excluded any Skater who did not advance to the Free Skate round.
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+Learning Objectives:
+
+1. Students will learn how to perform matched pairs t-test in R Studio
+
+2. Student will practice interpreting results
+
+3. Students will practice the hypothesis testing skills
+
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+For this activity, students will need to use R Studio. 
+
+Students are expected to understand the concept of hypothesis forming, rejecting hypothesis, confidence intervals and interpreting output. Students are also expected to now how to code basic ggplots, fit models, and use functions in R Studio.
+
+This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
+:::
+
+
+
+### Data
+
+The pickleBall data contains ratings and reliability scores for collegiate matches. 
+
+Download data: 
+
+[pickleBall.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Pickleball/Data_repository/pickleBall.csv)
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+NCPA male and female players (380 cases with 12 variables) data:
+
+| Variable            | Description               |
+|---------------------|---------------------------|
+| First Name          | First name of player      |
+| Last Name           | Last name of player       |
+| Overall             | Overall rating score      |
+| Overall Reliability | Overall Reliability score |
+| Singles             | Singles rating score      |
+| Singles Reliability | Singles Reliability score |
+| Doubles             | Doubles rating score      |
+| Doubles Reliability | Doubles Reliability score |
+| Mixed               | Mixed rating score        |
+| Mixed Reliability   | Mixed Reliability score   |
+| Sex                 | Gender of player          |    
+
+</details>
+
+
+### Materials
+
+[Class handout](pickleball_worksheet.qmd)
+
+[Class handout - with solutions](pickleball_solutions.qmd)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Students should gain an understanding of matched pairs t-test in R Studio. 
+:::

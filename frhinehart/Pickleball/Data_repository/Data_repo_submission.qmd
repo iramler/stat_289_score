@@ -4,7 +4,7 @@ author: "Faith Rhinehart"
 date: "June 25, 2025" 
 format: html
 categories:
-  - ???
+  - Matched Pairs T-Test
 ---
 
 ## Motivation
@@ -47,10 +47,10 @@ NCPA male and female players (380 cases with 12 variables) data:
                        
 </details>
 
-Download Pickleball Data:  [pickleBall.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Pickleball/Data_repository/pickleBall.csv)
+Download Pickleball Data: [pickleBall.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Pickleball/Data_repository/pickleBall.csv)
 
 ## Questions Investigated
-1. ???
+1. Is there a significant difference between the means of Doubles Reliability and Singles Reliability
 
 ## References
 

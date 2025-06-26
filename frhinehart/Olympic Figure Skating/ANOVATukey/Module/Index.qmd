@@ -4,7 +4,7 @@ author:
   - name: Faith Rhinehart
     affiliation:
       - ref: slu
-date: "June 12th, 2025"
+date: "June 12, 2025"
 description: "Using ANOVA to determine a difference in mean scores throughout the years of winter Olympics"
 editor: 
   canonical: true

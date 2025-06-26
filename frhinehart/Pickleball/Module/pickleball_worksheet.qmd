@@ -1,5 +1,5 @@
 ---
-title: "pickleball_solutions"
+title: "pickleball_worksheet"
 Authors: Faith Rhinehart
 execute: 
   echo: true
@@ -19,28 +19,17 @@ library(dplyr)
 library(ggplot2)
 library(tidyr)
 
-pickleBall <- read_csv("pickleBall.csv")
 ```
 
 ## 1 - Creating a boxplot 
 
 A) Create a boxplot comparing Singles and Doubles Reliability scores.
 
-```{r}
-pickle <- pickleBall |> select(2,3, 7, 9, 12)
 
-pickle_long <- pivot_longer(pickle, cols = c(3, 4), names_to = "Category", values_to = "Reliability") 
-
-ggplot(data = pickle_long, aes(x = Category, y = Reliability)) +
-  geom_boxplot() +
-  labs(title = "Reliability Scores: Singles vs. Doubles",
-       x = "Match Type",
-       y = "Reliability Score")
-```
 
 B)  What do you notice about the center, spread, and any outliers in the distributions? Which category appears to have a higher average reliability?
 
-The mean for doubles reliability appears to be higher than for singles reliability, indicating that players tend to be more reliable in doubles matches. The spread (or variability) is larger for singles, which suggests that singles reliability scores vary more from player to player. There are no apparent outliers in either distribution based on the boxplot. 
+
 
 We want to perform a hypothesis test to test if there is a significant difference between singles and doubles reliability. Because each player was measured twice (single and double reliability), we want to use a matched pairs t-test to perform the hypothesis test. 
 
@@ -48,15 +37,13 @@ We want to perform a hypothesis test to test if there is a significant differenc
 
 A) State and evaluate the three assumptions needed for a paired t-test. You may assume independence. Use R code to help justify normality and check for outliers. 
 
-```{r}
-hist(pickleBall$Difference)
-```
 
-1. Independence: Data was collected independently.
 
-2. Normality: The differences between the pairs is approximately normally distributed.
+1. Independence:
 
-3. No Extreme Outliers: The differences should not have any extreme outliers. 
+2. Normality: 
+
+3. No Extreme Outliers: 
 
 
 ## 3 - Performing a matched pairs hypothesis test manually. 
@@ -65,83 +52,48 @@ Let μ be the true mean difference (Doubles - Singles) - because doubles reliabi
 
 A) State the null and alternative hypothesis.
 
-Null Hypothesis: The mean difference between the paired observations is zero.
-Alternative Hypothesis: The mean difference is not zero. 
+
 
 B) Create a new column labeled `Difference` that takes Doubles Reliability minus Singles Reliability.
 
-```{r}
-pickleBall$Difference <- pickleBall$`Doubles Reliability` - pickleBall$`Singles Reliability`
-```
+
 
 C) Calculate the mean difference of the `Difference` column. Report your result. 
-```{r}
-mean_difference <- mean(pickleBall$Difference)
-mean_difference
-```
 
-The mean difference between doubles reliability and singles reliability is 0.1454211
+
 
 D) Calculate the standard deviation of the `Difference` column. Report your result.
-```{r}
-sd_difference <- sd(pickleBall$Difference)
-sd_difference
-```
 
-The standard deviation of the difference between doubles reliability and singles reliability is 0.212845.
+
 
 E) Calculate the t-statistic. The formula is below in which you can do it by hand or do it using r. Report your result.
 $$ t = \frac{\bar{D}}{s_D / \sqrt{n}}$$
-```{r}
-t_stat <- mean_difference / (sd_difference / sqrt(380))
-t_stat
-```
 
-The t-statistic is 13.31851. 
+
 
 F) Calculate the degrees of freedom. Report your result.
-```{r}
-dfree <- 380 - 1
-dfree
-```
 
-The degrees of freedom is 379. 
+
 
 G) Calculate the p-value for two-tailed hypothesis. To do this do in R code - 2 * pt(-abs(t-statistic), df = degrees of freedom). Report your result. 
 
-```{r}
-p_value <- 2 * pt(-abs(t_stat), df = dfree)
-p_value
-```
 
-The p-value is 1.828055e-33
 
 H) Use the p-value to make a conclusion.
 
-There is strong evidence (p-value = 1.828055e-33, t = 13.319, df = 379) that there is a difference in means between doubles reliability and singles reliability.
 
 
 We can also do this process using the t.test function in r which allows us to perform the hypothesis test quicker. 
 
-
 ## 4 - Performing a matched pairs hypothesis test using R function:
 
 A) perform a matched pairs hypothesis t-test using the `t.test()` function and setting `paired = TRUE`. Include all parts of a formal hypothesis test. 
-```{r}
-pairedt_test <- t.test(pickleBall$`Doubles Reliability`, pickleBall$`Singles Reliability`, paired = TRUE)
-pairedt_test
-```
 
-Null Hypothesis: The mean difference between the paired observations is zero.
-Alternative Hypothesis: The mean difference is not zero. 
 
-Reject the null hypothesis.
-
-There is strong evidence (p-value < 2.2e-16, t = 13.319, df = 379) that there is a difference in means between doubles reliability and singles reliability.
 
 B) Interpret the confidence interval results given in the output in part A. 
 
-With 95% confidence, the true mean difference between doubles and singles reliability lies between 0.1239522 and 0.1668899. Since zero is not in the interval, the difference is statistically significant.
+
 
 You could also interpret it this way...
 On average, doubles reliability is between 12.4% and 16.7% higher than singles reliability.
@@ -150,4 +102,5 @@ A possible explanation for this is that doubles matches are more commonly played
 
 
 If you notice you gained two different p-values for both manually and using R. This is because the t.test() function in R does not report p-values smaller than 2.2e-16. When calculated manually, however, the full precision of the test statistic can be used to generate an even smaller p-value. This does not change the outcome of the results. Both methods will result in the same statistical conclusion. 
+
 
