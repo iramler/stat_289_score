@@ -17,7 +17,7 @@ In the 2024 season, few players drew more attention than Aaron Judge, Shohei Oht
 ## Data
 Below are three datasets containing pitch-by-pitch information from the 2024 at-bats of Aaron Judge, Shohei Ohtani and Mookie Betts. Each dataset includes details about the pitch thrown and the result of pitch and contextual information about the game at that moment.
 
-Data courtesty of of  [baseballsavant.mlb.com](https://baseballsavant.mlb.com/){target="_blank"} and accessed using the [baseballr](https://billpetti.github.io/baseballr/){target="_blank"} package.
+Data courtesy of of  [baseballsavant.mlb.com](https://baseballsavant.mlb.com/){target="_blank"} and accessed using the [baseballr](https://billpetti.github.io/baseballr/){target="_blank"} package.
 
 <center>
 [judge_batting_2024.csv](/data_repo_submission/judge_batting_2024.csv){target="_blank"}, [ohtani_batting_2024.csv](/data_repo_submission/ohtani_batting_2024.csv){target="_blank"}, [betts_batting_2024.csv](/data_repo_submission/betts_batting_2024.csv){target="_blank"}
@@ -46,7 +46,7 @@ Data courtesty of of  [baseballsavant.mlb.com](https://baseballsavant.mlb.com/){
 
 ## Questions
 
-1. Are some pitch types more likely to results in home runs than others for each hitter? Investigate whether the outcome of an at-bat (from the `events` varaible) differs by pitch tpye. Do certain hitters have more success on fastballs or offspeed pitches?
+1. Are some pitch types more likely to results in home runs than others for each hitter? Investigate whether the outcome of an at-bat (from the `events` variable) differs by pitch type. Do certain hitters have more success on fastballs or off-speed pitches?
 
 2. How does `launch_speed` differ across pitch zones? Explore whether certain areas of the strike zone tend to produce harder contact. Do the three hitters have different "sweet spots" where they generate higher exit velocities?
 
