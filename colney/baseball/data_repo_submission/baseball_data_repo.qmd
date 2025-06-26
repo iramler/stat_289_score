@@ -1,7 +1,7 @@
 ---
 title: "MLB Superstar 2024 Pitch-By-Pitch Breakdown"
 author: "Cooper Olney"
-date: "June 23, 2025"
+date: "June 26, 2025"
 
 categories:
   - ___
@@ -9,24 +9,50 @@ categories:
 ---
 
 ## Motivation 
+Baseball of often described as a game of matchups, a sport where each pitch creates a mini battle between pitcher and batter. In Major League Baseball (MLB), every pitch of an at-bat, whether it results in a swing, miss or contact is recorded in detail. This level of tracking allows us to break down every plate appearance using metrics that capture both the mechanics and the outcomes of each moment at the plate.
 
-
-
-
+In the 2024 season, few players drew more attention than Aaron Judge, Shohei Ohtani and Mookie Betts, three of the MLB's premier stars known for their elite hitting skills. These players serve as ideal case studies for examining how top-tier hitters navigate different pitch types, counts and in-game situations throughout a season. By analyzing pitch-by-pitch data for these superstars, we can shed light on what sets them apart at the plate, and what patterns or tendencies emerge over time.
 
 
 ## Data
+Below are three datasets containing pitch-by-pitch information from the 2024 at-bats of Aaron Judge, Shohei Ohtani and Mookie Betts. Each dataset includes details about the pitch thrown and the result of pitch and contextual information about the game at that moment.
+
+Data courtesty of of  [baseballsavant.mlb.com](https://baseballsavant.mlb.com/){target="_blank"} and accessed using the [baseballr](https://billpetti.github.io/baseballr/){target="_blank"} package.
+
+<center>
+[judge_batting_2024.csv](/data_repo_submission/judge_batting_2024.csv){target="_blank"}, [ohtani_batting_2024.csv](/data_repo_submission/ohtani_batting_2024.csv){target="_blank"}, [betts_batting_2024.csv](/data_repo_submission/betts_batting_2024.csv){target="_blank"}
+</center> 
 
 
-
+| Variable          | Description
+|-------------------|------------------------------------------------
+| game_date    | The date the game took place.
+| inning    | The inning during which the pitch occurred.
+| outs_when_up    | The number of outs when the batter stepped up to the plate.
+| pitch_number    | The number of the pitch with the plate appearance.
+| pitch_name    | The type of classification of the pitch thrown (e.g., 4-seam Fastball, Slider).
+| p_throws    | The pitcher's throwing hand (R for right, L for left).
+| description    | Text description of the pitch outcome (e.g., swinging_strike, ball, foul).
+| events    | The result of the plate appearance (e.g., single, field_out, walk).
+| launch_speed    | The speed (in mph) of the ball off the bat when contact is made.
+| launch_angle    | The vertical angle (in degrees) at which the ball leaves the bat.
+| hit_distance_sc    | The distance (in feet) the ball traveled as measured or estimated by Statcast.
+| launch_speed_angle    | Classification bin (1-6) based on the quality of contact, combing launch speed and launch angle to estimate how well the ball was hit. Higher values indicate better contact and a greater likelihood of a positive outcome.
+| zone    | The strike zone location of the pitch from catchers viewpoint. 1-9 are within the strike zone, 11-14 are just outside of the strike zone. 10 is way outside of strike zone. [Image of Zones](https://medium.com/@thomasjamesnestico/classifying-mlb-pitch-zones-and-predicting-milb-zones-7e95cf308254){target="_blank"}
+| release_speed    | The speed (in mph) of the pitch as it leaves the pitcher's hand.
+| release_spin_rate    | The spin rate (in RPM) of the ball as it leaves the pitcher's hand.
 
 
 
 ## Questions
 
+1. Are some pitch types more likely to results in home runs than others for each hitter? Investigate whether the outcome of an at-bat (from the `events` varaible) differs by pitch tpye. Do certain hitters have more success on fastballs or offspeed pitches?
 
-
-
+2. How does `launch_speed` differ across pitch zones? Explore whether certain areas of the strike zone tend to produce harder contact. Do the three hitters have different "sweet spots" where they generate higher exit velocities?
 
 
 # References
+
+Petti B, Gilani S (2022). baseballr: Acquiring and Analyzing Baseball Data. R package version 1.3.0, 
+[https://CRAN.R-project.org/package=baseballr.](https://CRAN.R-project.org/package=baseballr.){target="_blank"}
+
