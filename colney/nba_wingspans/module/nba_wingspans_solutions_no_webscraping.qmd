@@ -5,14 +5,11 @@ format: html
 
 In professional basketball, physical traits can have a major impact on how a player performs. One key trait that often draws attention from scouts and analysts is **wingspan**, the distance from fingertip to fingertip with arms fully extended.
 
-This worksheet explores the question:
-How does wingspan, especially wingspan relative to height, relate to player performance in the NBA?
+This worksheet explores the question: How does wingspan, especially wingspan relative to height, relate to player performance in the NBA?
 
 You’ll analyze data combining NBA player profiles (including height and wingspan) with in-game statistics from the 2024–25 season. A key variable is **wingspan_advantage**: the difference between a player’s wingspan and height, often viewed as a potential edge in defense and rebounding, but a potential disadvantage in shooting.
 
 Throughout this worksheet, you’ll clean and combine messy datasets, visualize relationships, and explore meaningful patterns, just like a data analyst working for an NBA front office. Your goal is to investigate whether a player’s wingspan advantage is linked to any performance metrics, and to think critically about how physical traits might (or might not) translate to on-court impact.
-
-
 
 # 0. Load the Following Packages
 
@@ -37,14 +34,14 @@ Clean the dataset using the following packages from tidyverse: `dplyr`, `tidyr`,
 
 Once you are finished cleaning this dataset, these should be the following variables.
 
-| Variable | Type | Description |
-|------------------------|------------------------|------------------------|
-| `name` | chr | Full name of the NBA player |
-| `team` | chr | Three-letter abbreviation of the team the player is on |
-| `position` | chr | Player's primary on-court position in abbreviated form |
-| `height_inches` | num | Player's height in inches |
-| `wingspan_inches` | num | Player's wingspan in inches |
-| `wingspan_advantage` | num | Difference between wingspan and height in inches (wingspan - height) |
+| Variable             | Type | Description                                                          |
+|----------------------|------|----------------------------------------------------------------------|
+| `name`               | chr  | Full name of the NBA player                                          |
+| `team`               | chr  | Three-letter abbreviation of the team the player is on               |
+| `position`           | chr  | Player's primary on-court position in abbreviated form               |
+| `height_inches`      | num  | Player's height in inches                                            |
+| `wingspan_inches`    | num  | Player's wingspan in inches                                          |
+| `wingspan_advantage` | num  | Difference between wingspan and height in inches (wingspan - height) |
 
 a.  Convert the `height` variable (which is currently a character string like 6'4") into a new numeric variable called `height_inches` that represents each player's height in total inches. **Hint** using helper variables (such as separate variables for feet and inches) can make this process easier.
 
@@ -127,6 +124,9 @@ b.  To tidy the dataset by completing the following steps:
 **Optional:** Use `select()` to keep only the variables you're interested in.
 
 ```{r}
+# We might need to provide a little more guidance here. I dont know if 
+# most students would think of using slice_max without a hint
+
 per_100_poss <-
   per_100_poss %>%
   group_by(player) %>%
@@ -156,9 +156,11 @@ shooting <-
 d.  Combine the two cleaned datasets from Basketball Reference into a single dataset.
 
 ```{r}
+# I think full join is actually the more natural one here. (not that it actually matters for the end 
+# result in this case)
 bball_ref <-
   per_100_poss %>%
-  left_join(shooting, by = "player")
+  full_join(shooting, by = "player")
 ```
 
 # 4. Combine Datasets
@@ -178,6 +180,9 @@ Combine the datasets using **two** different strategies.
 a.  Use `left_join()` to combine the datasets. Do you notice the misspelled names, what happens as a result of the misspelled names?
 
 ```{r}
+# I think anti-join makes more sense here. this way you can identify the players without knowing them ahead of time
+# Plus it looks like it shows that Harry Giles III is mistakenly split into a team called "III"
+
 wingspan %>%
   left_join(bball_ref, by = c("name" = "player"))
 ```
@@ -185,6 +190,9 @@ wingspan %>%
 b.  Use `stringdist_join()` from the `fuzzyjoin` package to combine the datasets. How does the result differ from using `left_join()`?
 
 ```{r}
+# This should probably be labeled as an "optional" problem.
+# also need to load the package
+
 stringdist_join(
   wingspan, bball_ref,
   by = c("name" = "player"),
@@ -216,15 +224,16 @@ combined <-
 
 Use the newly created dataset to investigate potential relationships between a player's physical traits and their performance on the court.
 
+a.  Create a histogram of the `wingspan_advantage` variable to see how common different levels of advantage (or disadvantage) are across players in the NBA.
 
-a. Create a histogram of the `wingspan_advantage` variable to see how common different levels of advantage (or disadvantage) are across players in the NBA.
 ```{r}
 combined %>%
   ggplot(., aes(x = wingspan_advantage)) +
   geom_histogram(binwidth = 1)
 ```
 
-b. Create a scatterplot using `wingspan_advantage` as the explanatory variable and `blk` as the response variable. What kind of relationship, if any, do you observe? Are there any outliers?
+b.  Create a scatterplot using `wingspan_advantage` as the explanatory variable and `blk` as the response variable. What kind of relationship, if any, do you observe? Are there any outliers?
+
 ```{r}
 combined %>%
   ggplot(., aes(x = wingspan_advantage, y = blk)) +
@@ -232,7 +241,8 @@ combined %>%
   geom_smooth(method = "loess", se = FALSE)
 ```
 
-c. Create a scatterplot using `wingspan_inches` as the explanatory variable and `3pt_percentage` as the response variable. Include a regression line, a title, and labels for the x and y axes. Then separate the plot by `position`. What patterns or relationships stand out within or across positions?
+c.  Create a scatterplot using `wingspan_inches` as the explanatory variable and `3pt_percentage` as the response variable. Include a regression line, a title, and labels for the x and y axes. Then separate the plot by `position`. What patterns or relationships stand out within or across positions?
+
 ```{r}
 combined %>%
   ggplot(., aes(x = wingspan_advantage, y = `3pt_rate`)) +
@@ -241,16 +251,8 @@ combined %>%
   facet_wrap(~position)
 ```
 
-d. **Optional:** Investigate any other combination of physical traits and on-court performance metric you find interesting. Create a visualization to explore the relationship and try to explain any patterns or outliers you observe.
+d.  **Optional:** Investigate any other combination of physical traits and on-court performance metric you find interesting. Create a visualization to explore the relationship and try to explain any patterns or outliers you observe.
+
 ```{r}
 
 ```
-
-
-
-
-
-
-
-
-
