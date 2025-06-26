@@ -1,7 +1,7 @@
 ---
 title: "URC_players_data_repo"
 author: "Phoebe Jones" 
-date: "June 24, 2025" 
+date: "June 26, 2025" 
 
 categories:
   - Indicator variables 
@@ -10,17 +10,16 @@ categories:
 
 ## Motivation
 
-Unlike other sports, which often have a “look”, rugby is unique in that it is intended to be accessible to players of various shapes and sizes. Different positions have distinct expectations and 
+Unlike other sports, which often have a “look”, rugby is unique in that it is intended to be accessible to players of various shapes and sizes. Different positions have distinct expectations and therefore are best suited to people with distinct physiques. This makes the height and weight data interesting to explore, especially with regard to position.
 
 ### Understanding Rugby
 
-Rugby is a sport that is primarily popular in Europe. Union rugby (the type this data is from) is played by 15 players on the pitch from each team. The pitch is roughly the size of an American Football field and has goalposts (similar to in football) on either side of the field. These goalposts lie on the “try line”. The goal of the teams is to get the ball past their respective try line, as doing so will score them 7 points. 
+Rugby is a sport that is primarily popular in Europe. Union rugby (the type this data is from) is played by 15 players on the pitch from each team. The pitch is roughly the size of an American Football field and has goalposts (similar to in football) on either side of the field. These goalposts lie on the “try line”. The goal of the teams is to get the ball past their respective try line, as doing so will score them 7 points. Points can also be earned by kicking the ball through the posts during the match.
 
 #### Positions
 
-This data splits the players up into 9 positions: prop, hooker, lock, back row, scrum-half, fly-half, centre, winger, fullback. On the field at one time there are
-
-The position defined as back row is actually 3 different positions: . 
+This data splits the players up into 9 positions: prop, hooker, lock, back row, scrum-half, fly-half, centre, winger, fullback. On the field at one time there are 2 props, 1 hooker, 2 locks, 3 members of the back row, 2 wingers, 2 centres, 1 scrum-half, 1 fly-half, and 1 fullback. The props, locks, hooker, and back row are considered the forwards (generally attackers) and the other positions are the backs (generally defensive players).
+The position defined as back row is actually 2 different positions: 2 flankers and a number 8.
 
 ### United Rugby Championship
 
@@ -42,10 +41,6 @@ The `rugby.csv` data set includes data from all.rugby about the make-up of each 
 | Birthdate   | Player birthdate (dd/mm/yyyy)                |
 | Height      | Player height (meters)                       |
 | Weight      | Player weight (kg)                           |
-| Height_ft   | Player height (ft in)                        |
-| Weight_lb   | Player weight (lb)                           |
-| Contract    | Player contract type (PRO or ACADEMY)        |
-| Length      | Player contract end year                     |
 | Team        | Player team in the URC                       | 
 
 </details>
