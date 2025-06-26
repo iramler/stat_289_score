@@ -1,5 +1,32 @@
 ---
-title: "baseball_data_repo"
-format: html
+title: "MLB Superstar 2024 Pitch-By-Pitch Breakdown"
+author: "Cooper Olney"
+date: "June 23, 2025"
+
+categories:
+  - ___
+  - ___
 ---
 
+## Motivation 
+
+
+
+
+
+
+## Data
+
+
+
+
+
+
+## Questions
+
+
+
+
+
+
+# References

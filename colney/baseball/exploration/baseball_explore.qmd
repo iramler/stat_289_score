@@ -8,8 +8,11 @@ format: html
 
 library(baseballr)
 library(tidyverse)
+library(rvest)
 ```
 
+
+## Trying to get the data with the baseballr package
 ```{r}
 #install.packages("remotes")
 
@@ -24,7 +27,7 @@ playerid_lookup(last_name = "Judge",
 
 ```{r}
 start_date <- "2023-03-01"
-end_date <- "2023-10-01"  # Adjust if playoffs needed
+end_date <- "2023-10-01"
 
 
 judge_id <- playerid_lookup("Judge", "Aaron")$mlbam_id
@@ -37,3 +40,99 @@ judge_pitches <- statcast_search(
   playerid = judge_id
 )
 ```
+
+
+
+
+```{r}
+library(baseballr)
+```
+
+
+### Aaron Judge
+```{r}
+playerid_lookup(last_name = "Judge",
+                first_name = "Aaron")
+```
+
+```{r}
+judge <-
+  scrape_statcast_savant(
+  start_date = "2024-3-28",
+  end_date = "2024-9-29",
+  playerid = 592450,
+  player_type = "batter"
+)
+```
+
+```{r}
+ #judge <-
+  judge %>%
+  select(
+    game_date, inning, outs_when_up, pitch_number, pitch_name, p_throws, description, events, launch_speed, launch_angle, hit_distance_sc, launch_speed_angle, zone, release_speed,release_spin_rate
+    ) %>%
+
+ mutate(events = if_else(events == "", NA, events)) %>% filter(!is.na(events))
+```
+
+```{r}
+write_csv(judge, "judge_batting_2024.csv")
+```
+
+
+### Shohei Ohtani
+```{r}
+playerid_lookup(last_name = "Ohtani",
+                first_name = "Shohei")
+```
+
+```{r}
+ohtani <-
+  scrape_statcast_savant(
+  start_date = "2024-3-28",
+  end_date = "2024-9-29",
+  playerid = 660271,
+  player_type = "batter"
+)
+```
+
+```{r}
+ohtani <- ohtani %>%
+  select(
+    game_date, inning, outs_when_up, pitch_number, pitch_name, p_throws, description, events, launch_speed, launch_angle, hit_distance_sc, launch_speed_angle, zone, release_speed,release_spin_rate
+    )
+```
+
+```{r}
+write_csv(ohtani, "ohtani_batting_2024.csv")
+```
+
+
+### Mookie Betts
+```{r}
+playerid_lookup(last_name = "Betts",
+                first_name = "Mookie")
+```
+
+```{r}
+betts <-
+scrape_statcast_savant(
+  start_date = "2024-3-28",
+  end_date = "2024-9-29",
+  playerid = 605141,
+  player_type = "batter"
+)
+```
+
+```{r}
+betts <-
+  betts %>%
+  select(
+    game_date, inning, outs_when_up, pitch_number, pitch_name, p_throws, description, events, launch_speed, launch_angle, hit_distance_sc, launch_speed_angle, zone, release_speed,release_spin_rate
+    )
+```
+
+```{r}
+write_csv(betts, "betts_batting_2024.csv")
+```
+
