@@ -1,0 +1,81 @@
+---
+title: "NBA Sampling Distribution"
+author: "Cooper and Ivan"
+format: 
+  html:
+    embed-resources: true
+---
+
+We're in need of some sampling distribution modules and I thought I would outline one that you could  make if you are interested.
+
+Sport: NBA
+Player: Shai Gilgeous-Alexander
+Variables: Points (measured at the per game level)
+Parameter of Interest: PPG (average) for post season run for different lengths 
+
+Scenario: Use SGA's regular season points distribution as the population to "model" what if scenarios for his post-season scoring average. 
+
+
+```{r}
+# install.packages("hoopR") # run only once
+```
+
+```{r}
+library(hoopR)
+library(dplyr)
+library(stringr)
+library(lubridate)
+```
+
+
+```{r}
+all_players <- load_nba_player_box(
+  seasons = most_recent_nba_season()
+  )
+
+sga <- all_players |> filter(str_detect(athlete_display_name, "Shai Gilgeous-Alexander")) |>
+  filter(team_name == "Thunder") |>
+  filter(did_not_play == FALSE)
+
+# This gives both post season (season_type == 3)
+# and regular season (season_type == 2)
+# Note that the NBA Cup Championship game is
+# included in game-by-game data here. This
+# means that SGA has 77 regular season games 
+# to use instead of the 76 listed in his
+# Stats page (https://www.espn.com/nba/player/stats/_/id/4278073/shai-gilgeous-alexander)
+
+
+```
+
+
+Here is the process.
+
+1. Extract just regular season games. Use these as the "population".
+2. Export the Points column only to a csv file for StatKey.
+
+StatKey version 
+Sample "n" games from reg season points. Calculate mean points and build the sampling distribution.
+
+Pre-simulation:
+- Look at a dotplot of his Points and describe is (shaoe, center, spread, etc)
+
+
+Simulation 1:
+- Figure out how many games SGA played in the first round and use that as his "n"
+- Can compare his actual PPG for the first round to the dotplot that is created for this simulation
+
+Simulation 2:
+- Append the second round to this (i.e., n is now the total number of games played in the first two rounds)
+
+Simulation 3:
+- Add the conference finals to the sample size
+
+Simulation 4: 
+- Use all 23 playoff games
+- Can again compare his playoff PPG to the resulting distribution
+
+For each Simulation round, have students discuss shape, center, spread for that round. At the end students should come up with some general "rules" or "trends" that they see.
+
+
+This then leads into the Central Limit Theory (Normal model) style.
