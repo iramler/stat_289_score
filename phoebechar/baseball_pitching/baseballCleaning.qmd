@@ -8,9 +8,15 @@ library(tidyverse)
 library(dplyr)
 library(ggplot2)
 
-pitchers <- read.csv("phoebechar/baseball/pitchersLarge.csv")
+pitchers <- read.csv("phoebechar/baseball_pitching/pitchersLarge.csv")
 
-pitchers <- pitchers |> select(player_name, pitch_type, type, release_speed, events, description, des, balls, strikes, outs_when_up)
+pitchers <- pitchers |> select(player_name, pitch_type, type, release_speed, events, description, balls, strikes, outs_when_up)
 
-write_csv(pitchers, "phoebechar/baseball/pitchers.csv")
+pitchers <- pitchers |> unite(count, balls, strikes, sep = "-")
+
+pitchers <- pitchers |> select(!events)
+
+pitchers <- pitchers |> rename(result = type)
+
+write_csv(pitchers, "phoebechar/baseball_pitching/pitchers.csv")
 ```
