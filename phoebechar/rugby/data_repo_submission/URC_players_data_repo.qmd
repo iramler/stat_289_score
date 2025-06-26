@@ -5,23 +5,30 @@ date: "June 24, 2025"
 
 categories:
   - Indicator variables 
+  - Categorical variables
 ---
 
 ## Motivation
 
+Unlike other sports, which often have a “look”, rugby is unique in that it is intended to be accessible to players of various shapes and sizes. Different positions have distinct expectations and 
 
 ### Understanding Rugby
 
+Rugby is a sport that is primarily popular in Europe. Union rugby (the type this data is from) is played by 15 players on the pitch from each team. The pitch is roughly the size of an American Football field and has goalposts (similar to in football) on either side of the field. These goalposts lie on the “try line”. The goal of the teams is to get the ball past their respective try line, as doing so will score them 7 points. 
 
 #### Positions
 
+This data splits the players up into 9 positions: prop, hooker, lock, back row, scrum-half, fly-half, centre, winger, fullback. On the field at one time there are
+
+The position defined as back row is actually 3 different positions: . 
 
 ### United Rugby Championship
 
+The United Rugby Championship (URC) is a global league of 16 club teams from around the world. The championship is tournament style and split into 18 matches with knock-out stages leading to the final.
 
 ## Data
 
-The `rugby.csv` data set includes data from .
+The `rugby.csv` data set includes data from all.rugby about the make-up of each of the teams in the United Rugby Championships.
 
 <details>
 
@@ -30,7 +37,7 @@ The `rugby.csv` data set includes data from .
 | Variable    | Description                                  |
 |-------------|----------------------------------------------|
 | Name        | Player name (First LAST)                     |
-| Position    | Player position (Scrum-Half, Winger, etc.)   |                 
+| Position    | Player position (Scrum-Half, Winger, etc.)   |      
 | Age         | Player age                                   |
 | Birthdate   | Player birthdate (dd/mm/yyyy)                |
 | Height      | Player height (meters)                       |
@@ -47,10 +54,10 @@ Download [URCplayers.csv](URCplayers.csv){target="_blank"}
 
 ## Questions
 
-1. 
+1. Is there a relationship between height/weight and position?
+2. Are some teams younger/older than average?
+3. Are some positions held by older/younger players?
 
 ## References
 
-[Paddlestats Website: Raisin River Race History](https://paddlestats.net/racehistory/RAISIN)
-
-[Raisin River Race Website](https://rrca.on.ca/page.php?id=13)
+[All Rugby URC Table](https://all.rugby/tournament/urc/table)

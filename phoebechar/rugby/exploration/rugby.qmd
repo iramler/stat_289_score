@@ -11,11 +11,13 @@ library(stringr)
 
 players <- read.csv("phoebechar/rugby/rugby.csv")
 
-rename(players, Birthdate = Birthdate.)
+players <- players |> rename(Birthdate = Birthdate.)
 
 players <- players |> mutate(Age = parse_number(Age))
 
 players <- players |> mutate(Height = parse_number(Height), Weight = parse_number(Weight)) 
+
+players <- players |> rename(Height_ft = Height..ft.in.) |> rename(Weight_lb = Weight.st.lb)
 
 write_csv(players, "phoebechar/rugby/data_repo_submission/URCplayers.csv")
 
