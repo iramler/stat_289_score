@@ -76,9 +76,17 @@ NCPA male and female players (380 cases with 12 variables) data:
 
 ### Materials
 
+R qmd file:
+
 [Class handout](pickleball_worksheet.qmd)
 
 [Class handout - with solutions](pickleball_solutions.qmd)
+
+Word Document:
+
+[Class handout](pickleball_worksheet.docx)
+
+[Class handout - with solutions](pickleball_solutions.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of matched pairs t-test. 

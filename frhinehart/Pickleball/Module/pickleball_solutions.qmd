@@ -1,12 +1,12 @@
 ---
-title: "pickleball_solutions"
+title: "Pickleball Matched Pairs Solutions"
 Authors: Faith Rhinehart
 execute: 
   echo: true
   warning: false
   error: true
 format: 
-  html:
+  docx:
     embed-resources: true
 ---
 

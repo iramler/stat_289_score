@@ -1,25 +1,19 @@
 ---
-title: "pickleball_worksheet"
+title: "Pickleball Matched Pairs Worksheet"
 Authors: Faith Rhinehart
 execute: 
   echo: true
   warning: false
   error: true
 format: 
-  html:
+  docx:
     embed-resources: true
 ---
 
 Pickleball is a fast-paced sport blending tennis, badminton, and ping-pong, played with paddles and a plastic ball on a small court. College tournaments feature singles, doubles, and mixed doubles in a best-of-three format, emphasizing strategy, teamwork, and precision. Player performance is often tracked using the DUPR (Dynamic Universal Pickleball Rating) system, which rates skill from 2.000 to 8.000 based on match results, opponent strength, and recent play. A Reliability Score (1–100%) reflects how accurate a rating is, with 60%+ considered dependable.
 
 Read in the Dataset:
-```{r}
-library(readr)
-library(dplyr)
-library(ggplot2)
-library(tidyr)
 
-```
 
 ## 1 - Creating a boxplot 
 
@@ -87,7 +81,7 @@ We can also do this process using the t.test function in r which allows us to pe
 
 ## 4 - Performing a matched pairs hypothesis test using R function:
 
-A) perform a matched pairs hypothesis t-test using the `t.test()` function and setting `paired = TRUE`. Include all parts of a formal hypothesis test. 
+A) perform a matched pairs hypothesis t-test. Include all parts of a formal hypothesis test. 
 
 
 
