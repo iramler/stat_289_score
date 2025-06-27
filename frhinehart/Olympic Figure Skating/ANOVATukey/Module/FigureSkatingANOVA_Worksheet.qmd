@@ -6,7 +6,8 @@ execute:
   warning: false
   error: true
 format: 
-  html:
+  docx: 
+  html: 
     embed-resources: true
 ---
 
@@ -45,7 +46,7 @@ a - State the null hypothesis and alternative hypothesis
 b - Preform an Anova to determine if there is an significant difference of `TP` (Total Points) between the years using the aov() function. You will need to change `Year` to a factor. 
 
 
-c - Report the F-Staistic, degrees of freedom, and p-value
+c - Report the F-Statistic, degrees of freedom, and p-value
 
 
 d - Use the p-value to make a conclusion

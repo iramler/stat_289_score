@@ -125,3 +125,4 @@ ggplot(data = classSoccer, aes(x = MIN, y = `Career Goals`, color = Sex)) +
        y = "Career Goals") +
   theme_minimal() 
 ```
+
