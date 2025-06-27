@@ -1,5 +1,5 @@
 ---
-title: "Effects on Total Points"
+title: "Figure Skating Effects on Total Points"
 author:
   - name: Faith Rhinehart
     affiliation:
@@ -75,9 +75,17 @@ Download data:
 
 ### Materials
 
+R qmd file:
+
 [Class handout](TwoWayANOVA_Worksheet.qmd)
 
 [Class handout - with solutions](TwoWayANOVA_Solutions.qmd)
+
+Word Document:
+
+[Class handout](TwoWayANOVA_Worksheet.docx)
+
+[Class handout - with solutions](TwoWayANOVA_Solutions.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of Two way Interaction ANOVA and how to perform the hypothesis test.

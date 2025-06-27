@@ -1,5 +1,5 @@
 ---
-title: "FigureSkatingAnova_Solutions"
+title: "Figure Skating One-Way Anova Solutions"
 Authors: Faith Rhinehart
 execute: 
   echo: true
@@ -18,7 +18,7 @@ library(ggplot2)
 library(tidyverse)
 library(here)
 library(dplyr)
-menSkating <- read_csv(here::here("frhinehart/Olympic Figure Skating/Module/MensFigureSkating.csv"))
+menSkating <- read_csv(here::here("C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Olympic Figure Skating/ANOVATukey/Module/MensFigureSkating.csv"))
 ```
 
 1) Create a box plot graph with `Year` on the x-axis and `TP` (Total Points) on the y-axis. Group by Year to get a box plot for each year. Describe what you see. 
@@ -40,7 +40,7 @@ Independence - Yes
 Normality - Yes, the box plots are not significantly skewed
 Constant Variance - Yes the whiskers are roughly the same.
 
-Now that we have checked the assumptions we can preform ANOVA. 
+Now that we have checked the assumptions, we can perform ANOVA. 
 
 3) 
 

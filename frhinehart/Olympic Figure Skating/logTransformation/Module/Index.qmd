@@ -71,9 +71,17 @@ Download data: [MensFigureSkating.csv](C:/Users/0211f/GitHub/slu_score_module_de
 
 ### Materials
 
+R qmd file:
+
 [Class handout](Figure_Skating_Worksheet.qmd)
 
-[Class handout - with solutions](Figure_skating_Solutions.qmd)
+[Class handout - with solutions](Figure_Skating_Solutions.qmd)
+
+Word Document:
+
+[Class handout](Figure_Skating_Worksheet.docx)
+
+[Class handout - with solutions](Figure_Skating_Solutions.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of model building, interpreting coefficients, and the process of log transformations.

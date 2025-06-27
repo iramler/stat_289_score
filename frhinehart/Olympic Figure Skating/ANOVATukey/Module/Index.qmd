@@ -12,7 +12,7 @@ categories:
   - ANOVA
   - Post Hoc Tukey Test
   - Confidence Interval
-  - Pair Wise Comparisons
+  - Pair Wise 
 ---
 
 ### Background to Figure Skating Video
@@ -75,9 +75,17 @@ Download data: [MensFigureSkating.csv](frhinehart/Olympic Figure Skating/Module/
 
 ### Materials
 
+R qmd file:
+
 [Class handout](FigureSkatingANOVA_Worksheet.qmd)
 
 [Class handout - with solutions](FigureSkatingANOVA_Solutions.qmd)
+
+Word document:
+
+[Class handout](FigureSkatingANOVA_Solutions.docx)
+
+[Class handout - with solutions](FigureSkatingANOVA_Worksheet.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of how the process of One-way ANOVA and Pair-wise Comparisons (such as Post Hoc Tukey test) works. 

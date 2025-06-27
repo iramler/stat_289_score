@@ -1,25 +1,17 @@
 ---
-title: "Figure_skating_Worksheet"
+title: "Figure Skating Log Transformation Worksheet"
 Authors: Faith Rhinehart
 execute: 
   echo: true
   warning: false
 format: 
-  html:
+  docx:
     embed-resources: true
 ---
 
 Figure skating is a sport where people perform routines on ice to music, combining athletic skill with artistic expression. Skaters compete in different categories like men's singles, women's singles, pairs (a man and a woman skating together), and ice dance (which focuses more on rhythm and movement). Each skater or team performs two routines: the short program and the free skate. The short program is a shorter routine with a list of required moves that every skater must include. Judges look at how well each move is done and how smoothly everything fits with the music. The free skate is longer and gives skaters more freedom to show their personal style and creativity. They still need to include certain types of moves, but they can choose how to put them together. Judges give scores for both routines based on how difficult the moves are, how well they’re done, and how artistic the performance is. The scores from both routines are added together, and the skater or team with the highest total wins.
 
-Reading in the Dataset:
-```{r}
-library(readr)
-library(ggplot2)
-library(tidyverse)
-library(rvest)
-library(here)
-library(dplyr)
-```
+Read in the Dataset:
 
 
 Question 1:
@@ -31,20 +23,17 @@ b) Provide an interpretation of the intercept of the model.
 
 
 c) Plot the model on a scatterplot and add a smoother. Comment on any trends you see on the graph.
+ 
+
+Question 2: 
+
+Consider the new variable "YearsSince2006" which tell us how many years since 2006. Use the internet to determine what is special about the number used to create the new variable? What would be an interpretation of the new variable? Would you rather create the new variable by subtracting mean(Year)? Why or why not? Create this new variable in your dataset.
 
 
-Question 3: 
-
-Consider the new variable being made in the code below. Use the internet to determine what is special about the number used to create the new variable? What would be an interpretation of the new variable? Would you rather create the new variable by subtracting mean(Year)? Why or why not? (Before we move on, we will give the new variable a better name.)
-```{r}
-Skating2 <- Skating |>
-  mutate(YearsSince2006 = Year - 2006)
-```
-
-Question 4: Fit a model that uses the new variable created above to predict `TP`. Provide an interpretation of the intercept of the model.
+Question 3: Fit a model that uses the new variable created above to predict TP. Provide an interpretation of the intercept of the model.
 
 
-Question 5:
+Question 4:
 
 a) Fit a model that uses `SP` (Short program) to predict `FS` (Free Skating). Comment on the 4 model assumptions and if applicable, provide relevant plots to support your answer.
 
@@ -54,6 +43,5 @@ b) Based on the answers in part a what transformation should you preform on what
 
 c) Preform a the transformation on and write down the fitted model below using the model summary output.
 
-
-d) Interpret $$\hat{\beta{_0}}$$ and $$\hat{\beta{_1}}$$. 
+d) Interpret Beta_0 and Beta_1. 
 
