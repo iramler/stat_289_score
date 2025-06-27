@@ -5,7 +5,7 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
-date: "June 17, 2025"
+date: "June 27, 2025"
 description: "Using player data from the United Rugby Championships to explore indicator variables"
 editor: 
   canonical: true
