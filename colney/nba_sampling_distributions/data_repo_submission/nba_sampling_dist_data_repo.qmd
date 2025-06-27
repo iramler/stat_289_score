@@ -1,0 +1,47 @@
+---
+title: "Shai Gilgeous-Alexander 2024-25 Points"
+author: "Cooper Olney"
+date: "June 27, 2025"
+
+categories:
+  - Sampling Distribution for Sample Mean
+---
+
+
+## Motivation
+
+The 2024-25 NBA season was a historic one for both Shai Gilgeous-Alexander (SGA) and the Oklahoma City Thunder. SGA led the league in scoring, was named NBA MVP and capped off the year with the Finals MVP as the Thunder claimed their first ever NBA Championship. His scoring consistency and ability to take over game made one of the league's most dominant offensive forces. This dataset, which contains SGA's point totals from every regular seasons game, offers a snapshot of one of the most impressive seasons in recent NBA history.
+
+In addition to its basketball significance, this dataset also serves as a valuable resource for exploring foundational ideas in statistics, such as sampling distributions of the sample mean. By treating his regular season performances as a population, we can use this data to simulate different scenarios, estimate averages from smaller samples, and investigate how sample data can be used to make broader predictions. 
+
+
+## Data
+The **sga_points_2025.csv** dataset contains 77 rows and 1 column. Each row represents a game that Shai Gilgeous-Alexander played during the 2024-25 regular season. **Note:** The dataset includes the NBA Cup Championship game, which is not officially counted in regular season statistics by the NBA.
+
+Download Data:[sga_points_2025.csv](/data_repo_submission/sga_points_2025.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+| points    | Points scored by Shai Gilgeous-Alexander during each 2024-25 regular season game.
+
+</details>
+
+
+## Questions
+
+1. What does SGA's regular season scoring distribution look like in terms of shape, center and spread?
+
+2. How does the distribution of sample means change as we increase the sample size from 7 games (one full playoff series) to his full 23 game playoff run?
+
+3.How does SGA's actual playoff scoring average compare to the simulated sampling distributions, and what does this tell us about the role of sample size in interpreting performance?
+
+
+## References
+
+Saiem Gilani (2023). hoopR: Access Men's Basketball Play by Play Data. R package version 2.1.0, 
+[https://CRAN.R-project.org/package=hoopR](https://CRAN.R-project.org/package=hoopR){target="_blank"}
+

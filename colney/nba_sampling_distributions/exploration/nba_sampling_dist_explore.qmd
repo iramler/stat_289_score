@@ -1,0 +1,39 @@
+---
+title: "nba_sampling_dist_explore"
+format: html
+---
+
+
+```{r}
+# install.packages("hoopR")
+```
+
+```{r}
+library(hoopR)
+library(dplyr)
+library(stringr)
+library(lubridate)
+```
+
+```{r}
+all_players <- load_nba_player_box(
+  seasons = most_recent_nba_season()
+  )
+
+sga <- all_players |> filter(str_detect(athlete_display_name, "Shai Gilgeous-Alexander")) |>
+  filter(team_name == "Thunder") |>
+  filter(did_not_play == FALSE) |>
+  filter(season_type == 2) %>%
+  select(points)
+```
+
+```{r}
+write_csv(sga, "sga_points_2025.csv")
+```
+
+
+
+
+
+
+
