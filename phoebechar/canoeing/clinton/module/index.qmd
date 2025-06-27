@@ -89,9 +89,11 @@ The data are compiled from the [Paddlestats Website](https://paddlestats.net/rac
 
 ### Materials
 
-[Module Worksheet](clinton_module_worksheet.qmd){target="_blank"}
+[Module Worksheet (R Version)](clinton_module_worksheet.qmd){target="_blank"}
 
-[Solutions to Worksheet](clinton_module_SOLUTIONS.qmd){target="_blank"}
+[Module Worksheet (non-R Version)](Clinton_DataVis_Graphing.docx)
+
+[Solutions to Worksheet (R Version)](clinton_module_SOLUTIONS.qmd){target="_blank"}
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Upon conclusion of this module, students will have a greater understanding of data manipulation and visualization and will be better prepared to use both with less clear-cut data.

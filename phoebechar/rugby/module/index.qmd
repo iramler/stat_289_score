@@ -70,9 +70,11 @@ The data are compiled from the All.Rugby Website [https://all.rugby/tournament/u
 
 ### Materials
 
-[Module Worksheet](URC_module_worksheet.qmd){target="_blank"}
+[Module Worksheet (R version)](URC_module_worksheet.qmd){target="_blank"}
 
-[Solutions to Worksheet](URC_module_SOLUTIONS.qmd){target="_blank"}
+[Module Worksheet (non-R version)](URC_Indicator_Vars.docx){target="_blank"}
+
+[Solutions to Worksheet (R version)](URC_module_SOLUTIONS.qmd){target="_blank"}
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Upon conclusion of this module, students will have a greater understanding of indicator variables, including how to incorporate them and interpret their coefficients.
