@@ -24,12 +24,10 @@ Pickleball is a fast-paced sport blending tennis, badminton, and ping-pong, play
 
 The pickleBall dataset features data from the NCPA (National Collegiate Pickleball Association) of male and female players. Variables include characteristics such as name and sex. Other variables included the overrall, singles, doubles, and mixed rating and the overall, singles, doubles, and mixed reliability score. The relevant variables for this specific module are doubles reliability and singles reliability.   
 
-For the sake of this module, the data set was tidied so that it excluded any Skater who did not advance to the Free Skate round.
-
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 Learning Objectives:
 
-1. Students will learn how to perform matched pairs t-test in R Studio
+1. Students will learn how to perform matched pairs t-test
 
 2. Student will practice interpreting results
 
@@ -38,9 +36,9 @@ Learning Objectives:
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-For this activity, students will need to use R Studio. 
+For this activity, students will need to use a statistical software. 
 
-Students are expected to understand the concept of hypothesis forming, rejecting hypothesis, confidence intervals and interpreting output. Students are also expected to now how to code basic ggplots, fit models, and use functions in R Studio.
+Students are expected to understand the concept of hypothesis forming, rejecting hypothesis, confidence intervals and interpreting output. Students are also expected to now how to code basic plots, fit models, and use functions.
 
 This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
 :::
@@ -51,9 +49,7 @@ This activity would be suitable for an in-class activity or as an out-of-class a
 
 The pickleBall data contains ratings and reliability scores for collegiate matches. 
 
-Download data: 
-
-[pickleBall.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Pickleball/Data_repository/pickleBall.csv)
+Download data: [pickleBall.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Pickleball/Data_repository/pickleBall.csv)
 
 <details>
 
@@ -85,5 +81,5 @@ NCPA male and female players (380 cases with 12 variables) data:
 [Class handout - with solutions](pickleball_solutions.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Students should gain an understanding of matched pairs t-test in R Studio. 
+Students should gain an understanding of matched pairs t-test. 
 :::
