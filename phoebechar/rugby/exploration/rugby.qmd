@@ -10,7 +10,7 @@ library(readr)
 library(stringr)
 library(lubridate)
 
-players <- read.csv("phoebechar/rugby/rugby.csv")
+players <- read.csv("phoebechar/rugby/exploration/rugby.csv")
 
 players <- players |> rename(Birthdate = Birthdate.)
 
@@ -30,7 +30,7 @@ teams <- teams |> mutate(AvgAge = mean(Age, na.rm = TRUE), AvgHeight = mean(Heig
 
 teams <- teams |> select(Team, TotalAge, AvgAge, TotalHeight, AvgHeight, TotalWeight, AvgWeight)
 
-performance <- read.csv("phoebechar/rugby - performance.csv")
+performance <- read.csv("phoebechar/rugby/exploration/rugby - performance.csv")
 
 performance <- performance |> mutate(Team = str_to_lower(Team))
 
@@ -44,7 +44,3 @@ URC_players <- URC_players |> filter(!is.na(Height), !is.na(Weight))
 
 write_csv(URC_players, "phoebechar/rugby/module/URCpositions.csv")
 ```
-
-```{r}
-```
-

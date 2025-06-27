@@ -4,9 +4,9 @@ author: "Phoebe Jones"
 date: "June 18, 2025" 
 
 categories:
-  - Ggplot
-  - Dplyr
-  - Beginner data cleaning
+  - Graphing
+  - Filtering
+  - Data manuipulation
 ---
 
 ## Motivation
@@ -48,14 +48,11 @@ Each row in the `full_clinton` data set represents a specific paddler from a yea
 | byYrOver    | Rank out of all the boats that year (all classes)         |
 | byYrBoat    | Rank out of all boats of the same type that year          |
 | courseID    | Version of the course raced (all the same here)           |
-| notes       | Extra information (usually about class)                   |
 | personID    | The person's PaddleStats ID                               |
 | displayName | Name of the racer                                         |
-| sortName    | Name of the race with last name first                     |
 | city        | Racer's home city (as given at registration)              |
 | state       | Racer's home state or province (as given at registration) |
 | country     | Racer's home country (as given at registration)           |
-| teamName    | Racer's team name                                         |
 | status      | Finishing status (DNF, DNS, DQ, etc.)                     |
 
 </details>

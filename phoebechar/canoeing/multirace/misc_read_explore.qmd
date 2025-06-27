@@ -42,4 +42,12 @@ ggplot(raisin, aes(x = time)) +
   geom_histogram()
 ```
 
+```{r}
+clint <- read.csv("phoebechar/canoeing/clinton/data_repo_submission/full_clinton.csv")
+
+clint <- clint |> select(!notes & !sortName &!teamName)
+
+write_csv(clint, "phoebechar/canoeing/clinton/data_repo_submission/full_clinton.csv")
+```
+
 
