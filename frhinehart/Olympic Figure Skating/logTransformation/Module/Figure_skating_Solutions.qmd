@@ -19,8 +19,7 @@ library(tidyverse)
 library(rvest)
 library(here)
 library(dplyr)
-Skating <- read_csv(here::here("C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Olympic Figure Skating/logTransformation/Module/MensFigureSkating.csv")) |>
-  select(2:7)
+Skating <- read_csv(here::here("C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Olympic Figure Skating/logTransformation/Module/MensFigureSkating.csv"))
 ```
 
 Question 1:
