@@ -50,9 +50,9 @@ The MensFigureSkating data and womensFigureSkating contains scores from skaters 
 
 Download data: 
 
-:[MensFigureSkating.csv](MensFigureSkating.csv)
+[MensFigureSkating.csv](MensFigureSkating.csv)
 
-:[womensFigureSkating.csv](womensFigureSkating.csv)
+[womensFigureSkating.csv](womensFigureSkating.csv)
 
 
 <details>
@@ -74,9 +74,9 @@ Download data:
 
 ### Materials
 
-:[Class handout](TwoWayANOVA_Worksheet.qmd)
+[Class handout](TwoWayANOVA_Worksheet.qmd)
 
-:[Class handout - with solutions](TwoWayANOVA_Solutions.qmd)
+[Class handout - with solutions](TwoWayANOVA_Solutions.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of Two way Interaction ANOVA and how to perform the hypothesis test.

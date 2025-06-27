@@ -51,7 +51,7 @@ The menSkating data contains scores from skaters in the Winter Olympics since 20
 
 Download data: 
 
-:[MensFigureSkating.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Olympic Figure Skating/logTransformation/Module/MensFigureSkating.csv)
+[MensFigureSkating.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Olympic Figure Skating/logTransformation/Module/MensFigureSkating.csv)
 
 <details>
 
@@ -72,9 +72,9 @@ Download data:
 
 ### Materials
 
-:[Class handout](Figure_Skating_Worksheet.qmd)
+[Class handout](Figure_Skating_Worksheet.qmd)
 
-:[Class handout - with solutions](Figure_skating_Solutions.qmd)
+[Class handout - with solutions](Figure_skating_Solutions.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of model building, interpreting coefficients, and the process of log transformations.

@@ -55,7 +55,7 @@ The menSkating data contains scores from skaters in the Winter Olympics since 20
 
 Download data: 
 
-:[MensFigureSkating.csv](frhinehart/Olympic Figure Skating/Module/MensFigureSkating.csv)
+[MensFigureSkating.csv](frhinehart/Olympic Figure Skating/Module/MensFigureSkating.csv)
 
 <details>
 
@@ -76,9 +76,9 @@ Download data:
 
 ### Materials
 
-:[Class handout](FigureSkatingANOVA_Worksheet.qmd)
+[Class handout](FigureSkatingANOVA_Worksheet.qmd)
 
-:[Class handout - with solutions](FigureSkatingANOVA_Solutions.qmd)
+[Class handout - with solutions](FigureSkatingANOVA_Solutions.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of how the process of ANOVA and the Post Hoc Tukey test works in R Studio. 
