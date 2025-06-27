@@ -23,19 +23,21 @@ If you are unfamiliar with Soccer, please watch this video:
 
 Soccer, also known as football in many parts of the world, is a globally popular sport. Two teams of eleven players (4 defenders, 4 midfielders, 2 forwards, and 1 goalkeeper) compete to score goals by maneuvering a ball into the opposing team’s net using any part of the body except their hands and arms (goalkeepers are the exception). The game emphasizes a blend of physical endurance, technical skill, and strategic teamwork. Games are 90 minutes long, divided into two 45-minute halves, with extra time and penalty shootouts used if necessary to determine a winner. Players are evaluated not only on goals and assists but also on their passing accuracy, defensive contributions, and overall impact on the game. Referees use yellow and red cards to manage player behavior and maintain fairness on the field. A yellow card serves as a warning for actions such as reckless tackles, delaying the game, or showing dissent toward the referee. If a player receives two yellow cards in one match, it results in a red card, meaning the player is ejected from the game. A red card can also be given directly for more serious offenses like violent conduct, serious foul play, or using offensive language. When a player is shown a red card, their team must continue the match with one fewer player.
 
-The two dataseta in this module features data from male players and female players on the U.S National Team in 2024. Variables include numerical characteristics of the player such as goals, assists, Minutes playes, games played etc. Year. All of the variables are relevant for this module.
+The two dataseta in this module features data from male players and female players on the U.S National Team in 2024. Variables include numerical characteristics of the player such as goals, assists, Minutes playes, games played etc. All of the variables are relevant for this module.
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 Learning Objectives:
 
 1. Students will learn data manipulation for analysis
 
+2. Students will learn to add labels to graphs
+
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-For this activity, students will need to use R Studio. 
+For this activity, students will need to use R. 
 
-Students are expected to understand the basic data manipulation strategies used in R. Students are also expected to now how to code basic ggplots, and how to use dplyr functions in R Studio.
+Students are expected to understand the basic data manipulation strategies used in R. Students are also expected to now how to code basic ggplots, and how to use dplyr functions in R.
 
 This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
 :::
