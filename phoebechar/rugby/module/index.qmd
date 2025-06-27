@@ -1,0 +1,79 @@
+---
+title: "United Rugby Championships: Indicator Variables"
+author:
+  - name: Phoebe Jones
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+date: "June 17, 2025"
+description: "Using player data from the United Rugby Championships to explore indicator variables"
+editor: 
+  canonical: true
+categories:
+  - Multiple Linear Regression
+  - Indicator Variables
+---
+
+## Module
+
+Please note that these materials have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction
+
+The United Rugby Championship (URC) is a global league of 16 club teams from around the world. The championship is tournament style and split into 18 matches with knock-out stages leading to the final. This championship is one of the most important competitions for these club teams and is very competitive.
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This contains clear instructions and could be used as an out-of-class homework assignment that should take between 30 minutes and an hour.
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, students will:
+
+1.  Be able to define indicator variables
+2.  Understand the role of indicator variables
+3.  Be able to assess the appropriateness of indicator variables
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Students should have a brief, introductory knowledge of indicator variables.
+:::
+
+::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
+Students will need to use RStudio.
+:::
+
+### Data
+
+This activity uses a smaller version of the data set: [URCplayers.csv](){target="_blank"}
+
+The `URCplayer.csv` data set contains data from all.rugby about the make-up of each of the teams in the United Rugby Championships. There are 723 players with 7 variables recorded for each. The data used for this activity has been filtered to remove players with `NA` values for weight or height and only includes 6 positions: prop, lock, hooker, scrum-half, fly-half, and fullback.
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable  | Description                                |
+|-----------|--------------------------------------------|
+| Name      | Player name (First LAST)                   |
+| Position  | Player position (Scrum-Half, Winger, etc.) |
+| Age       | Player age                                 |
+| Birthdate | Player birthdate (dd/mm/yyyy)              |
+| Height    | Player height (meters)                     |
+| Weight    | Player weight (kg)                         |
+| Team      | Player team in the URC                     |
+
+</details>
+
+#### Data Source
+
+The data are compiled from the All.Rugby Website [https://all.rugby/tournament/urc/table](https://all.rugby/tournament/urc/table){target="_blank"}.
+
+### Materials
+
+[Module Worksheet](URC_module_worksheet.qmd){target="_blank"}
+
+[Solutions to Worksheet](URC_module_SOLUTIONS.qmd){target="_blank"}
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Upon conclusion of this module, students will have a greater understanding of indicator variables, including how to incorporate them and interpret their coefficients.
+:::
