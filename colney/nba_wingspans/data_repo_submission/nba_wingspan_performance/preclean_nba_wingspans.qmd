@@ -28,13 +28,37 @@ preclean <- wingspans %>%
   select(-1) %>%
   clean_names() %>%
   rename(wingspan_advantage = length) %>%
-  arrange(name) %>%
+  arrange(name)
+```
+
+
+```{r}
+preclean <-
+  preclean %>%
+  slice(-179) %>%
+  filter(name != "Alexandre SarrWAS | PF" & name != "Carlton CarringtonWAS | SG") %>%
+  slice(-96, -377, -429) %>%
+  mutate(
+    name = if_else(name == "Danté ExumDAL | SG", "Dante ExumDAL | SG", name),
+    name = if_else(name == "GG JacksonMEM | PF", "GG Jackson IIMEM | PF", name),
+    name = if_else(name == "Monté MorrisPHX | PG", "Monte MorrisPHX | PG", name),
+    name = if_else(name == "Robert Williams IIIPOR | C", "Robert WilliamsPOR | C", name),
+    name = if_else(name == "Ronald Holland IIDET | SG", "Ron HollandDET | SG", name),
+    name = if_else(name == "Tristan da SilvaORL | PF", "Tristan Da SilvaORL | PF", name),
+    name = if_else(name == "Xavier TillmanBOS | PF", "Xavier Tillman Sr.BOS | PF", name)
+  )
   
+# chunk below explains this code more
+```
+  
+```{r}
+# dont run
+
   # remove names duplicates
   filter(name != "Alexandre SarrWAS | PF" & name != "Carlton CarringtonWAS | SG") %>%
   
   # removing weird outlier (player is a free agent and has III at the end of name, so makes it through the str_remove)
-  slice(-149) %>%
+  slice(-149) %>% # maybe not the row for harry giles
   
   # removing names that don't match between the craftedNBA dataset and the bball reference dataset, (kept Sengun and Jimmy Butler for the fuzzyjoin question)
   mutate(

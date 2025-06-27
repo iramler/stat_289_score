@@ -1,6 +1,9 @@
 ---
 title: "NBA Wingspan & Performance Solutions (no webscraping)"
-format: html
+format:
+  html:  embed-resources: true
+  docx: default
+  pdf:  default
 ---
 
 In professional basketball, physical traits can have a major impact on how a player performs. One key trait that often draws attention from scouts and analysts is **wingspan**, the distance from fingertip to fingertip with arms fully extended.
@@ -119,7 +122,9 @@ per_100_poss <- read_csv(here::here("colney/nba_wingspans/data_repo_submission/n
 
 b.  To tidy the dataset by completing the following steps:
 
-**First**, remove duplicate player entries by keeping only the row that represents a player’s full season total. (For example, Luka Dončić was traded mid-season, so he appears three times: once for his stats with DAL, once with LAL, and once for his total 2024–25 season stats.) **Hint:** Use `group_by()` and `ungroup()` to help identify duplicates. Also, games played will be the highest for rows that represent a full season total.
+**First**, remove duplicate player entries by keeping only the row that represents a player’s full season total. For example, Luka Dončić was traded mid-season, so he appears three times: once for his stats with DAL, once with LAL, and once for his total 2024–25 season stats.
+
+**Hint:** Use `group_by(player)` to group rows by player name. Then use `slice_max()` and order by games to keep only the row wheer each player had the most games played, which will be their season total. Finally, use `ungroup()` to remove the grouping.
 
 **Optional:** Use `select()` to keep only the variables you're interested in.
 
@@ -167,27 +172,22 @@ bball_ref <-
 
 Combine the cleaned wingspan dataset from part 2, with the combined Basketball Reference dataset you created in part 3.d.
 
-In the 'nba_wingspan_2025.csv' file, two names were intentionally misspelled compared to their spellings on Basketball Reference.
+In the 'nba_wingspan_2025.csv' file, two names were misspelled compared to their spellings on Basketball Reference. Keep this in mind as you work through the questions.
 
--   CSV spelling → Correct spelling (Basketball Reference)
--   Jimmy Butler III → should be Jimmy Butler
--   Alperen Sengun → should be Alperen Şengün
-
-Keep this in mind as you work through the questions.
-
-Combine the datasets using **two** different strategies.
-
-a.  Use `left_join()` to combine the datasets. Do you notice the misspelled names, what happens as a result of the misspelled names?
-
+a.  Use `anti_join()` to combine the datasets. What do the resulting rows represent?
 ```{r}
 # I think anti-join makes more sense here. this way you can identify the players without knowing them ahead of time
 # Plus it looks like it shows that Harry Giles III is mistakenly split into a team called "III"
 
 wingspan %>%
-  left_join(bball_ref, by = c("name" = "player"))
+  anti_join(bball_ref, by = c("name" = "player"))
 ```
 
-b.  Use `stringdist_join()` from the `fuzzyjoin` package to combine the datasets. How does the result differ from using `left_join()`?
+b.  **Optional:** Use `stringdist_join()` from the `fuzzyjoin` package to combine the datasets. What issues could this potentially cause?
+
+```{r}
+library(fuzzyjoin)
+```
 
 ```{r}
 # This should probably be labeled as an "optional" problem.
