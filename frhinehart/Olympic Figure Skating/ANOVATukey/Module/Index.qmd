@@ -82,14 +82,17 @@ Download data: [MensFigureSkating.csv](MensFigureSkating.csv)
 R qmd file: 
 
 [Class handout](FigureSkatingANOVA_Worksheet.qmd)
+[Class handout - with solutions](FigureSkatingANOVA_Worksheet_Solutions.qmd)
 
 Word document:
 
 [Class handout](FigureSkatingANOVA_Worksheet.docx)
+[Class handout - with solutions](FigureSkatingANOVA_Worksheet_Solutions.docx)
 
 pdf: 
 
 [Class handout](FigureSkatingANOVA_Worksheet.pdf)
+[Class handout - with solutions](FigureSkatingANOVA_Worksheet_Solutions.pdf)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of how the process of One-way ANOVA and Pair-wise Comparisons (such as Post Hoc Tukey test) works. 
