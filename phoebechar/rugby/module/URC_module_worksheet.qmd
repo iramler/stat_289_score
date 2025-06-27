@@ -39,37 +39,16 @@ players <- players |> mutate(prop_ind = if_else(Position == "Prop", 1, 0),
 
 ### 1. Define the 5th indicator variable (for `Fullback`).
 
-```{r}
-players <- players |> mutate(full_ind = if_else(Position == "Fullback", 1, 0))
-```
-
 ### 2. Fit a model that uses `Height` as a predictor for `Weight` and includes all of the indicator variables. Print a summary of the model.
 
-```{r}
-modPos = lm(Weight ~ Height + prop_ind + hook_ind + lock_ind + scrum_ind + full_ind, data = players)
-
-summary(modPos)
-```
 
 ### 3. What does the summary tell you? Is it consistent with the scatterplot?
 
-The summary shows that the coefficient for fullback is not significant and the coefficient for scrum-half is barely significant. This is consistent with the scatterplot because we can see that the intercepts of the lines for hooker, lock, and prop differ both from each other and the line for the fly-half, but the lines for scrum-half and fullback have very similar intercepts to each other and to the line for fly-half.
-
 ### 4. Is it helpful to have indicator variables for ALL of the different positions in this dataset? Why or why not?
-
-Answers may vary. Students should point out that according to both the scatterplot and the model summary, the scrum-half, fly-half, and fullback positions have very similar lines and most likely do not need separate indicator variables.
 
 ### 5. Regardless of your answer, refit the model without the indicator variables for scrum-half and fullback. Instead we will leave them grouped in with the fly-halves. We will call this group the Backs. Print a summary of the model.
 
-```{r}
-modPos2 = lm(Weight ~ Height + prop_ind + hook_ind + lock_ind, data = players)
-
-summary(modPos2)
-```
-
 ### 6. What does the t-test on the prop indicator variable tell us?
-
-There is significant evidence (t = 46.900, p ~= 0) that there is a difference between the starting weights for players who are in the prop position as compared to players who play in the fly-half, fullback, or scrum-half positions.
 
 ### Run the following code chunk. This scatterplot reflects the change in the model by switching to a single line for the scrum-halves, fullbacks, and fly-halves (the backs).
 ```{r}
@@ -81,6 +60,4 @@ ggplot(players, aes(x = Height, y = Weight)) +
 ```
 
 ### 7. Interpret, in context, the coefficient for one of the indicator variables.
-
-Answers will vary. One example: On average, a player in the hooker position will be 20.31 kg heavier than a back player of the same height.
 
