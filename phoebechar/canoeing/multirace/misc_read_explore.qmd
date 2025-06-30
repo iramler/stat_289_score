@@ -21,16 +21,14 @@ clinton <- clinton$results |> as_tibble() |>
   unnest_wider(col = c(paddlers, elemVals)) |>
   unnest_wider(`1`, names_sep = "_")
 
-clinton <- rename(clinton, classID = classId, time = value, courseID = courseId)
+clinton <- rename(clinton, classID = classId, time = value, courseID = courseId, personID = personId)
 
 clinton <- clinton |> select(!"resultId" & !"raceId" & !"eventId" & !"primaryClass" & !"raceRoleId" & !"isRacePaddler" & !"1_id" & !"1_dType" & !"1_value" & !"allCourses")
 
-clinton <- rename(clinton, personID = personId)
+clinton <- clinton |> select(!notes & !sortName &!teamName)
 
-clinton <- clinton |> filter(time != 0)
+write_csv(clinton, "phoebechar/canoeing/clinton/data_repo_submission/full_clinton.csv")
 
-ggplot(clinton, aes(x = time)) +
-  geom_histogram()
 ```
 
 ```{r}
@@ -40,14 +38,6 @@ raisin <- raisin |> filter(time != 0) |> filter(year != 2017)
 
 ggplot(raisin, aes(x = time)) +
   geom_histogram()
-```
-
-```{r}
-clint <- read.csv("phoebechar/canoeing/clinton/data_repo_submission/full_clinton.csv")
-
-clint <- clint |> select(!notes & !sortName &!teamName)
-
-write_csv(clint, "phoebechar/canoeing/clinton/data_repo_submission/full_clinton.csv")
 ```
 
 

@@ -2,6 +2,7 @@
 title: "Positions in the United Rugby Championships: Understanding Indicator Variables | SOLUTIONS"
 author: "Phoebe Jones"
 format: html
+    embed-resources: TRUE
 ---
 
 Unlike other sports, which often have a “look”, rugby is unique in that it is intended to be accessible to players of various shapes and sizes. Different positions have distinct expectations and therefore are best suited to people with distinct physiques. This makes the height and weight data interesting to explore, especially with regard to position.
@@ -10,7 +11,7 @@ This data contains players from the United Rugby Championship from 6 positions: 
 
 Props are relied on for strength and power and are often used like battering rams against the other team. The hooker is responsible for more technical game play, like winning the ball back and restarting play. Locks are the main source of power on the team and are usually tall and strong in their legs. The scrum-half is responsible for covering many different parts of the pitch and is also useful in attacks, meaning they must be very fast. The fly-half is usually the most important player on the pitch and defines the strategy of the team, making their role more tactical than strength-based. The fullback is the furthest back player on the pitch and needs to be quick to be the last line of defense against attacks.
 
-```{r}
+```{r message = FALSE, warning = FALSE}
 library(tidyverse)
 library(ggplot2) ## for graphing
 library(dplyr) ## for data manipulation

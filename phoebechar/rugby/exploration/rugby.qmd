@@ -9,6 +9,7 @@ library(dplyr)
 library(readr)
 library(stringr)
 library(lubridate)
+library(ggplot2)
 
 players <- read.csv("phoebechar/rugby/exploration/rugby.csv")
 
@@ -44,3 +45,17 @@ URC_players <- URC_players |> filter(!is.na(Height), !is.na(Weight))
 
 write_csv(URC_players, "phoebechar/rugby/module/URCpositions.csv")
 ```
+
+```{r}
+URC <- read.csv("phoebechar/rugby/data_repo_submission/URCplayers.csv")
+
+fly <- URC |> filter(Position == "Fly-half")
+
+fly_age <- fly |> group_by(Team) |> summarise(fly_age = mean(Age, na.rm = TRUE))
+
+fly_perform <- full_join(fly_age, performance)
+
+ggplot(fly_perform, aes(x = fly_age, y = Kicking)) +
+  geom_point()
+```
+

@@ -2,7 +2,9 @@
 title: "General Clinton Canoe Regatta"
 author: "Phoebe Jones" 
 date: "June 18, 2025" 
-
+format:
+    html:
+      embed-resources: true
 categories:
   - Graphing
   - Filtering
@@ -44,8 +46,8 @@ Each row in the `full_clinton` data set represents a specific paddler from a yea
 | overall     | Overall rank (out of all boats ever)                      |
 | byBoat      | Rank out of all boats of the same type                    |
 | byClass     | Rank out of all boats in class (all years)                |
-| byYrClass   | Rank out of the boats in their class in their year        |
 | byYrOver    | Rank out of all the boats that year (all classes)         |
+| byYrClass   | Rank out of the boats in their class in their year        |
 | byYrBoat    | Rank out of all boats of the same type that year          |
 | courseID    | Version of the course raced (all the same here)           |
 | personID    | The person's PaddleStats ID                               |

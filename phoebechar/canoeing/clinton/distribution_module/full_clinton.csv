@@ -1,4 +1,4 @@
-year,boatType,bib,classID,place,time,overall,byBoat,byClass,byYrOver,byYrClass,byYrBoat,courseID,personId,displayName,city,state,country,status
+year,boatType,bib,classID,place,time,overall,byBoat,byClass,byYrOver,byYrClass,byYrBoat,courseID,personID,displayName,city,state,country,status
 2014,Canoe,P21,oc2pro,1,25899,1,1,1,1,1,1,susquehanna70,blaisgu01,Guillame Blais,St Boniface,QC,CAN,NA
 2014,Canoe,P21,oc2pro,1,25899,1,1,1,1,1,1,susquehanna70,pellerma01,Mathieu Pellerin,Shawinigan,QC,CAN,NA
 2014,Canoe,P14,oc2pro,2,25900,2,2,2,2,2,2,susquehanna70,stpiema01,Mathieu St-Pierre,Shawinigam,QC,CAN,NA
@@ -667,7 +667,7 @@ year,boatType,bib,classID,place,time,overall,byBoat,byClass,byYrOver,byYrClass,b
 2018,Canoe,P12,oc2pro,28,30235,315,314,228,35,28,35,susquehanna70,halemi01,Mike Hale,Grayling,MI,USA,NA
 2018,Canoe,P12,oc2pro,28,30235,315,314,228,35,28,35,susquehanna70,marshfl01,Flash Marsh,Mio,MI,USA,NA
 2025,Canoe,V3,oc2cruisermaster,1,30237,316,315,7,64,1,64,susquehanna70,allenti01,Timothy Allen,Westfield,MA,USA,NA
-2025,Canoe,V3,oc2cruisermaster,1,30237,316,315,7,64,1,64,susquehanna70,NA,Gen Matsui,Bethany,CT,USA,NA
+2025,Canoe,V3,oc2cruisermaster,1,30237,316,315,7,64,1,64,susquehanna70,matsuige01,Gen Matsui,Bethany,CT,USA,NA
 2018,Canoe,P35,oc2pro,29,30243,317,316,229,36,29,36,susquehanna70,rossem01,Emma Ellsworth,Orange,MA,USA,NA
 2018,Canoe,P35,oc2pro,29,30243,317,316,229,36,29,36,susquehanna70,lyesiubr01,Brent Lyesiuk,Orange,MA,USA,NA
 2018,Canoe,P45,oc2pro,30,30246,318,317,230,37,30,37,susquehanna70,NA,Alain Paquette,St Jerome,QC,CAN,NA
@@ -3147,8 +3147,8 @@ year,boatType,bib,classID,place,time,overall,byBoat,byClass,byYrOver,byYrClass,b
 2019,Unknown,G16,opentour,NA,0,1650,92,90,180,20,20,susquehanna70,dannja01,Jim Dann,Endwell,NY,USA,DNF
 2019,Canoe,A5,oc2stockalum,NA,0,1651,1521,66,181,6,153,susquehanna70,NA,Morgan George,Sidney Center,NY,USA,DNF
 2019,Canoe,A5,oc2stockalum,NA,0,1651,1521,66,181,6,153,susquehanna70,NA,Chrissy Adamo,Walton,NY,USA,DNF
-2019,Canoe,D3,oc2recmix,NA,0,1652,1522,11,182,2,154,susquehanna70,deando01,Donald Dean,Binghamton,NY,USA,NA
-2019,Canoe,D3,oc2recmix,NA,0,1652,1522,11,182,2,154,susquehanna70,NA,Jenny Cordis,Binghamton,NY,USA,NA
+2019,Canoe,D3,oc2recmix,NA,0,1652,1522,11,182,2,154,susquehanna70,deando01,Donald Dean,Binghamton,NY,USA,DNF
+2019,Canoe,D3,oc2recmix,NA,0,1652,1522,11,182,2,154,susquehanna70,NA,Jenny Cordis,Binghamton,NY,USA,DNF
 2014,Canoe,E8,oc2stock,NA,0,1653,1523,143,189,14,182,susquehanna70,NA,Alan Haight,Manlius,NY,USA,DNS
 2014,Canoe,E8,oc2stock,NA,0,1653,1523,143,189,14,182,susquehanna70,NA,Russ Haight,Manlius,NY,USA,DNS
 2014,Canoe,E15,oc2stock,NA,0,1654,1524,144,190,15,183,susquehanna70,gergke01,Ken Gerg,Emporium,PA,USA,DNS

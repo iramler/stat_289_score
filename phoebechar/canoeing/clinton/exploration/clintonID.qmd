@@ -1,0 +1,18 @@
+---
+title: "clintonID"
+format: html
+---
+
+```{r}
+clinton <- read.csv("phoebechar/canoeing/clinton/data_repo_submission/full_clinton.csv")
+
+clinton <- clinton |> mutate(id = if_else(is.na(personID), 0, 1))
+
+clinton <- clinton |> group_by(year, bib) |> arrange(desc(personID)) |> slice(1) |> ungroup()
+
+clinton <- clinton |> filter(time != 0)
+
+ggplot(clinton, aes(x = id, y = time)) +
+  geom_boxplot(aes(group = id))
+```
+
