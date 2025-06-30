@@ -10,7 +10,9 @@ categories:
 
 ## Motivation
 
-The 2024-25 NBA season was a historic one for both Shai Gilgeous-Alexander (SGA) and the Oklahoma City Thunder. SGA led the league in scoring, was named NBA MVP and capped off the year with the Finals MVP as the Thunder claimed their first ever NBA Championship. His scoring consistency and ability to take over game made one of the league's most dominant offensive forces. This dataset, which contains SGA's point totals from every regular seasons game, offers a snapshot of one of the most impressive seasons in recent NBA history.
+The 2024-25 NBA season was a historic one for the Oklahoma City Thunder, who cpatured their first ever NBA Championship. The Nba Playoffs consist of four rounds, First Round, Second Round, Conference Finals, and NBA Finals, with each round played as a best of seven series. In the 2025, playoffs, the Thunder played a total of 23 games: 4 in the First Round, 7 in the Second Round, 5 in the Conference Finals, and 7 in the NBA Finals.
+
+At the heart of this title run was Shai Gilgeous-Alexander (SGA), who led the league in scoring, was nab NBA MVP and capped off the season by earning the Finals MVP. His scoring consistency and ability to take over games made him one of the most dominant offensive forces in the league. This dataset, which contains SGA's point totals from every regular season game, offers a snapshot of one of the most impressive individual season in recent NBA history.
 
 In addition to its basketball significance, this dataset also serves as a valuable resource for exploring foundational ideas in statistics, such as sampling distributions of the sample mean. By treating his regular season performances as a population, we can use this data to simulate different scenarios, estimate averages from smaller samples, and investigate how sample data can be used to make broader predictions. 
 

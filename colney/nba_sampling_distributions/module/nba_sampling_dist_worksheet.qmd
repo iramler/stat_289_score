@@ -1,0 +1,30 @@
+---
+title: "nba_sampling_dist_worksheet"
+format: html
+---
+
+
+
+
+# 1. Look at dotplot and describe shape, center and spread
+
+
+
+# 2. Use finals as sample size
+
+
+
+# 3. Use all the playoffs as the sample size
+
+
+
+# 4. General rules and trends
+
+
+
+# 5. Central limit theorem
+
+
+
+
+
