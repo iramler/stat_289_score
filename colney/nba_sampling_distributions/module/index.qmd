@@ -1,5 +1,5 @@
 ---
-title: "Shai "
+title: "Shai Gilgeous-Alexander 2024-25 Points"
 author:
   - name: Cooper Olney
     affiliation:
@@ -10,47 +10,50 @@ author:
     affiliation:
       - ref: slu
 date: "June __, 2025"
-description: "____"
+description: "Exploring sampling distribution for the sample mean by looking at Shai Gilgeous-Alexander's game-by-game 2024-25 regular season point totals."
 editor: 
   canonical: true
 categories:
-  - ___
-  - ___
+  - Sampling Distribution for Sample Mean
 ---
 
 ## Module
-
-
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
 
 
 ## Introduction
+The 2024-25 NBA season was a historic one for the Oklahoma City Thunder, who captured their first ever NBA Championship. The NBA Playoffs consist of four rounds, First Round, Second Round, Conference Finals, and NBA Finals, with each round played as a best of seven series. In the 2025, playoffs, the Thunder played a total of 23 games: 4 in the First Round, 7 in the Second Round, 5 in the Conference Finals, and 7 in the NBA Finals.
 
+At the heart of this title run was [Shai Gilgeous-Alexander (SGA)](https://en.wikipedia.org/wiki/Shai_Gilgeous-Alexander){target="_blank"}, who led the league in scoring, was NBA MVP and capped off the season by earning the Finals MVP. His scoring consistency and ability to take over games made him one of the most dominant offensive forces in the league. This dataset, which contains SGA's point totals from every regular season game, offers a snapshot of one of the most impressive individual season in recent NBA history.
 
-
+In addition to its basketball significance, this dataset allows us to explore how statistical tools (such as StatKey) can be used to simulate real-world scenarios. By treating SGA's regular season point totals as the population, we can model specific playoff situations by drawing random samples of different sizes. These simulations help us understand how much variation we might expect in his performances and how likely different playoff outcomes are are based on his regular season scoring.
 
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
 
-1.
+1. Describe the shape, center and spread of a statistical distribution.
 
-2.
+2. Use simulation tools (StatKey) to create sampling distributions of the sample mean.
 
-3.
+3. Comparing sampling distributions from different sample sizes.
 
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 **Technology Requirement:**
 
+This activity uses Statkey or any similar sampling distribution tool.
+
+Previous knowledge...
 
 
 :::
 
 ### Data
+The **sga_points_2025.csv** dataset contains 77 rows and 1 column. Each row represents a game that Shai Gilgeous-Alexander played in during the 2024-25 NBA regular season. **Note** this dataset includes the NBA Cup Championship, but stats from that game are not officially counted in NBA season totals.
 
-
-Download Data: [](){target="_blank"}
+Download Data: [sga_points_2025.csv](/data_repo_submission/sga_points_2025.csv){target="_blank"}
 
 
 <details>
@@ -59,19 +62,20 @@ Download Data: [](){target="_blank"}
 
 | Variable          | Description
 |-------------------|------------------------------------------------
-|     | 
+| points    | Total number of points Shai Gilgeous-Alexander scored in that game.
 
 </details>
 
 #### Data Sources
 
-
+Saiem Gilani (2023). hoopR: Access Men's Basketball Play by Play Data. R package version 2.1.0, 
+[https://CRAN.R-project.org/package=hoopR](https://CRAN.R-project.org/package=hoopR){target="_blank"}
 
 ### Materials
 
-[Class handout]()
+[Class handout](/module/nba_sampling_dist_worksheet.qmd)
 
-[Class handout - with solutions]()
+[Class handout - with solutions](/module/nba_sampling_dist_solutions.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 

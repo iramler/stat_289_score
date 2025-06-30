@@ -28,7 +28,7 @@ Download Data:[sga_points_2025.csv](/data_repo_submission/sga_points_2025.csv){t
 
 | Variable          | Description
 |-------------------|------------------------------------------------
-| points    | Points scored by Shai Gilgeous-Alexander during each 2024-25 regular season game.
+| points    | Total number of points Shai Gilgeous-Alexander scored in that game.
 
 </details>
 
