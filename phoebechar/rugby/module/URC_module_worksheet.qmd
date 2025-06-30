@@ -41,7 +41,6 @@ players <- players |> mutate(prop_ind = if_else(Position == "Prop", 1, 0),
 
 ### 2. Fit a model that uses `Height` as a predictor for `Weight` and includes all of the indicator variables. Print a summary of the model.
 
-
 ### 3. What does the summary tell you? Is it consistent with the scatterplot?
 
 ### 4. Is it helpful to have indicator variables for ALL of the different positions in this dataset? Why or why not?

@@ -1,0 +1,57 @@
+---
+title: "Stars of Bullriding: Champion and Rookie"
+author: "Phoebe Jones" 
+date: "June 30, 2025" 
+format:
+    html:
+      embed-resources: true
+categories:
+  - 
+---
+
+## Motivation
+ 
+ 
+
+### Understanding Bullriding
+
+Bull riding is fairly self-explanatory. Riders are tasked with staying on a bucking bull for at least 8 seconds and riding with style.
+
+### Jose and Hudson
+
+Jose Vitor Leme was the top rider in the Professional Bull Riders group in 2025. Jose is 28, has been riding since 2017 and, in his career, has had 448 rides. Hudson Bolton was named the PBR rookie of the year for 2025. Hudson is 19, had his first ride with PBR in 2023 and has had 32 rides thus far in his career.
+
+## Data
+
+Each row in the `starRiders` data set represents one ride done by either Hudson or Jose in their respective careers.
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable    | Description                                |
+|-------------|--------------------------------------------|
+| season      | Year of the season                         |
+| tour        | Tour the event was a part of               |
+| date        | Date of the event                          |
+| location    | Location of the event                      |    
+| event       | Event the ride was a part of               |
+| bull        | Bull ridden on                             |
+| score       | Score for the ride                         |
+| rider       | Hudson or Jose                             |
+
+</details>
+
+**Download Bullriding Data:** [25riders.csv](25riders.csv){target="_blank"}
+
+
+## Questions
+
+1. 
+
+## References
+
+The data are compiled from . 
+
+[]()
+

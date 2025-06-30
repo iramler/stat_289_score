@@ -23,10 +23,10 @@ Please note that these materials have not yet completed the required pedagogical
 
 ### Introduction
 
-The United Rugby Championship (URC) is a global league of 16 club teams from around the world. The championship is tournament style and split into 18 matches with knock-out stages leading to the final. This championship is one of the most important competitions for these club teams and is very competitive.
+The United Rugby Championship (URC) is a global league of 16 club teams from around the world. The championship is tournament style with and split into 18 matches. This championship is one of the most important competitions for these club teams and is very competitive.
 
 ::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
-This contains clear instructions and could be used as an out-of-class homework assignment that should take between 30 minutes and an hour.
+This could be used as an out-of-class homework assignment that should take between 30 minutes and an hour.
 :::
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
@@ -42,7 +42,7 @@ Students should have a brief, introductory knowledge of indicator variables.
 :::
 
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
-Students will need to use RStudio.
+Students will need to have access to RStudio or another statistics software capable of creating and using indicator variables.
 :::
 
 ### Data
@@ -77,7 +77,7 @@ The data are compiled from the All.Rugby Website [https://all.rugby/tournament/u
 
 [Module Worksheet (non-R version)](URC_Indicator_Vars.docx){target="_blank"}
 
-[Solutions to Worksheet (R version)](URC_module_SOLUTIONS.qmd){target="_blank"}
+[Solutions to Worksheet (R/Quarto version)](URC_module_SOLUTIONS.qmd){target="_blank"}
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Upon conclusion of this module, students will have a greater understanding of indicator variables, including how to incorporate them and interpret their coefficients.

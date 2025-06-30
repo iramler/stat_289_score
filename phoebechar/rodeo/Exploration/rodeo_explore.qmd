@@ -41,6 +41,8 @@ hudson <- hudson |> mutate(rider = "Hudson")
 
 compare <- full_join(hudson, jose)
 
+write_csv(compare, "phoebechar/rodeo/data_repo_submission/starRiders.csv")
+
 full_noDQ <- compare |> filter(score != 0)
 
 ggplot(full_noDQ, aes(x = rider, group = rider, y = score)) +
