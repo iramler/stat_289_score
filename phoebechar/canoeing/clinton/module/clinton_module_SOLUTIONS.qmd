@@ -11,7 +11,7 @@ Downriver racing is a sport where competitors take their watercraft (usually a c
 Completing this race is an impressive feat, and this combined with the race’s fame means there is usually high attendance. However, unlike most races, where the turnout is mostly recreational paddlers, the difficulty of this race means that most paddlers at the General Clinton are pros. This phenomenon has interesting impacts on data from the race.
 
 ```{r message = FALSE, warning = FALSE}
-library(tidyverse)
+library(readr)
 library(dplyr)
 library(ggplot2)
 
@@ -23,62 +23,64 @@ Each row in this data set represents a specific paddler from a year of the Clint
 #### 1. For ease of understanding, modify the data set so the first columns are `displayName` and `bib` number. The order after that does not matter.
 
 ```{r}
-clinton_full <- clinton_full |> select(displayName, bib, everything())
+clinton_full <- 
+  clinton_full |> 
+    relocate(displayName, bib)
 ```
 
 #### 2. Using the fact that each bib number is only assigned to one boat per year, modify the data set to only include each boat/team once (rather than including each racer in a boat/team)
 
 ```{r}
-clinton_full <- clinton_full |> group_by(year, bib) |> slice(1)
+clinton_full <- 
+  clinton_full |> 
+  group_by(year, bib) |> 
+  slice(1)
 ```
 
 #### 3. Make a horizontal bar graph comparing counts of the different classes.
 
 ```{r}
-ggplot(clinton_full, aes(y = classID)) +
+ggplot(data = clinton_full, 
+       mapping = aes(y = classID)
+       ) +
   geom_bar()
 ```
 
 ##### 3.1. Change the color and fill of the bars to any combination you like.
 
 ```{r}
-ggplot(clinton_full, aes(y = classID)) +
-  geom_bar(colour = "darkslategrey", fill = "darkseagreen")
+ggplot(data = clinton_full, 
+       mapping = aes(y = classID)
+       ) +
+  geom_bar(colour = "darkslategrey", 
+           fill = "darkseagreen")
 ```
 
-#### 4. From 2014-2019, the Clinton tracked teams who registered but did not start or did not finish the race by marking them as DNS or DNF, which is entered under 'status' in the data. Modify the data set to only include teams with an NA under 'status'.
+#### 4. From 2014-2019, the Clinton tracked teams who registered but did not start or did not finish the race by marking them as DNS or DNF, which is entered under 'status' in the data. All teams that completed the race were given an `NA` for this variable. Modify the data set to only include teams with an `NA` under `status`.
 
 ```{r}
-clinton_full <- clinton_full |> filter(is.na(status))
+clinton <- 
+  clinton_full |> 
+    filter(is.na(status))
 ```
 
 #### 5. Make a histogram showing the distribution of times.
 
 ```{r}
-ggplot(clinton_full, aes(x = time)) +
-  geom_histogram()
-```
-
-#### 6. We can see a very short bar at time = 0 (which is obviously impossible), indicating one boat with an unrecorded time slipped through our earlier filtering. Filter this boat out and remake the histogram.
-
-```{r}
-clinton <- clinton_full |> filter(time != 0) ## or
-## clinton <- clinton_full |> filter(!(year == 2019 & bib == "D3"))
-## clinton <- clinton_full |> slice(-910)
-
-## remake the histogram
 ggplot(clinton, aes(x = time)) +
   geom_histogram()
 ```
 
-##### 6.1. Change the number of bins (test out a few options!)
+##### 5.1. Change the number of bins (test out a few options!)
 
 ```{r}
 ggplot(clinton, aes(x = time)) +
-  geom_histogram(bins = 17)
+  geom_histogram(bins = 10)
 ```
 
-#### Four common classes at the Clinton are oc2pro, oc2rec, oc2stock, and oc2cruiser. These classes are all tandem (2 person) canoes of various types. Depending on the class, there are different specs the boats are expected to be within.
+
+
+#### Four common classes at the Clinton are `oc2pro`, `oc2rec`, `oc2stock`, and `oc2cruiser`. These classes are all tandem (2 person) canoes of various types. Depending on the class, there are different specs the boats are expected to be within.
 * Rec boats are shortest and heaviest
 * Stock boats are longer but taller/deeper
 * Pro and cruising boats are long and shallow and have very few differences (the choice between the two is mostly attributed to the racer's goal with the race)
@@ -88,15 +90,18 @@ The picture below shows an example of (in order) a rec boat, a stock boat, and a
 
 ![Boat Types](boatTypes.png)
 
-#### 7. Create a version of the data set that only includes the classes mentioned above.
+#### 6. Create a version of the data set that only includes the classes mentioned above.
 ```{r}
-clinton_class <- clinton_full |> filter(classID %in% c("oc2pro", "oc2rec", "oc2stock", "oc2cruiser"))
+clinton_class <- clinton |> 
+  filter(classID %in% c("oc2pro", "oc2rec", "oc2stock", "oc2cruiser"))
 ```
 
 #### 8. With the new dataset, make boxplots showing time distribution for each class. What do the plots tell you?
 
 ```{r}
-ggplot(clinton_class, aes(x = classID, y = time, group = classID)) +
+ggplot(clinton_class, 
+       aes(x = classID, y = time, group = classID)
+       ) +
   geom_boxplot()
 ```
 
