@@ -1,5 +1,5 @@
 ---
-title: "nba_sampling_dist_worksheet"
+title: "Shai Gilgeous-Alexander 2024-25 Points"
 format: html
 ---
 
