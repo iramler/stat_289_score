@@ -88,6 +88,12 @@ Word Document:
 
 [Class handout - with solutions](pickleball_solutions.docx)
 
+pdf Document:
+
+[Class handout](pickleball_worksheet.pdf)
+
+[Class handout - with solutions](pickleball_solutions.pdf)
+
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of matched pairs t-test. 
 :::

@@ -69,7 +69,7 @@ Before we recombine the data sets, it would be helpful to know if the player is 
 
 
 
-8) Create a scatterplot that uses `MIN` to predict `Career Goals` colored by `Sex`. Add a smoother for both genders and appropriate labels to the graph.
+8) Create a scatterplot that uses `Career Caps` to predict `Career Goals` colored by `Sex`. Add a smoother for both genders and appropriate labels to the graph.
 
 
 

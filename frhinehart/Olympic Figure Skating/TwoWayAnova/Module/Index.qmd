@@ -87,6 +87,11 @@ Word Document:
 
 [Class handout - with solutions](TwoWayANOVA_Solutions.docx)
 
+Word Document:
+
+[Class handout](TwoWayANOVA_Worksheet.pdf)
+
+[Class handout - with solutions](TwoWayANOVA_Solutions.pdf)
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of Two way Interaction ANOVA and how to perform the hypothesis test.
 :::

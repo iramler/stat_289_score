@@ -105,9 +105,23 @@ Women's data:
 
 ### Materials
 
+R qmd file:
+
 [Class handout](soccer_Worksheet.qmd)
 
 [Class handout - with solutions](soccer_Solutions.qmd)
+
+Word Document:
+
+[Class handout](soccer_Worksheet.docx)
+
+[Class handout - with solutions](soccer_Solutions.docx)
+
+pdf Document:
+
+[Class handout](soccer_Worksheet.pdf)
+
+[Class handout - with solutions](soccer_Solutions.pdf)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of how the process of data manipulation works and the different strategies used to achieve a certain dataset. 

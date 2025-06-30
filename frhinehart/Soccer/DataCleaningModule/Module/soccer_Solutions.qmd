@@ -96,13 +96,13 @@ combined_Soccer <- bind_rows(cleanedwomenSoccer, cleanedmenSoccer)
 classSoccer <- combined_Soccer |> mutate(`Career Goals` = as.numeric(`Career Goals`), Pos = as.factor(Pos), GP = as.numeric(GP), GS = as.numeric(GS), MIN = as.numeric(MIN), G = as.numeric(G), A = as.numeric(A), YC = as.numeric(YC), RC = as.numeric(RC), `Career Caps` = as.numeric(`Career Caps`), Sex = as.factor(Sex)) 
 ```
 
-8) Create a scatterplot that uses `MIN` to predict `Career Goals` colored by `Sex`. Add a smoother for both genders and appropriate labels to the graph.
+8) Create a scatterplot that uses `Career Caps` to predict `Career Goals` colored by `Sex`. Add a smoother for both genders and appropriate labels to the graph.
 
 ```{r}
-ggplot(data = classSoccer, aes(x = MIN, y = `Career Goals`, color = Sex)) +
+ggplot(data = classSoccer, aes(x = `Career Caps`, y = `Career Goals`, color = Sex)) +
   geom_point() +
   geom_smooth() +
-  labs(title = "Player's Minutes vs. Career Goals",
+  labs(title = "Player's Career Caps vs. Career Goals",
        x = "Total Minutes Played",
        y = "Career Goals") +
   theme_minimal() 
@@ -118,12 +118,12 @@ topTwo <- classSoccer |>
 
 10) Recreate the graph made in question 8 but add the player's name from question 9 to their respective point on the graph.
 ```{r}
-ggplot(data = classSoccer, aes(x = MIN, y = `Career Goals`, color = Sex)) +
+ggplot(data = classSoccer, aes(x = `Career Caps`, y = `Career Goals`, color = Sex)) +
   geom_point() +
   geom_smooth() +
   geom_text(data = topTwo, aes(label = Player), vjust = -0.5, size = 3, show.legend = FALSE) +
-  labs(title = "Player's Minutes vs. Career Goals",
-       x = "Total Minutes Played",
+  labs(title = "Player's Career Caps vs. Career Goals",
+       x = "Career Caps",
        y = "Career Goals") +
   theme_minimal() 
 ```
