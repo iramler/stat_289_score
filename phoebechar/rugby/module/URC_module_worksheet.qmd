@@ -15,7 +15,7 @@ library(tidyverse)
 library(ggplot2) ## for graphing
 library(dplyr) ## for data manipulation
 
-players <- read.csv("phoebechar/rugby/module/URCpositions.csv")
+players <- read.csv("URCpositions.csv")
 ```
 
 ### Run the following code chunk. The scatterplot shows height of players being used as a predictor for weight. The graph has a separate line for each position.

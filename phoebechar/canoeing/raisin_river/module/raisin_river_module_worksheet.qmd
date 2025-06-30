@@ -10,7 +10,7 @@ library(tidyverse)
 library(dplyr)
 library(broom)
 
-RR_dnf_data <- read_csv("phoebechar/canoeing/raisin_river/module/raisin_river_DNF.csv")
+RR_dnf_data <- read_csv("raisin_river_DNF.csv")
 ```
 
 This data set contains flow measurements (indicative of water level) in ft^3/sec and the ratio of DNFs (# of DNFs/total participants) from the Raisin River Race from 2005-2025 (excluding, 2020 and 2021, when the race didn't run, and 2019, which has incomplete data).
