@@ -1,0 +1,70 @@
+---
+title: "outlierSoccer_solutions"
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
+  docx:  default
+  pdf:  default
+---
+
+Soccer, also known as football in many parts of the world, is a globally popular sport. Two teams of eleven players (4 defenders, 4 midfielders, 2 forwards, and 1 goalkeeper) compete to score goals by maneuvering a ball into the opposing team’s net using any part of the body except their hands and arms (goalkeepers are the exception). The game emphasizes a blend of physical endurance, technical skill, and strategic teamwork. Games are 90 minutes long, divided into two 45-minute halves, with extra time and penalty shootouts used if necessary to determine a winner. Players are evaluated not only on goals and assists but also on their passing accuracy, defensive contributions, and overall impact on the game. Referees use yellow and red cards to manage player behavior and maintain fairness on the field. A yellow card serves as a warning for actions such as reckless tackles, delaying the game, or showing dissent toward the referee. If a player receives two yellow cards in one match, it results in a red card, meaning the player is ejected from the game. A red card can also be given directly for more serious offenses like violent conduct, serious foul play, or using offensive language. When a player is shown a red card, their team must continue the match with one fewer player.
+
+The U.S. Men's National Soccer Team (USMNT) was officially established in 1913 while the U.S. Women's National Team (USWNT) was established in 1985. Players are selected for the U.S. national soccer teams through a combination of scouting, performance, and coaching decisions. For major tournaments like the World Cup or Olympics, coaches must select a limited number of players—usually around 23—who offer the best balance of skill, experience, and team dynamics. Veteran players must also go through the same process but do have a higher advantage then a new player.
+
+Read in the Dataset:
+```{r}
+library(readr)
+SoccerData <- read_csv("SoccerData.csv")
+```
+
+1) Create a scatterplot using games played (GP) to predict goals scored (G). Color by Sex and add a smoother. What do you notice from the plot? Are there any clear trends or outliers? 
+```{r}
+ggplot(data = SoccerData, aes(x = GP, y = G, color = Sex)) +
+  geom_point() +
+  geom_smooth()
+```
+
+Notice that the females tend to have more goals than the males and there is a distinct outlier that could be influential. 
+
+2) Write out the population model.
+
+$$G = \beta_0 + \beta_1GP $$
+
+3) Fit a linear model using games played (GP) to predict goals (G). Write out the fitted model. What does the slope mean in the context of this model?
+
+```{r}
+model = lm(G ~ GP, data = SoccerData)
+summary(model)
+```
+
+$$ \hat{G} = -0.14122 + 0.12946GP$$
+The slope means that for every additional game played, a player is predicted to score approximately 0.129 more goals, on average, assuming all other factors remain constant.
+
+4) Use the model summary plots to determine which observation has the highest residual and leverage. Who does this observation correspond to?
+```{r}
+plot(model)
+```
+
+Point 33 has the highest residual and leverage and it corresponding to Sophie Smith.
+
+5) Based on the Residuals vs Leverage plot, is that point an influential outlier to the model? How do you know?
+
+Yes because it is above the .5 cook's distance line meaning it has moderate influence on the regression model. 
+
+6) Calculate the cook's distance of the influential point.
+
+```{r}
+cooks_d <- cooks.distance(model)
+cooks_d
+```
+
+7.564772e-01
+
+7) How might removing the point influence the model?
+
+The model's fit might improve allowing for more precise estimates

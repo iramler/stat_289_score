@@ -37,7 +37,7 @@ Learning Objectives:
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 For this activity, students will need to use R. 
 
-Students are expected to understand the basic data manipulation strategies used in R. Students are also expected to now how to code basic ggplots, and how to use dplyr functions in R.
+Students are expected to understand the basic data manipulation strategies used in R. Students are also expected to know how to code basic ggplots, and how to use dplyr functions in R.
 
 This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
 :::
