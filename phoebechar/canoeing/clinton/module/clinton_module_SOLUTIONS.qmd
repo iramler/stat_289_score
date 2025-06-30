@@ -7,6 +7,7 @@ format:
 ---
 
 Downriver racing is a sport where competitors take their watercraft (usually a canoe, kayak, or stand-up paddle board) down a race course in competition with other paddlers. The General Clinton Canoe Regatta (nicknamed "the 70-miler") is a prominent race in the sport that has been running since the 1960s. The race is a 63 mile course down the Susquehanna River in New York (from Cooperstown to Bainbridge). Paddlers compete against each other to achieve the fastest time in their class, with the fastest boats finishing about 7-8 hours after they start.
+
 Completing this race is an impressive feat, and this combined with the race’s fame means there is usually high attendance. However, unlike most races, where the turnout is mostly recreational paddlers, the difficulty of this race means that most paddlers at the General Clinton are pros. This phenomenon has interesting impacts on data from the race.
 
 ```{r message = FALSE, warning = FALSE}
@@ -58,7 +59,7 @@ ggplot(clinton_full, aes(x = time)) +
   geom_histogram()
 ```
 
-#### 6. We can see a very short bar at time == 0 (which is obviously impossible), indicating one boat with an unrecorded time slipped through our earlier filtering. Filter this boat out and remake the histogram.
+#### 6. We can see a very short bar at time = 0 (which is obviously impossible), indicating one boat with an unrecorded time slipped through our earlier filtering. Filter this boat out and remake the histogram.
 
 ```{r}
 clinton <- clinton_full |> filter(time != 0) ## or

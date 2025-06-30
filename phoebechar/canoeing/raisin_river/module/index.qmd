@@ -5,10 +5,9 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
-  - name: 
-    email: 
-    affiliation:
-      - ref: slu
+format: 
+      html:
+          embed-resources: true
 date: "June 11, 2025"
 description: "Finding and removing highly influential outliers"
 editor: 

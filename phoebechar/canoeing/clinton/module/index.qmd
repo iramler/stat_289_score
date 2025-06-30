@@ -5,6 +5,9 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
+format: 
+      html:
+          embed-resources: true
 date: "June 17, 2025"
 description: "Using data from the Clinton Canoe Regatta to explore data manipulation and visualization."
 editor: 
