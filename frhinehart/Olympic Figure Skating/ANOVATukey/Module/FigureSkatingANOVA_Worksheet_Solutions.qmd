@@ -1,5 +1,6 @@
 ---
 title: "Olympic Figure Skating: One-ANOVA (Solutions)"
+author: Faith Rhinehart
 execute: 
   echo: true
   warning: false
