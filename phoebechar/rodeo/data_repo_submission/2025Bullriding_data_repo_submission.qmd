@@ -13,7 +13,7 @@ categories:
  
 Bull riding is an extremely difficult and demanding sport. Athletes are putting their lives on the line with every ride. This recklessness might lead people to believe that younger athletes are more commonly successful, but a lack of experience can be deadly, so there must be a balance. Looking at different eras of successful riders can give insight into this balance.
 
-### Understanding Bullriding
+### Understanding Bull riding
 
 Bull riding is fairly self-explanatory. Riders are tasked with staying on a bucking bull and riding with style. In order to get a score for the ride, they must stay on the bull for at least 8 seconds. Then, they will be scored out of 50 on how well they manged to stay in control during the ride (things like fluidity and style are considered). The bull will also be given a score out of 50 based on how difficult its performance made it for the rider. The bull score and rider score are added create the final score out of 100. Any ride over 90 points is considered exceptional.
 
