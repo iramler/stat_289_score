@@ -49,13 +49,11 @@ write_csv(URC_players, "phoebechar/rugby/module/URCpositions.csv")
 ```{r}
 URC <- read.csv("phoebechar/rugby/data_repo_submission/URCplayers.csv")
 
-fly <- URC |> filter(Position == "Fly-half")
+prop <- URC |> filter(Position == "Prop") |> group_by(Team) |> arrange(desc(Weight)) |> slice(1)
 
-fly_age <- fly |> group_by(Team) |> summarise(fly_age = mean(Age, na.rm = TRUE))
+prop_perform <- full_join(prop, performance)
 
-fly_perform <- full_join(fly_age, performance)
-
-ggplot(fly_perform, aes(x = fly_age, y = Kicking)) +
+ggplot(prop_perform, aes(x = Weight, y = Scrums)) +
   geom_point()
 ```
 

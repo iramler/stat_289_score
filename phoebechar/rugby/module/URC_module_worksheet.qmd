@@ -2,6 +2,7 @@
 title: "Positions in the United Rugby Championships: Understanding Indicator Variables | SOLUTIONS"
 author: "Phoebe Jones"
 format: html
+    embed-resources: true
 ---
 
 Unlike other sports, which often have a “look”, rugby is unique in that it is intended to be accessible to players of various shapes and sizes. Different positions have distinct expectations and therefore are best suited to people with distinct physiques. This makes the height and weight data interesting to explore, especially with regard to position.
