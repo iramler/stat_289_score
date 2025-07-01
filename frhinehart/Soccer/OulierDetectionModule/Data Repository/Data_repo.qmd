@@ -57,8 +57,9 @@ This process was used to make the dataset:
 Download Soccer Data: [SoccerData.csv]("SoccerData.csv")
 
 ## Questions Investigated
-1. Can outlier's be detected using a fitted model?
-2. Can we determine a outlier influence on a regression model?
+1. Can outliers be detected using a fitted model?
+2. Can we determine an outlier's influence on a regression model?
+3. How does games played or minutes played influence goals scored?
 
 ## References
 

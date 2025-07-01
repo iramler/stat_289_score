@@ -12,10 +12,6 @@ format:
   pdf:  default
 ---
 
-Soccer, also known as football in many parts of the world, is a globally popular sport. Two teams of eleven players (4 defenders, 4 midfielders, 2 forwards, and 1 goalkeeper) compete to score goals by maneuvering a ball into the opposing team’s net using any part of the body except their hands and arms (goalkeepers are the exception). The game emphasizes a blend of physical endurance, technical skill, and strategic teamwork. Games are 90 minutes long, divided into two 45-minute halves, with extra time and penalty shootouts used if necessary to determine a winner. Players are evaluated not only on goals and assists but also on their passing accuracy, defensive contributions, and overall impact on the game. Referees use yellow and red cards to manage player behavior and maintain fairness on the field. A yellow card serves as a warning for actions such as reckless tackles, delaying the game, or showing dissent toward the referee. If a player receives two yellow cards in one match, it results in a red card, meaning the player is ejected from the game. A red card can also be given directly for more serious offenses like violent conduct, serious foul play, or using offensive language. When a player is shown a red card, their team must continue the match with one fewer player.
-
-The U.S. Men's National Soccer Team (USMNT) was officially established in 1913 while the U.S. Women's National Team (USWNT) was established in 1985. Players are selected for the U.S. national soccer teams through a combination of scouting, performance, and coaching decisions. For major tournaments like the World Cup or Olympics, coaches must select a limited number of players—usually around 23—who offer the best balance of skill, experience, and team dynamics. Veteran players must also go through the same process but do have a higher advantage then a new player.
-
 Read in the Dataset:
 ```{r}
 library(readr)

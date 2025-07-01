@@ -8,6 +8,9 @@ date: "June 23, 2025"
 description: "Using R Functions for Data Manipulation"
 editor: 
   canonical: true
+format: 
+  html:
+    embed-resources: true
 categories:
   - Data Manipulating 
   - Creating Scatterplots and Labeling Points

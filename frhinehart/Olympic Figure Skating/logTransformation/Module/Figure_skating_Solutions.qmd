@@ -12,8 +12,6 @@ format:
   pdf:  default
 ---
 
-Figure skating is a sport where people perform routines on ice to music, combining athletic skill with artistic expression. Skaters compete in different categories like men's singles, women's singles, pairs (a man and a woman skating together), and ice dance (which focuses more on rhythm and movement). Each skater or team performs two routines: the short program and the free skate. The short program is a shorter routine with a list of required moves that every skater must include. Judges look at how well each move is done and how smoothly everything fits with the music. The free skate is longer and gives skaters more freedom to show their personal style and creativity. They still need to include certain types of moves, but they can choose how to put them together. Judges give scores for both routines based on how difficult the moves are, how well they’re done, and how artistic the performance is. The scores from both routines are added together, and the skater or team with the highest total wins.
-
 Read in the Dataset:
 ```{r}
 library(readr)

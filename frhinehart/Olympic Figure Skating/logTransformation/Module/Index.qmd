@@ -8,6 +8,9 @@ date: "June 17, 2025"
 description: "Model Building on the US Olympic Figure Skaters"
 editor: 
   canonical: true
+format: 
+  html:
+    embed-resources: true
 categories:
   - Model Building
   - Log Transformations

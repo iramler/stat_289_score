@@ -15,7 +15,7 @@ The DUPR (Dynamic Universal Pickleball Rating) system is a comprehensive and evo
 
 ## Data
 
-The dataset provided (male and female collegiate pickleball players) was scraped from NCPA official website (see references for link). 
+The dataset provided (male and female collegiate pickleball players) was scraped from NCPA (National Collegiate Pickleball Association) official website (see references for link). 
 
 ::: {.callout-note collapse="true" title="Tidying Process"}
 
@@ -35,15 +35,15 @@ NCPA male and female players (380 cases with 12 variables) data:
 |---------------------|---------------------------|
 | First Name          | First name of player      |
 | Last Name           | Last name of player       |
-| Overall             | Overall rating score      |
+| Overall             | Overall rating            |
 | Overall Reliability | Overall Reliability score |
-| Singles             | Singles rating score      |
+| Singles             | Singles rating            |
 | Singles Reliability | Singles Reliability score |
-| Doubles             | Doubles rating score      |
+| Doubles             | Doubles rating            |
 | Doubles Reliability | Doubles Reliability score |
-| Mixed               | Mixed rating score        |
+| Mixed               | Mixed rating              |
 | Mixed Reliability   | Mixed Reliability score   |
-| Sex                 | Gender of player          |                        
+| Sex                 | Sex of player             |                        
                        
 </details>
 
@@ -51,10 +51,12 @@ Download Pickleball Data: [pickleBall.csv](C:/Users/0211f/GitHub/slu_score_modul
 
 ## Questions Investigated
 1. Is there a significant difference between the means of Doubles Reliability and Singles Reliability
+2. How does the Reliability score relate to Rating of a player?
+3. What tends to produce the highest Rating and Reliability between Singles, Doubles and Mixed?
 
 ## References
 
-Data was scraped from Wikipedia:
+Data was scraped from the NCPA offical website:
 
 [NCPA Pickleball](https://tournaments.ncpaofficial.com/player-ratings){   }
 

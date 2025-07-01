@@ -3223,7 +3223,8 @@ window.Quarto = {
 <section id="checking-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="checking-assumptions">2 - Checking assumptions</h2>
 <ol type="A">
-<li>State and evaluate the three assumptions needed for a paired t-test. You may assume independence. Use R code to help justify normality and check for outliers.</li>
+<li><p>Create a new column labeled <code>Difference</code> that takes Doubles Reliability minus Singles Reliability.</p></li>
+<li><p>State and evaluate the three assumptions needed for a paired t-test. You may assume independence. Use code to help justify normality and check for outliers.</p></li>
 </ol>
 <ol type="1">
 <li><p>Independence:</p></li>
@@ -3236,7 +3237,6 @@ window.Quarto = {
 <p>Let μ be the true mean difference (Doubles - Singles) - because doubles reliability mean is higher than singles reliability.</p>
 <ol type="A">
 <li><p>State the null and alternative hypothesis.</p></li>
-<li><p>Create a new column labeled <code>Difference</code> that takes Doubles Reliability minus Singles Reliability.</p></li>
 <li><p>Calculate the mean difference of the <code>Difference</code> column. Report your result.</p></li>
 <li><p>Calculate the standard deviation of the <code>Difference</code> column. Report your result.</p></li>
 <li><p>Calculate the t-statistic. The formula is below in which you can do it by hand or do it using r. Report your result. <span class="math display">\[ t = \frac{\bar{D}}{s_D / \sqrt{n}}\]</span></p></li>
@@ -3244,17 +3244,15 @@ window.Quarto = {
 <li><p>Calculate the p-value for two-tailed hypothesis. To do this do in R code - 2 * pt(-abs(t-statistic), df = degrees of freedom). Report your result.</p></li>
 <li><p>Use the p-value to make a conclusion.</p></li>
 </ol>
+<p>A possible explanation for this is that doubles matches are more commonly played than single matches.</p>
 <p>We can also do this process using the t.test function in r which allows us to perform the hypothesis test quicker.</p>
 </section>
 <section id="performing-a-matched-pairs-hypothesis-test-using-r-function" class="level2">
 <h2 class="anchored" data-anchor-id="performing-a-matched-pairs-hypothesis-test-using-r-function">4 - Performing a matched pairs hypothesis test using R function:</h2>
 <ol type="A">
-<li><p>perform a matched pairs hypothesis t-test. Include all parts of a formal hypothesis test.</p></li>
+<li><p>Perform a matched pairs hypothesis t-test using the <code>t.test()</code> function and setting <code>paired = TRUE</code>. Include all parts of a formal hypothesis test.</p></li>
 <li><p>Interpret the confidence interval results given in the output in part A.</p></li>
 </ol>
-<p>You could also interpret it this way… On average, doubles reliability is between 12.4% and 16.7% higher than singles reliability.</p>
-<p>A possible explanation for this is that doubles matches are more commonly played than single matches.</p>
-<p>If you notice you gained two different p-values for both manually and using R. This is because the t.test() function in R does not report p-values smaller than 2.2e-16. When calculated manually, however, the full precision of the test statistic can be used to generate an even smaller p-value. This does not change the outcome of the results. Both methods will result in the same statistical conclusion.</p>
 </section>
 
 </main>

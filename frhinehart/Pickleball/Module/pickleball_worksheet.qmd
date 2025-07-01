@@ -22,25 +22,23 @@ Read in the Dataset:
 A) Create a boxplot comparing Singles and Doubles Reliability scores.
 
 
-
 B)  What do you notice about the center, spread, and any outliers in the distributions? Which category appears to have a higher average reliability?
-
 
 
 We want to perform a hypothesis test to test if there is a significant difference between singles and doubles reliability. Because each player was measured twice (single and double reliability), we want to use a matched pairs t-test to perform the hypothesis test. 
 
 ## 2 - Checking assumptions
 
-A) State and evaluate the three assumptions needed for a paired t-test. You may assume independence. Use R code to help justify normality and check for outliers. 
+A) Create a new column labeled `Difference` that takes Doubles Reliability minus Singles Reliability.
 
 
+B) State and evaluate the three assumptions needed for a paired t-test. You may assume independence. Use code to help justify normality and check for outliers. 
 
-1. Independence:
+1. Independence: 
 
 2. Normality: 
 
 3. No Extreme Outliers: 
-
 
 ## 3 - Performing a matched pairs hypothesis test manually. 
 
@@ -49,54 +47,35 @@ Let μ be the true mean difference (Doubles - Singles) - because doubles reliabi
 A) State the null and alternative hypothesis.
 
 
-
-B) Create a new column labeled `Difference` that takes Doubles Reliability minus Singles Reliability.
-
+B) Calculate the mean difference of the `Difference` column. Report your result. 
 
 
-C) Calculate the mean difference of the `Difference` column. Report your result. 
+C) Calculate the standard deviation of the `Difference` column. Report your result.
 
 
-
-D) Calculate the standard deviation of the `Difference` column. Report your result.
-
-
-
-E) Calculate the t-statistic. The formula is below in which you can do it by hand or do it using r. Report your result.
+D) Calculate the t-statistic. The formula is below in which you can do it by hand or do it using r. Report your result.
 $$ t = \frac{\bar{D}}{s_D / \sqrt{n}}$$
 
 
-
-F) Calculate the degrees of freedom. Report your result.
-
+E) Calculate the degrees of freedom. Report your result.
 
 
-G) Calculate the p-value for two-tailed hypothesis. To do this do in R code - 2 * pt(-abs(t-statistic), df = degrees of freedom). Report your result. 
+F) Calculate the p-value for two-tailed hypothesis. To do this do in R code - 2 * pt(-abs(t-statistic), df = degrees of freedom). Report your result. 
 
 
+G) Use the p-value to make a conclusion.
 
-H) Use the p-value to make a conclusion.
 
-
+A possible explanation for this is that doubles matches are more commonly played than single matches.
 
 We can also do this process using the t.test function in r which allows us to perform the hypothesis test quicker. 
 
 ## 4 - Performing a matched pairs hypothesis test using R function:
 
-A) perform a matched pairs hypothesis t-test. Include all parts of a formal hypothesis test. 
-
+A) Perform a matched pairs hypothesis t-test using the `t.test()` function and setting `paired = TRUE`. Include all parts of a formal hypothesis test. 
 
 
 B) Interpret the confidence interval results given in the output in part A. 
 
-
-
-You could also interpret it this way...
-On average, doubles reliability is between 12.4% and 16.7% higher than singles reliability.
-
-A possible explanation for this is that doubles matches are more commonly played than single matches.
-
-
-If you notice you gained two different p-values for both manually and using R. This is because the t.test() function in R does not report p-values smaller than 2.2e-16. When calculated manually, however, the full precision of the test statistic can be used to generate an even smaller p-value. This does not change the outcome of the results. Both methods will result in the same statistical conclusion. 
 
 

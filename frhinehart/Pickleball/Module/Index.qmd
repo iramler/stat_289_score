@@ -8,6 +8,9 @@ date: "June 26, 2025"
 description: "Using matched pairs to determine a difference in mean reliability scores for pickle ball players"
 editor: 
   canonical: true
+format: 
+  html:
+    embed-resources: true
 categories:
   - Matched Pairs t-test
 ---
@@ -61,15 +64,15 @@ NCPA male and female players (380 cases with 12 variables) data:
 |---------------------|---------------------------|
 | First Name          | First name of player      |
 | Last Name           | Last name of player       |
-| Overall             | Overall rating score      |
+| Overall             | Overall rating            |
 | Overall Reliability | Overall Reliability score |
-| Singles             | Singles rating score      |
+| Singles             | Singles rating            |
 | Singles Reliability | Singles Reliability score |
-| Doubles             | Doubles rating score      |
+| Doubles             | Doubles rating            |
 | Doubles Reliability | Doubles Reliability score |
-| Mixed               | Mixed rating score        |
+| Mixed               | Mixed rating              |
 | Mixed Reliability   | Mixed Reliability score   |
-| Sex                 | Gender of player          |    
+| Sex                 | Sex of player             |    
 
 </details>
 

@@ -8,6 +8,9 @@ date: "June 30, 2025"
 description: "Determing the influence of an outlier"
 editor: 
   canonical: true
+format: 
+  html:
+    embed-resources: true
 categories:
   - Model Fitting 
   - Outlier Detection
@@ -70,7 +73,7 @@ Soccer data:
 | RC             | Number of Red Cards Received                                   |
 | Career Caps    | Number of International Games Played Representing National Team|
 | Career Goals   | Career Goals                                                   |
-| Sex            | Gender of player                                               |
+| Sex            | Sex of player                                                  |
 
 
 </details>
