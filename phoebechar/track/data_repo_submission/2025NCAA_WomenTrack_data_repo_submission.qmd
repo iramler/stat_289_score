@@ -1,5 +1,38 @@
 ---
-title: "2025NCAA_WomenTrack_data_repo_submission"
-format: html
+title: "2025 NCAA Women's Track Running"
+author: "Phoebe Jones" 
+date: "July 1, 2025" 
+format:
+    html:
+      embed-resources: true
+categories:
+  - 
 ---
+
+## Motivation
+
+### Track Basics
+
+## Data
+
+Each row in the `NCAA_track` data set represents one of the top 50
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable    | Description                                             |
+|-------------|---------------------------------------------------------|
+| Place       | The runner's place for this event                       |
+| Athlete     | The runner's name (Last, First)                         |
+| Year        | The runner's class year                                 |
+| Team        | The team the runner represents                          |
+| Time        | The runner's time for this event                        |
+| Meet        | The meet the time was achieved at                       |
+| Meet.Date   | The date of the meet the time was achieved at           |
+| Event       | What even the time is from (how many meters)            |
+
+</details>
+
+**Download Running Data:** [NCAA_track.csv](NCAA_track.csv){target="_blank"}
 

@@ -9,6 +9,7 @@ library(dplyr)
 library(tidyr)
 library(lubridate)
 library(ggplot2)
+library(stringr)
 
 running <- read.csv("NCAA_track.csv")
 
@@ -17,6 +18,8 @@ running <- running |> separate(Year, into = c("Class", "Year"), sep = "-")
 running <- running |> mutate(Time = ms(Time))
 
 running <- running |> mutate(Time = as.duration(Time))
+
+running <- running |> mutate(EventName = as.factor(Event))
 ```
 
 ```{r}
@@ -26,7 +29,29 @@ speed <- speed |> mutate(Speed = Event/Time)
 
 speed <- speed |> mutate(EventName = as.factor(Event))
 
+desmos <- speed |> select(Event, Speed)
+
+write_csv(desmos, "desmos.csv")
+
 ggplot(speed, aes(x = Event, y = Speed)) +
-  geom_point() +
-  geom_smooth(se = FALSE)
+  geom_point()
 ```
+
+```{r}
+silly <- running |> separate(Athlete, into = c("LastName", "FirstName"), sep = ", ")
+
+silly <- silly |> mutate(FirstLetter = str_sub(FirstName, 1, 1))
+
+silly <- silly |> mutate(Time = as.double(Time))
+
+silly <- silly |> mutate(Speed = Event/Time)
+
+ggplot(silly, aes(x = FirstLetter, y = Place)) +
+  geom_boxplot(aes(group = FirstLetter))
+
+silly2 <- silly |> mutate(Name1Length = (str_length(FirstName)))
+
+ggplot(silly2, aes(x = Class, y = Name1Length)) +
+  geom_boxplot(aes(group = Class))
+```
+
