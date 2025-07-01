@@ -1,8 +1,7 @@
 ---
 title: "Positions in the United Rugby Championships: Understanding Indicator Variables | SOLUTIONS"
-author: "Phoebe Jones"
 format: html
-    embed-resources: true
+    embed-resources:  true
 ---
 
 Unlike other sports, which often have a “look”, rugby is unique in that it is intended to be accessible to players of various shapes and sizes. Different positions have distinct expectations and therefore are best suited to people with distinct physiques. This makes the height and weight data interesting to explore, especially with regard to position.
@@ -46,11 +45,7 @@ players <- players |> mutate(prop_ind = if_else(Position == "Prop", 1, 0),
 
 ### 4. Is it helpful to have indicator variables for ALL of the different positions in this dataset? Why or why not?
 
-### 5. Regardless of your answer, refit the model without the indicator variables for scrum-half and fullback. Instead we will leave them grouped in with the fly-halves. We will call this group the Backs. Print a summary of the model.
-
-### 6. What does the t-test on the prop indicator variable tell us?
-
-### Run the following code chunk. This scatterplot reflects the change in the model by switching to a single line for the scrum-halves, fullbacks, and fly-halves (the backs).
+### Regardless of your answer to number 4, we will look at a version of the model without the indicator variables for scrum-half and fullback. We will instead leave them grouped in with the fly-halves in a group we will call the Backs. Run the following code chunk to see a scatterplot reflecting this model.
 ```{r}
 players <- players |> mutate(Position2 = if_else(Position %in% c("Fullback", "Scrum-half", "Fly-half"), "Backs", Position))
 
@@ -59,5 +54,8 @@ ggplot(players, aes(x = Height, y = Weight)) +
   geom_smooth(aes(colour = Position2), method = "lm", se = FALSE)
 ```
 
-### 7. Interpret, in context, the coefficient for one of the indicator variables.
+### 5. Refit the model without the indicator variables for scrum-half and fullback. Print a summary of the model.
 
+### 6. What does the t-test on the prop indicator variable tell us?
+
+### 7. Interpret, in context, the coefficient for one of the indicator variables.

@@ -1,8 +1,9 @@
 ---
 title: "Positions in the United Rugby Championships: Understanding Indicator Variables | SOLUTIONS"
-author: "Phoebe Jones"
-format: html
-    embed-resources: TRUE
+format:  
+    html:  
+        embed-resources: true
+    pdf:  default
 ---
 
 Unlike other sports, which often have a “look”, rugby is unique in that it is intended to be accessible to players of various shapes and sizes. Different positions have distinct expectations and therefore are best suited to people with distinct physiques. This makes the height and weight data interesting to explore, especially with regard to position.
@@ -60,8 +61,16 @@ The summary shows that the coefficient for fullback is not significant and the c
 
 Answers may vary. Students should point out that according to both the scatterplot and the model summary, the scrum-half, fly-half, and fullback positions have very similar lines and most likely do not need separate indicator variables.
 
-### 5. Regardless of your answer, refit the model without the indicator variables for scrum-half and fullback. Instead we will leave them grouped in with the fly-halves. We will call this group the Backs. Print a summary of the model.
+### Regardless of your answer to number 4, we will look at a version of the model without the indicator variables for scrum-half and fullback. We will instead leave them grouped in with the fly-halves in a group we will call the Backs. Run the following code chunk to see a scatterplot reflecting this model.
+```{r}
+players <- players |> mutate(Position2 = if_else(Position %in% c("Fullback", "Scrum-half", "Fly-half"), "Backs", Position))
 
+ggplot(players, aes(x = Height, y = Weight)) +
+  geom_point(aes(colour = Position)) +
+  geom_smooth(aes(colour = Position2), method = "lm", se = FALSE)
+```
+
+### 5. Refit the model without the indicator variables for scrum-half and fullback. Print a summary of the model.
 ```{r}
 modPos2 = lm(Weight ~ Height + prop_ind + hook_ind + lock_ind, data = players)
 
@@ -71,15 +80,6 @@ summary(modPos2)
 ### 6. What does the t-test on the prop indicator variable tell us?
 
 There is significant evidence (t = 46.900, p ~= 0) that there is a difference between the starting weights for players who are in the prop position as compared to players who play in the fly-half, fullback, or scrum-half positions.
-
-### Run the following code chunk. This scatterplot reflects the change in the model by switching to a single line for the scrum-halves, fullbacks, and fly-halves (the backs).
-```{r}
-players <- players |> mutate(Position2 = if_else(Position %in% c("Fullback", "Scrum-half", "Fly-half"), "Backs", Position))
-
-ggplot(players, aes(x = Height, y = Weight)) +
-  geom_point(aes(colour = Position)) +
-  geom_smooth(aes(colour = Position2), method = "lm", se = FALSE)
-```
 
 ### 7. Interpret, in context, the coefficient for one of the indicator variables.
 
