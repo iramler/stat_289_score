@@ -98,7 +98,13 @@ rr_DNF <- left_join(rr_DNF, flow)
 
 rr_DNF <- rr_DNF |> filter(year != 2019)
 
-write_csv(rr_DNF, "phoebechar/canoeing/raisin_river/module/raisin_river_DNF.csv")
+rr_DNF <- read_csv("raisin_river_DNF.csv")
+
+rr_DNF <- rr_DNF |> rename(prop_DNF = ratio_DNF)
+
+rr_DNF <- rr_DNF |> mutate(prop_DNF = round(prop_DNF, digits = 4))
+
+write_csv(rr_DNF, "raisin_river_DNF.csv")
 
 ggplot(rr_DNF, aes(x = flow, y = ratio_DNF)) +
   geom_point() 

@@ -1,0 +1,32 @@
+---
+title: "running_track"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(ggplot2)
+
+running <- read.csv("NCAA_track.csv")
+
+running <- running |> separate(Year, into = c("Class", "Year"), sep = "-")
+
+running <- running |> mutate(Time = ms(Time))
+
+running <- running |> mutate(Time = as.duration(Time))
+```
+
+```{r}
+speed <- running |> mutate(Time = as.double(Time))
+
+speed <- speed |> mutate(Speed = Event/Time)
+
+speed <- speed |> mutate(EventName = as.factor(Event))
+
+ggplot(speed, aes(x = Event, y = Speed)) +
+  geom_point() +
+  geom_smooth(se = FALSE)
+```

@@ -6,8 +6,6 @@ format:
     pdf:  default
 ---
 
-Downriver racing is a sport where competitors take their watercraft (usually a canoe, kayak, or stand-up paddle board) down a race course in competition with other paddlers, sometimes navigating rapids, in an attempt to get the fastest time either overall or in their class (classes are split up by boat and paddler type). The Raisin River Canoe race has been running for over 50 years on the Raisin River in Eastern Ontario. The usual race course is 30 km ( about 18.6 miles) and contains rapids that fluctuate in difficulty with the water level. In race results, a DNF (did not finish) refers to a boat that did not make it to the finish line. Most of the time, these boats are paddlers who at some point decided to drop out of the race. This is most common in longer races (like Raisin River) or races with dangerous rapids. While the rapids on the Raisin River course are not too intimidating, as water level increases, the difficulty (or, more importantly, the fear factor) increases as well. Race directors are responsible for keeping track of their competitors and making sure they get off the river safely, so it is important that race officials are aware of possible DNFs. Having a way to predict the ratio of participants that may DNF the race based on the water level (information that is known ahead of time) could be very useful. For this activity we will be using data containing DNF and water level measures from the Raisin River Race from 2005-2025 to look at how outliers can impact a model.3
-
 ```{r message = FALSE, warning = FALSE}
 library(tidyverse)
 library(dplyr)
@@ -16,30 +14,29 @@ library(broom)
 RR_dnf_data <- read_csv("raisin_river_DNF.csv")
 ```
 
-This data set contains flow measurements (indicative of water level) in ft\^3/sec and the ratio of DNFs (# of DNFs/total participants) from the Raisin River Race from 2005-2025 (excluding, 2020 and 2021, when the race didn't run, and 2019, which has incomplete data).
+### Explore the relationship between flow rate and proportion of DNFs
 
-### Explore the relationship between flow rate and ratio of DNFs
-
-#### 1. Graph a scatterplot that shows flow rate as a predictor for rate of DNF
+#### 1. Graph a scatterplot that shows flow rate as a predictor for proportion of DNF
 
 ```{r}
-ggplot(RR_dnf_data, aes(x = flow, y = ratio_DNF)) +
+ggplot(RR_dnf_data, aes(x = flow, y = prop_DNF)) +
   geom_point() +
   labs(x = "Flow Rate (ft^3/sec)",
-       y = "Ratio of DNFs",
-       title = "Using flow rate to predict DNF ratio")
+       y = "Proportion of DNFs",
+       title = "Using flow rate to predict DNF proportion")
 ```
 
-#### 2. Fit a model using flow rate as a predictor for ratio of DNFs, print a summary of the model, and meaningfully interpret the slope coefficient.
+#### 2. Fit a model using flow rate as a predictor for proportion of DNFs, print a summary of the model, and meaningfully interpret the slope coefficient.
 
 ```{r}
-dnf_mod <- lm(ratio_DNF ~ flow, RR_dnf_data)
+dnf_mod <- lm(prop_DNF ~ flow, RR_dnf_data)
 summary(dnf_mod)
 ```
+For every 1000 ft^3/sec increase in flow, we can expect a 0.007056 unit decrease in the proportion of DNFs.
 
-##### a) The model has a negative coefficient for flow's impact on DNF ratio. Does this make sense with what you saw on the graph from question 1?
+##### a) The model has a negative coefficient for flow's impact on DNF proportion Does this make sense with what you saw on the graph from question 1?
 
-It does not make sense. On the scatterplot, there is a positive trend.
+It does not make sense. On the scatterplot, there is a positive trend with most of the data points.
 
 ##### b) Note the p-value for the flow coefficient. Is it significant?
 
@@ -54,7 +51,7 @@ Based on the scatterplot and the model summary, the model is not appropriate. Th
 #### 3. Use the augment function to add the model's residuals into the dataset
 
 ```{r}
-dnf_resid = left_join(select(RR_dnf_data, year, ratio_DNF, flow), augment(dnf_mod))
+dnf_resid = left_join(select(RR_dnf_data, year, prop_DNF, flow), augment(dnf_mod))
 ```
 
 ##### a) Do any observations have unusual leverage? standardized residual? influence?
@@ -83,7 +80,7 @@ dnf_resid |> filter(.cooksd > 1) ## 2017 is highly influential
 
 [![Raisin River Race Course](raisinmap.png)](https://rrca.on.ca/page.php?id=10)
 
-Answers may vary, but the shortening of the race course reduces the difficulty of the race notably, even with high water. This decrease in difficulty (or more importantly, effort, especially with the very fast-moving water) can account for a drop in the DNF ratio. Because of this impact, removing this observation from the data set makes sense, as all other years represent the original race course, not the shortened version.
+Answers may vary, but the shortening of the race course reduces the difficulty of the race notably, even with high water. This decrease in difficulty (or more importantly, effort, especially with the very fast-moving water) can account for a drop in the DNF proportion. Because of this impact, removing this observation from the data set makes sense, as all other years represent the original race course, not the shortened version.
 
 #### 5. Remove the influential observation from the data set.
 
@@ -94,24 +91,24 @@ RR_dnf_data2 <- RR_dnf_data |> filter(year != 2017)
 #### 6. Regraph the scatterplot without the influential observation and add a smoother.
 
 ```{r}
-ggplot(RR_dnf_data2, aes(x = flow, y = ratio_DNF)) +
+ggplot(RR_dnf_data2, aes(x = flow, y = prop_DNF)) +
   geom_point() +
   geom_smooth(method = lm, se = FALSE) +
   labs(x = "Flow Rate (ft^3/sec)",
-       y = "Ratio of DNFs",
-       title = "Using flow rate to predict DNF ratio")
+       y = "Proportion of DNFs",
+       title = "Using flow rate to predict DNF proportion")
 ```
 
 #### 7. Refit the model with the new version of the data set and print a summary of the model.
 
 ```{r}
-dnf_mod <- lm(ratio_DNF ~ flow, RR_dnf_data)
+dnf_mod <- lm(prop_DNF ~ flow, RR_dnf_data2)
 summary(dnf_mod)
 ```
 
 ##### a) Meaningfully interpret the slope coefficient.
 
-For every 100 ft\^3/sec increase in flow, we can expect a 0.01279 unit increase in the ratio of DNFs.
+For every 100 ft\^3/sec increase in flow, we can expect a 0.01279 unit increase in the proportion of DNFs.
 
 ##### b) If the flow level is 1100 ft\^3/sec and there are 200 competitors about how many DNFs can we expect?
 
