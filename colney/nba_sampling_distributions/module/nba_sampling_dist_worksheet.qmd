@@ -5,7 +5,7 @@ format: docx
 
 The 2024-25 NBA season was a historic one for the Oklahoma City Thunder, who captured their first ever NBA Championship. The NBA Playoffs consist of four rounds, First Round, Second Round, Conference Finals, and NBA Finals, with each round played as a best of seven series. In the 2025, playoffs, the Thunder played a total of 23 games: 4 in the First Round, 7 in the Second Round, 5 in the Conference Finals, and 7 in the NBA Finals.
 
-At the heart of this title run was Shai Gilgeous-Alexander (SGA), who led the league in scoring, was NBA MVP and capped off the season by earning the Finals MVP. His scoring consistency and ability to take over games made him one of the most dominant offensive forces in the league. This dataset, which contains SGA's point totals from every regular season game, offers a snapshot of one of the most impressive individual season in recent NBA history.
+At the heart of this title run was Shai Gilgeous-Alexander (SGA), who led the league in scoring, was named NBA MVP and capped off the season by earning the Finals MVP. His scoring consistency and ability to take over games made him one of the most dominant offensive forces in the league. This dataset, which contains SGA's point totals from every regular season game, offers a snapshot of one of the most impressive individual season in recent NBA history.
 
 In addition to its basketball significance, this dataset allows us to explore how statistical tools (such as StatKey) can be used to simulate real-world scenarios. By treating SGA's regular season point totals as the population, we can model specific playoff situations by drawing random samples of different sizes. These simulations help us understand how much variation we might expect in his performances and how likely different playoff outcomes are are based on his regular season scoring.
 
@@ -49,7 +49,7 @@ b. SGA's actual points per game in the 2025 NBA Finals was 30.3. Based on your s
 
 # 3. Simulating an NBA Playoffs Scenario
 
-Now set the sample to 23 to mimic the Oklahoma City Thunder's 2025 playoff run, and generate 1000 samples
+Now set the sample size to 23 to mimic the Oklahoma City Thunder's 2025 playoff run, and generate 1000 samples
 
 a. Describe the shape, center, and spread of the sampling distribution you generated.
   
@@ -61,12 +61,12 @@ b. SGA's actual points per game in the 2025 NBA Playoffs was 29.9. Based on your
 
 # 4. General Rules and Trends
 
-Based on your two simulations, using sample sizes of 7 and 23, what general patterns or trends do you notice about the shape, center, and spread of sampling distributions? 
+Based on your two simulations, using sample sizes of 7 and 23, what general patterns or trends do you notice about the shape, center, and spread of the sampling distributions? 
 
 
 
 # 5. Central Limit Theorem
 
-In the simulations you ran, the sampling distributions started to look more consistent in shape and spread as the sample size increased. Why do you think this happens?
+As the sample size increased from 7 to 23, the sampling distributions began to look more symmetric and bell-shaped. Why do you think this happened? What kind of distribution does the sampled means seem to resemble?
 
 
