@@ -1,21 +1,26 @@
 ---
 title: "2025 NCAA Women's Track Running"
 author: "Phoebe Jones" 
-date: "July 1, 2025" 
+date: "July 2, 2025" 
 format:
     html:
       embed-resources: true
 categories:
-  - 
+  - Mutating
+  - Nonlinear Regression
 ---
 
 ## Motivation
 
-### Track Basics
+Each year
+
+There aren't too many complexities to running track. Runners compete to complete the distance in the shortest time. There are many different events (distinguished usually by length) and runners typically have a specialty between distance or sprint. Distance runners need to think about pacing themselves and strategically overtaking competitors. Sprinters need to get a good start and maintain high speed for a short period of time.
 
 ## Data
 
 Each row in the `NCAA_track` data set represents one of the top 50
+
+There are 351 rows observed over 8 variables.
 
 <details>
 
@@ -35,4 +40,17 @@ Each row in the `NCAA_track` data set represents one of the top 50
 </details>
 
 **Download Running Data:** [NCAA_track.csv](NCAA_track.csv){target="_blank"}
+
+## Questions
+
+1. Can we separate `Athlete` into first and last name variables?
+2. Can we create a speed variable to observe the relationship between distance and speed?
+3. 
+
+## References
+
+The data are compiled from TFRRS (Track and Field Results Reporting System), an online database of track and field results. 
+
+[TFRRS: 2025 NCAA East Individual Results](https://www.tfrrs.org/ncaad1east/outdoortrack/women)
+
 
