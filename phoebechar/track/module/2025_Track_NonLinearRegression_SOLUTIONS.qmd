@@ -1,5 +1,0 @@
----
-title: "2025 Women's Track Running: Non-Linear Least Squares Regression"
-format: html
----
-

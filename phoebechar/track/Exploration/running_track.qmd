@@ -27,7 +27,9 @@ speed <- running |> mutate(Time = as.double(Time))
 
 speed <- speed |> mutate(Speed = Event/Time)
 
-speed <- speed |> mutate(EventName = as.factor(Event))
+ggplot(speed, aes(x = log(Event), y = Speed)) +
+  geom_point() +
+  geom_smooth()
 
 desmos <- speed |> select(Event, Speed)
 
