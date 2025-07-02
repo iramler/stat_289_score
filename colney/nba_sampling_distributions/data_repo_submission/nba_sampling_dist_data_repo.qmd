@@ -4,7 +4,8 @@ author: "Cooper Olney"
 date: "June 27, 2025"
 
 categories:
-  - Sampling Distribution for Sample Mean
+  - Summary Statistics
+  - Histograms
 ---
 
 
@@ -37,9 +38,7 @@ Download Data:[sga_points_2025.csv](/data_repo_submission/sga_points_2025.csv){t
 
 1. What does SGA's regular season scoring distribution look like in terms of shape, center and spread?
 
-2. How does the distribution of sample means change as we increase the sample size from 7 games (one full playoff series) to his full 23 game playoff run?
-
-3.How does SGA's actual playoff scoring average compare to the simulated sampling distributions, and what does this tell us about the role of sample size in interpreting performance?
+2. What is the typical variation in points in a game for SGA?
 
 
 ## References
