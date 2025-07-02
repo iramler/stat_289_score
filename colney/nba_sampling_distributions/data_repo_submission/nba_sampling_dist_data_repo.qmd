@@ -19,9 +19,9 @@ In addition to its basketball significance, this dataset also serves as a valuab
 
 
 ## Data
-The **sga_points_2025.csv** dataset contains 77 rows and 1 column. Each row represents a game that Shai Gilgeous-Alexander played during the 2024-25 regular season. **Note:** The dataset includes the NBA Cup Championship game, which is not officially counted in regular season statistics by the NBA.
+The **sga_stats_2025.csv** dataset contains 77 rows and 16 column. Each row represents a game that Shai Gilgeous-Alexander played during the 2024-25 regular season. **Note:** The dataset includes the NBA Cup Championship game, which is not officially counted in regular season statistics by the NBA.
 
-Download Data:[sga_points_2025.csv](/data_repo_submission/sga_points_2025.csv){target="_blank"}
+Download Data:[sga_stats_2025.csv](/data_repo_submission/sga_stats_2025.csv){target="_blank"}
 
 <details>
 
@@ -29,7 +29,22 @@ Download Data:[sga_points_2025.csv](/data_repo_submission/sga_points_2025.csv){t
 
 | Variable          | Description
 |-------------------|------------------------------------------------
-| points    | Total number of points Shai Gilgeous-Alexander scored in that game.
+| minutes    | Total minutes played in the game
+| field_goals_made    | Number of made shots
+| field_goals_attempted    | Number of attempted shots 
+| three_point_field_goals_made    | Number of made 3pt shots
+| three_point_field_goals_attempted    | Number of attempted 3pt shots
+| free_throws_made    | Number of free throws made
+| free_throws_attempted    | Number of free throws attempted
+| offensive_rebounds    | Number of rebounds while on offense
+| defensive_rebounds    | Number of rebounds while on defense
+| rebounds    | Total number of times he got the ball after the other team missed a shot
+| assists    | Number of passes that led directly to a made basket
+| steals    | Number of times he stole the ball from the other team
+| blocks    | Number of times he deflected a shot from the other team
+| turnovers    | Number of times he lost the ball to the other team
+| fouls    | Number of fouls committed
+| points    | Total number of points scored in that game
 
 </details>
 

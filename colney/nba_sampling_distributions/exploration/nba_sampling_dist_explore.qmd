@@ -24,11 +24,12 @@ sga <- all_players |> filter(str_detect(athlete_display_name, "Shai Gilgeous-Ale
   filter(team_name == "Thunder") |>
   filter(did_not_play == FALSE) |>
   filter(season_type == 2) %>%
-  select(points)
+  select(12:28) %>%
+  select(-plus_minus)
 ```
 
 ```{r}
-write_csv(sga, "sga_points_2025.csv")
+write_csv(sga, "sga_stats_2025.csv")
 ```
 
 
