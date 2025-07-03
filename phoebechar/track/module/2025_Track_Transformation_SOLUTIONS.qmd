@@ -1,9 +1,0 @@
----
-title: "2025 Women's Track Running: Fixing Non-Linear Data Transformation"
-format: html
----
-
-## Graph
-## Comment (model conditions? linearity)
-## Transforms
-

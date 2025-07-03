@@ -19,6 +19,12 @@ running <- running |> mutate(Time = ms(Time))
 
 running <- running |> mutate(Time = as.duration(Time))
 
+module <- running |> mutate(Time = as.double(Time))
+
+module <- module |> mutate(Speed = Event/Time)
+
+write_csv(module, "WomensTrack2025.csv")
+
 running <- running |> mutate(EventName = as.factor(Event))
 ```
 
