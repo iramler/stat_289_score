@@ -5,16 +5,21 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
+  - name: Robin Lock
+    email: rlock@stlawu.edu
+    affiliation:
+      - ref: slu
+
 format: 
       html:
           embed-resources: true
 date: "June 11, 2025"
-description: "Finding and removing highly influential outliers"
+description: "Investigate how water flow relates to race dropout rates in the Raisin River Race by fitting a linear regression model."
 editor: 
   canonical: true
 categories:
   - Linear Regression
-  - Outlier Detectors
+  - Outliers
 ---
 
 ## Module
@@ -48,13 +53,13 @@ Students should have knowledge of how to fit linear regression models and famili
 
 ::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
 
-Students will need to use RStudio or other stat software like Minitab.
+Students will need to use R or other stat software like Minitab.
 
 :::
 
 ### Data
 
-This activity uses the data set: [raisin_river_DNF.csv](raisin_river_DNF.csv){target="_blank"}
+This activity uses the data set: [raisin_river_DNF.csv](raisin_river_DNF.csv)
 
 The `raisin_river_DNF.csv` data set includes data from Paddlestats and the Raisin River Race website about the Raisin River Race from the years 2015-2025 (excluding 2020 and 2021 as no race was held due to the COVID-19 pandemic and 2019 due to incomplete finish status data). Each row contains the year, the flow from that year, and the proportion of DNFs from that year (calculated by dividing number of DNFs by total number of participants). 
 
@@ -72,17 +77,17 @@ The `raisin_river_DNF.csv` data set includes data from Paddlestats and the Raisi
 
 #### Data Source
 
-The data are compiled from the [Paddlestats Website](https://paddlestats.net/racehistory/RAISIN){target="_blank"} and the [Raisin River Race Website](https://rrca.on.ca/page.php?id=13){target="_blank"}. This data set is a pared down version of the `raisin_river_full.csv`. [raisin_river_full.csv](raisin_river_DNF.csv){target="_blank"}
+The data are compiled from the [Paddlestats Website](https://paddlestats.net/racehistory/RAISIN){target="_blank"} and the [Raisin River Race Website](https://rrca.on.ca/page.php?id=13){target="_blank"}. This data set is a pared down version of the [`raisin_river_full.csv`](https://data.scorenetwork.org/water_sports/canoe_racing_raisin_river.html){target="_blank"} file from the SCORE Data Repository.
 
 ### Materials
 
-[Module Worksheet (R Version)](raisin_river_module_worksheet.qmd){target="_blank"}
+- [Module Worksheet (R Version)](raisin_river_module_worksheet.qmd)
 
-[Module Worksheet (Other Software Version)]("RaisinRiver_Module_Worksheet"){target="_blank"} 
+- [Module Worksheet (Other Software Version)]("RaisinRiver_Module_Worksheet") 
 
-[Solutions to Worksheet (R/Quarto Version)](raisin_river_module_SOLUTIONS.qmd){target="_blank"}
+- [Solutions to Worksheet (R/Quarto Version)](raisin_river_module_SOLUTIONS.qmd)
 
-[Solutions to Worksheet (PDF)](raisin_river_module_SOLUTIONS.pdf){target="_blank"}
+- [Solutions to Worksheet (PDF)](raisin_river_module_SOLUTIONS.pdf)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Upon conclusion of this module, students will have an understanding of how to detect outliers in their data set, the influence these observations can have, and how to remove them if appropriate.
