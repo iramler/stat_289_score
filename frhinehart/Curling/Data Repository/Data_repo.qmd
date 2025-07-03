@@ -1,0 +1,77 @@
+---
+title: "2022 Winter Olympics Curling Round Robin Results"
+author: "Faith Rhinehart" 
+date: "July 3, 2025" 
+format: html
+categories:
+  - Correlation Analysis
+  - Group Comparisons
+  - t-test
+  - ANOVA
+---
+
+## Motivation
+
+Curling at the Winter Olympics is a strategic and fast-paced ice sport where two teams take turns sliding 42–44lb granite stones down a pebbled 45m ice sheet toward a circular target called the house. Each end (akin to an inning) sees teams delivering eight stones (or five in mixed doubles), using brooms to sweep the ice and influence the stone’s speed and direction. Scoring occurs when one team’s stones are closest to the button (center); only one team scores per end, with one point per stone closer than the opponent’s nearest. If there is a tie they they do a draw shot challenge. Men’s and women’s matches consist of 10 ends, while mixed doubles have 8, and play continues into extra ends if tied.
+
+The Olympic format includes round-robin play where 10 teams in men’s/women’s and mixed doubles complete. The top four go to the semifinals, then the medal matches. Curling blends precision, teamwork, and tactical sweeping to control stone trajectory and score multiple points while strategically managing who throws last using the hammer.
+
+## Data
+
+The dataset provided (male, female, and mixed Olympic Curling teams) was scraped from Wikipedia (see references for link). 
+
+::: {.callout-note collapse="true" title="Tidying Process"}
+
+This process was used to make the dataset
+- **Copied and pasted the data set into Excel**
+  - Deleted the "Skip" variable
+  - Deleted the "W-L" variable
+  - Deleted the "Qualification" variable
+  - Added a sex variable to indicate male team, female team, or mixed team
+  - Added a rank variable to indicate the rank the team was after the round robin
+
+:::
+
+
+<details>
+<summary><strong>Variable Descriptions</strong></summary>
+
+male, female, and mixed Olympic Curling teams results after round robin (30 cases with 13 variables) data:
+
+| Variable  | Description            |
+|-----------|------------------------|
+| Team      | Country                |
+| Pld       | Matches Played         |
+| W         | Wins                   |
+| L         | Loses                  |
+| PF        | Points For             |
+| PA        | Points Against         |
+| EW        | Ends Won               |
+| EL        | Ends Lost              |
+| BE        | Blank Ends             |
+| SE        | Stolen Ends            |
+| S%        | Shot Percentage        |  
+| DSC       | Draw Shot Challenge    |
+| Sex       | Sex of Team            |
+| Rank      | Rank After Round Robin |
+                       
+</details>
+
+Download Curling Data: [Curling.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Curling/Data Repository/Curling.csv)
+
+## Questions Investigated
+1. Do teams with more Blank Ends (BE) tend to win more matches?
+2. Is there a correlation between Stolen Ends (SE) and Wins (W)?
+3. How does Shot Percentage (S%) vary between teams with high and low DSC scores?
+4. Do teams with better DSC scores tend to win more Ends (EW)?
+5. Is there a significant difference between wins and sex of the team?
+
+## References
+
+Data was scraped from Wikipedia:
+
+[2022 Olympic Curling](https://en.wikipedia.org/wiki/Curling_at_the_2022_Winter_Olympics#Round_robin_2){   }
+
+Video was linked from YouTube:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TjxcZhbVSVQ?si=q8yccV3-b1RLlPv9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
