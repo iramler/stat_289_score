@@ -1,0 +1,43 @@
+---
+title: "explore"
+format: html
+---
+
+```{r}
+library(tidyverse)
+```
+
+# Pitching Data
+```{r}
+pitching <- 
+  read_csv(here::here("colney/mlb_k-means/exploration/pitchers_2024.csv")) %>%
+  select(-2,-3) %>%
+  rename(
+    name = `last_name, first_name`
+  )
+```
+
+```{r}
+write_csv(pitching, "mlb_pitching_2024.csv")
+```
+
+
+# Batting Data
+```{r}
+batting <-
+  read_csv(here::here("colney/mlb_k-means/exploration/batters_2024.csv")) %>%
+  select(-2,-3) %>%
+  rename(
+    name = `last_name, first_name`
+  ) %>%
+  mutate(
+    hr_per_hit = round(home_run / hit, 3),
+    k_rate = k_percent / 100
+  ) %>%
+  select(-2, -4, -5, -6)
+```
+
+```{r}
+write_csv(batting, "mlb_batting_2024.csv")
+```
+

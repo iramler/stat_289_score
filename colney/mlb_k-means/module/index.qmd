@@ -1,0 +1,83 @@
+---
+title: "MLB Pitching and Batting styles"
+author:
+  - name: Cooper Olney
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - ref: slu
+date: "July __, 2025"
+description: "____"
+editor: 
+  canonical: true
+categories:
+  - ___
+---
+
+# Module
+
+
+
+
+# Introduction
+
+
+
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will be able to:
+
+1. 
+
+2. 
+
+3. 
+
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+**Technology Requirement:**
+
+
+
+**Students should have prior knowledge in:**
+
+- 
+
+:::
+
+### Data
+
+
+Download Data: [sga_points_2025.csv](/data_repo_submission/sga_points_2025.csv){target="_blank"}
+
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+|     | 
+
+</details>
+
+#### Data Sources
+
+
+
+### Materials
+
+[Class handout]()
+
+[Class handout - with solutions]()
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+
+
+:::
+
+

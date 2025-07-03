@@ -1,0 +1,57 @@
+---
+title: "MLB Pitching and Batting Styles"
+author: "Cooper Olney"
+date: "July __, 2025"
+
+categories:
+  - ___
+  - ___
+---
+
+
+## Motivation
+
+ 
+
+
+## Data
+The **mlb_pitching_2024.csv** dataset contains 77 rows and 16 column. Each row represents a game that Shai Gilgeous-Alexander played during the 2024-25 regular season. **Note:** The dataset includes the NBA Cup Championship game, which is not officially counted in regular season statistics by the NBA.
+
+Download Data:[sga_stats_2025.csv](/data_repo_submission/sga_stats_2025.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+| minutes    | Total minutes played in the game
+
+</details>
+
+The **mlb_batting_2024.csv** dataset contains 77 rows and 16 column. Each row represents a game that Shai Gilgeous-Alexander played during the 2024-25 regular season. **Note:** The dataset includes the NBA Cup Championship game, which is not officially counted in regular season statistics by the NBA.
+
+Download Data:[sga_stats_2025.csv](/data_repo_submission/sga_stats_2025.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+| minutes    | Total minutes played in the game
+
+</details>
+
+
+## Questions
+
+1. 
+
+2. 
+
+
+## References
+
+
+
