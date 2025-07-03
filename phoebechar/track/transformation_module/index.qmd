@@ -1,0 +1,55 @@
+---
+title: "2025 Women's Track Running: Fixing Non-Linear Data with Transformation"
+author:
+  - name: Phoebe Jones
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+format: 
+      html:
+          embed-resources: true
+date: "July 3, 2025"
+description: "Using data from 2025 D1 Women's track to observe the use case of a log transformation."
+editor: 
+  canonical: true
+categories:
+  - Simple Linear Regression
+---
+
+## Module
+
+Please note that these materials have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+Learning Obj:
+When do we use transformations?
+Applying transformation.
+
+Tech:
+R or other stat software
+
+
+
+### Data
+
+This activity uses an edited version of the data set: [NCAA_track](NCAA_track.csv)
+
+The `NCAA_track.cav` data set includes data from 
+
+| Variable    | Description                                             |
+|-------------|---------------------------------------------------------|
+| Place       | The runner's place for this event                       |
+| Athlete     | The runner's name (Last, First)                         |
+| Class       | The runner's class in school (FR, SO, JR, SR)           |
+| Year        | The runner's year in school (1, 2, 3, 4)                |
+| Team        | The team the runner represents                          |
+| Time        | The runner's time for this event                        |
+| Meet        | The meet the time was achieved at                       |
+| Meet.Date   | The date of the meet the time was achieved at           |
+| Event       | What event the time is from (how many meters)           |
+| Speed       | The runner's speed for the event in m/s (event/time)    |
+
+
+
+Conclusion:
+When and why do we use tranformations?
+Impact of transformations.

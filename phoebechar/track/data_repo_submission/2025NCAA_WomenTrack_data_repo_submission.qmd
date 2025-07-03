@@ -13,7 +13,7 @@ categories:
 
 ## Motivation
 
-In outdoor track, runners run on a track and compete to complete the distance in the shortest time. There are many different events (distinguished by length, measured in meters) and runners typically have a specialty between distance or sprint. Distance runners need to think about pacing themselves and strategically overtaking competitors. Sprinters need to get a good start and maintain their highest speed for a short period of time. NCAA Women's Division 1 track runners compete at a very high level and their times are recorded throughout the season to track the top individual achievements.
+In outdoor track, runners run on a track and compete to complete the distance in the shortest time. There are many different events (distinguished by length, measured in meters) and runners typically have a specialty between distance or sprint. Distance runners need to think about pacing themselves and strategically overtaking competitors. Sprinters need to get a good start and maintain their highest speed for a short period of time. NCAA Women's Division 1 track runners compete at a very high level, and their times are recorded throughout the season to track the top individual achievements.
 
 ## Data
 
@@ -34,7 +34,7 @@ There are 351 rows observed over 8 variables.
 | Time        | The runner's time for this event                        |
 | Meet        | The meet the time was achieved at                       |
 | Meet.Date   | The date of the meet the time was achieved at           |
-| Event       | What event the time is from (how many meters)            |
+| Event       | What event the time is from (how many meters)           |
 
 </details>
 

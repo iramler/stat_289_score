@@ -1,0 +1,33 @@
+---
+title: "2025 Women's Track Running: Fixing Non-Linear Data Transformation"
+format: 
+  html:
+      embed-resources: true
+---
+
+In outdoor track, runners run on a track and compete to complete the distance in the shortest time. There are many different events (distinguished by length, measured in meters) and runners typically have a specialty between distance or sprint. Distance runners need to think about pacing themselves and strategically overtaking competitors. Sprinters need to get a good start and maintain their highest speed for a short period of time. NCAA Women's Division 1 track runners compete at a very high level, and their times are recorded throughout the season to track the top individual achievements.
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+
+track <- read.csv("WomensTrack2025.csv")
+```
+
+### 1. Make a scatterplot using distance (Event) to predict speed
+
+#### 1.1. What do you notice? (think of model conditions)
+
+#### 1.2. Given the context from the first paragraph and/or your background knowledge of the sport, give a possible explanation for what you noticed.
+
+The scatterplot above shows that at first, there is very quick decay in speed as distance increases, but then that decay slows and soon levels out. There are a few different ways we could account for this non-linearity in a model. One (the one this worksheet explores) is to use a transformation on the data.
+
+### 2. Based on the model's issue, apply a transformation to the data to make a linear model more appropriate.
+
+### 3. Make a scatterplot showing the transformed relationship.
+
+### 4. Define a model using the transformed data and print a summary.
+
+### 5. Interpret in context, the coefficient on the transformed distance term.
+
+Look back at your scatterplot and notice that despite the increased appropriateness of a linear model, the data still has some curvature. In the future, there may be another strategy to use with data like this that will result in a more accurate and appropriate model.

@@ -1,5 +1,5 @@
 ---
-title: "2025 Women's Track Running: Fixing Non-Linear Data Transformation"
+title: "2025 Women's Track Running: Fixing Non-Linear Data Transformation | SOLUTIONS"
 format: html
     embed-resources: true
 ---
@@ -11,46 +11,41 @@ library(ggplot2)
 track <- read.csv("WomensTrack2025.csv")
 ```
 
-1. Make a scatterplot using distance (Event) to predict speed
+### 1. Make a scatterplot using distance (Event) to predict speed
 
 ```{r}
 ggplot(track, aes(x = Event, y = Speed)) +
   geom_point()
 ```
 
-1.1. What do you notice (think of model conditions)?
+#### 1.1. What do you notice? (think of model conditions)
 
 The data does not match a linear trend. There is clear curvature in the data. Speed seems to at first, dramatically decrease as distance increases, but the speed at which it decreases slows as distance continues to grow.
 
-One way we can adapt to this is by applying a transformation to the data.
+#### 1.2. Given the context from the first paragraph and/or your background knowledge of the sport, give a possible explanation for what you noticed.
 
-2. Based on the model's issue, apply a transformation to the data to make a linear model more appropriate.
+Answers may vary. Students may point to the fact that distance runners have to run for longer, and therefore cannot most likely maintain their fastest possible speed for this time period. The sprinters, on the other hand, must do exactly that, as they only have a short period of time to get and keep the lead.
+
+### 2. Based on the model's issue, apply a transformation to the data to make a linear model more appropriate.
 
 ```{r}
 track <- track |> mutate(ln_distance = log(Event))
 ```
 
-3. Make a scatterplot showing the transformed relationship.
+### 3. Make a scatterplot showing the transformed relationship.
 
 ```{r}
 ggplot(track, aes(x = ln_distance, y = Speed)) +
   geom_point()
 ```
 
-4. Define a model using the transformed data and print a summary.
+### 4. Define a model using the transformed data and print a summary.
 
 ```{r}
 mod_track <- lm(Speed ~ ln_distance, track)
 summary(mod_track)
 ```
 
-5. Interpret in context, the coefficient on the transformed distance term.
+### 5. Interpret in context, the coefficient on the transformed distance term.
 
-As the natural log of distance increases by 1, Speed will, on average, decrease by 0.92 meters/second.
-
-
-------
-
-Notice that the data is still not entirely linear. There may be a better way to adapt to this relationship.
-
-Why is the relationship non-linear? Use context.
+As the natural log of distance increases by 1, speed will, on average, decrease by 0.92 meters/second.
