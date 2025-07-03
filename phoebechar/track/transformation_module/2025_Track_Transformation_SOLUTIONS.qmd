@@ -47,3 +47,10 @@ summary(mod_track)
 5. Interpret in context, the coefficient on the transformed distance term.
 
 As the natural log of distance increases by 1, Speed will, on average, decrease by 0.92 meters/second.
+
+
+------
+
+Notice that the data is still not entirely linear. There may be a better way to adapt to this relationship.
+
+Why is the relationship non-linear? Use context.

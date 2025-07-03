@@ -24,7 +24,16 @@ There are many different kinds of non-linear models, so the first step in using 
 We will start by applying an exponential decay model to the data. An exponential decay model has the following form:
 
 $$ y = ab^x$$
+Where a is the initial value of y when x = 0 and b is the decay term (how fast the decay is).
+
 Next we will apply a logarithmic decay model. Logarithmic decay models have the following form:
 
 $$ y = a - b * \ln(x)$$
-Where a is the intial value of y when x = 1-where the decay curve starts- and b is how fast the value decreases. As b is larger, the drop will be steeper at first. The ln(x) term allows the decay to slow over time.
+Where a is the value of y when x = 1-where the decay curve starts- and b is how fast the value decreases. As b is larger, the drop will be steeper at first. The ln(x) term allows the decay to slow over time.
+
+--------
+Report AIC, BIC, R-squared (for each model).
+
+If you completed the transformation module with this data set, compare the model you created there with the models from this module.
+
+Which model do you prefer? Why?
