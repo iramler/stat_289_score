@@ -1,7 +1,9 @@
 ---
 title: "2025 Women's Track Running: Fixing Non-Linear Data Transformation | SOLUTIONS"
-format: html
-    embed-resources: true
+format:  
+    html:  
+        embed-resources: true
+    pdf:  default
 ---
 
 ```{r message = FALSE, warning = FALSE}
