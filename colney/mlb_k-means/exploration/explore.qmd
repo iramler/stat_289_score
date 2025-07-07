@@ -13,7 +13,14 @@ pitching <-
   read_csv(here::here("colney/mlb_k-means/exploration/pitchers_2024.csv")) %>%
   select(-2,-3) %>%
   rename(
-    name = `last_name, first_name`
+    name = `last_name, first_name`,
+    bf = pa,
+    k_rate = k_percent,
+    bb_rate = bb_percent
+  ) %>%
+  mutate(
+    k_rate = round(k_rate / 100, 3),
+    bb_rate = round(bb_rate / 100, 3)
   )
 ```
 
@@ -39,5 +46,81 @@ batting <-
 
 ```{r}
 write_csv(batting, "mlb_batting_2024.csv")
+```
+
+# Exploring Batting K-means
+```{r}
+library(tidyverse)
+library(cluster)
+library(factoextra)
+```
+
+```{r}
+# get only numerical vars
+batting_data <- batting %>%
+  select(3, 4, 5, 6)
+```
+
+```{r}
+# scale the data
+batting_scaled <- scale(batting_data)
+```
+
+## choosing number of clusters
+```{r}
+# elbow method
+fviz_nbclust(batting_scaled, kmeans, method = "wss")
+
+# silhouette method
+fviz_nbclust(batting_scaled, kmeans, method = "silhouette")
+
+# both methods determine optimal cluster number is 4
+
+```
+
+## clusters
+```{r}
+set.seed(123)
+
+k_batting <- kmeans(batting_scaled, centers = 4, nstart = 25)
+```
+
+```{r}
+batting_clustered <- batting %>%
+  mutate(cluster = factor(k_batting$cluster))
+```
+
+```{r}
+# only using 2 vars of the 4 that determined the clusters
+batting_clustered %>%
+  ggplot(., aes(x = k_rate, y = slg_percent, color = cluster)) +
+  geom_point()
+```
+
+```{r}
+# reduce all 4 vars into 2 with PCA
+fviz_cluster(k_batting, data = batting_scaled,
+             geom = "point", ellipse.type = "convex")
+
+```
+
+
+```{r}
+pca_result <- prcomp(batting_scaled)
+summary(pca_result)
+pca_result$rotation
+```
+
+```{r}
+fviz_pca_var(pca_result,
+             col.var = "contrib",
+             gradient.cols = c("lightblue", "blue", "darkblue"),
+             repel = TRUE)
+```
+
+
+# Exploring Pitching K-means
+```{r}
+
 ```
 

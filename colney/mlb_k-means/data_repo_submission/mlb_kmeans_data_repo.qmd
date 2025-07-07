@@ -15,9 +15,9 @@ categories:
 
 
 ## Data
-The **mlb_pitching_2024.csv** dataset contains 77 rows and 16 column. Each row represents a game that Shai Gilgeous-Alexander played during the 2024-25 regular season. **Note:** The dataset includes the NBA Cup Championship game, which is not officially counted in regular season statistics by the NBA.
+The **mlb_pitching_2024.csv** dataset contains 107 rows and 4 columns. Each row represents a MLB pitcher who faced at least 502 batters in the 2024 regular season. **Note:** Baseball Savant's minimum qualification for leaderboard statistics is 502 batters faced.
 
-Download Data:[sga_stats_2025.csv](/data_repo_submission/sga_stats_2025.csv){target="_blank"}
+Download Data:[mlb_pitching_2024.csv](/data_repo_submission/mlb_pitching_2024.csv){target="_blank"}
 
 <details>
 
@@ -25,13 +25,16 @@ Download Data:[sga_stats_2025.csv](/data_repo_submission/sga_stats_2025.csv){tar
 
 | Variable          | Description
 |-------------------|------------------------------------------------
-| minutes    | Total minutes played in the game
+| name    | Pitcher's full name
+| bf    | Batters Faced: total number of batters the pitcher faced
+| k_rate    | Proportion of batters the pitcher stuck out
+| bb_rate    | Proportion of batters the pitcher walked
 
 </details>
 
-The **mlb_batting_2024.csv** dataset contains 77 rows and 16 column. Each row represents a game that Shai Gilgeous-Alexander played during the 2024-25 regular season. **Note:** The dataset includes the NBA Cup Championship game, which is not officially counted in regular season statistics by the NBA.
+The **mlb_batting_2024.csv** dataset contains 129 rows and 6 columns. Each row represents a MLB batter who had at least 502 plate appearances in the 2024 regular season. **Note:** Baseball Savant's minimum qualification for leaderboard statistics is 502 plate appearances.
 
-Download Data:[sga_stats_2025.csv](/data_repo_submission/sga_stats_2025.csv){target="_blank"}
+Download Data:[mlb_batting_2024.csv](/data_repo_submission/mlb_batting_2024.csv){target="_blank"}
 
 <details>
 
@@ -39,7 +42,12 @@ Download Data:[sga_stats_2025.csv](/data_repo_submission/sga_stats_2025.csv){tar
 
 | Variable          | Description
 |-------------------|------------------------------------------------
-| minutes    | Total minutes played in the game
+| name    | Batter's full name
+| pa    | Plate Appearance: total number of times a batter stepped up to the plate
+| batting_avg    | Batting Average: hits divided by at-bats
+| slg_percent    | Slugging Percentage: Measures total bases per at-bat (single = 1 base, HR = 4 bases)
+| hr_per_hit    | Proportion of a batter's hits that were home runs
+| k_rate    | Proportion of plate appearances that ended in a strikeout
 
 </details>
 
@@ -52,6 +60,7 @@ Download Data:[sga_stats_2025.csv](/data_repo_submission/sga_stats_2025.csv){tar
 
 
 ## References
+Baseball Savant: Statcast Custom Leaderboards. (n.d.). Baseballsavant.Com. Retrieved from https://baseballsavant.mlb.com/leaderboard/custom?year=2024
 
 
 
