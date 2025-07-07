@@ -54,6 +54,11 @@ ggplot(track, aes(x = ln_distance, y = Speed)) +
 ```{r}
 transformation_track <- lm(Speed ~ ln_distance, track)
 summary(transformation_track)
+
+trans2_track <- lm(log(Speed) ~ ln_distance, track)
+summary(trans2_track)
+
+AIC(trans2_track)
 ```
 
 ### 6. Interpret the R-squared for this model and compare it to the R-squared from question 1.

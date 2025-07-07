@@ -19,7 +19,7 @@ ggplot(track, aes(x = Event, y = Speed)) +
 
 The scatterplot above shows that at first, there is very quick decay in speed as distance increases, but then that decay slows and soon levels out. There are a few different ways we could account for this trend in a model. One would be to apply a transformation to the data and continue to use a linear model, another way (the one this worksheet will be exploring) is to switch to a non-linear model. 
 
-There are many different kinds of non-linear models, so the first step in using one is to decide the most useful way to build it. In this case, there are 2 non-linear models that show trends most similar to the data here. One is a logarithmic decay model and the other is a power curve decay mode. 
+There are many different kinds of non-linear models, so the first step in using one is to decide the most useful way to build it. In this case, there are 2 non-linear models that show trends most similar to the data here. One is a logarithmic decay model and the other is a power decay mode. 
 
 We will start by applying an logarithmic decay model to the data. A logarithmic decay model has the following form:
 
@@ -34,9 +34,10 @@ nls_mod <- nls(Speed ~ logarithmic(Event, a, b),
                 start = list(a = 8, b = 0.9))
 
 nls_mod
+AIC(nls_mod)
 ```
 
-Next, we will apply a power curve decay model to the data. A power curve regression equation has the following form:
+Next, we will apply a power decay model to the data. A power curve regression equation has the following form:
 
 $$ y = ax^b$$
 ```{r}
@@ -46,7 +47,8 @@ nls_mod2 <- nls(Speed ~ power_curve(Event, a, b),
                 data = track,
                 start = list(a = 15, b = -.1))
 
-nls_mod2
+summary(nls_mod2)
+AIC(nls_mod2)
 ```
 
 --------
@@ -55,3 +57,5 @@ Report AIC, BIC, R-squared (for each model).
 If you completed the transformation module with this data set, compare the model you created there with the models from this module.
 
 Which model do you prefer? Why?
+
+Answers may vary. A simple answer would be to chose the power curve model because it has the most success (based on the R-squared), but equally as valid would be an argument in favor of the log transformation model due to its simplicity. The R-squared values do not show a significant enough preference for any of the models to override a preference because of ease of use and explanation.
