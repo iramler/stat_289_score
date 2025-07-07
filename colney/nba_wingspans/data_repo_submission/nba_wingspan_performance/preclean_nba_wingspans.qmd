@@ -35,7 +35,6 @@ preclean <- wingspans %>%
 ```{r}
 preclean <-
   preclean %>%
-  slice(-179) %>%
   filter(name != "Alexandre SarrWAS | PF" & name != "Carlton CarringtonWAS | SG") %>%
   slice(-96, -377, -429) %>%
   mutate(
@@ -364,4 +363,17 @@ combined <-
 write_csv(combined, "nba_wingspan_performance_2025.csv")
 ```
 
+
+# Team Abbreviations Dataset
+```{r}
+teams <- read_csv(here::here("colney/nba_wingspans/data_repo_submission/nba_wingspan_performance_2025.csv")) %>%
+  select(2) %>%
+  distinct(team) %>%
+  slice(-31) %>%
+  arrange(team)
+```
+
+```{r}
+write_csv(teams, "nba_team_abbreviations.csv")
+```
 

@@ -110,6 +110,17 @@ wingspan <-
   relocate(team, .after = name)
 ```
 
+e. At this point, there may still be errors in the dataset, such as invalid or incorrectly extracted team abbreviations. To catch these, use the reference dataset of valid NBA team abbreviations: `nba_team_abbreviations.csv`.
+
+- First use `anti_join()` to identify any rows in the wingspan dataset with invalid team names. Then remove those rows from the dataset with `semi_join()`.
+```{r}
+teams <- read_csv(here::here("colney/nba_wingspans/data_repo_submission/nba_team_abbreviations.csv"))
+
+anti_join(wingspan, teams, by = "team")
+
+wingspan <- semi_join(wingspan, teams, by = "team")
+```
+
 # 3. Load Data From Basketball Reference
 
 **Why Per 100 Possessions:** Per 100 possessions stats are often preferred over per game stats in basketball because some teams have more possessions simply due to pace. These stats adjusts for that by standardizing performance across the same number of plays, making it easier to compare players fairly and evaluate efficiency and impact.
@@ -124,7 +135,7 @@ b.  To tidy the dataset by completing the following steps:
 
 **First**, remove duplicate player entries by keeping only the row that represents a player’s full season total. For example, Luka Dončić was traded mid-season, so he appears three times: once for his stats with DAL, once with LAL, and once for his total 2024–25 season stats.
 
-**Hint:** Use `group_by(player)` to group rows by player name. Then use `slice_max()` and order by games to keep only the row wheer each player had the most games played, which will be their season total. Finally, use `ungroup()` to remove the grouping.
+**Hint:** Use `group_by(player)` to group rows by player name. Then use `slice_max()` and order by games to keep only the row where each player had the most games played, which will be their season total. Finally, use `ungroup()` to remove the grouping.
 
 **Optional:** Use `select()` to keep only the variables you're interested in.
 
