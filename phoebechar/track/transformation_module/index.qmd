@@ -14,9 +14,8 @@ editor:
   canonical: true
 categories:
   - Simple Linear Regression
+image: trackfield.jpg
 ---
-
-![Source: https://www.flotrack.org/articles/14297681-ncaa-track-and-field-national-championship-photo-gallery](trackfield.jpg){width=3in}
 
 ### Module
 
