@@ -36,6 +36,14 @@ The scatterplot above shows that at first, there is very quick decay in speed as
 
 ### 6. Interpret the R-squared for this model and compare it to the R-squared from question 1.
 
-### 7. Interpret in context, the coefficient on the transformed distance term.
+Look back at your scatterplots and notice that despite the increased appropriateness of the transformed model, the data still has some curvature. To deal with this stubborn curvature we will apply another transformation.
 
-Look back at your scatterplots and notice that despite the increased appropriateness of the transformed model, the data still has some curvature. In the future, there may be another strategy to use with data like this that will result in a more accurate and appropriate model.
+### 7. Apply an appropriate transformation to the Speed variable in the data.
+
+### 8. Make a scatterplot showing this relationship.
+
+### 9. Define a model using the transformed data and print a summary.
+
+### 10. Which of the three models you defined do you prefer?
+
+### 11. Is there a downside to the model you prefer?

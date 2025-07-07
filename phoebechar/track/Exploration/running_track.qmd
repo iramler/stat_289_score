@@ -62,4 +62,52 @@ silly2 <- silly |> mutate(Name1Length = (str_length(FirstName)))
 ggplot(silly2, aes(x = Class, y = Name1Length)) +
   geom_boxplot(aes(group = Class))
 ```
+__________________________________
+
+```{r}
+test <- read_csv("WomensTrack2025.csv")
+
+ggplot(test, aes(y = Speed, x = Event)) +
+  geom_point()
+
+mod1 <- lm(Speed ~ Event, test)
+summary(mod1)
+
+mod2 <- lm(Speed ~ log(Event), test)
+summary(mod2)
+
+mod3 <- lm(log(Speed) ~ log(Event), test)
+summary(mod3)
+
+logarithmic <- function(x, a, b) { a-b*log(x)}
+mod4 <- nls(Speed ~ logarithmic(Event, a, b),
+                data = test,
+                start = list(a = 8, b = 0.9))
+summary(mod4)
+
+power_curve <- function(x, a, b) { a*(x^b) }
+mod5 <- nls(Speed ~ power_curve(Event, a, b),
+                data = test,
+                start = list(a = 15, b = -.1))
+summary(mod5)
+
+AIC(mod1)
+AIC(mod2)
+AIC(mod3)
+AIC(mod4)
+AIC(mod5)
+
+BIC(mod1)
+BIC(mod2)
+BIC(mod3)
+BIC(mod4)
+BIC(mod5)
+
+ggplot(test, aes(y = log(Speed), x = log(Event))) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+
+
 

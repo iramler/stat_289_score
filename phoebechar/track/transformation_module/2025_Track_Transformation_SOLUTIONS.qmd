@@ -1,5 +1,5 @@
 ---
-title: "2025 Women's Track Running: Fixing Non-Linear Data with a Log Transformation | SOLUTIONS"
+title: "2025 Women's Track Running: Fixing Non-Linear Data with a Log Transformations | SOLUTIONS"
 format:  
     html:  
         embed-resources: true
@@ -54,17 +54,47 @@ ggplot(track, aes(x = ln_distance, y = Speed)) +
 ```{r}
 transformation_track <- lm(Speed ~ ln_distance, track)
 summary(transformation_track)
-
-trans2_track <- lm(log(Speed) ~ ln_distance, track)
-summary(trans2_track)
-
-AIC(trans2_track)
 ```
 
 ### 6. Interpret the R-squared for this model and compare it to the R-squared from question 1.
 
 The adjusted R-squared for this model is 0.945. This means that 94.5% of the variation in speed can be explained by a linear model using the natural log of distance as a predictor. This is significantly higher than the R-squared for the model without the transformation, making the transformed model more useful for predicting speed based on event distance.
 
-### 7. Interpret in context, the coefficient on the transformed distance term.
+Look back at your scatterplots and notice that despite the increased appropriateness of the transformed model, the data still has some curvature. To deal with this stubborn curvature we will apply another transformation.
 
-As the natural log of distance increases by 1, speed will, on average, decrease by 0.92 meters/second.
+### 7. Apply an appropriate transformation to the Speed variable in the data.
+
+```{r}
+track <- track |> mutate(ln_speed = log(Speed))
+```
+
+### 8. Make a scatterplot showing this relationship.
+
+```{r}
+ggplot(track, aes(x = ln_distance, y = ln_speed)) +
+  geom_point()
+```
+
+### 9. Define a model using the transformed data and print a summary.
+
+```{r}
+transformation2_track <- lm(ln_speed ~ ln_distance, track)
+summary(transformation2_track)
+```
+
+### 10. Which of the three models you defined do you prefer?
+
+```{r}
+AIC(transformation_track)
+AIC(transformation2_track)
+
+BIC(transformation_track)
+BIC(transformation2_track)
+```
+
+
+Answers may vary. Based on the R-squared, the models explain similar amounts of the variation in the data. The double log transformed model explains slightly more, and if you look at the AIC and BIC of the models, these measurements support that. The AIC and BIC for the double log transformed model are significantly lower. Because of these measures, I prefer the double log transformed model.
+
+### 11. Is there a downside to the model you prefer?
+
+Answers will vary. For the double log model: interpretations are more difficult. For the single transformation model: there is still some curvature that makes the model less appropriate.

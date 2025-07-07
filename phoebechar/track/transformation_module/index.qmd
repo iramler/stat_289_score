@@ -1,5 +1,5 @@
 ---
-title: "2025 Women's Track Running: Fixing Non-Linear Data with Transformation"
+title: "2025 Women's Track Running: Fixing Non-Linear Data with Log Transformations"
 author:
   - name: Phoebe Jones
     affiliation:
@@ -9,12 +9,14 @@ format:
       html:
           embed-resources: true
 date: "July 7, 2025"
-description: "Using data from 2025 D1 Women's track to observe the use case of a log transformation."
+description: "Using data from 2025 D1 Women's track to observe the use case of log transformations."
 editor: 
   canonical: true
 categories:
   - Simple Linear Regression
 ---
+
+![Source: https://www.flotrack.org/articles/14297681-ncaa-track-and-field-national-championship-photo-gallery](trackfield.jpg){width=3in}
 
 ### Module
 
@@ -25,7 +27,7 @@ Please note that these materials have not yet completed the required pedagogical
 In outdoor track, runners run on a track and compete to complete the distance in the shortest time. There are many different events (distinguished by length, measured in meters) and runners typically have a specialty between distance or sprint. Distance runners need to think about pacing themselves and strategically overtaking competitors. Sprinters need to get a good start and maintain their highest speed for a short period of time. This difference in strategy is represented in the data recorded about runners' performance at high levels. NCAA Women's Division 1 track runners compete at a very high level, and their times are recorded throughout the season to track the top individual achievements.
 
 ::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
-This could be used as an out-of-class homework assignment or an in-class activity that should take 30 minutes or less.
+This could be used as an out-of-class homework assignment or an in-class activity that should take 45 minutes or less.
 :::
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
