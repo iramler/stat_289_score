@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2025 Women’s Track Running: Fixing Non-Linear Data Transformation | SOLUTIONS</title>
+<title>2025 Women’s Track Running: Fixing Non-Linear Data with a Log Transformation | SOLUTIONS</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3088,7 +3088,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">2025 Women’s Track Running: Fixing Non-Linear Data Transformation | SOLUTIONS</h1>
+<h1 class="title">2025 Women’s Track Running: Fixing Non-Linear Data with a Log Transformation | SOLUTIONS</h1>
 </div>
 
 
@@ -3111,11 +3111,39 @@ vertical-align: -.125em;
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>track <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;WomensTrack2025.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="make-a-scatterplot-using-distance-event-to-predict-speed" class="level3">
-<h3 class="anchored" data-anchor-id="make-a-scatterplot-using-distance-event-to-predict-speed">1. Make a scatterplot using distance (Event) to predict speed</h3>
+<section id="define-a-model-using-distance-event-to-predict-speed-and-interpret-the-r-squared-for-the-model." class="level3">
+<h3 class="anchored" data-anchor-id="define-a-model-using-distance-event-to-predict-speed-and-interpret-the-r-squared-for-the-model.">1. Define a model using distance (Event) to predict speed and interpret the R-squared for the model.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(track, <span class="fu">aes</span>(<span class="at">x =</span> Event, <span class="at">y =</span> Speed)) <span class="sc">+</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mod_track <span class="ot">&lt;-</span> <span class="fu">lm</span>(Speed <span class="sc">~</span> Event, track)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_track)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Speed ~ Event, data = track)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.35805 -0.88282  0.03831  0.99845  1.46487 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  7.709e+00  6.225e-02  123.84   &lt;2e-16 ***
+Event       -3.317e-04  1.457e-05  -22.76   &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.9327 on 349 degrees of freedom
+Multiple R-squared:  0.5976,    Adjusted R-squared:  0.5964 
+F-statistic: 518.2 on 1 and 349 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>The adjusted R-squared of this model is 0.596. This means that 59.6% of the variation of Speed can be explained by a linear model using event distance as a predictor.</p>
+</section>
+<section id="make-a-scatterplot-representing-the-model-you-defined." class="level3">
+<h3 class="anchored" data-anchor-id="make-a-scatterplot-representing-the-model-you-defined.">2. Make a scatterplot representing the model you defined.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(track, <span class="fu">aes</span>(<span class="at">x =</span> Event, <span class="at">y =</span> Speed)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3125,25 +3153,25 @@ vertical-align: -.125em;
 </div>
 </div>
 <section id="what-do-you-notice-think-of-model-conditions" class="level4">
-<h4 class="anchored" data-anchor-id="what-do-you-notice-think-of-model-conditions">1.1. What do you notice? (think of model conditions)</h4>
+<h4 class="anchored" data-anchor-id="what-do-you-notice-think-of-model-conditions">2.1. What do you notice? (think of model conditions)</h4>
 <p>The data does not match a linear trend. There is clear curvature in the data. Speed seems to at first, dramatically decrease as distance increases, but the speed at which it decreases slows as distance continues to grow.</p>
 </section>
 <section id="given-the-context-from-the-first-paragraph-andor-your-background-knowledge-of-the-sport-give-a-possible-explanation-for-what-you-noticed." class="level4">
-<h4 class="anchored" data-anchor-id="given-the-context-from-the-first-paragraph-andor-your-background-knowledge-of-the-sport-give-a-possible-explanation-for-what-you-noticed.">1.2. Given the context from the first paragraph and/or your background knowledge of the sport, give a possible explanation for what you noticed.</h4>
+<h4 class="anchored" data-anchor-id="given-the-context-from-the-first-paragraph-andor-your-background-knowledge-of-the-sport-give-a-possible-explanation-for-what-you-noticed.">2.2. Given the context from the first paragraph and/or your background knowledge of the sport, give a possible explanation for what you noticed.</h4>
 <p>Answers may vary. Students may point to the fact that distance runners have to run for longer, and therefore cannot most likely maintain their fastest possible speed for this time period. The sprinters, on the other hand, must do exactly that, as they only have a short period of time to get and keep the lead.</p>
 </section>
 </section>
 <section id="based-on-the-models-issue-apply-a-transformation-to-the-data-to-make-a-linear-model-more-appropriate." class="level3">
-<h3 class="anchored" data-anchor-id="based-on-the-models-issue-apply-a-transformation-to-the-data-to-make-a-linear-model-more-appropriate.">2. Based on the model’s issue, apply a transformation to the data to make a linear model more appropriate.</h3>
+<h3 class="anchored" data-anchor-id="based-on-the-models-issue-apply-a-transformation-to-the-data-to-make-a-linear-model-more-appropriate.">3. Based on the model’s issue, apply a transformation to the data to make a linear model more appropriate.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>track <span class="ot">&lt;-</span> track <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">ln_distance =</span> <span class="fu">log</span>(Event))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>track <span class="ot">&lt;-</span> track <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">ln_distance =</span> <span class="fu">log</span>(Event))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="make-a-scatterplot-showing-the-transformed-relationship." class="level3">
-<h3 class="anchored" data-anchor-id="make-a-scatterplot-showing-the-transformed-relationship.">3. Make a scatterplot showing the transformed relationship.</h3>
+<h3 class="anchored" data-anchor-id="make-a-scatterplot-showing-the-transformed-relationship.">4. Make a scatterplot showing the transformed relationship.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(track, <span class="fu">aes</span>(<span class="at">x =</span> ln_distance, <span class="at">y =</span> Speed)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(track, <span class="fu">aes</span>(<span class="at">x =</span> ln_distance, <span class="at">y =</span> Speed)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3154,10 +3182,10 @@ vertical-align: -.125em;
 </div>
 </section>
 <section id="define-a-model-using-the-transformed-data-and-print-a-summary." class="level3">
-<h3 class="anchored" data-anchor-id="define-a-model-using-the-transformed-data-and-print-a-summary.">4. Define a model using the transformed data and print a summary.</h3>
+<h3 class="anchored" data-anchor-id="define-a-model-using-the-transformed-data-and-print-a-summary.">5. Define a model using the transformed data and print a summary.</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mod_track <span class="ot">&lt;-</span> <span class="fu">lm</span>(Speed <span class="sc">~</span> ln_distance, track)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_track)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>transformation_track <span class="ot">&lt;-</span> <span class="fu">lm</span>(Speed <span class="sc">~</span> ln_distance, track)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(transformation_track)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -3180,8 +3208,12 @@ F-statistic:  5995 on 1 and 349 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </section>
+<section id="interpret-the-r-squared-for-this-model-and-compare-it-to-the-r-squared-from-question-1." class="level3">
+<h3 class="anchored" data-anchor-id="interpret-the-r-squared-for-this-model-and-compare-it-to-the-r-squared-from-question-1.">6. Interpret the R-squared for this model and compare it to the R-squared from question 1.</h3>
+<p>The adjusted R-squared for this model is 0.945. This means that 94.5% of the variation in speed can be explained by a linear model using the natural log of distance as a predictor. This is significantly higher than the R-squared for the model without the transformation, making the transformed model more useful for predicting speed based on event distance.</p>
+</section>
 <section id="interpret-in-context-the-coefficient-on-the-transformed-distance-term." class="level3">
-<h3 class="anchored" data-anchor-id="interpret-in-context-the-coefficient-on-the-transformed-distance-term.">5. Interpret in context, the coefficient on the transformed distance term.</h3>
+<h3 class="anchored" data-anchor-id="interpret-in-context-the-coefficient-on-the-transformed-distance-term.">7. Interpret in context, the coefficient on the transformed distance term.</h3>
 <p>As the natural log of distance increases by 1, speed will, on average, decrease by 0.92 meters/second.</p>
 </section>
 

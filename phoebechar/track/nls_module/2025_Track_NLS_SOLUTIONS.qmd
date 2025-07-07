@@ -19,31 +19,32 @@ ggplot(track, aes(x = Event, y = Speed)) +
 
 The scatterplot above shows that at first, there is very quick decay in speed as distance increases, but then that decay slows and soon levels out. There are a few different ways we could account for this trend in a model. One would be to apply a transformation to the data and continue to use a linear model, another way (the one this worksheet will be exploring) is to switch to a non-linear model. 
 
-There are many different kinds of non-linear models, so the first step in using one is to decide the most useful way to build it. In this case, there are 2 non-linear models that follow a similar trend to the data here. One is an exponential decay model and the other is a logarithmic decay mode. 
+There are many different kinds of non-linear models, so the first step in using one is to decide the most useful way to build it. In this case, there are 2 non-linear models that show trends most similar to the data here. One is a logarithmic decay model and the other is a power curve decay mode. 
 
-We will start by applying an exponential decay model to the data. An exponential decay model has the following form:
+We will start by applying an logarithmic decay model to the data. A logarithmic decay model has the following form:
 
-$$ y = ab^x$$
-Where a is the initial value of y when x = 0 and b is the decay term (how fast the decay is).
-
-```{r}
-exponential <- function(x, a, b) {a * (b^x)}
-
-nls_mod1 <- nls(Speed ~ exponential(Event, a, b),
-                data = track, start = list(a = 8, b = 0.9))
-```
-
-Next we will apply a logarithmic decay model. Logarithmic decay models have the following form:
-
-$$ y = a - b * \ln(x)$$
+$$ y = a - b\ln(x)$$
 Where a is the value of y when x = 1—where the decay curve starts—and b is how fast the value decreases. As b is larger, the drop will be steeper at first. The ln(x) term allows the decay to slow over time.
 
 ```{r}
 logarithmic <- function(x, a, b) { a-b*log(x)}
 
-nls_mod2 <- nls(Speed ~ logarithmic(Event, a, b),
+nls_mod <- nls(Speed ~ logarithmic(Event, a, b),
                 data = track,
                 start = list(a = 8, b = 0.9))
+
+nls_mod
+```
+
+Next, we will apply a power curve decay model to the data. A power curve regression equation has the following form:
+
+$$ y = ax^b$$
+```{r}
+power_curve <- function(x, a, b) { a*(x^b) }
+
+nls_mod2 <- nls(Speed ~ power_curve(Event, a, b),
+                data = track,
+                start = list(a = 15, b = -.1))
 
 nls_mod2
 ```

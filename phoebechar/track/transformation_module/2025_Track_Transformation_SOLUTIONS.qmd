@@ -1,5 +1,5 @@
 ---
-title: "2025 Women's Track Running: Fixing Non-Linear Data Transformation | SOLUTIONS"
+title: "2025 Women's Track Running: Fixing Non-Linear Data with a Log Transformation | SOLUTIONS"
 format:  
     html:  
         embed-resources: true
@@ -13,41 +13,53 @@ library(ggplot2)
 track <- read.csv("WomensTrack2025.csv")
 ```
 
-### 1. Make a scatterplot using distance (Event) to predict speed
+### 1. Define a model using distance (Event) to predict speed and interpret the R-squared for the model.
+
+```{r}
+mod_track <- lm(Speed ~ Event, track)
+summary(mod_track)
+```
+The adjusted R-squared of this model is 0.596. This means that 59.6% of the variation of Speed can be explained by a linear model using event distance as a predictor.
+
+### 2. Make a scatterplot representing the model you defined.
 
 ```{r}
 ggplot(track, aes(x = Event, y = Speed)) +
   geom_point()
 ```
 
-#### 1.1. What do you notice? (think of model conditions)
+#### 2.1. What do you notice? (think of model conditions)
 
 The data does not match a linear trend. There is clear curvature in the data. Speed seems to at first, dramatically decrease as distance increases, but the speed at which it decreases slows as distance continues to grow.
 
-#### 1.2. Given the context from the first paragraph and/or your background knowledge of the sport, give a possible explanation for what you noticed.
+#### 2.2. Given the context from the first paragraph and/or your background knowledge of the sport, give a possible explanation for what you noticed.
 
 Answers may vary. Students may point to the fact that distance runners have to run for longer, and therefore cannot most likely maintain their fastest possible speed for this time period. The sprinters, on the other hand, must do exactly that, as they only have a short period of time to get and keep the lead.
 
-### 2. Based on the model's issue, apply a transformation to the data to make a linear model more appropriate.
+### 3. Based on the model's issue, apply a transformation to the data to make a linear model more appropriate.
 
 ```{r}
 track <- track |> mutate(ln_distance = log(Event))
 ```
 
-### 3. Make a scatterplot showing the transformed relationship.
+### 4. Make a scatterplot showing the transformed relationship.
 
 ```{r}
 ggplot(track, aes(x = ln_distance, y = Speed)) +
   geom_point()
 ```
 
-### 4. Define a model using the transformed data and print a summary.
+### 5. Define a model using the transformed data and print a summary.
 
 ```{r}
-mod_track <- lm(Speed ~ ln_distance, track)
-summary(mod_track)
+transformation_track <- lm(Speed ~ ln_distance, track)
+summary(transformation_track)
 ```
 
-### 5. Interpret in context, the coefficient on the transformed distance term.
+### 6. Interpret the R-squared for this model and compare it to the R-squared from question 1.
+
+The adjusted R-squared for this model is 0.945. This means that 94.5% of the variation in speed can be explained by a linear model using the natural log of distance as a predictor. This is significantly higher than the R-squared for the model without the transformation, making the transformed model more useful for predicting speed based on event distance.
+
+### 7. Interpret in context, the coefficient on the transformed distance term.
 
 As the natural log of distance increases by 1, speed will, on average, decrease by 0.92 meters/second.
