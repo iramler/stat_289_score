@@ -24,9 +24,7 @@ The dataset provided (male, female, and mixed Olympic Curling teams) was scraped
 
 This process was used to make the dataset
 - **Copied and pasted the data set into Excel**
-  - Deleted the "Skip" variable
-  - Deleted the "W-L" variable
-  - Deleted the "Qualification" variable
+  - Deleted the "Skip". "W-L", and "Qualification" variable
   - Added a sex variable to indicate male team, female team, or mixed team
   - Added a rank variable to indicate the rank the team was after the round robin
 

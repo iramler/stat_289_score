@@ -1,0 +1,69 @@
+---
+title: "2025 IFSC Climbing World Cup National Team Results"
+author: "Faith Rhinehart" 
+date: "July 7, 2025" 
+format: html
+categories:
+  - Graphing
+  - Interpreting Graphs
+---
+
+## Motivation
+
+The IFSC (International Federation of Sport Climbing) Climbing World Cup is a dynamic, high-intensity series of international competitions where elite climbers from around the globe compete across three distinct disciplines: lead, bouldering, and speed. In lead climbing, athletes scale tall, complex routes on a timed attempt, aiming to reach the highest hold before falling or time runs out. Bouldering features short, powerful problems on lower walls without ropes, testing strength, technique, and problem-solving in a limited number of attempts. Speed climbing is a head-to-head race up a standardized 15-meter wall, where climbers sprint to the top in mere seconds. The World Cup blends explosive athleticism, mental focus, and route-reading strategy. 
+
+The competition travels to diverse locations around the world to highlight the sport’s global appeal and allowing athletes to adapt to different wall styles and environmental conditions. This promotes climbing culture worldwide but also ensures a fair and varied challenge for competitors. Competitors gain points based on their performance at each location and compete for a gold, silver, and bronze medal in each event (lead, bloudering, and speed) as well they can earn a trophy for the overall winners. Competitor's points get added up to their total National ranking.
+
+## Data
+
+The dataset provided (Nation's total points in the IFSC Climbing World Cup) was scraped from Wikipedia (see references for link). 
+
+::: {.callout-note collapse="true" title="Tidying Process"}
+
+This process was used to make the dataset
+- **Copied and pasted the data set into Excel**
+
+:::
+
+
+<details>
+<summary><strong>Variable Descriptions</strong></summary>
+
+National Team Results of the IFCS World Cup (10 cases with 9 variables) data:
+
+| Variable      | Description                             |
+|---------------|-----------------------------------------|
+| Rank          | Country's place in Competition          |
+| Name          | Name of Country                         |
+| Points        | Total Points Obtained from Each Location|
+| Keqaio        | Points Obtained at This Location        |
+| Curitiba      | Points Obtained at This Location        |
+| Salt Lake City| Points Obtained at This Location        |
+| Prague        | Points Obtained at This Location        |
+| Bern          | Points Obtained at This Location        |
+| Innsbruck     | Points Obtained at This Location        |
+
+                       
+</details>
+
+Download Climbing Data: [Climbing.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Climbing/Data Repository/Climbing.csv)
+
+## Questions Investigated
+1. How do scores vary across locations for each country?
+2. Which location contributed the most points overall?
+3. Which country scored the most points overall?
+4. What is the distribution of scores at each location?
+5. Which locations contribute most to the top-ranked countries’ scores?
+
+## References
+
+Data was scraped from Wikipedia:
+
+[2025 Climbing Results](https://en.wikipedia.org/wiki/2025_IFSC_Climbing_World_Cup#National_Teams){   }
+
+Video was linked from YouTube:
+
+The video is about climbing at the Olympics instead of the IFCS World Cup but it explains how each of the events work which are the same for both the Olympics and IFSC World Cup. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HdCD_MuU7bs?si=9s77TZm46Phnc0uA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
