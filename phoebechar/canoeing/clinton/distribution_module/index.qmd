@@ -7,7 +7,7 @@ author:
         name: St. Lawrence University
 format: 
       html:
-          embed-resources: true
+          embed-resources: false
 date: "June 20, 2025"
 description: "Using data from the Clinton Canoe Regatta to look at data distributions."
 editor: 
@@ -16,7 +16,7 @@ categories:
   - Histograms
   - Boxplots
   - Normal Distributions
-  - Skewed Distributions
+  - Skewness
 ---
 
 ## Module
