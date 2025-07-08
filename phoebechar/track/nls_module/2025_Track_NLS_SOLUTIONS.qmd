@@ -10,7 +10,7 @@ library(ggplot2)
 track <- read.csv("WomensTrack2025.csv")
 ```
 
-1. Make a scatterplot using distance (Event) to predict speed
+1. Make a scatterplot using distance (Event) to predict speed.
 
 ```{r}
 ggplot(track, aes(x = Event, y = Speed)) +
@@ -23,23 +23,49 @@ There are many different kinds of non-linear models, so the first step in using 
 
 We will start by applying an logarithmic decay model to the data. A logarithmic decay model has the following form:
 
-$$ y = a - b\ln(x)$$
-Where a is the value of y when x = 1—where the decay curve starts—and b is how fast the value decreases. As b is larger, the drop will be steeper at first. The ln(x) term allows the decay to slow over time.
+$$ y = a - b\ln(x) $$
+Where a is the value of y when x = 1—where the decay curve starts—and b is how fast the value decreases (and for decay must be positive, as the negative is already included in the equation). As b is larger, the drop will be steeper at first. The ln(x) term allows the decay to slow over time.
 
 ```{r}
 logarithmic <- function(x, a, b) { a-b*log(x)}
-
-nls_mod <- nls(Speed ~ logarithmic(Event, a, b),
-                data = track,
-                start = list(a = 8, b = 0.9))
-
-nls_mod
-AIC(nls_mod)
 ```
 
-Next, we will apply a power decay model to the data. A power curve regression equation has the following form:
+The above code defines the logarithmic decay function, allowing us to use it within the `nls` function, as in the code below. For `nls` models, you must provide starting values for each of the parameters; these values do not have to be exact, they just have to be reasonable guesses. Here, we will guess 10 for $a$ as we know that it must be higher than 9 (as that is the value when x = 100), but we cannot see how much higher. For $b$ we will guess 1 as the curve is not too extreme.
 
-$$ y = ax^b$$
+```{r}
+nls_mod <- nls(Speed ~ logarithmic(Event, a, b),
+                data = track,
+                start = list(a = 10, b = 1))
+summary(nls_mod)
+```
+
+2. Write out the fitted model.
+
+$$\widehat{\text{Speed}} = 13.12 - 0.92\ln(\text{Event}) $$
+
+3. Report the AIC and BIC for the model.
+
+```{r}
+AIC(nls_mod)
+BIC(nls_mod)
+```
+
+The AIC for the model is 252.70 and the BIC is 264.29.
+
+4. Plug in the correct values for a and b and run the code to make a scatterplot that shows the nls line with the data.
+
+```{r}
+a = 
+b = 
+ggplot(track, aes(x = Event)) +
+  geom_point(aes(y = Speed)) +
+  geom_function(fun = function(x) { a-b*log(x) }, color="hotpink")
+```
+
+
+Next, we will repeat the process to apply a power decay model to the data. A power curve regression equation has the following form:
+
+$$ y = ax^b $$
 ```{r}
 power_curve <- function(x, a, b) { a*(x^b) }
 
@@ -50,6 +76,25 @@ nls_mod2 <- nls(Speed ~ power_curve(Event, a, b),
 summary(nls_mod2)
 AIC(nls_mod2)
 ```
+
+Plug in the correct function and use the scatterplot to test different $a$ and $b$ values to find good starting guesses.
+```{r}
+a = 
+b = 
+ggplot(track, aes(x = Event)) +
+  geom_point(aes(y = Speed)) +
+  geom_function(fun = function(x) {  }, color="hotpink")
+```
+
+Fit the model
+
+Write out the fitted model.
+
+Report the AIC and BIC for the model.
+
+
+
+The easi
 
 --------
 Report AIC, BIC, R-squared (for each model).

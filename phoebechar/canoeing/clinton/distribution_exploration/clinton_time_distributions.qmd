@@ -10,6 +10,9 @@ library(ggplot2)
 library(dplyr)
 ## read in data
 clinton <- read.csv("phoebechar/canoeing/clinton/data_repo_submission/full_clinton.csv")
+
+clinton <- full_clinton
+
 ## filter to include each boat ONLY once
 clinton <- clinton |> group_by(year, bib) |> slice(1)
 ## remove DNF/DNS/non-recorded times
@@ -20,8 +23,23 @@ clinton_pro <- clinton |> mutate(pro = if_else(grepl("pro", classID), 1, 0)) |>
   filter(pro == 1)
 
 ## create dataset with all non-pro canoes
-clinton_canoe <- clinton |> mutate(pro = if_else(grepl("pro", classID), 1, 0)) |>
+clinton_canoe <- clinton |> 
+  mutate(pro = if_else(grepl("pro", classID), 1, 0)) |>
   filter(pro == 0) |> mutate(canoe = if_else(grepl("oc", classID), 1, 0)) |> filter(canoe == 1)
+
+## create dataset with all non-pro canoes
+clinton_canoe <- clinton |> 
+  mutate(pro = if_else(grepl("pro", classID), 1, 0)) |>
+  #filter(pro == 0) |> 
+  mutate(canoe = if_else(grepl("oc", classID), 1, 0)) |>
+  filter(canoe == 1) |>
+  mutate(n_paddlers = parse_number(classID))
+
+clinton_canoe <- clinton_canoe |>
+  select(year, classID, place, time, overall, pro, n_paddlers)
+
+
+clinton_canoe |> write_csv(file = "clinton_canoes.csv")
 ```
 
 ```{r}
