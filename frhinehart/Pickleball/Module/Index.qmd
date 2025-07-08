@@ -13,6 +13,7 @@ format:
     embed-resources: true
 categories:
   - Matched Pairs t-test
+image: pickleballImage.webp
 ---
 
 ### Background to Figure Skating Video

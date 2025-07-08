@@ -14,7 +14,10 @@ format:
 categories:
   - Model Building
   - Log Transformations
+image: FigureImage.webp
 ---
+
+![Source: ]
 
 ### Background to Figure Skating Video
 

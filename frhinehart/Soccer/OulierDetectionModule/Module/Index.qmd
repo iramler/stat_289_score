@@ -14,6 +14,7 @@ format:
 categories:
   - Model Fitting 
   - Outlier Detection
+image: soccerImage.jpg
 ---
 
 ### Background to Soccer Video

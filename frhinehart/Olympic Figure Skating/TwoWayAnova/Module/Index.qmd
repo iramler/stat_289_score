@@ -15,6 +15,7 @@ categories:
   - Two Way Interaction ANOVA
   - Post Hoc Tukey
   - Pair Wise Comparisons
+image: FigureImage.webp
 ---
 
 ### Background to Figure Skating Video
