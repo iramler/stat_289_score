@@ -36,22 +36,22 @@ This process was used to make the dataset
 
 male, female, and mixed Olympic Curling teams results after round robin (30 cases with 13 variables) data:
 
-| Variable  | Description            |
-|-----------|------------------------|
-| Team      | Country                |
-| Pld       | Matches Played         |
-| W         | Wins                   |
-| L         | Loses                  |
-| PF        | Points For             |
-| PA        | Points Against         |
-| EW        | Ends Won               |
-| EL        | Ends Lost              |
-| BE        | Blank Ends             |
-| SE        | Stolen Ends            |
-| S%        | Shot Percentage        |  
-| DSC       | Draw Shot Challenge    |
-| Sex       | Sex of Team            |
-| Rank      | Rank After Round Robin |
+| Variable  | Description                 |
+|-----------|-----------------------------|
+| Team      | Country Team is Representing|
+| Pld       | Matches Played              |
+| W         | Wins                        |
+| L         | Loses                       |
+| PF        | Points For                  |
+| PA        | Points Against              |
+| EW        | Ends Won                    |
+| EL        | Ends Lost                   |
+| BE        | Blank Ends                  |
+| SE        | Stolen Ends                 |
+| S%        | Shot Percentage             |  
+| DSC       | Draw Shot Challenge         |
+| Sex       | Sex of Team                 |
+| Rank      | Rank After Round Robin      |
                        
 </details>
 
