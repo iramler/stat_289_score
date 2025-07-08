@@ -3,10 +3,11 @@ title: "2025 Women's Track Running: Using Non-Linear Least Squares Regression"
 format:  
     html:  
         embed-resources: true
-    pdf:  default
 ---
 
-```{r message = FALSE, warning = FALSE}
+In outdoor track, runners run on a track and compete to complete the distance in the shortest time. There are many different events (distinguished by length, measured in meters) and runners typically have a specialty between distance or sprint. Distance runners need to think about pacing themselves and strategically overtaking competitors. Sprinters need to get a good start and maintain their highest speed for a short period of time. NCAA Women's Division 1 track runners compete at a very high level, and their times are recorded throughout the season to track the top individual achievements.
+
+```{r}
 library(tidyverse)
 library(ggplot2)
 
@@ -15,14 +16,15 @@ track <- read.csv("WomensTrack2025.csv")
 
 1. Make a scatterplot using distance (Event) to predict speed.
 
-```{r}
-ggplot(track, aes(x = Event, y = Speed)) +
-  geom_point()
-```
+
+The scatterplot shows that at first, there is very quick decay in speed as distance increases, but then that decay slows and soon levels out. There are a few different ways we could account for this trend in a model. One would be to apply a transformation to the data and continue to use a linear model, another way (the one this worksheet will be exploring) is to switch to a non-linear least squares (nls) model. 
+
+There are many different kinds of nls models, so the first step in using one is to decide the most useful way to build it. In this case, there are 2 equation types that show trends most similar to the data here. One is logarithmic decay and the other is power decay. 
 
 We will start by applying an logarithmic decay model to the data. A logarithmic decay model has the following form:
 
 $$ y = a - b\ln(x) $$
+
 Where $a$ is the value of y when x = 1 (where the decay curve starts) and b is how fast the value decreases (and for decay must be positive, as the negative is already included in the equation). As $b$ is larger, the drop will be steeper at first. The $\ln(x)$ term allows the decay to slow over time.
 
 ```{r}
@@ -43,22 +45,13 @@ nls_mod <- nls(Speed ~ logarithmic(Event, a, b),
 summary(nls_mod)
 ```
 
-$$\widehat{\text{Speed}} = 13.12 - 0.92*\ln(\text{Event}) $$
-
 3. Report the AIC and BIC for the model.
-
-```{r}
-AIC(nls_mod)
-BIC(nls_mod)
-```
-
-The AIC for the model is 252.70 and the BIC is 264.29.
 
 4. Plug in the correct values for $a$ and $b$ so the code below will create a scatterplot that shows the logarithmic decay line with the data.
 
 ```{r}
-a = 13.12
-b = 0.92
+a = 
+b = 
 ggplot(track, aes(x = Event)) +
   geom_point(aes(y = Speed)) +
   geom_function(fun = function(x) { a-b*log(x) }, color="hotpink") +
@@ -72,18 +65,15 @@ Now, you will repeat the process to apply a power decay model to the data. A pow
 
 $$ y = ax^{-b} $$
 
-The parameters in the power decay model have similar roles to those in the logarithmic decay model. $a$ impacts the vertical scale of the curve and is typically the y value where the curvature begins. $b$ is the decay rate and changes how quickly the decay happens (and for decay must be positive, as the negative is already included in the equation). Because $x$ is being raised to a negative value, the decay term will eventually converge towards 0.
+The parameters in the power decay model have similar roles to those in the logarithmic decay model. $a$ impacts the vertical scale of the curve and is typically the y value where the curvature begins. $b$ is the decay rate and changes how quickly the decay happens. Because $x$ is being raised to a negative value, the decay term will eventually converge towards 0.
 
 5. Plug in the correct function and use the scatterplot to test different $a$ and $b$ values to find good starting guesses for when we fit the model.
 ```{r}
-## the answer key uses a = 15 and b = 0.1
-## which are reasonable but not exactly correct
-
-a = 15
-b = .1
+a = 
+b = 
 ggplot(track, aes(x = Event)) +
   geom_point(aes(y = Speed)) +
-  geom_function(fun = function(x) { a*(x^(-b)) }, color="hotpink") +
+  geom_function(fun = function(x) { }, color="hotpink") +
   labs(title = "Speed vs. Event Distance",
    x = "Event Distance (m)",
    y = "Speed (m/s)") +
@@ -91,13 +81,6 @@ ggplot(track, aes(x = Event)) +
 ```
 
 6. Fit the model using the correct function and some reasonable starting values you found.
-```{r}
-power_curve <- function(x, a, b) { a*(x^(-b)) }
-
-nls_mod2 <- nls(Speed ~ power_curve(Event, a, b),
-                data = track,
-                start = list(a = 15, b = .1))
-```
 
 7. Use the model summary to write out the fitted model.
 
@@ -105,33 +88,10 @@ nls_mod2 <- nls(Speed ~ power_curve(Event, a, b),
 summary(nls_mod2)
 ```
 
-$$\widehat{\text{Speed}} = 17.29*\text{Event}^{-0.14}$$
-
 8. Report the AIC and BIC for the model.
-
-```{r}
-AIC(nls_mod2)
-BIC(nls_mod2)
-```
-
-The AIC for this model is 123.95 and the BIC for this model is 135.53.
 
 9. Which of the two non-linear least squares models you created do you prefer?
 
-The lower AIC and BIC of the second model make it the more useful model for predicting a runner's speed using the distance they are running. I prefer the power decay model.
-
 10. Define a model that uses natural log of `Event` to predict the natural log of `Speed`.
 
-```{r}
-transform_mod <- lm(log(Speed) ~ log(Event), track)
-summary(transform_mod)
-```
-
 10.1. Do you prefer the transformation model or the nls model you picked in question 9 for predicting Speed using Event?
-
-```{r}
-AIC(transform_mod)
-BIC(transform_mod)
-```
-
-The double transformation model has a very low AIC (-1245.9), making it the most useful model, I prefer it for this. However, it is important to remember that using log transformations makes the data harder to work with **in context** and makes visualizations and interpretations less meaningful.
