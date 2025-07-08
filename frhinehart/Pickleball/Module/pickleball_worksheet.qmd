@@ -27,12 +27,12 @@ B)  What do you notice about the center, spread, and any outliers in the distrib
 
 We want to perform a hypothesis test to test if there is a significant difference between singles and doubles reliability. Because each player was measured twice (single and double reliability), we want to use a matched pairs t-test to perform the hypothesis test. 
 
-## 2 - Checking assumptions
+## 2 - Checking conditions
 
 A) Create a new column labeled `Difference` that takes Doubles Reliability minus Singles Reliability.
 
 
-B) State and evaluate the three assumptions needed for a paired t-test. You may assume independence. Use code to help justify normality and check for outliers. 
+B) State and evaluate the three conditions needed for a paired t-test. You may assume independence. Use code to help justify normality and check for outliers. 
 
 1. Independence: 
 
@@ -42,7 +42,7 @@ B) State and evaluate the three assumptions needed for a paired t-test. You may 
 
 ## 3 - Performing a matched pairs hypothesis test manually. 
 
-Let μ be the true mean difference (Doubles - Singles) - because doubles reliability mean is higher than singles reliability. 
+Let $\mu$ be the true mean difference (Doubles - Singles) - because doubles reliability mean is higher than singles reliability. 
 
 A) State the null and alternative hypothesis.
 

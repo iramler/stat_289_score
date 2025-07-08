@@ -3282,8 +3282,8 @@ window.Quarto = {
 <p>The mean for doubles reliability appears to be higher than for singles reliability, indicating that players tend to be more reliable in doubles matches. The spread (or variability) is larger for singles, which suggests that singles reliability scores vary more from player to player. There are no apparent outliers in either distribution based on the boxplot.</p>
 <p>We want to perform a hypothesis test to test if there is a significant difference between singles and doubles reliability. Because each player was measured twice (single and double reliability), we want to use a matched pairs t-test to perform the hypothesis test.</p>
 </section>
-<section id="checking-assumptions" class="level2">
-<h2 class="anchored" data-anchor-id="checking-assumptions">2 - Checking assumptions</h2>
+<section id="checking-conditions" class="level2">
+<h2 class="anchored" data-anchor-id="checking-conditions">2 - Checking conditions</h2>
 <ol type="A">
 <li>Create a new column labeled <code>Difference</code> that takes Doubles Reliability minus Singles Reliability.</li>
 </ol>
@@ -3291,7 +3291,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pickleBall<span class="sc">$</span>Difference <span class="ot">&lt;-</span> pickleBall<span class="sc">$</span><span class="st">`</span><span class="at">Doubles Reliability</span><span class="st">`</span> <span class="sc">-</span> pickleBall<span class="sc">$</span><span class="st">`</span><span class="at">Singles Reliability</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="A">
-<li>State and evaluate the three assumptions needed for a paired t-test. You may assume independence. Use code to help justify normality and check for outliers.</li>
+<li>State and evaluate the three conditions needed for a paired t-test. You may assume independence. Use code to help justify normality and check for outliers.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(pickleBall<span class="sc">$</span>Difference)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3305,13 +3305,13 @@ window.Quarto = {
 </div>
 <ol type="1">
 <li><p>Independence: Data was collected independently.</p></li>
-<li><p>Normality: The differences between the pairs is approximately normally distributed.</p></li>
+<li><p>Normality: The differences between the pairs slightly right skewed but since the same size is 380 it sould still be safe to use the t-distribution.</p></li>
 <li><p>No Extreme Outliers: The differences should not have any extreme outliers.</p></li>
 </ol>
 </section>
 <section id="performing-a-matched-pairs-hypothesis-test-manually." class="level2">
 <h2 class="anchored" data-anchor-id="performing-a-matched-pairs-hypothesis-test-manually.">3 - Performing a matched pairs hypothesis test manually.</h2>
-<p>Let μ be the true mean difference (Doubles - Singles) - because doubles reliability mean is higher than singles reliability.</p>
+<p>Let <span class="math inline">\(\mu\)</span> be the true mean difference (Doubles - Singles) - because doubles reliability mean is higher than singles reliability.</p>
 <ol type="A">
 <li>State the null and alternative hypothesis.</li>
 </ol>
@@ -3406,7 +3406,7 @@ mean difference
 <ol start="2" type="A">
 <li>Interpret the confidence interval results given in the output in part A.</li>
 </ol>
-<p>With 95% confidence, the true mean difference between doubles and singles reliability lies between 0.124 and 0.167. Since zero is not in the interval, the difference is statistically significant.</p>
+<p>With 95% confidence, the mean reliability score for players as doubles is between 0.124 and 0.167 higher than for singles. Since zero is not in the interval, the difference is statistically significant.</p>
 </section>
 
 </main>

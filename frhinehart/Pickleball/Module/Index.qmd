@@ -1,22 +1,23 @@
 ---
-title: "Exploring Differences in Reliability Scores"
+title: "Exploring Differences in Pickeball Reliability Scores"
 author:
   - name: Faith Rhinehart
     affiliation:
-      - ref: slu
+      - id: slu
+        name: St. Lawrence University
 date: "June 26, 2025"
-description: "Using matched pairs to determine a difference in mean reliability scores for pickle ball players"
+description: "Using matched pairs to determine a difference in mean reliability scores for pickleball players"
 editor: 
   canonical: true
 format: 
   html:
-    embed-resources: true
+    embed-resources: false
 categories:
   - Matched Pairs t-test
 image: pickleballImage.webp
 ---
 
-### Background to Figure Skating Video
+### Background to Pickleball Video
 
 If you are unfamiliar with Pickleball, please watch this video:
 
@@ -61,19 +62,19 @@ Download data: [pickleBall.csv](C:/Users/0211f/GitHub/slu_score_module_developme
 
 NCPA male and female players (380 cases with 12 variables) data:
 
-| Variable            | Description               |
-|---------------------|---------------------------|
-| First Name          | First name of player      |
-| Last Name           | Last name of player       |
-| Overall             | Overall rating            |
-| Overall Reliability | Overall Reliability score |
-| Singles             | Singles rating            |
-| Singles Reliability | Singles Reliability score |
-| Doubles             | Doubles rating            |
-| Doubles Reliability | Doubles Reliability score |
-| Mixed               | Mixed rating              |
-| Mixed Reliability   | Mixed Reliability score   |
-| Sex                 | Sex of player             |    
+| Variable            | Description                                               |
+|---------------------|-----------------------------------------------------------|
+| First Name          | First name of player                                      |
+| Last Name           | Last name of player                                       |
+| Overall             | Overall rating                                            |
+| Overall Reliability | Overall Reliability score (percent expressed as a decimal)|
+| Singles             | Singles rating                                            |
+| Singles Reliability | Singles Reliability score (percent expressed as a decimal)|
+| Doubles             | Doubles rating                                            |
+| Doubles Reliability | Doubles Reliability score (percent expressed as a decimal)|
+| Mixed               | Mixed rating                                              |
+| Mixed Reliability   | Mixed Reliability score (percent expressed as a decimal)  |
+| Sex                 | Sex of player                                             |    
 
 </details>
 
@@ -99,5 +100,5 @@ pdf Document:
 [Class handout - with solutions](pickleball_solutions.pdf)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Students should gain an understanding of matched pairs t-test. 
+Students should gain an understanding of matched pairs t-test to compare mean reliability scores for singles and doubles ratings. 
 :::
