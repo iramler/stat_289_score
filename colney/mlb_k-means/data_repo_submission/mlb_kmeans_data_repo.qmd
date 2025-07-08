@@ -11,7 +11,11 @@ categories:
 
 ## Motivation
 
- 
+Major League Baseball (MLB) is often described as a sport of matchups. Every plate appearance is a one-on-one battle between a pitcher and a batter, and no two players approach that battle in exactly the same way. Some pitchers attack hitters with velocity and strikeouts, while others rely on control and limiting walks. On the other side of the ball, some batters swing for power, others prioritize making contact, and only a few manage to do both.
+
+Modern baseball statistics make it easier than ever to quantify these differences. With hundreds of pitchers and hitters competing across a full season, we can use performance data to identify trends and patterns that define different types of players. There are two datasets from the 2024 MLB regular season, each containing statistics that can help classify different kinds of pitchers and batters.
+
+The main goal is to understand how players vary and how we might group them based on their performance. For example, is there a way to define power versus contact hitters, or high strikeout versus pitch to contact pitchers. These patterns can help us better understand player roles, team strategies, and the diversity of skill sets in the MLB.
 
 
 ## Data
@@ -54,13 +58,13 @@ Download Data:[mlb_batting_2024.csv](/data_repo_submission/mlb_batting_2024.csv)
 
 ## Questions
 
-1. 
+1. Do pitchers with low walk rates also have lower strikeout rates?
 
-2. 
+2. Do batters with high home run per hit rate also strikeout more often? 
+
+3. Among batters with the highest batting averages, do they also tend to have low strikeout rates or high home run rates?
 
 
 ## References
 Baseball Savant: Statcast Custom Leaderboards. (n.d.). Baseballsavant.Com. Retrieved from https://baseballsavant.mlb.com/leaderboard/custom?year=2024
-
-
 
