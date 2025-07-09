@@ -1,5 +1,5 @@
 ---
-title: "MLB Pitching and Batting styles"
+title: "MLB Pitching and Batting Styles"
 author:
   - name: Cooper Olney
     affiliation:
@@ -9,51 +9,55 @@ author:
     email: iramler@stlawu.edu
     affiliation:
       - ref: slu
-date: "July __, 2025"
-description: "____"
+date: "July 9, 2025"
+description: "Introducing K-means clustering by using MLB pitching and batting data from the 2024 regular season."
 editor: 
   canonical: true
 categories:
-  - ___
+  - K-means Clustering
+image: "https://i.ytimg.com/vi/ypw0L1ExD0g/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC-oeU0B368pg7DHYURuR_pjLbyEA"
 ---
 
 # Module
-
-
-
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
 
 # Introduction
 
+Major League Baseball (MLB) is often described as a sport of matchups. Every plate appearance is a one-on-one battle between a pitcher and a batter, and no two players approach that battle in exactly the same way. Some pitchers attack hitters with velocity and strikeouts, while others rely on control and limiting walks. On the other side of the ball, some batters swing for power, others prioritize making contact, and only a few manage to do both. Modern baseball statistics make it easier than ever to quantify these differences. With hundreds of pitchers and hitters competing across a full season, we can use performance data to identify trends and patterns that define different types of players. 
 
+Rather than focusing on individual players, our goal is to understand how players vary and whether they fall into distinguishable groups based on their performance. For example, can we statistically separate power hitters from contact hitter? Or are there distinct types of pitchers, like high-strikeout arms versus control specialists? To explore these questions, we'll use K-means clustering, an unsupervised learning method that groups players with similar statistical profiles. This approach will help us identify common archetypes among pitchers and batters, providing a new perspective on play roles and skill sets in the MLB.
 
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 By the end of this activity, you will be able to:
 
-1. 
+1. Explain the purpose of K-means clustering and how it is used to group similar observations.
 
-2. 
+2. Use K-means clustering to identify groups of MLB pitchers and batters based on performance statistics. 
 
-3. 
+3. Interpret each cluster and describe how they relate to different types of players.
 
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-**Technology Requirement:**
+**Technology Requirements:**
 
+This activity uses the `tidyverse`, `cluster` and `factoextra` packages in R.
 
+**Students should have prior knowledge of:**
 
-**Students should have prior knowledge in:**
+- Understanding and interpreting quantitative variables.
 
-- 
+- Reading and comparing summary statistics.
+
+- Basic familiarity with scatterplots. 
 
 :::
 
 ### Data
+The **mlb_pitching_2024.csv** dataset contains 107 rows and 4 columns. Each row represents a MLB pitcher who faced at least 502 batters in the 2024 regular season. **Note:** Baseball Savant's minimum qualification for leaderboard statistics is 502 batters faced.
 
-
-Download Data: [sga_points_2025.csv](/data_repo_submission/sga_points_2025.csv){target="_blank"}
-
+Download Data:[mlb_pitching_2024.csv](/data_repo_submission/mlb_pitching_2024.csv){target="_blank"}
 
 <details>
 
@@ -61,22 +65,44 @@ Download Data: [sga_points_2025.csv](/data_repo_submission/sga_points_2025.csv){
 
 | Variable          | Description
 |-------------------|------------------------------------------------
-|     | 
+| name    | Pitcher's full name
+| bf    | Batters Faced: total number of batters the pitcher faced
+| k_rate    | Proportion of batters the pitcher stuck out
+| bb_rate    | Proportion of batters the pitcher walked
+
+</details>
+
+The **mlb_batting_2024.csv** dataset contains 129 rows and 6 columns. Each row represents a MLB batter who had at least 502 plate appearances in the 2024 regular season. **Note:** Baseball Savant's minimum qualification for leaderboard statistics is 502 plate appearances.
+
+Download Data:[mlb_batting_2024.csv](/data_repo_submission/mlb_batting_2024.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+| name    | Batter's full name
+| pa    | Plate Appearance: total number of times a batter stepped up to the plate
+| batting_avg    | Batting Average: hits divided by at-bats
+| slg_percent    | Slugging Percentage: Measures total bases per at-bat (single = 1 base, HR = 4 bases)
+| hr_per_hit    | Proportion of a batter's hits that were home runs
+| k_rate    | Proportion of plate appearances that ended in a strikeout
 
 </details>
 
 #### Data Sources
 
-
+Baseball Savant: Statcast Custom Leaderboards. (n.d.). Baseballsavant.Com. Retrieved from https://baseballsavant.mlb.com/leaderboard/custom?year=2024
 
 ### Materials
 
-[Class handout]()
+[Class handout](/module/mlb_kmeans_worksheet.qmd)
 
-[Class handout - with solutions]()
+[Class handout - with solutions](/module/mlb_kmeans_solutions.qmd)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-
+Through this module, you explored how K-means clustering can be used to group MLB pitchers and batters based on their performance statistics. By identifying and interpreting these clusters, you gained insight into different player profiles and how statistical pattersn can reveal meaningful differences in playing style.
 
 :::
 
