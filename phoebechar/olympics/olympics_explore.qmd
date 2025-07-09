@@ -1,0 +1,44 @@
+---
+title: "olympics_explore"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(class)
+
+olympics <- read_csv("athlete_events.csv")
+
+olympics <- olympics |> filter (Year >= 1980)
+
+olympicsF <- olympics |> filter (Sex == "F")
+olympicsM <- olympics |> filter (Sex == "M")
+
+olympicsF <- olympicsF |> filter(!is.na(Sport))
+olympicsF <- olympicsF |> filter(!is.na(Age))
+olympicsF <- olympicsF |> filter(!is.na(Weight))
+olympicsF <- olympicsF |> filter(!is.na(Height))
+
+olympicsF <- olympicsF |> mutate(across(.cols = c("Age", "Height", "Weight"), ~ (.x - min(.x)) / (max(.x) - min(.x))))
+```
+
+```{r}
+olympicsF_train <- olympicsF |> slice_sample(n = 43580)
+olympicsF_test <- anti_join(olympicsF, olympicsF_train)
+
+olySmallTrain <- olympicsF_train |> select(Age, Weight, Height)
+
+olySmallTest <- olympicsF_test |> select(Age, Weight, Height)
+
+olyTrainCat <- olympicsF_train$Sport
+olyTestCat <- olympicsF_test$Sport
+
+knn_oly <- knn(train = olySmallTrain, test = olySmallTest, cl = olyTrainCat, k = 10)
+
+tab <- table(knn_oly, olyTestCat)
+tab
+
+sum(diag(tab)) / sum(tab)
+```
+

@@ -1,0 +1,57 @@
+---
+title: "frediving_explore"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(lubridate)
+library(readr)
+library(ggplot2)
+
+diving <- read_csv("divingRecords.csv")
+
+diving <- diving |> mutate(Gender = as.factor(Gender), Discipline = as.factor(Discipline), Continent = as.factor(Continent), Date = dmy(Date))
+
+static <- diving |> filter(Discipline == "STA")
+
+static <- static |> mutate(Result = ms(Result), Announced = ms(Announced))
+
+static <- static |> mutate(Result = as.duration(Result), Announced = as.duration(Announced))
+
+static <- static |> mutate(prop_over = (Result - Announced)/Result)
+
+static_over <- static |> select(Name, Discipline, Gender, Continent, prop_over)
+```
+
+```{r}
+vertical <- diving |> filter(Discipline %in% c("VMT", "CWT", "CWTB", "CNF", "FIM"))
+
+vertical <- vertical |> mutate(Result = parse_number(Result), Announced = parse_number(Announced))
+
+vertical <- vertical |> mutate(prop_over = (Result - Announced)/Result)
+
+vertical_over <- vertical |> select(Name, Discipline, Gender, Continent, prop_over)
+```
+
+```{r}
+horizontal <- diving |> filter (Discipline %in% c("DYN", "DYNB", "DNF"))
+
+horizontal <- horizontal |> mutate(Result = parse_number(Result), Announced = parse_number(Announced))
+
+horizontal <- horizontal |> mutate(prop_over = (Result - Announced)/Result)
+
+horizontal_over <- horizontal |> select(Name, Discipline, Gender, Continent, prop_over)
+```
+
+```{r}
+full_over = full_join(static_over, horizontal_over)
+```
+
+```{r}
+ggplot(full_over, aes(x = Continent, y = prop_over)) +
+  geom_boxplot(aes(group = Continent))
+
+```
+

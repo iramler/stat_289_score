@@ -68,7 +68,10 @@ __________________________________
 test <- read_csv("WomensTrack2025.csv")
 
 ggplot(test, aes(y = Speed, x = Event)) +
-  geom_point()
+  geom_point() +
+  theme_minimal() +
+  labs(x = "Event Distance (m)",
+       y = "Runner Speed (m/s)")
 
 mod1 <- lm(Speed ~ Event, test)
 summary(mod1)
@@ -105,7 +108,21 @@ BIC(mod5)
 
 ggplot(test, aes(y = log(Speed), x = log(Event))) +
   geom_point() +
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm", color = "hotpink", se = FALSE)+
+  theme_minimal() +
+  labs(x = "Natural Log of Event Distance",
+       y = "Natural Log of Runner Speed")
+
+
+
+a = 17.29
+b = 0.14
+ggplot(test, aes(y = Speed, x = Event)) +
+  geom_point() +
+  geom_function(linewidth = 1, fun = function(x) { a*(x^(-b)) }, color="hotpink") +
+  theme_minimal() +
+  labs(x = "Event Distance (m)",
+       y = "Runner Speed (m/s)")
 ```
 
 
