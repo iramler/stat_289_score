@@ -1,0 +1,63 @@
+---
+title: "Freediving Continental Records"
+author: "Phoebe Jones" 
+date: "July 10, 2025" 
+format:
+    html:
+      embed-resources: true
+categories:
+  - Exploratory Data Analysis
+  - Boxplots
+  - Data Wrangling
+---
+
+## Motivation
+
+AIDA
+
+### Understanding Freediving
+
+All types of freediving involve the diver being under the water for as long as they can with one breath, but from there, the disciplines differ. Most disciplines involve a measurement of distance, but there is also the Static Apnea (STA) discipline in which the diver does not move, just stays under the surface for as long as they can with one breath. The distance disciplines can be split into depth (vertical) and dynamic (horizontal) distances, which are further split based on the type of equipment a diver is allowed during the dive. This data set includes 9 disciplines besides Static Apnea:
+
+Depth:
+Depth disciplines require the diver descend as deep as they can into the water and ascend on a single breath. These disciplines are performed in open water. The AIDA recognized competition disciplines are constant-weight with fins (CWT), constant-weight with bi-fins (CWTB), constant weight with no fins (CNF), and free immersion (FIM).
+The names of the disciplines indicate their differences, but for clarification, CWT divers use mono-fins as opposed to the bi-fins in CWBT diving.
+This data set also contains no limit (NLT) and variable weight (VWT) records. No limit 
+
+Dynamic:
+Dynamic disciplines require the diver to travel horizontally through the water as far as they can on a single breath. These disciplines are performed in a pool. The AIDA recognized dynamic disciplines are dynamic with fins (DYN), dynamic with bi-fins (DYNB), and dynamic with no fins (DNF). Similarly to the depth disciplines, DYN divers most commonly use mono-fins, rather than the bi-fins used by DYNB dives.
+
+Divers in all disciplines are required to announce their target performance ahead of their attempt. If they fail to reach their announced target, they will face a point penalty. In horizontal and static disciplines it is common for divers to announce very very low targets, so they do not face this penalty. However, in depth (vertical) disciplines, divers are not allowed to go deeper than their target (for safety reasons), so they must announce strategically.
+
+## Data
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable    | Description                                               |
+|-------------|-----------------------------------------------------------|
+| Name        | Diver name (and country)                                  |
+| Sex         | Diver sex (Male or Female)                                |
+| Discipline  | Discipline of the dive (STA, CNF, DNF, etc.)              |
+| Result      | Result of the dive (time or distance)                     |
+| Announced   | Diver's announced target for the dive                     |                          
+| Points      | Points earned from the dive                               |
+| Date        | Date of the dive (dd.mm.yyyy)                             |
+| Event       | Event (competition) the dive was performed at             |
+| Continent   | Continent the athlete represents                          |
+
+
+</details>
+
+## Questions
+
+1. Are there different announcement trends between disciplines? Why is that? (do some research)
+
+2. Do some continents seem to outperform others?
+
+3. What are the world records (according to this data) in each discipline?
+
+## References
+
+These data are compiled from [AIDA (International Association for the Development of Apnea)](https://www.aidainternational.org/ContinentalRecords).

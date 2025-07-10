@@ -10,7 +10,7 @@ library(lubridate)
 library(readr)
 library(ggplot2)
 
-diving <- read_csv("divingRecords.csv")
+diving <- read_csv("continentalDiving.csv")
 
 diving <- diving |> mutate(Gender = as.factor(Gender), Discipline = as.factor(Discipline), Continent = as.factor(Continent), Date = dmy(Date))
 
