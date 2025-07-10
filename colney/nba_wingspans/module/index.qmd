@@ -16,9 +16,9 @@ editor:
 image: wingspans.jpg
 categories:
   - Webscraping
-  - Data visualization
-  - Data wrangling
-  - Merging / Joining
+  - Data Visualization
+  - Data Wrangling
+  - Joining / Merging
 ---
 
 ## Module
@@ -140,15 +140,19 @@ Download Data: [nba_shooting_2025.csv](nba_shooting_2025.csv){target="_blank"}
 
 **Version With Web Scraping**
 
-[Class handout](nba_wingspans_worksheet.qmd)
+- [Class handout](nba_wingspans_worksheet.qmd)
 
-[Class handout - with solutions](nba_wingspans_solutions.qmd)
-
+- Solutions:
+  + [Quarto with visible R code](nba_wingspans_solutions.qmd)
+  + [HTML with hideable R code](nba_wingspans_solutions.html)
+  
 **Version Without Web Scraping**
 
-[Class handout](nba_wingspans_solutions_no_webscraping.qmd)
+- [Class handout](nba_wingspans_solutions_no_webscraping.qmd)
 
-[Class handout - with solutions](nba_wingspans_solutions_no_webscraping.qmd)
+- Solutions:
+  + [Quarto with visible R code](nba_wingspans_solutions_no_webscraping.qmd)
+  + [HTML with hideable R code](nba_wingspans_solutions_no_webscraping.html)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Through this module, you explored how physical attributes, specifically wingspan and wingspan advantage might relate to on-court performance in the NBA. By cleaning the combining data from multiple sources, you've created a comprehensive dataset that allowed for deeper exploration of relationships between physical characteristics and basketball statistics.
@@ -160,7 +164,7 @@ This activity underscores the value of data wrangling, merging and visualization
 
 ### Additional Reading
 
--   [Basketball Players' Long Wingspan Enhances Defensive Upside but Hinders Shooting Capabilities](https://sportrxiv.org/index.php/server/preprint/view/238){target="_blank"}
+-   - Kaazempur-Mofrad, A. R. (2022, December). [*Basketball players’ long wingspan enhances defensive upside but hinders shooting capabilities: A statistical inquiry of the effect of NBA player wingspans on shooting accuracy and defensive impact*](https://sportrxiv.org/index.php/server/preprint/view/238) (Preprint). *SportRxiv*. https://doi.org/10.51224/SRXIV.238
 
 -   [The Freakish Advantage of NBA All-Stars - The Wall Street Journal](https://www.wsj.com/articles/the-freakish-advantage-of-nba-all-stars-1455224954){target="_blank"} (Subscription required)
 

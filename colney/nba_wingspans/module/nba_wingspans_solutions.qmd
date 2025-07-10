@@ -3,6 +3,9 @@ title: "NBA Wingspan & Performance Solutions"
 format: 
   html:
     embed-resources: true
+execute: 
+  eval: false
+  echo: true
 ---
 
 In professional basketball, physical traits can have a major impact on how a player performs. One key trait that often draws attention from scouts and analysts is **wingspan**, the distance from fingertip to fingertip with arms fully extended.
@@ -27,7 +30,7 @@ library(janitor)
 Load in the `nba_wingspan_2025.csv` from the data folder.
 
 ```{r}
-wingspan <- read_csv(here::here("colney/nba_wingspans/data_repo_submission/nba_wingspan_2025.csv"))
+wingspan <- read_csv("nba_wingspan_2025.csv")
 ```
 
 # 2. Clean the Dataset
