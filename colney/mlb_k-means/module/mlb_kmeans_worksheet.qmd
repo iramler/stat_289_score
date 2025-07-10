@@ -116,6 +116,78 @@ fviz_nbclust(pitching_scaled, kmeans, method = "silhouette")
 Based on the two plots, a reasonable number of clusters for the pitching data appears to be 4 or 5. To keep things simple, we'll move forward using 4 clusters.
 
 # 5. Applying K-means
+Now that you've selected a number of clusters (K=4), it's time to run the K-means algorithm and assign each pitcher to a cluster. 
+
+a. Run the K-means Algorithm
+The code below applies K-means clustering to the scaled pitching data.
+```{r}
+k_pitching <- kmeans(pitching_scaled, centers = 4, nstart = 25)
+```
+
+What's Happening in the Code:
+- centers = 4, tells the algorithm to find 4 clusters
+
+- nstart = 25, tells R to run the algorithm 25 times with different random starting points and keep the best result and keep the best result.
+
+b. Add Cluster Labels to the Original Data
+Now that each pitcher has been assigned to a cluster, we'll add those cluster labels back to the original dataset, so we can explore and visualize them. The code below does this.
+```{r}
+pitching_clustered <- pitching %>%
+  mutate(cluster = factor(k_pitching$cluster))
+```
+
+c. Visualize the Clusters
+Use the `pitching_clustered` dataset to plot `k_rate` vs `bb_rate` and color each point by the assigned cluster.
+```{r}
+
+```
+
+d. How would you describe the overall shape and separation of the clusters in the scatterplot?
+
+
+# 6. What the results/clusters mean 
+(Do this after solutions)
+
+
+# 7. Clustering MLB Batters
+Now that you've practiced K-means clustering with the pitching dataset, it's time to apply the same process to the batting dataset. 
+
+The main difference this time is that you're working with four numeric variables instead of just two: `batting_avg`, `slg_percent`, `hr_per_hit` and `k_rate`.
+
+This means you'll be clustering in 4-dimensional space, which makes it harder to visualize directly, but you can still explore relationships using scatterplots of two variables at a time.
+
+a. Load in the `mlb_batting_2024.csv` file
+```{r}
+
+```
+
+b. Select numeric variables
+```{r}
+
+```
+
+c. Scale the data
+```{r}
+
+```
+
+d. Use the Elbow and Silhouette methods to choose the number of clusters
+```{r}
+
+```
+
+e. Run K-means
+```{r}
+
+```
+
+f. Add cluster labels
+```{r}
+
+```
+
+g. Create multiple scatterplots...
+
 
 
 
