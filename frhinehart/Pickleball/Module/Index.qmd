@@ -5,7 +5,12 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
-date: "June 26, 2025"
+  - name: Jessica Chapman
+    email: jchapman@stlawu.edu
+    affiliation: slu
+
+    
+date: "July 10, 2025"
 description: "Using matched pairs to determine a difference in mean reliability scores for pickleball players"
 editor: 
   canonical: true
@@ -13,7 +18,7 @@ format:
   html:
     embed-resources: false
 categories:
-  - Matched Pairs t-test
+  - Paired Data
 image: pickleballImage.webp
 ---
 
@@ -28,6 +33,11 @@ If you are unfamiliar with Pickleball, please watch this video:
 Pickleball is a fast-paced sport blending tennis, badminton, and ping-pong, played with paddles and a plastic ball on a small court. College tournaments feature singles, doubles, and mixed doubles in a best-of-three format, emphasizing strategy, teamwork, and precision. Player performance is often tracked using the DUPR (Dynamic Universal Pickleball Rating) system, which rates skill from 2.000 to 8.000 based on match results, opponent strength, and recent play. A Reliability Score (1–100%) reflects how accurate a rating is, with 60%+ considered dependable.
 
 The pickleBall dataset features data from the NCPA (National Collegiate Pickleball Association) of male and female players in 2024. Variables include characteristics such as name and sex. Other variables included the overrall, singles, doubles, and mixed rating and the overall, singles, doubles, and mixed reliability score. The relevant variables for this specific module are doubles reliability and singles reliability.   
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This could serve as an in class activity and should take roughly a half an hour to complete. 
+:::
+
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 Learning Objectives:
