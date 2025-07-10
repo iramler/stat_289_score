@@ -1,5 +1,124 @@
 ---
-title: "mlb_kmeans_worksheet"
-format: html
+title: "MLB Pitching and Batting Styles"
+format: docx
 ---
+
+Major League Baseball (MLB) is often described as a sport of matchups. Every plate appearance is a one-on-one battle between a pitcher and a batter, and no two players approach that battle in exactly the same way. Some pitchers attack hitters with velocity and strikeouts, while others rely on control and limiting walks. On the other side of the ball, some batters swing for power, others prioritize making contact, and only a few manage to do both. Modern baseball statistics make it easier than ever to quantify these differences. With hundreds of pitchers and hitters competing across a full season, we can use performance data to identify trends and patterns that define different types of players. 
+
+In this activity, we'll use data from the 2024 MLB season and apply K-means clustering, an unsupervised learning method that groups players based on similar statistical profiles. Rather than focusing on individual players, our goal is to understand how players vary, and whether they fall into distinguishable groups based on their hitting or pitching performance. For example, can we statistically separate power hitters from contact hitters? Are there clear differences between high-strikeout pitchers and control specialists?
+
+By the end of this activity, you'll use K-means clustering to uncover common player archetypes, providing insight into the many different roles and skill sets found across the MLB.
+
+# 0. Load the Following Packages
+
+```{r}
+
+```
+
+# 1. Load in Pitching Dataset
+
+Load in the `mlb_pitching_2024.csv` file from the data folder. Each row represents a pitcher from the 2024 regular season who faced at least 502 batters.
+
+```{r}
+
+```
+
+# 2. Exploring Pitching Dataset
+
+Pitchers in this dataset are described by their strikeout rate (`k_rate`) and walk rate (`bb_rate`).
+
+- `k_rate`: The proportion of batters a pitcher struck out (e.g., 0.27 = 27%)
+- `bb_rate`: The proportion of batters a pitcher walked (e.g, 0.08 = 8%)
+
+These two stats give us a sense of a pitcher's general approach: do they rely on overpowering hitters with strikeouts, or do they focus on control and limiting walks?
+
+Create a scatterplot of `k_rate` vs. `bb_rate` to look for patterns or trends. Do you see any groups forming in the plot?
+```{r}
+
+```
+
+# 3. Introduction to K-mean Clustering
+So far, you've explored how MLB pitchers differ in terms of strikeout rate and walk rate. You may have noticed natural groupings in the scatterplot. K-means clustering is a method that helps us formally identify those kinds of groups in the data. 
+
+K-means is an unsupervised learning method, which means it doesn't use any labels or outcomes to guide the analysis. Instead, it groups observations, in this case its pitchers, based purely on how similar they are across the variables we choose (like `k_rate`, `bb_rate`). 
+
+Here's how K-means clustering works using the MLB pitching dataset:
+
+1. You choose the number of groups/clusters (K) you want to find. For example, 2 or 3 clusters of pitcher types. 
+
+2. The algorithm randomly picks K starting points in the scatterplot. These are called centers (or centroids) and represent the "middle" of each group.
+
+3. Each pitcher is assigned to closest center based on distance, pitchers with similar strikeout and walk rates will end up near the same center.
+
+4. The center of each group is then recalculated as the average position of all pitchers in that group.
+
+5. Steps 3-4 repeat until the groups stop changing. 
+
+At the end, each pitcher is assigned to a cluster with others who have similar pitching profiles. For example, one group might contain high strikeout, high walk pitchers, while another contains low strikeout, low walk pitchers. 
+
+K-means clustering is useful when:
+
+- You want to group observations based on similarities, without needing labels. 
+
+- You're interested in exploring variation and structure in the data.
+
+- You want to check whether natural groupings support your intuition.
+
+- You're working with numerical data and want a simple, interpretable method to identify patterns. 
+
+a. Based on the scatterplot from question 2, how many clusters do you think might make sense for this pitching data?
+
+
+
+b. Why might it be useful to group pitchers using a method like K-means instead of relying on just one stat like strikeout rate?
+
+
+
+# 4. Prepare Data for Clustering
+Before running the K-means algorithm, we nedd to prepare the data. This involves selecting the numeric variables we want to use and scaling them so that both variables are on the same scale.
+
+a. Select Numerical Variables
+
+K-means clustering requires only numeric input. In this case, we'll use just two variables, `k_rate` and `bb_rate`. Use `select()` to create a new data frame with just these two columns.
+```{r}
+
+```
+
+b. Scale the Data
+
+K-means clustering are sensitive ot the scale of the variables, so it's important to standardize them before clusting. The process if called scaling, and in R, the `scale()` function does this automatically by converting each value to a z-score
+
+This ensures that both `k_rate` and `bb_rate` are measured on the same sclae, so one doesn't unfairly influence the clustering results just because its original values were larger or more speard out. 
+
+Use the `scale()` function to create a new data frame of standardized values.
+```{r}
+
+```
+
+c. Choosing the Number of Clusters
+
+K-means requires you to specify the number of clusters (K) ahead of time. To decide what value to use, there are two common methods to select the optimal number of clusters.
+
+- The Elbow Method: This looks at the total within-cluster variation. As the number of clusters increases, the variation within each group naturally decreases, but eventually the improvement slows down.
+
+You're looking for a bend or elbow in the plot, this is the point where adding more clusters doesn't significantly reduce the variation. Here is the code to create the plot.
+```{r}
+fviz_nbclust(pitching_scaled, kmeans, method = "wss")
+```
+
+- The Silhouette Method: This measures how well each point fits within its assigned cluster. It calculates a silhouette score for each observation, which reflects how similar it is to points in its own cluster versus other clusters. 
+
+Higher scores mean better defined clusters. You're looking for the number of clusters that has the highest average silhouette width. Here is the code to create the plot.
+```{r}
+fviz_nbclust(pitching_scaled, kmeans, method = "silhouette")
+```
+
+Based on the two plots, a reasonable number of clusters for the pitching data appears to be 4 or 5. To keep things simple, we'll move forward using 4 clusters.
+
+# 5. Applying K-means
+
+
+
+
+
 
