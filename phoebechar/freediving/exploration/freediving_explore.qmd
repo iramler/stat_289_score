@@ -1,5 +1,5 @@
 ---
-title: "frediving_explore"
+title: "freediving_explore"
 format: html
 ---
 
@@ -46,12 +46,22 @@ horizontal_over <- horizontal |> select(Name, Discipline, Gender, Continent, pro
 ```
 
 ```{r}
-full_over = full_join(static_over, horizontal_over)
+distance <- full_join(vertical, horizontal)
+
+distance <- distance |> group_by(Discipline) |> mutate(perc_best = Result/max(Result))
+
+static <- static |> mutate(perc_best = as.double(Result/max(Result)))
+
+static_small <- static |> select(Name, Discipline, Gender, Continent, perc_best)
+distance_small <- distance |> select(Name, Discipline, Gender, Continent, perc_best)
+
+diving_perform <- full_join(static_small, distance_small)
 ```
 
 ```{r}
-ggplot(full_over, aes(x = Continent, y = prop_over)) +
-  geom_boxplot(aes(group = Continent))
-
+ggplot(diving_perform, aes(x = Discipline, y = perc_best)) +
+  geom_boxplot(aes(group = Discipline)) +
+  facet_wrap(~Gender)
 ```
+
 
