@@ -1,0 +1,10 @@
+---
+title: "cleaning"
+format: html
+---
+
+The `Result` and `Announced` columns hold data both from distance-based disciplines and the Static Apnea discipline, which is solely time based. Because of this, the easiest way to work with this data is to split it into two data sets, one with distance disciplines and one with the static discipline.
+
+For the static data, we will use the `lubridate` package to put the `Result` and `Announced` columns into formats easier to work with.
+
+For the distance data, the `Result` and `Announced` columns contain 'm's to indicate the unit, but this forces the data to read in as characters instead of integers like we want. We must parse the numbers.

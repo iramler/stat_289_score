@@ -1,5 +1,5 @@
 ---
 title: "mlb_kmeans_solutions"
-format: html
+format: docx
 ---
 

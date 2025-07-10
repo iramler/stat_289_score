@@ -153,6 +153,9 @@ k_pitching <- kmeans(pitching_scaled, centers = 4, nstart = 25)
 ```{r}
 pitching_clustered <- pitching %>%
   mutate(cluster = factor(k_pitching$cluster))
+
+# for pitching clustered could use pitching_scaled instead of pitching
+# so pitching_clustered <- pitching scaled, see how scatter plot changes
 ```
 
 ```{r}

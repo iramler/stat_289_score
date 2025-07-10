@@ -9,35 +9,66 @@ library(dplyr)
 library(class)
 
 olympics <- read_csv("athlete_events.csv")
-
 olympics <- olympics |> filter (Year >= 1980)
-
 olympicsF <- olympics |> filter (Sex == "F")
 olympicsM <- olympics |> filter (Sex == "M")
-
-olympicsF <- olympicsF |> filter(!is.na(Sport))
-olympicsF <- olympicsF |> filter(!is.na(Age))
-olympicsF <- olympicsF |> filter(!is.na(Weight))
-olympicsF <- olympicsF |> filter(!is.na(Height))
-
-olympicsF <- olympicsF |> mutate(across(.cols = c("Age", "Height", "Weight"), ~ (.x - min(.x)) / (max(.x) - min(.x))))
 ```
 
 ```{r}
-olympicsF_train <- olympicsF |> slice_sample(n = 43580)
-olympicsF_test <- anti_join(olympicsF, olympicsF_train)
+woWinter <- olympicsF |> filter(Season == "Winter")
 
-olySmallTrain <- olympicsF_train |> select(Age, Weight, Height)
+woWinter <- woWinter |> filter (!Sport %in% c("Biathlon", "Bobsleigh", "Curling", "Freestyle Sking", "Ice Hockey", "Short Track Speed Skating", "Skeleton", "Ski Jumping", "Snowboarding"))
+```
 
-olySmallTest <- olympicsF_test |> select(Age, Weight, Height)
+```{r}
+woWinter <- woWinter |> filter(!is.na(Sport) & !is.na(Age) & !is.na(Weight) & !is.na(Height))
 
-olyTrainCat <- olympicsF_train$Sport
-olyTestCat <- olympicsF_test$Sport
+woWinter <- woWinter |> mutate(across(.cols = c("Age", "Height", "Weight"), ~ (.x - min(.x)) / (max(.x) - min(.x))))
 
-knn_oly <- knn(train = olySmallTrain, test = olySmallTest, cl = olyTrainCat, k = 10)
+Btrain <- woWinter |> slice_sample(n = 5623)
+Btest <- anti_join(woWinter, Btrain)
 
-tab <- table(knn_oly, olyTestCat)
-tab
+BsmallTrain <- Btrain |> select(Age, Weight, Height)
+
+BsmallTest <- Btest |> select(Age, Weight, Height)
+
+BtrainCat <- Btrain$Sport
+BtestCat <- Btest$Sport
+
+Bknn_oly <- knn(train = BsmallTrain, test = BsmallTest, cl = BtrainCat, k = 9)
+
+tab <- table(Bknn_oly, BtestCat)
+
+sum(diag(tab)) / sum(tab)
+```
+
+```{r}
+menSum <- olympicsM |> filter (Season == "Summer")
+
+## menSum <- menSum |> filter(!Sport %in% c("Badminton", "Baseball", "Beach Volleyball", "Golf", "Rugby Sevens", "Table Tennis", "Taekwondo", "Tennis", "Trampolining", "Triatholon"))
+```
+
+```{r}
+menSum <- menSum |> filter(!is.na(Sport))
+menSum <- menSum |> filter(!is.na(Age))
+menSum <- menSum |> filter(!is.na(Weight))
+menSum <- menSum |> filter(!is.na(Height))
+
+menSum <- menSum |> mutate(across(.cols = c("Age", "Height", "Weight"), ~ (.x - min(.x)) / (max(.x) - min(.x))))
+
+train <- menSum |> slice_sample(n = 51109)
+test <- anti_join(menSum, train)
+
+smallTrain <- train |> select(Age, Weight, Height)
+
+smallTest <- test |> select(Age, Weight, Height)
+
+trainCat <- train$Sport
+testCat <- test$Sport
+
+knn_oly <- knn(train = smallTrain, test = smallTest, cl = trainCat, k = 50)
+
+tab <- table(knn_oly, testCat)
 
 sum(diag(tab)) / sum(tab)
 ```
