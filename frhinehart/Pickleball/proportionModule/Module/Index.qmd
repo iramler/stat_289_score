@@ -1,0 +1,20 @@
+---
+title: "Index"
+format: html
+---
+
+```{r}
+library(readr)
+pickleballData <- read_csv("pickleballData.csv")
+
+pick <- pickleBall |>
+  mutate(Overall_Rating_Reliability = ifelse(
+    `Overall Reliability` >= 0.6, 1, 0
+  )) |>
+  group_by(Sex) |>
+  summarise(
+    count_good_reliability = sum(Overall_Rating_Reliability, na.rm = TRUE)
+  ) 
+View(pick)
+```
+
