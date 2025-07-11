@@ -146,22 +146,22 @@ d. How would you describe the overall shape and separation of the clusters in th
 
 
 # 6. Interpreting the Pitching Clusters 
-Based on the strikeout and walk rates, each cluster represents a different type of pitcher. Here's how to interpret the four clusters.
+Based on the strikeout and walk rates, each cluster represents a different type of pitcher. Here's one way to interpret the four clusters.
 
 - Cluster 1 (Red): Struggling Pitchers
-  - Low `k_rate` and high `bb_rate`
+  - low `k_rate`, high `bb_rate`
   - These pitchers don't strike out many batters and give up a lot of walks. This often leads to poor results because they're not getting outs efficiently and are allowing many free base runners. This group often bounce between the majors and minors leagues or move to bullpen roles, as they struggle to consistently compete against top-level hitters.
 
 - Cluster 2 (Green): Control Specialists
-  - Low `k_rate` and low `bb_rate`
+  - low `k_rate`, low `bb_rate`
   - These pitchers don't rely on strikeouts but rarely walk hitters either. They succeed by throwing strikes and letting the defense make plays, also known as "pitch to contact". You'll often find veterans or crafty pitchers in this group who rely on movement, timing, precision rather than velocity.
 
 - Cluster 3 (Blue): Elite Pitchers
-  - High `k_rate` and low `bb_rate`
+  - high `k_rate`, low `bb_rate`
   - These are the top performers. They strike out a lot of batters and rarely issue walks, meaning they control the game by keeping hitters off balance and off base. This is the group that earns $100+ million contracts and become All-Stars. Teams build around these kinds of pitchers.
   
 - Cluster 4 (Purple): Fireballers
-  - High `k_rate` and high `bb_rate`
+  - high `k_rate`, high `bb_rate`
   - These pitchers rack up strikeouts but also walk more batters than average. They're aggressive and hard to hit, but their lack of control can lead to risky innings. Some can develop into elite pitchers, but others become high-risk, high-reward pitchers. Capable of blowing hitters away or losing the strike zone entirely. 
 
 # 7. Clustering MLB Batters
@@ -217,15 +217,39 @@ Create a scatterplot of `batting_avg` vs. `hr_per_hit`, coloring the points by c
 
 Even though we're only viewing two dimensions at a time, these plots still give useful insights into how the clusters differ. Keep in mind that the clustering happened in a 4D space, so the groups may not look perfectly separated in every 2D plot. 
 
-f. 
+f. Visualizing clusters in 2D using PCA
+Since we're clustering using four variables, it's challenging to see the full picture in a single scatterplot. One common method for visualizing high-dimensional data in 2D is called Principal Component Analysis (PCA).
+
+PCA creates new variables (called principal components) that capture the most important variation in the data. While we won't dive into the full details of how PCA works, we can use it create a 2D plot that shows all four-variables clusters in one view.
+
+The code below displays the K-means clustering results based on the PCA transformed data.
+```{r}
+fviz_cluster(k_batting, data = batting_scaled,
+             geom = "point", ellipse.type = "convex")
+```
+
+This gives a simplified picture of how well the clusters are separated overall. It's not a perfect view, but it's a helpful summary when working with more than two variables. 
 
 # 8. Interpreting the Batting Clusters
+Based on the scatterplots using batting average, slugging percentage, home runs per hit and strikeout rate, each cluster represents a different type of batter. Here's one way to interpret the four clusters. 
 
-
-
-
+- Cluster 1 (Red): Elite Hitters
+  - high `batting_avg`, high `slg_percent`, high `hr_per_hit`, average `k_rate`
+  - These players are the total package at the plate, great at making contact and generating power. They're often All-Stars, typically bat second or third in the lineup, and frequently appear on MVP ballots.
+  
+- Cluster 2 (Green): Struggling Hitters
+  - below average `batting_avg`, low `slg_percent`, below average `hr_per_hit`, average `k_rate`
+  - These batters tend to struggle at the plate and offer limited offensive value. They're often young players adjusting to MLB pitching, defensive specialists, or bench players.
+  
+- Cluster 3 (Blue): Contact Hitters
+  - high `batting_avg`, average `slg_percent`, below average `hr_per_hit`, low `k_rate`
+  - These hitters focus on putting the ball in play and rarely strike out. They may not hit many home runs, but they're consistent and tough outs. They may be leadoff hitters and they help generate offense by getting on base.
+  
+- Cluster 4 (Purple): Power Hitters
+  - average `batting_avg`, average `slg_percent`, high `hr_per_hit`, high `k_rate`
+  - These players swing hard and aim for home runs, even if it means striking out more. They're dangerous at the plate, especially with runners on base. They can change a game with one swing, often batting cleanup. 
+  
 # 9. Conclusion
+In this activity, you were introduced to K-means clustering, an unsupervised learning method used to find groups within data based on similarity. Rather than labeling players manually or relying on traditional categories, K-means allowed us to explore how pitchers and batters naturally cluster based on their performance.
 
-
-
-
+By applying K-means to the MLB pitching and batting dataset, we identified distinct player archetypes such as power hitters, contact hitter, elite pitchers, and control specialists, using only a few carefully chosen variables. While baseball was the context, the same clustering method can be used in many field to reveal hidden structure and uncover meaningful patterns.
