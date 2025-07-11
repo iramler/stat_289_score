@@ -25,7 +25,7 @@ categories:
 image: pickleballImage.webp
 ---
 
-### Background to Pickleball Video
+## Background to Pickleball Video
 
 If you are unfamiliar with Pickleball, please watch this video:
 
@@ -33,7 +33,7 @@ If you are unfamiliar with Pickleball, please watch this video:
 
 </iframe>
 
-### Introduction to Module
+## Introduction to Module
 
 Pickleball is a fast-paced sport blending tennis, badminton, and ping-pong, played with paddles and a plastic ball on a small court. College tournaments feature singles, doubles, and mixed doubles in a best-of-three format, emphasizing strategy, teamwork, and precision. Player performance is often tracked using the DUPR (Dynamic Universal Pickleball Rating) system, which rates skill from 2.000 to 8.000 based on match results, opponent strength, and recent play. A Reliability Score (1–100%) reflects how accurate a rating is, with 60%+ considered dependable.
 
@@ -44,28 +44,20 @@ This could serve as an in class activity and should take roughly a half an hour 
 :::
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
-Learning Objectives:
-
-1.  Students will learn how to perform matched pairs t-test
-
-2.  Student will practice interpreting results
-
-3.  Students will practice the hypothesis testing skills
+Students will gain experience performing matched pairs t-test and confidence intervals.
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-For this activity, students will need to use a statistical software.
+For this activity, students will need to use a statistical software capable of plotting data. 
 
-Students are expected to understand the concept of hypothesis forming, rejecting hypothesis, confidence intervals and interpreting output. Students are also expected to now how to code basic plots, fit models, and use functions.
-
-This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
+Students are expected to understand the concept of hypothesis forming, rejecting hypothesis, confidence intervals.
 :::
 
-### Data
+## Data
 
-The pickleBall data contains ratings and reliability scores for collegiate matches.
+The `pickleBall` data contains ratings and reliability scores for collegiate matches.
 
-Download data: [pickleBall.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Pickleball/Data_repository/pickleBall.csv)
+Download data: [pickleBall.csv](pickleBall.csv)
 
 <details>
 
@@ -73,41 +65,32 @@ Download data: [pickleBall.csv](C:/Users/0211f/GitHub/slu_score_module_developme
 
 NCPA male and female players (380 cases with 12 variables) data:
 
-| Variable            | Description                                                |
-|---------------------|------------------------------------------------------------|
-| First Name          | First name of player                                       |
-| Last Name           | Last name of player                                        |
-| Overall             | Overall rating                                             |
+| Variable | Description |
+|-------------------|-----------------------------------------------------|
+| First Name | First name of player |
+| Last Name | Last name of player |
+| Overall | Overall rating |
 | Overall Reliability | Overall Reliability score (percent expressed as a decimal) |
-| Singles             | Singles rating                                             |
+| Singles | Singles rating |
 | Singles Reliability | Singles Reliability score (percent expressed as a decimal) |
-| Doubles             | Doubles rating                                             |
+| Doubles | Doubles rating |
 | Doubles Reliability | Doubles Reliability score (percent expressed as a decimal) |
-| Mixed               | Mixed rating                                               |
-| Mixed Reliability   | Mixed Reliability score (percent expressed as a decimal)   |
-| Sex                 | Sex of player                                              |
+| Mixed | Mixed rating |
+| Mixed Reliability | Mixed Reliability score (percent expressed as a decimal) |
+| Sex | Sex of player |
 
 </details>
 
-### Materials
+### Data Source
 
-R qmd file:
+Details on the data are available in the associated [SCORE Data Repository entry](https://data.scorenetwork.org/pickleball/pickleball_ncpa_player_ratings-2024.html){target="_blank"}.
 
-[Class handout](pickleball_worksheet.qmd)
 
-[Class handout - with solutions](pickleball_solutions.qmd)
+## Materials
 
-Word Document:
+- [Class handout (MS Word)](pickleball_worksheet.docx)
 
-[Class handout](pickleball_worksheet.docx)
-
-[Class handout - with solutions](pickleball_solutions.docx)
-
-pdf Document:
-
-[Class handout](pickleball_worksheet.pdf)
-
-[Class handout - with solutions](pickleball_solutions.pdf)
+- [Class handout - with solutions](pickleball_solutions.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of matched pairs t-test to compare mean reliability scores for singles and doubles ratings.
