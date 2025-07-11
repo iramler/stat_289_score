@@ -12,7 +12,9 @@ By the end of this activity, you'll use K-means clustering to uncover common pla
 # 0. Load the Following Packages
 
 ```{r}
-
+library(tidyverse)
+library(cluster)
+library(factoextra)
 ```
 
 # 1. Load in Pitching Dataset
@@ -20,7 +22,7 @@ By the end of this activity, you'll use K-means clustering to uncover common pla
 Load in the `mlb_pitching_2024.csv` file from the data folder. Each row represents a pitcher from the 2024 regular season who faced at least 502 batters.
 
 ```{r}
-
+pitching <- read_csv(here::here("colney/mlb_k-means/data_repo_submission/mlb_pitching_2024.csv"))
 ```
 
 # 2. Exploring Pitching Dataset
@@ -34,7 +36,8 @@ These two stats give us a sense of a pitcher's general approach: do they rely on
 
 Create a scatterplot of `k_rate` vs. `bb_rate` to look for patterns or trends. Do you see any groups forming in the plot?
 ```{r}
-
+ggplot(pitching, aes(x = k_rate, y = bb_rate)) + 
+  geom_point()
 ```
 
 # 3. Introduction to K-mean Clustering
@@ -68,31 +71,32 @@ K-means clustering is useful when:
 
 a. Based on the scatterplot from question 2, how many clusters do you think might make sense for this pitching data?
 
-
+Solution:
 
 b. Why might it be useful to group pitchers using a method like K-means instead of relying on just one stat like strikeout rate?
 
-
+Solution:
 
 # 4. Prepare Data for Clustering
-Before running the K-means algorithm, we nedd to prepare the data. This involves selecting the numeric variables we want to use and scaling them so that both variables are on the same scale.
+Before running the K-means algorithm, we need to prepare the data. This involves selecting the numeric variables we want to use and scaling them so that both variables are on the same scale.
 
 a. Select Numerical Variables
 
 K-means clustering requires only numeric input. In this case, we'll use just two variables, `k_rate` and `bb_rate`. Use `select()` to create a new data frame with just these two columns.
 ```{r}
-
+pitching_data <- pitching %>%
+  select(3, 4)
 ```
 
 b. Scale the Data
 
-K-means clustering are sensitive ot the scale of the variables, so it's important to standardize them before clusting. The process if called scaling, and in R, the `scale()` function does this automatically by converting each value to a z-score
+K-means clustering are sensitive to the scale of the variables, so it's important to standardize them before clustering. The process if called scaling, and in R, the `scale()` function does this automatically by converting each value to a z-score
 
-This ensures that both `k_rate` and `bb_rate` are measured on the same sclae, so one doesn't unfairly influence the clustering results just because its original values were larger or more speard out. 
+This ensures that both `k_rate` and `bb_rate` are measured on the same scale, so one doesn't unfairly influence the clustering results just because its original values were larger or more spread out. 
 
 Use the `scale()` function to create a new data frame of standardized values.
 ```{r}
-
+pitching_scaled <- scale(pitching_data)
 ```
 
 c. Choosing the Number of Clusters
@@ -139,9 +143,99 @@ pitching_clustered <- pitching %>%
 c. Visualize the Clusters
 Use the `pitching_clustered` dataset to plot `k_rate` vs `bb_rate` and color each point by the assigned cluster.
 ```{r}
-
+pitching_clustered %>%
+  ggplot(., aes(x = k_rate, y = bb_rate, color = cluster)) +
+  geom_point()
 ```
 
 d. How would you describe the overall shape and separation of the clusters in the scatterplot?
+
+Solution:
+
+
+# 6. Interpreting the Pitching Clusters  
+Based on the strikeout and walk rates, each cluster represents a different type of pitcher. Here's how to interpret the four clusters.
+
+- Cluster 1 (Red): Struggling Pitchers
+  - Low `k_rate` and high `bb_rate`
+  - These pitchers don't strike out many batters and give up a lot of walks. This often leads to poor results because they're not getting outs efficiently and are allowing many free base runners. This group often bounce between the majors and minors leagues or move to bullpen roles, as they struggle to consistently compete against top-level hitters.
+
+- Cluster 2 (Green): Control Specialists
+  - Low `k_rate` and low `bb_rate`
+  - These pitchers don't rely on strikeouts but rarely walk hitters either. They succeed by throwing strikes and letting the defense make plays, also known as "pitch to contact". You'll often find veterans or crafty pitchers in this group who rely on movement, timing, precision rather than velocity.
+
+- Cluster 3 (Blue): Elite Pitchers
+  - High `k_rate` and low `bb_rate`
+  - These are the top performers. They strike out a lot of batters and rarely issue walks, meaning they control the game by keeping hitters off balance and off base. This is the group that earns $100+ million contracts and become All-Stars. Teams build around these kinds of pitchers.
+  
+- Cluster 4 (Purple): Fireballers
+  - High `k_rate` and high `bb_rate`
+  - These pitchers rack up strikeouts but also walk more batters than average. They're aggressive and hard to hit, but their lack of control can lead to risky innings. Some can develop into elite pitchers, but others become high-risk, high-reward pitchers. Capable of blowing hitters away or losing the strike zone entirely. 
+  
+# 7. Clustering MLB Batters
+Now that you've practiced K-means clustering with the pitching dataset, it's time to apply the same process to the batting dataset. 
+
+The main difference this time is that you're working with four numeric variables instead of just two: `batting_avg`, `slg_percent`, `hr_per_hit` and `k_rate`.
+
+This means you'll be clustering in 4-dimensional space, which makes it harder to visualize directly, but you can still explore relationships using scatterplots of two variables at a time.
+
+a. Load in the `mlb_batting_2024.csv` file
+```{r}
+batting <- read_csv(here::here("colney/mlb_k-means/data_repo_submission/mlb_batting_2024.csv"))
+```
+
+b. Select numeric variables
+```{r}
+batting_data <- batting %>%
+  select(3, 4, 5, 6)
+```
+
+c. Scale the data
+```{r}
+batting_scaled <- scale(batting_data)
+```
+
+d. Use the Elbow and Silhouette methods to choose the number of clusters
+```{r}
+fviz_nbclust(batting_scaled, kmeans, method = "wss")
+
+fviz_nbclust(batting_scaled, kmeans, method = "silhouette")
+```
+
+e. Run K-means
+```{r}
+k_batting <- kmeans(batting_scaled, centers = 4, nstart = 25)
+```
+
+f. Add cluster labels
+```{r}
+batting_clustered <- batting %>%
+  mutate(cluster = factor(k_batting$cluster))
+```
+
+g. Visualize the clusters
+
+Since this K-means analysis used four variables, we can't fully visualize the clusters in one plot. However, we can still explore how the groups differ by looking at scatterplots of two variables at a time. 
+
+Create a scatterplot of `k_rate` vs. `slg_percent`, coloring the points by cluster. This shows the trade-off between power and contact, highlighting whether hitters with more extra-base power tend to strike out more.
+```{r}
+batting_clustered %>%
+  ggplot(., aes(x = k_rate, y = slg_percent, color = cluster)) +
+  geom_point()
+```
+
+Create a scatterplot of `batting_avg` vs. `hr_per_hit`, coloring the points by cluster. This helps compare overall contact ability and home run power, revealing if hitters with high batting averages also generate a lot of power. 
+```{r}
+batting_clustered %>%
+  ggplot(., aes(x = batting_avg, y = hr_per_hit, color = cluster)) +
+  geom_point()
+```
+
+Even though we're only viewing two dimensions at a time, these plots still give useful insights into how the clusters differ. Keep in mind that the clustering happened in a 4D space, so the groups may not look perfectly separated in every 2D plot. 
+
+
+
+
+
 
 
