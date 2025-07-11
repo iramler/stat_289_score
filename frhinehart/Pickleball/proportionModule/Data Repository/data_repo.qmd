@@ -5,6 +5,7 @@ date: "June 25, 2025"
 format: html
 categories:
   - Matched Pairs T-Test
+  - Proportion Confidence Intervals
 ---
 
 ## Motivation
@@ -15,16 +16,7 @@ The DUPR (Dynamic Universal Pickleball Rating) system is a comprehensive and evo
 
 ## Data
 
-The dataset provided (male and female collegiate pickleball players) was scraped from NCPA (National Collegiate Pickleball Association) official website (see references for link). 
-
-::: {.callout-note collapse="true" title="Tidying Process"}
-
-This process was used to make the dataset
-- **Copied and pasted the data set into Excel**
-  - Added a sex variable to indicate the gender of player
-
-:::
-
+The dataset provided (male and female collegiate pickleball players from 2024) was scraped from NCPA (National Collegiate Pickleball Association) official website (see references for link). 
 
 <details>
 <summary><strong>Variable Descriptions</strong></summary>
@@ -47,7 +39,7 @@ NCPA male and female players (380 cases with 12 variables) data:
                        
 </details>
 
-Download Pickleball Data: [pickleBall.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Pickleball/Data_repository/pickleBall.csv)
+Download Pickleball Data: [pickleBall_2024.csv](../data/pickleBall_2024.csv)
 
 ## Questions Investigated
 1. Is there a significant difference between the means of Doubles Reliability and Singles Reliability
@@ -58,8 +50,10 @@ Download Pickleball Data: [pickleBall.csv](C:/Users/0211f/GitHub/slu_score_modul
 
 Data was scraped from the NCPA offical website:
 
-[NCPA Pickleball](https://tournaments.ncpaofficial.com/player-ratings){   }
+[NCPA Pickleball](https://tournaments.ncpaofficial.com/player-ratings){target="_blank"}
 
+<!--
 Video was linked from YouTube:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fTvPYdKZqO0?si=1UuCNuORNX791EU6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+-->
