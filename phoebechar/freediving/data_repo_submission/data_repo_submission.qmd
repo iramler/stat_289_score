@@ -34,7 +34,7 @@ Divers in all disciplines are required to announce their target performance ahea
 
 ## Data
 
-Each row in the `continentalDiving` data set represents a continental record in a diving discipline. All continents have records for the competitive disciplines and South America, North America, Europe, and Africa have at least one record in NLT or VWT. Europe has 2 tied records for men's CWT set by different men. Similarly, Oceania has 2 records for men's CNF set by the same man on different occasions. 
+Each row in the `continentalDiving` data set represents a continental (every continent besides Antarctica) record in a diving discipline. All continents have records for the competitive disciplines and South America, North America, Europe, and Africa have at least one record in NLT or VWT. Europe has 2 tied records for men's CWT set by different men. Similarly, Oceania has 2 records for men's CNF set by the same man on different occasions. 
 
 There are 108 records with 9 variables for each.
 

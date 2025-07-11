@@ -1,0 +1,56 @@
+---
+title: "Freediving Continental Records: Data Wrangling Worksheet"
+format:  
+    html:  
+        embed-resources: true
+---
+
+Freediving is a demanding sport that involves more strategy than people assume. The central, international organization of this sport under AIDA (International Association for the Development of Apnea) allows for the exploration of intriguing strategies and trends among top competitors. 
+
+All types of freediving involve the diver being under the water for as long as they can with one breath. Most disciplines involve a measurement of distance, but there is also the Static Apnea (STA) discipline in which the diver does not move, just stays under the surface for as long as they can with one breath. To learn more about the disciplines, see the explanation from [AIDA](https://www.aidainternational.org/competitive).
+
+Each row in this data set represents a continental (every continent besides Antarctica) record in a diving discipline. The number of disciplines present in the data differ between continents, but all continents have at least a female and male record for 8 of the 10 possible disciplines.
+
+There are 108 records with 9 variables for each.
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(readr)
+library(lubridate)
+library(ggplot2)
+```
+
+We will begin by reading the data in. 
+
+1. To save us from having to do it later, when you read in the data, add a line to read the `Date` column in as a day-month-year date (from the `lubridate` package) and the `Discipline` and `Sex` columns as factors as they both have limited options (this data only contains F for female and M for male).
+
+
+2. This data contains results from the time-based and distance-based freediving disciplines. This means that some rows in the `Result` and `Announced` columns contain time measurements and others contain distances. To make the data easier to work with, split it into two data sets, one with distance disciplines and one with the static discipline.
+
+
+For the static data, we will use the `lubridate` package to put the `Result` and `Announced` columns into formats easier to work with. Ultimately, we want to have this data in the `duration` form (this normalizes all rows to duration in seconds), but it is currently character data and cannot be converted right away.
+
+3. First, we must use a function from the `lubridate` package to convert the data into minute-second time data.
+
+
+4. Now, the data can be converted into `duration`.
+
+
+For the distance data, the `Result` and `Announced` columns contain 'm's to indicate the unit, but this forces the data to read in as characters instead of integers like we want.
+
+5. Parse the numbers from the `Result` and `Announced` columns.
+
+
+Now the data is wrangled into reasonable forms, we should create versions of the data sets that would allow them to be combined. This means instead of relying on exact results, we should rely on some kind of proportions/percentages. 
+
+6. For both data sets, create a secondary version with a variable that shows the dive results as proportions of the best dive result in that discipline. 
+
+
+7. Select just the `Name`, `Continent`, `Discipline`, and new proportion column and then try to merge the data sets.
+
+7.1 When attempting to merge the data sets, you should have encountered an error as the values in the proportion column in the distance data set are doubles, but those in the static data are still considered durations. Add to your previous code so that the proportion values in the static data set are coerced into doubles.
+
+
+8. Use the now-clean data to make a boxplot comparing the performances of different continents.
+

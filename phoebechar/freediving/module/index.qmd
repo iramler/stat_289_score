@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Freediving Continental Records: Data Wrangling"
 author:
   - name: Phoebe Jones
     affiliation:
@@ -8,10 +8,96 @@ author:
 format: 
       html:
           embed-resources: true
-date: "June 17, 2025"
-description: ""
+date: "July 11, 2025"
+description: "Using continental freediving record data to practice data wrangling techniques."
 editor: 
   canonical: true
 categories:
-  - 
+  - Data Wrangling
+  - Filtering
+  - Mutating
+  - Joining/Merging
+image: freediving.jpg
 ---
+
+## Module
+
+Please note that these materials have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction to Freediving
+
+Freediving is a demanding sport that involves more strategy than people assume. The central, international organization of this sport under AIDA (International Association for the Development of Apnea) allows for the exploration of intriguing strategies and trends among top competitors. If are unfamiliar with freediving, 
+
+### Introduction to Module
+
+The data for this module is not set up in an ideal way for data analysis. Columns that would be most useful as integers are initially read in as characters due to the inclusion of units in the data, and two very different performance measurements are forced into the same column. This activity walks through the steps someone looking to use this data for analysis would take to organize it.
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This would be best suited as an out-of-class assignment and should take between 45 minutes and an hour. 
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, students will:
+
+1. Have a greater understanding of how to use data wrangling techniques.
+
+2. Have gained experience troubleshooting issues with un-tidied data.
+
+3. Be introduced to the step-by-step approach to data tidying.
+
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+
+Students should have had an introduction to various methods used to wrangle data including general filtering, joining, and mutating.
+
+:::
+
+::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
+
+Students will need to use R.
+
+:::
+
+### Data
+
+This activity uses the data set: [continentalDiving.csv](continentalDiving.csv){target="_blank"}
+
+Each row in the `continentalDiving` data set represents a continental (every continent besides Antarctica) record in a diving discipline. All continents have records for the competitive disciplines and South America, North America, Europe, and Africa have at least one record in NLT or VWT. Europe has 2 tied records for men's CWT set by different men. Similarly, Oceania has 2 records for men's CNF set by the same man on different occasions. 
+
+There are 108 records with 9 variables for each.
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable    | Description                                               |
+|-------------|-----------------------------------------------------------|
+| Name        | Diver name (and country)                                  |
+| Sex         | Diver sex (Male or Female)                                |
+| Discipline  | Discipline of the dive (STA, CNF, DNF, etc.)              |
+| Result      | Result of the dive (time or distance)                     |
+| Announced   | Diver's announced target for the dive                     |
+| Points      | Points earned from the dive                               |
+| Date        | Date of the dive (dd.mm.yyyy)                             |
+| Event       | Event (competition) the dive was performed at             |
+| Continent   | Continent the athlete represents                          |
+
+</details>
+
+#### Data Source
+
+These data are compiled from [AIDA (International Association for the Development of Apnea)](https://www.aidainternational.org/ContinentalRecords).
+
+### Materials
+
+[Module Worksheet](Freediving_DataWrangling_worksheet.qmd){target="_blank"}
+
+[Module Solutions (R/Quarto Version)](Freediving_DataWrangling_SOLUTIONS.qmd){target="_blank"}
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+
+This module will help students gain experience wrangling troublesome data and dealing with problems that arise step by step using the skills they already have.
+
+:::
+

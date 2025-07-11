@@ -1,0 +1,84 @@
+---
+title: "Freediving Continental Records: Data Wrangling | SOLUTIONS"
+format:  
+    html:  
+        embed-resources: true
+    pdf:  default
+---
+
+```{r message = FALSE, warning = FALSE}
+library(tidyverse)
+library(dplyr)
+library(readr)
+library(lubridate)
+library(ggplot2)
+```
+
+We will begin by reading the data in. 
+
+1. To save us from having to do it later, when you read in the data, add a line to read the `Date` column in as a day-month-year date (from the `lubridate` package) and the `Discipline` and `Sex` columns as factors as they both have limited options (this data only contains F for female and M for male).
+
+```{r}
+diving <- read_csv("continentalDiving.csv") |> mutate(Sex = as.factor(Sex), Discipline = as.factor(Discipline), Date = dmy(Date))
+```
+
+2. This data contains results from the time-based and distance-based freediving disciplines. This means that some rows in the `Result` and `Announced` columns contain time measurements and others contain distances. To make the data easier to work with, split it into two data sets, one with distance disciplines and one with the static discipline.
+
+```{r}
+static <- diving |> filter (Discipline == "STA")
+
+distance <- anti_join(diving, static)
+```
+
+3. First, we must use a function from the `lubridate` package to convert the data into minute-second time data.
+
+```{r}
+static <- static |> mutate(Result = ms(Result), 
+                           Announced = ms(Announced))
+```
+
+4. Now, the data can be converted into `duration`.
+
+```{r}
+static <- static |> mutate(Result = as.duration(Result), 
+                           Announced = as.duration(Announced))
+```
+
+5. Parse the numbers from the `Result` and `Announced` columns.
+
+```{r}
+distance <- distance |> mutate(Result = parse_number(Result), Announced = parse_number(Announced))
+```
+
+6. For both data sets, create a secondary version with a variable that shows the dive results as proportions of the best dive result in that discipline. 
+
+```{r}
+distance_prop <- distance |> group_by(Discipline) |> mutate(Prop_best = Result / max(Result)) |> ungroup()
+
+static_prop <- static |> mutate(Prop_best = Result / max(Result))
+```
+
+7. Select just the `Name`, `Continent`, `Discipline`, and new proportion column and then try to merge the data sets.
+
+```{r}
+distance_small <- distance_prop |> select(Name, Continent, Discipline, Prop_best)
+
+static_small <- static_prop |> select(Name, Continent, Discipline, Prop_best)
+
+diving_compare <- full_join(distance_small, static_small)
+```
+
+7.1 When attempting to merge the data sets, you should have encountered an error as the values in the proportion column in the distance data set are doubles, but those in the static data are still considered durations. Add to your previous code so that the proportion values in the static data set are coerced into doubles.
+
+```{r}
+## change code under question 6
+## static_prop <- static |> mutate(Prop_best = as.double(Result / max(Result)))
+```
+
+8. Use the now-clean data to make a boxplot comparing the performances of different continents.
+
+```{r}
+ggplot(diving_compare, aes(x = Continent, y = Prop_best)) +
+  geom_boxplot() +
+  theme_minimal()
+```
