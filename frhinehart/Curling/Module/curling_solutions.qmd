@@ -97,3 +97,5 @@ reject the null hypothesis.
 
 There is significant evidence (p-value = .00135, DF = 4, G = 17.801) that adding the predictors Sex, PF, and S% significantly improves the model fit. 
 
+
+

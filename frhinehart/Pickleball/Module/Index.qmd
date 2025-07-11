@@ -22,7 +22,7 @@ format:
     embed-resources: false
 categories:
   - Paired Data
-image: pickleballImage.webp
+image: pickleImage.jpg
 ---
 
 ## Background to Pickleball Video
@@ -90,7 +90,7 @@ Details on the data are available in the associated [SCORE Data Repository entry
 
 - [Class handout (MS Word)](pickleball_worksheet.docx)
 
-- [Class handout - with solutions](pickleball_solutions.docx)
+- [Class handout - with solutions](pickleball_worksheet_solutions.docx)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Students should gain an understanding of matched pairs t-test to compare mean reliability scores for singles and doubles ratings.
