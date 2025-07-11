@@ -6,13 +6,12 @@ format: html
 categories:
   - Correlation Analysis
   - Group Comparisons
-  - t-test
-  - ANOVA
+  - Nested Likelihood Ratio Test
 ---
 
 ## Motivation
 
-Curling at the Winter Olympics is a strategic and fast-paced ice sport where two teams take turns sliding 42–44lb granite stones down a pebbled 45m ice sheet toward a circular target called the house. Each end (akin to an inning) sees teams delivering eight stones (or five in mixed doubles), using brooms to sweep the ice and influence the stone’s speed and direction. Scoring occurs when one team’s stones are closest to the button (center); only one team scores per end, with one point per stone closer than the opponent’s nearest. If there is a tie they they do a draw shot challenge. Men’s and women’s matches consist of 10 ends, while mixed doubles have 8, and play continues into extra ends if tied.
+Curling at the Winter Olympics is a strategic ice sport where two teams take turns sliding granite stones down a pebbled 45m ice sheet toward a circular target called the house. Each end sees teams delivering eight stones (or five in mixed doubles), using brooms to sweep the ice and influence the stone’s speed and direction. Scoring occurs when one team’s stones are closest to the button (center); only one team scores per end, with one point per stone closer than the opponent’s nearest. If there is a tie they do a draw shot challenge. Men’s and women’s matches consist of 10 ends, while mixed doubles have 8, and play continues into extra ends if tied.
 
 The Olympic format includes round-robin play where 10 teams in men’s/women’s and mixed doubles complete. The top four go to the semifinals, then the medal matches. Curling blends precision, teamwork, and tactical sweeping to control stone trajectory and score multiple points while strategically managing who throws last using the hammer.
 
@@ -63,6 +62,7 @@ Download Curling Data: [Curling.csv](C:/Users/0211f/GitHub/slu_score_module_deve
 3. How does Shot Percentage (S%) vary between teams with high and low DSC scores?
 4. Do teams with better DSC scores tend to win more Ends (EW)?
 5. Is there a significant difference between wins and sex of the team?
+6. Can we compare models for better predictions?
 
 ## References
 

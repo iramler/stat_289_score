@@ -1,0 +1,107 @@
+---
+title: "Model Building and Testing with Curling Statistics"
+author:
+  - name: Faith Rhinehart
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+date: "July 11, 2025"
+description: "Using a nested likelihood ratio test to determine the better model for predicting qualification"
+editor: 
+  canonical: true
+format: 
+  html:
+    embed-resources: false
+categories:
+  - Nested Likelihood Ratio Test
+image: curlingImage.webp
+---
+
+### Background to Curling Video
+
+If you are unfamiliar with Curling, please watch this video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TjxcZhbVSVQ?si=q8yccV3-b1RLlPv9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Introduction to Module
+
+Curling at the Winter Olympics is a strategic ice sport where two teams take turns sliding granite stones down a pebbled 45m ice sheet toward a circular target called the house. Each end sees teams delivering eight stones (or five in mixed doubles), using brooms to sweep the ice and influence the stone’s speed and direction. The Olympic format includes round-robin play where 10 teams in men’s/women’s and mixed doubles complete. The top four go to the semifinals, then the medal matches.
+
+The curling dataset features data from the 2022 Winter Olympics of male, female, and mixed doubles teams. Variables include characteristics such as name, country, and sex. Other variables included Shot Percentage, Ends Won, Ends Stolen, Point For, Points Against, etc. The relevant variables for this specific module are Sex, Shot Percentage, and Points For. 
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+Learning Objectives:
+
+1. Students will learn how to perform a nested likelihood ratio test
+
+2. Student will practice writing and fitting models
+
+3. Students will practice the hypothesis testing skills
+
+4. Students will practice data manipulation skills
+
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+For this activity, students will need to use a statistical software. 
+
+Students are expected to understand the concept of hypothesis forming, rejecting hypothesis, and model building. Students are also expected to now how to fit models, and use functions in code.
+
+This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
+:::
+
+### Data
+
+The curling data contains statistics for the 2022 Winter Olympics Round Robin. 
+
+Download data: [Curling.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Curling/Module/Curling.csv)
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+male, female, and mixed Olympic Curling teams results after round robin (30 cases with 13 variables) data:
+
+| Variable  | Description                 |
+|-----------|-----------------------------|
+| Team      | Country Team is Representing|
+| Pld       | Matches Played              |
+| W         | Wins                        |
+| L         | Loses                       |
+| PF        | Points For                  |
+| PA        | Points Against              |
+| EW        | Ends Won                    |
+| EL        | Ends Lost                   |
+| BE        | Blank Ends                  |
+| SE        | Stolen Ends                 |
+| S%        | Shot Percentage             |  
+| DSC       | Draw Shot Challenge         |
+| Sex       | Sex of Team                 |
+| Rank      | Rank After Round Robin      |   
+
+</details>
+
+
+### Materials
+
+R qmd file:
+
+[Class handout](curling_worksheet.qmd)
+
+[Class handout - with solutions](curling_solutions.qmd)
+
+Word Document:
+
+[Class handout](curling_worksheet.docx)
+
+[Class handout - with solutions](curling_solutions.docx)
+
+pdf Document:
+
+[Class handout](curling_worksheet.pdf)
+
+[Class handout - with solutions](curling_solutions.pdf)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Students should gain an understanding of the nested likelihood ratio test for model selection. 
+:::

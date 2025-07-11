@@ -1,0 +1,71 @@
+---
+title: "Curling Nested Likelihood Ratio Test Worksheet"
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
+  docx:  default
+  pdf:  default
+---
+
+Read in dataset and necessary libraries:
+
+
+The Nested Likelihood Ratio Test compares two models: a simpler Null Model (which includes only an intercept) and a more complex Full Model (which includes additional predictors). The test determines whether the inclusion of these additional predictors significantly improves the model’s fit to the data. It is commonly used with logistic regression, where the goal is to understand the effect of one or more predictors on a binary outcome.
+
+To begin, we create a binary variable `Qualified`, which will have a value of 1 for the top four ranked individuals in each sex category (Male, Female, Mixed), and 0 for all others. This will serve as our binary outcome variable, which is required for logistic regression which estimates the log-odds of the binary outcome (Qualified = 1).
+
+1) Create a new variable `Qualified` that gives a 1 for the top four of each Sex and a 0 for those who did not. 
+
+
+
+
+Logistic regression models require categorical variables to be coded as factors. Therefore, we convert both `Qualified` and `Sex` to factors, which will allow the regression model to interpret them correctly as categorical predictors.
+
+2) Change the `Qualified` and `Sex` to a factor.
+
+
+
+
+For this worksheet, we will be seeing if the variables `Sex`, `S%`, and `PF` improve the model. We are only using three to avoid the risk of over fitting the model.
+
+The standard Full model is:
+
+$$log(\frac{\pi}{1-\pi}) = \beta_0 + \beta_1X_1 + ... + \beta_kX_k $$
+
+The standard Null model:
+
+$$log(\frac{\pi}{1-\pi}) = \beta_0$$
+ 
+3) Write the full and null model for the predictors we are using for this nested likelihood ratio test.
+
+
+
+
+Since we want to test if the full model is useful we can create our hypothesis.
+
+The standard null and alternative hypothesis is as follows:
+
+$$H_o: \beta_1 = \beta_2 = \beta_3 = 0$$ (no difference between predictors)
+
+$$H_a: at \space least \space one \space \beta_i \space \neq 0 \space for \space i = 1, 2, 3 $$
+
+4) Write the null and alternative hypothesis for our hypothesis test.
+
+
+
+
+5) Write the null and full model in code using the `glm()` function. Make sure to assign family = binomial. The `glm()` function fits the logistic regression models. `family = binomial` specifies that we're modeling a binary outcome.
+
+
+
+
+To preform the nested likelihood ratio test we use the anova() function, which compares the deviance (goodness-of-fit) of the null and full models. The test statistic (G = null deviance - full deviance) follows a chi-squared distribution, and the p-value tells us whether the inclusion of the additional predictors (Sex, S%, and PF) significantly improves the model. If the p-value is small (typically < 0.05), we reject the null hypothesis and conclude that the full model provides a significantly better fit.
+
+6) Preform the hypothesis using the `anova()` function. Report the deviance, p-value and degrees of freedom. Conclude your results.
+ 
+

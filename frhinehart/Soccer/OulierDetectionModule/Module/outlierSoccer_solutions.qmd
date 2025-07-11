@@ -52,14 +52,14 @@ Point 33 has the highest residual and leverage and it corresponding to Sophie Sm
 
 Yes because it is above the .5 cook's distance line meaning it has moderate influence on the regression model. 
 
-6) Calculate the cook's distance of the influential point.
+6) Calculate the cook's distance of the influential point. 
 
 ```{r}
 cooks_d <- cooks.distance(model)
 cooks_d
 ```
 
-7.564772e-01
+7.565e-01
 
 7) How might removing the point influence the model?
 
