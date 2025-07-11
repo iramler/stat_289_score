@@ -8,16 +8,16 @@ library(tidyverse)
 library(dplyr)
 library(readr)
 library(lubridate)
+library(stringr)
 ```
 
-We will begin by reading the data in. To save us from having to do it later, as you read in the data, add a line to read the `Date` column in as a day-month-year date (from the `lubridate` package) and the `Discipline` and `Sex` columns as factors as they both have limited options (this data only contains F for female and M for male).
+We will begin by reading the data in. To save us from having to do it later, when you read in the data, add a line to read the `Date` column in as a day-month-year date (from the `lubridate` package) and the `Discipline` and `Sex` columns as factors as they both have limited options (this data only contains F for female and M for male).
 
 ```{r}
 diving <- read_csv("continentalDiving.csv") |> mutate(Sex = as.factor(Sex), Discipline = as.factor(Discipline), Date = dmy(Date))
 ```
 
-
-This data contains results from the time-based and distance-based freediving disciplines. This means that the `Result` and `Announced` columns contain both distance measurements and time measurements. Because of this, the easiest way to work with this data is to split it into two data sets, one with distance disciplines and one with the static discipline. Write code to do that.
+This data contains results from the time-based and distance-based freediving disciplines. This means that the `Result` and `Announced` columns contain both distance measurements and time measurements. To make the data easier to work with, split it into two data sets, one with distance disciplines and one with the static discipline.
 
 ```{r}
 static <- diving |> filter (Discipline == "STA")
@@ -28,20 +28,31 @@ distance <- anti_join(diving, static)
 For the static data, we will use the `lubridate` package to put the `Result` and `Announced` columns into formats easier to work with. Ultimately, we want to have this data in the `duration` form, but it is currently character and cannot be converted right away. First, we must use a function from the `lubridate` package to convert the data into minute-second time data.
 
 ```{r}
-
+static <- static |> mutate(Result = ms(Result), 
+                           Announced = ms(Annouced))
 ```
 
 Now, the data can be converted into a `duration` class.
 
+```{r}
+static <- static |> mutate(Result = as.duration(Result), 
+                           Announced = as.duration(Announced))
+```
+
+If you open the data set, you can see that these variables now have the s (seconds) unit within the entries. The presence of this unit does not stop analysis using this variable as a regular integer value.
+
 For the distance data, the `Result` and `Announced` columns contain 'm's to indicate the unit, but this forces the data to read in as characters instead of integers like we want. We must parse the numbers.
 
+```{r}
+distance <- distance |> mutate(Result = parse_number(Result), Announced = parse_number(Announced))
+```
 
-------------------------
+Now the data is wrangled into reasonable forms, we should adapt the two data sets in a way tha allows them to be combined. This means instead of relying on exact results, we should rely on some kind of proportions/percentages. 
 
-All data: separate country and name, date as dmy, Gender and Discipline as factors, add prop_over(?) and perc_best(?), Ranks (??)
+For both data sets, add a variable that interprets the times/distances as proportions of the best performances in each discipline. 
 
-Distance: parse numbers from Result and Announced
+```{r}
 
-Static: read as ms, as duration (note unit)
+```
 
-
+Merge smaller versions of the data sets.

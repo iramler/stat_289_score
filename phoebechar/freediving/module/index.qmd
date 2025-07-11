@@ -1,0 +1,17 @@
+---
+title: ""
+author:
+  - name: Phoebe Jones
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+format: 
+      html:
+          embed-resources: true
+date: "June 17, 2025"
+description: ""
+editor: 
+  canonical: true
+categories:
+  - 
+---
