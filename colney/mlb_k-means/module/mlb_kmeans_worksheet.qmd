@@ -12,12 +12,14 @@ By the end of this activity, you'll use K-means clustering to uncover common pla
 # 0. Load the Following Packages
 
 ```{r}
-
+library(tidyverse)
+library(cluster)
+library(factoextra)
 ```
 
 # 1. Load in Pitching Dataset
 
-Load in the `mlb_pitching_2024.csv` file from the data folder. Each row represents a pitcher from the 2024 regular season who faced at least 502 batters.
+Load in the `mlb_pitching_2024.csv` file from the data folder. Each row represents a pitcher from the 2024 regular season who faced at least 502 batters. Call the new object `pitching`.
 
 ```{r}
 
@@ -44,9 +46,9 @@ K-means is an unsupervised learning method, which means it doesn't use any label
 
 Here's how K-means clustering works using the MLB pitching dataset:
 
-1. You choose the number of groups/clusters (K) you want to find. For example, 2 or 3 clusters of pitcher types. 
+1. You choose the number of groups/clusters (K) you want the algorithm to find. For example, K = 4 means you're asking for 4 groups of similar pitchers.
 
-2. The algorithm randomly picks K starting points in the scatterplot. These are called centers (or centroids) and represent the "middle" of each group.
+2. The algorithm randomly picks K starting points in the plot. These are called centers (or centroids) and these are the initial guesses for where the "middle" for each group might be.
 
 3. Each pitcher is assigned to closest center based on distance, pitchers with similar strikeout and walk rates will end up near the same center.
 
@@ -79,18 +81,18 @@ Before running the K-means algorithm, we need to prepare the data. This involves
 
 a. Select Numerical Variables
 
-K-means clustering requires only numeric input. In this case, we'll use just two variables, `k_rate` and `bb_rate`. Use `select()` to create a new data frame with just these two columns.
+K-means clustering requires only numeric input. In this case, we'll use just two variables, `k_rate` and `bb_rate`. Use `select()` to create a new data frame called `pitching_data` with just these two columns.
 ```{r}
 
 ```
 
 b. Scale the Data
 
-K-means clustering are sensitive to the scale of the variables, so it's important to standardize them before clustering. The process if called scaling, and in R, the `scale()` function does this automatically by converting each value to a z-score
+K-means clustering is sensitive to the scale of the variables, so it's important to standardize them before clustering. The process is called scaling, and in R, the `scale()` function does this automatically by converting each value to a z-score
 
 This ensures that both `k_rate` and `bb_rate` are measured on the same scale, so one doesn't unfairly influence the clustering results just because its original values were larger or more spread out. 
 
-Use the `scale()` function to create a new data frame of standardized values.
+Use the `scale()` function to create a new data frame called `pitching_scaled` of standardized values.
 ```{r}
 
 ```
@@ -101,7 +103,7 @@ K-means requires you to specify the number of clusters (K) ahead of time. To dec
 
 - The Elbow Method: This looks at the total within-cluster variation. As the number of clusters increases, the variation within each group naturally decreases, but eventually the improvement slows down.
 
-You're looking for a bend or elbow in the plot, this is the point where adding more clusters doesn't significantly reduce the variation. Here is the code to create the plot.
+You're looking for a bend or "elbow" in the plot, this is the point where adding more clusters doesn't significantly reduce the variation. Here is the code to create the plot.
 ```{r}
 fviz_nbclust(pitching_scaled, kmeans, method = "wss")
 ```
@@ -119,30 +121,34 @@ Based on the two plots, a reasonable number of clusters for the pitching data ap
 Now that you've selected a number of clusters (K=4), it's time to run the K-means algorithm and assign each pitcher to a cluster. 
 
 a. Run the K-means Algorithm
-The code below applies K-means clustering to the scaled pitching data.
+The code below applies K-means clustering to the scaled pitching data. 
+
+*Note:* The `set.seed()` function is used to make the results reproducible. K-means starts with random cluster centers, so setting a seed ensures that the randomization produces the same result each time you run the code.
 ```{r}
+set.seed(123)
+
 k_pitching <- kmeans(pitching_scaled, centers = 4, nstart = 25)
 ```
 
-What's Happening in the Code:
+What's Happening in the `kmeans` function:
 - centers = 4, tells the algorithm to find 4 clusters
 
 - nstart = 25, tells R to run the algorithm 25 times with different random starting points and keep the best result and keep the best result.
 
 b. Add Cluster Labels to the Original Data
-Now that each pitcher has been assigned to a cluster, we'll add those cluster labels back to the original dataset, so we can explore and visualize them. The code below does this.
+Now that the algorithm has assigned each pitcher to a cluster, we'll add this information to the original dataset, so we can visualize and interpret the clusters. The code below does this.
 ```{r}
 pitching_clustered <- pitching %>%
   mutate(cluster = factor(k_pitching$cluster))
 ```
 
 c. Visualize the Clusters
-Use the `pitching_clustered` dataset to plot `k_rate` vs `bb_rate` and color each point by the assigned cluster.
+Use the `pitching_clustered` data table to plot `k_rate` vs `bb_rate`, and color each point by the assigned cluster.
 ```{r}
 
 ```
 
-d. How would you describe the overall shape and separation of the clusters in the scatterplot?
+d. What patterns do you notice in how the clusters are separated in the scatterplot? Are any clusters more distinct or overlapping than others?
 
 
 # 6. Interpreting the Pitching Clusters 
@@ -222,7 +228,7 @@ Since we're clustering using four variables, it's challenging to see the full pi
 
 PCA creates new variables (called principal components) that capture the most important variation in the data. While we won't dive into the full details of how PCA works, we can use it create a 2D plot that shows all four-variables clusters in one view.
 
-The code below displays the K-means clustering results based on the PCA transformed data.
+The code below displays the K-means clustering results based on the PCA transformed data. `k_batting` and `batting_scaled` are placeholders for the object names, use the object names you created earlier in section 7.
 ```{r}
 fviz_cluster(k_batting, data = batting_scaled,
              geom = "point", ellipse.type = "convex")
@@ -232,18 +238,18 @@ This gives a simplified picture of how well the clusters are separated overall. 
 
 # 8. Interpreting the Batting Clusters
 Based on the scatterplots using batting average, slugging percentage, home runs per hit and strikeout rate, each cluster represents a different type of batter. Here's one way to interpret the four clusters. 
-
-- Cluster 1 (Red): Elite Hitters
-  - high `batting_avg`, high `slg_percent`, high `hr_per_hit`, average `k_rate`
-  - These players are the total package at the plate, great at making contact and generating power. They're often All-Stars, typically bat second or third in the lineup, and frequently appear on MVP ballots.
   
-- Cluster 2 (Green): Struggling Hitters
+- Cluster 1 (Red): Struggling Hitters
   - below average `batting_avg`, low `slg_percent`, below average `hr_per_hit`, average `k_rate`
   - These batters tend to struggle at the plate and offer limited offensive value. They're often young players adjusting to MLB pitching, defensive specialists, or bench players.
   
-- Cluster 3 (Blue): Contact Hitters
+- Cluster 2 (Green): Contact Hitters
   - high `batting_avg`, average `slg_percent`, below average `hr_per_hit`, low `k_rate`
   - These hitters focus on putting the ball in play and rarely strike out. They may not hit many home runs, but they're consistent and tough outs. They may be leadoff hitters and they help generate offense by getting on base.
+  
+- Cluster 3 (Blue): Elite Hitters
+  - high `batting_avg`, high `slg_percent`, high `hr_per_hit`, average `k_rate`
+  - These players are the total package at the plate, great at making contact and generating power. They're often All-Stars, typically bat second or third in the lineup, and frequently appear on MVP ballots.
   
 - Cluster 4 (Purple): Power Hitters
   - average `batting_avg`, average `slg_percent`, high `hr_per_hit`, high `k_rate`
@@ -252,4 +258,4 @@ Based on the scatterplots using batting average, slugging percentage, home runs 
 # 9. Conclusion
 In this activity, you were introduced to K-means clustering, an unsupervised learning method used to find groups within data based on similarity. Rather than labeling players manually or relying on traditional categories, K-means allowed us to explore how pitchers and batters naturally cluster based on their performance.
 
-By applying K-means to the MLB pitching and batting dataset, we identified distinct player archetypes such as power hitters, contact hitter, elite pitchers, and control specialists, using only a few carefully chosen variables. While baseball was the context, the same clustering method can be used in many field to reveal hidden structure and uncover meaningful patterns.
+By applying K-means to the MLB pitching and batting dataset, we identified distinct player archetypes such as power hitters, contact hitter, elite pitchers, and control specialists, using only a few carefully chosen variables. While baseball was the context, the same clustering method can be used in many fields to reveal hidden structure and uncover meaningful patterns.
