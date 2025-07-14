@@ -1,0 +1,34 @@
+---
+title: "Olympics Participants 1900-2018"
+author: "Phoebe Jones" 
+date: "July 14, 2025" 
+format:
+    html:
+      embed-resources: true
+categories:
+  - 
+---
+
+## Motivation
+
+
+## Data
+
+
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable    | Description                                               |
+|-------------|-----------------------------------------------------------|
+| 
+
+</details>
+
+## Questions
+
+1.
+
+## References
+

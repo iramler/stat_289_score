@@ -1,75 +1,28 @@
 ---
-title: "olympics_explore"
+title: "Olympic Winners from 1900 - 2018:"
 format: html
 ---
 
 ```{r}
 library(tidyverse)
 library(dplyr)
-library(class)
+library(ggplot2)
+library(forcats)
 
 olympics <- read_csv("athlete_events.csv")
-olympics <- olympics |> filter (Year >= 1980)
 olympicsF <- olympics |> filter (Sex == "F")
 olympicsM <- olympics |> filter (Sex == "M")
 ```
 
 ```{r}
-woWinter <- olympicsF |> filter(Season == "Winter")
+particpation <- olympics |> group_by(Games, Sex) |> mutate(n_Participants = n()) |> slice(1)
 
-woWinter <- woWinter |> filter (!Sport %in% c("Biathlon", "Bobsleigh", "Curling", "Freestyle Sking", "Ice Hockey", "Short Track Speed Skating", "Skeleton", "Ski Jumping", "Snowboarding"))
-```
+particpation <- particpation |> mutate(Year = as.factor(Year))
 
-```{r}
-woWinter <- woWinter |> filter(!is.na(Sport) & !is.na(Age) & !is.na(Weight) & !is.na(Height))
+particpation <- particpation |> mutate(Year = fct_inseq(Year))
 
-woWinter <- woWinter |> mutate(across(.cols = c("Age", "Height", "Weight"), ~ (.x - min(.x)) / (max(.x) - min(.x))))
-
-Btrain <- woWinter |> slice_sample(n = 5623)
-Btest <- anti_join(woWinter, Btrain)
-
-BsmallTrain <- Btrain |> select(Age, Weight, Height)
-
-BsmallTest <- Btest |> select(Age, Weight, Height)
-
-BtrainCat <- Btrain$Sport
-BtestCat <- Btest$Sport
-
-Bknn_oly <- knn(train = BsmallTrain, test = BsmallTest, cl = BtrainCat, k = 9)
-
-tab <- table(Bknn_oly, BtestCat)
-
-sum(diag(tab)) / sum(tab)
-```
-
-```{r}
-menSum <- olympicsM |> filter (Season == "Summer")
-
-## menSum <- menSum |> filter(!Sport %in% c("Badminton", "Baseball", "Beach Volleyball", "Golf", "Rugby Sevens", "Table Tennis", "Taekwondo", "Tennis", "Trampolining", "Triatholon"))
-```
-
-```{r}
-menSum <- menSum |> filter(!is.na(Sport))
-menSum <- menSum |> filter(!is.na(Age))
-menSum <- menSum |> filter(!is.na(Weight))
-menSum <- menSum |> filter(!is.na(Height))
-
-menSum <- menSum |> mutate(across(.cols = c("Age", "Height", "Weight"), ~ (.x - min(.x)) / (max(.x) - min(.x))))
-
-train <- menSum |> slice_sample(n = 51109)
-test <- anti_join(menSum, train)
-
-smallTrain <- train |> select(Age, Weight, Height)
-
-smallTest <- test |> select(Age, Weight, Height)
-
-trainCat <- train$Sport
-testCat <- test$Sport
-
-knn_oly <- knn(train = smallTrain, test = smallTest, cl = trainCat, k = 50)
-
-tab <- table(knn_oly, testCat)
-
-sum(diag(tab)) / sum(tab)
+ggplot(particpation, aes(x = Year, y = n_Participants)) +
+  geom_point(aes(colour = Sex)) +
+  facet_wrap(~Season)
 ```
 
