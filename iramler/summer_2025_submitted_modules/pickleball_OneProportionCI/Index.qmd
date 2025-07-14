@@ -1,15 +1,17 @@
 ---
-title: "Introduction to "
+title: "Pickleball: Estimating the proportion of dependable DUPR ratings"
 author:
   - name: Faith Rhinehart
     affiliation:
       - id: slu
         name: St. Lawrence University
   - name: Ivan Ramler
-    affiliation: slu
+    affiliation: 
+      - ref: slu
     email: iramler@stlawu.edu
   - name: Jessica Chapman
-    affiliation: slu
+    affiliation: 
+      - ref: slu
     
 date: "July 14, 2025"
 description: "Estimate the proportion of collegiate pickleball players who have a dependable overall DUPR reliability score (of 60% or higher)."
