@@ -21,7 +21,7 @@ This dataset provides as a valuable resource for analyzing the physical characte
 ## Data
 The **mma_fighters.csv** dataset contains 2348 rows and 9 columns. Each row represents a MMA fighter in the ufcstats.com database. **Note:** Win-loss records include all professional MMA fights, not just fights that took place in the UFC.
 
-Download Data:[mma_fights.csv](/data_repo_submission/mma_fighters.csv){target="_blank"}
+Download Data:[mma_fighters.csv](/data_repo_submission/mma_fighters.csv){target="_blank"}
 
 <details>
 
