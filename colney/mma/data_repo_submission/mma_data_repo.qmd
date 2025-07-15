@@ -1,0 +1,59 @@
+---
+title: "MMA Fighter Profiles"
+author: "Cooper Olney"
+date: "July 15, 2025"
+
+categories:
+  - Data visualization
+  - Data wrangling
+---
+
+
+## Motivation
+
+Mixed Martial Arts (MMA) is a full contact combat sport that combines techniques from various disciplines, including boxing, wrestling, Brazilian jiu-jitsu, Mauy Thai, and kickboxing. Competitors face off in timed round inside a cage octagon, using striking and grappling skills to defeat their opponents by knockout, submission, or judges' decision. The sport demands a unique blend of physical ability, mental toughness, and strategic versatility, making it one of the most dynamic and demanding competitions in the world.
+
+One of the most talked about physical attributes in MMA is reach, the distance from fingertip to fingertip when arms are fully extended. Reach plays a critical role in striking based exchanges, where the ability to hit an opponent from a safe distance can provide a major tactical edge. Fighters with longer reaches may be able to land punches or kicks without stepping into their opponent's range, making it harder for shorter reach opponents to counter. However, reach isn't everything, a fighter must still have the footwork, timing, and technique to effectively use that length.
+
+This dataset provides as a valuable resource for analyzing the physical characteristics and career outcomes of MMA fighters. We can explore how physical advantages may, or may not, translate to success in the octagon. Notable fighters such as Jon Jones, who is known for his exceptional reach, demonstrate how these traits can shape both fighting style and long-term dominance. 
+
+
+## Data
+The **mma_fighters.csv** dataset contains 2348 rows and 9 columns. Each row represents a MMA fighter in the ufcstats.com database. **Note:** Win-loss records include all professional MMA fights, not just fights that took place in the UFC.
+
+Download Data:[mma_fights.csv](/data_repo_submission/mma_fighters.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+| Name    | Full name of fighter
+| Nickname    | Nickname of fighter
+| Height    | Fighter's height in inches
+| Weight    | Fighter's weight in pounds
+| Reach    | Fighter's reach in inches
+| Stance    | Fighter's primary fighting stance
+| W    | Total number of wins in professional MMA competition
+| L    | Total number of losses in professional MMA competition
+| D    | Total number of draws in professional MMA competition
+
+
+</details>
+
+
+## Questions
+
+1. Do fighters with longer reaches tend to have more wins?
+
+2. Is there a relationship between a fighter's height and their win total?
+
+3. Do heavier fighters tend to have more wins on average that lighter fighters?
+
+
+## References
+
+Stats | UFC. (n.d.). Retrieved from http://ufcstats.com/statistics/fighters
+
+

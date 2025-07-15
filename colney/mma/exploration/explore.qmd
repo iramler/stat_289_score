@@ -1,0 +1,147 @@
+---
+title: "explore"
+format: html
+---
+
+# ufcstats
+```{r}
+library(tidyverse)
+library(rvest)
+library(purrr)
+```
+
+# just A 
+```{r}
+url <- "http://ufcstats.com/statistics/fighters?char=a&page=all"
+objs <-
+  url %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+a <- objs[[1]]
+```
+
+# scrape all pages
+```{r}
+# Define the base URL pattern and letters
+base_url <- "http://ufcstats.com/statistics/fighters?char=%s&page=all"
+letters_vec <- letters  # a to z
+
+# Scrape and combine all pages
+all_fighters <- map_dfr(letters_vec, function(letter) {
+  url <- sprintf(base_url, letter)
+  message("Scraping: ", url)
+  
+  tryCatch({
+    table <- read_html(url) %>%
+      html_nodes("table") %>%
+      html_table()
+    
+    df <- table[[1]]
+    df
+  }, error = function(e) {
+    message("Failed on letter: ", letter)
+    return(NULL)
+  })
+})
+
+```
+
+# fighter profile dataset
+```{r}
+fighter_profiles <-
+  all_fighters %>%
+  mutate(across(where(is.character), ~na_if(., ""))) %>%
+  select(-11) %>%
+  filter(
+    !is.na(First),
+    !is.na(Last),
+    !is.na(Stance)
+  ) %>%
+  filter(
+    Reach != "--",
+    Wt. != "--",
+    Ht. != "--"
+  ) %>%
+  rename(
+    Height = Ht.,
+    Weight = Wt.
+  ) %>%
+  mutate(Name = paste(First, Last, sep = " ")) %>%  relocate(Name, .before = Nickname) %>%
+  mutate(
+    Name = if_else(
+      is.na(Nickname) | Nickname == "",
+      str_c(First, Last, sep = " "),
+      str_c(First, ' "', Nickname, '" ', Last)
+    )
+  ) %>% select(-First, -Last, - Nickname) %>%
+  mutate(Name = str_c(Name = str_c(Name, Stance, sep = " | "))) %>% select(-Stance) %>%
+  select(-W, -L, -D)
+```
+
+# fighter record dataset
+```{r}
+fighter_records <- 
+  all_fighters %>%
+  mutate(across(where(is.character), ~na_if(., ""))) %>%
+  select(-11) %>%
+  filter(
+    !is.na(First),
+    !is.na(Last),
+    !is.na(Stance)
+  ) %>%
+  filter(
+    Reach != "--",
+    Wt. != "--",
+    Ht. != "--"
+  ) %>%
+  rename(
+    Height = Ht.,
+    Weight = Wt.
+  ) %>%
+  mutate(Name = paste(First, Last, sep = " ")) %>%  relocate(Name, .before = Nickname) %>% select(Name, W, L, D)
+```
+
+# complete dataset
+```{r}
+complete <-
+  all_fighters %>%
+mutate(across(where(is.character), ~na_if(., ""))) %>%
+select(-11) %>%
+filter(
+  !is.na(First),
+  !is.na(Last),
+  !is.na(Stance)
+) %>%
+filter(
+  Reach != "--",
+  Wt. != "--",
+  Ht. != "--"
+) %>%
+rename(
+  Height = Ht.,
+  Weight = Wt.
+) %>%
+mutate(Name = paste(First, Last, sep = " ")) %>%  relocate(Name, .before = Nickname) %>%
+select(-First, -Last) %>%
+separate_wider_delim( # worksheet
+      cols = Height, 
+      names = c("feet", "inches"), # removes Height and splits into ft and in
+      delim = "'") %>%
+  mutate( # worksheet
+    feet = parse_number(feet), 
+    inches = parse_number(inches),
+    Height = feet * 12 + inches # new var, in numerical(inches) format
+  ) %>%
+  select(-feet, -inches) %>% relocate(Height, .before = Weight) %>%
+  mutate(
+    Weight = parse_number(Weight),
+    Reach = parse_number(Reach)
+  )
+```
+
+```{r}
+write_csv(complete, "mma_fighters.csv")
+```
+
