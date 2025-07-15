@@ -10,7 +10,18 @@ library(ggplot2)
 library(forcats)
 
 olympics <- read_csv("athlete_events.csv")
+
+oly19 <- olympics |> filter(Year >= 1900) |> group_by(Year) |> mutate(Participants = n()) |> ungroup()
+
+olympicsF <- oly19 |> filter (Sex == "F") |> select(ID, Name, Age, Height, Weight, Team, NOC, Games, Year, Season, City, Sport, Event, Medal, Participants)
+
+write_csv(olympicsF, "female_olympics.csv")
+
 olympicsF <- olympics |> filter (Sex == "F")
+olympicsF <- olympicsF |> filter(Year >= 1900)
+
+
+
 olympicsM <- olympics |> filter (Sex == "M")
 ```
 

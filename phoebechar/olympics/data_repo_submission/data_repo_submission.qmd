@@ -1,34 +1,62 @@
 ---
-title: "Olympics Participants 1900-2018"
+title: "Women in the Olympics Participants 1900-2016"
 author: "Phoebe Jones" 
-date: "July 14, 2025" 
+date: "July 15, 2025" 
 format:
     html:
       embed-resources: true
 categories:
-  - 
+  - Data Visualization
+  - Exploratory Data Analysis
+  - Missing Data
 ---
 
 ## Motivation
 
+The Paris Olympics in 1900 was the first time women were permitted to participate in the Olympic games. The roles of individuals identified as female within the Olympics have seen significant change since that historic first game. Focusing on just these athletes allows us to see some of these changes.
 
 ## Data
 
+The `female_olympics.csv` data set contains each female athlete from every Olympic games between the Paris games in summer of 1900 and the Rio games in summer of 2016. If an athlete competed in more than one event in a games, there will be a row representing their participation in each of the events. Similarly, if an athlete competed in more than one games in this period, they will have a row/rows corresponding to each games they competed in.
 
+This data is a version of a dataset compiled by [Randi H Griffin](https://www.randigriffin.com/). For the original scraping process see her [Kaggle](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results). This version of the data only included female athletes and includes a new variable `Participants`.
+
+This data has 74522 observations over 15 variables. There are some missing values (most commonly for Height and Weight) which are coded as `NA`.
 
 <details>
 
 <summary><b>Variable Descriptions</b></summary>
 
-| Variable    | Description                                               |
-|-------------|-----------------------------------------------------------|
-| 
+| Variable      | Description                             |
+|---------------|-----------------------------------------|
+| ID            | Unique number for each athlete          |
+| Name          | Athlete name                            |
+| Age           | Athlete age (in years)                  |
+| Height        | Athlete height (in cm)                  |
+| Weight        | Athlete weight (in km)                  |
+| Team          | Team name                               |
+| NOC           | 3-letter code for team from the NOC     |
+| Games         | Year and season of game                 |
+| Year          | Year of games                           |
+| Season        | Season of games (summer or winter)      |
+| City          | Host city for games                     |
+| Sport         | Athlete sport                           |
+| Event         | Athlete event (within sport)            |
+| Medal         | Medal won (Gold, Silver, Bronze, NA)    |
+| Participants  | Number of participants in that games    |
 
 </details>
 
+[female_olympics.csv](female_olympics.csv)
+
 ## Questions
 
-1.
+1. How has the amount of female participants in the games changed over the years? How about the proportion?
+2. Do some sports have unusually tall or short athletes?
+3. Do you notice a trend for cases when missing values (for variables other than Medal) seem most prevalent?
 
 ## References
 
+Data from Randi H. Griffin's compilation of Olympics data.
+
+[Kaggle Link](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results)
