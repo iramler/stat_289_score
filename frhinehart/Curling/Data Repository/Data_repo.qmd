@@ -69,7 +69,3 @@ Download Curling Data: [Curling.csv](C:/Users/0211f/GitHub/slu_score_module_deve
 Data was scraped from Wikipedia:
 
 [2022 Olympic Curling](https://en.wikipedia.org/wiki/Curling_at_the_2022_Winter_Olympics#Round_robin_2){   }
-
-Video was linked from YouTube:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TjxcZhbVSVQ?si=q8yccV3-b1RLlPv9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
