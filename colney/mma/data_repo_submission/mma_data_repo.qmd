@@ -1,11 +1,11 @@
 ---
-title: "MMA Fighter Profiles"
+title: "MMA Fighter Reach & Performance"
 author: "Cooper Olney"
 date: "July 15, 2025"
 
 categories:
-  - Data visualization
-  - Data wrangling
+  - Data Visualization
+  - Data Wrangling
 ---
 
 

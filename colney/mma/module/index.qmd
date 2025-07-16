@@ -1,0 +1,96 @@
+---
+title: "MMA Fighters' Reach and Performance"
+author:
+  - name: Cooper Olney
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - ref: slu
+date: "July 16, 2025"
+description: "Exploring reach and performance in MMA by cleaning, merging and analyzing datasets."
+editor: 
+  canonical: true
+image: mma_reach.png
+categories:
+  - Data Visualization
+  - Data Wrangling
+  - Joining / Merging
+---
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction
+
+Mixed Martial Arts (MMA) is a full contact combat sport that combines techniques from various disciplines, including boxing, wrestling, Brazilian jiu-jitsu, Mauy Thai, and kickboxing. Competitors face off in timed round inside a cage octagon, using striking and grappling skills to defeat their opponents by knockout, submission, or judges' decision. The sport demands a unique blend of physical ability, mental toughness, and strategic versatility, making it one of the most dynamic and demanding competitions in the world.
+
+One of the most talked about physical attributes in MMA is reach, the distance from fingertip to fingertip when arms are fully extended. Reach plays a critical role in striking based exchanges, where the ability to hit an opponent from a safe distance can provide a major tactical edge. Fighters with longer reaches may be able to land punches or kicks without stepping into their opponent's range, making it harder for shorter reach opponents to counter. However, reach isn't everything, a fighter must still have the footwork, timing, and technique to effectively use that length.
+
+This dataset provides a valuable opportunity to practice key data science skills such as data wrangling, visualization and joining datasets. Students can explore how physical characteristics like height, reach and stance relate to win-loss records by cleaning and transforming raw data into usable formats, leading to analysis that highlights trends, uncovers outliers, and supports evidence based insights about fighter performance.
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This could be suitable for an out of class activity or one that spans one class period.
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will be able to:
+
+1.  Clean and transform raw and messy data into a structured and analysis ready format.
+
+2.  Combine multiple datasets.
+
+3.  Explore relationships between variables and communicate findings using visualizations.
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+**Technology Requirement:**
+
+This activity requires the use of `R` with familiarity in `Quarto` documents and several `tidyverse` packages including `dplyr`, `tidyr`, `readr` and ``stringr`.
+:::
+
+### Data
+
+The **mma_fighters.csv** dataset contains 2348 rows and 9 columns. Each row represents a MMA fighter in the ufcstats.com database. **Note:** Win-loss records include all professional MMA fights, not just fights that took place in the UFC.
+
+Download Data:[mma_fighters.csv](/data_repo_submission/mma_fighters.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+| Name    | Full name of fighter
+| Nickname    | Nickname of fighter
+| Height    | Fighter's height in inches
+| Weight    | Fighter's weight in pounds
+| Reach    | Fighter's reach in inches
+| Stance    | Fighter's primary fighting stance
+| W    | Total number of wins in professional MMA competition
+| L    | Total number of losses in professional MMA competition
+| D    | Total number of draws in professional MMA competition
+
+
+</details>
+
+#### Data Sources
+
+[http://ufcstats.com/statistics/fighters](http://ufcstats.com/statistics/fighters){target="_blank"}
+
+### Materials
+
+- [Class handout](mma_worksheet.qmd)
+
+- [Solutions](mma_solutions.qmd)
+  
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Through this module, you explored how physical attributes specifically reach, height, and stance might relate to performance outcomes in MMA. By wrangling and cleaning raw fighter data, then joining it with win-loss records, you created a structured dataset suitable for analysis.
+
+With this dataset, you produced visualizations to uncover patterns, such as whether fighter with longer reaches tend to have more wins. These insights can help explain how physical traits contribute to performance. This activity highlights the importance of data skills such as data wrangling, joining and visualization..
+:::
+

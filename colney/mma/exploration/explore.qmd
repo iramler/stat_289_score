@@ -80,6 +80,11 @@ fighter_profiles <-
   select(-W, -L, -D)
 ```
 
+```{r}
+write_csv(fighter_profiles, "mma_profiles.csv")
+```
+
+
 # fighter record dataset
 ```{r}
 fighter_records <- 
@@ -102,6 +107,20 @@ fighter_records <-
   ) %>%
   mutate(Name = paste(First, Last, sep = " ")) %>%  relocate(Name, .before = Nickname) %>% select(Name, W, L, D)
 ```
+
+# check dups
+```{r}
+fighter_records %>%
+  count(Name) %>%
+  filter(n>1)
+# two fighters named joey gomez and bruno silva
+```
+
+
+```{r}
+write_csv(fighter_records, "mma_records.csv")
+```
+
 
 # complete dataset
 ```{r}
@@ -144,4 +163,19 @@ separate_wider_delim( # worksheet
 ```{r}
 write_csv(complete, "mma_fighters.csv")
 ```
+
+# new fighter records dataset
+```{r}
+new_records <- complete %>%
+  select(Name, Nickname, W, L, D)
+```
+
+```{r}
+write_csv(new_records, "mma_records.csv")
+```
+
+
+
+
+
 

@@ -1,0 +1,124 @@
+---
+title: "MMA Fighters' Reach and Performance"
+format: html
+---
+
+Mixed Martial Arts (MMA) is a full contact combat sport that combines techniques from various disciplines, including boxing, wrestling, Brazilian jiu-jitsu, Mauy Thai, and kickboxing. Competitors face off in timed round inside a cage octagon, using striking and grappling skills to defeat their opponents by knockout, submission, or judges' decision. The sport demands a unique blend of physical ability, mental toughness, and strategic versatility, making it one of the most dynamic and demanding competitions in the world.
+
+One of the most talked about physical attributes in MMA is reach, the distance from fingertip to fingertip when arms are fully extended. Reach plays a critical role in striking based exchanges, where the ability to hit an opponent from a safe distance can provide a major tactical edge. Fighters with longer reaches may be able to land punches or kicks without stepping into their opponent's range, making it harder for shorter reach opponents to counter. However, reach isn't everything, a fighter must still have the footwork, timing, and technique to effectively use that length.
+
+This worksheet provides a valuable opportunity to practice key data science skills such as data wrangling, visualization and joining datasets. Students can explore how physical characteristics like height, reach and stance relate to win-loss records by cleaning and transforming raw data into usable formats, leading to analysis that highlights trends, uncovers outliers, and supports evidence based insights about fighter performance.
+
+# 0. Load the Following Packages
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+# 1. Load in CSV file
+
+Load in the `mma_profiles.csv` from the data folder.
+
+```{r}
+
+```
+
+# 2. Clean the Dataset
+
+Clean the dataset using the following packages from tidyverse: `dplyr`, `tidyr`,  `readr` and `stringr`.
+
+Once you are finished cleaning this dataset, these should be the following variables.
+
+| Variable             | Type | Description                                                          |
+|----------------------|------|----------------------------------------------------------------------|
+| `Name`               | chr  | Full name of fighter                                          |
+| `Nickname`               | chr  | Nickname of fighter               |
+| `Stance` | chr  | Fighter's primary fighting stance |
+| `Height_inches`           | num  | Fighter's height in inches              |
+| `Weight_lbs`    | num  | Fighter's weight in pounds                                         |
+| `Reach_inches` | num  | Fighter's reach in inches  |
+| `Reach_advantage` | num  | Difference between reach and height in inches (reach - height) |
+
+a.  Convert the `Height` variable (which is currently a character string like 6'2") into a new numeric variable called `height_inches` that represents each fighters's height in total inches. **Hint** using helper variables (such as to `separate` variables into feet and inches) can make this process easier.
+
+```{r}
+
+```
+
+b.  Do the same thing as above, but with the `Weight` variable. Create a new numeric variable called `Weight_lbs` that represents each fighter’s weight in total pounds.
+
+```{r}
+
+```
+
+c. Do the same thing as above, but with the `Reach` variable. Create a new numeric variable called `Reach_inches` that represents each fighter’s reach in total inches.
+```{r}
+
+```
+
+d. Create a new variable called `Reach_advantage`, this represents the difference between reach and height (reach - height).
+```{r}
+
+```
+
+e.  Extract the fighter's stance (e.g. "Orthodox" or "Southpaw") from the `Name` variable and store it in a new variable called `Stance`, so that the stance is no longer part of the name column.
+
+```{r}
+
+```
+
+f.  Extract the fighter's nickname from the `Name` variable and store it in a new variable called `Nickname`, so that the nickname is no longer part of the name column. **Note:** If fighter has no nickname, the `Nickname` column result should be NA. **Hint:** Use `stringr` functions to complete this step. After removing the nickname from the name column, watch out for any extra spaces that may remain.
+
+```{r}
+
+```
+
+# 3. Load Records Dataset
+
+a.  Load the data from the `mma_records.csv` file from the data folder.
+
+```{r}
+
+```
+
+b.  Create a new variable called `Win_rate`, which represents the number of fights won divided by total number of fights (W + L + D). Use `round()` function to round the result.
+
+```{r}
+
+```
+
+# 4. Combine Datasets
+
+Combine the cleaned profiles dataset from part 2, with the records dataset from part 3.
+```{r}
+
+```
+
+# 5. Explore the Combined Dataset
+
+Use the newly created dataset to investigate potential relationships between a fighter's physical characteristics and their performance in the octagon..
+
+a.  Create a histogram of the `Reach_advantage` variable to see how common different levels of advantage (or disadvantage) are across fighters in MMA. Provide a brief summary of the distribution.
+
+```{r}
+
+```
+
+b.  Create a scatterplot using `Reach_advantage` as the explanatory variable and `Win_rate` as the response variable. What kind of relationship, if any, do you observe? Are there any outliers?
+
+```{r}
+
+```
+
+c.  Create a scatterplot using `Weight_lbs` as the explanatory variable and `Win_rate` as the response variable. Include a regression line, a title, and labels for the x and y axes. Then separate the plot by `Stance`. What patterns or relationships stand out within or across Stance?
+
+```{r}
+
+```
+
+d.  **Optional:** Investigate any other combination of physical characteristics and performance metrics you find interesting. Create a plot to explore the relationship and try to explain any patterns or outliers you observe.
+
+```{r}
+
+```
