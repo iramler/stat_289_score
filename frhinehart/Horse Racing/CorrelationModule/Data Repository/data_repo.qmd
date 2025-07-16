@@ -13,7 +13,9 @@ categories:
 
 Horse racing at the Kentucky Derby is a high-stakes thoroughbred competition held annually on the first Saturday in May at Churchill Downs in Louisville, Kentucky. Known as “The Most Exciting Two Minutes in Sports,” the Derby features a 1¼-mile (10 furlong) race on a dirt track, where up to 20 three-year-old horses compete for a chance at Triple Crown glory. The race is a fast-paced dash requiring both speed and stamina. Jockeys must navigate position, pace, and track conditions to secure a winning run to the finish line.
 
-The Kentucky Derby is the first leg of the Triple Crown, followed by the Preakness Stakes and Belmont Stakes. Horses qualify through a points-based Road to the Kentucky Derby series called prep races. Betting plays a major role in the excitement, with odds reflecting the public’s perception of each horse’s chances to win. Odds are determined by the amount of money wagered on each horse and fluctuate until post time. For example, a 5-1 horse would return 5 dollar profit for every 1 dollar bet if it wins. Favorites often have low odds, while long shots results in dramatic payouts. Beyond athleticism, the Derby is a cultural spectacle in Southern tradition.
+The Kentucky Derby is the first leg of the Triple Crown, followed by the Preakness Stakes and Belmont Stakes. Horses qualify through a points-based Road to the Kentucky Derby series called prep races. In 2025, there were only 19 horses in the races because some horses become unfit to race and had to pull out of the derby. 
+
+Betting plays a major role in the excitement, with odds reflecting the public’s perception of each horse’s chances to win. Odds are determined by the amount of money wagered on each horse and fluctuate until post time. For example, a 5-1 horse would return 5 dollar profit for every 1 dollar bet if it wins. Favorites often have low odds, while long shots results in dramatic payouts. Beyond athleticism, the Derby is a cultural spectacle in Southern tradition. 
 
 ## Data
 
@@ -51,7 +53,7 @@ This process was used to make the dataset
                        
 </details>
 
-Download Kentucky Derby Data: [horseRacing.csv](frhinehart/Horse Racing/Data Repository/horseRacing.csv)
+Download Kentucky Derby Data: [horseRacing.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Horse Racing/Simple&MulipleLinearRegressionModule/Data Repository/horseRacing.csv)
 
 ## Questions Investigated
 1. Does the projected Morning Line Odds do a good job predicting actual Final Odds?

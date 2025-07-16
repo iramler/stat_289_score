@@ -1,0 +1,102 @@
+---
+title: "Investing The Difference in Figure Skating Scores Throughout the Years"
+author:
+  - name: Faith Rhinehart
+    affiliation:
+      - ref: slu
+  - name: Jessica Chapman
+    affiliation: slu
+  - name: Ivan Ramler
+    affiliation: slu
+
+date: "June 27, 2025"
+description: "Using ANOVA to determine a difference in mean scores throughout the years of winter Olympics"
+editor: 
+  canonical: true
+categories:
+  - ANOVA
+  - Tukey HSD
+  - Pair wise comparisons
+---
+
+### Background to Figure Skating Video
+
+If you are unfamiliar with the Kentucky Derby, please watch this video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OV7wWZVrch4?si=PG3zWgJ4X_GPqT6l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Introduction to Module
+
+Horse racing at the Kentucky Derby is a high-stakes thoroughbred competition held annually on the first Saturday in May at Churchill Downs in Louisville, Kentucky. Known as “The Most Exciting Two Minutes in Sports,” the Derby features a 1¼-mile (10 furlong) race on a dirt track, where up to 20 three-year-old horses compete for a chance at Triple Crown glory. The race is a fast-paced dash requiring both speed and stamina. Jockeys must navigate position, pace, and track conditions to secure a winning run to the finish line. The Kentucky Derby is the first leg of the Triple Crown, followed by the Preakness Stakes and Belmont Stakes. Horses qualify through a points-based Road to the Kentucky Derby series called prep races. Betting plays a major role in the excitement, with odds reflecting the public’s perception of each horse’s chances to win. Favorites often have low odds, while long shots results in dramatic payouts. Beyond athleticism, the Derby is a cultural spectacle in Southern tradition.
+
+The `horseRacing` dataset features data from the 2025 Kentucky Derby Variables include characteristics such as Finish, Qualifying Points, Jockey, Trainer, Morning Odds, Finish Odds, and more. The relevant variables for this specific module are Qualifying Points and Finish.   
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+Learning Objectives:
+
+1. Students will practice correlation analysis. 
+
+2. Students will practice calculating and interpreting r. 
+
+3. Students will practice fitting models and interpretation of plots. 
+
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+For this activity, students will need to a statistical software such as R. 
+
+Students are expected to understand the concept of correlation, calculation correlation coeffiecient (r), interpreting output and graphs. Students are also expected to now how to code basic plots and fit models.
+
+This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
+:::
+
+
+
+### Data
+
+The `horseRacing.csv` data contains the 2025 Kentucky Derby final results.
+
+Download data: [horseRacing.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Horse Racing/CorrelationModule/Data Repository/horseRacing.csv)
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+2025 Kentucky Derby results (19 cases with 30 variables) data:
+
+| Variable         | Description                |
+|------------------|----------------------------|
+| Finish           | Place Horse Finished       |
+| Program Number   | Number of Horse            |
+| Horse            | Horse's Name               |
+| Qualifying Points| Points Earned in Prep Races|
+| Trainer          | Trainer's Name             |
+| Jockey           | Jockey's Name              |
+| Morning Line Odds| Projected Odds Before Race |
+| Final Odds       | Actual Odds Post Race      |
+| Margin Lengths   | Blank Ends                 |
+| Winnings         | Distance Between Finishers | 
+
+</details>
+
+
+### Materials
+
+R qmd file: 
+
+[Class handout](Correlation_Worksheet.qmd)
+[Class handout - with solutions](Correlation_Worksheet_Solutions.qmd)
+
+Word document:
+
+[Class handout](Correlation.docx)
+[Class handout - with solutions](Correlation_Worksheet_Solutions.docx)
+
+pdf: 
+
+[Class handout](Correlation_Worksheet.pdf)
+[Class handout - with solutions](Correlation_Worksheet_Solutions.pdf)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Students should gain an understanding of how the process of correlation analysis works and calculating and interpreting r. 
+:::

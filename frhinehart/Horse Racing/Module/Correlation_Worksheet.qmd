@@ -1,0 +1,59 @@
+---
+title: "Horse Racing Correlation Worksheet"
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
+  docx:  default
+  pdf:  default
+---
+
+Horse racing at the Kentucky Derby is a high-stakes thoroughbred competition held annually on the first Saturday in May at Churchill Downs in Louisville, Kentucky. Known as “The Most Exciting Two Minutes in Sports,” the Derby features a 1¼-mile (10 furlong) race on a dirt track, where up to 20 three-year-old horses compete for a chance at Triple Crown glory. The race is a fast-paced dash requiring both speed and stamina. Jockeys must navigate position, pace, and track conditions to secure a winning run to the finish line. The Kentucky Derby is the first leg of the Triple Crown, followed by the Preakness Stakes and Belmont Stakes. Horses qualify through a points-based Road to the Kentucky Derby series called prep races. Betting plays a major role in the excitement, with odds reflecting the public’s perception of each horse’s chances to win. Favorites often have low odds, while long shots results in dramatic payouts. Beyond athleticism, the Derby is a cultural spectacle in Southern tradition.
+
+Read in the dataset and necessary packages:
+
+
+
+1) Make a scatter plot that has `Qualifying Points` on the x-axis and `Finish` on the y-axis. Add a smoother, give your graph a title, and comment on what you notice. Remember lower numbered finishes are better.
+
+
+
+2) Calculate the correlation coefficient (r) of the scatterplot. (If using the `cor` function in R studio remember to change qualifying points and finish to numeric)
+
+
+
+a. What does the sign of r tell you?
+
+
+
+b. Does the sign make sense with the research question? Explain.
+
+ 
+
+c. Is the strength of the relationship weak, moderate, or strong?
+
+ 
+
+3) Check for outliers by fitting qualifying points and finish onto a model. Using the Residual vs Fitted plot comment on which observations appear to have a high residual and could be an outlier. 
+
+
+
+a. How might these outliers affect your interpretation of r?
+
+
+
+4) Using the Q-Q residual plot, Do the points in the scatterplot suggest a linear trend? If not, what kind of relationship do you see?
+
+
+
+5) Would this correlation suggest causation? Why or why not?
+
+
+
+6) How can confounding variables might influence the result?
+
+

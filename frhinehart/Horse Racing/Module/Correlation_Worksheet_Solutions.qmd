@@ -1,0 +1,77 @@
+---
+title: "Horse Racing Correlation Worksheet Solutions"
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
+  docx:  default
+  pdf:  default
+---
+
+Read in the dataset and necessary packages:
+```{r}
+library(readr)
+library(ggplot2)
+horseRacing <- read_csv("horseRacing.csv", 
+    col_types = cols(Finish = col_number(), 
+        `Qualifying Points` = col_number()))
+```
+
+1) Make a scatter plot that has `Qualifying Points` on the x-axis and `Finish` on the y-axis. Add a smoother, give your graph a title, and comment on what you notice. Remember lower numbered finishes are better.
+
+```{r}
+ggplot(data = horseRacing, aes(x = `Qualifying Points`, y = Finish)) +
+  geom_point() +
+  geom_smooth(method = lm) +
+  labs(title = "Qualifying Points vs Finished Position")
+```
+
+As qualifying points increase, finish position tends to decrease. Since lower finish numbers are better (e.g., 1st place), this suggests that horses with more qualifying points generally finish in better positions. 
+
+2) Calculate the correlation coefficient (r) of the scatterplot. (If using the `cor` function in R studio remember to change qualifying points and finish to numeric)
+```{r}
+cor_coef <- cor(horseRacing$`Qualifying Points`, horseRacing$Finish)
+cor_coef
+```
+
+`r round(cor_coef, 3)`
+
+a. What does the sign of r tell you?
+
+Since it is negative it means that as qualifying points increase the finished position decreases
+
+b. Does the sign make sense with the research question? Explain.
+
+Yes because it is going in the same direction. 
+
+c. Is the strength of the relationship weak, moderate, or strong?
+
+It is a moderately negative correlation that suggests some general trend but not a perfect one. 
+
+3) Check for outliers by fitting qualifying points and finish onto a model. Using the Residual vs Fitted plot comment on which observations appear to have a high residual and could be an outlier. 
+```{r}
+model <- lm(Finish ~ `Qualifying Points`, data = horseRacing)
+plot(model)
+```
+
+Observation 19 and 3 appear to have high residuals and could be an outlier. 
+
+a. How might these outliers affect your interpretation of r?
+
+A horse with very high qualifying points but a poor finish (or vice versa) can pull the line of best fit away from the true trend, weakening or distorting the correlation.
+
+4) Using the Q-Q residual plot, Do the points in the scatterplot suggest a linear trend? If not, what kind of relationship do you see?
+
+The residuals mostly follow the Q-Q line, suggesting that the residuals are approximately normally distributed and the relationship between qualifying points and finish is likely linear.
+
+5) Would this correlation suggest causation? Why or why not?
+
+No, correlation does not imply causation. Although qualifying points are associated with better finishes, we cannot conclude that earning more qualifying points directly causes a horse to finish better, especially with other factors at play.
+
+6) How can confounding variables might influence the result?
+
+Variables like Final Odds, Jockey, and Trainer can all influence a horse’s finish independently of qualifying points. This means the correlation between qualifying points and finish might be partly explained by these other factors and not purely by qualifying points.
