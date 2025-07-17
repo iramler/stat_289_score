@@ -1,5 +1,5 @@
 ---
-title: "Investing The Relationship Between Qualifying Points and Finish Position"
+title: "Testing The Relationship Between Morning Line Odds and Finish Position"
 author:
   - name: Faith Rhinehart
     affiliation:
@@ -9,12 +9,13 @@ author:
   - name: Ivan Ramler
     affiliation: slu
 
-date: "July 15, 2025"
-description: "Using correlation analysis if Higher Qualifying Points Tend to Finish in Better Positions in the Kentucky Derby"
+date: "July 17, 2025"
+description: "Using a pearson correlation hypothsis test to look at the relationship between morning line odds and finished position in the Kentucky Derby"
 editor: 
   canonical: true
 categories:
-  - Correlation Analysis
+  - Pearson Correlation
+  - Hypothesis Testing
 ---
 
 ### Background to Figure Skating Video
@@ -27,23 +28,21 @@ If you are unfamiliar with the Kentucky Derby, please watch this video:
 
 Horse racing at the Kentucky Derby is a high-stakes thoroughbred competition held annually on the first Saturday in May at Churchill Downs in Louisville, Kentucky. Known as “The Most Exciting Two Minutes in Sports,” the Derby features a 1¼-mile (10 furlong) race on a dirt track, where up to 20 three-year-old horses compete for a chance at Triple Crown glory. The race is a fast-paced dash requiring both speed and stamina. Jockeys must navigate position, pace, and track conditions to secure a winning run to the finish line. The Kentucky Derby is the first leg of the Triple Crown, followed by the Preakness Stakes and Belmont Stakes. Horses qualify through a points-based Road to the Kentucky Derby series called prep races. Betting plays a major role in the excitement, with odds reflecting the public’s perception of each horse’s chances to win. Favorites often have low odds, while long shots results in dramatic payouts. Beyond athleticism, the Derby is a cultural spectacle in Southern tradition.
 
-The `horseRacing` dataset features data from the 2025 Kentucky Derby Variables include characteristics such as Finish, Qualifying Points, Jockey, Trainer, Morning Odds, Finish Odds, and more. The relevant variables for this specific module are Qualifying Points and Finish.   
+The `horseRacing` dataset features data from the 2025 Kentucky Derby Variables include characteristics such as Finish, Qualifying Points, Jockey, Trainer, Morning Odds, Finish Odds, and more. The relevant variables for this specific module are Finish and Morning Line Odds.   
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
 Learning Objectives:
 
-1. Students will practice correlation analysis. 
+1. Students will gain an understanding of the pearson correlation hypothesis test. 
 
-2. Students will practice calculating and interpreting r. 
-
-3. Students will practice fitting models and interpretation of plots. 
+2. Students will practice model building.
 
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 For this activity, students will need to a statistical software such as R. 
 
-Students are expected to understand the concept of correlation, calculation correlation coeffiecient (r), interpreting output and graphs. Students are also expected to now how to code basic plots and fit models.
+Students are expected to understand the concept of hypothesis testing, modeling building, and interpreting output. Students are also expected to now how to code basic plots.
 
 This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
 :::
@@ -82,19 +81,19 @@ Download data: [horseRacing.csv](C:/Users/0211f/GitHub/slu_score_module_developm
 
 R qmd file: 
 
-[Class handout](Correlation_Worksheet.qmd)
-[Class handout - with solutions](Correlation_Worksheet_Solutions.qmd)
+[Class handout](HypothesisTest_Worksheet.qmd)
+[Class handout - with solutions](HypothesisTest_Solutions.qmd)
 
 Word document:
 
-[Class handout](Correlation_Worksheet.docx)
-[Class handout - with solutions](Correlation_Worksheet_Solutions.docx)
+[Class handout](HypothesisTest_Worksheet.docx)
+[Class handout - with solutions](HypothesisTest_Worksheet_Solutions.docx)
 
 pdf: 
 
-[Class handout](Correlation_Worksheet.pdf)
-[Class handout - with solutions](Correlation_Worksheet_Solutions.pdf)
+[Class handout](HypothesisTest_Worksheet.pdf)
+[Class handout - with solutions](HypothesisTest_Worksheet_Solutions.pdf)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Students should gain an understanding of how the process of correlation analysis works and calculating and interpreting r. 
+Students should gain an understanding of pearson correlation hypothesis testing and model building. 
 :::

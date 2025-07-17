@@ -1,0 +1,97 @@
+---
+title: "Horse Racing: Pearson Correlation Hypothesis Test Worksheet Solutions"
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
+  docx:  default
+  pdf:  default
+---
+
+Read in the dataset and necessary packages: 
+```{r}
+library(readr)
+library(ggplot2)
+horseRacing <- read_csv("frhinehart/Horse Racing/Simple&MulipleLinearRegressionModule/Module/horseRacing.csv")
+```
+
+Research Question of Interest: We are testing whether Morning Line Odds is associated with Finish Position.
+
+1. Visualization
+
+	a) Create a scatterplot comparing Morning Line Odds and Finish. Add a smoother.
+
+```{r}
+ggplot(data = horseRacing, aes(x = `Morning Line Odds`, y = Finish)) +
+  geom_point() +
+  geom_smooth(method = lm)
+```
+	
+	b) What do you notice about the relationship of the plot?
+
+As morning line odds increase the finish position increases. Suggesting that the lower odds place better than the higher odds.
+
+Let’s test this with a simple linear regression (or Pearson correlation).
+
+2. Model Building
+
+  a) Write the population model for the question of interest.
+
+$$Finish = \beta_0 + \beta_1MorningLineOdds + \epsilon $$
+
+  b) Fit the model using the model summary output. Report the fitted model.
+  
+```{r}
+model = lm(Finish ~ `Morning Line Odds`, data = horseRacing)
+summary(model)
+```
+
+$$Finish = 1.9966 + 0.3638MorningLineOdds$$
+
+  c) Interpret the slope of the model in context.
+  
+For every 1-unit increase in Morning Line Odds, the average finish position increases by about 0.36 places, meaning the horse tends to place slightly worse.
+
+3. Defining Hypothesis
+
+  a) Define the null and alternative hypothesis.
+$$H_o: \beta_1 = 0 \space (no relationship)$$
+$$H_a: \beta_1 \neq 0 \space (there is a relationship)$$
+
+  b) Based on the model summary output, do you expect to reject to fail to reject the null.
+  
+I expect to reject the null hypothesis.
+
+4. Run the two-tailed hypothesis test. Hint: your answers should match the model summary output
+
+Show your work for the following: 
+
+  a) Report the standard error
+  
+0.1060
+
+  b) Calculate the degrees of freedom
+
+$$df = n - 2 = 19-2 = 17$$
+  
+  c) Calculate the t-statistic. Show your work of how you calculated it. 
+  
+$$t = \frac{\hat{\beta_1}}{SE} = \frac{0.3638} {0.1060} = 3.432$$
+  
+  d) Report the p-value using a two-tailed t-distribution online software or by hand.
+  
+0.0032
+  
+5. Conclusion
+
+  a) Conclude your results
+  
+There is strong evidence (df = 17, t-statistic = 3.432, p-value = .0032) to conclude that there is a relationship between morning line odds and finished place. 
+  
+6. Reflection/Opinion
+
+  a) If you were betting in the Kentucky Derby would you trust Morning Line Odds, why?

@@ -60,6 +60,7 @@ Download Kentucky Derby Data: [horseRacing.csv](C:/Users/0211f/GitHub/slu_score_
 2. Can we predict a horse's finish position using Final Odds and Qualifying Points?
 3. Do horses with higher qualifying points tend to finish in better positions?
 4. Do lower Final Odds (i.e., favorites) predict better race outcomes?
+5. How do Qualifying Points relate to Finish position
 
 ## References
 

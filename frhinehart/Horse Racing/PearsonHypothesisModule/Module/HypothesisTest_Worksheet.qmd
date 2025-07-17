@@ -1,0 +1,74 @@
+---
+title: "Horse Racing: Pearson Correlation Hypothesis Test Worksheet"
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
+  docx:  default
+  pdf:  default
+---
+
+Horse racing at the Kentucky Derby is a high-stakes thoroughbred competition held annually on the first Saturday in May at Churchill Downs in Louisville, Kentucky. Known as “The Most Exciting Two Minutes in Sports,” the Derby features a 1¼-mile (10 furlong) race on a dirt track, where up to 20 three-year-old horses compete for a chance at Triple Crown glory. The race is a fast-paced dash requiring both speed and stamina. Jockeys must navigate position, pace, and track conditions to secure a winning run to the finish line. The Kentucky Derby is the first leg of the Triple Crown, followed by the Preakness Stakes and Belmont Stakes. Horses qualify through a points-based Road to the Kentucky Derby series called prep races. Betting plays a major role in the excitement, with odds reflecting the public’s perception of each horse’s chances to win. Favorites often have low odds, while long shots results in dramatic payouts. Beyond athleticism, the Derby is a cultural spectacle in Southern tradition.
+
+Read in the dataset and necessary packages: 
+
+
+Research Question of Interest: We are testing whether Morning Line Odds is associated with Finish Position.
+
+1. Visualization
+
+	a) Create a scatterplot comparing Morning Line Odds and Finish. Add a smoother.
+
+	
+	b) What do you notice about the relationship of the plot?
+
+
+Let’s test this with a simple linear regression (or Pearson correlation).
+
+2. Model Building
+
+  a) Write the population model for the question of interest.
+
+
+  b) Fit the model using the model summary output. Report the fitted model.
+
+
+  c) Interpret the slope of the model.
+  
+
+3. Defining Hypothesis
+
+  a) Define the null and alternative hypothesis.
+
+
+  b) Based on the model summary output, do you expect to reject to fail to reject the null.
+  
+
+4. Run the two-tailed hypothesis test. Hint: your answers should match or be close the model summary output.
+
+Show your work for the following: 
+
+  a) Report the standard error
+  
+
+  b) Calculate the degrees of freedom
+
+  
+  c) Calculate the t-statistic. Show your work of how you calculated it. 
+  
+  
+  d) Report the p-value using a two-tailed t-distribution online software or by hand.
+  
+  
+5. Conclusion
+
+  a) Conclude your results
+  
+  
+6. Reflection/Opinion
+
+  a) If you were betting in the Kentucky Derby would you trust Morning Line Odds, why?
