@@ -1,0 +1,42 @@
+---
+title: "explore"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(rvest)
+library(janitor)
+```
+
+# pat mahomes career passing yards
+```{r}
+url <- "https://www.pro-football-reference.com/players/M/MahoPa00/gamelog/"
+objs <-
+  url %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+pass_yards <- objs[[1]]
+```
+
+```{r}
+pass_yards <- 
+  pass_yards %>%
+  row_to_names(row_number = 1) %>%
+  select(14) %>%
+  slice(-2, -19, -34, -50, -68, -86, -103, -120) %>%
+  mutate(
+    passing_yards = parse_number(Yds)
+  ) %>% select(2)
+```
+
+```{r}
+write_csv(pass_yards, "mahomes_pass_yards.csv")
+```
+
+
+
+
+

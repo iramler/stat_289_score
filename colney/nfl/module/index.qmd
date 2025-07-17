@@ -1,0 +1,108 @@
+---
+title: "Sampling Distributions: Patrick Mahomes Career Passing Yards"
+author:
+  - name: Cooper Olney
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - ref: slu
+      
+date: "July 17, 2025"
+description: "Explore the concept of sampling distributions using Patrick Mahomes regular season passing yards data to simulate playoff scenarios."
+
+editor: 
+  canonical: true
+image: mahomes.jpg
+categories:
+  - Sampling Distributions
+  - Simulation
+  - Central Limit Theorem
+
+---
+<!--
+![Source: https://www.theguardian.com/sport/2024/feb/11/super-bowl-2024-mvp-patrick-mahomes-kansas-city-chiefs](mahomes.jpg)
+-->
+
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+## Introduction
+
+The Kansas City Chiefs have cemented themselves as a modern NFL dynasty, winning three Super Bowls in five seasons and reaching the AFC Championship game nearly every year since 2018. The NFL playoffs are structured as a single elimination tournament with four rounds: Wild Card, Divisional Round, Conference Championship, and the Super Bowl.
+
+At the core of the Cheifs' run has been Patrick Mahomes, the quarterback of the team. He is widely regarded as one of the most talented players in NFL history. Mahomes has already collected multiple MVP awards, Super Bowl titles, and countless clutch performances. Despite only playing eight seasons so far, Mahomes is frequently mentioned alongside legendary quarterbacks like Tom Brady and Joe Montana.
+
+::: {.callout-note collapse="true" title="SGA Highlight Reel" appearance="minimal"}
+For those not familiar with Patrick Mahomes, feel free to check out this highlight reel from his NFL career.
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=qb61-Ep405k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+</iframe>
+:::
+
+This module allows us to explore how statistical tools (such as [StatKey](https://www.lock5stat.com/StatKey/){target="_blank"}) can be used to simulate real-world scenarios. By treating Mahomes' regular season passing yard totals as the population, we can model specific playoff situations by drawing random samples of different sizes. These simulations help us understand how much variation we might expect in his performances and how likely different playoff outcomes are based on his regular season passing.
+
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This could serve as an in class activity and should take roughly a half an hour to complete.
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will be able to:
+
+1.  Describe the shape, center and spread of a statistical distribution.
+
+2.  Use simulation tools (such as StatKey) to create sampling distributions of the sample mean.
+
+3.  Comparing sampling distributions from different sample sizes.
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+**Technology Requirement:**
+
+This activity uses Statkey (or a similar tool) for generating sampling distributions
+
+**Students should have prior knowledge in:**
+
+-   Understanding and interpreting distributions (shape, center, spread)
+
+-   Distinguishing between a population and a sample
+
+-   Knowledge of Normal Distributions is helpful.
+:::
+
+## Data
+
+The `mahomes_pass_yards.csv` dataset contains 112 rows and 1 column. Each row represents a regular season game from Patrick Mahomes' NFL career.
+
+Download Data: [mahomes_pass_yards.csv](mahomes_pass_yards.csv)
+
+<details>
+
+<summary><b>Variable Description</b></summary>
+
+| Variable | Description                                                         |
+|----------|---------------------------------------------------------------------|
+| passing_yards   | Total number of passing yards Patrick Mahomes recorded in that game. |
+
+</details>
+
+### Data Sources
+
+Patrick Mahomes Career Game Log. (n.d.). Pro-Football-Reference.Com. Retrieved from https://www.pro-football-reference.com/players/M/MahoPa00.htm
+
+
+## Materials
+
+[Class Handout - MS Word version using StatKey](nfl_sampling_dist_worksheet.docx)
+
+[Class handout - with solutions](nfl_sampling_dist_solutions.docx)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Through this module, you've used NFL data to explore how sample size influences the behavior of sampling distributions. By treating Patrick Mahomes' regular season passing yards totals as a population, you've simulated different playoff ans Super Bowl scenarios to see how his performances might vary under pressure. These simulations offer a practical way to observe how sample means fluctuate, and how the shape of the distribution evolve with larger samples. This foundation sets the stage for a deeper understanding of the Central Limit Theorem and Normal Approximation methods.
+:::
