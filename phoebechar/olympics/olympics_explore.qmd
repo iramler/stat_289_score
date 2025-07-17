@@ -1,5 +1,5 @@
 ---
-title: "Olympic Winners from 1900 - 2018:"
+title: "Olympic data cleaning"
 format: html
 ---
 

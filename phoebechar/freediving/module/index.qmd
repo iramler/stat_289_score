@@ -26,7 +26,9 @@ Please note that these materials have not yet completed the required pedagogical
 
 ### Introduction to Freediving
 
-Freediving is a demanding sport that involves more strategy than people assume. The central, international organization of this sport under AIDA (International Association for the Development of Apnea) allows for the exploration of intriguing strategies and trends among top competitors. If are unfamiliar with freediving, 
+Freediving is a demanding sport that involves more strategy than people assume. The central, international organization of this sport under AIDA (International Association for the Development of Apnea) allows for the exploration of intriguing strategies and trends among top competitors. If are unfamiliar with freediving, watch this video explanation of the basics of the sport:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xMYRB_MFMeg?si=62dP2uui1nFDFAZf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Introduction to Module
 

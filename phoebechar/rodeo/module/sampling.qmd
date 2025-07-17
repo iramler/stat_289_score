@@ -1,0 +1,19 @@
+---
+title: "sampling"
+format: html
+---
+
+```{r}
+library(dplyr)
+
+jose <- read_csv("starRiders.csv") |> filter(rider == "Jose")
+
+josePoints <- jose |> filter(score != 0)
+
+josePoints <- josePoints |> select(!rider)
+
+write_csv(josePoints, "joseCareerScores.csv")
+
+josePoints <- josePoints |> filter(season == 2025) |> summarise(mean(score))
+```
+

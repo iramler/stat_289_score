@@ -10,12 +10,12 @@ library(ggplot2)
 library(lubridate)
 
 ## top rider 2025
-jose <- read_csv("phoebechar/rodeo/Jose_Vitor_Leme.csv")
+jose <- read_csv("Jose_Vitor_Leme.csv")
 
 jose <- jose |> mutate(date = ymd(date))
 
 ## rookie of the year 2025
-hudson <- read_csv("phoebechar/rodeo/Hudson_Bolton.csv")
+hudson <- read_csv("Hudson_Bolton.csv")
 
 hudson <- hudson |> mutate(date = ymd(date))
 
@@ -41,7 +41,7 @@ hudson <- hudson |> mutate(rider = "Hudson")
 
 compare <- full_join(hudson, jose)
 
-write_csv(compare, "phoebechar/rodeo/data_repo_submission/starRiders.csv")
+write_csv(compare, "starRiders.csv")
 
 full_noDQ <- compare |> filter(score != 0)
 

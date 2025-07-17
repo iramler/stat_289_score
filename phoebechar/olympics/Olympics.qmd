@@ -1,0 +1,20 @@
+---
+title: "Olympics"
+format: html
+---
+
+```{r}
+library(tidyverse)
+
+women <- read_csv("female_olympics.csv")
+
+women <- women |> filter(!is.na(Height))
+```
+
+```{r}
+short <- women |> filter(Height < 160)
+
+
+```
+
+

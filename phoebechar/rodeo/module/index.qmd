@@ -1,0 +1,109 @@
+---
+title: "Sampling Distribution for a Sample Mean: Jose Vitor Leme Career Scores"
+author:
+  - name: Phoebe Jones
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+format: 
+      html:
+          embed-resources: true
+date: "July 16, 2025"
+description: "Jose Vitor Leme's 2025 PBR season to explore sampling distributions."
+editor: 
+  canonical: true
+categories:
+  - Sampling Distributions
+  - Simulation
+  - Dotplots
+image: jose.png
+---
+
+## Module
+
+Please note that these materials have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction to Bullriding
+
+Bull riding is an extremely difficult and demanding sport. Riders are tasked with staying on a bucking bull and riding with style. In order to get a score for the ride, they must stay on the bull for at least 8 seconds. Then, they will be scored out of 50 on how well they manged to stay in control during the ride (things like fluidity and style are considered). The bull will also be given a score out of 50 based on how difficult its performance made it for the rider. The bull score and rider score are added to create the final score out of 100. Any ride over 90 points is considered exceptional. 
+
+#### Jose Vitor Leme
+
+This module includes ride score data (all scored rides before June 2025) from athlete Jose Vitor Leme. Leme was the PBR World Champion in 2025, the third time he has earned this title. To earn the honor, he competed in the PBR World Finals, succeeded through the 4 elimination round rides and performed very well in the 4 final rides.
+
+### Introduction to Module
+
+Throughout this module, students will use bullriding data to explore the impact of sample size on sampling distributions. By using Jose Vitor Leme's career ride scores as a population, students will simulate different PBR World Finals scenarios and investigate the consistency of Leme's actual performances. 
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This could serve as an in class activity and should take roughly a half an hour to complete. 
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, students will be able to:
+
+1.  Describe the shape, center and spread of a statistical distribution.
+
+2.  Use simulation tools (such as StatKey) to create sampling distributions of the sample mean.
+
+3.  Compare sampling distributions from different sample sizes.
+
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+**Technology Requirement:**
+
+This activity uses Statkey (or a similar tool) for generating sampling distributions
+
+**Students should have prior knowledge in:**
+
+-   Understanding and interpreting distributions (shape, center, spread)
+
+-   Distinguishing between a population and a sample
+
+-   Basics of normal distributions
+:::
+
+### Data
+
+This activity uses the data set: [joseCareerPoints.csv](joseCareerPoints.csv){target="_blank"}
+
+Each row in the `joseCareerPoints` data set represents a represents a ride scored for Jose Vitor Leme in his career. Rides that were not scored due to an early buck off are not included. The most recent ride in this data set is from May 18th, 2025.
+
+This data set is a smaller version of the `starRiders.csv` which also contains ride data from 2025 Rookie of Season Hudson Bolton.
+
+There are 467 rides with 7 variables for each.
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable    | Description                                |
+|-------------|--------------------------------------------|
+| season      | Year of the season                         |
+| tour        | Tour the event was a part of               |
+| date        | Date of the event                          |
+| location    | Location of the event                      |  
+| event       | Event the ride was a part of               |
+| bull        | Bull ridden on                             |
+| score       | Score for the ride                         |
+
+</details>
+
+#### Data Source
+
+The data are compiled from The [Professional Bull Riders](https://www.pbr.com/) (PBR) website. 
+
+[Jose's Profile on PBR](https://www.pbr.com/athletes/riders/profile/2108669/JoseVitorLeme)
+
+### Materials
+
+[Module Worksheet](JVL_sampling_distributions_worksheet.docx){target="_blank"}
+
+[Module Solutions](JVL_sampling_distributions_SOLUTIONS.docx){target="_blank"}
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+
+Using ride scores from Jose Vitor Leme, this activity provides a hands-on way to observe the variations among sample means as well as the impact of sample size on distribution shape. This foundation sets the stage for a deeper understanding of the Central Limit Theorem and Normal Approximation methods.
+
+:::
