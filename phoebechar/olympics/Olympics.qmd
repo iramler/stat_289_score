@@ -9,12 +9,20 @@ library(tidyverse)
 women <- read_csv("female_olympics.csv")
 
 women <- women |> filter(!is.na(Height))
+
+women <- women |> group_by(ID) |> slice(1) |> ungroup()
 ```
 
 ```{r}
-short <- women |> filter(Height < 160)
+women_prop <- sample_n(women, size = 10000)
 
+statkey <- women_prop |> mutate(short = if_else(Height < 160, 1, 0))
 
+short <- women_prop |> filter(Height < 160)
+
+write_csv(statkey, "forstatkey.csv")
+
+confint(women_prop)
 ```
 
 

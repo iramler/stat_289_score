@@ -1,0 +1,57 @@
+---
+title: "Olympics: Confidence interval for proportion of below average height female olympians"
+author:
+  - name: Phoebe Jones
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+date: "July 18, 2025"
+description: "Estimate the proportion of female olympians who are below average height (160 cm)"
+editor: 
+  canonical: true
+format: 
+  html:
+    embed-resources: false
+categories:
+  - Confidence Intervals
+  - Proportions
+image: olymp.jpeg
+---
+
+## Introduction to Module
+
+The Paris Olympics in 1900 was the first time women were permitted to participate in the Olympic games. These competitors are obviously incredibly impressive and are not supposed to represent an average person. But just how “not-average” are they? In this worksheet, we will specifically be looking at how the height of female Olympians compares to the international average height. This data set represents a random sample of 10000 of the 30225 female Olympians that have competed since women were first allowed to compete in 1900. 1188 of the 10000 athletes are below 160 cm in height.
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This could serve as an in class activity and should take roughly a half an hour to complete.
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+Students will gain experience performing single proportion confidence intervals.
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Students are expected to have been exposed to the concept confidence intervals for a single proportion. (Although this is intended to be used as an earlier example for the topic.)
+:::
+
+## Data
+
+This activity uses the data set: [female_olympics.csv](female_olympics.csv){target="_blank"}
+
+Each row in the `female_olympics` data set represents a female Olympian with  from between the 1900 (the first year women were allowed to compete) and 2016 Olympics.
+
+For the purposes of this module, the data was filtered so each athlete was only included once, and only athletes with available height data were included. A random sample of 10000 athletes was chosen using the `sample_n()` function from the `dplyr` R package.
+
+Students do not need access to the data to complete the module as it is summarized in the provided worksheet. 
+
+## Materials
+
+- [Class handout (MS Word)](CI_Single_Prop_Olympians_worksheet.docx.docx)
+
+- [Class handout - with solutions](CI_Single_Prop_Olympians_SOLUTIONS.docx)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+
+Students should gain an increased understanding of constructing and interpreting single-proportion confidence intervals.
+:::
+
