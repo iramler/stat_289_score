@@ -1,5 +1,18 @@
 ---
-title: "data_repo_submission"
-format: html
+title: "Paralympics: Total Medal Counts"
+author: "Phoebe Jones, Faith Rhinehart"
+date: July 21, 2025
+format: 
+    html:
+      embed-resources: true
+categories:
+  - 
 ---
+
+## Motivation
+
+## The Paralympics
+
+## Data
+
 
