@@ -11,9 +11,11 @@ categories:
 
 ## Motivation
 
-The IFSC (International Federation of Sport Climbing) Climbing World Cup is a dynamic, high-intensity series of international competitions where elite climbers from around the globe compete across three distinct disciplines: lead, bouldering, and speed. In lead climbing, athletes scale tall, complex routes on a timed attempt, aiming to reach the highest hold before falling or time runs out. Bouldering features short, powerful problems on lower walls without ropes, testing strength, technique, and problem-solving in a limited number of attempts. Speed climbing is a head-to-head race up a standardized 15-meter wall, where climbers sprint to the top in mere seconds. The World Cup blends explosive athleticism, mental focus, and route-reading strategy. 
+Adapted sports for disabled individuals are not new additions to the world of sports, but they are often pushed to the side. These athletes receive less media attention and less public support, but work just as hard, if not harder, to succeed. Performing data analysis using data from these sports brings attention to their importance and can help find areas for improved support from outside individuals.
 
-The competition travels to diverse locations around the world to highlight the sport’s global appeal and allowing athletes to adapt to different wall styles and environmental conditions. This promotes climbing culture worldwide but also ensures a fair and varied challenge for competitors. Competitors gain points based on their performance at each location and compete for a gold, silver, and bronze medal in each event (lead, bloudering, and speed) as well they can earn a trophy for the overall winners. Competitor's points get added up to their total National ranking.
+## The Paralympics
+
+Following World War II, when the effects of war left many veterans and civilians disabled, the Olympic Committee decided to hold the Paralympics for athletes with disabilities. The sports in the Paralympics are usually very similar to those in the Olympics with key differences that make them accessible to more diverse bodies. For example, the winter Paralympics include sled hockey, for which athletes play while sitting on bladed sleds, rather than the standing on skates that most people are used to watching.
 
 ## Data
 
