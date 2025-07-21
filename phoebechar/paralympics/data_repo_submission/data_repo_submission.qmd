@@ -11,8 +11,54 @@ categories:
 
 ## Motivation
 
-## The Paralympics
+The IFSC (International Federation of Sport Climbing) Climbing World Cup is a dynamic, high-intensity series of international competitions where elite climbers from around the globe compete across three distinct disciplines: lead, bouldering, and speed. In lead climbing, athletes scale tall, complex routes on a timed attempt, aiming to reach the highest hold before falling or time runs out. Bouldering features short, powerful problems on lower walls without ropes, testing strength, technique, and problem-solving in a limited number of attempts. Speed climbing is a head-to-head race up a standardized 15-meter wall, where climbers sprint to the top in mere seconds. The World Cup blends explosive athleticism, mental focus, and route-reading strategy. 
+
+The competition travels to diverse locations around the world to highlight the sport’s global appeal and allowing athletes to adapt to different wall styles and environmental conditions. This promotes climbing culture worldwide but also ensures a fair and varied challenge for competitors. Competitors gain points based on their performance at each location and compete for a gold, silver, and bronze medal in each event (lead, bloudering, and speed) as well they can earn a trophy for the overall winners. Competitor's points get added up to their total National ranking.
 
 ## Data
+
+The dataset provided (2024 Paris Summer Paralympics Medal Summary) was scraped from Wikipedia (see references for link). 
+
+::: {.callout-note collapse="true" title="Tidying Process"}
+
+This process was used to make the dataset
+- **Copied and pasted the data set into Excel**
+- **Removed rank variable**
+
+:::
+
+
+<details>
+<summary><strong>Variable Descriptions</strong></summary>
+
+2024 Paris Paralympic Medals (86 cases with 5 variables) data:
+
+| Variable   | Description                        |
+|------------|------------------------------------|
+| NPC        | Country's place in Competition     |
+| Gold       | Number of Gold Medals for Country  |
+| Silver     | Number of Gold Medals for Country  |
+| Bronze     | Number of Gold Medals for Country  |
+| Total      | Total Number of Medals for Country |
+
+                       
+</details>
+
+Download Climbing Data: [Paralympics.csv](phoebechar/paralympics/data_repo_submission/Paralympics.csv)
+
+## Questions Investigated
+1. What can be discovered through a medal distribution?
+2. What percent of countries earned fewer than 5 total medals?
+3. Is the distribution of total medals left-skewed, right-skewed, or symmetric?
+4. Can we visualize which countries had the same total number of medals but different medal types?
+5. Are there any outliers in total medal count?
+6. If countries were ranked by total medals instead of golds, how would the top 10 change?
+
+## References
+
+Data was scraped from Wikipedia:
+
+[2024 Paris Paralympic Medal Table](https://en.wikipedia.org/wiki/2024_Summer_Paralympics_medal_table#Medal_table){   }
+
 
 
