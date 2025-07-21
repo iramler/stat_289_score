@@ -37,7 +37,7 @@ The Kansas City Chiefs have cemented themselves as a modern NFL dynasty, winning
 
 At the core of the Cheifs' run has been Patrick Mahomes, the quarterback of the team. He is widely regarded as one of the most talented players in NFL history. Mahomes has already collected multiple MVP awards, Super Bowl titles, and countless clutch performances. Despite only playing eight seasons so far, Mahomes is frequently mentioned alongside legendary quarterbacks like Tom Brady and Joe Montana.
 
-::: {.callout-note collapse="true" title="SGA Highlight Reel" appearance="minimal"}
+::: {.callout-note collapse="true" title="Patrick Mahomes Highlight Reel" appearance="minimal"}
 For those not familiar with Patrick Mahomes, feel free to check out this highlight reel from his NFL career.
 
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=qb61-Ep405k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>

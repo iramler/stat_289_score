@@ -1,0 +1,112 @@
+---
+title: "Sampling Distributions: Andrei Vasilevskiy 2019-2021 Save Percentage"
+author:
+  - name: Cooper Olney
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+  - name: Ivan Ramler
+    email: iramler@stlawu.edu
+    affiliation:
+      - ref: slu
+      
+date: "July 21, 2025"
+description: "Explore the concept of sampling distributions using Andrei Vasilevskiy regular season save percentage data to simulate playoff scenarios."
+
+editor: 
+  canonical: true
+image: vasilevskiy.jpg
+categories:
+  - Sampling Distributions
+  - Simulation
+  - Central Limit Theorem
+
+---
+<!--
+![Source: https://www.nbcsports.com/nhl/news/lightnings-andrei-vasilevskiy-wins-2021-conn-smythe-trophy](vasilevskiy.jpg)
+-->
+
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+## Introduction
+
+The Tampa Bay Lightning established themselves as one of the best modern NHL teams by winning back-to-back Stanley Cup Championships in the 2019-20 and 2020-21 seasons. The NHL playoffs are structured as four round, best of seven series tournament: the First Round, Second Round, Conference Finals, and the Stanley Cup Final. To win the championship, a team must win 16 games over the course of multiple high stakes series, facing the toughest opponents in rapid succession.
+
+At the core of the Lightning's run was Andrei Vasilevskiy, the team's starting goaltender. Known for his athleticism, composure, and consistency, Vasilevskiy played a crucial role in Tampa Bay's title runs. In the 2020-21 playoffs, he posted on of the most dominant performances by a goalie in recent memory and was awarded the Conn Smythe Trophy as the most valuable player of the postseason. His ability to perform under pressure, especially in elimination games, helped solidify his reputation as one of the best goaltenders of his era.
+
+::: {.callout-note collapse="true" title="Andrei Vasilevskiy Highlight Reel" appearance="minimal"}
+For those not familiar with Andrei Vasilevskiy, feel free to check out this highlight reel from the 2020-21 season.
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=kwUYVUGgnSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+</iframe>
+:::
+
+This module allows us to explore how statistical tools (such as [StatKey](https://www.lock5stat.com/StatKey/){target="_blank"}) can be used to simulate real-world scenarios. By treating Vasilevskiy's game-by-game save percentages from the 2019-20 and 2020-21 regular seasons as the population, we can model specific playoff situations by drawing random samples of different sizes. These simulations help us understand how much variation we might expect in his performances and how likely different playoff outcomes are based on his regular season save percentages.
+
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This could serve as an in class activity and should take roughly a half an hour to complete.
+:::
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will be able to:
+
+1.  Describe the shape, center and spread of a statistical distribution.
+
+2.  Use simulation tools (such as StatKey) to create sampling distributions of the sample mean.
+
+3.  Comparing sampling distributions from different sample sizes.
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+**Technology Requirement:**
+
+This activity uses Statkey (or a similar tool) for generating sampling distributions
+
+**Students should have prior knowledge in:**
+
+-   Understanding and interpreting distributions (shape, center, spread)
+
+-   Distinguishing between a population and a sample
+
+-   Knowledge of Normal Distributions is helpful.
+:::
+
+## Data
+
+The `vasilevskiy_save_percentage.csv` dataset contains 94 rows and 1 column. Each row represents a regular season game that Andrei Vasilevskiy played during the 2019-20 and 2020-21 NHL seasons.
+
+Download Data: [vasilevskiy_save_percentage.csv](vasilevskiy_save_percentage.csv)
+
+<details>
+
+<summary><b>Variable Description</b></summary>
+
+| Variable | Description                                                         |
+|----------|---------------------------------------------------------------------|
+| save_percentage   | The proportion of shots on goal that Vasilevskiy saved in a given game. |
+
+</details>
+
+### Data Sources
+
+Andrei Vasilevskiy 2019-20 Game Log. (n.d.). Hockey-Reference.Com. Retrieved from https://www.hockey-reference.com/players/v/vasilan02/gamelog/2020
+
+Andrei Vasilevskiy 2020-21 Game Log. (n.d.). Hockey-Reference.Com. Retrieved from https://www.hockey-reference.com/players/v/vasilan02/gamelog/2021
+
+
+
+
+## Materials
+
+[Class Handout - MS Word version using StatKey](nhl_sampling_distributions.docx)
+
+[Class handout - with solutions](nhl_sampling_distributions-solutions.docx)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Through this module, you've used NHL data to explore how sample size influences the behavior of sampling distributions. By treating Andrei Vasilevskiy's regular season save percentages as a population, you've simulated different playoff and Stanley Cup scenarios to see how his performances might vary under pressure. These simulations offer a practical way to observe how sample means fluctuate, and how the shape of the distribution evolve with larger samples. This foundation sets the stage for a deeper understanding of the Central Limit Theorem and Normal Approximation methods.
+:::

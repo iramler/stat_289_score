@@ -1,0 +1,68 @@
+---
+title: "explore"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(rvest)
+library(janitor)
+```
+
+# Andrei Vasilevskiy save percentage from 2019-2020 regular season
+```{r}
+url <- "https://www.hockey-reference.com/players/v/vasilan02/gamelog/2020"
+objs <-
+  url %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+save_percent <- objs[[1]]
+```
+
+```{r}
+save_2020 <-
+save_percent %>%
+  row_to_names(row_number = 1) %>%
+  select(14) %>%
+  slice(-9, -19, -31, -42, -53, -58) %>%
+  mutate(
+    save_percentage = parse_number(`SV%`)
+  ) %>% select(2)
+```
+
+# Andrei Vasilevskiy save percentage from 2020-2021 regular season
+```{r}
+url <- "https://www.hockey-reference.com/players/v/vasilan02/gamelog/2021"
+objs <-
+  url %>%
+  read_html() %>%
+  html_nodes("table") %>%
+  html_table()
+
+save_percent_2021 <- objs[[1]]
+```
+
+```{r}
+save_2021 <-
+save_percent_2021 %>%
+  row_to_names(row_number = 1) %>%
+  select(14) %>%
+  slice(-7, -18, -30, -43, -47) %>%
+  mutate(
+    save_percentage = parse_number(`SV%`)
+  ) %>% select(2)
+```
+
+# combine data
+```{r}
+save_percentage <- bind_rows(save_2020, save_2021)
+```
+
+```{r}
+write_csv(save_percentage, "vasilevskiy_save_percentage.csv")
+```
+
+
+
