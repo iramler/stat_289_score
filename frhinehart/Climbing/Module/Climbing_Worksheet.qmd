@@ -1,0 +1,50 @@
+---
+title: "Climbing: Data Wrangling and Data Visualization Worksheet"
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
+  docx:  default
+  pdf:  default
+---
+
+The IFSC (International Federation of Sport Climbing) Climbing World Cup is a dynamic, high-intensity series of international competitions where elite climbers from around the globe compete across three distinct disciplines: lead, bouldering, and speed. In lead climbing, athletes scale tall, complex routes on a timed attempt, aiming to reach the highest hold before falling or time runs out. Bouldering features short, powerful problems on lower walls without ropes, testing strength, technique, and problem-solving in a limited number of attempts. Speed climbing is a head-to-head race up a standardized 15-meter wall, where climbers sprint to the top in mere seconds. The World Cup blends explosive athleticism, mental focus, and route-reading strategy. 
+
+The competition travels to diverse locations around the world to highlight the sport’s global appeal and allowing athletes to adapt to different wall styles and environmental conditions. This promotes climbing culture worldwide but also ensures a fair and varied challenge for competitors. Competitors gain points based on their performance at each location and compete for a gold, silver, and bronze medal in each event (lead, bloudering, and speed) as well they can earn a trophy for the overall winners. Competitor's points get added up to their total National ranking.
+
+
+Read in dataset and necessary packages: 
+
+
+
+1) Calculate the mean total points scored across the 10 countries. What is the median of the points?
+
+
+
+2) Find the standard deviation of the total points. What does this tell you about the spread of performance across the countries?
+
+
+
+3) Which location appears to have the most competitive scores (i.e., the smallest range across countries)?
+
+
+
+4) Which country had the most balanced performance (i.e., the smallest standard deviation in their six location scores)? What might a low standard deviation indicate about a country’s consistency?
+
+
+
+5) Create a new dataframe that has all locations for each country in one column and score for that location in another column. 
+
+
+
+6) Create a bar graph showing the total points for each country and color by location. What are the top three countries with the most points overall?
+
+
+
+7) Which locations contributed the most to each of Japan, France, and United Kingdom's scores? Report how much contribution these locations had on the overall score in percent form. 
+
+

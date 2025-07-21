@@ -6,6 +6,7 @@ format: html
 categories:
   - Graphing
   - Interpreting Graphs
+  - Data Analysis
 ---
 
 ## Motivation
@@ -60,10 +61,3 @@ Download Climbing Data: [Climbing.csv](C:/Users/0211f/GitHub/slu_score_module_de
 Data was scraped from Wikipedia:
 
 [2025 Climbing Results](https://en.wikipedia.org/wiki/2025_IFSC_Climbing_World_Cup#National_Teams){   }
-
-Video was linked from YouTube:
-
-The video is about climbing at the Olympics instead of the IFCS World Cup but it explains how each of the events work which are the same for both the Olympics and IFSC World Cup. 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HdCD_MuU7bs?si=9s77TZm46Phnc0uA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-

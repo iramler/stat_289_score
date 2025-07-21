@@ -1,0 +1,107 @@
+---
+title: "Climbing: Data Wrangling and Data Visualization Worksheet Solutions"
+Authors: Faith Rhinehart
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
+  docx:  default
+  pdf:  default
+---
+
+
+Read in dataset and necessary packages: 
+```{r}
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(readr)
+Climbing <- read_csv("frhinehart/Climbing/Module/Climbing.csv")
+```
+
+1) Calculate the mean total points scored across the 10 countries. What is the median of the points?
+
+```{r}
+mean_total <- mean(Climbing$Points)
+median_total <- median(Climbing$Points)
+
+mean_total
+median_total
+```
+
+`r round(mean_total, 3)`
+`r round(median_total, 3)`
+
+2) Find the standard deviation of the total points. What does this tell you about the spread of performance across the countries?
+
+```{r}
+sd_total <- sd(Climbing$Points)
+sd_total
+```
+
+`r round(sd_total, 3)`
+
+There is a very high spread in total points across the countries. They vary a lot. 
+
+3) Which location appears to have the most competitive scores (i.e., the smallest range across countries)?
+
+```{r}
+location_ranges <- sapply(Climbing[ , 4:9], function(Points) max(Points) - min(Points))
+most_competitive_location <- names(location_ranges)[which.min(location_ranges)]
+
+location_ranges
+most_competitive_location
+```
+
+Bern was the most competitive location
+
+4) Which country had the most balanced performance (i.e., the smallest standard deviation in their six location scores)? What might a low standard deviation indicate about a country’s consistency?
+
+```{r}
+row_sd <- apply(Climbing[ , 4:9], 1, sd)
+most_balanced_country <- Climbing$Name[which.min(row_sd)]
+
+row_sd
+most_balanced_country
+```
+
+Austria had the most balanced performance. This indicates they preformed relatively the same across each location. 
+
+5) Create a new dataframe that has all locations for each country in one column and score for that location in another column. 
+
+```{r}
+long_data <- Climbing |>
+  pivot_longer(cols = Keqiao:Innsbruck, 
+               names_to = "Location", 
+               values_to = "Score")
+View(long_data)
+```
+
+6) Create a bar graph showing the total points for each country and color by location. What are the top three countries with the most points overall?
+
+```{r}
+ggplot(long_data, aes(x = Name, y = Points, fill = Location)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Total Points by Country", x = "Country", y = "Points") +
+  theme_minimal()
+```
+
+Japan, France, and United Kingdom have the most points overall. 
+
+7) Which locations contributed the most to each of Japan, France, and United Kingdom's scores? Report how much contribution these locations had on the overall score in percent form. 
+
+```{r}
+TopThree <- long_data |> slice(1:18)
+
+TopThreePercent <- TopThree |>
+  mutate(Contribution_Percent = round((Score / Points) * 100, 1))
+View(TopThreePercent)
+```
+
+Japan - Salt Lake City - 19.5%
+France - Prague - 22.7%
+United Kingdom - Innsbruck - 25.9%
+

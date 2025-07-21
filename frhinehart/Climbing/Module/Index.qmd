@@ -1,0 +1,105 @@
+---
+title: "Investing the IFSC 2025 Climbing World Cup Results"
+author:
+  - name: Faith Rhinehart
+    affiliation:
+      - ref: slu
+  - name: Jessica Chapman
+    affiliation: slu
+  - name: Ivan Ramler
+    affiliation: slu
+
+date: "July 21, 2025"
+description: "Using data wrangling and visualization to find trends"
+editor: 
+  canonical: true
+categories:
+  - Data Wrangling
+  - Data Visualization
+  - Descriptive Statistics
+---
+
+### Background to Climbing Video
+
+If you are unfamiliar with climbing, please watch this video:
+
+The video is about climbing at the Olympics instead of the IFCS World Cup but it explains how each of the events work which are the same for both the Olympics and IFSC World Cup. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HdCD_MuU7bs?si=9s77TZm46Phnc0uA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Introduction to Module
+
+The IFSC (International Federation of Sport Climbing) Climbing World Cup is a dynamic, high-intensity series of international competitions where elite climbers from around the globe compete across three distinct disciplines: lead, bouldering, and speed. In lead climbing, athletes scale tall, complex routes on a timed attempt, aiming to reach the highest hold before falling or time runs out. Bouldering features short, powerful problems on lower walls without ropes, testing strength, technique, and problem-solving in a limited number of attempts. Speed climbing is a head-to-head race up a standardized 15-meter wall, where climbers sprint to the top in mere seconds. The World Cup blends explosive athleticism, mental focus, and route-reading strategy. 
+
+The competition travels to diverse locations around the world to highlight the sport’s global appeal and allowing athletes to adapt to different wall styles and environmental conditions. This promotes climbing culture worldwide but also ensures a fair and varied challenge for competitors. Competitors gain points based on their performance at each location and compete for a gold, silver, and bronze medal in each event (lead, bloudering, and speed) as well they can earn a trophy for the overall winners. Competitor's points get added up to their total National ranking.
+
+The `Climbing` dataset features data from the 2025 IFSC Climbing WOrld Cup Kentucky Derby Variables include characteristics such as Country's Name and numeric varables of each location's score and overall scores. All the varaibles are relevant for this module.   
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+Learning Objectives:
+
+1. Students will practice data wrangling 
+
+2. Students will practice data visualization
+ 
+3. Students will practice interpretation skills of descriptive statistics
+
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+For this activity, students will need to a statistical software such as R. 
+
+Students are expected to understand data wrangling in their chosen software and interpreting output. Students are also expected to now how to code basic plots and find descriptive statistics.
+
+This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
+:::
+
+
+
+### Data
+
+The `Climbing.csv` data contains the 2025 Kentucky Derby final results.
+
+Download data: [Climbing.csv](C:/Users/0211f/GitHub/slu_score_module_development/frhinehart/Climbing/Module/Climbing.csv)
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+National Team Results of the IFCS World Cup (10 cases with 9 variables) data:
+
+| Variable      | Description                             |
+|---------------|-----------------------------------------|
+| Rank          | Country's place in Competition          |
+| Name          | Name of Country                         |
+| Points        | Total Points Obtained from Each Location|
+| Keqaio        | Points Obtained at This Location        |
+| Curitiba      | Points Obtained at This Location        |
+| Salt Lake City| Points Obtained at This Location        |
+| Prague        | Points Obtained at This Location        |
+| Bern          | Points Obtained at This Location        |
+| Innsbruck     | Points Obtained at This Location        |
+
+</details>
+
+
+### Materials
+
+R qmd file: 
+
+[Class handout](Climbing_Worksheet.qmd)
+[Class handout - with solutions](Climbing_Solutions.qmd)
+
+Word document:
+
+[Class handout](Climbing_Worksheet.docx)
+[Class handout - with solutions](Climbing_Solutions.docx)
+
+pdf: 
+
+[Class handout](Climbing_Worksheet.pdf)
+[Class handout - with solutions](Climbing_Solutions.pdf)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Students should gain a better understanding of data wrangling, data visualization, and finding descriptive statistics. 
+:::

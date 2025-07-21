@@ -17,7 +17,7 @@ categories:
   - Correlation Analysis
 ---
 
-### Background to Figure Skating Video
+### Background to Horsing Racing Video
 
 If you are unfamiliar with the Kentucky Derby, please watch this video:
 

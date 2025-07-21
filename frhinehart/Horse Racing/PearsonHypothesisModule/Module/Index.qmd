@@ -18,7 +18,7 @@ categories:
   - Hypothesis Testing
 ---
 
-### Background to Figure Skating Video
+### Background to Horse Racing Video
 
 If you are unfamiliar with the Kentucky Derby, please watch this video:
 
