@@ -1,0 +1,123 @@
+---
+title: "NCAA 2025 Women's Track: One-ANOVA | SOLUTIONS"
+execute: 
+  echo: true
+  warning: false
+  error: true
+format: 
+  html:
+    embed-resources: true
+  docx:  default
+  pdf:  default
+---
+
+```{r}
+library(readr)
+library(ggplot2)
+library(dplyr)
+womenTrack <- read_csv("WomensTrack2025.csv")
+```
+
+1) Filter the dataset to only include events considered part of the sprint discipline. These would be the 100, 200, and 400 meter events.
+```{r}
+womenTrack <- womenTrack |> filter(Event %in% c(100, 200, 400))
+```
+
+2)  Create a boxplot with `Event` (as a factor) on the x-axis and `Speed` on the y-axis. Group by Event to get a box for each event. Describe what you see.
+```{r}
+ggplot(data = womenTrack, 
+       aes(x = factor(Event), 
+           y = Speed, 
+           group = Event)
+       ) +
+  geom_boxplot()
+```
+
+All the events seem to have different means. The 100 and 200 m events have a small amount of overlap, but, for the most part, the boxes are very distinct.
+
+------------------------------------------------------------------------
+
+We would like to determine if the mean speeds are significantly statistically different between events.
+
+3)  Explain why **One-Way ANOVA** may be a good candidate method to use here.
+
+A One-Way ANOVA test is useful in this scenario because the independent variable in the relationship is a factor with 3 possible levels. 
+
+4)  Before using ANOVA, we will first need to check for assumptions.
+
+The 3 assumptions are:
+
+-   **Independence:** if the samples are collected independently from each other
+-   **Normality:** if the data is normally distributed (or we have sufficiently large sample sizes such that the Central Limit Theorem holds)
+-   **Constant Variance:** if the difference between observed and predicted values is equal among data points.
+
+Evaluate the three assumptions. Use your boxplots to assist. You may also want to investigate the data directly (paying close attention to the names of the runners).
+
+**Solution:**
+- Constant Variance: The 100 and 400 m boxplots have approximately the same variation. The 200 m box has a slightly lower variation. We can check the standard deviations for each group using the code below. (Note the the ratio of largest to smallest is $0.128/0.0942 \approx 1.36$).
+
+```{r}
+womenTrack |>
+  group_by(Event) |>
+  summarize(n = n(), sd = sd(Speed))
+```
+
+- Normality: All 3 events have some skew. The 200 and 400 m events have outliers, but with the amount of observations, these outliers are most likely not too highly influential.
+
+- Independence: This condition fails for two reasons. First, Division 1 track runners do not represent a random sample of runners (one could argue they are a representative of successful/competitive runners). Secondly, several runners appear in multiple events, even all three. 
+
+_This could lead to a nice discussion with students on the trade off between weak assumptions and value gained from the analysis._
+
+------------------------------------------------------------------------
+
+5)  Regardless of your evaluation of the assumptions, we will perform the ANOVA hypothesis test - recognizing that it may not be perfect, but it is still potentially informative.
+
+a.  State the null hypothesis and alternative hypotheses in words.
+
+_Null - There is no difference in the mean speed between sprint events_
+
+_Alternative - Not all sprint events have equal mean speeds_
+
+b.  Perform an ANOVA hypothesis test to determine if there are any statistically significant differences in `Speed` between the events using the aov() function. You will need to change `Event` to a factor.
+
+```{r}
+anova_result <- aov(Speed ~ as.factor(Event), data = womenTrack)
+summary(anova_result)
+```
+
+c.  Report the F-Statistic, degrees of freedom, and p-value.
+
+_F-Statistic = 1774_
+_P-value = approximately_
+_df = 2 and 148_
+
+d.  Use the p-value to make a conclusion.
+
+_There is clear statistical evidence to conclude that there is a least one pair of events with different mean speeds (F-Statistic = 1774, P-value = approximately 0, df = 2 and 148)._
+
+------------------------------------------------------------------------
+
+6)  In order to find out which events are statistically discernible from each other we can perform a Post Hoc Tukey Test.
+
+Perform a Post Hoc Tukey test using the `TukeyHSD()` function to determine between which events there is a statistically significant difference in speed Report the results.
+
+```{r}
+tukey_result <- TukeyHSD(anova_result)
+tukey_result
+```
+
+All of the events have statistically significant differences in speed.
+
+7)  The Tukey Test also provides a confidence interval.
+
+Interpret the confidence interval for the 100 and 200 meter comparison in the context of this data situation.
+
+_With 95% confidence, runners in the 100 meter event ran between, on average, 0.11 and 0.22 m/s faster than runners in the 200 meter event._
+
+------------------------------------------------------------------------
+
+8) The strategy of track running changes based on the distance of the event being run. For shorter events, athletes have to go all out and expend a lot of energy to maintain their fastest possible pace for a short time. As the event distance increases, maintaining the highest possible speed becomes less realistic, requiring runners to have a different approach.
+
+Do the results from Tukey's HSD support this trend?
+
+_Yes the tukey test does support this trend showing the significant difference between the events based on the distance. Specifically, when the event had a longer distance, runners had lower speeds_

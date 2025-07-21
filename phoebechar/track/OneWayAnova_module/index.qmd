@@ -1,0 +1,99 @@
+---
+title: "Investigating The Difference in Running Speeds Throughout Different Sprint Events"
+author:
+  - name: Phoebe Jones
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+
+date: "July 21, 2025"
+description: "Using ANOVA to explore differences in mean speeds throughout the sprint events of NCAA D1 Women's Track"
+editor: 
+  canonical: true
+categories:
+  - ANOVA
+  - Post Hoc Comparisons
+image: trackfield.jpg
+---
+
+### Introduction to Track
+
+In outdoor track, runners run on a track and compete to complete the distance in the shortest time. There are many different events (distinguished by length, measured in meters) and runners typically have a specialty between distance or sprint. Distance runners need to think about pacing themselves and strategically overtaking competitors. Sprinters need to get a good start and maintain their highest speed for a short period of time. This difference in strategy is represented in the data recorded about runners' performance at high levels. NCAA Women's Division 1 track runners compete at a very high level, and their times are recorded throughout the season to track the top individual achievements.
+
+### Introduction to Module
+
+This module walks through the steps of using ANOVA and post-hoc comparisons
+
+The `MensFigureSkating` dataset features data from male skaters in the winter Olympics since 2006. Variables include characteristics such as Name, Nation, Year. Other variables included the 3 types of scoring: Free Skate, Short Program, and Total Points. The relevant variables for this specific module are Total Points and Year.
+
+For the sake of this module, the data set was tidied so that it excluded any skater who did not advance to the Free Skate round.
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+Learning Objectives:
+
+1.  Students will learn when and how to use One-Way ANOVA
+
+2.  Students will learn how to perform a pair wise comparison such as Post Hoc Tukey Test
+
+3.  Students will gain a further understanding of interpreting graphs and outputs
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+Intended as a reinforcement module, students should be exposed to ANOVA prior to the module. In particular, students are expected to have been exposed to the concept of hypothesis forming, rejecting hypothesis, confidence intervals and interpreting output. Students are also expected to now how to construct basic plots, fit ANOVA models, and use software (such as R or Minita) to produce said results.
+:::
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
+:::
+
+::: {.callout-note collapse="true" title="Technology Requirements" appearance="minimal"}
+For this activity, students will need to a statistical software capable of producing ANOVA output with Tukey's HSD. Materials are provided both for using `R` as well as a a handout that is software agnostic.
+:::
+
+### Data
+
+This activity uses an edited version of the data set: [NCAA_track](NCAA_track.csv)
+
+Each row in the `NCAA_track.csv` data set represents one of the 50 fastest times in a given event for the 2025 NCAA Women's Division 1 East outdoor track season (with only a runner's fastest time included, no runner is included more than once for a single event). If a time was achieved by more than one runner, each runner will be present, and they will all have the same number in the `Place` column. Each event includes exactly 50 runners, with the exception the 200 meters event, which has two runners tied in 50th place. If a runner had a top 50 time in more than one event, they will have a row in the data set for each event they were in the top 50 for.
+
+This version of the data set contains an extra variable called `Speed` that represents a runner's average speed over an event. It was calculated by dividing `Event` by `Time` and is recorded in meters per second.
+
+There are 351 rows observed over 9 variables.
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable    | Description                                             |
+|-------------|---------------------------------------------------------|
+| Place       | The runner's place for this event                       |
+| Athlete     | The runner's name (Last, First)                         |
+| Year        | The runner's class year                                 |
+| Team        | The team the runner represents                          |
+| Time        | The runner's time for this event                        |
+| Meet        | The meet the time was achieved at                       |
+| Meet.Date   | The date of the meet the time was achieved at           |
+| Event       | What event the time is from (how many meters)           |
+| Speed       | The runner's speed for the event in m/s (event/time)    |
+
+</details>
+
+#### Data Source
+
+The data are compiled from the Track and Field Results Reporting System Website [https://www.tfrrs.org/ncaad1east/outdoortrack/women](https://www.tfrrs.org/ncaad1east/outdoortrack/women){target="_blank"}.
+
+### Materials
+
+Class Handout
+
+-   [R/Quarto Version](WomensTrackANOVA_worksheet.qmd)
+-   [MS Word Version](WomensTrackANOVA_worksheet.docx)
+
+Solutions
+
+-   [R/Quarto Version](WomensTrackANOVA_SOLUTIONS.qmd)
+-   [PDF Version](WomensTrackANOVA_SOLUTIONS.pdf)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Students should gain an understanding of how the process of One-way ANOVA and a Post Hoc Tukey test works.
+:::

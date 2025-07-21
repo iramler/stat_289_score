@@ -1,0 +1,67 @@
+---
+title: "NCAA 2025 Women's Track: One-ANOVA Worksheet"
+format: 
+  html:
+      embed-resources: true
+---
+
+In outdoor track, runners run on a track and compete to complete the distance in the shortest time. There are many different events (distinguished by length, measured in meters) and runners typically have a specialty between distance or sprint. NCAA Women's Division 1 track runners compete at a very high level, and their times are recorded throughout the season to track the top individual achievements.
+
+Each row in this data set represents one of the 50 fastest times in a given event for the 2025 NCAA Women's Division 1 East outdoor track season (with only a runner's fastest time included, no runner is included more than once for a single event). Runners' speeds have been calculated (in meters per second) by dividing the event's distance by the runner's time.
+
+There are 351 rows observed over 10 variables.
+
+```{r}
+library(readr)
+library(ggplot2)
+library(dplyr)
+womenTrack <- read_csv("WomensTrack2025.csv")
+```
+
+1) Filter the dataset to only include events considered part of the sprint discipline. These would be the 100, 200, and 400 meter events.
+
+2)  Create a boxplot with `Event` (as a factor) on the x-axis and `Speed` on the y-axis. Group by Event to get a box for each event. Describe what you see.
+
+------------------------------------------------------------------------
+
+We would like to determine if the mean speeds are significantly statistically different between events.
+
+3)  Explain why **One-Way ANOVA** may be a good candidate method to use here.
+
+4)  Before using ANOVA, we will first need to check for assumptions.
+
+The 3 assumptions are:
+
+-   **Independence:** if the samples are collected independently from each other
+-   **Normality:** if the data is normally distributed (or we have sufficiently large sample sizes such that the Central Limit Theorem holds)
+-   **Constant Variance:** if the difference between observed and predicted values is equal among data points.
+
+Evaluate the three assumptions. Use your boxplots to assist. You may also want to investigate the data directly (paying close attention to the names of the runners).
+
+------------------------------------------------------------------------
+
+5)  Regardless of your evaluation of the assumptions, we will perform the ANOVA hypothesis test - recognizing that it may not be perfect, but it is still potentially informative.
+
+a.  State the null hypothesis and alternative hypotheses in words.
+
+b.  Perform an ANOVA hypothesis test to determine if there are any statistically significant differences in `Speed` between the events using the aov() function. You will need to change `Event` to a factor.
+
+c.  Report the F-Statistic, degrees of freedom, and p-value.
+
+d.  Use the p-value to make a conclusion.
+
+------------------------------------------------------------------------
+
+6)  In order to find out which events are statistically discernible from each other we can perform a Post Hoc Tukey Test.
+
+Perform a Post Hoc Tukey test using the `TukeyHSD()` function to determine between which events there is a statistically significant difference in speed Report the results.
+
+7)  The Tukey Test also provides a confidence interval.
+
+Interpret the confidence interval for the 100 and 200 meter comparison in the context of this data situation.
+
+------------------------------------------------------------------------
+
+8) The strategy of track running changes based on the distance of the event being run. For shorter events, athletes have to go all out and expend a lot of energy to maintain their fastest possible pace for a short time. As the event distance increase, maintaining the highest possible speed becomes less realistic, requiring runners to have a different approach.
+
+Do the results from Tukey's HSD support this trend?

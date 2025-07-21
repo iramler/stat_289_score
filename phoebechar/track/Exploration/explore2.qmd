@@ -1,0 +1,32 @@
+---
+title: "explore2"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+track <- read.csv("WomensTrack2025.csv")
+```
+
+```{r}
+track <- track |> mutate(Discipline = if_else(Event %in% c(100, 200, 400), "Sprint", "Distance"))
+```
+
+```{r}
+sprint <- track |> filter(Discipline == "Sprint")
+distance <- track |> filter(Discipline == "Distance")
+
+track <- track |> mutate(Event = as.factor(Event))
+
+ggplot(sprint, aes(x = Event, y = Speed)) +
+  geom_boxplot(aes(group = Event))
+
+test <- aov(Speed ~ as.factor(Event), data = distance)
+summary(test)
+
+tukey <- TukeyHSD(test)
+tukey
+```
+
