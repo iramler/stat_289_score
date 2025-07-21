@@ -16,7 +16,7 @@ editor:
 categories:
   - Data Wrangling
   - Data Visualization
-  - Descriptive Statistics
+  - Summary Statistics
 ---
 
 ### Background to Climbing Video
@@ -42,14 +42,14 @@ Learning Objectives:
 
 2. Students will practice data visualization
  
-3. Students will practice interpretation skills of descriptive statistics
+3. Students will practice interpretation skills of summary statistics
 
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 For this activity, students will need to a statistical software such as R. 
 
-Students are expected to understand data wrangling in their chosen software and interpreting output. Students are also expected to now how to code basic plots and find descriptive statistics.
+Students are expected to understand data wrangling in their chosen software and interpreting output. Students are also expected to now how to code basic plots and find summary statistics.
 
 This activity would be suitable for an in-class activity or as an out-of-class assignment taking approximately one class period.
 :::
@@ -101,5 +101,5 @@ pdf:
 [Class handout - with solutions](Climbing_Solutions.pdf)
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Students should gain a better understanding of data wrangling, data visualization, and finding descriptive statistics. 
+Students should gain a better understanding of data wrangling, data visualization, and finding summary statistics. 
 :::

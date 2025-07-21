@@ -6,7 +6,9 @@ format:
     html:
       embed-resources: true
 categories:
-  - 
+  - Summary Statistics
+  - Exploratory Data Analysis
+  - Data Visualization
 ---
 
 ## Motivation
@@ -46,7 +48,7 @@ This process was used to make the dataset
                        
 </details>
 
-Download Climbing Data: [Paralympics.csv](phoebechar/paralympics/data_repo_submission/Paralympics.csv)
+Download Paralympics Data: [Paralympics.csv](phoebechar/paralympics/data_repo_submission/Paralympics.csv)
 
 ## Questions Investigated
 1. What can be discovered through a medal distribution?
