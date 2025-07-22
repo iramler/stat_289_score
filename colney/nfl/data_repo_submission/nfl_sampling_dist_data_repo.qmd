@@ -1,0 +1,47 @@
+---
+title: "Patrick Mahomes Career Passing Yards"
+author: "Cooper Olney"
+date: "July 22, 2025"
+
+categories:
+  - Summary Statistics
+  - Histograms
+---
+
+
+## Motivation
+
+The Kansas City Chiefs have cemented themselves as a modern NFL dynasty, winning three Super Bowls in five seasons and reaching the AFC Championship game nearly every year since 2018. The NFL playoffs are structured as a single elimination tournament with four rounds: Wild Card, Divisional Round, Conference Championship, and the Super Bowl.
+
+At the core of the Cheifs' run has been Patrick Mahomes, the quarterback of the team. He is widely regarded as one of the most talented players in NFL history. Mahomes has already collected multiple MVP awards, Super Bowl titles, and countless clutch performances. Despite only playing eight seasons so far, Mahomes is frequently mentioned alongside legendary quarterbacks like Tom Brady and Joe Montana.
+
+This module allows us to explore how statistical tools (such as [StatKey](https://www.lock5stat.com/StatKey/){target="_blank"}) can be used to simulate real-world scenarios. By treating Mahomes' regular season passing yard totals as the population, we can model specific playoff situations by drawing random samples of different sizes. These simulations help us understand how much variation we might expect in his performances and how likely different playoff outcomes are based on his regular season passing.
+
+
+## Data
+The `mahomes_pass_yards.csv` dataset contains 112 rows and 1 column. Each row represents a regular season game from Patrick Mahomes' NFL career.
+
+Download Data: [mahomes_pass_yards.csv](mahomes_pass_yards.csv)
+
+<details>
+
+<summary><b>Variable Description</b></summary>
+
+| Variable | Description                                                         |
+|----------|---------------------------------------------------------------------|
+| passing_yards   | Total number of passing yards Patrick Mahomes recorded in that game. |
+
+</details>
+
+
+## Questions
+
+1. What does Mahomes's career regular season passing yards distribution look like in terms of shape, center and spread?
+
+2. What is the typical variation in passing yards in a game for Mahomes?
+
+
+## References
+
+Patrick Mahomes Career Game Log. (n.d.). Pro-Football-Reference.Com. Retrieved from https://www.pro-football-reference.com/players/M/MahoPa00.htm
+
