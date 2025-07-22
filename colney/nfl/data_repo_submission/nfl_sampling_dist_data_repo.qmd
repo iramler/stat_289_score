@@ -19,7 +19,7 @@ This module allows us to explore how statistical tools (such as [StatKey](https:
 
 
 ## Data
-The `mahomes_pass_yards.csv` dataset contains 112 rows and 1 column. Each row represents a regular season game from Patrick Mahomes' NFL career.
+The `mahomes_pass_yards.csv` dataset contains 112 rows and 1 column. Each row represents a regular season game from Patrick Mahomes’ NFL career.
 
 Download Data: [mahomes_pass_yards.csv](mahomes_pass_yards.csv)
 
@@ -36,7 +36,7 @@ Download Data: [mahomes_pass_yards.csv](mahomes_pass_yards.csv)
 
 ## Questions
 
-1. What does Mahomes's career regular season passing yards distribution look like in terms of shape, center and spread?
+1. What does Mahomes’ career regular season passing yards distribution look like in terms of shape, center and spread?
 
 2. What is the typical variation in passing yards in a game for Mahomes?
 
