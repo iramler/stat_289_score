@@ -59,8 +59,8 @@ For every 1-unit increase in Morning Line Odds, the average finish position incr
 3. Defining Hypothesis
 
   a) Define the null and alternative hypothesis.
-$$H_o: \beta_1 = 0 \space (no relationship)$$
-$$H_a: \beta_1 \neq 0 \space (there is a relationship)$$
+$$H_o: \beta_1 = 0 \space (\text{no relationship})$$
+$$H_a: \beta_1 \neq 0 \space (\text{there is a relationship})$$
 
   b) Based on the model summary output, do you expect to reject to fail to reject the null.
   
