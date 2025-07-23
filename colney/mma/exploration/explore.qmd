@@ -157,8 +157,17 @@ separate_wider_delim( # worksheet
   mutate(
     Weight = parse_number(Weight),
     Reach = parse_number(Reach)
+  ) 
+```
+
+```{r}
+complete <- 
+  complete %>%
+   mutate(
+    Win_rate = round(W / (W+L+D), 2)
   )
 ```
+
 
 ```{r}
 write_csv(complete, "mma_fighters.csv")

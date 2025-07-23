@@ -19,9 +19,9 @@ This dataset provides as a valuable resource for analyzing the physical characte
 
 
 ## Data
-The **mma_fighters.csv** dataset contains 2348 rows and 9 columns. Each row represents a MMA fighter in the ufcstats.com database. **Note:** Win-loss records include all professional MMA fights, not just fights that took place in the UFC.
+The **mma_fighters.csv** dataset contains 2349 rows and 10 columns. Each row represents a MMA fighter in the ufcstats.com database. **Note:** Win-loss records include all professional MMA fights, not just fights that took place in the UFC.
 
-Download Data:[mma_fighters.csv](/data_repo_submission/mma_fighters.csv){target="_blank"}
+Download Data: [mma_fighters.csv](/data_repo_submission/mma_fighters.csv){target="_blank"}
 
 <details>
 
@@ -34,10 +34,11 @@ Download Data:[mma_fighters.csv](/data_repo_submission/mma_fighters.csv){target=
 | Height    | Fighter's height in inches
 | Weight    | Fighter's weight in pounds
 | Reach    | Fighter's reach in inches
-| Stance    | Fighter's primary fighting stance
+| Stance    | Fighter's primary fighting stance (Orthodox, Southpaw, Switch, Open Stance)
 | W    | Total number of wins in professional MMA competition
 | L    | Total number of losses in professional MMA competition
 | D    | Total number of draws in professional MMA competition
+| Win_rate    | Proportion of fights won, (wins / total fights)
 
 
 </details>
@@ -45,11 +46,9 @@ Download Data:[mma_fighters.csv](/data_repo_submission/mma_fighters.csv){target=
 
 ## Questions
 
-1. Do fighters with longer reaches tend to have more wins?
+1. Can you create a new variable called `Total_fights` that shows the number of professional MMA fights for each fighter?
 
-2. Is there a relationship between a fighter's height and their win total?
-
-3. Do heavier fighters tend to have more wins on average that lighter fighters?
+2. What does a scatterplot of `Reach` and `Win_rate` reveal? Do Fighters with longer reach tend to have higher win percentages?
 
 
 ## References
