@@ -54,7 +54,7 @@ This activity requires the use of `R` with familiarity in `Quarto` documents and
 
 ### Data
 
-The **mma_fighters.csv** dataset contains 2348 rows and 9 columns. Each row represents a MMA fighter in the ufcstats.com database. **Note:** Win-loss records include all professional MMA fights, not just fights that took place in the UFC.
+The **mma_fighters.csv** dataset contains 2349 rows and 10 columns. Each row represents a MMA fighter in the ufcstats.com database. **Note:** Win-loss records include all professional MMA fights, not just fights that took place in the UFC.
 
 Download Data:[mma_fighters.csv](/data_repo_submission/mma_fighters.csv){target="_blank"}
 
@@ -69,7 +69,45 @@ Download Data:[mma_fighters.csv](/data_repo_submission/mma_fighters.csv){target=
 | Height    | Fighter's height in inches
 | Weight    | Fighter's weight in pounds
 | Reach    | Fighter's reach in inches
-| Stance    | Fighter's primary fighting stance
+| Stance    | Fighter's primary fighting stance (Orthodox, Southpaw, Switch, Open Stance)
+| W    | Total number of wins in professional MMA competition
+| L    | Total number of losses in professional MMA competition
+| D    | Total number of draws in professional MMA competition
+| Win_rate    | Proportion of fights won, (wins / total fights)
+
+
+</details>
+
+#### Datasets used in Worksheet
+The **mma_profiles.csv** dataset contains 2348 rows and 4 columns. Each row represents a MMA fighter in the ufcstats.com database.
+
+Download Data:[mma_profiles.csv](/data_repo_submission/mma_profiles.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+| Name    | Full name of fighter, including nickname in quotes and stance at the end
+| Height    | Fighter's height in feet and inches format
+| Weight    | Fighter's weight in pounds
+| Reach    | Fighter's reach in inches
+
+</details>
+
+The **mma_records.csv** dataset contains 2348 rows and 5 columns. Each row represents a MMA fighter in the ufcstats.com database. **Note:** Win-loss records include all professional MMA fights, not just fights that took place in the UFC.
+
+Download Data:[mma_records.csv](/data_repo_submission/mma_records.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable          | Description
+|-------------------|------------------------------------------------
+| Name    | Full name of fighter
+| Nickname    | Nickname of fighter
 | W    | Total number of wins in professional MMA competition
 | L    | Total number of losses in professional MMA competition
 | D    | Total number of draws in professional MMA competition
@@ -91,6 +129,6 @@ Download Data:[mma_fighters.csv](/data_repo_submission/mma_fighters.csv){target=
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 Through this module, you explored how physical attributes specifically reach, height, and stance might relate to performance outcomes in MMA. By wrangling and cleaning raw fighter data, then joining it with win-loss records, you created a structured dataset suitable for analysis.
 
-With this dataset, you produced visualizations to uncover patterns, such as whether fighter with longer reaches tend to have more wins. These insights can help explain how physical traits contribute to performance. This activity highlights the importance of data skills such as data wrangling, joining and visualization..
+With this dataset, you produced visualizations to uncover patterns, such as whether fighter with longer reaches tend to have more wins. These insights can help explain how physical traits contribute to performance. This activity highlights the importance of data skills such as data wrangling, joining and visualization.
 :::
 
