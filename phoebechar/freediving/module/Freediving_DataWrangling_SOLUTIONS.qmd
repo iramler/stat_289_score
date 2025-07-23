@@ -19,7 +19,7 @@ We will begin by reading the data in.
 1. To save us from having to do it later, when you read in the data, add a line to read the `Date` column in as a day-month-year date (from the `lubridate` package) and the `Discipline` and `Sex` columns as factors as they both have limited options (this data only contains F for female and M for male).
 
 ```{r}
-diving <- read_csv("continentalDiving.csv") |> mutate(Sex = as.factor(Sex), Discipline = as.factor(Discipline), Date = dmy(Date))
+diving <- read_csv("freedivingRecords.csv") |> mutate(Sex = as.factor(Sex), Discipline = as.factor(Discipline), Date = dmy(Date))
 ```
 
 2. This data contains results from the time-based and distance-based freediving disciplines. This means that some rows in the `Result` and `Announced` columns contain time measurements and others contain distances. To make the data easier to work with, split it into two data sets, one with distance disciplines and one with the static discipline.

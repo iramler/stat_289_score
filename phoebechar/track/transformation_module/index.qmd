@@ -47,11 +47,9 @@ Students will need to have access to RStudio or another statistics software capa
 
 ### Data
 
-This activity uses an edited version of the data set: [NCAA_track](NCAA_track.csv)
+This activity uses the data set: [WomensTrack2025](WomensTrack2025.csv)
 
-Each row in the `NCAA_track.csv` data set represents one of the 50 fastest times in a given event for the 2025 NCAA Women's Division 1 East outdoor track season (with only a runner's fastest time included, no runner is included more than once for a single event). If a time was achieved by more than one runner, each runner will be present, and they will all have the same number in the `Place` column. Each event includes exactly 50 runners, with the exception the 200 meters event, which has two runners tied in 50th place. If a runner had a top 50 time in more than one event, they will have a row in the data set for each event they were in the top 50 for.
-
-This version of the data set contains an extra variable called `Speed` that represents a runner's average speed over an event. It was calculated by dividing `Event` by `Time` and is recorded in meters per second.
+Each row in the `WomensTrack2025.csv` data set represents one of the 50 fastest times in a given event for the 2025 NCAA Women's Division 1 East outdoor track season (with only a runner's fastest time included, no runner is included more than once for a single event). If a time was achieved by more than one runner, each runner will be present, and they will all have the same number in the `Place` column. Each event includes exactly 50 runners, with the exception the 200 meters event, which has two runners tied in 50th place. If a runner had a top 50 time in more than one event, they will have a row in the data set for each event they were in the top 50 for.
 
 There are 351 rows observed over 9 variables.
 
@@ -65,7 +63,7 @@ There are 351 rows observed over 9 variables.
 | Athlete     | The runner's name (Last, First)                         |
 | Year        | The runner's class year                                 |
 | Team        | The team the runner represents                          |
-| Time        | The runner's time for this event                        |
+| Time        | The runner's time for this event (in seconds)           |
 | Meet        | The meet the time was achieved at                       |
 | Meet.Date   | The date of the meet the time was achieved at           |
 | Event       | What event the time is from (how many meters)           |

@@ -65,7 +65,7 @@ There are 351 rows observed over 9 variables.
 | Athlete     | The runner's name (Last, First)                         |
 | Year        | The runner's class year                                 |
 | Team        | The team the runner represents                          |
-| Time        | The runner's time for this event                        |
+| Time        | The runner's time for this event (in seconds)           |
 | Meet        | The meet the time was achieved at                       |
 | Meet.Date   | The date of the meet the time was achieved at           |
 | Event       | What event the time is from (how many meters)           |

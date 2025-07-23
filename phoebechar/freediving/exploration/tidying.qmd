@@ -1,0 +1,25 @@
+---
+title: "tidying"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(lubridate)
+library(readr)
+library(ggplot2)
+
+diving <- read_csv("continentalDiving.csv")
+
+diving <- diving |> filter(!Discipline %in% c("NLT", "VWT"))
+
+diving <- diving |> mutate(help_date = dmy(Date))
+
+diving <- diving |> group_by(Discipline, Continent, Sex) |> arrange(help_date) |> slice(1)
+
+real_diving <- diving |> select(Name, Sex, Discipline, Result, Announced, Date, Event, Continent)
+
+write_csv(real_diving, "freedivingRecords.csv")
+```
+

@@ -17,9 +17,9 @@ In outdoor track, runners run on a track and compete to complete the distance in
 
 ## Data
 
-Each row in the `NCAA_track` data set represents one of the 50 fastest times in a given event for the 2025 NCAA Women's Division 1 East outdoor track season (with only a runner's fastest time included, no runner is included more than once for a single event). If a time was achieved by more than one runner, each runner will be present, and they will all have the same number in the `Place` column. Each event includes exactly 50 runners, with the exception the 200 meters event, which has two runners tied in 50th place. If a runner had a top 50 time in more than one event, they will have a row in the data set for each event they were in the top 50 for.
+Each row in the `WomensTrack2025.csv` data set represents one of the 50 fastest times in a given event for the 2025 NCAA Women's Division 1 East outdoor track season (with only a runner's fastest time included, no runner is included more than once for a single event). If a time was achieved by more than one runner, each runner will be present, and they will all have the same number in the `Place` column. Each event includes exactly 50 runners, with the exception the 200 meters event, which has two runners tied in 50th place. If a runner had a top 50 time in more than one event, they will have a row in the data set for each event they were in the top 50 for.
 
-There are 351 rows observed over 8 variables.
+There are 351 rows observed over 9 variables.
 
 <details>
 
@@ -31,20 +31,23 @@ There are 351 rows observed over 8 variables.
 | Athlete     | The runner's name (Last, First)                         |
 | Year        | The runner's class year                                 |
 | Team        | The team the runner represents                          |
-| Time        | The runner's time for this event                        |
+| Time        | The runner's time for this event (in seconds)           |
 | Meet        | The meet the time was achieved at                       |
 | Meet.Date   | The date of the meet the time was achieved at           |
 | Event       | What event the time is from (how many meters)           |
+| Speed       | The runner's speed for the event in m/s (event/time)    |
 
 </details>
 
-**Download Running Data:** [NCAA_track.csv](NCAA_track.csv){target="_blank"}
+**Download Running Data:** [WomensTrack2025.csv](WomensTrack2025.csv){target="_blank"}
 
 ## Questions
 
-1. Can we separate `Athlete` into first and last name variables?
-2. Can we create a speed variable to observe the relationship between distance and speed?
-3. Do some meets produce irregular times?
+1. How can we separate `Athlete` into first and last name variables?
+2. How can we create a speed variable to observe the relationship between distance and speed?
+3. Do some meets produce unusual times?
+4. What is the average time for each event?
+5. How can we characterize the relationship between speed and distance?
 
 ## References
 

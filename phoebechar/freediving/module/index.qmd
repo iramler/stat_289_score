@@ -63,11 +63,11 @@ Students will need to use R.
 
 ### Data
 
-This activity uses the data set: [continentalDiving.csv](continentalDiving.csv){target="_blank"}
+This activity uses the data set: [freedivingRecords.csv](freedivingRecords.csv){target="_blank"}
 
-Each row in the `continentalDiving` data set represents a continental (every continent besides Antarctica) record in a diving discipline. All continents have records for the competitive disciplines and South America, North America, Europe, and Africa have at least one record in NLT or VWT. Europe has 2 tied records for men's CWT set by different men. Similarly, Oceania has 2 records for men's CNF set by the same man on different occasions. 
+Each row in the `freedivingRecords` data set represents a continental (every continent besides Antarctica) record in a diving discipline. All continents have one record in the data set for each of the 8 disciplines. If more than one diver set a particular record, only the diver who set it first is included.
 
-There are 108 records with 9 variables for each.
+There are 96 records with 8 variables for each.
 
 <details>
 
@@ -80,7 +80,6 @@ There are 108 records with 9 variables for each.
 | Discipline  | Discipline of the dive (STA, CNF, DNF, etc.)              |
 | Result      | Result of the dive (time or distance)                     |
 | Announced   | Diver's announced target for the dive                     |
-| Points      | Points earned from the dive                               |
 | Date        | Date of the dive (dd.mm.yyyy)                             |
 | Event       | Event (competition) the dive was performed at             |
 | Continent   | Continent the athlete represents                          |
