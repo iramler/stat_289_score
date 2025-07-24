@@ -19,7 +19,9 @@ The Paris Olympics in 1900 was the first time women were permitted to participat
 
 The `female_olympics.csv` data set contains each female athlete from every Olympic games between the Paris games in summer of 1900 and the Rio games in summer of 2016. If an athlete competed in more than one event in a games, there will be a row representing their participation in each of the events. Similarly, if an athlete competed in more than one games in this period, they will have a row/rows corresponding to each games they competed in.
 
-This data is a version of a dataset compiled by [Randi H Griffin](https://www.randigriffin.com/). For the original scraping process see her [Kaggle](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results). This version of the data only included female athletes and includes a new variable `Participants`.
+This data is a version of a dataset compiled by [Randi H Griffin](https://www.randigriffin.com/). For the original scraping process see her [Kaggle](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results). 
+
+This version of the data only includes female athletes and includes a new variable: `Participants`.
 
 This data has 74522 observations over 15 variables. There are some missing values (most commonly for Height and Weight) which are coded as `NA`.
 

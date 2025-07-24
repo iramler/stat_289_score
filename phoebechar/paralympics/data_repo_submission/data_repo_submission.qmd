@@ -13,7 +13,7 @@ categories:
 
 ## Motivation
 
-Adapted sports for disabled individuals are not new additions to the world of sports, but they are often pushed to the side. These athletes receive less media attention and less public support, but work just as hard, if not harder, to succeed. Performing data analysis using data from these sports brings attention to their importance and can help find areas for improved support from outside individuals.
+Adapted sports for disabled individuals are not new additions to the world of sports, but they are often pushed to the side. These athletes receive less media attention and less public support but have the same drive to succeed. Performing data analysis using data from these sports brings attention to their importance and can help find areas for improved support from outside individuals.
 
 ## The Paralympics
 
