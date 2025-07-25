@@ -1,0 +1,134 @@
+---
+title: "NFL Point Spreads and Game Scores"
+author:
+  - name: Robin Lock
+    affiliation:
+      - id: slu
+        name: St. Lawrence University
+date: "July 5, 2025"
+description: "A review of inference (tests and confidence intervals) for one and two sample problems involving means or proportions using pointspreads for NFL games"
+editor: 
+  canonical: true
+#image: wingspans.jpg
+categories:
+  - Tests for means
+  - Confidence intervals for means
+  - Tests for proportions
+  - Confidence intervals for proportions
+  - Paired data difference in means
+---
+
+## Module
+
+Please note that these material have not yet completed the required pedagogical and industry peer-reviews to become a published module on the SCORE Network. However, instructors are still welcome to use these materials if they are so inclined.
+
+### Introduction
+
+An [ESPN article](https://www.espn.com/sports-betting/story/_/id/41111932/estimated-35-billion-expected-bet-nfl-season) estimated that bets on National Football League (NFL) games in 2024 would total about $35 billion.  One of the most popular wagers is to pick the winner of a game against a "point spread". 
+
+### A Primer on Point Spreads
+
+The point spread is a mechanism to make it hard to predict the "winner" by adding a fixed number of extra points to what is perceived to be the weaker team's (the *underdog*) score.  In order to "win  against the points" (or *cover*), the favored team must win by more points than the point spread. If the underdog wins the game outright or finishes within the point spread of the winner's score, they win against the points.  
+
+**Example**: The Kansas City Chiefs played at the Buffalo Bills in week \#12 of the 2024 season and Buffalo was a 2.5 point favorite.  The final score was Buffalo 30 - Kansas City 21, so Buffalo won against the points. If Kansas City had scored one more touchdown to make the score 30-28, they would have covered the 2.5 spread. 
+
+In theory, the point spread makes the game a toss up, so either team has a 50% chance of winning.  In practice, the point spreads are often chosen to try to get an equal number of fans to take either side of the bet. We use point spreads from [ESPN's Pigskin Pick'em Game](https://fantasy.espn.com/games/nfl-pigskin-pickem-2024/) which are all in "half points" (1.5, 2.5, etc.) so there is always a "winner" against the points. 
+
+The dataset includes the point spreads for each game of the 2023 and 2024 NFL regular seasons along with the actual scores of the games and various indicators of the results from the perspective of the favorite and also the home team. The worksheets contain a series of questions pertaining to point spreads and game scores.  
+
+::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
+This could bew suitable of an out of class activity or one that spans more than one class period.
+:::
+
+
+::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
+By the end of this activity, you will be able to:
+
+1.  Clean and transform raw and messy data into a structured and analysis ready format.
+
+2.  Combine multiple datasets, including resolving issues like inconsistent naming.
+
+3.  Explore relationships between variables and communicate findings using visualizations.
+
+4.  (Optional) Use web scraping tools to gather additional data from an online source.
+:::
+
+::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
+**Technology Requirement:**
+
+This activity requires the use of `R` with familiarity in `Quarto` documents and several `tidyverse` packages including `dplyr`, `tidyr`, `readr` and `stringr`. Students will also work with the `janitor` and `rvest` packages to perform webs scraping and clean raw datasets due to data inconsistencies.
+:::
+
+### Data
+
+The dataset has the point spreads and game results for all 544 regular season games in the 2023 and 2024 NFL seasons. Each row is a single game with information on 16 different variables. 
+
+Download Data: [NFLPoints.csv](NFLPoints.csv){target="_blank"}
+
+<details>
+
+<summary><b>Variable Descriptions</b></summary>
+
+| Variable    | Description                                             |
+|-------------|---------------------------------------------------------|
+| FavScore      | Points scored for the favored team                    |
+| Favorite     | Team name for the favored team                        |
+| Pts        | Point spread                                |
+| Underdog       | Team name for the underdog                          |
+| DogScore        | Points scored by the underdog team          |
+| FavCover        | 1=Favorite wins against the spread, 0=Underdog covers                       |
+| FavDiff   | Favorite's score minus underdog's score          |
+| FavWin     | Favorite wins the game outright           |
+| HomeDog       | 1=Home team is the underdog, 0=Away team is the underdog    |
+| HomeScore      | Points scored for the home team                    |
+| AwayScore      | Points scored for the away team                    |
+| HomePts      | Point spread for the home team   (negative is a home underdog)                 |
+| HomeCover      | 1=Home team covers the spread, 0=Away team covers        |
+| HomeDiff      | Home team score minus Away team score                    |
+| HomeWin      | Home team wins the game outright                    
+| Week     | Week of the regular season (1-18)                    |
+| Year      | Year of the season (2023 or 2024)                    |
+</details>
+
+#### Data Sources
+
+Point spreads and scores from ESPN's Pigskin Pick'em Game (but links only work if your have an account for that season).
+
+[Pigskin Pick'em -2023](https://fantasy.espn.com/games/nfl-pigskin-pickem-2023/)
+
+[Pigskin Pick'em -2024](https://fantasy.espn.com/games/nfl-pigskin-pickem-2024/)
+
+
+### Materials
+
+**Version With Web Scraping**
+
+- [Class handout](nba_wingspans_worksheet.qmd)
+
+- Solutions:
+  + [Quarto with visible R code](nba_wingspans_solutions.qmd)
+  + [HTML with hideable R code](nba_wingspans_solutions.html)
+  
+**Version Without Web Scraping**
+
+- [Class handout](nba_wingspans_solutions_no_webscraping.qmd)
+
+- Solutions:
+  + [Quarto with visible R code](nba_wingspans_solutions_no_webscraping.qmd)
+  + [HTML with hideable R code](nba_wingspans_solutions_no_webscraping.html)
+
+::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
+Through this module, you explored how physical attributes, specifically wingspan and wingspan advantage might relate to on-court performance in the NBA. By cleaning the combining data from multiple sources, you've created a comprehensive dataset that allowed for deeper exploration of relationships between physical characteristics and basketball statistics.
+
+With your final combined dataset, you were able to generate visualizations to investigate potential connections, such as whether players with longer wingspan advantages tend to have a larger defensive impact. These kinds of relationships can provide use insights for analysts, scouts and even fans trying to understand the value of certain physical traits.
+
+This activity underscores the value of data wrangling, merging and visualization and sets the stage for more advanced analysis in the future. Whether that's building predictive models, exploring important relationships, or applying machine learning techniques to sports data.
+:::
+
+### Additional Reading
+
+-   - Kaazempur-Mofrad, A. R. (2022, December). [*Basketball players’ long wingspan enhances defensive upside but hinders shooting capabilities: A statistical inquiry of the effect of NBA player wingspans on shooting accuracy and defensive impact*](https://sportrxiv.org/index.php/server/preprint/view/238) (Preprint). *SportRxiv*. https://doi.org/10.51224/SRXIV.238
+
+-   [The Freakish Advantage of NBA All-Stars - The Wall Street Journal](https://www.wsj.com/articles/the-freakish-advantage-of-nba-all-stars-1455224954){target="_blank"} (Subscription required)
+
+-   [17 Current NBA Players With The Largest Wingspans, Ranked By Length - TheSportster](https://www.thesportster.com/current-nba-players-with-largest-longest-widest-wingspans/){target="_blank"}
