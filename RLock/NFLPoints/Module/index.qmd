@@ -5,11 +5,14 @@ author:
     affiliation:
       - id: slu
         name: St. Lawrence University
-date: "July 5, 2025"
+date: "July 26, 2025"
 description: "A review of inference (tests and confidence intervals) for one and two sample problems involving means or proportions using pointspreads for NFL games"
 editor: 
   canonical: true
 #image: wingspans.jpg
+format:
+    html:
+      embed-resources: true
 categories:
   - Tests for means
   - Confidence intervals for means
@@ -34,29 +37,33 @@ The point spread is a mechanism to make it hard to predict the "winner" by addin
 
 In theory, the point spread makes the game a toss up, so either team has a 50% chance of winning.  In practice, the point spreads are often chosen to try to get an equal amlunt of action on either side of the bet. We use point spreads from [ESPN's Pigskin Pick'em Game](https://fantasy.espn.com/games/nfl-pigskin-pickem-2024/) which are all in "half points" (1.5, 2.5, etc.) so there is always a "winner" against the points. 
 
-The dataset includes the point spreads for each game of the 2023 and 2024 NFL regular seasons along with the actual scores of the games and various indicators of the results from the perspective of the favorite and also the home team. The worksheets contain a series of questions pertaining to point spreads and game scores.  
+The dataset includes the point spreads for each game of the 2023 and 2024 NFL regular seasons along with the actual scores of the games and various indicators of the results from the perspective of the favorite and also the home team. The worksheets contain a series of questions pertaining to point spreads and game scores.  These could be used as an exam prep where students are asked to identify the correct statistical procedure to apply and/or use the data to complete any analysis needed to answer a question. The questions cover most of the standard inference procedures (tests and confidence intervals) for one and two sample problems involving means or proportions. 
 
 ::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
-This could bew suitable of an out of class activity or one that spans more than one class period.
+This activity could take a couple of different forms:
+
+1. An in-class review after instruction on inference for means and proportions where students are simply asked to identify what statistical procedure is appropriate to answer each of the questions. Giving time for students (individually or in pairs) to make the identifications for each question should take 20-30 minutes.
+
+2. Use the *NFLPoints* dataset to apply the chosen inference procedure to answer some set of the questions.
 :::
 
 
 ::: {.callout-note collapse="true" title="Learning Objectives" appearance="minimal"}
-By the end of this activity, you will be able to:
+By the end of this activity, students will be able to:
 
-1.  Clean and transform raw and messy data into a structured and analysis ready format.
+1.  Identify the proper inference procedure for means or proportions needed to address specific questions.
 
-2.  Combine multiple datasets, including resolving issues like inconsistent naming.
+2.  Use the data to perform the appropriate inference procedure (for means or proportions) to answer the specific question in context.  
 
-3.  Explore relationships between variables and communicate findings using visualizations.
-
-4.  (Optional) Use web scraping tools to gather additional data from an online source.
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
 **Technology Requirement:**
 
-This activity requires the use of `R` with familiarity in `Quarto` documents and several `tidyverse` packages including `dplyr`, `tidyr`, `readr` and `stringr`. Students will also work with the `janitor` and `rvest` packages to perform webs scraping and clean raw datasets due to data inconsistencies.
+The "procedure identification" task does not require any technology.
+
+Carrying out the procedure would generally require some statistics software package, although some questions could be included in an assessment with appropriate summary statistics to be done with a calculator. 
+
 :::
 
 ### Data
@@ -101,9 +108,8 @@ Point spreads and scores from ESPN's Pigskin Pick'em Game (but links only work i
 
 ### Materials
 
-**Version With Web Scraping**
 
-- [Class handout](nba_wingspans_worksheet.qmd)
+- [Class handout - Word version](NFLPointsWorksheet.docx)
 
 - Solutions:
   + [Quarto with visible R code](nba_wingspans_solutions.qmd)
@@ -114,21 +120,17 @@ Point spreads and scores from ESPN's Pigskin Pick'em Game (but links only work i
 - [Class handout](nba_wingspans_solutions_no_webscraping.qmd)
 
 - Solutions:
-  + [Quarto with visible R code](nba_wingspans_solutions_no_webscraping.qmd)
-  + [HTML with hideable R code](nba_wingspans_solutions_no_webscraping.html)
-
+  + [Only identifying procedures - Word](NFLPointsSolutions1.docx)
+  + [Only identifying procedures - PDF ](NFLPointsSolutions1.pdf)
+  + [Identification and answers - Word](NFLPointsSolutions2.docx)   
+  + [Identification and answers - PDF](NFLPointsSolutions2.pdf)
+  + [Identification and solutions - Word](NFLPointsSolutions3.docx)   
+  + [Identification and solutions - PDF](NFLPointsSolutions3.pdf)
+  + [Identification and solutions - Quarto](NFLPointsSolutions3.qmd)
+  
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
-Through this module, you explored how physical attributes, specifically wingspan and wingspan advantage might relate to on-court performance in the NBA. By cleaning the combining data from multiple sources, you've created a comprehensive dataset that allowed for deeper exploration of relationships between physical characteristics and basketball statistics.
 
-With your final combined dataset, you were able to generate visualizations to investigate potential connections, such as whether players with longer wingspan advantages tend to have a larger defensive impact. These kinds of relationships can provide use insights for analysts, scouts and even fans trying to understand the value of certain physical traits.
 
-This activity underscores the value of data wrangling, merging and visualization and sets the stage for more advanced analysis in the future. Whether that's building predictive models, exploring important relationships, or applying machine learning techniques to sports data.
+The questions in this activity cover many of the topics involving inference for means or proportions with applications dealing with point spreads and scores of NFL games. 
 :::
 
-### Additional Reading
-
--   - Kaazempur-Mofrad, A. R. (2022, December). [*Basketball players’ long wingspan enhances defensive upside but hinders shooting capabilities: A statistical inquiry of the effect of NBA player wingspans on shooting accuracy and defensive impact*](https://sportrxiv.org/index.php/server/preprint/view/238) (Preprint). *SportRxiv*. https://doi.org/10.51224/SRXIV.238
-
--   [The Freakish Advantage of NBA All-Stars - The Wall Street Journal](https://www.wsj.com/articles/the-freakish-advantage-of-nba-all-stars-1455224954){target="_blank"} (Subscription required)
-
--   [17 Current NBA Players With The Largest Wingspans, Ranked By Length - TheSportster](https://www.thesportster.com/current-nba-players-with-largest-longest-widest-wingspans/){target="_blank"}
