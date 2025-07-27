@@ -31,7 +31,7 @@ The dataset includes the point spreads for each game of the 2023 and 2024 NFL re
 
 ## Data
 
-The dataset has the point spreads and game results for all 544 regular season games in the 2023 and 2024 NFL seasons. Each row is a single game with information on 16 different variables. 
+The dataset has the point spreads and game results for all 544 regular season games in the 2023 and 2024 NFL seasons. Each row is a single game with information on 17 different variables. 
 
 
 <details>
