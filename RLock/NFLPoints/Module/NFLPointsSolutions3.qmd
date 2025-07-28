@@ -1,0 +1,44 @@
+---
+title: "NFL Point Spreads - Solutions"
+author: "R. Lock"
+format: pdf
+---
+
+Solutions to 20 questions from the NFL Point Spreads and Game Scores module. 
+
+```{r}
+#| message: false
+#| warning: false
+library(Hmisc)
+```
+
+
+Get the data set. 
+```{r}
+NFLPoints<-read.csv("NFLPoints.csv")
+```
+
+**1.	What proportion of the time does the favored team actually win the game outright?**
+
+Procedure: CI for a proportion (one sample)
+
+```{r}
+NumFavWins<-sum(NFLPoints$FavWin)
+n=length(NFLPoints$FavWin)
+binconf(NumFavWins,n,method="asymptotic")
+```
+
+We are 95% sure that the proportion of times the favored team wins the game is between 0.641 and 0.719.
+
+**2.	Is the chance the favorite covers the spread discernibly different from 0.50? **
+
+Procedure: Test for proportion (one sample)
+
+$H_0:p=0.5$ vs. $H_a:p\ne 0.5$ where $p$ is the proportion of games the favored team covers the spread
+
+```{r}
+NumFavCover<-sum(NFLPoints$FavCover)
+n=length(NFLPoints$FavWin)
+prop.test(NumFavCover,n, correct=FALSE)
+```
+
