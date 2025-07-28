@@ -43,7 +43,7 @@ The dataset has the point spreads and game results for all 544 regular season ga
 | FavScore      | Points scored for the favored team                    |
 | Favorite     | Team name for the favored team                        |
 | Pts        | Point spread                                |
-| Underdog       | Team name for the underdog                          |
+| Underdog       | Team name for the underdog team                         |
 | DogScore        | Points scored by the underdog team          |
 | FavCover        | 1=Favorite wins against the spread, 0=Underdog covers                       |
 | FavDiff   | Favorite's score minus underdog's score          |
