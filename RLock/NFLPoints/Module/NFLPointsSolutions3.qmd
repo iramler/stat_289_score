@@ -4,7 +4,7 @@ author: "R. Lock"
 format: pdf
 ---
 
-Solutions to 20 questions from the NFL Point Spreads and Game Scores module. 
+Solutions to 20 questions from the NFL Point Spreads and Game Scores module.
 
 ```{r}
 #| message: false
@@ -12,33 +12,97 @@ Solutions to 20 questions from the NFL Point Spreads and Game Scores module.
 library(Hmisc)
 ```
 
+Get the data set.
 
-Get the data set. 
 ```{r}
 NFLPoints<-read.csv("NFLPoints.csv")
 ```
 
-**1.	What proportion of the time does the favored team actually win the game outright?**
+**1. What proportion of the time does the favored team actually win the game outright?**
 
 Procedure: CI for a proportion (one sample)
 
+Via formula
+
 ```{r}
-NumFavWins<-sum(NFLPoints$FavWin)
+x=sum(NFLPoints$FavWin)
 n=length(NFLPoints$FavWin)
-binconf(NumFavWins,n,method="asymptotic")
+phat=x/n
+SE=sqrt(phat*(1-phat)/n)
+zstar=qnorm(0.975)
+ME=zstar*SE
+lower=phat-ME
+upper=phat+ME
 ```
+
+$\hat{p} =$ `r x`/`r n`=`r round(phat,3)` with SE=`r round(SE,4)`
+
+CI for p is `r round(phat,3)` $\pm$ `r round(zstar,3)` $\cdot$ `r  round(SE,4)` = (`r round(lower,3)`,`r round(upper,3)`)
 
 We are 95% sure that the proportion of times the favored team wins the game is between 0.641 and 0.719.
 
-**2.	Is the chance the favorite covers the spread discernibly different from 0.50? **
+Using an internal R function 
+```{r}
+prop.test(x,n,correct=FALSE)
+```
+
+Note that the method used for this CI is slightly different than the formula-based method above. 
+
+**2. Is the chance the favorite covers the spread discernibly different from 0.50?**
 
 Procedure: Test for proportion (one sample)
 
 $H_0:p=0.5$ vs. $H_a:p\ne 0.5$ where $p$ is the proportion of games the favored team covers the spread
 
+Via formula
+
 ```{r}
-NumFavCover<-sum(NFLPoints$FavCover)
-n=length(NFLPoints$FavWin)
-prop.test(NumFavCover,n, correct=FALSE)
+x=sum(NFLPoints$FavCover)
+n=length(NFLPoints$FavCover)
+phat=x/n
+SE=sqrt(phat*(1-phat)/n)
+z=(phat-0.5)/SE
+pvalue=2*pnorm(-abs(z))
 ```
+
+$\hat{p} =$ `r x`/`r n`=`r round(phat,3)` with SE=`r round(SE,4)`
+
+z=(`r round(phat,3)` - 0.5)/`r round(SE,4)`=`r round(z,2)`, p-value=`r round(pvalue,3)`
+
+At a 5% significance level we do not have convincing evidence that the proportion of times the favorite covers the spread is different from 0.50.
+
+
+Using an internal R function 
+```{r}
+prop.test(x,n, correct=FALSE)
+```
+
+Note that the R prop.test function uses a chi-square statistic, rather than a z-statistic, but the square root of that chi-square statistic should match the z-statistic up to the +/- sign. 
+
+
+**3.	How different is the average point spread when the favored team is playing at home as compared to the favorite playing on the road? **
+
+Procedure: CI for a difference in means (two samples)
+
+```{r}
+(HomePts<-t.test(Pts~HomeDog, data=NFLPoints))
+```
+
+The difference in means is $\overline{x}_H-\overline{x}_A= 5.119-4.176=0.943$ and the 95% confidence interval for the difference in means is (`r round(HomePts$conf.int[1],2)`,`r  round(HomePts$conf.int[2],2)`).
+
+We are 95% sure that the average point spread when the  home team is favored is between 0.44 and 1.44 more than when the road team is favored.
+
+**4.	Many football fans say that the home field advantage is about a field goal (three points). Is the average home margin (*HomeDiff*) discernibly different from three points?**
+
+Procedure: Test for a mean (one sample using *HomeDiff*) OR
+Test for two means (paired data, using *HomeScore* and *AwayScore*)
+
+
+$H_0:\mu=3$ vs. $H_a:\mu \ne 3$ where $\mu$ is the mean home field margin
+
+```{r}
+t.test(NFLPoints$HomeDiff,mu=3)
+```
+
+The mean home field advantage is $\overline{x}_d=$
 
