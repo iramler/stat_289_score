@@ -1,0 +1,57 @@
+---
+title: "Run Order Exploration"
+format: html
+editor: visual
+---
+
+```{r}
+library(readr)
+Tremblant1 <- read_csv("emiliaagostinelli/module_1/Tremblant1.csv")
+```
+
+```{r}
+plot(Tremblant1$Run1_Rank ~ Tremblant1$Run1_Order)
+plot(Tremblant1$Run2_Rank ~ Tremblant1$Run1_Order)
+plot(Tremblant1$Final_Rank ~ Tremblant1$Run1_Order)
+plot(Tremblant1$Run2_Rank ~ Tremblant1$Run2_Order)
+plot(Tremblant1$Run2_Order ~ Tremblant1$Run1_Order)
+```
+
+```{r}
+bib_groups <- Tremblant1 |>
+  mutate(bib_group = case_when(
+    Run1_Order >= 1  & Run1_Order <= 7  ~ "Fastest",
+      Run1_Order >= 8  & Run1_Order <= 15 ~ "Fast",
+      Run1_Order >= 16 & Run1_Order <= 30 ~ "Medium",
+      Run1_Order > 30                    ~ "Slow"
+    )
+  )
+```
+
+```{r}
+mod1 = lm(Run2_Order ~ Run1_Order, data = Tremblant1)
+summary(mod1)
+```
+
+```{r}
+mod2 = lm(Final_Rank ~ Run1_Order, data = Tremblant1)
+summary(mod2)
+```
+
+```{r}
+mod3 = lm(Final_Rank ~ bib_group, data = bib_groups)
+summary(mod3)
+```
+
+```{r}
+ggplot(bib_groups, aes(x = bib_group, y = Final_Rank)) + 
+  geom_boxplot()
+```
+
+```{r}
+aov_model <- aov(Final_Rank ~ bib_group, data = bib_groups)
+summary(aov_model)
+TukeyHSD(aov_model)
+```
+
+Students can sketch out boxplots beforehand with a guess.
