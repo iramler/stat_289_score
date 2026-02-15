@@ -6,7 +6,9 @@ editor: visual
 
 ```{r}
 library(readr)
+library(tidyverse)
 Tremblant1 <- read_csv("emiliaagostinelli/module_1/Tremblant1.csv")
+View(Tremblant1)
 ```
 
 ```{r}
@@ -20,10 +22,10 @@ plot(Tremblant1$Run2_Order ~ Tremblant1$Run1_Order)
 ```{r}
 bib_groups <- Tremblant1 |>
   mutate(bib_group = case_when(
-    Run1_Order >= 1  & Run1_Order <= 7  ~ "Fastest",
-      Run1_Order >= 8  & Run1_Order <= 15 ~ "Fast",
-      Run1_Order >= 16 & Run1_Order <= 30 ~ "Medium",
-      Run1_Order > 30                    ~ "Slow"
+    Run1_Order >= 1  & Run1_Order <= 7  ~ "Group 1",
+      Run1_Order >= 8  & Run1_Order <= 15 ~ "Group 2",
+      Run1_Order >= 16 & Run1_Order <= 30 ~ "Group 3",
+      Run1_Order > 30                    ~ "Group 4"
     )
   )
 ```
@@ -55,3 +57,4 @@ TukeyHSD(aov_model)
 ```
 
 Students can sketch out boxplots beforehand with a guess.
+
