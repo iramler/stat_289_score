@@ -58,3 +58,38 @@ TukeyHSD(aov_model)
 
 Students can sketch out boxplots beforehand with a guess.
 
+
+```{r}
+## looking at boxplots for another race at Copper
+Copper <- read.csv("emiliaagostinelli/normal_distribution_module/Copper.csv")
+
+bib_groups_copper <- Copper |>
+  mutate(bib_group = case_when(
+    Run1_Order >= 1  & Run1_Order <= 7  ~ "Group 1",
+      Run1_Order >= 8  & Run1_Order <= 15 ~ "Group 2",
+      Run1_Order >= 16 & Run1_Order <= 30 ~ "Group 3",
+      Run1_Order > 30                    ~ "Group 4"
+    )
+  )
+
+ggplot(bib_groups_copper, aes(x = bib_group, y = Final_Rank)) + 
+  geom_boxplot()
+## appears a bit different from the Tremblant race and more along what we would hypothesize to see
+```
+
+```{r}
+## let's see which bib groups are actually different for final rank
+
+aov_model_copper <- aov(Final_Rank ~ bib_group, data = bib_groups_copper)
+summary(aov_model_copper)
+TukeyHSD(aov_model_copper)
+
+## here, group 1 is not signficantly different from group 2, but is for groups 3 and 4. Group 2 is barely significantly different from group 3, but still is. Groups 3 and 4 are not significantly different. 
+
+## this is different from our findings at Tremblant. For Tremblant Group 1 was significantly different from all others, but the otehrs had no signficant differences between them. Here, it seems that Groups 1 and 2 have no significant difference between them, but are significantly different from Groups 3 and 4. 
+
+## more of a separation between (Groups 1 and 2) from (Groups 3 and 4) in this case.
+## for Tremblant, a separation between (Group 1) from (Groups 2, 3, 4).
+```
+
+

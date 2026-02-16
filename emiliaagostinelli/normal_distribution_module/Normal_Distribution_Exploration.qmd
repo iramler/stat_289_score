@@ -1,0 +1,42 @@
+---
+title: "Normal Distribution Exploration"
+format: html
+editor: visual
+---
+
+
+```{r}
+## reading in data
+library(readr)
+Tremblant1 <- read_csv("emiliaagostinelli/normal_distribution_module/Tremblant1.csv")
+```
+
+
+```{r}
+## creating a variable for difference in run time between the 2 runs
+diff <- Tremblant1$Run1_Time - Tremblant1$Run2_Time
+```
+
+```{r}
+## looking at a histogram to see how run time differences are distributed
+hist(diff)
+## appears normally distributed
+```
+
+```{r}
+## does this hold true for other races?
+## look at data from another women's World Cup GS race at Copper Mtn. this year
+Copper <- read.csv("emiliaagostinelli/normal_distribution_module/Copper.csv")
+```
+
+```{r}
+## creating a diff variable for Copper and looking at a histogram
+copper_diff <- Copper$Run1_Time - Copper$Run2_Time
+hist(copper_diff)
+## see a hump in the -0.5 to -1.0 range - unsure if this is concerning
+```
+
+```{r}
+
+```
+
