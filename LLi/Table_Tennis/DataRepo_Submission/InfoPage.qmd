@@ -4,12 +4,12 @@ author: "Leiyue Li"
 date: February 12, 2026 
 description: Olympic Table Tennis Medals Between 1988 and 2024
 categories:
-  - DATA VISULIZATION
-  - SUMMARY STATISTICS
-  - CHI-SQUARE TEST FOR ASSOCIATION
-  - CHI-SQUARE TEST FOR GOODNESS-OF-FIT
-  - TEST FOR DIFFERENCE IN TWO PROPORTIONS
-  - LOGISTIC REGRESSION
+  - Data Visualization
+  - Summary Statistics
+  - Chi-Square Test For Assocation
+  - Chi-Square Test For Goodness-Of-Fit
+  - Test for Difference in Two Proportions
+  - Logistic Regression
 editor:
   markdown: 
     canonical: true
