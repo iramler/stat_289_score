@@ -1,0 +1,53 @@
+---
+title: "Trying Paired Difference"
+format: html
+---
+
+```{r}
+library(readr)
+library(broom)
+library(tidyverse)
+Tremblant1 <- read_csv("emiliaagostinelli/module_1/Tremblant1.csv")
+```
+
+```{r}
+diff <- Tremblant1$Run1_Time - Tremblant1$Run2_Time
+mean(diff, na.rm = TRUE)
+sd(diff, na.rm = TRUE)
+```
+
+```{r}
+## other module about times change each run - normal distribution stuff
+## try to compare to another race by manually findings differences
+hist(diff)
+```
+
+```{r}
+t.test(Tremblant1$Run1_Time, Tremblant1$Run2_Time, paired = TRUE, na.rm = TRUE)
+```
+t = -6.6225
+df = 26
+p-value = 5.04*(10^-7)
+95% CI: (-1.1798309, -0.6209098)
+Mean difference: -0.9003704
+
+```{r}
+Copper <- read_csv("emiliaagostinelli/normal_distribution_module/Copper.csv")
+
+c_diff <- Copper$Run1_Time - Copper$Run2_Time
+mean(c_diff, na.rm = TRUE)
+sd(c_diff, na.rm = TRUE)
+
+t_test <- t.test(Copper$Run1_Time, Copper$Run2_Time, paired = TRUE, na.rm = TRUE)
+t_test_table <- tidy(t_test)
+t_test_table <- t_test_table |>
+  rename(Mean_Difference = estimate,
+         Test_Statistic = statistic,
+         df = parameter,
+         Lower_Bound = conf.low,
+         Upper_Bound = conf.high) |>
+  select(Mean_Difference, Test_Statistic, df, Lower_Bound, Upper_Bound)
+t_test_table
+```
+
+

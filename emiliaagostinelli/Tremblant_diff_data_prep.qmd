@@ -1,0 +1,19 @@
+---
+title: "Data Prep"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+Tremblant1 <- read.csv("emiliaagostinelli/module_1/Tremblant1.csv")
+```
+
+```{r}
+Tremblant_diff <- Tremblant1 |>
+  mutate(Time_Diff = Run1_Time - Run2_Time)
+```
+
+```{r}
+write.csv(Tremblant_diff, file = "emiliaagostinelli/module_1/Tremblant_diff.csv")
+```
