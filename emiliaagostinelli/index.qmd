@@ -1,12 +1,23 @@
 ---
-title: Women's Alpine Skiing World Cup GS Statistics
-author: Emilia Agostinelli
-date: February 28, 2026
-description: "Statistics from a two-run women's world cup giant slalom race at Mont-Tremblant"
+title: "Women's Alpine Skiing World Cup Giant Slalom Statistics"
+author: 
+  - name: Emilia Agostinelli
+    affiliation: 
+      - id: slu
+        name: St. Lawrence University
+  
+date: March 2, 2026
+description: "Statistics from two runs at a women's World Cup alpine skiing giant slalom race at Mont-Tremblant"
+editor: 
+  canonical: true
+format:
+  html:
+    embed-resources: false
 categories:
-  - Paired data
-  - Difference in means
+  - Paired Data
+  - Difference in Means
   - Boxplots
+image: womens_gs.jpeg
 ---
 
 ## Motivation
