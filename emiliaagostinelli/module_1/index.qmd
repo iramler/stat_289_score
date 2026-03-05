@@ -2,14 +2,17 @@
 title: "Exploring Differences in Women's World Cup Giant Slalom Run Times"
 author: 
   - name: Emilia Agostinelli
+    url: 
     affiliation: 
       - id: slu
         name: St. Lawrence University
   - name: Ivan Ramler
     email: iramler@stlawu.edu
-    affiliation: slu
+    affiliation: 
+      - ref: slu
   - name: Robin Lock
-    affiliation: slu
+    affiliation:
+      - ref: slu
   
 date: February 28, 2024
 description: "Statistics from two runs at a women's World Cup alpine skiing giant slalom race at Mont-Tremblant"
@@ -36,9 +39,9 @@ Please note that these material have not yet completed the required pedagogical 
 
 ### Introduction
 
-In World Cup Giant Slalom (GS), there are two runs. Only the thirty fastest racers from the first run take a second run. If a racer is disqualified (DSQ) or did not finish (DNF) their first run, they do not take a second run. The order for the first run is determined by taking all racers and ordering them by their World Cup points, from highest to lowest. From that, the top 30 racers are put into three groups. The best seven racers are randomly assigning them a bib 1-7. The next eight best competitors are randomly assigned a bib 8-15. The next best 15 racers are randomly assigned a bib 16-30. The remaining racers go in descending order of points. For the second run, competitors race in reverse order of their results on the first run, so the 30th fastest racer on the first run goes 1st on the second run and so on. This data set includes data from only the top thirty finishers as any racers who placed higher than 30th do not take a second run.
+World Cup Giant Slalom (GS) is a high-speed alpine skiing event where skiers navigate a series of wide, rhythmic turns through pairs of gates. In World Cup GS, there are two runs. Only the thirty fastest racers on the first run take a second run. If a racer is disqualified (DSQ) or did not finish (DNF) their first run, they do not take a second run. The order for the first run is determined by taking all racers and ordering them by their World Cup points, from highest to lowest. World Cup points are a measure to rank a skier's performance throughout the season. The best ranked skier has the highest points. From there, the top 30 racers are put into three groups. The best seven racers are randomly assigned a bib 1-7. The next eight best competitors are randomly assigned a bib 8-15. The next best 15 racers are randomly assigned a bib 16-30. The remaining racers go in descending order of World Cup points. A second run takes place a couple hours after the first run is completed, allowing time for racers to have a break, for the course to be reset, and for racers to inspect the new course. Competitors race in reverse order of their results on the first run, so the 30th fastest racer on the first run goes 1st on the second run and so on. This data set includes data from only the top thirty finishers as any racers who placed higher than 30th do not take a second run.
 
-In this worksheet, we will be able to explore paired data, as we have information on 2 runs by the same competitor (unless they DSQ or DNF on the second run). Additionally, we will investigate difference in means between the 2 runs to determine if racers are on average faster or slower on a specific run. We will brainstorm reasoning for findings and understand the real-world applications of this exercise.
+In this worksheet, we will be able to explore paired data, as we have information on 2 runs by the same competitor (unless they DSQ or DNF on the second run). Additionally, we will investigate difference in means between the 2 runs to determine if racers are on average faster or slower on a specific run. We will brainstorm reasoning for findings and understand the real-world applications of this data exercise.
 
 ::: {.callout-note collapse="true" title="Activity Length" appearance="minimal"}
 This could serve as an in class activity and should take roughly a half an hour to complete. Questions can also be pulled from this activity to serve as shorter examples.
@@ -57,15 +60,11 @@ By the end of this activity, you will be able to:
 
 5.  Relate findings from CIs and t-tests.
 
-6.  Brainstorm reasoning for findings.
-
-7.  Understand the limitations of this dataset.
-
-8.  Relate this activity to a real-world question of interest.
+6.  Recognizing the limitations of data.
 :::
 
 ::: {.callout-note collapse="true" title="Methods" appearance="minimal"}
-For this activity, students will need access to Minitab or R.
+For this activity, students will need access to a statistical software, such as Minitab or R.
 
 Students are expected to have:
 
@@ -78,40 +77,35 @@ Students are expected to have:
 
 ### Data
 
-Each of the 30 rows in this data set represents a racer, and there are 11 variables. There are a few missing values in the Run2_Time, Run2_Rank, Total_Time, and Rank_Diff columns due to racers not finishing their first run.
+Two sets of data are explored in this module. The majority of analysis is based on a data set containing information from a women's World Cup GS race at Mont-Tremblant. A data set containing information from a women's World Cup GS race at Copper Mountain is also referenced. 
+
+Each data set has 30 rows, with each row representing a racer. There are a few missing values in the Run2_Time and Time_Diff columns due to racers not finishing their second run. There are three variables in each data set as described below.
 
 | Variable   | Description                                  |
 |------------|----------------------------------------------|
-| Name       | Name of the racer                            |
-| Nat        | Country the racer represents                 |
-| Run1_Order | Start order for the first run                |
 | Run1_Time  | Time for run 1 in seconds                    |
-| Run1_Rank  | Rankings of run 1                            |
-| Run2_Order | Start order for the second run               |
 | Run2_Time  | Time for run 2 in seconds                    |
-| Run2_Rank  | Rankings of run 2                            |
-| Total_Time | Combined time of runs 1 and 2                |
-| Final_Rank | Final results                                |
-| Rank_Diff  | Difference between run 1 rank and final rank |
 | Time_Diff  | Difference between run 1 time and run 2 time |
 
-: [Tremblant_diff.csv](Tremblant_diff.csv)
+The data sets can be accessed here:
 
-The description of the data scraping/cleaning can be accessed here: [Scraping Description](init-womens_tremblant_gs_new.qmd)
+[Tremblant_diff.csv](Tremblant_diff.csv)
+
+[Copper_diff.csv](Copper_diff.csv)
 
 ### Data Source
 
-[FIS World Cup Women's GS at Tremblant](https://www.fis-ski.com/DB/general/results.html?sectorcode=AL&raceid=118343 "FIS World Cup Women's GS at Tremblant")
+[FIS World Cup Women's GS at Tremblant](https://www.fis-ski.com/DB/general/results.html?sectorcode=AL&raceid=118343 "FIS World Cup Women's GS at Tremblant"){target="_blank"}
+
+- The description of the data scraping/cleaning for Tremblant can be accessed here: [Women’s Alpine Skiing World Cup GS Statistics](https://data.scorenetwork.org/skiing/Womens_Tremblant_GS.html){target="_blank"}
+
+[FIS World Cup Women's GS at Copper](https://www.fis-ski.com/DB/general/results.html?sectorcode=AL&raceid=127442 "FIS World Cup Women's GS at Copper"){target="blank"}
 
 ### Materials
 
 [Class Worksheet](Tremblant_Worksheet.docx)
 
 [Class Worksheet Key](Tremblant_Worksheet_Key.docx)
-
-### Authors
-
-Created by Emilia Agostinelli (St. Lawrence University), Robin Lock (St. Lawrence University), Ivan Ramler (St. Lawrence University).
 
 ### Acknowledgements
 
