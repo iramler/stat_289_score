@@ -22,7 +22,9 @@ image: womens_gs.jpeg
 
 ## Motivation
 
-In World Cup Giant Slalom (GS), there are two runs. Only the thirty fastest racers take a second run. If a racer is disqualified (DSQ) or did not finish (DNF) their first run, they do not take a second run. The order for the first run is determined by taking all racers and ordering them by their World Cup points, from highest to lowest. From that, the top 30 racers are put into three groups. The best seven racers are randomly assigning them a bib 1-7. The next eight best competitors are randomly assigned a bib 8-15. The next best 15 racers are randomly assigned a bib 16-30. The remaining racers go in descending order of points. For the second run, the course is reset. Competitors race in reverse order of their results on the first run, so the 30th fastest racer on the first run goes 1st on the second run and so on. This data set includes data from only the top thirty finishers as any racers who placed higher than 30th do not take a second run. Since this data includes information on 2 runs by the same competitor (unless they DSQ or DNF on the second run), it allows for exploration of paired data. We can investigate the difference in average run time between the 2 runs to investigate if racers are on average faster or slower on a specific run, and consider why this may be the case. We can also explore how run order is associated with final rankings.
+World Cup Giant Slalom (GS) is a high-speed alpine skiing event where skiers navigate a series of wide, rhythmic turns through pairs of gates. In World Cup GS, there are two runs. Only the thirty fastest racers on the first run take a second run. If a racer is disqualified (DSQ) or did not finish (DNF) their first run, they do not take a second run. The order for the first run is determined by taking all racers and ordering them by their World Cup points, from highest to lowest. World Cup points are a measure to rank a skier's performance throughout the season. The best ranked skier has the highest points. From there, the top 30 racers are put into three groups. The best seven racers are randomly assigned a bib 1-7. The next eight best competitors are randomly assigned a bib 8-15. The next best 15 racers are randomly assigned a bib 16-30. The remaining racers go in descending order of World Cup points. A second run takes place a couple hours after the first run is completed, allowing time for racers to have a break, for the course to be reset, and for racers to inspect the new course. Competitors race in reverse order of their results on the first run, so the 30th fastest racer on the first run goes 1st on the second run and so on. This data set includes data from only the top thirty finishers as any racers who placed higher than 30th do not take a second run.
+
+Since this data includes information on 2 runs by the same competitor (unless they DSQ or DNF on the second run), it allows for exploration of paired data. We can investigate the difference in average run time between the 2 runs to investigate if racers are on average faster or slower on a specific run, and consider why this may be the case. We can also explore how run order is associated with final rankings.
 
 ## Data
 
@@ -43,11 +45,11 @@ Each of the 30 rows in this data set represents a racer, and there are 11 variab
 | Rank_Diff  | Difference between run 1 rank and final rank |
 | Time_Diff  | Difference between run 1 time and run 2 time |
 
-: [Tremblant_diff.csv](../data/Tremblant_diff.csv)
+: [Tremblant_diff.csv](Tremblant_diff.csv)
 
 ### Data Preparation
 
-[init-womens_tremblant_gs_new.qmd](../_prep/Tremblant_GS/init-womens_tremblant_gs_new.qmd)
+[init-womens_tremblant_gs_new.qmd](init-womens_tremblant_gs_new.qmd)
 
 A variable for the difference in run times was created after the data was scraped and tidied.
 
@@ -61,4 +63,11 @@ A variable for the difference in run times was created after the data was scrape
 
 The data was scraped from the following link:
 
-[FIS World Cup Women's GS at Tremblant](https://www.fis-ski.com/DB/general/results.html?sectorcode=AL&raceid=118343 "FIS World Cup Women's GS at Tremblant")
+[FIS World Cup Women's GS at Tremblant](https://www.fis-ski.com/DB/general/results.html?sectorcode=AL&raceid=118343 "FIS World Cup Women's GS at Tremblant"){target="blank"}
+
+### Acknowledgements
+
+Image credits:
+
+Trovati, Alessandro. "Mikaela Shiffrin leans into a turn during her winning giant-slalom run Thursday at the alpine skiing world championships in Meribel, France." Los Angeles Times, 16 Feb. 2023, www.latimes.com/sports/olympics/story/2023-02-16/mikaela-shiffrin-wins-gold-giant-slalom-world-championships. 
+
