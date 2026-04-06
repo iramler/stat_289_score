@@ -45,7 +45,7 @@ Each of the 30 rows in this data set represents a racer, and there are 11 variab
 | Rank_Diff  | Difference between run 1 rank and final rank |
 | Time_Diff  | Difference between run 1 time and run 2 time |
 
-: [Tremblant_diff.csv](Tremblant_diff.csv)
+: [Tremblant1.csv](Tremblant1.csv)
 
 ### Data Preparation
 
