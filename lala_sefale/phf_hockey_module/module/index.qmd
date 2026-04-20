@@ -17,7 +17,7 @@ categories:
   - Data visualization
   - Summary statistics
   - Data wrangling
-image: hockey.jpg
+image: 
 format:
   html:
     embed-resources: false
@@ -31,7 +31,7 @@ Please note that these materials have not yet completed the required pedagogical
 
 If you are unfamiliar with ice hockey, the video below provides a quick overview of the sport and how the game is played.
 
-{{< video https://youtu.be/nv2FUnHceqU title="Ice Hockey Explained" >}}
+{{< video https://youtu.be/nv2FUnHceqU?si=p-eaJlCvIvlKUPFv title="Ice Hockey Explained" >}}
 
 ### Introduction
 
@@ -113,9 +113,17 @@ Premier Hockey Federation shot data from the 2021--2022 PHF season, accessed via
 
 ### Materials
 
-[Worksheet (.qmd)](phf_hockey_worksheet.qmd) --- Student handout with guided questions and empty code chunks.
+Student handout with guided questions and empty code chunks:
 
-[Solutions (.qmd)](phf_hockey_solutions.qmd) --- Complete solutions with code and output.
+[Worksheet (.qmd)](phf_hockey_worksheet.qmd)
+
+[Worksheet (.html)](phf_hockey_worksheet.html)
+
+Complete solutions with code and output:
+
+[Solutions (.qmd)](phf_hockey_solutions.qmd)
+
+[Solutions (.html)](phf_hockey_solutions.html) 
 
 ::: {.callout-note collapse="true" title="Conclusion" appearance="minimal"}
 After completing this module, students should have hands-on experience wrangling a real sports dataset, computing summary statistics at the team and player level, and choosing appropriate visualizations to communicate patterns. Key takeaways include understanding how to calculate and compare save proportions across goalies, how to identify top performers using grouped summaries, and how the shape of a distribution (e.g., left-skewed save proportions) tells a story about the data.
@@ -123,4 +131,4 @@ After completing this module, students should have hands-on experience wrangling
 
 ### Acknowledgements
 
-Thumbnail photo by Getty Images, published on [Just Women's Sports](https://justwomenssports.com){target="_blank"}.
+Hockey video, "The rules of hockey explained", published on [Ninh Lyn's Youtube channel](https://youtu.be/nv2FUnHceqU?si=YTTOCqzdn1hQuLyW){target="_blank"}.
