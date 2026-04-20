@@ -20,6 +20,7 @@ categories:
 format:
   html:
     embed-resources: false
+    preview-image: hockey.jpg
 ---
 
 ## Module
@@ -132,6 +133,8 @@ After completing this module, students should have hands-on experience wrangling
 :::
 
 ### Acknowledgements
+
+Thumbnail photo by Getty Images — licensed and published on ([Just Women’s Sports](https://justwomenssports.com/wp-content/uploads/2024/03/GettyImages-506958574-scaled-1.jpg){target="_blank"}).
 
 Hockey video, "The rules of hockey explained", published on [Ninh Lyn's Youtube channel](https://youtu.be/nv2FUnHceqU?si=YTTOCqzdn1hQuLyW){target="_blank"}.
 
